@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.16.2",
+  "version": "2026.10.16.3",
   "experiments": [
     {
       "id": "fortress",
@@ -28,17 +28,17 @@
       "relation": "本项目原创定时爆破迷宫玩法实验，非原作或逐关复制。"
     },
     {
-      "id": "bubbles",
+      "id": "starline",
       "number": "03",
-      "title": "泡泡龙式解谜",
-      "english": "NEXT EXPERIMENT",
+      "title": "星泡航线",
+      "english": "STARLINE BUBBLES",
       "sourceGame": "puzzle-bobble",
-      "status": "planned",
-      "url": null,
-      "cover": null,
-      "levels": null,
-      "description": "后续候选：瞄准、反弹与同色消除。尚未开发，当前没有可游玩版本。",
-      "relation": "仅为后续候选，名称与范围尚未固定。"
+      "status": "published",
+      "url": "./games/starline/",
+      "cover": "./assets/starline-cover.svg",
+      "levels": 12,
+      "description": "瞄准、反弹，让同色的星点相遇。十二张原创星图，三连消除与悬岛掉落交织成新的航线。",
+      "relation": "本项目原创瞄准反弹与泡泡消除玩法实验，非原作或逐关复制。"
     }
   ],
   "groups": [
@@ -632,7 +632,20 @@
       "edition": "指发射泡泡的 Puzzle Bobble 系列；不是跳跃动作《Bubble Bobble》。",
       "sources": [
         "bubble"
-      ]
+      ],
+      "experiment": {
+        "id": "starline",
+        "number": "03",
+        "title": "星泡航线",
+        "english": "STARLINE BUBBLES",
+        "sourceGame": "puzzle-bobble",
+        "status": "published",
+        "url": "./games/starline/",
+        "cover": "./assets/starline-cover.svg",
+        "levels": 12,
+        "description": "瞄准、反弹，让同色的星点相遇。十二张原创星图，三连消除与悬岛掉落交织成新的航线。",
+        "relation": "本项目原创瞄准反弹与泡泡消除玩法实验，非原作或逐关复制。"
+      }
     },
     {
       "id": "arkanoid",

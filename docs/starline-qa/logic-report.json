@@ -1,0 +1,67 @@
+{
+  "testedAt": "2026-10-16T04:55:46.353Z",
+  "kind": "pure-logic fixtures and solver simulation; not browser play",
+  "passed": 15,
+  "checks": [
+    {
+      "name": "12 unique original maps, valid staggered rows, connected ceiling, below danger and positive ammo",
+      "status": "passed"
+    },
+    {
+      "name": "hex adjacency is symmetric, unique, bounded and has at most six neighbours",
+      "status": "passed"
+    },
+    {
+      "name": "two connected do not pop, three clear; final-ammo win takes precedence and terminal effects expire",
+      "status": "passed"
+    },
+    {
+      "name": "severed ceiling support drops a different-colour island",
+      "status": "passed"
+    },
+    {
+      "name": "islands remain supported through any adjacent colour; diagonal non-neighbours do not connect",
+      "status": "passed"
+    },
+    {
+      "name": "empty ceiling and both side walls: reflection stays within bounds and attaches legally",
+      "status": "passed"
+    },
+    {
+      "name": "preview and real fixed-step flight agree on attachment for all 12 boards and representative angles",
+      "status": "passed"
+    },
+    {
+      "name": "full boundary has no legal attachment and resolves to failure, never overwrites occupied cells",
+      "status": "passed"
+    },
+    {
+      "name": "ammo exhaustion and bottom line both lose when not cleared",
+      "status": "passed"
+    },
+    {
+      "name": "colour exhaustion refreshes current and next; bag only emits present colours",
+      "status": "passed"
+    },
+    {
+      "name": "one complete five-colour bag supplies each surviving colour before repeating",
+      "status": "passed"
+    },
+    {
+      "name": "one swap per turn and duplicate fire while in flight spends only one shot",
+      "status": "passed"
+    },
+    {
+      "name": "pause freezes projectile and clock, resume moves; restart is clean independent state",
+      "status": "passed"
+    },
+    {
+      "name": "simulation and diagnostics copies cannot mutate the original state",
+      "status": "passed"
+    },
+    {
+      "name": "all twelve levels solved under their actual shot budgets with production collision and colour generation",
+      "status": "passed"
+    }
+  ]
+}
