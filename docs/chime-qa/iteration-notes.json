@@ -49,5 +49,10 @@
   "testHarness": {
     "restingReasonAssertion": "The expected Chinese substring omitted 了; corrected to the actual reason. The physics already stopped correctly.",
     "reloadFixture": "Setting menu unlock before reload was overwritten by legitimate pagehide save; moved fixture to initialization. Initial UI report preserved."
+  },
+  "narrowResult": {
+    "issue": "At 320px the long level-16 result card was 246.08px tall inside a 222.44px scene and overlapped lower controls. Primary button remained hittable, but the panel did not fit.",
+    "fix": "Only CSS: a visible paused/result overlay at <=380px reserves min-height 300px; normal playing and planning scene sizes are unchanged.",
+    "newCheck": "Actual level-16 normal inputs, card contained in scene, hit test and real replay click at 320px."
   }
 }
