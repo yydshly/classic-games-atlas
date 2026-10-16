@@ -25,6 +25,16 @@ async def main(args):
   await p.locator('#primary-action').click();assert not await p.locator('#help-dialog').is_visible();checks['tutorialPersists']=True
   await p.locator('#help').click();assert (await snap(p))['state']=='paused';await p.keyboard.press('Escape');assert (await snap(p))['state']=='playing';checks['helpEscResumes']=True
   await p.locator('#levels').click();assert await p.locator('[data-level="2"]').is_disabled();await p.keyboard.press('Escape');checks['lockedStages']=True
+  spare=await ctx.new_page();await spare.goto('about:blank');await spare.bring_to_front();await p.wait_for_timeout(150)
+  background_state=(await snap(p))['state'];checks['headlessTabSwitchObservedState']=background_state
+  await p.bring_to_front();await spare.close()
+  if background_state!='paused':
+   # This headless build keeps tabs focused/visible. Exercise the registered
+   # handler separately and label the scripted DOM stimulus honestly.
+   await p.evaluate('window.dispatchEvent(new Event("blur"))')
+   checks['autoPauseCoverage']='scripted DOM blur handler; headless tab switch did not deliver focus loss'
+  else:checks['autoPauseCoverage']='actual tab switch'
+  assert (await snap(p))['state']=='paused';await p.keyboard.press('p');assert (await snap(p))['state']=='playing'
   await p.goto(args.url);await p.screenshot(path=str(out/'desktop.png'),full_page=True)
   # A fresh mobile context uses real touch events. No gameplay state fixture.
   mobile=await b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1);m=await mobile.new_page();m.on('pageerror',lambda e:errors.append(str(e)));await m.goto(args.url);await m.locator('#primary-action').tap();await m.locator('#help-confirm').tap();
@@ -38,6 +48,7 @@ async def main(args):
   checks['responsiveWidths']=widths
   await p.goto(args.url.replace('games/maze/',''));await p.wait_for_selector('.game-card');assert await p.locator('.game-card').count()==72;assert await p.locator('.lab-card').count()==3;assert await p.locator('.lab-planned a').count()==0;assert await p.locator('a[href="./games/maze/"]').count()==2;checks['atlas72AndHonestReleaseLabels']=True
   await p.locator('.lab-card a[href="./games/maze/"]').click();assert '/games/maze/' in p.url;await p.locator('.back-link').click();await p.wait_for_selector('.game-card');checks['atlasReturn']=True
+  blocked=await b.new_context();await blocked.add_init_script('Object.defineProperty(window,"localStorage",{get(){throw new DOMException("Storage disabled","SecurityError")}})');bp=await blocked.new_page();bp.on('pageerror',lambda e:errors.append(str(e)));await bp.goto(args.url);assert not (await snap(bp))['storageAvailable'];await bp.locator('#primary-action').click();await bp.locator('#help-confirm').click();assert (await snap(bp))['state']=='playing';checks['storageUnavailableStillPlayable']=True;await blocked.close()
   assert not errors and not bad,(errors,bad)
   report={'testedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':args.url,'checks':checks,'consoleErrors':errors,'badResponses':bad};(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps(report,ensure_ascii=True));await mobile.close();await ctx.close();await b.close()
 if __name__=='__main__':
