@@ -78,7 +78,7 @@ export class Renderer {
     if((player&&(tank.shield>0||tank.invulnerable>0))||(!player&&tank.spawnShield>0)){
       ctx.strokeStyle=player?'#8de4cf88':'#e1b48688';ctx.lineWidth=1.4;ctx.beginPath();ctx.arc(tank.x,tank.y,17+Math.sin(game.time*6)*1.5,0,Math.PI*2);ctx.stroke();
     }
-    if(!player){const width=22;ctx.fillStyle='#112025';ctx.fillRect(tank.x-width/2,tank.y-20,width,3);ctx.fillStyle=body;ctx.fillRect(tank.x-width/2,tank.y-20,width*tank.hp/tank.maxHp,3);}
+    if(!player){const width=22;ctx.fillStyle='#112025';ctx.fillRect(tank.x-width/2,tank.y-20,width,3);ctx.fillStyle=body;ctx.fillRect(tank.x-width/2,tank.y-20,width*tank.hp/tank.maxHp,3);if(tank.aimCharge>0){ctx.strokeStyle='#ffca78';ctx.lineWidth=2;ctx.beginPath();ctx.arc(tank.x,tank.y,18,-Math.PI/2,-Math.PI/2+Math.min(1,tank.aimCharge/.45)*Math.PI*2);ctx.stroke();}}
     else {ctx.fillStyle='#d5f7d5';polygon(ctx,[[tank.x-3,tank.y+18],[tank.x+3,tank.y+18],[tank.x,tank.y+14]]);ctx.fill();}
   }
   beacon(game){

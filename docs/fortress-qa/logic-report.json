@@ -1,8 +1,8 @@
 {
-  "testedAt": "2026-10-16T03:26:43.178Z",
+  "testedAt": "2026-10-16T03:57:25.639Z",
   "kind": "deterministic engine simulation, not browser input",
-  "passed": 15,
-  "total": 15,
+  "passed": 17,
+  "total": 17,
   "results": [
     {
       "name": "Ten distinct 25x25 maps, valid symbols, clear staging and increasing waves",
@@ -29,7 +29,7 @@
       "status": "passed"
     },
     {
-      "name": "Enemy AI physically advances along a valid route and fires",
+      "name": "Enemy AI advances, saves fire until a target is close, then fires",
       "status": "passed"
     },
     {
@@ -58,6 +58,14 @@
     },
     {
       "name": "All queued targets cleared triggers victory; restart creates independent clean state",
+      "status": "passed"
+    },
+    {
+      "name": "Enemy stops and visibly winds up before firing at a nearby player",
+      "status": "passed"
+    },
+    {
+      "name": "Off-centre enemies align their hull before turning beside a steel pillar",
       "status": "passed"
     },
     {

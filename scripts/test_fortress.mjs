@@ -38,7 +38,7 @@ test('Two normal projectile hits destroy brick; steel survives; shots do not tun
   g.tiles[5][5]='S';g.player.cooldown=0;fire(g,g.player);advance(g,.2);assert.equal(g.tiles[5][5],'S');assert.equal(g.bullets.length,0);
 });
 test('Three enemy classes have distinct armour, speed and firing cadence',()=>{const g=fixture();const enemies=Object.keys(ENEMY_TYPES).map((type,index)=>spawnEnemy(g,type,SPAWNS[index]));assert.equal(new Set(enemies.map(t=>t.hp)).size,3);assert.equal(new Set(enemies.map(t=>t.speed)).size,3);assert.equal(new Set(Object.values(ENEMY_TYPES).map(t=>t.rate)).size,3);});
-test('Enemy AI physically advances along a valid route and fires',()=>{const g=fixture();const enemy=spawnEnemy(g,'scout',{x:12,y:2});const y=enemy.y;advance(g,2.5);assert.ok(enemy.y>y+40);assert.ok(g.events.some(e=>e.type==='fire'&&e.enemy));});
+test('Enemy AI advances, saves fire until a target is close, then fires',()=>{const g=fixture();const enemy=spawnEnemy(g,'scout',{x:12,y:2});const y=enemy.y;advance(g,2.5);assert.ok(enemy.y>y+40);assert.ok(!g.events.some(e=>e.type==='fire'&&e.enemy));advance(g,4);assert.ok(g.events.some(e=>e.type==='fire'&&e.enemy));});
 test('Heavy armour absorbs normal hits; rapid damage destroys enemies and scores',()=>{
   const g=fixture();Object.assign(g.player,point(5,7),{dir:0});const enemy=spawnEnemy(g,'heavy',{x:5,y:5});Object.assign(enemy,{speed:0,cooldown:Infinity,spawnShield:0});
   fire(g,g.player);advance(g,.13);assert.equal(enemy.hp,3);applyPower(g,'rapid');g.player.cooldown=0;advance(g,.6,{fire:true});assert.equal(g.enemies.length,0);assert.equal(g.kills,1);assert.ok(g.score>=300);
@@ -54,6 +54,12 @@ test('Repair caps health; shield prevents damage; rapid fire expires and emits l
 });
 test('All queued targets cleared triggers victory; restart creates independent clean state',()=>{const g=fixture();g.spawned=g.level.queue.length;update(g,{},1/60);assert.equal(g.state,'won');assert.ok(g.score>0);const fresh=createGame(g.index);assert.equal(fresh.state,'ready');assert.equal(fresh.score,0);assert.equal(fresh.spawned,0);assert.equal(fresh.base.hp,3);assert.equal(fresh.lives,3);});
 
+test('Enemy stops and visibly winds up before firing at a nearby player',()=>{
+  const g=fixture();Object.assign(g.player,point(5,8));const e=spawnEnemy(g,'scout',{x:5,y:4});e.cooldown=0;advance(g,.2);assert.ok(e.aimCharge>0);assert.ok(!g.events.some(event=>event.type==='fire'));const y=e.y;advance(g,.4);assert.ok(g.events.some(event=>event.type==='fire'));assert.ok(e.y-y<12);
+});
+test('Off-centre enemies align their hull before turning beside a steel pillar',()=>{
+  const g=createGame(7);g.spawnClock=Infinity;start(g);const e=spawnEnemy(g,'heavy',{x:10,y:10});Object.assign(e,{x:258.4,y:254.666,cooldown:Infinity,think:.65,waypoint:{x:252,y:276}});advance(g,1.3);assert.ok(e.y>270);assert.ok(Math.abs(e.x-252)<1);
+});
 test('Every undefended map naturally resolves to defeat within 180 simulated seconds',()=>{
   for(let index=0;index<10;index++){const g=createGame(index);start(g);advance(g,180);assert.equal(g.state,'lost',`stage ${index+1} must not stall`);}
 });

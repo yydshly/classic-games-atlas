@@ -109,8 +109,11 @@ function moveEnemy(game,tank,dt) {
   tank.think-=dt;
   const aimed=clearShot(game,tank,game.player);
   if(aimed>=0&&Math.hypot(tank.x-game.player.x,tank.y-game.player.y)<200&&tank.cooldown<=0) {
-    tank.dir=aimed;fire(game,tank,true);tank.waypoint=null;
-  }
+    tank.aimCharge=(tank.aimCharge||0)+dt;tank.dir=aimed;
+    const windup=tank.type==='heavy'?.75:tank.type==='gunner'?.55:.45;
+    if(tank.aimCharge>=windup){fire(game,tank,true);tank.aimCharge=0;tank.waypoint=null;}
+    return;
+  } else tank.aimCharge=0;
   if(tank.think<=0||!tank.waypoint) {
     const path=route(game,tank,game.base,{avoidTanks:tank.stuck>.6});
     tank.waypoint=path[0]?coordinates(path[0]):null;tank.think=.65;
@@ -119,16 +122,25 @@ function moveEnemy(game,tank,dt) {
   if(point) {
     const dx=point.x-tank.x,dy=point.y-tank.y;
     if(Math.abs(dx)>1.2||Math.abs(dy)>1.2) {
-      tank.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?1:3):(dy>0?2:0);
-      const vector=VECTORS[tank.dir],distance=Math.min(tank.speed*dt,Math.max(Math.abs(dx),Math.abs(dy)));
+      const cellX=center(cell(tank.x)),cellY=center(cell(tank.y));
+      // Align to the current lane before turning. Otherwise a hull can clip a
+      // neighbouring pillar and remain wedged while BFS keeps choosing its lane.
+      if(Math.abs(point.x-cellX)<.5&&Math.abs(dx)>.3)tank.dir=dx>0?1:3;
+      else if(Math.abs(point.y-cellY)<.5&&Math.abs(dy)>.3)tank.dir=dy>0?2:0;
+      else tank.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?1:3):(dy>0?2:0);
+      const vector=VECTORS[tank.dir],distance=Math.min(tank.speed*dt,tank.dir%2?Math.abs(dx):Math.abs(dy));
       const x=tank.x+vector.x*distance,y=tank.y+vector.y*distance;
       if(canOccupy(game,tank,x,y)){tank.x=x;tank.y=y;tank.stuck=0;}
-      else {tank.stuck+=dt;fire(game,tank,true);if(tank.stuck>.8)tank.think=0;}
+      else {tank.stuck+=dt;if(tank.stuck>.8)tank.think=0;}
     } else {tank.x=point.x;tank.y=point.y;tank.waypoint=null;}
   }
   const baseAim=clearShot(game,tank,game.base);
-  if(baseAim>=0&&Math.hypot(tank.x-game.base.x,tank.y-game.base.y)<210)tank.dir=baseAim;
-  fire(game,tank,true);
+  const baseInRange=baseAim>=0&&Math.hypot(tank.x-game.base.x,tank.y-game.base.y)<210;
+  if(baseInRange)tank.dir=baseAim;
+  const front=VECTORS[tank.dir];
+  const frontTile=game.tiles[cell(tank.y+front.y*24)]?.[cell(tank.x+front.x*24)];
+  // Fire at a target or at a demolishable obstruction, not blindly across the map.
+  if(baseInRange||frontTile==='B')fire(game,tank,true);
 }
 
 export function spawnEnemy(game,type,point=SPAWNS[game.spawned%3]) {
@@ -142,7 +154,7 @@ function lose(game,reason) {game.state='lost';game.resultReason=reason;emit(game
 function damageBase(game) {
   if(game.base.hp<=0)return;
   if(game.base.shield>0){emit(game,'deflect',game.base);return;}
-  game.base.hp--;game.base.flash=.5;game.base.shield=.7;emit(game,'base-hit',game.base);
+  game.base.hp--;game.base.flash=.5;game.base.shield=1.5;emit(game,'base-hit',game.base);
   if(game.base.hp<=0)lose(game,'信标熄灭：基地耐久已经耗尽。');
 }
 function damagePlayer(game) {
