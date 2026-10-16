@@ -187,6 +187,9 @@ def main():
                           group=group, scope=scope, platforms=platforms.split(','), era=era,
                           genres=genres.split(','), play=play, classic=classic, edition=edition,
                           sources=[source]))
+    for game in games:
+        if game['id'] == 'battle-city':
+            game['experiment'] = dict(id='fortress',title='堡垒防线',url='./games/fortress/',status='可游玩',relation='本项目原创基地防守玩法实验，非原作或逐关复制。')
     assert len(games) == 72
     catalogue = dict(version='2026.10.16.1', groups=[dict(id=i,title=t,number=n,tagline=ta,description=d) for i,t,n,ta,d in GROUPS], games=games, sources=sources)
     (root / 'data').mkdir(exist_ok=True)

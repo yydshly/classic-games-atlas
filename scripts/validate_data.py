@@ -24,7 +24,7 @@ for game in games:
         assert source['relation'] and source['status'] and source['note']
 html=(ROOT/'index.html').read_text(encoding='utf-8')
 for resource in re.findall(r'(?:src|href)="(\./[^"#]+)"',html):
-    assert (ROOT/resource).is_file(),resource
-assert '未实现' in html and '不是游戏平台分类' in html
+    assert (ROOT/resource).is_file() or (ROOT/resource/'index.html').is_file(),resource
+assert '原创玩法实验' in html and '不是游戏平台分类' in html
 report=dict(entries=len(games),uniqueIds=72,uniqueTitles=72,groups=dict(counts),sourceRecords=len(data['sources']),sourceStatuses=dict(collections.Counter(source['status'] for source in data['sources'].values())),localResources='all present')
 print(json.dumps(report,ensure_ascii=True,indent=2))

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="一份可搜索的中文经典游戏图鉴。72 个代表作品与系列，10 个主题分组，带玩法介绍、版本说明与参考资料。本阶段不提供游戏复刻。">
+  <meta name="description" content="一份可搜索的中文经典游戏图鉴。72 个代表作品与系列，10 个主题分组，带玩法介绍、版本说明与参考资料。另有独立原创玩法实验可游玩。">
   <meta name="theme-color" content="#183c38">
   <title>经典游戏图鉴 · Classic Games Atlas</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -14,7 +14,7 @@
   <a class="skip-link" href="#collection">跳到图鉴目录</a>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="经典游戏图鉴首页"><span class="brand-symbol" aria-hidden="true">✣</span><span>经典游戏图鉴<small>CLASSIC GAMES ATLAS</small></span></a>
-    <nav aria-label="主导航"><a href="#collection">图鉴目录 <span>↗</span></a><a href="#about">阅读说明 <span>↗</span></a><a class="repo-link" href="https://github.com/yydshly/classic-games-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></nav>
+    <nav aria-label="主导航"><a href="#collection">图鉴目录 <span>↗</span></a><a class="lab-nav" href="#experiments">原创试玩 ↗</a><a class="about-nav" href="#about">阅读说明 <span>↗</span></a><a class="repo-link" href="https://github.com/yydshly/classic-games-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></nav>
   </header>
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
@@ -26,7 +26,8 @@
       </div>
       <div class="hero-art"><img src="./assets/atlas-cover.svg" width="600" height="500" alt="原创几何海报：方块、轨道、弹球与方向键共同组成游戏记忆的抽象图景。不是游戏截图。"><span class="art-caption">ORIGINAL GEOMETRIC STUDY — 001</span></div>
     </section>
-    <div class="stats-strip" aria-label="图鉴概览"><p><strong>72</strong><span>作品与系列</span></p><p><strong>10</strong><span>主题分组</span></p><p class="stats-scope"><span class="tiny-cross" aria-hidden="true">＋</span><span>只有介绍与探索<br><b>本阶段未实现游戏复刻</b></span></p><span class="strip-end" aria-hidden="true">PRESS START TO REMEMBER ↘</span></div>
+    <div class="stats-strip" aria-label="图鉴概览"><p><strong>72</strong><span>作品与系列</span></p><p><strong>10</strong><span>主题分组</span></p><p class="stats-scope"><span class="tiny-cross" aria-hidden="true">＋</span><span>图鉴与原创实验<br><b>首款基地防守现已可玩</b></span></p><span class="strip-end" aria-hidden="true">PRESS START TO REMEMBER ↘</span></div>
+    <section class="experiments-section" id="experiments" aria-labelledby="experiments-title"><div class="experiment-art"><img src="./assets/fortress-cover.svg" width="500" height="300" alt="堡垒防线原创插画：带履带和炮塔的绿色装甲车守护六边形信标。"></div><div class="experiment-copy"><p class="eyebrow">PLAY LAB 01 / 原创玩法实验 <span>现已可玩</span></p><h2 id="experiments-title">堡垒防线</h2><p>读过经典，也试着亲手守住一道防线。<br>十张原创地图、三类来敌、三种补给，守护最后一盏信标。</p><div class="experiment-tags"><span>单人 · 10关</span><span>键盘 / 触屏</span><span>本地进度</span></div><a class="primary-link" href="./games/fortress/">进入原创战场 <span>↗</span></a><p class="experiment-boundary">参考坦克基地保护机制的原创作品，非原作或逐关复制。</p></div></section>
     <section class="catalogue-section" id="collection" aria-labelledby="collection-title">
       <div class="section-heading"><div><p class="eyebrow">THE COLLECTION / 图鉴目录</p><h2 id="collection-title">选一段记忆，<span>重新发现经典。</span></h2></div><p class="section-aside">按主题翻阅，或找一个熟悉的名字。<br>点开卡片，了解玩法、版本与资料。</p></div>
       <div class="explore-panel">
@@ -39,7 +40,7 @@
       <div id="load-error" class="empty-state" hidden><h3>图鉴暂时无法读取</h3><p>请检查网络后重新加载。如果正在本地打开，请使用静态 HTTP 服务访问。</p><button class="primary-link" id="reload" type="button">重新加载</button></div>
       <noscript><p class="notice">图鉴搜索和详情需要 JavaScript。也可在 <a href="./data/games.json">完整数据文件</a>中阅读全部条目。</p></noscript>
     </section>
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-number" aria-hidden="true">A—Z<br><span>PLAY / REMEMBER</span></div><div class="about-copy"><p class="eyebrow">A NOTE FROM THE ATLAS</p><h2 id="about-title">经典，不止一种模样。</h2><p>这是一份跨平台、跨年代的代表作品图鉴，不是销量榜、评分榜或严格的历史排名。十个分组是阅读主题，混合时代、场景与类型，<strong>不是游戏平台分类</strong>。卡片另列代表平台与玩法类型。</p><p>“系列”“作品”“作品版本”与“玩法谱系”分别标注。系列介绍概括共同体验，不代表每代都有相同规则；重制版、合集与后继品牌只作为注明范围的资料入口。</p><div class="about-grid"><div><h3>读文字，也看出处</h3><p>优先引用开发商、发行商、官方商店和博物馆；详情显示来源关系与核读状态。页面可读不等于所有事实都已验证。</p></div><div><h3>留住记忆，尊重创作</h3><p>介绍文字与几何插画为本项目原创；插画不代表原游戏画面。游戏名称及相关商标属于各自权利人。本阶段未实现复刻，不提供 ROM 或游戏资源。</p></div></div><a class="text-link" href="https://www.worldvideogamehalloffame.org/exhibits/world-video-game-hall-of-fame/" target="_blank" rel="noopener noreferrer">延伸阅读：The Strong 世界电子游戏名人堂 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></div></section>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-number" aria-hidden="true">A—Z<br><span>PLAY / REMEMBER</span></div><div class="about-copy"><p class="eyebrow">A NOTE FROM THE ATLAS</p><h2 id="about-title">经典，不止一种模样。</h2><p>这是一份跨平台、跨年代的代表作品图鉴，不是销量榜、评分榜或严格的历史排名。十个分组是阅读主题，混合时代、场景与类型，<strong>不是游戏平台分类</strong>。卡片另列代表平台与玩法类型。</p><p>“系列”“作品”“作品版本”与“玩法谱系”分别标注。系列介绍概括共同体验，不代表每代都有相同规则；重制版、合集与后继品牌只作为注明范围的资料入口。</p><div class="about-grid"><div><h3>读文字，也看出处</h3><p>优先引用开发商、发行商、官方商店和博物馆；详情显示来源关系与核读状态。页面可读不等于所有事实都已验证。</p></div><div><h3>留住记忆，尊重创作</h3><p>介绍文字与几何插画为本项目原创；插画不代表原游戏画面。游戏名称及相关商标属于各自权利人。独立提供原创玩法实验，不冒称原作完整复刻，不提供 ROM 或原游戏资源。</p></div></div><a class="text-link" href="https://www.worldvideogamehalloffame.org/exhibits/world-video-game-hall-of-fame/" target="_blank" rel="noopener noreferrer">延伸阅读：The Strong 世界电子游戏名人堂 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></div></section>
   </main>
   <footer><a class="footer-brand" href="#top">经典游戏图鉴 <span aria-hidden="true">↑</span></a><p>记忆没有通关画面。<span>CLASSIC GAMES ATLAS · 2026</span></p><a href="./data/games.json">开放图鉴数据 <span aria-hidden="true">↗</span></a></footer>
   <dialog id="game-dialog" aria-labelledby="detail-title"><div class="dialog-shell"><button class="dialog-close" type="button" aria-label="关闭详情">关闭 <span aria-hidden="true">×</span></button><div id="detail-content"></div></div></dialog>
