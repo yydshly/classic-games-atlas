@@ -24,8 +24,10 @@ def blast(s,b):
  return out
 def paths(s,origin=None,extra=None,avoid=True):
  origin=origin or pos(s['player']); blocked={pos(b) for b in s['bombs']}|{pos(f) for f in s['flames']}
+ for b in s['bombs']:
+  if b['fuse']<.8:blocked|=blast(s,b)
  if extra:blocked.add(extra)
- if avoid:
+ if avoid and s['player']['invulnerable']<=0:
   for e in s['enemies']:
    blocked.add(pos(e))
    for dx,dy in DIRS:blocked.add((e['x']+dx,e['y']+dy))
@@ -46,12 +48,15 @@ def escape(s,at):
   distance=min((abs(cell[0]-e['x'])+abs(cell[1]-e['y']) for e in s['enemies']),default=20)
   if distance<=2:continue
   candidates.append((len(path)*1.3-max(0,min(distance,5)-2)*.4,cell,path))
+ if not candidates and (s['player']['hp']>1 or s['player']['invulnerable']>0):
+  for cell,path in paths(s,at,at,avoid=False).items():
+   if path and cell not in danger and len(path)<=7:candidates.append((len(path)*1.3,cell,path))
  return min(candidates,default=None,key=lambda x:x[0])
 async def snap(p):return await p.evaluate(SNAP)
 async def step(p,d):
  s=await snap(p);a=pos(s['player']);dx,dy=DIRS[d];target=(a[0]+dx,a[1]+dy)
  if s['state']!='playing' or s['grid'][target[1]][target[0]]!='.':return False
- if any(abs(target[0]-e['x'])+abs(target[1]-e['y'])<=1 for e in s['enemies']):return False
+ if s['player']['invulnerable']<=0 and any(abs(target[0]-e['x'])+abs(target[1]-e['y'])<=1 for e in s['enemies']):return False
  await p.keyboard.down(KEYS[d]);deadline=time.monotonic()+.8
  while time.monotonic()<deadline:
   await p.wait_for_timeout(18);s=await snap(p)
@@ -79,16 +84,18 @@ async def wait_safe(p,seconds):
     await walk(p,path[:1])
   await p.wait_for_timeout(80)
 
-async def pilot(p,limit=260):
+async def pilot(p,limit=260,checkpoint=None):
  begin=time.monotonic();samples=[];last_sample=-1
  while time.monotonic()-begin<limit:
   s=await snap(p)
   if int(s['time'])//3!=last_sample:
    last_sample=int(s['time'])//3;samples.append({k:s[k] for k in ['time','state','player','stats','enemies']})
+   if checkpoint:checkpoint.write_text(json.dumps({'kind':'read-only in-progress checkpoint','snapshot':s},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
   if s['state']!='playing':break
   if s['bombs'] or s['flames']:await wait_safe(p,.25);continue
   routes=paths(s);player=pos(s['player'])
-  nearest_enemy=min((abs(e['x']-player[0])+abs(e['y']-player[1]) for e in s['enemies']),default=20)
+  open_routes=paths(s,avoid=False)
+  nearest_enemy=min((len(open_routes[pos(e)]) for e in s['enemies'] if pos(e) in open_routes),default=99)
   # Lure nearby trackers into a bomb rather than walking toward their current cell.
   if nearest_enemy<=4:
    safe=escape(s,player)
@@ -145,7 +152,7 @@ async def main(args):
    await p.goto(args.url);await p.wait_for_selector('#primary-action');await p.locator('#levels').click();await p.locator(f'[data-level="{args.stage}"]').click();await p.locator('#primary-action').click()
    if await p.locator('#help-dialog').is_visible():await p.locator('#help-confirm').click()
    await p.wait_for_timeout(80)
-   result=await pilot(p,args.limit);result['attempt']=attempt;report['results'].append(result)
+   result=await pilot(p,args.limit,out/f'checkpoint-attempt-{attempt}.json');result['attempt']=attempt;report['results'].append(result)
    await p.screenshot(path=str(out/f'stage-{args.stage:02}-attempt-{attempt}.png'),full_page=True)
    print(json.dumps({k:result[k] for k in ['stage','result','elapsedWall','attempt']}),flush=True)
    report['consoleErrors']=errors;report['badResponses']=bad;(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
