@@ -38,12 +38,23 @@
 
 已替换检查中发现的错链和失效路径，例如热血错误商店 ID、俄罗斯方块旧路径、The Strong FIFA 路径及 Imangi 目录路径。没有下载或发布第三方游戏图像、音频、ROM。
 
-## 发布状态与阻塞
+## 线上发布与验收
 
-已创建独立 **PRIVATE** 仓库 `yydshly/classic-games-atlas`，已提交并推送 `main` 供账号持有者审阅。远端默认分支已确认是 `main`；GitHub Pages 查询返回 404（未配置）。提交署名使用 `yydshly` 与 GitHub noreply 邮箱。
+账号持有者已明确确认仅公开此新项目。仓库 [yydshly/classic-games-atlas](https://github.com/yydshly/classic-games-atlas) 已设为 **PUBLIC**，默认分支为 `main`。GitHub Pages 使用 `legacy` 分支发布，从 `main` 的 `/` 根目录部署，HTTPS 已启用。没有改变其他仓库、添加凭据、安装软件或付费。提交保留完整历史，署名使用 `yydshly` 与 GitHub noreply 邮箱。
 
-**尚未部署 GitHub Pages，没有可直接访问的公开网站 URL，也没有线上版本一致性检查结果。**目标预期地址不应当被称为已上线。
+**真实网站：[https://yydshly.github.io/classic-games-atlas/](https://yydshly.github.io/classic-games-atlas/)**
 
-自动审批拒绝创建 public 仓库，理由是公开发布需要额外明确确认。仅私有保存属于已完成的安全替代方案。下一步需要账号持有者授权：允许本项目仓库改为 public，并在 GitHub Pages 公开本项目介绍、原创代码与原创 SVG；不改变其他仓库。
+线上验收对应运行代码提交 `5c1958967bb07e12ef55b88c837e8fe495ab319d`：
 
-获得授权后应执行：确认当前库身份与可见性 → 发布本项目 → Pages 设置为 main 根目录 → 等待部署成功 → 在真实 Pages 项目路径重新运行浏览器验收 → 比较线上 HTML、JS、CSS、JSON 和 SVG 与 main 提交对应文件的内容哈希。
+- [Pages 成功工作流](https://github.com/yydshly/classic-games-atlas/actions/runs/38842357088)，状态 `completed / success`，与上述提交对应。
+- [部署设置和构建证据](qa-online/deployment.json)：Pages 状态 `built`，构建无错误。
+- [线上完整浏览器报告](qa-online/browser-report.json)：实际访问 GitHub Pages 项目地址，72 个详情逐条通过；中英文/别名搜索、全部主题、玩法组合筛选、空结果、键盘焦点及直达链接重载通过。
+- 320、360、390、768、1024、1440px 六种视口无页面横向溢出；手机详情无横向溢出。测试期间 **0 页面错误、0 控制台 error、0 请求失败、0 HTTP 4xx/5xx 资源**。
+- [线上资源内容核对](qa-online/integrity-report.json)：HTML、JS、CSS、JSON、海报 SVG 与图标 SVG 六个运行文件均 HTTP 200，SHA-256 与提交文件逐一相同。
+- 线上截图：[桌面首页](qa-online/desktop.png)、[目录](qa-online/desktop-catalogue.png)、[详情](qa-online/desktop-detail.png)、[手机首页](qa-online/mobile.png)、[手机目录](qa-online/mobile-catalogue.png)、[手机详情](qa-online/mobile-detail.png)、[空结果](qa-online/empty-state.png)。
+
+线上测试复现了快速关闭再打开详情时，旧关闭事件覆盖新直达链接的竞态。修复改为同步更新关闭路由，并忽略重新打开后抵达的旧关闭事件；重跑上述整套线上验收通过。
+
+本记录及线上截图的后续提交只更新文档和证据，不改变六个运行文件。交付时另外核对最新 Pages 构建提交与 `main` 一致，及最终提交的线上资源哈希一致。
+
+实际剩余限制为上文列出的来源核读缺口，以及浏览器验收目前覆盖 Chromium；没有未解决的发布或网站功能阻塞。本项目仍仅为作品图鉴，未实现任何游戏复刻。

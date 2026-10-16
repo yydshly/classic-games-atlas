@@ -2,6 +2,8 @@
 
 一份中文静态图鉴：介绍 72 个代表作品、系列与玩法谱系，按 10 个主题组织。不是销量榜、评分榜或完整游戏史；**本阶段未实现任何游戏复刻**。
 
+**在线图鉴：[https://yydshly.github.io/classic-games-atlas/](https://yydshly.github.io/classic-games-atlas/)**
+
 本项目独立于其他仓库。只包含原创介绍、原创 HTML/CSS/JavaScript、原创 SVG、资料链接与开发/验证脚本。没有账户、后端、模型调用、统计追踪、外部字体或运行时第三方依赖。不提供 ROM、模拟器、游戏音画或游戏下载。
 
 ## 本阶段目标与已实现内容
@@ -72,7 +74,9 @@ python scripts/test_browser.py --url http://127.0.0.1:4174/
 
 目标仓库：`yydshly/classic-games-atlas`，默认分支 `main`。目标部署方案为 GitHub Pages 从 `main` 根目录发布；`.nojekyll`关闭 Jekyll 处理，所有资源使用相对路径，适配 `/classic-games-atlas/` 项目路径。
 
-**当前：公开仓库创建被自动审批要求额外确认，故只创建私有仓库保存可审阅成果。未开启 Pages，未上线。**不能将本地预览当作公开网站。获得明确公开许可后才能变更可见性并部署；不得扩大任何其他私有仓库可见性。
+**当前：已取得明确公开许可，仅将此新库设为 public，并成功部署 GitHub Pages。**网站通过 HTTPS 访问；Pages 从 `main` 根目录发布。线上全部 72 条详情、搜索与组合筛选、空结果、键盘、直达链接重载及六种屏宽验收通过；运行文件内容与部署提交一致。公开和部署仅作用于本项目，未改变其他仓库。
+
+线上验收报告、截图和资源哈希见 [docs/VERIFICATION.md](docs/VERIFICATION.md)。复查线上文件可运行 `python scripts/verify_deployment.py --commit HEAD`；完整线上浏览器复查使用 `python scripts/test_browser.py --url https://yydshly.github.io/classic-games-atlas/ --out .local/online`。
 
 提交使用账号 `yydshly` 与 GitHub noreply 邮箱，不写入个人邮箱或凭据。验证证据见 [docs/VERIFICATION.md](docs/VERIFICATION.md)。
 
