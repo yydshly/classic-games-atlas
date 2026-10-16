@@ -31,7 +31,7 @@ for experiment in experiments:
     assert experiment['sourceGame'] in {game['id'] for game in games}
     game=next(g for g in games if g['id']==experiment['sourceGame'])
     if experiment['status']=='published':
-        assert experiment['levels']=={'fortress':10,'maze':10,'starline':12,'prism':12,'crate':20,'pass':8,'trail':8,'lantern':10,'cloud':8,'garden':20,'vine':16,'petal':20,'sand':20,'pinfall':12,'gale':8}[experiment['id']] and experiment['url']
+        assert experiment['levels']=={'fortress':10,'maze':10,'starline':12,'prism':12,'crate':20,'pass':8,'trail':8,'lantern':10,'cloud':8,'garden':20,'vine':16,'petal':20,'sand':20,'pinfall':12,'gale':8,'post':8}[experiment['id']] and experiment['url']
         assert (ROOT/experiment['url']/'index.html').is_file()
         assert (ROOT/experiment['cover']).is_file()
         assert game['experiment']==experiment

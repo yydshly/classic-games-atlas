@@ -1,0 +1,4 @@
+import{TRACKS,atArc,project}from'../games/post/tracks.mjs';
+const angle=x=>Math.atan2(Math.sin(x),Math.cos(x));
+export function decide(g,pace=1){const t=TRACKS[g.level-1],p=g.car,q=project(t,p),target=atArc(t,q.arc+38+p.speed*.12),error=angle(Math.atan2(target.y-p.y,target.x-p.x)-p.angle),ahead=atArc(t,q.arc+100),bend=Math.abs(angle(Math.atan2(ahead.ty,ahead.tx)-Math.atan2(q.ty,q.tx))),desired=Math.max(82,Math.min(233,235-bend*105-Math.abs(error)*95))*pace;return{steer:Math.abs(error)<.028?0:Math.sign(error),gas:p.speed<desired-3?1:0,brake:p.speed>desired+10?1:0};}
+if(process.argv.includes('--stdio')){const rl=(await import('node:readline')).createInterface({input:process.stdin});rl.on('line',s=>{try{process.stdout.write(JSON.stringify(decide(JSON.parse(s)))+'\n');}catch(e){process.stdout.write(JSON.stringify({error:String(e)})+'\n');}});}

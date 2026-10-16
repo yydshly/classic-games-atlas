@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-10-16T12:28:19.396Z",
+  "passed": 20,
+  "fixtureBoundary": "Artificial positions, speeds, clock/deadline and final-lap thresholds only in isolated rule fixtures; independent normal-input eight-course wins never use these writes",
+  "tests": [
+    "eight distinct closed courses, three environments, straight-segment gates and safe recovery points",
+    "three-second countdown prevents movement and race-clock advance under held controls",
+    "gas accelerates, steering rotates relative to heading, stationary steering cannot pivot",
+    "release coasts down and braking stops without reversing",
+    "speed is capped by production constants and oversized frame deltas are bounded",
+    "road shoulder slows the vehicle while leaving steering available",
+    "road-edge collision resets safely, adds three seconds and locks repeated reset",
+    "manual recovery keeps ordered progress and current lap, charges time and restores road heading",
+    "swept gate detects high-speed crossing, rejects reverse, wide misses and repeated line contact",
+    "finish and out-of-order gates cannot advance the next required checkpoint",
+    "all ordered forward gates and adequate route travel are required for a lap",
+    "reverse driving is visible and cannot collect a checkpoint or lap",
+    "discontinuous route jump is recovered without awarding skipped checkpoints",
+    "final lap settles exactly once and later inputs do not alter won race",
+    "deadline failure has priority over a same-step final finish crossing",
+    "pause freezes countdown, car, lap, timer and input effects",
+    "checkpoint reload preserves lap and gate progress, restores only safe position and adds recovery penalty",
+    "corrupt versions, times, lap histories, gate order and resource counts are rejected",
+    "resume close to deadline loses once; saved countdown restarts paused without charged racing time",
+    "fixed-step update is independent of frame chunking and authored tracks stay immutable"
+  ]
+}

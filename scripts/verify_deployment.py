@@ -23,7 +23,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/petal-cover.svg','games/petal/index.html','games/petal/petal.css','games/petal/boards.mjs','games/petal/levels.mjs','games/petal/engine.mjs','games/petal/renderer.mjs','games/petal/game.mjs',
          'assets/sand-cover.svg','games/sand/index.html','games/sand/sand.css','games/sand/boards.mjs','games/sand/levels.mjs','games/sand/deduction.mjs','games/sand/engine.mjs','games/sand/renderer.mjs','games/sand/game.mjs',
          'assets/pinfall-cover.svg','games/pinfall/index.html','games/pinfall/pinfall.css','games/pinfall/levels.mjs','games/pinfall/engine.mjs','games/pinfall/renderer.mjs','games/pinfall/game.mjs',
-         'assets/gale-cover.svg','games/gale/index.html','games/gale/gale.css','games/gale/levels.mjs','games/gale/engine.mjs','games/gale/renderer.mjs','games/gale/game.mjs']
+         'assets/gale-cover.svg','games/gale/index.html','games/gale/gale.css','games/gale/levels.mjs','games/gale/engine.mjs','games/gale/renderer.mjs','games/gale/game.mjs',
+         'assets/post-cover.svg','games/post/index.html','games/post/post.css','games/post/tracks.mjs','games/post/engine.mjs','games/post/renderer.mjs','games/post/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
