@@ -3,3 +3,4 @@
 
 /* Planning stays fully visible before the clock starts. */
 .scene{display:flex;flex-direction:column}.overlay.ready{position:relative;inset:auto;order:-1;background:#f1f3e7;backdrop-filter:none;padding:12px;line-height:1.5}.overlay.ready .overlay-card{border:0;box-shadow:none;background:none;max-width:none;width:100%;padding:0}.overlay.ready h2,.overlay.ready .eyebrow,.overlay.ready #overlay-summary{display:none}.overlay.ready #overlay-copy{margin:0 0 10px}.overlay.ready .overlay-actions button{min-height:44px}
+@media(max-width:380px){.scene:has(>.overlay:not([hidden]):not(.ready)){min-height:300px}}
