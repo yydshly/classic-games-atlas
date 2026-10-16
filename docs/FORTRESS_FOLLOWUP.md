@@ -32,7 +32,9 @@
 
 ## 发布
 
-此修复与第二款新增分开提交。提交后在实际 Pages 地址核对文件与首款核心路径，再记录部署证据。
+此修复与第二款新增分开提交：`d2c0af5b5046bf72d7df4cd3f444447a178fc9b9`。[Pages 成功工作流](https://github.com/yydshly/classic-games-atlas/actions/runs/38848409427)。
+
+[13 个线上运行文件](fortress-qa/fix-online-integrity.json)均 HTTP 200，内容与修复提交一致。[第 8 关线上实玩](fortress-qa/fix-online-stage8/report.json)清除 9/11 后因出击耗尽失败，该次没有计为通关；本地同代码的 11/11 成功证据仍保留。真实战斗及失败流程正常，不将一次自动驾驶策略失败冒称已发现新的技术阻塞。线上终关复验结果随后补入。
 
 ## 限制
 
