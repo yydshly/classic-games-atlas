@@ -37,7 +37,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/courier-cover.svg','games/courier/index.html','games/courier/courier.css','games/courier/levels.mjs','games/courier/engine.mjs','games/courier/renderer.mjs','games/courier/game.mjs',
          'assets/venture-cover.svg','games/venture/index.html','games/venture/venture.css','games/venture/levels.mjs','games/venture/engine.mjs','games/venture/renderer.mjs','games/venture/game.mjs',
          'assets/island-cover.svg','games/island/index.html','games/island/island.css','games/island/levels.mjs','games/island/engine.mjs','games/island/renderer.mjs','games/island/game.mjs',
-         'assets/orbit-cover.svg','games/orbit/index.html','games/orbit/orbit.css','games/orbit/levels.mjs','games/orbit/engine.mjs','games/orbit/renderer.mjs','games/orbit/game.mjs']
+         'assets/orbit-cover.svg','games/orbit/index.html','games/orbit/orbit.css','games/orbit/levels.mjs','games/orbit/engine.mjs','games/orbit/renderer.mjs','games/orbit/game.mjs',
+         'assets/duel-cover.svg','games/duel/index.html','games/duel/duel.css','games/duel/levels.mjs','games/duel/engine.mjs','games/duel/renderer.mjs','games/duel/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
