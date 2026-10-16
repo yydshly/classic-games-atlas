@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-16T08:39:32.202Z",
+  "passed": 12,
+  "tests": [
+    "20 authored goals and fixed-seed initial boards are distinct, stable and playable",
+    "horizontal and vertical intersections deduplicate and create one bloom at preferred target",
+    "four in a row/column and five create specified specials at target, source or top-left",
+    "direct special swap triggers new position, effect chains and overlap counts once",
+    "old effects can destroy a new creation anchor; retained creation does not collect or loosen soil",
+    "invalid exchange returns exact board without spending a move; animation blocks second exchange",
+    "normal exchange completes cascades to stable board, score and collection count actual unique removals",
+    "final move evaluates all cascades and goals before zero-step loss",
+    "shuffle preserves tile multiset, specials, soil, goals, counters and steps, produces stable legal play",
+    "constrained shuffle fallback keeps exact multiset, has no matches and guarantees an adjacent move",
+    "no-action settle automatically shuffles without consuming progress, and matching specials activate",
+    "hint spends no moves; pause freezes phase; restart and checkpoints isolate; restored state validated"
+  ]
+}
