@@ -49,6 +49,14 @@
 
 ## 部署与边界
 
-第三款本地验收已完成，待独立提交与 Pages 成功后补入线上实玩、文件核对和提交信息。本地预览不是线上发布证明。
+第三款独立代码提交：`16b0fb79754118cdfae84232e026ce60d096014a`。[Pages 成功工作流](https://github.com/yydshly/classic-games-atlas/actions/runs/38853266554)，构建状态 `built`，2026-10-16 04:57:48 UTC 完成。
+
+- 实际网站：[星泡航线](https://yydshly.github.io/classic-games-atlas/games/starline/)，[图鉴主页](https://yydshly.github.io/classic-games-atlas/)。
+- [线上首/中/末实玩](starline-qa/online-play/report.json)：第 1/6/12 关分别 2/7/9 发清场；第六关反弹 1 次、悬岛 4 颗，第十二关反弹 2 次、悬岛 14 颗。第一关自然解锁第二关，重载保留纪录；后两关为仅开放菜单的夹具。每次结算都等待飞行结束，终局效果自然结束后再截图，画面与场上数量 0 一致。
+- [线上操作验收](starline-qa/online-ui/report.json)：实际鼠标、键盘和触屏流程通过；飞行中重复点击只扣一发、暂停冻结、触底失败/重试、交换限制、教学与声音保存、十二关菜单、存储受限回退、五种宽度、三款入口与返回均通过。无控制台错误、请求失败或资源 4xx/5xx。
+- [线上全部图鉴回归](starline-qa/online-atlas/browser-report.json)：72 条详情、筛选/搜索/空结果、键盘/焦点、深链与六种宽度通过。
+- [28 个发布文件](starline-qa/online-integrity.json)均 HTTP 200，逐文件 SHA-256 与第三款代码提交完全一致。包括图鉴、发布清单、三款运行文件和原创插画。
+
+本次补充证据提交只更新报告与文档，保持已验收的运行代码。
 
 未声称十二关均已真人手动通关，或同一自然存档连续通关全部十二关。真实浏览器实玩覆盖第 1/6/12 关，其余关卡为共享生产规则的解算证据。移动验证为 Chromium 触屏模拟，尚未覆盖实体手机、Safari、Firefox、屏幕阅读器和真实用户难度评估。无头环境的真实切页自动暂停未验证；键盘暂停与帮助恢复均已验证。
