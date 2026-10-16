@@ -90,16 +90,23 @@ function handleRoute() {
   else if (dialog.open) dialog.close();
 }
 
+function closeGame() {
+  // Update the route synchronously: a queued close event may arrive after reopening.
+  if (location.hash.startsWith('#game=')) history.replaceState(null, '', `${location.pathname}${location.search}#collection`);
+  dialog.close();
+}
+
 $('#reload').addEventListener('click', () => location.reload());
-$('.dialog-close').addEventListener('click', () => dialog.close());
+$('.dialog-close').addEventListener('click', closeGame);
+dialog.addEventListener('cancel', (event) => { event.preventDefault(); closeGame(); });
 dialog.addEventListener('click', (event) => {
   if (event.target !== dialog) return;
   const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeGame();
 });
 dialog.addEventListener('close', () => {
+  if (dialog.open) return;
   document.body.classList.remove('dialog-open');
-  if (location.hash.startsWith('#game=')) history.replaceState(null, '', `${location.pathname}${location.search}#collection`);
   if (returnFocus?.isConnected) returnFocus.focus({ preventScroll:true });
 });
 dialog.addEventListener('keydown', (event) => {
