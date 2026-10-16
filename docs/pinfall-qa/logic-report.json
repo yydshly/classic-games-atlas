@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-10-16T10:50:40.347Z",
+  "passed": 12,
+  "fixtureBoundary": "Exceptional velocities, final-ball, catch and guard states are isolated rule fixtures; normal campaigns have separate ordinary angle-input evidence",
+  "tests": [
+    "twelve authored layouts have distinct geometry, finite budgets and no overlapping circles",
+    "continuous circle sweep catches high-speed passage and rejects separating/tangent-miss motion",
+    "one flying ball locks aim and repeat launch without extra budget or score",
+    "repeated physical contact with a hit peg scores only once and peg stays until collection",
+    "pulse marks radius once, does not chain the second pulse, and stones never score or disappear",
+    "bucket needs a complete ball and a nonempty hit; empty catches cannot farm shots",
+    "last ball settles target clear before exhausted-budget loss and victory is unique",
+    "fixed-step results are invariant across ordinary frame chunks and catch slot is frozen while aiming",
+    "pause and a large paused time gap do not advance ball, slot, score or clock",
+    "low-speed protection nudges at most twice and timed retrieval removes only already-hit pegs",
+    "stable angle-log replay restores exact settled physics; in-flight checkpoint is unavailable and malformed versions reject",
+    "planning predicts copies without touching real shots, targets, physical parameters or result"
+  ]
+}

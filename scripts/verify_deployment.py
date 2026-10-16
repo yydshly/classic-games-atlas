@@ -21,7 +21,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/garden-cover.svg','games/garden/index.html','games/garden/garden.css','games/garden/levels.mjs','games/garden/engine.mjs','games/garden/renderer.mjs','games/garden/game.mjs',
          'assets/vine-cover.svg','games/vine/index.html','games/vine/vine.css','games/vine/levels.mjs','games/vine/engine.mjs','games/vine/renderer.mjs','games/vine/game.mjs',
          'assets/petal-cover.svg','games/petal/index.html','games/petal/petal.css','games/petal/boards.mjs','games/petal/levels.mjs','games/petal/engine.mjs','games/petal/renderer.mjs','games/petal/game.mjs',
-         'assets/sand-cover.svg','games/sand/index.html','games/sand/sand.css','games/sand/boards.mjs','games/sand/levels.mjs','games/sand/deduction.mjs','games/sand/engine.mjs','games/sand/renderer.mjs','games/sand/game.mjs']
+         'assets/sand-cover.svg','games/sand/index.html','games/sand/sand.css','games/sand/boards.mjs','games/sand/levels.mjs','games/sand/deduction.mjs','games/sand/engine.mjs','games/sand/renderer.mjs','games/sand/game.mjs',
+         'assets/pinfall-cover.svg','games/pinfall/index.html','games/pinfall/pinfall.css','games/pinfall/levels.mjs','games/pinfall/engine.mjs','games/pinfall/renderer.mjs','games/pinfall/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
