@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "groups": 25,
+  "checks": [
+    "Sixteen distinct layouts, three environments, staged package queues and finite budgets",
+    "Every original structure stays exactly stable for five seconds with no free delivery",
+    "Ready is frozen and refuses launch or ability; parameters must be finite and in range",
+    "One launch consumes one parcel and an active flight rejects repeated or stale launch",
+    "Standard parcel has no ability and keys cannot create another parcel",
+    "Sail activates once, adds forward lift and lowers gravity for its finite window",
+    "Heavy seal activates once, adds downward impulse and stronger impact without an explosion",
+    "Short preview spans only .45 seconds and matches ordinary free flight within integrator error",
+    "Swept rectangle faces and rounded corners catch high-speed paths through thin obstacles",
+    "A real fixed-step projectile cannot tunnel through a solid stone wall",
+    "Repeated contact delivers each target ID and stamp only once",
+    "A falling intact block can deliver after the last parcel is gone, and loss waits for collapse",
+    "Last parcel missing all stations settles to one loss, rather than losing at launch",
+    "Moving structures and flight lock another launch until a quiet settling interval",
+    "Pause freezes projectile, structures, debris, budget, score, timer and all commands",
+    "60Hz and 120Hz frame partitions use the same fixed-step trajectory and structures",
+    "In-flight refresh replay preserves the exact ability and full physical state",
+    "Pending real-play collapse is exactly restored instead of resetting the structures",
+    "Bad, null, impossible, duplicate and ended checkpoints reject forged state",
+    "Fragments are bounded decorative pieces, expire, and cannot deliver or score",
+    "All sixteen recorded normal-budget plans replay with distinct win and full-star results",
+    "An ordinary first-stage shot earns all three stars without setting stamps or targets",
+    "Stars and score distinguish delivery, par and optional stamps; loss never awards stars",
+    "Observation guard settles once with an accurate reason rather than claiming ammo ran out",
+    "Diagnostics snapshots never mutate the live model or immutable level layouts"
+  ],
+  "fixture": "Explicit isolated collision/last-ammo/falling-block/star unit fixtures alone assign test-world state. All sixteen production campaigns, replay and real browser tests use ordinary launch/ability and formal fixed-step updates only."
+}
