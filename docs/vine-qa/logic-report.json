@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-16T09:16:26.962Z",
+  "passed": 12,
+  "tests": [
+    "16 distinct authored floors, safe growth capacity, deterministic reachable food and valid directed cycles",
+    "tail vacates on ordinary movement; growth retains tail and collides before eating",
+    "reverse and duplicate directions reject; two rapid legal turns execute on separate ticks",
+    "portal lands on marked cell, forces arrow direction, retains body and clears old queued turn",
+    "portal occupied landing including current head collides; vacating tail landing legal unless growing",
+    "food generation stays reachable and avoids all body, walls, portals and exit across seeded samples",
+    "temporarily body-sealed food space waits, then normal tail movement releases reachable spawn",
+    "existing food never relocates during normal movement and adjacent-only free cell may receive food",
+    "locked exit is traversable; collected target must be followed by entering the lit exit",
+    "last food plus collision loses before collection; legal last food on exit resolves win",
+    "pause freezes all movement and food timing, clears input; retry is fresh and speed increases with growth",
+    "checkpoint restores body, food, RNG and targets paused, resets buffer/beat; malformed save rejects"
+  ]
+}
