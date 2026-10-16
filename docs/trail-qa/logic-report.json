@@ -1,0 +1,13 @@
+{
+  "testedAt": "2026-10-16T06:36:10.886Z",
+  "passed": 7,
+  "tests": [
+    "8 original layouts, three biomes, safe start and checkpoint floors",
+    "variable jump height, no midair jump, bounded velocity and no tunnelling through thin ledge",
+    "coyote jump after walking off an edge and buffered jump on landing",
+    "moving platform carries a standing player horizontally and vertically without drift",
+    "enemy contact loses one life, respawn protection persists then expires, check point is used",
+    "three falls exhaust lives; fresh retry restores start, checkpoint and pickups",
+    "pause freezes movers, patrols, protection, clock and camera; snapshots cannot mutate live state"
+  ]
+}

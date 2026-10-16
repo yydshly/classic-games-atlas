@@ -14,7 +14,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/starline-cover.svg','games/starline/index.html','games/starline/starline.css','games/starline/levels.mjs','games/starline/engine.mjs','games/starline/renderer.mjs','games/starline/game.mjs',
          'assets/prism-cover.svg','games/prism/index.html','games/prism/prism.css','games/prism/levels.mjs','games/prism/engine.mjs','games/prism/renderer.mjs','games/prism/game.mjs',
          'assets/crate-cover.svg','games/crate/index.html','games/crate/crate.css','games/crate/levels.mjs','games/crate/engine.mjs','games/crate/renderer.mjs','games/crate/game.mjs',
-         'assets/pass-cover.svg','games/pass/index.html','games/pass/pass.css','games/pass/levels.mjs','games/pass/engine.mjs','games/pass/renderer.mjs','games/pass/game.mjs']
+         'assets/pass-cover.svg','games/pass/index.html','games/pass/pass.css','games/pass/levels.mjs','games/pass/engine.mjs','games/pass/renderer.mjs','games/pass/game.mjs',
+         'assets/trail-cover.svg','games/trail/index.html','games/trail/trail.css','games/trail/levels.mjs','games/trail/engine.mjs','games/trail/renderer.mjs','games/trail/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
