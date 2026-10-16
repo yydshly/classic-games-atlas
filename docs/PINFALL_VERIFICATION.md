@@ -39,7 +39,13 @@
 
 完整一球后以带版本的角度日志存档，恢复从初始图按相同物理重放并校验；不信任注入的钉或分数。飞行中不保存部分结果，刷新回到本球出手前并暂停。旧版、非法角度和不可能的终局日志会被拒绝，个人纪录独立保留。
 
-代码提交、成功 Pages、公开全部 12 关与最终 108 个运行文件版本检查在部署验收后追加。本地预览不作为上线证明。前十三款运行目录与本款开始前 `ab0914fc8efeff0200d46906b90ca65a5b8efbb4` 保持一致；共享入口更新为 14 款、186 关，仍保留 72 条图鉴。
+代码提交：`14612fc6228a15116431951a68753af61f8435aa`。GitHub Pages [部署任务 38891851846](https://github.com/yydshly/classic-games-atlas/actions/runs/38891851846)成功，精确 SHA 与任务信息见 [pages-code.json](pinfall-qa/pages-code.json)。
+
+公开试玩：[落星弹庭](https://yydshly.github.io/classic-games-atlas/games/pinfall/)。[A 组](pinfall-qa/live-a/report.json)、[B 组](pinfall-qa/live-b/report.json)、[C 组](pinfall-qa/live-c/report.json)覆盖全部 12 关，29 次正常发射、17 次合法接球返还；每关保存最佳/解锁并核对新局重试。分数、钉、球数、角度、统计与 Node 模拟一致；公开 Chromium 与本地 Chromium 的物理步数也全部一致。跨 Node 的第 3 关单步时间差继续原样记录。
+
+[公开界面 22 项](pinfall-qa/live-ui/report.json)、[图鉴完整回归](pinfall-qa/live-atlas/browser-report.json)、[公开 36 组步长一致性副本](pinfall-qa/live-determinism.json)全部通过，无页面/控制台错误、失败请求或 HTTP 错误资源。[108 文件版本检查](pinfall-qa/live-integrity.json)全部 HTTP 200、SHA-256 与代码提交相同，完成标志 true，无网络重试。[线上汇总](pinfall-qa/live-summary.json)记录玩法结果与时间差。
+
+提交准备阶段曾短暂出现执行环境传输断开；重连后先核对本地与远端，确认尚无新提交，再接续完成，没有重建或覆盖已有工作。之后的证据提交仅补充文档、报告和截图，不改变运行文件；最终 main 再等待 Pages 成功，复查 108 文件及首关发射/暂停/刷新回滚/正常胜利，最终 SHA 在交付消息中报告。前十三款运行目录与本款开始前 `ab0914fc8efeff0200d46906b90ca65a5b8efbb4` 保持一致；共享入口更新为 14 款、186 关，仍保留 72 条图鉴。
 
 ## 复查命令与限制
 
