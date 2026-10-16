@@ -36,21 +36,34 @@ if __name__ == '__main__':
     parser.add_argument('--url',default='https://yydshly.github.io/classic-games-atlas/')
     parser.add_argument('--commit',default='HEAD')
     parser.add_argument('--out',default='.local/deployment-integrity.json')
+    parser.add_argument('--resume',action='store_true',help='Continue the verified prefix of an incomplete report for the same commit and URL')
     args=parser.parse_args()
     commit=subprocess.check_output(['git','rev-parse',args.commit],cwd=ROOT,text=True).strip()
     records=[]
     network_events=[]
     output=ROOT/args.out
     output.parent.mkdir(parents=True,exist_ok=True)
+    resumed_prefix=0
+    if args.resume:
+        previous=json.loads(output.read_text(encoding='utf-8'))
+        assert previous['commit']==commit and previous['url'].rstrip('/')==args.url.rstrip('/') and not previous['completed']
+        records=previous['files']
+        assert len(records)<len(FILES)
+        for name,record in zip(FILES,records):
+            expected=subprocess.check_output(['git','show',f'{commit}:{name}'],cwd=ROOT)
+            digest=hashlib.sha256(expected).hexdigest()
+            assert record['file']==name and record['httpStatus']==200 and record['match'] and record['commitSHA256']==record['liveSHA256']==digest
+        network_events=previous.get('networkEvents',[])
+        resumed_prefix=len(records)
     session=requests.Session()
     def save_report(completed=False,error=None):
         report=dict(checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),url=args.url,commit=commit,completed=completed,
                     allMatch=completed and all(record['match'] for record in records),files=records,networkEvents=network_events,
-                    transport='Persistent requests.Session; normal TLS certificate validation; at most one retry on connection/timeout errors')
+                    transport='Persistent requests.Session; normal TLS certificate validation; at most one retry on connection/timeout errors per invocation',resumedVerifiedPrefix=resumed_prefix)
         if error: report['error']=error
         output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         return report
-    for name in FILES:
+    for name in FILES[len(records):]:
         expected=subprocess.check_output(['git','show',f'{commit}:{name}'],cwd=ROOT)
         path='' if name=='index.html' else name
         for attempt in range(2):

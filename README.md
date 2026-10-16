@@ -490,6 +490,8 @@ node scripts/test_paper.mjs
 python scripts/test_paper_browser.py
 python scripts/test_paper_ui.py
 node scripts/test_paper_replay.mjs docs/paper-qa/public-browser/report.json .local/paper-replay.json
+python scripts/test_paper_journey.py --start 1 --end 16
+python scripts/test_paper_release.py
 ```
 
 角色、包裹、纸亭、图形、邮路与声音原创，只参考经典抛射解谜机制，不复制Angry Birds表达或使用原作素材。保留前二十款和72条图鉴。自动精确瞄准与人工难度体验分开说明。
