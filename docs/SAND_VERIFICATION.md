@@ -38,7 +38,13 @@
 
 ## GitHub Pages
 
-代码提交、成功部署、公开 20 关与最终 101 个运行文件版本检查在部署验收后追加。本地预览不作为实际上线证明。前十二款运行目录与本款开始前的 `8152dc7b157300bd5e029dcb81a41018c583dece` 保持一致；共享首页、实验清单和 README 更新为 13 款、174 关，仍保留图鉴 72 条。
+代码提交：`bbf2a590af69df35de91708e7dba7f6ad2e57168`。GitHub Pages [部署任务 38888087550](https://github.com/yydshly/classic-games-atlas/actions/runs/38888087550)成功，精确 SHA 与任务信息见 [pages-code.json](sand-qa/pages-code.json)。
+
+公开试玩：[星砂勘探](https://yydshly.github.io/classic-games-atlas/games/sand/)。[A 组](sand-qa/live-a/report.json)、[B 组](sand-qa/live-b/report.json)、[C 组](sand-qa/live-c/report.json)覆盖全部 20 关，共 475 次正常揭开/标旗/快捷展开，全部零提示；每关均保存最佳/解锁并检查全新重试。终态棋盘、雷数、揭开数量、旗数与统计和生产模拟逐项相等，活动时间不作跨环境相等要求。
+
+[公开界面 24 项](sand-qa/live-ui/report.json)与[图鉴完整回归](sand-qa/live-atlas/browser-report.json)通过，包含错旗快捷展开失败、长按/滚动保护、存档版本回退、前十二款入口与手机布局，无页面/控制台错误、失败请求或 HTTP 错误资源。[101 文件版本检查](sand-qa/live-integrity.json)全部 HTTP 200、SHA-256 与代码提交一致，完成标志 true，无网络重试。[线上汇总](sand-qa/live-summary.json)保留证据边界。
+
+之后的证据提交只补充文档、报告和截图，不改变运行文件。最终 main 再次等待 Pages 成功并复查全部 101 文件及首关正常推理/提示/暂停/日志恢复；最终提交在交付消息中报告。前十二款运行目录与本款开始前的 `8152dc7b157300bd5e029dcb81a41018c583dece` 保持一致；共享首页、实验清单和 README 更新为 13 款、174 关，仍保留图鉴 72 条。
 
 ## 复查与未覆盖项
 
