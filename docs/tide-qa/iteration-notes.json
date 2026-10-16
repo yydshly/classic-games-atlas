@@ -1,0 +1,21 @@
+{
+  "prototype": {
+    "issue": "Initial all-pair chains could clear in two to four shots by excessive automatic cascades.",
+    "change": "Authored mixed singles/pairs; final first level has twelve originals, later boards use up to four colors and 35 originals. Same advance speed 12, no test-only world changes."
+  },
+  "geometry": {
+    "samplingPerCurveSegment": 80,
+    "denseReferencePerSegment": 640,
+    "maxObservedRelativeArcError": 8.723e-06,
+    "rocksOverlapRoutes": false,
+    "movingContact": "Relative projectile/pearl displacement sweep, not just a static point test."
+  },
+  "unitTiming": {
+    "issue": "Second fixture shot after 35 ticks was still in the real reload lock.",
+    "resolution": "Waited to the ordinary cooldown end in the test. Production lock unchanged."
+  },
+  "controls": {
+    "range": "Focused native Home/End values are not overwritten by periodic HUD. Reset explicitly resets the focused slider and launcher aim.",
+    "touch": "Center tap cancels; a drag starting at the launcher is allowed and fires once on release beyond the dead zone."
+  }
+}

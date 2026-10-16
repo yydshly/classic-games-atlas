@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "groups": 26,
+  "checks": [
+    "twelve unique curves, three themes, 322 original pearls and staged powers",
+    "arc-length tables agree with dense integration and clamp endpoints with unit tangents",
+    "paths remain in bounds, clear launcher and never intersect rock collision footprints",
+    "constant arc speed through different curves and minimum physical neighbor clearance",
+    "ready does not move or accept fire/swap/powers",
+    "firing and swapping lock in flight, old revisions reject and one fire consumes one preview",
+    "swap exchanges only two colors, draws nothing and has a brief repeat lock",
+    "front/rear impact inserts on the matching arc side without overlap",
+    "inserting between connected neighbors pushes only the necessary front segment",
+    "three connected same-color pearls pop including the inserted shot exactly once",
+    "same colors across an open gap are not a group until physical closure",
+    "different colors reconnect without imaginary elimination and keep arc spacing",
+    "shot clear followed by gap closure scores a two-stage cascade with unique IDs",
+    "ammo removes exhausted colors and generates no color once the board is empty",
+    "swept relative circle and rectangle tests detect motion between endpoints",
+    "a rock intercepts the shot before pearls beyond it and consumes only that shot",
+    "touching the end wins priority over a same-step last-pair clear",
+    "slow uses one charge, does not stack, expires, and shares the same shot speed",
+    "backward power preserves spacing and clamps at the inlet without refund or duplication",
+    "pause freezes flight, chain, timers, RNG, score and all gameplay commands",
+    "60Hz and 120Hz partitions give identical moving beads and projectile positions",
+    "in-flight command replay preserves all model fields and residual step",
+    "mid-gap real-play replay keeps pending cascade and exact score history",
+    "bad, duplicate, impossible and already-ended logs reject; forged geometry/colors ignored",
+    "doing nothing naturally reaches the endpoint under production speed",
+    "prediction accepts copied telemetry without events and never mutates live state/data"
+  ],
+  "fixture": "Specific geometry/contact/priority unit fixtures alone set test-world pearls or projectile positions. Production campaign strategies and real-play restore checks use normal act/update only."
+}

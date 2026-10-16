@@ -27,7 +27,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/post-cover.svg','games/post/index.html','games/post/post.css','games/post/tracks.mjs','games/post/engine.mjs','games/post/renderer.mjs','games/post/game.mjs',
          'assets/beacon-cover.svg','games/beacon/index.html','games/beacon/beacon.css','games/beacon/levels.mjs','games/beacon/engine.mjs','games/beacon/game.mjs',
          'assets/chime-cover.svg','games/chime/index.html','games/chime/chime.css','games/chime/levels.mjs','games/chime/engine.mjs','games/chime/renderer.mjs','games/chime/game.mjs',
-         'assets/brook-cover.svg','games/brook/index.html','games/brook/brook.css','games/brook/levels.mjs','games/brook/engine.mjs','games/brook/renderer.mjs','games/brook/game.mjs']
+         'assets/brook-cover.svg','games/brook/index.html','games/brook/brook.css','games/brook/levels.mjs','games/brook/engine.mjs','games/brook/renderer.mjs','games/brook/game.mjs',
+         'assets/tide-cover.svg','games/tide/index.html','games/tide/tide.css','games/tide/levels.mjs','games/tide/geometry.mjs','games/tide/engine.mjs','games/tide/renderer.mjs','games/tide/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
