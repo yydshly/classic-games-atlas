@@ -704,6 +704,8 @@ node scripts/test_duel_replay.mjs docs/duel-qa/public-browser/report.json .local
 python scripts/test_duel_release.py
 ```
 
+32组核心、23组UI、公网8场正常体力/速度全胜，35次出手/35次格挡/129条实际输入精确重放；30入口、前作、活动招式恢复与原生触屏回归通过，220文件部署核对见验收记录。
+
 测试策略只看当前公开距离与动作阶段，通过普通输入获胜，不写体力、耐力、坐标、对手或结算。隔离规则夹具与完整正常战役分开记录；保留旧29款与72项图鉴，部署验收后交回主对话。
 
 ## 持续扩展路线
