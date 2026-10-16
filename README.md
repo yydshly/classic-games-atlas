@@ -679,6 +679,8 @@ node scripts/test_orbit_replay.mjs docs/orbit-qa/public-browser/report.json .loc
 python scripts/test_orbit_release.py
 ```
 
+已通过31组核心规则、公网12关正常速度完整通关和21组交互；126枚锁定、70行、463条实际输入逐ticks精确重放。图鉴、29入口、前作首关、精确恢复与原生触屏回归通过，部署版本逐文件核对见验收记录。
+
 正常策略与真实界面验证分开保留；自动可行策略不等同人工难度或全局最优。保留前二十八款与72项图鉴，完成公开验收后交回主对话。
 
 ## 持续扩展路线
