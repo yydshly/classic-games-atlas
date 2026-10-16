@@ -1,0 +1,10 @@
+{
+  "notes": [
+    "Continued existing uncommitted implementation; did not recreate or discard it.",
+    "Initial220HP boss could be defeated before an all-party attack; authored final boss360HP before final campaign acceptance. Original player HP/energy/items are unchanged.",
+    "UI normal KO/revive witness exposed a missing30HP effect in the turn log. Actual HP was already correct; log now records actual bounded gain and a core assertion covers it. Final-source all8 UI campaign repeated.",
+    "Early test harness errors (async assertions and initial shield fixture absorbing all damage) corrected; isolated setup fixtures remain separate from normal campaigns.",
+    "Entry traversal naturally saves a paused event on leaving a game. Release restore scenario now uses the normal reset control before preparing its test battle. No runtime change for this harness issue."
+  ],
+  "acceptance": "All8 campaigns use authored resources, real UI commands and natural unlocks. No HP/energy/item/turn/win writes. Boundary scenarios only seed unlock metadata when needed."
+}

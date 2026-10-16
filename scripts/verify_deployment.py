@@ -39,7 +39,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/island-cover.svg','games/island/index.html','games/island/island.css','games/island/levels.mjs','games/island/engine.mjs','games/island/renderer.mjs','games/island/game.mjs',
          'assets/orbit-cover.svg','games/orbit/index.html','games/orbit/orbit.css','games/orbit/levels.mjs','games/orbit/engine.mjs','games/orbit/renderer.mjs','games/orbit/game.mjs',
          'assets/duel-cover.svg','games/duel/index.html','games/duel/duel.css','games/duel/levels.mjs','games/duel/engine.mjs','games/duel/renderer.mjs','games/duel/game.mjs',
-         'assets/expedition-cover.svg','games/expedition/index.html','games/expedition/expedition.css','games/expedition/levels.mjs','games/expedition/engine.mjs','games/expedition/renderer.mjs','games/expedition/game.mjs']
+         'assets/expedition-cover.svg','games/expedition/index.html','games/expedition/expedition.css','games/expedition/levels.mjs','games/expedition/engine.mjs','games/expedition/renderer.mjs','games/expedition/game.mjs',
+         'assets/feather-cover.svg','games/feather/index.html','games/feather/feather.css','games/feather/chapters.mjs','games/feather/engine.mjs','games/feather/renderer.mjs','games/feather/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
