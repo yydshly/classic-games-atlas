@@ -466,6 +466,8 @@ node scripts/test_tide.mjs
 node scripts/test_tide_strategy.mjs
 python scripts/test_tide_browser.py
 python scripts/test_tide_ui.py
+node scripts/test_tide_replay.mjs docs/tide-qa/public-browser/report.json .local/tide-replay.json
+python scripts/test_tide_release.py
 ```
 
 潮灯、珠、图形、曲线、礁屏和声音均原创，只参考Zuma通用珠链消除机制，不使用原作素材或关卡。保留前十九款及72条图鉴。

@@ -17,5 +17,10 @@
   "controls": {
     "range": "Focused native Home/End values are not overwritten by periodic HUD. Reset explicitly resets the focused slider and launcher aim.",
     "touch": "Center tap cancels; a drag starting at the launcher is allowed and fires once on release beyond the dead zone."
+  },
+  "finalScreenshotReview": {
+    "issue": "Won screen retained the last resolving/reloading instruction below controls.",
+    "change": "Terminal HUD now states completed/retry. Engine, maps, rendering and input rules unchanged.",
+    "verified": "Local release smoke passes all 20 entry pages, previous-game win, exact in-flight restore to win, native touch win and completed status text."
   }
 }
