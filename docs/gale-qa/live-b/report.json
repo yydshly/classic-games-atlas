@@ -1,0 +1,1384 @@
+{
+  "testedAt": "2026-10-16T11:57:47.458787+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/gale/",
+  "method": "Ordinary keyboard edges for move, jump, fire, upper aim and limited pulse; production physics, normal armor/lives/ammo rules",
+  "fixture": "Later-stage menu unlock/tutorial/sound only; no player or enemy health, position, speed, result writes",
+  "results": [
+    {
+      "stage": 2,
+      "end": {
+        "state": "won",
+        "level": 2,
+        "width": 2150,
+        "height": 440,
+        "time": 11.250000000000002,
+        "accumulator": 0.006300000000000052,
+        "camera": 1389.9999937859975,
+        "solids": [
+          {
+            "id": "g0",
+            "x": 0,
+            "y": 350,
+            "w": 640,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g1",
+            "x": 725,
+            "y": 350,
+            "w": 735,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g2",
+            "x": 1550,
+            "y": 350,
+            "w": 600,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "b0",
+            "x": 1050,
+            "y": 310,
+            "w": 80,
+            "h": 40,
+            "oneWay": false
+          },
+          {
+            "id": "l0",
+            "x": 350,
+            "y": 268,
+            "w": 115,
+            "h": 14,
+            "oneWay": true
+          },
+          {
+            "id": "l1",
+            "x": 1460,
+            "y": 272,
+            "w": 110,
+            "h": 14,
+            "oneWay": true
+          }
+        ],
+        "enemies": [
+          {
+            "id": 1,
+            "kind": "infantry",
+            "x": 361.4666666666649,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 295,
+            "max": 375,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": 32,
+            "cooldown": 0.16666666666666813,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 2,
+            "kind": "turret",
+            "x": 870,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 835,
+            "max": 915,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": 0.6083333333333352,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 3,
+            "kind": "flyer",
+            "x": 1294.7537515233375,
+            "y": 220.38786012566712,
+            "w": 34,
+            "h": 24,
+            "hp": 0,
+            "min": 1215,
+            "max": 1295,
+            "initialHp": 3,
+            "baseY": 230,
+            "vx": 0,
+            "cooldown": 0.17500000000000146,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 4,
+            "kind": "infantry",
+            "x": 1673.4000000000024,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 1635,
+            "max": 1715,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": -32,
+            "cooldown": 0.1333333333333348,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 5,
+            "kind": "turret",
+            "x": 1910,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 1875,
+            "max": 1955,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": 0.3416666666666684,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          }
+        ],
+        "pickups": [
+          {
+            "id": 1,
+            "x": 430,
+            "y": 325,
+            "kind": "scatter",
+            "collected": true
+          },
+          {
+            "id": 2,
+            "x": 1300,
+            "y": 325,
+            "kind": "rapid",
+            "collected": true
+          },
+          {
+            "id": 3,
+            "x": 1700,
+            "y": 325,
+            "kind": "repair",
+            "collected": true
+          }
+        ],
+        "player": {
+          "x": 2060.840277777778,
+          "y": 314,
+          "w": 24,
+          "h": 36,
+          "vx": 0,
+          "vy": 0,
+          "hp": 5,
+          "facing": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "buffer": 0,
+          "invulnerable": 0,
+          "lock": 0,
+          "fireTimer": 0.020000000000000018,
+          "aimUp": false,
+          "weapon": "rapid",
+          "ammo": 28
+        },
+        "projectiles": [
+          {
+            "id": 98,
+            "owner": "player",
+            "x": 2147.173611111113,
+            "y": 331,
+            "vx": 700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 2.0916666666666672
+          }
+        ],
+        "effects": [],
+        "nextBullet": 99,
+        "lives": 3,
+        "specials": 2,
+        "checkpointIndex": 1,
+        "checkpointPos": {
+          "x": 1180,
+          "y": 314
+        },
+        "goal": 2060,
+        "reason": null,
+        "stats": {
+          "score": 695,
+          "kills": 5,
+          "shots": 62,
+          "jumps": 3,
+          "hitsTaken": 0,
+          "deaths": 0,
+          "specialsUsed": 0,
+          "pickups": 3,
+          "checkpoints": 1,
+          "bossPhases": 1,
+          "settlements": 1
+        },
+        "unlocked": 3,
+        "best": {
+          "2": {
+            "score": 695,
+            "time": 11.250000000000002
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false,
+        "input": {
+          "keys": [],
+          "touches": 0,
+          "mobileAim": false
+        },
+        "viewport": {
+          "width": 760,
+          "camera": 1389.9999937859975
+        }
+      },
+      "normalKeyEdges": [
+        {
+          "timeObserved": 0,
+          "xObserved": 50,
+          "key": "KeyJ",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.5666666666666671,
+          "xObserved": 50,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.6166666666666669,
+          "xObserved": 52.77083333333333,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 0.8333333333333328,
+          "xObserved": 57.87499999999999,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.9333333333333325,
+          "xObserved": 65.13194444444444,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 0.9999999999999989,
+          "xObserved": 70.1875,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 3.6999999999999895,
+          "xObserved": 588.5902777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 4.133333333333328,
+          "xObserved": 673.0902777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 5.6833333333334055,
+          "xObserved": 975.3402777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 6.11666666666676,
+          "xObserved": 1059.8402777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 7.91666666666685,
+          "xObserved": 1410.8402777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 8.366666666666832,
+          "xObserved": 1498.5902777777778,
+          "key": "Space",
+          "edge": "up"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    },
+    {
+      "stage": 5,
+      "end": {
+        "state": "won",
+        "level": 5,
+        "width": 2550,
+        "height": 440,
+        "time": 16.724999999999692,
+        "accumulator": 0.015800000000003596,
+        "camera": 1789.9999999999961,
+        "solids": [
+          {
+            "id": "g0",
+            "x": 0,
+            "y": 350,
+            "w": 850,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g1",
+            "x": 950,
+            "y": 350,
+            "w": 810,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g2",
+            "x": 1860,
+            "y": 350,
+            "w": 690,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "b0",
+            "x": 1150,
+            "y": 311,
+            "w": 85,
+            "h": 39,
+            "oneWay": false
+          },
+          {
+            "id": "b1",
+            "x": 2240,
+            "y": 314,
+            "w": 75,
+            "h": 36,
+            "oneWay": false
+          },
+          {
+            "id": "l0",
+            "x": 460,
+            "y": 268,
+            "w": 115,
+            "h": 14,
+            "oneWay": true
+          },
+          {
+            "id": "l1",
+            "x": 1460,
+            "y": 272,
+            "w": 110,
+            "h": 14,
+            "oneWay": true
+          }
+        ],
+        "enemies": [
+          {
+            "id": 1,
+            "kind": "turret",
+            "x": 340,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 305,
+            "max": 385,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": -0.008333333333331838,
+            "windup": 0.35000000000000075,
+            "attack": {
+              "type": "fan",
+              "x": 62,
+              "y": 332
+            },
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 2,
+            "kind": "infantry",
+            "x": 629.9333333333359,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 595,
+            "max": 675,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": -32,
+            "cooldown": 0.45000000000000207,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 3,
+            "kind": "flyer",
+            "x": 1103.5349856119274,
+            "y": 220.6342653319408,
+            "w": 34,
+            "h": 24,
+            "hp": 0,
+            "min": 1025,
+            "max": 1105,
+            "initialHp": 3,
+            "baseY": 230,
+            "vx": 0,
+            "cooldown": 0.40833333333333527,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 4,
+            "kind": "turret",
+            "x": 1430,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 1395,
+            "max": 1475,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": 1.0500000000000043,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 1,
+            "engaged": true
+          },
+          {
+            "id": 5,
+            "kind": "infantry",
+            "x": 1616.3333333333333,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 1615,
+            "max": 1695,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": 32,
+            "cooldown": -0.008333333333331838,
+            "windup": 0.19999999999999993,
+            "attack": {
+              "type": "single",
+              "x": 1301.5763888888887,
+              "y": 287.3576388888889
+            },
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 6,
+            "kind": "flyer",
+            "x": 2044.839304504708,
+            "y": 235.3367827778863,
+            "w": 34,
+            "h": 24,
+            "hp": 0,
+            "min": 1965,
+            "max": 2045,
+            "initialHp": 3,
+            "baseY": 230,
+            "vx": 0,
+            "cooldown": 1.15,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 7,
+            "kind": "infantry",
+            "x": 2408.3333333333917,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 2335,
+            "max": 2415,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": 32,
+            "cooldown": 1.8416666666666668,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 2,
+            "engaged": true
+          }
+        ],
+        "pickups": [
+          {
+            "id": 1,
+            "x": 430,
+            "y": 325,
+            "kind": "scatter",
+            "collected": true
+          },
+          {
+            "id": 2,
+            "x": 1410,
+            "y": 325,
+            "kind": "rapid",
+            "collected": true
+          },
+          {
+            "id": 3,
+            "x": 2100,
+            "y": 325,
+            "kind": "repair",
+            "collected": true
+          }
+        ],
+        "player": {
+          "x": 2460.5902777777765,
+          "y": 240.95138888888906,
+          "w": 24,
+          "h": 36,
+          "vx": 0,
+          "vy": 0,
+          "hp": 4,
+          "facing": 1,
+          "grounded": false,
+          "coyote": 0,
+          "buffer": 0,
+          "invulnerable": 0,
+          "lock": 0,
+          "fireTimer": 0.20666666666666667,
+          "aimUp": false,
+          "weapon": "base",
+          "ammo": 0
+        },
+        "projectiles": [
+          {
+            "id": 132,
+            "owner": "player",
+            "x": 810.3263888888929,
+            "y": 268.39583333333337,
+            "vx": -700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 0.03333333333333882
+          },
+          {
+            "id": 133,
+            "owner": "player",
+            "x": 873.4513888888939,
+            "y": 244.2291666666667,
+            "vx": -700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 0.1583333333333388
+          },
+          {
+            "id": 134,
+            "owner": "player",
+            "x": 936.5763888888949,
+            "y": 239.5937500000001,
+            "vx": -700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 0.2833333333333389
+          },
+          {
+            "id": 135,
+            "owner": "player",
+            "x": 999.7013888888958,
+            "y": 254.48958333333348,
+            "vx": -700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 0.40833333333333927
+          },
+          {
+            "id": 136,
+            "owner": "player",
+            "x": 1062.8263888888962,
+            "y": 288.91666666666686,
+            "vx": -700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 0.5333333333333394
+          },
+          {
+            "id": 149,
+            "owner": "player",
+            "x": 2576.381944444446,
+            "y": 239.08333333333343,
+            "vx": 700,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 2.033333333333334
+          },
+          {
+            "id": 150,
+            "owner": "player",
+            "x": 2508.256944444444,
+            "y": 251.37500000000014,
+            "vx": 580,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 2.1583333333333337
+          }
+        ],
+        "effects": [],
+        "nextBullet": 151,
+        "lives": 3,
+        "specials": 2,
+        "checkpointIndex": 1,
+        "checkpointPos": {
+          "x": 1290,
+          "y": 314
+        },
+        "goal": 2460,
+        "reason": null,
+        "stats": {
+          "score": 915,
+          "kills": 7,
+          "shots": 99,
+          "jumps": 7,
+          "hitsTaken": 2,
+          "deaths": 0,
+          "specialsUsed": 0,
+          "pickups": 3,
+          "checkpoints": 1,
+          "bossPhases": 1,
+          "settlements": 1
+        },
+        "unlocked": 6,
+        "best": {
+          "5": {
+            "score": 915,
+            "time": 16.724999999999692
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false,
+        "input": {
+          "keys": [],
+          "touches": 0,
+          "mobileAim": false
+        },
+        "viewport": {
+          "width": 760,
+          "camera": 1789.9999999999961
+        }
+      },
+      "normalKeyEdges": [
+        {
+          "timeObserved": 0,
+          "xObserved": 50,
+          "key": "KeyJ",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 1.6833333333333298,
+          "xObserved": 50,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 5.5833333333334005,
+          "xObserved": 798.0416666666666,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 6.016666666666755,
+          "xObserved": 882.5416666666666,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 6.98333333333347,
+          "xObserved": 1071.0416666666665,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 7.4333333333334926,
+          "xObserved": 1158.7916666666665,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 8.033333333333518,
+          "xObserved": 1275.7916666666665,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 8.366666666666832,
+          "xObserved": 1283.6388888888887,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 8.400000000000164,
+          "xObserved": 1283.6388888888887,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 8.800000000000141,
+          "xObserved": 1352.4305555555552,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 9.133333333333455,
+          "xObserved": 1417.4305555555552,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 9.316666666666778,
+          "xObserved": 1425.2777777777774,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 10.833333333333359,
+          "xObserved": 1711.819444444444,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 11.266666666666667,
+          "xObserved": 1796.319444444444,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 13.16666666666656,
+          "xObserved": 2166.819444444444,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 13.616666666666534,
+          "xObserved": 2254.569444444444,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 14.066666666666508,
+          "xObserved": 2342.319444444444,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 14.066666666666508,
+          "xObserved": 2342.319444444444,
+          "key": "ArrowLeft",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 14.133333333333171,
+          "xObserved": 2350.256944444444,
+          "key": "ArrowLeft",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 14.349999999999826,
+          "xObserved": 2350.9236111111104,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 14.383333333333157,
+          "xObserved": 2352.2430555555547,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 14.383333333333157,
+          "xObserved": 2352.2430555555547,
+          "key": "ArrowLeft",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 14.383333333333157,
+          "xObserved": 2352.2430555555547,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 14.816666666666466,
+          "xObserved": 2284.2430555555547,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 15.116666666666449,
+          "xObserved": 2225.7430555555547,
+          "key": "ArrowLeft",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 15.116666666666449,
+          "xObserved": 2225.7430555555547,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 15.999999999999732,
+          "xObserved": 2359.576388888888,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 16.16666666666639,
+          "xObserved": 2367.42361111111,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 16.199999999999722,
+          "xObserved": 2367.42361111111,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 16.616666666666365,
+          "xObserved": 2439.4652777777765,
+          "key": "Space",
+          "edge": "up"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    },
+    {
+      "stage": 8,
+      "end": {
+        "state": "won",
+        "level": 8,
+        "width": 3150,
+        "height": 440,
+        "time": 22.63333333333269,
+        "accumulator": 0.01646666668454906,
+        "camera": 2389.9999999999964,
+        "solids": [
+          {
+            "id": "g0",
+            "x": 0,
+            "y": 350,
+            "w": 690,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g1",
+            "x": 780,
+            "y": 350,
+            "w": 650,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "g2",
+            "x": 1530,
+            "y": 350,
+            "w": 1620,
+            "h": 90,
+            "oneWay": false
+          },
+          {
+            "id": "b0",
+            "x": 1110,
+            "y": 312,
+            "w": 85,
+            "h": 38,
+            "oneWay": false
+          },
+          {
+            "id": "l0",
+            "x": 460,
+            "y": 268,
+            "w": 115,
+            "h": 14,
+            "oneWay": true
+          },
+          {
+            "id": "l1",
+            "x": 1850,
+            "y": 272,
+            "w": 110,
+            "h": 14,
+            "oneWay": true
+          }
+        ],
+        "enemies": [
+          {
+            "id": 1,
+            "kind": "infantry",
+            "x": 383.5999999999981,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 315,
+            "max": 395,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": 32,
+            "cooldown": 0.10000000000000148,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 2,
+            "kind": "turret",
+            "x": 930,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 895,
+            "max": 975,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": 0.7500000000000013,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 3,
+            "kind": "flyer",
+            "x": 1284.9244239845668,
+            "y": 220.0003259688274,
+            "w": 34,
+            "h": 24,
+            "hp": 0,
+            "min": 1205,
+            "max": 1285,
+            "initialHp": 3,
+            "baseY": 230,
+            "vx": 0,
+            "cooldown": 0.3000000000000016,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 4,
+            "kind": "infantry",
+            "x": 1781.1333333333364,
+            "y": 320,
+            "w": 28,
+            "h": 30,
+            "hp": 0,
+            "min": 1755,
+            "max": 1835,
+            "initialHp": 3,
+            "baseY": 320,
+            "vx": -32,
+            "cooldown": 0.26666666666666816,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 5,
+            "kind": "turret",
+            "x": 2030,
+            "y": 318,
+            "w": 34,
+            "h": 32,
+            "hp": 0,
+            "min": 1995,
+            "max": 2075,
+            "initialHp": 6,
+            "baseY": 318,
+            "vx": 0,
+            "cooldown": 0.008333333333334829,
+            "windup": 0,
+            "attack": null,
+            "phase": 1,
+            "shield": 0,
+            "attackCount": 0,
+            "engaged": true
+          },
+          {
+            "id": 6,
+            "kind": "boss",
+            "x": 2810,
+            "y": 218,
+            "w": 112,
+            "h": 132,
+            "hp": 0,
+            "min": 2810,
+            "max": 2810,
+            "initialHp": 60,
+            "baseY": 218,
+            "vx": 0,
+            "cooldown": 0.12500000000000258,
+            "windup": 0,
+            "attack": null,
+            "phase": 3,
+            "shield": 0,
+            "attackCount": 3,
+            "engaged": true
+          }
+        ],
+        "pickups": [
+          {
+            "id": 1,
+            "x": 430,
+            "y": 325,
+            "kind": "scatter",
+            "collected": true
+          },
+          {
+            "id": 2,
+            "x": 1690,
+            "y": 325,
+            "kind": "rapid",
+            "collected": true
+          },
+          {
+            "id": 3,
+            "x": 2700,
+            "y": 325,
+            "kind": "repair",
+            "collected": true
+          },
+          {
+            "id": 4,
+            "x": 2380,
+            "y": 325,
+            "kind": "rapid",
+            "collected": true
+          }
+        ],
+        "player": {
+          "x": 3060.4166666666665,
+          "y": 314,
+          "w": 24,
+          "h": 36,
+          "vx": 0,
+          "vy": 0,
+          "hp": 4,
+          "facing": 1,
+          "grounded": true,
+          "coyote": 0.12,
+          "buffer": 0,
+          "invulnerable": 0,
+          "lock": 0,
+          "fireTimer": 0.0566666666666667,
+          "aimUp": false,
+          "weapon": "base",
+          "ammo": 0
+        },
+        "projectiles": [
+          {
+            "id": 191,
+            "owner": "player",
+            "x": 3165.8333333333367,
+            "y": 331,
+            "vx": 580,
+            "vy": 0,
+            "source": 0,
+            "r": 3,
+            "ttl": 2.008333333333334
+          }
+        ],
+        "effects": [],
+        "nextBullet": 192,
+        "lives": 3,
+        "specials": 2,
+        "checkpointIndex": 2,
+        "checkpointPos": {
+          "x": 2320,
+          "y": 314
+        },
+        "goal": 3060,
+        "reason": null,
+        "stats": {
+          "score": 2720,
+          "kills": 6,
+          "shots": 136,
+          "jumps": 9,
+          "hitsTaken": 1,
+          "deaths": 0,
+          "specialsUsed": 0,
+          "pickups": 4,
+          "checkpoints": 2,
+          "bossPhases": 3,
+          "settlements": 1
+        },
+        "unlocked": 8,
+        "best": {
+          "8": {
+            "score": 2720,
+            "time": 22.63333333333269
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false,
+        "input": {
+          "keys": [],
+          "touches": 0,
+          "mobileAim": false
+        },
+        "viewport": {
+          "width": 760,
+          "camera": 2389.9999999999964
+        }
+      },
+      "normalKeyEdges": [
+        {
+          "timeObserved": 0.049999999999999996,
+          "xObserved": 50,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.049999999999999996,
+          "xObserved": 50,
+          "key": "KeyJ",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.16666666666666666,
+          "xObserved": 60.291666666666664,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 0.6500000000000001,
+          "xObserved": 71.38888888888889,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 0.7499999999999998,
+          "xObserved": 78.64583333333333,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 1.0666666666666653,
+          "xObserved": 89.1111111111111,
+          "key": "ArrowRight",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 3.9666666666666552,
+          "xObserved": 642.1527777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 4.416666666666676,
+          "xObserved": 729.9027777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 5.98333333333342,
+          "xObserved": 1035.4027777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 6.433333333333443,
+          "xObserved": 1123.1527777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 7.78333333333351,
+          "xObserved": 1386.4027777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 8.233333333333507,
+          "xObserved": 1474.1527777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 12.916666666666574,
+          "xObserved": 2387.402777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 13.383333333333214,
+          "xObserved": 2478.402777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 13.74999999999986,
+          "xObserved": 2549.902777777778,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 14.183333333333168,
+          "xObserved": 2634.402777777778,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 14.583333333333146,
+          "xObserved": 2712.402777777778,
+          "key": "ArrowRight",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 15.366666666666434,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 15.824999999999742,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 16.174999999999724,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 16.608333333333032,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 18.508333333332924,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 18.974999999999564,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 19.324999999999545,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "down"
+        },
+        {
+          "timeObserved": 19.791666666666185,
+          "xObserved": 2726.75,
+          "key": "Space",
+          "edge": "up"
+        },
+        {
+          "timeObserved": 20.85833333333279,
+          "xObserved": 2726.75,
+          "key": "ArrowRight",
+          "edge": "down"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

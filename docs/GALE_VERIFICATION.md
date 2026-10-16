@@ -34,7 +34,13 @@
 
 当前局保存最近检查点编号与战斗进度，刷新强制回到已声明的检查点坐标，保留当前护甲/出击/武器/弹药/技能、敌人护甲及拾取结果，清空飞行弹并先暂停。坐标、敌方巡逻位置和当前预警不从外部存档信任，恢复后重新预警并给短暂保护；不是原地恢复当前交火帧。出击复归会正常修满护甲，刷新不会额外回血。
 
-代码提交、Pages 成功、公开全部八关与最终 115 个运行文件检查将在部署验收后追加。前十四款运行目录与本款开始前 `bcffe572ffd2073421784d3b53ab32903f529497` 保持一致；共享入口更新为 15 款、194 关，仍保留 72 条图鉴。本地预览不作为上线证明。
+代码提交为 [`0694abfd6fab32367c8648e5b247051d449822e7`](https://github.com/yydshly/classic-games-atlas/commit/0694abfd6fab32367c8648e5b247051d449822e7)，对应 [Pages 成功运行 38897038975](https://github.com/yydshly/classic-games-atlas/actions/runs/38897038975)。[公开汇总](gale-qa/live-summary.json)、[A 组 1/4/7 关](gale-qa/live-a/report.json)、[B 组 2/5/8 关](gale-qa/live-b/report.json)与[C 组 3/6 关](gale-qa/live-c/report.json)记录全部 8 关真实键盘通关：共清除 49 单位、9 次检查点接续、零次出击耗尽；首领实际经历三阶段并攻击 3 次。每关验证最佳/解锁持久化和全新重玩。
+
+[公网 22 项界面验收](gale-qa/live-ui/report.json)与[图鉴完整回归](gale-qa/live-atlas/browser-report.json)通过；[115 个运行文件](gale-qa/code-integrity.json)全部 HTTP 200，SHA-256 与代码提交逐项匹配，无传输重试。所有正式公网报告的控制台、请求失败与 HTTP 错误均为空。后续证据归档不修改运行代码，归档提交再次等待 Pages 成功并复核同一组运行文件。
+
+[失焦补测](gale-qa/live-focus/report.json)确认暂停时世界、敌人、弹体、时间与相机冻结，清除按住输入；恢复后正常减速至停稳且不继续开火，必须重新按键。无头 Chromium 新标签切换仍报告焦点在原页，故补测明确使用合成 DOM blur 事件，不冒充实体操作系统失焦验收。首版错误地要求恢复瞬间坐标不变，误判正常惯性减速；现检查减速距离不超过 12 像素、速度归零及后续位置/射击计数稳定。
+
+前十四款运行目录与本款开始前 `bcffe572ffd2073421784d3b53ab32903f529497` 保持一致；共享入口更新为 15 款、194 关，仍保留 72 条图鉴。本地预览不作为上线证明。
 
 ## 复查命令与限制
 
@@ -43,7 +49,8 @@ node scripts/test_gale_strategy.mjs
 node scripts/test_gale.mjs
 python scripts/test_gale_browser.py --stages 1,4,8
 python scripts/test_gale_ui.py
+python scripts/test_gale_focus.py
 python scripts/verify_deployment.py --commit HEAD
 ```
 
-通关是自动策略的实际键盘输入，不是人工熟练度评估。策略使用只读世界遥测，不限于人工视野。后期菜单解锁夹具与隔离规则夹具均已单独标识。尚未验收实体手机、Safari、Firefox 或完整屏幕阅读器；触屏通过 Chromium 真实多点事件模拟。没有移动平台、联网、账户、付费、凭据或依赖安装。交回主对话后再安排后续，本任务不启动第十六款。
+通关是自动策略的实际键盘输入，不是人工熟练度评估。策略使用只读世界遥测，不限于人工视野。后期菜单解锁夹具与隔离规则夹具均已单独标识。尚未验收实体手机、Safari、Firefox、实体操作系统窗口切换或完整屏幕阅读器；触屏通过 Chromium 真实多点事件模拟。没有移动平台、联网、账户、付费、凭据或依赖安装。交回主对话后再安排后续，本任务不启动第十六款。
