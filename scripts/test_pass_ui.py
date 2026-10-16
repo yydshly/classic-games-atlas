@@ -32,7 +32,7 @@ async def main(args):
    await m.set_viewport_size({'width':width,'height':900});assert not await m.evaluate('document.documentElement.scrollWidth>innerWidth'),width;widths.append(width)
   checks['responsiveWidths']=widths
   blocked=await b.new_context();await blocked.add_init_script('Object.defineProperty(window,"localStorage",{get(){throw new DOMException("Disabled","SecurityError")}})');bp=await blocked.new_page();watch(bp);await bp.goto(args.url);await begin(bp);assert not (await snap(bp))['storageAvailable'];await bp.locator('[data-site="1"]').click();await bp.locator('[data-build="bolt"]').click();assert (await snap(bp))['gold']==165;checks['storageUnavailableStillPlayable']=True;await blocked.close()
-  base=args.url.replace('games/pass/','');await p.goto(base);await p.wait_for_selector('.game-card');assert await p.locator('.game-card').count()==72;assert await p.locator('.lab-card').count()==6
+  base=args.url.replace('games/pass/','');await p.goto(base);await p.wait_for_selector('.game-card');assert await p.locator('.game-card').count()==72;assert await p.locator('.lab-card').count()==len(json.loads((ROOT/'data/experiments.json').read_text(encoding='utf8')))
   for game in ['fortress','maze','starline','prism','crate','pass']:assert await p.locator(f'a[href="./games/{game}/"]').count()==2
   await p.locator('[data-open="kingdom-rush"]').click();assert '8' in await p.locator('.lab-detail').inner_text();await p.locator('.lab-detail a').click();assert '/games/pass/' in p.url;checks['atlasAssociationAndSixEntrances']=True
   for game in ['fortress','maze','starline','prism','crate']:
