@@ -1,0 +1,996 @@
+{
+  "testedAt": "2026-10-16T20:42:46.951888+00:00",
+  "url": "http://127.0.0.1:4174/games/venture/",
+  "checks": [
+    "Fresh tutorial and ready state keep normal budget and never advance with wall time",
+    "Native locked routes and keyboard tile inspection cannot move the actual token",
+    "Held key opens only one movement receipt; Escape cancels path, position, fare and revision without charging",
+    "Purchase receipt previews cash and next clearing; cancel is free, confirm spends exactly once and creates one owner ID",
+    "All repeat business buttons and keyboard collection are guarded after one business action",
+    "Ending a turn is separately confirmed, clears one event and resets movement only after exact income/maintenance/rent",
+    "Refresh during an unconfirmed move cancels it, restores exact ledger/token and resumes paused without a charge",
+    "Mid-route refresh exactly replays assets/cash/calendar, then ordinary keyboard shortcuts and native Enter confirmations win",
+    "Victory unlocks next map, stores earned best and cannot pay another event; final receipt shows already-settled cash",
+    "320px result button fits, receives actual hits, and retry resets budget/portfolio while preserving best",
+    "Real upgrade/cancel/confirmation charges15 once, raises investment to37 and adds3 income in the current clearing",
+    "Sale returns14, removes future income, and ordinary later movement/rebuy creates a new ID without duplicating old assets",
+    "Help/route chooser freeze all resources; blur cancels a pending receipt and pauses without settlement",
+    "Synthesized audio preference persists without an external audio resource",
+    "Actual unproductive moves cause a visible natural bankruptcy once, and retry restores42 ordinary starting coins",
+    "A real public-work route stays solvent yet fails the last-turn asset goals, preserving prior earned best",
+    "12 actual map buttons, cards, receipt controls, ledgers and route chooser fit six widths320–1440",
+    "Malformed storage returns to fresh safe defaults",
+    "Malformed economic replay or forged cash/asset snapshots cannot create production resources",
+    "Native touchscreen completes an entire first map through real card, trading and confirmation buttons",
+    "Denied local storage still permits the whole normal-budget first map",
+    "No page/console errors, failed requests orHTTP4xx/5xx resources"
+  ],
+  "fixtures": "Only explicit stage/unlock/tutorial/storage metadata; no budget, cash, assets, position, income or result writes.",
+  "restore": {
+    "level": 1,
+    "turn": 2,
+    "phase": "business",
+    "pos": 2,
+    "travelled": 2,
+    "laps": 0,
+    "cash": 1,
+    "assets": [
+      null,
+      {
+        "id": 1,
+        "level": 1,
+        "investment": 11
+      },
+      {
+        "id": 2,
+        "level": 1,
+        "investment": 14
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "actionUsed": true,
+    "nextAsset": 3,
+    "transactions": [
+      {
+        "id": 1,
+        "turn": 1,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 2,
+        "turn": 1,
+        "kind": "buy",
+        "amount": -11,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 3,
+        "turn": 1,
+        "kind": "income",
+        "amount": 4,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 4,
+        "turn": 1,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 5,
+        "turn": 1,
+        "kind": "rent",
+        "amount": -3
+      },
+      {
+        "id": 6,
+        "turn": 2,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 7,
+        "turn": 2,
+        "kind": "buy",
+        "amount": -14,
+        "tile": 2,
+        "asset": 2
+      }
+    ],
+    "turns": [
+      {
+        "turn": 1,
+        "event": "calm",
+        "net": 0,
+        "after": 16,
+        "lines": [
+          {
+            "kind": "income",
+            "tile": 1,
+            "asset": 1,
+            "label": "梧叶茶摊营业",
+            "amount": 4
+          },
+          {
+            "kind": "upkeep",
+            "tile": 1,
+            "asset": 1,
+            "label": "梧叶茶摊摊位维护",
+            "amount": -1
+          },
+          {
+            "kind": "rent",
+            "label": "街区固定开支",
+            "amount": -3
+          }
+        ],
+        "portfolio": [
+          {
+            "tile": 1,
+            "id": 1,
+            "level": 1,
+            "investment": 11
+          }
+        ]
+      }
+    ],
+    "revision": 6,
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      }
+    ],
+    "stats": {
+      "moves": 2,
+      "purchases": 2,
+      "upgrades": 0,
+      "operations": 0,
+      "work": 0,
+      "sales": 0,
+      "turnsEnded": 1,
+      "settlements": 0
+    },
+    "worth": 17,
+    "assetValue": 16,
+    "goals": {
+      "assets": 2,
+      "types": 2,
+      "cash": 1,
+      "worth": 17,
+      "done": false
+    },
+    "score": 490
+  },
+  "keyboardRestoreWin": {
+    "state": "won",
+    "turn": 5,
+    "cash": 40,
+    "worth": 56,
+    "stats": {
+      "moves": 5,
+      "purchases": 2,
+      "upgrades": 0,
+      "operations": 0,
+      "work": 3,
+      "sales": 0,
+      "turnsEnded": 5,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "upgrade": {
+    "cash": 6,
+    "investment": 37,
+    "assetValue": 33,
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "upgrade"
+      }
+    ]
+  },
+  "saleAndRepurchase": {
+    "oldAssetId": 1,
+    "newAssetId": 3,
+    "cash": 8,
+    "transactions": [
+      {
+        "id": 1,
+        "turn": 1,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 2,
+        "turn": 1,
+        "kind": "buy",
+        "amount": -22,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 3,
+        "turn": 1,
+        "kind": "income",
+        "amount": 6,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 4,
+        "turn": 1,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 5,
+        "turn": 1,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 6,
+        "turn": 2,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 7,
+        "turn": 2,
+        "kind": "work",
+        "amount": 8,
+        "tile": 3
+      },
+      {
+        "id": 8,
+        "turn": 2,
+        "kind": "income",
+        "amount": 6,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 9,
+        "turn": 2,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 10,
+        "turn": 2,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 11,
+        "turn": 3,
+        "kind": "fare",
+        "amount": -2
+      },
+      {
+        "id": 12,
+        "turn": 3,
+        "kind": "buy",
+        "amount": -15,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 13,
+        "turn": 3,
+        "kind": "income",
+        "amount": 7,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 14,
+        "turn": 3,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 1,
+        "asset": 1
+      },
+      {
+        "id": 15,
+        "turn": 3,
+        "kind": "income",
+        "amount": 5,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 16,
+        "turn": 3,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 17,
+        "turn": 3,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 18,
+        "turn": 4,
+        "kind": "fare",
+        "amount": -2
+      },
+      {
+        "id": 19,
+        "turn": 4,
+        "kind": "lap",
+        "amount": 9
+      },
+      {
+        "id": 20,
+        "turn": 4,
+        "kind": "sell",
+        "amount": 14,
+        "tile": 1,
+        "asset": 1,
+        "investment": 22
+      },
+      {
+        "id": 21,
+        "turn": 4,
+        "kind": "income",
+        "amount": 3,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 22,
+        "turn": 4,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 23,
+        "turn": 4,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 24,
+        "turn": 4,
+        "kind": "event",
+        "amount": -2
+      },
+      {
+        "id": 25,
+        "turn": 5,
+        "kind": "fare",
+        "amount": -2
+      },
+      {
+        "id": 26,
+        "turn": 5,
+        "kind": "income",
+        "amount": 4,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 27,
+        "turn": 5,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 28,
+        "turn": 5,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 29,
+        "turn": 6,
+        "kind": "fare",
+        "amount": -2
+      },
+      {
+        "id": 30,
+        "turn": 6,
+        "kind": "income",
+        "amount": 4,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 31,
+        "turn": 6,
+        "kind": "upkeep",
+        "amount": -1,
+        "tile": 8,
+        "asset": 2
+      },
+      {
+        "id": 32,
+        "turn": 6,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 33,
+        "turn": 7,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 34,
+        "turn": 7,
+        "kind": "lap",
+        "amount": 9
+      },
+      {
+        "id": 35,
+        "turn": 7,
+        "kind": "buy",
+        "amount": -22,
+        "tile": 1,
+        "asset": 3
+      }
+    ],
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "sell"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 1
+      },
+      {
+        "kind": "buy"
+      }
+    ]
+  },
+  "naturalBankruptcy": {
+    "cash": -2,
+    "turn": 7,
+    "reason": "本回合开支超过结余，商旅破产。",
+    "transactions": [
+      {
+        "id": 1,
+        "turn": 1,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 2,
+        "turn": 1,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 3,
+        "turn": 2,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 4,
+        "turn": 2,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 5,
+        "turn": 3,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 6,
+        "turn": 3,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 7,
+        "turn": 4,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 8,
+        "turn": 4,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 9,
+        "turn": 4,
+        "kind": "event",
+        "amount": -2
+      },
+      {
+        "id": 10,
+        "turn": 5,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 11,
+        "turn": 5,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 12,
+        "turn": 6,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 13,
+        "turn": 6,
+        "kind": "rent",
+        "amount": -5
+      },
+      {
+        "id": 14,
+        "turn": 7,
+        "kind": "fare",
+        "amount": -1
+      },
+      {
+        "id": 15,
+        "turn": 7,
+        "kind": "rent",
+        "amount": -5
+      }
+    ],
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "naturalTimeout": {
+    "cash": 64,
+    "turn": 10,
+    "reason": "最后一回合结束，仍有目标未达成。看看日历和下一笔清算，再试一次。",
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 1
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 1
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 1
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "turn": 5,
+    "cash": 40,
+    "worth": 56,
+    "stats": {
+      "moves": 5,
+      "purchases": 2,
+      "upgrades": 0,
+      "operations": 0,
+      "work": 3,
+      "sales": 0,
+      "turnsEnded": 5,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 0
+      },
+      {
+        "kind": "buy"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "move",
+        "card": 2
+      },
+      {
+        "kind": "work"
+      },
+      {
+        "kind": "end"
+      }
+    ],
+    "method": "Native touchscreen tutorial, board inspection, movement/business receipt taps and explicit clearing; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
