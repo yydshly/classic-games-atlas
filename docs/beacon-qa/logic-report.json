@@ -1,0 +1,31 @@
+{
+  "testedAt": "2026-10-16T13:27:26.794Z",
+  "passed": 24,
+  "fixtureBoundary": "Isolated artificial unit positions/HP/AP/death and objective thresholds test rule edges only. Independent full campaign wins use normal commands and untouched published state.",
+  "tests": [
+    "ten unique maps, three themes, three combined objectives and shared unit prototypes",
+    "four-neighbor BFS respects range, blockers, occupied squares and board limits",
+    "move preview is pure and commit spends exactly one AP along a legal path",
+    "occupied destinations, allied attacks and movement through friendly units are rejected",
+    "supercover line blocks high walls and diagonal wall corners",
+    "water and low cover leave sight open while intervening units block it",
+    "deterministic cover damage applies only beyond adjacent range with a minimum of one",
+    "attack previews exact target HP and stale repeated command cannot spend another AP",
+    "repair costs one AP, caps at maximum, is once per own turn and never revives",
+    "dead units vacate their square and cannot take any action",
+    "wait forfeits only remaining AP and cannot be repeated or used across sides",
+    "end-turn command is revision-guarded; enemy actions consume finite AP and terminate",
+    "enemy cannot read unsubmitted UI fields and deterministic replies match",
+    "enemy medic shares the same one-per-turn repair and AP rule",
+    "last enemy kill alone cannot win escort; living courier must also reach exit",
+    "courier death or no surviving combat unit takes priority over cleared enemies and exit",
+    "hold progress is counted after enemy reply, requires a survivor and breaks on leaving",
+    "completed hold count saturates while threats remain and the current turn stays restorable",
+    "last allowed round can complete objective; incomplete objective then fails uniquely",
+    "pause rejects every action and freezes both player and enemy phases",
+    "current player turn restores exact HP/AP/positions/revision without refills",
+    "mid-enemy save resumes remaining AP and produces identical final committed board",
+    "corrupt version, AP/HP/type/position/overlap/counters and impossible outcomes reject",
+    "ready save remains fresh and published maps remain immutable"
+  ]
+}

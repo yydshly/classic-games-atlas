@@ -1,0 +1,2361 @@
+{
+  "testedAt": "2026-10-16T13:10:23.155953+00:00",
+  "url": "http://127.0.0.1:4174/games/beacon/",
+  "method": "Native mouse/keyboard unit selection, mode/range preview, target cell and explicit confirmation. Enemy replies run at production UI pace. Strategy forecasts on separate rule copies; live state is never written.",
+  "fixture": "Later-stage menu unlock/tutorial/sound preference only; no HP/AP/position/enemy/objective/result fixture for campaign wins",
+  "results": [
+    {
+      "stage": 1,
+      "end": {
+        "level": 1,
+        "state": "won",
+        "phase": "player",
+        "round": 4,
+        "held": 0,
+        "revision": 25,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 4,
+            "hp": 3,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 3,
+            "hp": 2,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 3,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 9,
+          "attacks": 10,
+          "heals": 0,
+          "kills": 2,
+          "blueLosses": 0,
+          "damageTaken": 11,
+          "enemyActions": 8,
+          "endTurns": 3,
+          "settlements": 1
+        },
+        "log": [
+          "第 3 回合，小队行动",
+          "小队弧手造成 2 点伤害",
+          "小队弧手移动 1 格",
+          "小队礁卫移动 3 格",
+          "小队礁卫造成 3 点伤害",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手造成 3 点伤害",
+          "第 4 回合，小队行动",
+          "小队礁卫造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b1",
+          "x": 2,
+          "y": 4,
+          "target": "r2"
+        },
+        "selected": null,
+        "mode": "move",
+        "plan": null,
+        "focus": {
+          "x": 2,
+          "y": 5
+        },
+        "unlocked": 2,
+        "best": {
+          "1": {
+            "score": 1092,
+            "rounds": 4,
+            "damage": 11
+          }
+        },
+        "sound": true,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false
+      },
+      "normalUIActions": [
+        {
+          "beforeRound": 1,
+          "beforeRevision": 0,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 5,
+            "revision": 0
+          },
+          "afterRevision": 1,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 1,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 1,
+            "revision": 1
+          },
+          "afterRevision": 2,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 2,
+          "command": {
+            "kind": "end-turn",
+            "revision": 2
+          },
+          "afterRevision": 8,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 8,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 8
+          },
+          "afterRevision": 9,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 9,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 9
+          },
+          "afterRevision": 10,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 10,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 3,
+            "revision": 10
+          },
+          "afterRevision": 11,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 11,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r1",
+            "revision": 11
+          },
+          "afterRevision": 12,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 12,
+          "command": {
+            "kind": "end-turn",
+            "revision": 12
+          },
+          "afterRevision": 16,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 16,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 16
+          },
+          "afterRevision": 17,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 17,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 1,
+            "y": 3,
+            "revision": 17
+          },
+          "afterRevision": 18,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 18,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 4,
+            "revision": 18
+          },
+          "afterRevision": 19,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 19,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r2",
+            "revision": 19
+          },
+          "afterRevision": 20,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 20,
+          "command": {
+            "kind": "end-turn",
+            "revision": 20
+          },
+          "afterRevision": 24,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 24,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r2",
+            "revision": 24
+          },
+          "afterRevision": 25,
+          "afterPhase": "player",
+          "state": "won"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    },
+    {
+      "stage": 4,
+      "end": {
+        "level": 4,
+        "state": "won",
+        "phase": "player",
+        "round": 7,
+        "held": 0,
+        "revision": 58,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 2,
+            "hp": 9,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 3,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "medic",
+            "x": 1,
+            "y": 2,
+            "hp": 5,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "courier",
+            "x": 7,
+            "y": 3,
+            "hp": 8,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "medic",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          }
+        ],
+        "stats": {
+          "moves": 22,
+          "attacks": 18,
+          "heals": 6,
+          "kills": 3,
+          "blueLosses": 0,
+          "damageTaken": 16,
+          "enemyActions": 20,
+          "endTurns": 6,
+          "settlements": 1
+        },
+        "log": [
+          "敌方弧手造成 3 点伤害",
+          "第 6 回合，小队行动",
+          "小队弧手造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格",
+          "小队引航员移动 3 格",
+          "敌方回合开始",
+          "第 7 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格"
+        ],
+        "reason": "威胁清除，引航员安全抵达",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b4",
+          "x": 7,
+          "y": 3
+        },
+        "selected": null,
+        "mode": "move",
+        "plan": null,
+        "focus": {
+          "x": 7,
+          "y": 3
+        },
+        "unlocked": 5,
+        "best": {
+          "4": {
+            "score": 1102,
+            "rounds": 7,
+            "damage": 16
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false
+      },
+      "normalUIActions": [
+        {
+          "beforeRound": 1,
+          "beforeRevision": 0,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 1,
+            "y": 3,
+            "revision": 0
+          },
+          "afterRevision": 1,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 1,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 3,
+            "y": 3,
+            "revision": 1
+          },
+          "afterRevision": 2,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 2,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 0,
+            "y": 1,
+            "revision": 2
+          },
+          "afterRevision": 3,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 3,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 2,
+            "y": 0,
+            "revision": 3
+          },
+          "afterRevision": 4,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 4,
+          "command": {
+            "kind": "end-turn",
+            "revision": 4
+          },
+          "afterRevision": 12,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 12,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 12
+          },
+          "afterRevision": 13,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 13,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 2,
+            "revision": 13
+          },
+          "afterRevision": 14,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 14,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r1",
+            "revision": 14
+          },
+          "afterRevision": 15,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 15,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r1",
+            "revision": 15
+          },
+          "afterRevision": 16,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 16,
+          "command": {
+            "kind": "heal",
+            "unit": "b3",
+            "target": "b1",
+            "revision": 16
+          },
+          "afterRevision": 17,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 17,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 3,
+            "y": 0,
+            "revision": 17
+          },
+          "afterRevision": 18,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 18,
+          "command": {
+            "kind": "end-turn",
+            "revision": 18
+          },
+          "afterRevision": 24,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 24,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 2,
+            "y": 1,
+            "revision": 24
+          },
+          "afterRevision": 25,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 25,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 1,
+            "y": 2,
+            "revision": 25
+          },
+          "afterRevision": 26,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 26,
+          "command": {
+            "kind": "end-turn",
+            "revision": 26
+          },
+          "afterRevision": 32,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 32,
+          "command": {
+            "kind": "heal",
+            "unit": "b3",
+            "target": "b1",
+            "revision": 32
+          },
+          "afterRevision": 33,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 33,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r3",
+            "revision": 33
+          },
+          "afterRevision": 34,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 34,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r3",
+            "revision": 34
+          },
+          "afterRevision": 35,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 35,
+          "command": {
+            "kind": "end-turn",
+            "revision": 35
+          },
+          "afterRevision": 41,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 41,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r3",
+            "revision": 41
+          },
+          "afterRevision": 42,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 42,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r3",
+            "revision": 42
+          },
+          "afterRevision": 43,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 43,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 43
+          },
+          "afterRevision": 44,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 44,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 44
+          },
+          "afterRevision": 45,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 45,
+          "command": {
+            "kind": "heal",
+            "unit": "b3",
+            "target": "b1",
+            "revision": 45
+          },
+          "afterRevision": 46,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 46,
+          "command": {
+            "kind": "end-turn",
+            "revision": 46
+          },
+          "afterRevision": 50,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 50,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 50
+          },
+          "afterRevision": 51,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 51,
+          "command": {
+            "kind": "heal",
+            "unit": "b3",
+            "target": "b2",
+            "revision": 51
+          },
+          "afterRevision": 52,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 52,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 2,
+            "y": 4,
+            "revision": 52
+          },
+          "afterRevision": 53,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 53,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 4,
+            "y": 3,
+            "revision": 53
+          },
+          "afterRevision": 54,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 54,
+          "command": {
+            "kind": "end-turn",
+            "revision": 54
+          },
+          "afterRevision": 56,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 56,
+          "command": {
+            "kind": "heal",
+            "unit": "b3",
+            "target": "b2",
+            "revision": 56
+          },
+          "afterRevision": 57,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 57,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 7,
+            "y": 3,
+            "revision": 57
+          },
+          "afterRevision": 58,
+          "afterPhase": "player",
+          "state": "won"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    },
+    {
+      "stage": 7,
+      "end": {
+        "level": 7,
+        "state": "won",
+        "phase": "player",
+        "round": 6,
+        "held": 0,
+        "revision": 70,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 5,
+            "y": 2,
+            "hp": 3,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 1,
+            "y": 5,
+            "hp": 6,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 2,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 2,
+            "y": 1,
+            "hp": 4,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "b5",
+            "side": "blue",
+            "type": "courier",
+            "x": 7,
+            "y": 3,
+            "hp": 8,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "medic",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          }
+        ],
+        "stats": {
+          "moves": 30,
+          "attacks": 24,
+          "heals": 6,
+          "kills": 4,
+          "blueLosses": 0,
+          "damageTaken": 27,
+          "enemyActions": 24,
+          "endTurns": 5,
+          "settlements": 1
+        },
+        "log": [
+          "小队灯医移动 1 格",
+          "小队弧手造成 3 点伤害",
+          "小队弧手造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格",
+          "小队引航员移动 3 格",
+          "敌方回合开始",
+          "第 6 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队引航员移动 1 格"
+        ],
+        "reason": "威胁清除，引航员安全抵达",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b5",
+          "x": 7,
+          "y": 3
+        },
+        "selected": null,
+        "mode": "move",
+        "plan": null,
+        "focus": {
+          "x": 7,
+          "y": 3
+        },
+        "unlocked": 8,
+        "best": {
+          "7": {
+            "score": 1194,
+            "rounds": 6,
+            "damage": 27
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false
+      },
+      "normalUIActions": [
+        {
+          "beforeRound": 1,
+          "beforeRevision": 0,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 2,
+            "y": 2,
+            "revision": 0
+          },
+          "afterRevision": 1,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 1,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 1,
+            "y": 0,
+            "revision": 1
+          },
+          "afterRevision": 2,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 2,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 1,
+            "revision": 2
+          },
+          "afterRevision": 3,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 3,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 2,
+            "y": 5,
+            "revision": 3
+          },
+          "afterRevision": 4,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 4,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 6,
+            "revision": 4
+          },
+          "afterRevision": 5,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 5,
+          "command": {
+            "kind": "end-turn",
+            "revision": 5
+          },
+          "afterRevision": 15,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 15,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 1,
+            "y": 5,
+            "revision": 15
+          },
+          "afterRevision": 16,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 16,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b4",
+            "revision": 16
+          },
+          "afterRevision": 17,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 17,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 17
+          },
+          "afterRevision": 18,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 18,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 18
+          },
+          "afterRevision": 19,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 19,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 1,
+            "y": 6,
+            "revision": 19
+          },
+          "afterRevision": 20,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 20,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 1,
+            "y": 2,
+            "revision": 20
+          },
+          "afterRevision": 21,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 21,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r2",
+            "revision": 21
+          },
+          "afterRevision": 22,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 22,
+          "command": {
+            "kind": "end-turn",
+            "revision": 22
+          },
+          "afterRevision": 32,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 32,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 32
+          },
+          "afterRevision": 33,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 33,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r2",
+            "revision": 33
+          },
+          "afterRevision": 34,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 34,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r2",
+            "revision": 34
+          },
+          "afterRevision": 35,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 35,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 1,
+            "y": 4,
+            "revision": 35
+          },
+          "afterRevision": 36,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 36,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b3",
+            "revision": 36
+          },
+          "afterRevision": 37,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 37,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 0,
+            "y": 5,
+            "revision": 37
+          },
+          "afterRevision": 38,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 38,
+          "command": {
+            "kind": "end-turn",
+            "revision": 38
+          },
+          "afterRevision": 44,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 44,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b4",
+            "revision": 44
+          },
+          "afterRevision": 45,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 45,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 2,
+            "y": 2,
+            "revision": 45
+          },
+          "afterRevision": 46,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 46,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 46
+          },
+          "afterRevision": 47,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 47,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 47
+          },
+          "afterRevision": 48,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 48,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 4,
+            "y": 0,
+            "revision": 48
+          },
+          "afterRevision": 49,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 49,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 1,
+            "y": 5,
+            "revision": 49
+          },
+          "afterRevision": 50,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 50,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r4",
+            "revision": 50
+          },
+          "afterRevision": 51,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 51,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 5,
+            "y": 2,
+            "revision": 51
+          },
+          "afterRevision": 52,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 52,
+          "command": {
+            "kind": "end-turn",
+            "revision": 52
+          },
+          "afterRevision": 58,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 58,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r4",
+            "revision": 58
+          },
+          "afterRevision": 59,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 59,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r4",
+            "revision": 59
+          },
+          "afterRevision": 60,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 60,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 2,
+            "y": 1,
+            "revision": 60
+          },
+          "afterRevision": 61,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 61,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 61
+          },
+          "afterRevision": 62,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 62,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 62
+          },
+          "afterRevision": 63,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 63,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b3",
+            "revision": 63
+          },
+          "afterRevision": 64,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 64,
+          "command": {
+            "kind": "move",
+            "unit": "b5",
+            "x": 3,
+            "y": 3,
+            "revision": 64
+          },
+          "afterRevision": 65,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 65,
+          "command": {
+            "kind": "move",
+            "unit": "b5",
+            "x": 6,
+            "y": 3,
+            "revision": 65
+          },
+          "afterRevision": 66,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 66,
+          "command": {
+            "kind": "end-turn",
+            "revision": 66
+          },
+          "afterRevision": 68,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 68,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b4",
+            "revision": 68
+          },
+          "afterRevision": 69,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 69,
+          "command": {
+            "kind": "move",
+            "unit": "b5",
+            "x": 7,
+            "y": 3,
+            "revision": 69
+          },
+          "afterRevision": 70,
+          "afterPhase": "player",
+          "state": "won"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    },
+    {
+      "stage": 10,
+      "end": {
+        "level": 10,
+        "state": "won",
+        "phase": "enemy",
+        "round": 8,
+        "held": 4,
+        "revision": 97,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 3,
+            "y": 3,
+            "hp": 7,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 6,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 4,
+            "y": 3,
+            "hp": 3,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 1,
+            "y": 3,
+            "hp": 7,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "warden",
+            "x": 1,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r5",
+            "side": "red",
+            "type": "medic",
+            "x": 0,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 42,
+          "attacks": 33,
+          "heals": 7,
+          "kills": 5,
+          "blueLosses": 1,
+          "damageTaken": 34,
+          "enemyActions": 40,
+          "endTurns": 8,
+          "settlements": 1
+        },
+        "log": [
+          "敌方弧手造成 2 点伤害",
+          "灯台已连续守住 3 轮",
+          "第 8 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队弧手造成 3 点伤害",
+          "小队弧手造成 3 点伤害",
+          "小队礁卫移动 1 格",
+          "小队礁卫造成 3 点伤害",
+          "敌方回合开始",
+          "灯台已连续守住 4 轮"
+        ],
+        "reason": "威胁清除，灯台已守稳",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b1",
+          "x": 3,
+          "y": 3,
+          "target": "r3"
+        },
+        "selected": null,
+        "mode": "move",
+        "plan": null,
+        "focus": {
+          "x": 3,
+          "y": 3
+        },
+        "unlocked": 10,
+        "best": {
+          "10": {
+            "score": 1023,
+            "rounds": 8,
+            "damage": 34
+          }
+        },
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false
+      },
+      "normalUIActions": [
+        {
+          "beforeRound": 1,
+          "beforeRevision": 0,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 1,
+            "y": 3,
+            "revision": 0
+          },
+          "afterRevision": 1,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 1,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 0,
+            "y": 0,
+            "revision": 1
+          },
+          "afterRevision": 2,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 2,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 2,
+            "y": 5,
+            "revision": 2
+          },
+          "afterRevision": 3,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 3,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 1,
+            "revision": 3
+          },
+          "afterRevision": 4,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 4,
+          "command": {
+            "kind": "end-turn",
+            "revision": 4
+          },
+          "afterRevision": 16,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 16,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 0,
+            "y": 6,
+            "revision": 16
+          },
+          "afterRevision": 17,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 17,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 17
+          },
+          "afterRevision": 18,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 18,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 1,
+            "y": 0,
+            "revision": 18
+          },
+          "afterRevision": 19,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 19,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 0,
+            "y": 3,
+            "revision": 19
+          },
+          "afterRevision": 20,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 20,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 0,
+            "y": 1,
+            "revision": 20
+          },
+          "afterRevision": 21,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 21,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b3",
+            "revision": 21
+          },
+          "afterRevision": 22,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 22,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 3,
+            "y": 6,
+            "revision": 22
+          },
+          "afterRevision": 23,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 23,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 6,
+            "revision": 23
+          },
+          "afterRevision": 24,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 24,
+          "command": {
+            "kind": "end-turn",
+            "revision": 24
+          },
+          "afterRevision": 36,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 36,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 36
+          },
+          "afterRevision": 37,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 37,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 37
+          },
+          "afterRevision": 38,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 38,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b1",
+            "revision": 38
+          },
+          "afterRevision": 39,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 39,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 39
+          },
+          "afterRevision": 40,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 40,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 40
+          },
+          "afterRevision": 41,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 41,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r2",
+            "revision": 41
+          },
+          "afterRevision": 42,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 42,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r2",
+            "revision": 42
+          },
+          "afterRevision": 43,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 43,
+          "command": {
+            "kind": "end-turn",
+            "revision": 43
+          },
+          "afterRevision": 51,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 51,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 1,
+            "y": 1,
+            "revision": 51
+          },
+          "afterRevision": 52,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 52,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r4",
+            "revision": 52
+          },
+          "afterRevision": 53,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 53,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b3",
+            "revision": 53
+          },
+          "afterRevision": 54,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 54,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 0,
+            "revision": 54
+          },
+          "afterRevision": 55,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 55,
+          "command": {
+            "kind": "end-turn",
+            "revision": 55
+          },
+          "afterRevision": 63,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 63,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r4",
+            "revision": 63
+          },
+          "afterRevision": 64,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 64,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r4",
+            "revision": 64
+          },
+          "afterRevision": 65,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 65,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b3",
+            "revision": 65
+          },
+          "afterRevision": 66,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 66,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 3,
+            "y": 1,
+            "revision": 66
+          },
+          "afterRevision": 67,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 67,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 4,
+            "y": 3,
+            "revision": 67
+          },
+          "afterRevision": 68,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 68,
+          "command": {
+            "kind": "attack",
+            "unit": "b4",
+            "target": "r5",
+            "revision": 68
+          },
+          "afterRevision": 69,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 5,
+          "beforeRevision": 69,
+          "command": {
+            "kind": "end-turn",
+            "revision": 69
+          },
+          "afterRevision": 75,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 75,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r5",
+            "revision": 75
+          },
+          "afterRevision": 76,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 76,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r5",
+            "revision": 76
+          },
+          "afterRevision": 77,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 77,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b4",
+            "revision": 77
+          },
+          "afterRevision": 78,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 6,
+          "beforeRevision": 78,
+          "command": {
+            "kind": "end-turn",
+            "revision": 78
+          },
+          "afterRevision": 82,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 82,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 3,
+            "revision": 82
+          },
+          "afterRevision": 83,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 83,
+          "command": {
+            "kind": "move",
+            "unit": "b4",
+            "x": 1,
+            "y": 3,
+            "revision": 83
+          },
+          "afterRevision": 84,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 84,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b1",
+            "revision": 84
+          },
+          "afterRevision": 85,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 85,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 3,
+            "y": 1,
+            "revision": 85
+          },
+          "afterRevision": 86,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 86,
+          "command": {
+            "kind": "move",
+            "unit": "b3",
+            "x": 4,
+            "y": 3,
+            "revision": 86
+          },
+          "afterRevision": 87,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 7,
+          "beforeRevision": 87,
+          "command": {
+            "kind": "end-turn",
+            "revision": 87
+          },
+          "afterRevision": 91,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 91,
+          "command": {
+            "kind": "heal",
+            "unit": "b4",
+            "target": "b1",
+            "revision": 91
+          },
+          "afterRevision": 92,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 92,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 92
+          },
+          "afterRevision": 93,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 93,
+          "command": {
+            "kind": "attack",
+            "unit": "b3",
+            "target": "r3",
+            "revision": 93
+          },
+          "afterRevision": 94,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 94,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 3,
+            "y": 3,
+            "revision": 94
+          },
+          "afterRevision": 95,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 95,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r3",
+            "revision": 95
+          },
+          "afterRevision": 96,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 8,
+          "beforeRevision": 96,
+          "command": {
+            "kind": "end-turn",
+            "revision": 96
+          },
+          "afterRevision": 97,
+          "afterPhase": "enemy",
+          "state": "won"
+        }
+      ],
+      "bestUnlockAndFreshReplayVerified": true
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

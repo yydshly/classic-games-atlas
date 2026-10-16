@@ -24,7 +24,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/sand-cover.svg','games/sand/index.html','games/sand/sand.css','games/sand/boards.mjs','games/sand/levels.mjs','games/sand/deduction.mjs','games/sand/engine.mjs','games/sand/renderer.mjs','games/sand/game.mjs',
          'assets/pinfall-cover.svg','games/pinfall/index.html','games/pinfall/pinfall.css','games/pinfall/levels.mjs','games/pinfall/engine.mjs','games/pinfall/renderer.mjs','games/pinfall/game.mjs',
          'assets/gale-cover.svg','games/gale/index.html','games/gale/gale.css','games/gale/levels.mjs','games/gale/engine.mjs','games/gale/renderer.mjs','games/gale/game.mjs',
-         'assets/post-cover.svg','games/post/index.html','games/post/post.css','games/post/tracks.mjs','games/post/engine.mjs','games/post/renderer.mjs','games/post/game.mjs']
+         'assets/post-cover.svg','games/post/index.html','games/post/post.css','games/post/tracks.mjs','games/post/engine.mjs','games/post/renderer.mjs','games/post/game.mjs',
+         'assets/beacon-cover.svg','games/beacon/index.html','games/beacon/beacon.css','games/beacon/levels.mjs','games/beacon/engine.mjs','games/beacon/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
