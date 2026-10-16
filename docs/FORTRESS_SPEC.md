@@ -1,6 +1,6 @@
 # 堡垒防线：本轮需求与验收范围
 
-状态：首款实现完成，本地逻辑与真实输入验收通过；部署终态见 [FORTRESS_VERIFICATION.md](FORTRESS_VERIFICATION.md)。本轮不继续开发后续游戏。
+状态：首款实现完成并已上线，本地与真实线上输入验收通过；部署终态见 [FORTRESS_VERIFICATION.md](FORTRESS_VERIFICATION.md)。本轮不继续开发后续游戏。
 
 ## 产品边界
 

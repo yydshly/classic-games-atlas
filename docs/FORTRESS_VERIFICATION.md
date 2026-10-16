@@ -48,7 +48,18 @@ python scripts/test_fortress_browser.py --url http://127.0.0.1:4174/games/fortre
 
 ## 发布与线上验证
 
-待 main 提交发布后，在实际 GitHub Pages 地址重新验证，再更新本节。部署前的本地预览不算上线。
+**已成功上线：[https://yydshly.github.io/classic-games-atlas/games/fortress/](https://yydshly.github.io/classic-games-atlas/games/fortress/)**
+
+验证对应实现提交 `56dcfba02900800de817e5fad14e102d132bd1c5`，GitHub Pages 从公开仓库 `main` 根目录部署，HTTPS 已开启。
+
+- [成功部署工作流](https://github.com/yydshly/classic-games-atlas/actions/runs/38845995593)，[部署元数据](fortress-qa/online/deployment.json)。
+- [线上真实输入报告](fortress-qa/online/browser-report.json)：在真实 Pages 地址再次完整通关首关，6/6 敌人、基地耐久 3、剩余出击 2、得分 1510、约 29.82 秒；该次样本约 60 FPS，平均绘制约 0.17ms。通关解锁与刷新保留、暂停/恢复、重开、声音偏好、触屏按住移动和至少两次射击、返回 72 条图鉴及关联入口通过。
+- [线上操作轨迹与结局](fortress-qa/online/round-trajectory.json)使用真实键盘输入，不改写状态。完整失败与基地受击路径见上文的本地真实输入记录；线上为核心路径复测，没有冒称再次覆盖全部失败场景。
+- 六种宽度无横向溢出，线上测试为 0 页面错误、0 控制台 error、0 请求失败、0 HTTP 4xx/5xx 资源。
+- [13 个运行资源 SHA-256 比较](fortress-qa/online-integrity.json)：图鉴与游戏的 HTML、CSS、JSON、MJS/JS、SVG 均 HTTP 200，并与上述提交逐字节一致。
+- 线上截图：[交战](fortress-qa/online/desktop-combat.png)、[胜利](fortress-qa/online/round-result.png)、[手机控件](fortress-qa/online/mobile-combat.png)。
+
+后续只保存本次线上证据的提交不改变运行文件。最终交付另外核对最新 `main` 与 Pages 构建提交相同、无查询参数的线上运行文件内容相同。
 
 ## 实际限制
 

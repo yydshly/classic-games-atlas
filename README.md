@@ -34,7 +34,7 @@
 
 ## 原创玩法实验 01：堡垒防线
 
-**[进入游戏](games/fortress/) · [需求与验收范围](docs/FORTRESS_SPEC.md) · [测试与部署证据](docs/FORTRESS_VERIFICATION.md)**
+**[立即试玩堡垒防线](https://yydshly.github.io/classic-games-atlas/games/fortress/) · [需求与验收范围](docs/FORTRESS_SPEC.md) · [测试与部署证据](docs/FORTRESS_VERIFICATION.md)**
 
 参考坦克移动射击、砖墙破坏与基地保护机制的原创单人游戏，不是《坦克大战》原作或逐关复制。名称、十张地图、Canvas 美术与 Web Audio 音效均为本项目原创；图鉴原作介绍与我们的游戏入口分开标识。
 
