@@ -30,7 +30,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/brook-cover.svg','games/brook/index.html','games/brook/brook.css','games/brook/levels.mjs','games/brook/engine.mjs','games/brook/renderer.mjs','games/brook/game.mjs',
          'assets/tide-cover.svg','games/tide/index.html','games/tide/tide.css','games/tide/levels.mjs','games/tide/geometry.mjs','games/tide/engine.mjs','games/tide/renderer.mjs','games/tide/game.mjs',
          'assets/paper-cover.svg','games/paper/index.html','games/paper/paper.css','games/paper/levels.mjs','games/paper/engine.mjs','games/paper/renderer.mjs','games/paper/game.mjs',
-         'assets/harbor-cover.svg','games/harbor/index.html','games/harbor/harbor.css','games/harbor/levels.mjs','games/harbor/engine.mjs','games/harbor/renderer.mjs','games/harbor/game.mjs']
+         'assets/harbor-cover.svg','games/harbor/index.html','games/harbor/harbor.css','games/harbor/levels.mjs','games/harbor/engine.mjs','games/harbor/renderer.mjs','games/harbor/game.mjs',
+         'assets/farm-cover.svg','games/farm/index.html','games/farm/farm.css','games/farm/levels.mjs','games/farm/engine.mjs','games/farm/renderer.mjs','games/farm/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()

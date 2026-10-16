@@ -1,0 +1,2931 @@
+{
+  "testedAt": "2026-10-16T18:25:18.823070+00:00",
+  "url": "http://127.0.0.1:4174/games/farm/",
+  "method": "One initial page load, actual Next buttons and naturally earned unlocks. Real plot selection, crop select, action preview/confirmation and end-day confirmation. No resource, age, inventory, weather, deadline or result writes.",
+  "fixture": "Only initial unlock/tutorial preferences when start>1.",
+  "results": [
+    {
+      "state": "won",
+      "day": 3,
+      "actions": 1,
+      "cash": 11,
+      "score": 1273,
+      "stats": {
+        "actions": 4,
+        "plants": 1,
+        "waterings": 1,
+        "harvests": 1,
+        "produced": 2,
+        "delivered": 2,
+        "orders": 1,
+        "daysEnded": 2,
+        "growth": 2,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 2,
+        "income": 7
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "basket"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "basket"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "plot": 0,
+          "day": 1,
+          "cost": 2
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 0,
+          "day": 3
+        }
+      ],
+      "completed": [
+        {
+          "id": "basket",
+          "day": 3,
+          "units": [
+            "1:1",
+            "1:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 1,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "radish"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "basket"
+        }
+      ],
+      "unlocked": 2,
+      "best": {
+        "score": 1273,
+        "day": 3,
+        "cash": 11,
+        "actions": 4
+      }
+    },
+    {
+      "state": "won",
+      "day": 4,
+      "actions": 1,
+      "cash": 13,
+      "score": 1300,
+      "stats": {
+        "actions": 5,
+        "plants": 1,
+        "waterings": 2,
+        "harvests": 1,
+        "produced": 3,
+        "delivered": 3,
+        "orders": 1,
+        "daysEnded": 3,
+        "growth": 3,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 3,
+        "income": 9
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        },
+        {
+          "id": "1:3",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "bean",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 0,
+          "day": 4
+        }
+      ],
+      "completed": [
+        {
+          "id": "beans",
+          "day": 4,
+          "units": [
+            "1:1",
+            "1:2",
+            "1:3"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 2,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "bean"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "beans"
+        }
+      ],
+      "unlocked": 3,
+      "best": {
+        "score": 1300,
+        "day": 4,
+        "cash": 13,
+        "actions": 5
+      }
+    },
+    {
+      "state": "won",
+      "day": 4,
+      "actions": 1,
+      "cash": 18,
+      "score": 1409,
+      "stats": {
+        "actions": 7,
+        "plants": 2,
+        "waterings": 2,
+        "harvests": 2,
+        "produced": 5,
+        "delivered": 5,
+        "orders": 1,
+        "daysEnded": 3,
+        "growth": 5,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 5,
+        "income": 15
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "mixed"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "mixed"
+        },
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "mixed"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "mixed"
+        },
+        {
+          "id": "1:3",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "mixed"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "bean",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "plot": 1,
+          "day": 1,
+          "cost": 2
+        }
+      ],
+      "batches": [
+        {
+          "id": 2,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 1,
+          "day": 3
+        },
+        {
+          "id": 1,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 0,
+          "day": 4
+        }
+      ],
+      "completed": [
+        {
+          "id": "mixed",
+          "day": 4,
+          "units": [
+            "2:1",
+            "2:2",
+            "1:1",
+            "1:2",
+            "1:3"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 3,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "bean"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "radish"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "mixed"
+        }
+      ],
+      "unlocked": 4,
+      "best": {
+        "score": 1409,
+        "day": 4,
+        "cash": 18,
+        "actions": 7
+      }
+    },
+    {
+      "state": "won",
+      "day": 4,
+      "actions": 1,
+      "cash": 18,
+      "score": 1443,
+      "stats": {
+        "actions": 9,
+        "plants": 2,
+        "waterings": 3,
+        "harvests": 2,
+        "produced": 5,
+        "delivered": 5,
+        "orders": 2,
+        "daysEnded": 3,
+        "growth": 5,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 5,
+        "income": 17
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "later"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "later"
+        },
+        {
+          "id": "2:3",
+          "batch": 2,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "later"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "plot": 0,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 2,
+          "crop": "bean",
+          "plot": 1,
+          "day": 1,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 0,
+          "day": 3
+        },
+        {
+          "id": 2,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 1,
+          "day": 4
+        }
+      ],
+      "completed": [
+        {
+          "id": "early",
+          "day": 3,
+          "units": [
+            "1:1",
+            "1:2"
+          ]
+        },
+        {
+          "id": "later",
+          "day": 4,
+          "units": [
+            "2:1",
+            "2:2",
+            "2:3"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 4,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "bean"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "early"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "deliver",
+          "order": "later"
+        }
+      ],
+      "unlocked": 5,
+      "best": {
+        "score": 1443,
+        "day": 4,
+        "cash": 18,
+        "actions": 9
+      }
+    },
+    {
+      "state": "won",
+      "day": 5,
+      "actions": 2,
+      "cash": 22,
+      "score": 1460,
+      "stats": {
+        "actions": 10,
+        "plants": 2,
+        "waterings": 5,
+        "harvests": 2,
+        "produced": 4,
+        "delivered": 4,
+        "orders": 1,
+        "daysEnded": 4,
+        "growth": 6,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 6,
+        "income": 18
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "gold"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "gold"
+        },
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "gold"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "gold"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "melon",
+          "plot": 0,
+          "day": 1,
+          "cost": 4
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "plot": 1,
+          "day": 1,
+          "cost": 2
+        }
+      ],
+      "batches": [
+        {
+          "id": 2,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 1,
+          "day": 3
+        },
+        {
+          "id": 1,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 0,
+          "day": 5
+        }
+      ],
+      "completed": [
+        {
+          "id": "gold",
+          "day": 5,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 5,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "melon"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "radish"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "gold"
+        }
+      ],
+      "unlocked": 6,
+      "best": {
+        "score": 1460,
+        "day": 5,
+        "cash": 22,
+        "actions": 10
+      }
+    },
+    {
+      "state": "won",
+      "day": 5,
+      "actions": 1,
+      "cash": 24,
+      "score": 1530,
+      "stats": {
+        "actions": 10,
+        "plants": 2,
+        "waterings": 4,
+        "harvests": 2,
+        "produced": 5,
+        "delivered": 5,
+        "orders": 2,
+        "daysEnded": 4,
+        "growth": 7,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 7,
+        "income": 23
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "green"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "green"
+        },
+        {
+          "id": "1:3",
+          "batch": 1,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "green"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "gold"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "gold"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "bean",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "melon",
+          "plot": 1,
+          "day": 1,
+          "cost": 4
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 0,
+          "day": 4
+        },
+        {
+          "id": 2,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 1,
+          "day": 5
+        }
+      ],
+      "completed": [
+        {
+          "id": "green",
+          "day": 4,
+          "units": [
+            "1:1",
+            "1:2",
+            "1:3"
+          ]
+        },
+        {
+          "id": "gold",
+          "day": 5,
+          "units": [
+            "2:1",
+            "2:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 6,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "bean"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "melon"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "green"
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "deliver",
+          "order": "gold"
+        }
+      ],
+      "unlocked": 7,
+      "best": {
+        "score": 1530,
+        "day": 5,
+        "cash": 24,
+        "actions": 10
+      }
+    },
+    {
+      "state": "won",
+      "day": 7,
+      "actions": 2,
+      "cash": 39,
+      "score": 1688,
+      "stats": {
+        "actions": 19,
+        "plants": 5,
+        "waterings": 7,
+        "harvests": 5,
+        "produced": 11,
+        "delivered": 11,
+        "orders": 2,
+        "daysEnded": 6,
+        "growth": 13,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 13,
+        "income": 41
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "3:1",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "3:2",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "market"
+        },
+        {
+          "id": "4:1",
+          "batch": 4,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "soup"
+        },
+        {
+          "id": "4:2",
+          "batch": 4,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "soup"
+        },
+        {
+          "id": "5:1",
+          "batch": 5,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "soup"
+        },
+        {
+          "id": "5:2",
+          "batch": 5,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "soup"
+        },
+        {
+          "id": "5:3",
+          "batch": 5,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "soup"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "plot": 0,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "plot": 1,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "plot": 2,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 4,
+          "crop": "melon",
+          "plot": 3,
+          "day": 1,
+          "cost": 4
+        },
+        {
+          "id": 5,
+          "crop": "bean",
+          "plot": 0,
+          "day": 4,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 0,
+          "day": 3
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 1,
+          "day": 3
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 2,
+          "day": 3
+        },
+        {
+          "id": 4,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 3,
+          "day": 5
+        },
+        {
+          "id": 5,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 0,
+          "day": 7
+        }
+      ],
+      "completed": [
+        {
+          "id": "market",
+          "day": 3,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2",
+            "3:1",
+            "3:2"
+          ]
+        },
+        {
+          "id": "soup",
+          "day": 7,
+          "units": [
+            "5:1",
+            "5:2",
+            "5:3",
+            "4:1",
+            "4:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 7,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 2,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 3,
+          "crop": "melon"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 2
+        },
+        {
+          "kind": "water",
+          "plot": 3
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "harvest",
+          "plot": 2
+        },
+        {
+          "kind": "deliver",
+          "order": "market"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "bean"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 3
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 3
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "soup"
+        }
+      ],
+      "unlocked": 8,
+      "best": {
+        "score": 1688,
+        "day": 7,
+        "cash": 39,
+        "actions": 19
+      }
+    },
+    {
+      "state": "won",
+      "day": 8,
+      "actions": 1,
+      "cash": 38,
+      "score": 1682,
+      "stats": {
+        "actions": 16,
+        "plants": 5,
+        "waterings": 3,
+        "harvests": 5,
+        "produced": 11,
+        "delivered": 11,
+        "orders": 3,
+        "daysEnded": 7,
+        "growth": 13,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 13,
+        "income": 42
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "first"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "first"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "first"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "first"
+        },
+        {
+          "id": "3:1",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "second"
+        },
+        {
+          "id": "3:2",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "second"
+        },
+        {
+          "id": "4:1",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "third"
+        },
+        {
+          "id": "4:2",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "third"
+        },
+        {
+          "id": "4:3",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "third"
+        },
+        {
+          "id": "5:1",
+          "batch": 5,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "second"
+        },
+        {
+          "id": "5:2",
+          "batch": 5,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "second"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "plot": 0,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "plot": 1,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "plot": 2,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "plot": 3,
+          "day": 2,
+          "cost": 3
+        },
+        {
+          "id": 5,
+          "crop": "melon",
+          "plot": 0,
+          "day": 4,
+          "cost": 4
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 0,
+          "day": 3
+        },
+        {
+          "id": 2,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 1,
+          "day": 3
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 2,
+          "day": 4
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 3,
+          "day": 5
+        },
+        {
+          "id": 5,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 0,
+          "day": 8
+        }
+      ],
+      "completed": [
+        {
+          "id": "first",
+          "day": 3,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2"
+          ]
+        },
+        {
+          "id": "third",
+          "day": 6,
+          "units": [
+            "4:1",
+            "4:2",
+            "4:3"
+          ]
+        },
+        {
+          "id": "second",
+          "day": 8,
+          "units": [
+            "3:1",
+            "3:2",
+            "5:1",
+            "5:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 8,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 2,
+          "crop": "radish"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "plant",
+          "plot": 3,
+          "crop": "bean"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "deliver",
+          "order": "first"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 2
+        },
+        {
+          "kind": "water",
+          "plot": 3
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "melon"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 3
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "deliver",
+          "order": "third"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "second"
+        }
+      ],
+      "unlocked": 9,
+      "best": {
+        "score": 1682,
+        "day": 8,
+        "cash": 38,
+        "actions": 16
+      }
+    },
+    {
+      "state": "won",
+      "day": 4,
+      "actions": 0,
+      "cash": 20,
+      "score": 1476,
+      "stats": {
+        "actions": 8,
+        "plants": 2,
+        "waterings": 3,
+        "harvests": 2,
+        "produced": 4,
+        "delivered": 4,
+        "orders": 1,
+        "daysEnded": 3,
+        "growth": 6,
+        "dryWaits": 0,
+        "coldWaits": 0,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 6,
+        "income": 18
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "wheat"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "wheat"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "wheat"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "wheat"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "plot": 1,
+          "day": 1,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 0,
+          "day": 4
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 1,
+          "day": 4
+        }
+      ],
+      "completed": [
+        {
+          "id": "wheat",
+          "day": 4,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 9,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "grain"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "deliver",
+          "order": "wheat"
+        }
+      ],
+      "unlocked": 10,
+      "best": {
+        "score": 1476,
+        "day": 4,
+        "cash": 20,
+        "actions": 8
+      }
+    },
+    {
+      "state": "won",
+      "day": 5,
+      "actions": 2,
+      "cash": 35,
+      "score": 1723,
+      "stats": {
+        "actions": 14,
+        "plants": 4,
+        "waterings": 4,
+        "harvests": 4,
+        "produced": 9,
+        "delivered": 9,
+        "orders": 2,
+        "daysEnded": 4,
+        "growth": 11,
+        "dryWaits": 0,
+        "coldWaits": 2,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 11,
+        "income": 34
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "3:1",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "3:2",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "autumn"
+        },
+        {
+          "id": "4:1",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        },
+        {
+          "id": "4:2",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        },
+        {
+          "id": "4:3",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "beans"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "plot": 1,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "plot": 2,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "plot": 3,
+          "day": 1,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 0,
+          "day": 4
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 1,
+          "day": 4
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 2,
+          "day": 4
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 3,
+          "day": 5
+        }
+      ],
+      "completed": [
+        {
+          "id": "autumn",
+          "day": 4,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2",
+            "3:1",
+            "3:2"
+          ]
+        },
+        {
+          "id": "beans",
+          "day": 5,
+          "units": [
+            "4:1",
+            "4:2",
+            "4:3"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 10,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 2,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 3,
+          "crop": "bean"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 2
+        },
+        {
+          "kind": "water",
+          "plot": 3
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "harvest",
+          "plot": 2
+        },
+        {
+          "kind": "deliver",
+          "order": "autumn"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 3
+        },
+        {
+          "kind": "deliver",
+          "order": "beans"
+        }
+      ],
+      "unlocked": 11,
+      "best": {
+        "score": 1723,
+        "day": 5,
+        "cash": 35,
+        "actions": 14
+      }
+    },
+    {
+      "state": "won",
+      "day": 10,
+      "actions": 1,
+      "cash": 42,
+      "score": 1687,
+      "stats": {
+        "actions": 21,
+        "plants": 5,
+        "waterings": 9,
+        "harvests": 5,
+        "produced": 11,
+        "delivered": 11,
+        "orders": 2,
+        "daysEnded": 9,
+        "growth": 15,
+        "dryWaits": 0,
+        "coldWaits": 6,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 15,
+        "income": 47
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "morning"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "morning"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "morning"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "morning"
+        },
+        {
+          "id": "3:1",
+          "batch": 3,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "3:2",
+          "batch": 3,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "5:1",
+          "batch": 5,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "5:2",
+          "batch": 5,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "4:1",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "4:2",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "evening"
+        },
+        {
+          "id": "4:3",
+          "batch": 4,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "evening"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "plot": 1,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 3,
+          "crop": "melon",
+          "plot": 2,
+          "day": 1,
+          "cost": 4
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "plot": 0,
+          "day": 5,
+          "cost": 3
+        },
+        {
+          "id": 5,
+          "crop": "radish",
+          "plot": 1,
+          "day": 5,
+          "cost": 2
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 0,
+          "day": 4
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 1,
+          "day": 4
+        },
+        {
+          "id": 3,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 2,
+          "day": 7
+        },
+        {
+          "id": 5,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 1,
+          "day": 9
+        },
+        {
+          "id": 4,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 0,
+          "day": 10
+        }
+      ],
+      "completed": [
+        {
+          "id": "morning",
+          "day": 4,
+          "units": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:2"
+          ]
+        },
+        {
+          "id": "evening",
+          "day": 10,
+          "units": [
+            "5:1",
+            "5:2",
+            "4:1",
+            "4:2",
+            "4:3",
+            "3:1",
+            "3:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 11,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 2,
+          "crop": "melon"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 2
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "deliver",
+          "order": "morning"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "bean"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "radish"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 2
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 2
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "evening"
+        }
+      ],
+      "unlocked": 12,
+      "best": {
+        "score": 1687,
+        "day": 10,
+        "cash": 42,
+        "actions": 21
+      }
+    },
+    {
+      "state": "won",
+      "day": 10,
+      "actions": 2,
+      "cash": 53,
+      "score": 1883,
+      "stats": {
+        "actions": 24,
+        "plants": 7,
+        "waterings": 8,
+        "harvests": 7,
+        "produced": 15,
+        "delivered": 15,
+        "orders": 2,
+        "daysEnded": 9,
+        "growth": 19,
+        "dryWaits": 0,
+        "coldWaits": 5,
+        "settlements": 1
+      },
+      "ledger": {
+        "seeds": 19,
+        "income": 59
+      },
+      "plots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "units": [
+        {
+          "id": "1:1",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "1:2",
+          "batch": 1,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "2:1",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "2:2",
+          "batch": 2,
+          "crop": "grain",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "3:1",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "3:2",
+          "batch": 3,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "4:1",
+          "batch": 4,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "4:2",
+          "batch": 4,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "early"
+        },
+        {
+          "id": "5:1",
+          "batch": 5,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "5:2",
+          "batch": 5,
+          "crop": "radish",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "7:1",
+          "batch": 7,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "7:2",
+          "batch": 7,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "7:3",
+          "batch": 7,
+          "crop": "bean",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "6:1",
+          "batch": 6,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "feast"
+        },
+        {
+          "id": "6:2",
+          "batch": 6,
+          "crop": "melon",
+          "place": "delivered",
+          "order": "feast"
+        }
+      ],
+      "plantings": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "plot": 0,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "plot": 1,
+          "day": 1,
+          "cost": 3
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "plot": 2,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 4,
+          "crop": "radish",
+          "plot": 3,
+          "day": 1,
+          "cost": 2
+        },
+        {
+          "id": 5,
+          "crop": "radish",
+          "plot": 4,
+          "day": 2,
+          "cost": 2
+        },
+        {
+          "id": 6,
+          "crop": "melon",
+          "plot": 0,
+          "day": 5,
+          "cost": 4
+        },
+        {
+          "id": 7,
+          "crop": "bean",
+          "plot": 1,
+          "day": 5,
+          "cost": 3
+        }
+      ],
+      "batches": [
+        {
+          "id": 1,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 0,
+          "day": 4
+        },
+        {
+          "id": 2,
+          "crop": "grain",
+          "yield": 2,
+          "plot": 1,
+          "day": 4
+        },
+        {
+          "id": 3,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 2,
+          "day": 4
+        },
+        {
+          "id": 4,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 3,
+          "day": 4
+        },
+        {
+          "id": 5,
+          "crop": "radish",
+          "yield": 2,
+          "plot": 4,
+          "day": 5
+        },
+        {
+          "id": 7,
+          "crop": "bean",
+          "yield": 3,
+          "plot": 1,
+          "day": 9
+        },
+        {
+          "id": 6,
+          "crop": "melon",
+          "yield": 2,
+          "plot": 0,
+          "day": 10
+        }
+      ],
+      "completed": [
+        {
+          "id": "early",
+          "day": 5,
+          "units": [
+            "3:1",
+            "3:2",
+            "4:1",
+            "4:2",
+            "1:1",
+            "1:2"
+          ]
+        },
+        {
+          "id": "feast",
+          "day": 10,
+          "units": [
+            "5:1",
+            "5:2",
+            "7:1",
+            "7:2",
+            "7:3",
+            "6:1",
+            "6:2",
+            "2:1",
+            "2:2"
+          ]
+        }
+      ],
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "seedLedger": true,
+        "actionLedger": true,
+        "uniqueHarvest": true,
+        "allProduced": true,
+        "uniqueUnits": true,
+        "orderConservation": true,
+        "uniqueOrders": true,
+        "growthBounds": true,
+        "singleSettlement": true
+      },
+      "stage": 12,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "grain"
+        },
+        {
+          "kind": "plant",
+          "plot": 2,
+          "crop": "radish"
+        },
+        {
+          "kind": "plant",
+          "plot": 3,
+          "crop": "radish"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "plant",
+          "plot": 4,
+          "crop": "radish"
+        },
+        {
+          "kind": "water",
+          "plot": 2
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "harvest",
+          "plot": 2
+        },
+        {
+          "kind": "harvest",
+          "plot": 3
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "deliver",
+          "order": "early"
+        },
+        {
+          "kind": "harvest",
+          "plot": 4
+        },
+        {
+          "kind": "plant",
+          "plot": 0,
+          "crop": "melon"
+        },
+        {
+          "kind": "plant",
+          "plot": 1,
+          "crop": "bean"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "water",
+          "plot": 1
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 1
+        },
+        {
+          "kind": "water",
+          "plot": 0
+        },
+        {
+          "kind": "end"
+        },
+        {
+          "kind": "harvest",
+          "plot": 0
+        },
+        {
+          "kind": "deliver",
+          "order": "feast"
+        }
+      ],
+      "unlocked": 12,
+      "best": {
+        "score": 1883,
+        "day": 10,
+        "cash": 53,
+        "actions": 24
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}

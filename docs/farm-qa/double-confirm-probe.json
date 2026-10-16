@@ -1,0 +1,274 @@
+{
+  "before": {
+    "level": 1,
+    "state": "playing",
+    "day": 1,
+    "actions": 3,
+    "cash": 6,
+    "plots": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "nextPlant": 1,
+    "plantings": [],
+    "batches": [],
+    "units": [],
+    "completed": [],
+    "ledger": {
+      "seeds": 0,
+      "income": 0
+    },
+    "revision": 1,
+    "log": [
+      {
+        "kind": "start"
+      }
+    ],
+    "reason": null,
+    "stats": {
+      "actions": 0,
+      "plants": 0,
+      "waterings": 0,
+      "harvests": 0,
+      "produced": 0,
+      "delivered": 0,
+      "orders": 0,
+      "daysEnded": 0,
+      "growth": 0,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 0
+    },
+    "inventory": {
+      "radish": 0,
+      "bean": 0,
+      "melon": 0,
+      "grain": 0
+    },
+    "invariants": {
+      "cashMatches": true,
+      "nonnegative": true,
+      "seedLedger": true,
+      "actionLedger": true,
+      "uniqueHarvest": true,
+      "allProduced": true,
+      "uniqueUnits": true,
+      "orderConservation": true,
+      "uniqueOrders": true,
+      "growthBounds": true,
+      "singleSettlement": true
+    },
+    "score": 290,
+    "remaining": 1,
+    "unlocked": 1,
+    "best": {},
+    "selected": 0,
+    "crop": "radish",
+    "pendingProposal": null,
+    "dialogs": {
+      "help": false,
+      "levels": false,
+      "confirm": false
+    },
+    "storageAvailable": true
+  },
+  "afterDouble": {
+    "level": 1,
+    "state": "playing",
+    "day": 1,
+    "actions": 2,
+    "cash": 4,
+    "plots": [
+      {
+        "id": 1,
+        "crop": "radish",
+        "age": 0,
+        "moisture": 1,
+        "plantedDay": 1
+      },
+      null,
+      null,
+      null
+    ],
+    "nextPlant": 2,
+    "plantings": [
+      {
+        "id": 1,
+        "crop": "radish",
+        "plot": 0,
+        "day": 1,
+        "cost": 2
+      }
+    ],
+    "batches": [],
+    "units": [],
+    "completed": [],
+    "ledger": {
+      "seeds": 2,
+      "income": 0
+    },
+    "revision": 2,
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      }
+    ],
+    "reason": null,
+    "stats": {
+      "actions": 1,
+      "plants": 1,
+      "waterings": 0,
+      "harvests": 0,
+      "produced": 0,
+      "delivered": 0,
+      "orders": 0,
+      "daysEnded": 0,
+      "growth": 0,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 0
+    },
+    "inventory": {
+      "radish": 0,
+      "bean": 0,
+      "melon": 0,
+      "grain": 0
+    },
+    "invariants": {
+      "cashMatches": true,
+      "nonnegative": true,
+      "seedLedger": true,
+      "actionLedger": true,
+      "uniqueHarvest": true,
+      "allProduced": true,
+      "uniqueUnits": true,
+      "orderConservation": true,
+      "uniqueOrders": true,
+      "growthBounds": true,
+      "singleSettlement": true
+    },
+    "score": 257,
+    "remaining": 1,
+    "unlocked": 1,
+    "best": {},
+    "selected": 1,
+    "crop": "radish",
+    "pendingProposal": null,
+    "dialogs": {
+      "help": false,
+      "levels": false,
+      "confirm": false
+    },
+    "storageAvailable": true
+  },
+  "messageDouble": "第1块播种绯萝，种子费已入账。",
+  "afterOccupied": {
+    "level": 1,
+    "state": "playing",
+    "day": 1,
+    "actions": 2,
+    "cash": 4,
+    "plots": [
+      {
+        "id": 1,
+        "crop": "radish",
+        "age": 0,
+        "moisture": 1,
+        "plantedDay": 1
+      },
+      null,
+      null,
+      null
+    ],
+    "nextPlant": 2,
+    "plantings": [
+      {
+        "id": 1,
+        "crop": "radish",
+        "plot": 0,
+        "day": 1,
+        "cost": 2
+      }
+    ],
+    "batches": [],
+    "units": [],
+    "completed": [],
+    "ledger": {
+      "seeds": 2,
+      "income": 0
+    },
+    "revision": 2,
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      }
+    ],
+    "reason": null,
+    "stats": {
+      "actions": 1,
+      "plants": 1,
+      "waterings": 0,
+      "harvests": 0,
+      "produced": 0,
+      "delivered": 0,
+      "orders": 0,
+      "daysEnded": 0,
+      "growth": 0,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 0
+    },
+    "inventory": {
+      "radish": 0,
+      "bean": 0,
+      "melon": 0,
+      "grain": 0
+    },
+    "invariants": {
+      "cashMatches": true,
+      "nonnegative": true,
+      "seedLedger": true,
+      "actionLedger": true,
+      "uniqueHarvest": true,
+      "allProduced": true,
+      "uniqueUnits": true,
+      "orderConservation": true,
+      "uniqueOrders": true,
+      "growthBounds": true,
+      "singleSettlement": true
+    },
+    "score": 257,
+    "remaining": 1,
+    "unlocked": 1,
+    "best": {},
+    "selected": 1,
+    "crop": "radish",
+    "pendingProposal": {
+      "command": {
+        "kind": "plant",
+        "plot": 1,
+        "crop": "radish"
+      },
+      "revision": 2
+    },
+    "dialogs": {
+      "help": false,
+      "levels": false,
+      "confirm": true
+    },
+    "storageAvailable": true
+  },
+  "messageOccupied": "第1块播种绯萝，种子费已入账。"
+}
