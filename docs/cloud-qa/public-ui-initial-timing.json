@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-16T08:08:07.368777+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/cloud/",
+  "step": "first-visit automatic fire",
+  "initialAssertion": "two player shots and initial hp 3 after a fixed 180 ms wall-time wait",
+  "outcome": "assertion failed during concurrent browser startup; initial snapshot was not retained, so no individual subcondition is claimed",
+  "resolution": "replace fixed short wait with an observation-only condition wait for two normal auto-fired shots, up to 5 seconds; then assert hp 3; rerun the complete public UI suite",
+  "runtimeChange": false
+}

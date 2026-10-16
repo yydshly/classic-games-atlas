@@ -45,7 +45,32 @@ Chromium 通过正常鼠标移动完成全部八关，读取只读 `diagnostics(
 
 初次界面测试所有功能断言通过，但测试在模块尚未加载完时跳转，产生一次 `ERR_ABORTED`；记录保留在 [initial-navigation-abort](cloud-qa/local-ui-initial-navigation-abort.json)。补齐测试加载等待后完整重跑，控制台、HTTP 错误及请求失败全部为零，游戏运行代码未因此修改。
 
-72 条图鉴的搜索、10 组/类型交集筛选、空结果、全部详情、键盘、直达链接及六种宽度回归通过，见 [local-atlas/browser-report.json](cloud-qa/local-atlas/browser-report.json)。公开部署证据将在上线验证后追加。
+72 条图鉴的搜索、10 组/类型交集筛选、空结果、全部详情、键盘、直达链接及六种宽度回归通过，见 [local-atlas/browser-report.json](cloud-qa/local-atlas/browser-report.json)。公开部署结果如下。
+
+## 公开网站与提交
+
+- 网站：[云隙巡航](https://yydshly.github.io/classic-games-atlas/games/cloud/)；[图鉴](https://yydshly.github.io/classic-games-atlas/)。
+- 独立代码提交：`1d735d80542e1ff733aa8ce4ed289d48093dbce8`。
+- [Pages 代码部署成功](https://github.com/yydshly/classic-games-atlas/actions/runs/38871403259)，精确 headSha 与任务成功状态见 [部署元数据](cloud-qa/pages-code-deployment.json)。
+- [70 文件核验](cloud-qa/code-deployment-integrity.json)：公开 URL 均 HTTP 200，SHA-256 与代码提交逐一匹配，包含首页、数据、封面和全部九款运行文件。
+- 前八款运行目录与上一部署 `848d899faa7881dbb53a6cca4e2fe347426206d3` 完全一致；只增加第九款与图鉴关联/计数。
+
+公开地址的八关均通过正常鼠标操作通关、取得火力 III，并逐一验证实际存档、解锁与刷新整备。全部关卡三种弹型实际发射；终局机体 3、受伤 0、风幕消耗 0（有限风幕与受伤另由界面及边界测试覆盖）。这里记录自动化观察与输入，不宣称人工全通。
+
+| 关 | 公开地址实际战斗秒 | 终局机体 | 自动鼠标动作数 |
+|---|---:|---:|---:|
+| 1 | 21.28 | 3 | 125 |
+| 2 | 22.97 | 3 | 125 |
+| 3 | 24.49 | 3 | 118 |
+| 4 | 30.72 | 3 | 129 |
+| 5 | 24.64 | 3 | 145 |
+| 6 | 25.48 | 3 | 131 |
+| 7 | 31.24 | 3 | 147 |
+| 8 | 27.02 | 3 | 161 |
+
+完整报告：[公开 1/4/7](cloud-qa/public-1-4-7/report.json)、[公开 2/5/8](cloud-qa/public-2-5-8/report.json)、[公开 3/6](cloud-qa/public-3-6/report.json)、[汇总](cloud-qa/public-summary.json)。首/中/末关另有实际精英在场、升级及结算截图。八关与公开图鉴回归均无控制台错误、HTTP 错误或失败请求；图鉴报告见 [public-atlas](cloud-qa/public-atlas/browser-report.json)。
+
+公开界面脚本首轮在启动并发浏览器时，固定 180 毫秒等待后的自动开火断言失败；初始状态快照未保留，故不声称已确定哪个子条件失败。改用读取正常开火状态的条件等待，未修改游戏运行文件，完整公开界面重跑全部 19 项通过，控制台错误、HTTP 错误及失败请求均为零，见 [public-ui/report.json](cloud-qa/public-ui/report.json)。公开网站实际正常停留在 48.62 秒累积 5 次受伤、拾取 2 次修复后归零失败，点击重试恢复三格机体、火力 I 和两次风幕；双指拖动与第二指风幕不打断主指，也不滚动页面。[首轮记录](cloud-qa/public-ui-initial-timing.json)。
 
 复现使用现有 Node、Python、Playwright 与 Chromium，不自动安装软件：
 
