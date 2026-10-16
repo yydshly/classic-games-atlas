@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.16.12",
+  "version": "2026.10.16.13",
   "experiments": [
     {
       "id": "fortress",
@@ -156,6 +156,19 @@
       "levels": 20,
       "description": "把相同的花，寄往同一封信。二十页原创花笺，沿纸边绕行，在石印、留白与归拢中读出下一笔。",
       "relation": "本项目原创两折连线配对解谜，参考连连看机制，不复制既有游戏图案、关卡或音画。"
+    },
+    {
+      "id": "sand",
+      "number": "13",
+      "title": "星砂勘探",
+      "english": "STARDUST SURVEY",
+      "sourceGame": "minesweeper",
+      "status": "published",
+      "url": "./games/sand/",
+      "cover": "./assets/sand-cover.svg",
+      "levels": 20,
+      "description": "每一粒微光，都有可知的方向。二十张原创固定星图，从安全观测点开始，用数字、旗标和集合关系读懂整片星砂。",
+      "relation": "本项目原创固定逻辑排雷战役，参考扫雷机制，不复制既有游戏地图、美术、界面或声音。"
     }
   ],
   "groups": [
@@ -905,7 +918,20 @@
       "edition": "以经典 Windows 玩法为代表；现代版本可能加入额外模式。",
       "sources": [
         "mines"
-      ]
+      ],
+      "experiment": {
+        "id": "sand",
+        "number": "13",
+        "title": "星砂勘探",
+        "english": "STARDUST SURVEY",
+        "sourceGame": "minesweeper",
+        "status": "published",
+        "url": "./games/sand/",
+        "cover": "./assets/sand-cover.svg",
+        "levels": 20,
+        "description": "每一粒微光，都有可知的方向。二十张原创固定星图，从安全观测点开始，用数字、旗标和集合关系读懂整片星砂。",
+        "relation": "本项目原创固定逻辑排雷战役，参考扫雷机制，不复制既有游戏地图、美术、界面或声音。"
+      }
     },
     {
       "id": "snake",
