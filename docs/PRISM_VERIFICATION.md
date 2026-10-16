@@ -34,6 +34,15 @@
 
 ## 部署与覆盖边界
 
-本地验收已完成，待独立提交并确认 Pages 成功后补入真实线上流程与文件版本证据。本地预览不作为已上线证明。
+第四款独立代码提交：`4cbcc65feb0b53f4213f2f270e8d661e2528586a`。[Pages 成功工作流](https://github.com/yydshly/classic-games-atlas/actions/runs/38855736589)，构建状态 `built`，2026-10-16 05:26:15 UTC 完成。
+
+- 真实网站：[光轨砖阵](https://yydshly.github.io/classic-games-atlas/games/prism/)，[图鉴主页](https://yydshly.github.io/classic-games-atlas/)。
+- 线上正常输入：[第 1 关](prism-qa/online-1/report.json)20/20、54.78 秒；[第 6 关](prism-qa/online-6/report.json)30/30、40.75 秒；[第 12 关](prism-qa/online-12/report.json)52/52、105.07 秒，全部保留三条生命。观测帧率约 58–60 FPS。首关自然解锁第二关并重载保存，后两关只有菜单解锁夹具。
+- [线上道具观测](prism-qa/online-powers.json)保存实际模块、球数和挡板宽度变化，不使用测试接口授予道具。
+- [线上界面/触屏](prism-qa/online-ui/report.json)全部通过：真实拖动不滚页、短点按、发球与暂停、三次失球失败与重试、教学、声音与受限存储回退、五种宽度、四个入口和原作关联。无控制台错误、请求失败或资源 4xx/5xx。
+- [线上 72 条图鉴回归](prism-qa/online-atlas/browser-report.json)通过全部详情、搜索/筛选/空结果、键盘、深链与六种宽度。
+- [35 个发布文件](prism-qa/online-integrity.json)均 HTTP 200，逐文件 SHA-256 与第四款代码提交完全一致。
+
+星泡补验提交的完整 SHA 为 `7520b877eb4994cdd811dd6b7cb92952f5c0d6e4`，[对应 Pages 成功记录](https://github.com/yydshly/classic-games-atlas/actions/runs/38854650543)。本次补充线上证据提交仅更新报告与文档，不修改已验收的运行代码。
 
 真实浏览器实玩覆盖第 1/6/12 关，其余九关为地图结构、永久障碍可达性和生产规则模拟证据。移动检查使用 Chromium 触屏视口，尚未覆盖实体手机、Safari、Firefox、屏幕阅读器与真实用户难度评估。自动切页暂停在无头环境未实测；键盘暂停和帮助恢复已验证。
