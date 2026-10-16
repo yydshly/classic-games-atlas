@@ -514,6 +514,7 @@ node scripts/test_harbor.mjs
 python scripts/test_harbor_browser.py
 python scripts/test_harbor_ui.py
 node scripts/test_harbor_replay.mjs docs/harbor-qa/public-browser/report.json .local/harbor-replay.json
+python scripts/test_harbor_release.py
 ```
 
 云港、船、货物、网络地图、图形与声音原创，不复制Transport Tycoon原作资源。玩法简化为固定候选网络、离散回合和整程承运；保留前二十一款及72条图鉴，不承诺完整运输模拟复刻。
