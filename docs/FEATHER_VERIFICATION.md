@@ -15,7 +15,29 @@
 
 ## 公开部署
 
-接下来核对main推送、Pages对应提交、真实公网8章和边界交互、全部234文件内容。尚未把本地预览称为上线，公开结果完成后补录于此。
+真实网站：[星羽同伴](https://yydshly.github.io/classic-games-atlas/games/feather/)；[仓库](https://github.com/yydshly/classic-games-atlas)，main根目录GitHub Pages、HTTPS，使用现有yydshly登录和GitHub noreply署名。
+
+公开验收对应功能提交 `5ec13fe44a2180562ef0395b15becf17787e24f2`，[Pages成功构建38982705893](https://github.com/yydshly/classic-games-atlas/actions/runs/38982705893)，[部署元数据](feather-qa/feature-deployment.json)。
+
+- [公网真实8章](feather-qa/public-browser/report.json)正常资源、自然下一章/解锁全部胜利：93次选择、85次我方行动；14不变量每次成立，终章实际裂壳和三目标群体招式。没有战斗值或胜利写入；[公网实际输入18字段精确重放](feather-qa/public-replay.json)。
+- [公网27组UI](feather-qa/public-ui/report.json)全部通过，包括普通倒下/有限复起、道具耗尽、实际弱化净化与存档、重试、锁章、预览确认取消、重复Enter、键盘与原生触屏整章、6种宽度。解锁元数据边界夹具与自然完整战役明确分开。
+- [公网直接刷新](feather-qa/public-refresh.json)：4条实际事件/技能/物品确认后直接刷新，18字段与独立生产引擎重放一致，能量补给消耗/护盾/敌方状态/顺序/日志保留，恢复后继续获胜。
+- [公网发布回归](feather-qa/public-release.json)：32入口均200；前作苔原远征首关正常资源胜利，营地130体力；新作护盾/物品恢复后891分、原生触屏首章933分。原有[72项图鉴公网验收](feather-qa/public-atlas.json)通过搜索、筛选、全部详情、空结果、键盘、直达链接和6种宽度。
+- [234个运行文件](feather-qa/public-integrity.json)全部HTTP200，SHA-256逐一匹配功能提交，网络事件数量：0。上述浏览器报告均0控制台错误、0请求失败、0HTTP4xx/5xx资源。
+
+| 章节 | 轮次 | 我方行动 | 分数 |
+|---|---:|---:|---:|
+| 1 | 2 | 5 | 933 |
+| 2 | 2 | 6 | 913 |
+| 3 | 2 | 5 | 919 |
+| 4 | 4 | 11 | 862 |
+| 5 | 2 | 5 | 910 |
+| 6 | 5 | 15 | 776 |
+| 7 | 5 | 13 | 807 |
+| 8 | 9 | 25 | 638 |
+
+本次最终证据补录只改文档和验收产物，不改234运行文件。交付时另核对最新main=远端=最终Pages构建提交，并再次核对最终234文件、README/范围/验收/刷新脚本线上内容，重新读取32入口、前作首关、新作恢复和原生触屏首章。最终完整SHA和最新构建链接随交付提供。
+
 
 ## 范围与限制
 
