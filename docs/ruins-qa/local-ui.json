@@ -1,0 +1,1090 @@
+{
+  "testedAt": "2026-10-16T19:05:10.240274+00:00",
+  "url": "http://127.0.0.1:4174/games/ruins/",
+  "checks": [
+    "First tutorial is modal; wall time never starts enemies or damages the hero",
+    "Eight-map initial lock and native Escape work without a hidden action",
+    "A held movement key advances once; a separate wall attempt turns/spends one beat without crossing",
+    "Full-health medicine and out-of-range interaction cannot consume supplies or beats",
+    "Held sweep produces one attack, two separate recovery beats restore the real cooldown",
+    "Dodge preparation costs nothing; its next direction moves at most two cells and grants finite protection",
+    "Pause freezes all seventeen model fields and blocks attack/wait, then resumes unchanged",
+    "A real adjacent canvas mouse click moves exactly one legal cell",
+    "A real closed key door explains its condition and never consumes a missing key or action",
+    "Refresh during an actual enemy windup restores every field/intent/cooldown and stays paused, then the ordinary route wins",
+    "Normal exploration visits all three rooms, spends one real key, lights both lamps and settles/unlocks once",
+    "320px result panel and primary control remain readable and pass actual hit testing",
+    "Retry starts formal resources and world state while preserving a genuinely earned best",
+    "Standing in genuine prewarned attacks causes injury; a real H heals two and full health cannot spend a second potion",
+    "Both finite potions are actually consumed; injured empty-supply healing is disabled with no duplicated recovery",
+    "Natural zero-health death settles once, keeps best and offers a real formal-resource retry",
+    "A real nearby enemy canvas click executes a normal sweep and records actual hit feedback",
+    "Handbook pauses/resumes the prior mode and explicit blur pauses immediately",
+    "Original synthesized-audio preference survives refresh",
+    "Canvas, map, controls, warnings and native map dialog fit six widths from320 to1440",
+    "Malformed storage returns to safe formal defaults",
+    "Illegal replay and forged top-level health/keys never become production resources",
+    "Complete native touch combat, key-door exploration, lamps and exit win through ordinary controls",
+    "Denied storage still supports an entire ordinary-resource adventure win"
+  ],
+  "fixture": "Only menu/tutorial/sound and malformed/denied-storage or rejected forged-resume fixtures. Every successful health/key/potion/enemy/room change uses normal controls. Blur is explicitly simulated.",
+  "restore": {
+    "exactFields": [
+      "beat",
+      "room",
+      "hero",
+      "keys",
+      "potions",
+      "collected",
+      "lamps",
+      "opened",
+      "defeated",
+      "visited",
+      "rooms",
+      "strikes",
+      "lastAttack",
+      "lastDamage",
+      "revision",
+      "log",
+      "stats"
+    ],
+    "beat": 21,
+    "room": "B",
+    "enemyStates": {
+      "A": {
+        "enemies": []
+      },
+      "B": {
+        "enemies": [
+          {
+            "id": "b1",
+            "type": "moss",
+            "x": 5,
+            "y": 3,
+            "hp": 1,
+            "phase": "windup",
+            "timer": 2,
+            "intent": [
+              {
+                "x": 4,
+                "y": 3
+              }
+            ]
+          }
+        ]
+      },
+      "C": {
+        "enemies": [
+          {
+            "id": "c1",
+            "type": "moss",
+            "x": 6,
+            "y": 4,
+            "hp": 2,
+            "phase": "idle",
+            "timer": 0,
+            "intent": []
+          }
+        ]
+      }
+    }
+  },
+  "restoreAndWin": {
+    "state": "won",
+    "beat": 48,
+    "hero": {
+      "x": 6,
+      "y": 3,
+      "face": "down",
+      "hp": 6,
+      "invuln": 0,
+      "attackCd": 0,
+      "dodgeCd": 0
+    },
+    "keys": 0,
+    "potions": 2,
+    "lamps": [
+      "B",
+      "C"
+    ],
+    "opened": [
+      "AC"
+    ],
+    "visited": [
+      "A",
+      "B",
+      "C"
+    ],
+    "stats": {
+      "moves": 38,
+      "blockedMoves": 0,
+      "attacks": 4,
+      "hits": 4,
+      "kills": 2,
+      "dodges": 2,
+      "heals": 0,
+      "healed": 0,
+      "damage": 0,
+      "hitsTaken": 0,
+      "blockedHits": 0,
+      "keysSpent": 1,
+      "transitions": 3,
+      "interactions": 4,
+      "waits": 1,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "interact"
+      }
+    ]
+  },
+  "finiteRecovery": {
+    "hero": {
+      "x": 4,
+      "y": 3,
+      "face": "right",
+      "hp": 1,
+      "invuln": 2,
+      "attackCd": 0,
+      "dodgeCd": 0
+    },
+    "potions": 0,
+    "stats": {
+      "moves": 20,
+      "blockedMoves": 0,
+      "attacks": 1,
+      "hits": 1,
+      "kills": 0,
+      "dodges": 1,
+      "heals": 2,
+      "healed": 4,
+      "damage": 9,
+      "hitsTaken": 9,
+      "blockedHits": 0,
+      "keysSpent": 0,
+      "transitions": 1,
+      "interactions": 0,
+      "waits": 40,
+      "settlements": 0
+    },
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "heal"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "heal"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      }
+    ]
+  },
+  "naturalDeath": {
+    "state": "lost",
+    "beat": 68,
+    "hero": {
+      "x": 4,
+      "y": 3,
+      "face": "right",
+      "hp": 0,
+      "invuln": 2,
+      "attackCd": 0,
+      "dodgeCd": 0
+    },
+    "stats": {
+      "moves": 20,
+      "blockedMoves": 0,
+      "attacks": 1,
+      "hits": 1,
+      "kills": 0,
+      "dodges": 1,
+      "heals": 2,
+      "healed": 4,
+      "damage": 10,
+      "hitsTaken": 10,
+      "blockedHits": 0,
+      "keysSpent": 0,
+      "transitions": 1,
+      "interactions": 0,
+      "waits": 45,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "heal"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "heal"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "wait"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "beat": 48,
+    "hero": {
+      "x": 6,
+      "y": 3,
+      "face": "down",
+      "hp": 6,
+      "invuln": 0,
+      "attackCd": 0,
+      "dodgeCd": 0
+    },
+    "keys": 0,
+    "potions": 2,
+    "stats": {
+      "moves": 38,
+      "blockedMoves": 0,
+      "attacks": 4,
+      "hits": 4,
+      "kills": 2,
+      "dodges": 2,
+      "heals": 0,
+      "healed": 0,
+      "damage": 0,
+      "hitsTaken": 0,
+      "blockedHits": 0,
+      "keysSpent": 1,
+      "transitions": 3,
+      "interactions": 4,
+      "waits": 1,
+      "settlements": 1
+    },
+    "visited": [
+      "A",
+      "B",
+      "C"
+    ],
+    "lamps": [
+      "B",
+      "C"
+    ],
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "move",
+        "dir": "right"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "move",
+        "dir": "left"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "dodge",
+        "dir": "right"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "move",
+        "dir": "up"
+      },
+      {
+        "kind": "wait"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "attack"
+      },
+      {
+        "kind": "interact"
+      },
+      {
+        "kind": "move",
+        "dir": "down"
+      },
+      {
+        "kind": "interact"
+      }
+    ],
+    "method": "Native tutorial/start/D-pad/dodge-arm/sweep/wait/interaction taps throughout all three rooms; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

@@ -1,0 +1,13 @@
+{
+  "strategyCorrections": [
+    "Combat initially rewarded entering an empty neighboring room; penalized leaving the active combat room and allowed routes back to unfinished visited rooms.",
+    "The empty-enemy distance fallback punished the final kill; corrected it to zero. No health, potion or enemy stat changes."
+  ],
+  "map8Correction": {
+    "observed": "First key could open the final gate before north key was obtainable",
+    "fix": "Final key gate now also requires north lamp B",
+    "keyCountsUnchanged": true,
+    "normalResourcesUnchanged": true
+  },
+  "uiAssertion": "Out-of-range interaction wording is 走到…再按互动; initial test expected 靠近. Corrected assertion without production behavior changes."
+}
