@@ -59,7 +59,20 @@
 
 ## 部署与复现
 
-公开部署状态将在 Pages 成功及实际 URL 核验后追加，不能将本地预览当作上线。
+网站：[晶簇花园](https://yydshly.github.io/classic-games-atlas/games/garden/) · [图鉴](https://yydshly.github.io/classic-games-atlas/)。
+
+独立代码提交 `89db1616c38e60382d6e507296e62bc93b42e09c`，已 [成功部署 Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/38875211488)，精确 headSha、任务状态和步骤见 [pages-code-deployment.json](garden-qa/pages-code-deployment.json)。
+
+公开网站全部 20 关通过正常相邻鼠标点击和生产动画通关，逐关验证实际最佳分、解锁、刷新同种子整备。各关终局棋盘、RNG、步数、分数、颜色收集、土层及规则统计与上表正常模拟逐项完全相同；时间由真实操作与动画决定。完整原始记录：[公开 A 组](garden-qa/public-1-4-7-10-13-16-19/report.json)、[公开 B 组](garden-qa/public-2-5-8-11-14-17-20/report.json)、[公开 C 组](garden-qa/public-3-6-9-12-15-18/report.json)、[汇总](garden-qa/public-summary.json)。所有关卡无控制台错误、HTTP 错误及失败请求。
+
+公开界面 20 项检查通过，见 [public-ui/report.json](garden-qa/public-ui/report.json)，包含真实触屏滑动不滚动页面、手机棋盘上方目标栏、动画锁与重开、稳态/动画中刷新事务、正常低效策略 26 步失败和重试、存储不可用、320/360/390/768/1280 宽度及前九款入口。图鉴的搜索、筛选、全部详情、空结果、键盘和六种宽度回归通过，见 [public-atlas](garden-qa/public-atlas/browser-report.json)。
+
+前九款运行文件与上一部署 `40d6844a99ce80919c6bb2f0b5f7e8a9d1442576` 完全一致。
+
+中途执行连接短暂断开，恢复后先检查已推送提交与 Pages 成功状态，再继续公开验证，见 [execution-recovery](garden-qa/execution-recovery.json)。初版交叉匹配测试夹具因背景同色意外扩展到 7 格，改成隔离颜色后专测 5 格交叉，生产规则未因此修改，见 [fixture-correction](garden-qa/test-fixture-correction.json)。
+
+逐文件核验首轮在花园封面出现 `SSLEOFError` 传输中断，未将其报告为 HTTP 404 或全部核验成功。验证工具改为持久会话，保留证书校验、只对连接/超时有限重试一次，逐文件保存结果；错误记录见 [integrity-initial-tls](garden-qa/integrity-initial-tls.json)。持久连接这轮严格核验已完成，77/77 公开运行文件均 HTTP 200，SHA-256 与代码提交完全相同，且没有发生传输重试，见 [code-deployment-integrity.json](garden-qa/code-deployment-integrity.json)。涵盖首页、数据、封面及全部十款运行文件；未关闭 TLS 校验。
+
 
 ```powershell
 node scripts/test_garden.mjs

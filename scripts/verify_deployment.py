@@ -28,17 +28,39 @@ if __name__ == '__main__':
     args=parser.parse_args()
     commit=subprocess.check_output(['git','rev-parse',args.commit],cwd=ROOT,text=True).strip()
     records=[]
+    network_events=[]
+    output=ROOT/args.out
+    output.parent.mkdir(parents=True,exist_ok=True)
+    session=requests.Session()
+    def save_report(completed=False,error=None):
+        report=dict(checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),url=args.url,commit=commit,completed=completed,
+                    allMatch=completed and all(record['match'] for record in records),files=records,networkEvents=network_events,
+                    transport='Persistent requests.Session; normal TLS certificate validation; at most one retry on connection/timeout errors')
+        if error: report['error']=error
+        output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        return report
     for name in FILES:
         expected=subprocess.check_output(['git','show',f'{commit}:{name}'],cwd=ROOT)
         path='' if name=='index.html' else name
-        response=requests.get(args.url.rstrip('/')+'/'+path,params={'verify':commit},timeout=30)
-        response.raise_for_status()
+        for attempt in range(2):
+            try:
+                response=session.get(args.url.rstrip('/')+'/'+path,params={'verify':commit},timeout=30)
+                response.raise_for_status()
+                break
+            except (requests.exceptions.ConnectionError,requests.exceptions.Timeout) as error:
+                network_events.append(dict(file=name,attempt=attempt+1,errorType=type(error).__name__,message=str(error)[:600]))
+                session.close()
+                session=requests.Session()
+                save_report(error='Transport error; retrying once' if attempt==0 else 'Transport error after bounded retry')
+                if attempt==1: raise
+            except requests.exceptions.RequestException as error:
+                save_report(error=type(error).__name__+': '+str(error)[:600])
+                raise
         local_hash=hashlib.sha256(expected).hexdigest()
         live_hash=hashlib.sha256(response.content).hexdigest()
         records.append(dict(file=name,httpStatus=response.status_code,bytes=len(response.content),commitSHA256=local_hash,liveSHA256=live_hash,match=local_hash==live_hash))
-    report=dict(checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),url=args.url,commit=commit,allMatch=all(record['match'] for record in records),files=records)
-    output=ROOT/args.out
-    output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        save_report()
+    session.close()
+    report=save_report(completed=True)
     print(json.dumps(report,ensure_ascii=False,indent=2))
     assert report['allMatch'], 'Live content differs from the expected Git commit'
