@@ -1,0 +1,2377 @@
+{
+  "testedAt": "2026-10-16T04:17:02.036009+00:00",
+  "url": "http://127.0.0.1:4174/games/maze/",
+  "kind": "actual browser keyboard/pointer input, not logic simulation",
+  "fixture": "isolated localStorage unlocks menu selection only; no battle mutation",
+  "results": [
+    {
+      "stage": 1,
+      "result": "lost",
+      "elapsedWall": 34.12,
+      "end": {
+        "state": "lost",
+        "level": 1,
+        "time": 34.16666666666601,
+        "grid": [
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            "+",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            "+",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            "+",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            "+",
+            ".",
+            "+",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            ".",
+            ".",
+            "+",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            "+",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            ".",
+            ".",
+            "+",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ]
+        ],
+        "player": {
+          "x": 1,
+          "y": 7,
+          "fromX": 2,
+          "fromY": 7,
+          "age": 0,
+          "cooldown": 0.15,
+          "dir": 3,
+          "hp": 0,
+          "invulnerable": 1.6,
+          "capacity": 2,
+          "range": 3,
+          "step": 0.15,
+          "animationStep": 0.15
+        },
+        "enemies": [
+          {
+            "id": 2,
+            "x": 1,
+            "y": 7,
+            "type": "tracker",
+            "dir": 2,
+            "fromX": 1,
+            "fromY": 6,
+            "age": 0.09999999999999999,
+            "cooldown": 0.4999999999999997,
+            "burst": 0,
+            "animationStep": 0.6
+          }
+        ],
+        "bombs": [],
+        "flames": [],
+        "items": [],
+        "exit": {
+          "x": 13,
+          "y": 11
+        },
+        "stats": {
+          "planted": 7,
+          "crates": 13,
+          "kills": 2,
+          "chains": 0,
+          "hits": 3,
+          "score": 530
+        },
+        "seed": 422330293,
+        "nextId": 8,
+        "reason": "与巡逻机相撞。保持距离，利用拐角与炸弹拦截。",
+        "unlocked": 10,
+        "storageAvailable": true,
+        "sound": false,
+        "fps": 57.600921614745786,
+        "meanRenderMs": 0.3133333312968413
+      },
+      "samples": [
+        {
+          "time": 0.09999999999999999,
+          "state": "playing",
+          "player": {
+            "x": 1,
+            "y": 1,
+            "fromX": 1,
+            "fromY": 1,
+            "age": 1.0999999999999996,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 2,
+            "step": 0.22
+          },
+          "stats": {
+            "planted": 0,
+            "crates": 0,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 0
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 7,
+              "y": 1,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 1.0999999999999996,
+              "cooldown": 0.8299999999999997,
+              "burst": 0
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 7,
+              "type": "tracker",
+              "dir": 1,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 1.0999999999999996,
+              "cooldown": 0.9600000000000001,
+              "burst": 0
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 1.0999999999999996,
+              "cooldown": 1.0900000000000003,
+              "burst": 0
+            }
+          ]
+        },
+        {
+          "time": 4.033333333333324,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 1,
+            "fromX": 1,
+            "fromY": 1,
+            "age": 2.9833333333333276,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 2,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 1,
+            "crates": 2,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 20
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 6,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 0.49999999999999994,
+              "cooldown": 0.13999999999999968,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 13,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.5666666666666668,
+              "cooldown": 0.03333333333333316,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.2333333333333333,
+              "cooldown": 0.4066666666666663,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 6.433333333333316,
+          "state": "playing",
+          "player": {
+            "x": 5,
+            "y": 3,
+            "fromX": 4,
+            "fromY": 3,
+            "age": 0.05,
+            "cooldown": 0.17,
+            "dir": 1,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 1,
+            "crates": 2,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 70
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 6,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 0.3,
+              "cooldown": 0.33999999999999964,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 8,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 0.5666666666666668,
+              "cooldown": 0.03333333333333316,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.03333333333333333,
+              "cooldown": 0.6066666666666666,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 10.050000000000079,
+          "state": "playing",
+          "player": {
+            "x": 3,
+            "y": 4,
+            "fromX": 3,
+            "fromY": 3,
+            "age": 2.966666666666661,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 2,
+            "crates": 5,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 100
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 4,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 5,
+              "fromY": 1,
+              "age": 0.016666666666666666,
+              "cooldown": 0.6233333333333333,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 0.5833333333333335,
+              "cooldown": 0.016666666666666493,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 10,
+              "age": 0.39999999999999997,
+              "cooldown": 0.23999999999999966,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 14.583333333333638,
+          "state": "playing",
+          "player": {
+            "x": 7,
+            "y": 4,
+            "fromX": 7,
+            "fromY": 3,
+            "age": 2.549999999999996,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 3,
+            "crates": 6,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 260
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 13,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.31666666666666665,
+              "cooldown": 0.2833333333333331,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 8,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.3833333333333333,
+              "cooldown": 0.2566666666666663,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 15.8333333333337,
+          "state": "playing",
+          "player": {
+            "x": 3,
+            "y": 1,
+            "fromX": 4,
+            "fromY": 1,
+            "age": 0.016666666666666666,
+            "cooldown": 0.16833333333333333,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 3,
+            "crates": 6,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 310
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 12,
+              "y": 7,
+              "type": "tracker",
+              "dir": 3,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.36666666666666664,
+              "cooldown": 0.23333333333333311,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.3333333333333333,
+              "cooldown": 0.3066666666666663,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 20.583333333333446,
+          "state": "playing",
+          "player": {
+            "x": 6,
+            "y": 3,
+            "fromX": 5,
+            "fromY": 3,
+            "age": 2.966666666666661,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 4,
+            "crates": 8,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 330
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 9,
+              "y": 8,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 9,
+              "fromY": 7,
+              "age": 0.31666666666666665,
+              "cooldown": 0.2833333333333331,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 4,
+              "fromY": 9,
+              "age": 0.5333333333333333,
+              "cooldown": 0.10666666666666635,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 21.050000000000086,
+          "state": "playing",
+          "player": {
+            "x": 5,
+            "y": 5,
+            "fromX": 5,
+            "fromY": 4,
+            "age": 0.03333333333333333,
+            "cooldown": 0.15166666666666667,
+            "dir": 2,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 4,
+            "crates": 8,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 330
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 9,
+              "y": 7,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 9,
+              "fromY": 8,
+              "age": 0.18333333333333332,
+              "cooldown": 0.4166666666666664,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 9,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.35,
+              "cooldown": 0.28999999999999965,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 24.96666666666653,
+          "state": "playing",
+          "player": {
+            "x": 4,
+            "y": 5,
+            "fromX": 5,
+            "fromY": 5,
+            "age": 2.9499999999999944,
+            "cooldown": 0,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 5,
+            "crates": 11,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 360
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 9,
+              "y": 7,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 9,
+              "fromY": 6,
+              "age": 0.49999999999999994,
+              "cooldown": 0.09999999999999981,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 4,
+              "y": 9,
+              "type": "roamer",
+              "dir": 1,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.36666666666666664,
+              "cooldown": 0.273333333333333,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 30.14999999999957,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 1,
+            "fromX": 3,
+            "fromY": 1,
+            "age": 0.08333333333333333,
+            "cooldown": 0.06666666666666668,
+            "dir": 3,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 6,
+            "crates": 13,
+            "kills": 1,
+            "chains": 0,
+            "hits": 2,
+            "score": 430
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 3,
+              "y": 4,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 5,
+              "age": 0.2833333333333333,
+              "cooldown": 0.31666666666666643,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 5,
+              "y": 4,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 5,
+              "fromY": 5,
+              "age": 0.35,
+              "cooldown": 0.28999999999999965,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 33.76666666666603,
+          "state": "playing",
+          "player": {
+            "x": 4,
+            "y": 7,
+            "fromX": 3,
+            "fromY": 7,
+            "age": 0.09999999999999999,
+            "cooldown": 0.05000000000000002,
+            "dir": 1,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 7,
+            "crates": 13,
+            "kills": 2,
+            "chains": 0,
+            "hits": 2,
+            "score": 530
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 1,
+              "y": 6,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 1,
+              "fromY": 5,
+              "age": 0.3,
+              "cooldown": 0.29999999999999977,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        }
+      ],
+      "attempt": 1
+    },
+    {
+      "stage": 1,
+      "result": "won",
+      "elapsedWall": 80.14,
+      "end": {
+        "state": "won",
+        "level": 1,
+        "time": 80.18333333333007,
+        "grid": [
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "#"
+          ],
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ]
+        ],
+        "player": {
+          "x": 13,
+          "y": 11,
+          "fromX": 13,
+          "fromY": 10,
+          "age": 0,
+          "cooldown": 0.15,
+          "dir": 2,
+          "hp": 1,
+          "invulnerable": 0,
+          "capacity": 2,
+          "range": 3,
+          "step": 0.15,
+          "animationStep": 0.15
+        },
+        "enemies": [],
+        "bombs": [],
+        "flames": [],
+        "items": [
+          {
+            "x": 9,
+            "y": 9,
+            "type": "capacity"
+          }
+        ],
+        "exit": {
+          "x": 13,
+          "y": 11
+        },
+        "stats": {
+          "planted": 19,
+          "crates": 26,
+          "kills": 3,
+          "chains": 0,
+          "hits": 2,
+          "score": 1459
+        },
+        "seed": 1450392667,
+        "nextId": 20,
+        "reason": "",
+        "unlocked": 10,
+        "storageAvailable": true,
+        "sound": false,
+        "fps": 49.3177708367583,
+        "meanRenderMs": 0.3583333310981592
+      },
+      "samples": [
+        {
+          "time": 0.08333333333333333,
+          "state": "playing",
+          "player": {
+            "x": 1,
+            "y": 1,
+            "fromX": 1,
+            "fromY": 1,
+            "age": 1.083333333333333,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 2,
+            "step": 0.22
+          },
+          "stats": {
+            "planted": 0,
+            "crates": 0,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 0
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 7,
+              "y": 1,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 1.083333333333333,
+              "cooldown": 0.8466666666666665,
+              "burst": 0
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 7,
+              "type": "tracker",
+              "dir": 1,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 1.083333333333333,
+              "cooldown": 0.9766666666666668,
+              "burst": 0
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 1.083333333333333,
+              "cooldown": 1.106666666666667,
+              "burst": 0
+            }
+          ]
+        },
+        {
+          "time": 3.9999999999999907,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 1,
+            "fromX": 1,
+            "fromY": 1,
+            "age": 2.9499999999999944,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 2,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 1,
+            "crates": 2,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 20
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 6,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 0.4666666666666666,
+              "cooldown": 0.173333333333333,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 13,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.5333333333333333,
+              "cooldown": 0.06666666666666649,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.19999999999999998,
+              "cooldown": 0.4399999999999996,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 6.399999999999983,
+          "state": "playing",
+          "player": {
+            "x": 5,
+            "y": 3,
+            "fromX": 4,
+            "fromY": 3,
+            "age": 0.03333333333333333,
+            "cooldown": 0.18666666666666668,
+            "dir": 1,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 1,
+            "crates": 2,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 70
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 6,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 7,
+              "fromY": 1,
+              "age": 0.26666666666666666,
+              "cooldown": 0.37333333333333296,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 8,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 0.5333333333333333,
+              "cooldown": 0.06666666666666649,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0,
+              "cooldown": 0.64,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 10.050000000000079,
+          "state": "playing",
+          "player": {
+            "x": 3,
+            "y": 4,
+            "fromX": 3,
+            "fromY": 3,
+            "age": 2.9833333333333276,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 3,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.22,
+            "animationStep": 0.22
+          },
+          "stats": {
+            "planted": 2,
+            "crates": 5,
+            "kills": 0,
+            "chains": 0,
+            "hits": 0,
+            "score": 100
+          },
+          "enemies": [
+            {
+              "id": 1,
+              "x": 4,
+              "y": 1,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 5,
+              "fromY": 1,
+              "age": 0.016666666666666666,
+              "cooldown": 0.6233333333333333,
+              "burst": 0,
+              "animationStep": 0.64
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 11,
+              "fromY": 7,
+              "age": 0.5833333333333335,
+              "cooldown": 0.016666666666666493,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 10,
+              "age": 0.39999999999999997,
+              "cooldown": 0.23999999999999966,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 14.616666666666973,
+          "state": "playing",
+          "player": {
+            "x": 7,
+            "y": 4,
+            "fromX": 7,
+            "fromY": 3,
+            "age": 2.583333333333329,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 1,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 3,
+            "crates": 6,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 260
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 13,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.35,
+              "cooldown": 0.24999999999999978,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 8,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.41666666666666663,
+              "cooldown": 0.223333333333333,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 15.850000000000367,
+          "state": "playing",
+          "player": {
+            "x": 3,
+            "y": 1,
+            "fromX": 4,
+            "fromY": 1,
+            "age": 0.016666666666666666,
+            "cooldown": 0.16833333333333333,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 3,
+            "crates": 6,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 310
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 12,
+              "y": 7,
+              "type": "tracker",
+              "dir": 3,
+              "fromX": 13,
+              "fromY": 7,
+              "age": 0.3833333333333333,
+              "cooldown": 0.21666666666666645,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 10,
+              "type": "roamer",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.35,
+              "cooldown": 0.28999999999999965,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 20.616666666666777,
+          "state": "playing",
+          "player": {
+            "x": 6,
+            "y": 3,
+            "fromX": 5,
+            "fromY": 3,
+            "age": 2.9833333333333276,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 4,
+            "crates": 8,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 330
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 9,
+              "y": 8,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 9,
+              "fromY": 7,
+              "age": 0.35,
+              "cooldown": 0.24999999999999978,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 3,
+              "y": 9,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 4,
+              "fromY": 9,
+              "age": 0.5666666666666668,
+              "cooldown": 0.07333333333333303,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 21.100000000000083,
+          "state": "playing",
+          "player": {
+            "x": 5,
+            "y": 5,
+            "fromX": 5,
+            "fromY": 4,
+            "age": 0.03333333333333333,
+            "cooldown": 0.15166666666666667,
+            "dir": 2,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 4,
+            "crates": 8,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 330
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 9,
+              "y": 7,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 9,
+              "fromY": 8,
+              "age": 0.2333333333333333,
+              "cooldown": 0.3666666666666664,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 9,
+              "type": "roamer",
+              "dir": 3,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.39999999999999997,
+              "cooldown": 0.23999999999999966,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 25.08333333333319,
+          "state": "playing",
+          "player": {
+            "x": 4,
+            "y": 5,
+            "fromX": 5,
+            "fromY": 5,
+            "age": 3.016666666666661,
+            "cooldown": 0,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.185,
+            "animationStep": 0.185
+          },
+          "stats": {
+            "planted": 5,
+            "crates": 11,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 360
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 8,
+              "y": 7,
+              "type": "tracker",
+              "dir": 3,
+              "fromX": 9,
+              "fromY": 7,
+              "age": 0.016666666666666666,
+              "cooldown": 0.5833333333333333,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 4,
+              "y": 9,
+              "type": "roamer",
+              "dir": 1,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.4833333333333333,
+              "cooldown": 0.15666666666666634,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 29.349999999999614,
+          "state": "playing",
+          "player": {
+            "x": 3,
+            "y": 2,
+            "fromX": 3,
+            "fromY": 3,
+            "age": 0.44999999999999996,
+            "cooldown": 0,
+            "dir": 0,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 6,
+            "crates": 13,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 430
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 3,
+              "y": 5,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 3,
+              "fromY": 6,
+              "age": 0.08333333333333333,
+              "cooldown": 0.5166666666666664,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 5,
+              "y": 5,
+              "type": "roamer",
+              "dir": 0,
+              "fromX": 5,
+              "fromY": 6,
+              "age": 0.19999999999999998,
+              "cooldown": 0.4399999999999996,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 32.6166666666661,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 1,
+            "fromX": 3,
+            "fromY": 1,
+            "age": 1.3333333333333335,
+            "cooldown": 0,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 7,
+            "crates": 13,
+            "kills": 1,
+            "chains": 0,
+            "hits": 1,
+            "score": 430
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 5,
+              "y": 2,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 5,
+              "fromY": 3,
+              "age": 0.35,
+              "cooldown": 0.24999999999999978,
+              "burst": 0,
+              "animationStep": 0.6
+            },
+            {
+              "id": 3,
+              "x": 6,
+              "y": 1,
+              "type": "roamer",
+              "dir": 1,
+              "fromX": 5,
+              "fromY": 1,
+              "age": 0.21666666666666665,
+              "cooldown": 0.42333333333333295,
+              "burst": 0,
+              "animationStep": 0.64
+            }
+          ]
+        },
+        {
+          "time": 36.23333333333256,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 7,
+            "fromX": 1,
+            "fromY": 7,
+            "age": 0.11666666666666665,
+            "cooldown": 0.033333333333333354,
+            "dir": 1,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 8,
+            "crates": 13,
+            "kills": 2,
+            "chains": 0,
+            "hits": 1,
+            "score": 530
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 1,
+              "y": 4,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 1,
+              "fromY": 3,
+              "age": 0.36666666666666664,
+              "cooldown": 0.23333333333333311,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 39.78333333333236,
+          "state": "playing",
+          "player": {
+            "x": 4,
+            "y": 9,
+            "fromX": 3,
+            "fromY": 9,
+            "age": 1.2833333333333337,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 9,
+            "crates": 13,
+            "kills": 2,
+            "chains": 0,
+            "hits": 1,
+            "score": 530
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 3,
+              "y": 6,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 5,
+              "age": 0.31666666666666665,
+              "cooldown": 0.2833333333333331,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 43.24999999999883,
+          "state": "playing",
+          "player": {
+            "x": 6,
+            "y": 11,
+            "fromX": 5,
+            "fromY": 11,
+            "age": 1.1333333333333342,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 10,
+            "crates": 14,
+            "kills": 2,
+            "chains": 0,
+            "hits": 1,
+            "score": 540
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 5,
+              "y": 8,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 5,
+              "fromY": 7,
+              "age": 0.18333333333333332,
+              "cooldown": 0.4166666666666664,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 46.69999999999863,
+          "state": "playing",
+          "player": {
+            "x": 1,
+            "y": 11,
+            "fromX": 2,
+            "fromY": 11,
+            "age": 1.9999999999999978,
+            "cooldown": 0,
+            "dir": 3,
+            "hp": 2,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 11,
+            "crates": 15,
+            "kills": 2,
+            "chains": 0,
+            "hits": 1,
+            "score": 550
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 3,
+              "y": 10,
+              "type": "tracker",
+              "dir": 2,
+              "fromX": 3,
+              "fromY": 9,
+              "age": 0.03333333333333333,
+              "cooldown": 0.5666666666666665,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 50.699999999998404,
+          "state": "playing",
+          "player": {
+            "x": 5,
+            "y": 2,
+            "fromX": 5,
+            "fromY": 3,
+            "age": 0.19999999999999998,
+            "cooldown": 0,
+            "dir": 0,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 12,
+            "crates": 15,
+            "kills": 2,
+            "chains": 0,
+            "hits": 2,
+            "score": 550
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 5,
+              "y": 6,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 5,
+              "fromY": 7,
+              "age": 0.4333333333333333,
+              "cooldown": 0.16666666666666646,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 54.199999999998205,
+          "state": "playing",
+          "player": {
+            "x": 6,
+            "y": 1,
+            "fromX": 5,
+            "fromY": 1,
+            "age": 2.9499999999999944,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 13,
+            "crates": 15,
+            "kills": 2,
+            "chains": 0,
+            "hits": 2,
+            "score": 550
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 7,
+              "y": 4,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 7,
+              "fromY": 5,
+              "age": 0.3333333333333333,
+              "cooldown": 0.26666666666666644,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 57.71666666666467,
+          "state": "playing",
+          "player": {
+            "x": 2,
+            "y": 1,
+            "fromX": 3,
+            "fromY": 1,
+            "age": 2.066666666666664,
+            "cooldown": 0,
+            "dir": 3,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 14,
+            "crates": 16,
+            "kills": 2,
+            "chains": 0,
+            "hits": 2,
+            "score": 560
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 5,
+              "y": 2,
+              "type": "tracker",
+              "dir": 0,
+              "fromX": 5,
+              "fromY": 3,
+              "age": 0.24999999999999997,
+              "cooldown": 0.34999999999999976,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 60.116666666664536,
+          "state": "playing",
+          "player": {
+            "x": 7,
+            "y": 1,
+            "fromX": 7,
+            "fromY": 2,
+            "age": 0.03333333333333333,
+            "cooldown": 0.11666666666666667,
+            "dir": 0,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 14,
+            "crates": 16,
+            "kills": 2,
+            "chains": 0,
+            "hits": 2,
+            "score": 560
+          },
+          "enemies": [
+            {
+              "id": 2,
+              "x": 6,
+              "y": 1,
+              "type": "tracker",
+              "dir": 1,
+              "fromX": 5,
+              "fromY": 1,
+              "age": 0.24999999999999997,
+              "cooldown": 0.34999999999999976,
+              "burst": 0,
+              "animationStep": 0.6
+            }
+          ]
+        },
+        {
+          "time": 63.41666666666435,
+          "state": "playing",
+          "player": {
+            "x": 7,
+            "y": 3,
+            "fromX": 7,
+            "fromY": 2,
+            "age": 0.6166666666666669,
+            "cooldown": 0,
+            "dir": 2,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 15,
+            "crates": 18,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 730
+          },
+          "enemies": []
+        },
+        {
+          "time": 67.13333333333081,
+          "state": "playing",
+          "player": {
+            "x": 10,
+            "y": 1,
+            "fromX": 9,
+            "fromY": 1,
+            "age": 2.966666666666661,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 16,
+            "crates": 20,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 750
+          },
+          "enemies": []
+        },
+        {
+          "time": 71.3666666666639,
+          "state": "playing",
+          "player": {
+            "x": 11,
+            "y": 2,
+            "fromX": 11,
+            "fromY": 3,
+            "age": 2.9833333333333276,
+            "cooldown": 0,
+            "dir": 0,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 17,
+            "crates": 22,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 770
+          },
+          "enemies": []
+        },
+        {
+          "time": 74.61666666666372,
+          "state": "playing",
+          "player": {
+            "x": 12,
+            "y": 1,
+            "fromX": 11,
+            "fromY": 1,
+            "age": 2.9833333333333276,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 18,
+            "crates": 23,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 780
+          },
+          "enemies": []
+        },
+        {
+          "time": 75.499999999997,
+          "state": "playing",
+          "player": {
+            "x": 11,
+            "y": 6,
+            "fromX": 11,
+            "fromY": 5,
+            "age": 0.016666666666666666,
+            "cooldown": 0.13333333333333333,
+            "dir": 2,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 18,
+            "crates": 23,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 780
+          },
+          "enemies": []
+        },
+        {
+          "time": 79.48333333333011,
+          "state": "playing",
+          "player": {
+            "x": 12,
+            "y": 7,
+            "fromX": 11,
+            "fromY": 7,
+            "age": 2.9999999999999942,
+            "cooldown": 0,
+            "dir": 1,
+            "hp": 1,
+            "invulnerable": 0,
+            "capacity": 2,
+            "range": 3,
+            "step": 0.15,
+            "animationStep": 0.15
+          },
+          "stats": {
+            "planted": 19,
+            "crates": 26,
+            "kills": 3,
+            "chains": 0,
+            "hits": 2,
+            "score": 810
+          },
+          "enemies": []
+        }
+      ],
+      "attempt": 2
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": []
+}

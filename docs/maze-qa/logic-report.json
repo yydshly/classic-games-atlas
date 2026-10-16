@@ -1,0 +1,28 @@
+{
+  "passed": 14,
+  "levels": 10,
+  "kind": "pure-logic fixtures; not real browser input",
+  "testedAt": "2026-10-16T04:24:39.888356+00:00",
+  "checks": [
+    "PASS ten unique original maps: dimensions, boundary, safe start, all spawns, full floor connectivity after crates",
+    "PASS ready, start and pause freeze the clock and bombs",
+    "PASS capacity, duplicate cell and leave-own-bomb/re-entry collision",
+    "PASS fuse, self damage once per blast, destructible wall and first crate stops ray",
+    "PASS stone permanently stops the cross",
+    "PASS chain triggers a later bomb immediately and never twice",
+    "PASS same-wave crate still blocks a chained ray after destruction",
+    "PASS three hits produce failure; restarting restores full distinct state",
+    "PASS enemy contact damages with protection, explosion removes enemies",
+    "PASS upgrades require flame to expire and clamp capacity/range/speed",
+    "PASS exit requires no enemy and stepping onto exit; damage resolves before victory",
+    "PASS tracker routes around a stone toward nearby player",
+    "PASS charger has a burst and a real cooling interval",
+    "PASS read-only snapshot cannot mutate the real board or actors"
+  ],
+  "codeHashes": {
+    "engine.mjs": "23c68775bc32799ae8be0b3bd87645b2a54a00e9463a22c0607e0f097080b2bf",
+    "levels.mjs": "c935e76b0e39cf0148d208bb66b279f9d2b748a4a00f9de576f8ffde36666fd8",
+    "game.mjs": "3fdf24e28e4123ebc2dfd5d55c3c1ee2cde02b19bca6d7703991b040148dfc62",
+    "renderer.mjs": "7636eb84e149383fa25dfcea95b981e7fc746202adda417381940e8502309c65"
+  }
+}

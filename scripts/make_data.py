@@ -187,11 +187,13 @@ def main():
                           group=group, scope=scope, platforms=platforms.split(','), era=era,
                           genres=genres.split(','), play=play, classic=classic, edition=edition,
                           sources=[source]))
+    experiments = json.loads((root / 'data/experiments.json').read_text(encoding='utf-8'))
     for game in games:
-        if game['id'] == 'battle-city':
-            game['experiment'] = dict(id='fortress',title='堡垒防线',url='./games/fortress/',status='可游玩',relation='本项目原创基地防守玩法实验，非原作或逐关复制。')
+        experiment = next((e for e in experiments if e['sourceGame'] == game['id'] and e['status'] == 'published'), None)
+        if experiment:
+            game['experiment'] = experiment
     assert len(games) == 72
-    catalogue = dict(version='2026.10.16.1', groups=[dict(id=i,title=t,number=n,tagline=ta,description=d) for i,t,n,ta,d in GROUPS], games=games, sources=sources)
+    catalogue = dict(version='2026.10.16.2', experiments=experiments, groups=[dict(id=i,title=t,number=n,tagline=ta,description=d) for i,t,n,ta,d in GROUPS], games=games, sources=sources)
     (root / 'data').mkdir(exist_ok=True)
     (root / 'data/games.json').write_text(json.dumps(catalogue, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'entries':len(games), 'groups': {g[1]:sum(x['group']==g[0] for x in games) for g in GROUPS}}, ensure_ascii=False))

@@ -9,7 +9,8 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cover.svg','assets/favicon.svg','assets/fortress-cover.svg',
-         'games/fortress/index.html','games/fortress/fortress.css','games/fortress/levels.mjs','games/fortress/engine.mjs','games/fortress/renderer.mjs','games/fortress/game.mjs']
+         'games/fortress/index.html','games/fortress/fortress.css','games/fortress/levels.mjs','games/fortress/engine.mjs','games/fortress/renderer.mjs','games/fortress/game.mjs',
+         'assets/maze-cover.svg','data/experiments.json','games/maze/index.html','games/maze/maze.css','games/maze/levels.mjs','games/maze/engine.mjs','games/maze/renderer.mjs','games/maze/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()

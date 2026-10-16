@@ -1,6 +1,6 @@
 # 经典游戏图鉴 · Classic Games Atlas
 
-一份中文静态图鉴：介绍 72 个代表作品、系列与玩法谱系，按 10 个主题组织。不是销量榜、评分榜或完整游戏史。另有独立的原创玩法实验，首款《堡垒防线》提供 10 张原创关卡。
+一份中文静态图鉴：介绍 72 个代表作品、系列与玩法谱系，按 10 个主题组织。不是销量榜、评分榜或完整游戏史。另有独立的原创玩法实验，《堡垒防线》和《爆破迷宫》各提供 10 张原创关卡。
 
 **在线图鉴：[https://yydshly.github.io/classic-games-atlas/](https://yydshly.github.io/classic-games-atlas/)**
 
@@ -42,7 +42,7 @@
 - 可破砖墙、不可破钢障、水域；基地 3 格耐久，玩家 3 次出击；3 类补给（维修 / 速射 / 护盾）。
 - 初次教学、暂停/恢复、重开、胜败结算、关卡解锁、本地进度、声音偏好；切出标签自动暂停。
 - 方向键 / WASD 移动，空格 / J 开火，P / Esc 暂停，R 重新整备。手机按住方向与开火控件。
-- 无新增运行依赖、账户、联网玩法、后端、排行榜服务或关卡编辑器。本轮只交付此首款游戏。
+- 无新增运行依赖、账户、联网玩法、后端、排行榜服务或关卡编辑器。首款的补充修复与线上终关证据见 [后续验收](docs/FORTRESS_FOLLOWUP.md)。
 
 核心逻辑在 `games/fortress/engine.mjs`，地图数据在 `levels.mjs`，原创绘制在 `renderer.mjs`，界面、输入和存储在 `game.mjs`。诊断函数只提供状态副本，不提供改写游戏状态的作弊接口。
 
@@ -54,6 +54,26 @@ python scripts/test_fortress_browser.py --url http://127.0.0.1:4174/games/fortre
 ```
 
 Node 报告属于逻辑模拟；浏览器报告、实际首关录像和触屏事件属于真实输入证据，不宣称所有十关均由人工通关。部署后可将命令 URL 换为公开游戏地址复查。
+
+## 原创玩法实验 02：爆破迷宫
+
+**[立即试玩爆破迷宫](https://yydshly.github.io/classic-games-atlas/games/maze/) · [固定范围](docs/MAZE_SPEC.md) · [测试与部署证据](docs/MAZE_VERIFICATION.md)**
+
+十张原创地图的单人定时爆破迷宫：十字爆风、可破木箱、固定石柱、连锁引爆、三类巡逻机、容量/范围/速度强化。三格护甲与短暂保护；清空目标后进入出口才通关。原创 Canvas 画面与合成音效，不使用原作素材或地图。
+
+- 方向键 / WASD 移动，空格 / J 每按一次放一枚炸弹，P / Esc 暂停，R 重新整备；手机点按放置，按住方向移动。
+- 教学、暂停、胜败/重试、十关解锁、最佳纪录与声音偏好。强化仅在本关生效；两个游戏存档分别保存。
+- 数据清单 [data/experiments.json](data/experiments.json)统一管理已发布两款和第三款待开发候选；待开发项没有试玩链接，也不会附到原作详情作为已发布游戏。
+- 代码分离为 `games/maze/levels.mjs`、`engine.mjs`、`renderer.mjs`、`game.mjs`。只读诊断返回副本，不提供修改战斗的接口。
+
+```powershell
+node scripts/test_maze.mjs
+python scripts/test_maze_ui.py
+python scripts/test_maze_browser.py --stage 1
+python scripts/test_maze_browser.py --stage 10 --out docs/maze-qa/final-check
+```
+
+真实输入报告保留成功与失败尝试，明确选关夹具与未覆盖项。后续继续按[逐款交付规则](docs/DELIVERY_POLICY.md)推进，不承诺一次复刻全部图鉴作品。本轮第二款交付后结束当前工作，由主对话安排第三款。
 
 ## 内容和来源
 

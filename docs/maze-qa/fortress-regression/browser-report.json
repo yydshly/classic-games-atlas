@@ -1,0 +1,37 @@
+{
+  "testedAt": "2026-10-16T04:21:19.589231+00:00",
+  "url": "http://127.0.0.1:4174/games/fortress/",
+  "kind": "Playwright real keyboard/mouse and Chromium touch input, no game-state mutation",
+  "firstRound": {
+    "state": "won",
+    "level": 1,
+    "time": 29.349999999999614,
+    "kills": 6,
+    "total": 6,
+    "score": 1360,
+    "lives": 1,
+    "fps": 60.00300015000751,
+    "meanRenderMs": 0.1750000008692344,
+    "baseHP": 3
+  },
+  "checks": [
+    "First-run teaching, 1 unlocked / 9 locked stages, pause freezes time, resume, sound toggle",
+    "Real keyboard movement, turning, continuous fire, walls destroyed, enemy combat, full first-stage victory, next stage unlock",
+    "Win progress survives reload, stage 2 unlocked, stage selection and keyboard restart reset state",
+    "Sound preference persists after reload",
+    "Chromium touchStart/touchEnd inputs hold mobile movement and fire controls; game remains playable",
+    "Six viewport widths do not overflow; return to atlas keeps 72 entries and original-game association opens playable experiment"
+  ],
+  "viewportWidths": [
+    320,
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "badResponses": [],
+  "video": null
+}

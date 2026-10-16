@@ -20,6 +20,10 @@ let data;
 let selectedGroup = 'all';
 let returnFocus;
 
+function renderExperiments(experiments) {
+  $('#experiments-grid').innerHTML = experiments.map((e) => `<article class="lab-card ${e.status === 'planned' ? 'lab-planned' : ''}">${e.cover ? `<img src="${escapeHtml(e.cover)}" width="500" height="300" alt="${escapeHtml(e.title)}原创几何插画">` : '<div class="planned-art" aria-hidden="true"><span>03</span><i>○ ○ ○<br>　○ ○<br>　　○</i></div>'}<div class="lab-card-copy"><p class="eyebrow">PLAY LAB ${escapeHtml(e.number)} <span>${e.status === 'published' ? '现已可玩' : '待开发'}</span></p><h3>${escapeHtml(e.title)}</h3><p class="lab-english">${escapeHtml(e.english)}</p><p>${escapeHtml(e.description)}</p>${e.status === 'published' ? `<div class="experiment-tags"><span>单人 · ${e.levels}关</span><span>键盘 / 触屏</span><span>本地进度</span></div><a class="primary-link" href="${escapeHtml(e.url)}">进入原创战场 <span>↗</span></a>` : '<p class="planned-label">等待后续独立交付</p>'}</div></article>`).join('');
+}
+
 function tags(game) {
   return `<div class="platform-tags">${game.platforms.map((platform) => `<span>${escapeHtml(platform)}</span>`).join('')}<span class="era-tag">${escapeHtml(game.era)}</span></div>`;
 }
@@ -158,6 +162,7 @@ try {
     }
   });
   window.addEventListener('hashchange', handleRoute);
+  renderExperiments(data.experiments);
   render();
   handleRoute();
 } catch (error) {
