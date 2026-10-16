@@ -27,7 +27,13 @@
 
 ## 公开部署
 
-代码提交、Pages 成功任务、公开网址 20 关实际输入与 92 个运行文件的哈希证据将在部署验收完成后追加。本地预览不作为上线证明。
+代码提交：`51edf934bc286402d96f619340566ad720cc3633`。GitHub Pages [部署任务 38884573628](https://github.com/yydshly/classic-games-atlas/actions/runs/38884573628)成功，精确 SHA 与任务元数据见 [pages-code.json](petal-qa/pages-code.json)。
+
+公开试玩：[花笺连线](https://yydshly.github.io/classic-games-atlas/games/petal/)。[A 组](petal-qa/live-a/report.json)、[B 组](petal-qa/live-b/report.json)、[C 组](petal-qa/live-c/report.json)覆盖全部 20 关，共 267 次正常配对、534 次牌面点击。逐关清空、解锁/最佳保存、全新重玩均通过；终态棋盘、RNG、分数、资源与统计和生产模拟逐项一致，用时不作跨环境相等要求。
+
+[公开界面 20 项](petal-qa/live-ui/report.json)和[图鉴完整回归](petal-qa/live-atlas/report.json)全部通过，含前十一款入口和手机布局。此次公开浏览器检查无页面/控制台错误、失败请求或 HTTP 4xx/5xx 资源。[92 文件完整性](petal-qa/live-integrity.json)逐项 HTTP 200、SHA-256 与代码提交一致，完成标志为 true，无网络重试。[汇总](petal-qa/live-summary.json)列出证据边界。
+
+随后证据提交仅补充报告、截图、文档及两处更严格的 UI 断言（暂停用时冻结、错连保留原棋盘），不改变运行文件。最终 main 将再次等待 Pages 成功并复查 92 文件及首关正常操作；最终提交 SHA 在交付消息中报告。
 
 ## 可复查命令与限制
 
