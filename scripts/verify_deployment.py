@@ -36,7 +36,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/orchard-cover.svg','games/orchard/index.html','games/orchard/orchard.css','games/orchard/levels.mjs','games/orchard/engine.mjs','games/orchard/renderer.mjs','games/orchard/game.mjs',
          'assets/courier-cover.svg','games/courier/index.html','games/courier/courier.css','games/courier/levels.mjs','games/courier/engine.mjs','games/courier/renderer.mjs','games/courier/game.mjs',
          'assets/venture-cover.svg','games/venture/index.html','games/venture/venture.css','games/venture/levels.mjs','games/venture/engine.mjs','games/venture/renderer.mjs','games/venture/game.mjs',
-         'assets/island-cover.svg','games/island/index.html','games/island/island.css','games/island/levels.mjs','games/island/engine.mjs','games/island/renderer.mjs','games/island/game.mjs']
+         'assets/island-cover.svg','games/island/index.html','games/island/island.css','games/island/levels.mjs','games/island/engine.mjs','games/island/renderer.mjs','games/island/game.mjs',
+         'assets/orbit-cover.svg','games/orbit/index.html','games/orbit/orbit.css','games/orbit/levels.mjs','games/orbit/engine.mjs','games/orbit/renderer.mjs','games/orbit/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
