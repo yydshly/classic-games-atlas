@@ -1,0 +1,2016 @@
+{
+  "notes": [
+    "Initial family3 unit placement overlapped a rock; corrected authored starting ranger tile before normal campaign acceptance.",
+    "Early waiting-for-all-rangers policy lost workers/cart on the final family. Final ordinary strategy first pays for a second worker, defends collection/approach separately and leaves a garrison for escort. Initial resources/HP/waves/goals unchanged.",
+    "Escort followers could stand directly in front of their vehicle. Final escort path planning reserves the cart route and followers walk aside using ordinary movement; regression tests prove arrival without overlap.",
+    "Production blocked-exit test initially trapped the intended clearing unit behind other fixture blockers. Test now orders an outside blocker to a reachable free cell; runtime rule unchanged.",
+    "Final destroyed structures no longer remain valid attack targets. Final-source browser campaign and exact replay repeated.",
+    "Final visual clarity pass adds enemy planned route, actual windup target marker/accessible label and who-targets-whom text; all23 real UI groups rechecked without changing physics/economy."
+  ],
+  "failedNormalStrategyStates": [
+    {
+      "level": 7,
+      "state": "lost",
+      "ticks": 488,
+      "home": {
+        "id": "home",
+        "side": "player",
+        "x": 1,
+        "y": 3,
+        "hp": 130,
+        "maxHP": 130
+      },
+      "core": {
+        "id": "core",
+        "side": "enemy",
+        "x": 10,
+        "y": 3,
+        "hp": 110,
+        "maxHP": 110
+      },
+      "units": [
+        {
+          "id": "p1",
+          "type": "worker",
+          "side": "player",
+          "x": 4,
+          "y": 6,
+          "hp": 0,
+          "maxHP": 40,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p2",
+          "type": "ranger",
+          "side": "player",
+          "x": 4,
+          "y": 3,
+          "hp": 70,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 89,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p3",
+          "type": "guard",
+          "side": "player",
+          "x": 4,
+          "y": 2,
+          "hp": 48,
+          "maxHP": 110,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 2
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 106,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p4",
+          "type": "cart",
+          "side": "player",
+          "x": 1,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 85,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e5",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 118,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e6",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 2,
+          "hp": 36,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 513,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e7",
+          "type": "raider",
+          "side": "enemy",
+          "x": 2,
+          "y": 5,
+          "hp": 44,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 2,
+              "y": 3
+            }
+          ],
+          "blocked": true,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 514,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p8",
+          "type": "ranger",
+          "side": "player",
+          "x": 3,
+          "y": 3,
+          "hp": 70,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 3,
+            "y": 3
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": 1
+        },
+        {
+          "id": "e9",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 6,
+          "hp": 44,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 5,
+              "y": 5
+            },
+            {
+              "x": 4,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 3
+            }
+          ],
+          "blocked": true,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 496,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e10",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 8,
+          "y": 4,
+          "hp": 36,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 8,
+              "y": 3
+            },
+            {
+              "x": 7,
+              "y": 3
+            }
+          ],
+          "blocked": false,
+          "moveClock": 0.06666666666666667,
+          "gatherClock": 0,
+          "cooldown": 428,
+          "action": null,
+          "ticket": null
+        }
+      ],
+      "stats": {
+        "harvested": 9,
+        "delivered": 6,
+        "lost": 3,
+        "spent": 18,
+        "produced": 1,
+        "orders": 4,
+        "kills": 1,
+        "settlements": 1
+      },
+      "log": [
+        {
+          "tick": 0,
+          "kind": "order",
+          "ids": [
+            "p1"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "south"
+          }
+        },
+        {
+          "tick": 3,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 1,
+          "revision": 1
+        },
+        {
+          "tick": 6,
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "tick": 9,
+          "kind": "order",
+          "ids": [
+            "p4"
+          ],
+          "order": {
+            "kind": "move",
+            "x": 3,
+            "y": 5
+          }
+        },
+        {
+          "tick": 93,
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3",
+            "p8"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        }
+      ],
+      "ledger": [
+        {
+          "id": 1,
+          "tick": 54,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 2,
+          "tick": 84,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 3,
+          "tick": 285,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        },
+        {
+          "id": 4,
+          "tick": 467,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 5,
+          "tick": 470,
+          "type": "lost",
+          "unit": "p1",
+          "qty": 3,
+          "node": null
+        }
+      ],
+      "reason": "种火车被摧毁，护送目标无法完成。"
+    },
+    {
+      "level": 8,
+      "state": "lost",
+      "ticks": 3600,
+      "home": {
+        "id": "home",
+        "side": "player",
+        "x": 1,
+        "y": 3,
+        "hp": 130,
+        "maxHP": 130
+      },
+      "core": {
+        "id": "core",
+        "side": "enemy",
+        "x": 10,
+        "y": 3,
+        "hp": 120,
+        "maxHP": 120
+      },
+      "units": [
+        {
+          "id": "p1",
+          "type": "worker",
+          "side": "player",
+          "x": 7,
+          "y": 1,
+          "hp": 0,
+          "maxHP": 40,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p2",
+          "type": "ranger",
+          "side": "player",
+          "x": 4,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 903,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p3",
+          "type": "guard",
+          "side": "player",
+          "x": 4,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 110,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 503,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e4",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 118,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e5",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 786,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e6",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 348,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e7",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 264,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p8",
+          "type": "ranger",
+          "side": "player",
+          "x": 3,
+          "y": 3,
+          "hp": 24,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 3,
+            "y": 3
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 1120,
+          "action": null,
+          "ticket": 1
+        },
+        {
+          "id": "e9",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 515,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e10",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 583,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e11",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 915,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e12",
+          "type": "raider",
+          "side": "enemy",
+          "x": 4,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 1031,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e13",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 6,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 1117,
+          "action": null,
+          "ticket": null
+        }
+      ],
+      "stats": {
+        "harvested": 6,
+        "delivered": 6,
+        "lost": 0,
+        "spent": 18,
+        "produced": 1,
+        "orders": 3,
+        "kills": 9,
+        "settlements": 1
+      },
+      "log": [
+        {
+          "tick": 0,
+          "kind": "order",
+          "ids": [
+            "p1"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "south"
+          }
+        },
+        {
+          "tick": 3,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 1,
+          "revision": 1
+        },
+        {
+          "tick": 6,
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "tick": 93,
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3",
+            "p8"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        }
+      ],
+      "ledger": [
+        {
+          "id": 1,
+          "tick": 54,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 2,
+          "tick": 84,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 3,
+          "tick": 315,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        }
+      ],
+      "reason": "一百二十秒已到，远征目标尚未完成。"
+    },
+    {
+      "level": 7,
+      "state": "lost",
+      "ticks": 3600,
+      "home": {
+        "id": "home",
+        "side": "player",
+        "x": 1,
+        "y": 3,
+        "hp": 130,
+        "maxHP": 130
+      },
+      "core": {
+        "id": "core",
+        "side": "enemy",
+        "x": 10,
+        "y": 3,
+        "hp": 110,
+        "maxHP": 110
+      },
+      "units": [
+        {
+          "id": "p1",
+          "type": "worker",
+          "side": "player",
+          "x": 3,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 40,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p2",
+          "type": "ranger",
+          "side": "player",
+          "x": 4,
+          "y": 5,
+          "hp": 34,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 5
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 947,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p3",
+          "type": "guard",
+          "side": "player",
+          "x": 2,
+          "y": 6,
+          "hp": 76,
+          "maxHP": 110,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 2,
+            "y": 6
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 361,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p4",
+          "type": "cart",
+          "side": "player",
+          "x": 1,
+          "y": 5,
+          "hp": 61,
+          "maxHP": 85,
+          "carry": 0,
+          "order": {
+            "kind": "stop",
+            "x": 1,
+            "y": 3
+          },
+          "path": [],
+          "blocked": true,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e5",
+          "type": "raider",
+          "side": "enemy",
+          "x": 6,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 117,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e6",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 201,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e7",
+          "type": "raider",
+          "side": "enemy",
+          "x": 2,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 370,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p8",
+          "type": "ranger",
+          "side": "player",
+          "x": 4,
+          "y": 3,
+          "hp": 70,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 877,
+          "action": null,
+          "ticket": 1
+        },
+        {
+          "id": "p9",
+          "type": "ranger",
+          "side": "player",
+          "x": 4,
+          "y": 2,
+          "hp": 30,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 2
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 998,
+          "action": null,
+          "ticket": 2
+        },
+        {
+          "id": "e10",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 486,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e11",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 522,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e12",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 906,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e13",
+          "type": "raider",
+          "side": "enemy",
+          "x": 5,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 943,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e14",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 989,
+          "action": null,
+          "ticket": null
+        }
+      ],
+      "stats": {
+        "harvested": 12,
+        "delivered": 12,
+        "lost": 0,
+        "spent": 36,
+        "produced": 2,
+        "orders": 5,
+        "kills": 8,
+        "settlements": 1
+      },
+      "log": [
+        {
+          "tick": 0,
+          "kind": "order",
+          "ids": [
+            "p1"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "south"
+          }
+        },
+        {
+          "tick": 3,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 1,
+          "revision": 1
+        },
+        {
+          "tick": 6,
+          "kind": "order",
+          "ids": [
+            "p2"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 5
+          }
+        },
+        {
+          "tick": 9,
+          "kind": "order",
+          "ids": [
+            "p3"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 2,
+            "y": 6
+          }
+        },
+        {
+          "tick": 93,
+          "kind": "order",
+          "ids": [
+            "p8"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "tick": 219,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 2,
+          "revision": 5
+        },
+        {
+          "tick": 309,
+          "kind": "order",
+          "ids": [
+            "p9"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 2
+          }
+        }
+      ],
+      "ledger": [
+        {
+          "id": 1,
+          "tick": 54,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 2,
+          "tick": 84,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 3,
+          "tick": 109,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        },
+        {
+          "id": 4,
+          "tick": 163,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 5,
+          "tick": 193,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 6,
+          "tick": 218,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        }
+      ],
+      "reason": "一百二十秒已到，远征目标尚未完成。"
+    },
+    {
+      "level": 7,
+      "state": "lost",
+      "ticks": 1224,
+      "home": {
+        "id": "home",
+        "side": "player",
+        "x": 1,
+        "y": 3,
+        "hp": 0,
+        "maxHP": 130
+      },
+      "core": {
+        "id": "core",
+        "side": "enemy",
+        "x": 10,
+        "y": 3,
+        "hp": 110,
+        "maxHP": 110
+      },
+      "units": [
+        {
+          "id": "p1",
+          "type": "worker",
+          "side": "player",
+          "x": 3,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 40,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p2",
+          "type": "ranger",
+          "side": "player",
+          "x": 2,
+          "y": 7,
+          "hp": 58,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "escort",
+            "target": "p4"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 531,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p3",
+          "type": "guard",
+          "side": "player",
+          "x": 2,
+          "y": 6,
+          "hp": 62,
+          "maxHP": 110,
+          "carry": 0,
+          "order": {
+            "kind": "escort",
+            "target": "p4"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 361,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p4",
+          "type": "cart",
+          "side": "player",
+          "x": 1,
+          "y": 6,
+          "hp": 61,
+          "maxHP": 85,
+          "carry": 0,
+          "order": {
+            "kind": "move",
+            "x": 10,
+            "y": 6
+          },
+          "path": [
+            {
+              "x": 2,
+              "y": 6
+            },
+            {
+              "x": 2,
+              "y": 7
+            },
+            {
+              "x": 3,
+              "y": 7
+            },
+            {
+              "x": 4,
+              "y": 7
+            },
+            {
+              "x": 5,
+              "y": 7
+            },
+            {
+              "x": 6,
+              "y": 7
+            },
+            {
+              "x": 7,
+              "y": 7
+            },
+            {
+              "x": 8,
+              "y": 7
+            },
+            {
+              "x": 9,
+              "y": 7
+            },
+            {
+              "x": 10,
+              "y": 7
+            },
+            {
+              "x": 10,
+              "y": 6
+            }
+          ],
+          "blocked": true,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e5",
+          "type": "raider",
+          "side": "enemy",
+          "x": 6,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 117,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e6",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 7,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 201,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e7",
+          "type": "raider",
+          "side": "enemy",
+          "x": 2,
+          "y": 5,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 370,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "p8",
+          "type": "worker",
+          "side": "player",
+          "x": 2,
+          "y": 3,
+          "hp": 0,
+          "maxHP": 40,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 0,
+          "action": null,
+          "ticket": 1
+        },
+        {
+          "id": "p9",
+          "type": "ranger",
+          "side": "player",
+          "x": 2,
+          "y": 5,
+          "hp": 70,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "escort",
+            "target": "p4"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 380,
+          "action": null,
+          "ticket": 2
+        },
+        {
+          "id": "p10",
+          "type": "ranger",
+          "side": "player",
+          "x": 6,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 70,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 902,
+          "action": null,
+          "ticket": 3
+        },
+        {
+          "id": "e11",
+          "type": "raider",
+          "side": "enemy",
+          "x": 7,
+          "y": 2,
+          "hp": 0,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 504,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e12",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 5,
+          "y": 7,
+          "hp": 0,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "stop"
+          },
+          "path": [],
+          "blocked": false,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 544,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e13",
+          "type": "raider",
+          "side": "enemy",
+          "x": 2,
+          "y": 3,
+          "hp": 8,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            }
+          ],
+          "blocked": false,
+          "moveClock": 0.03333333333333333,
+          "gatherClock": 0,
+          "cooldown": 1232,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e14",
+          "type": "raider",
+          "side": "enemy",
+          "x": 1,
+          "y": 2,
+          "hp": 44,
+          "maxHP": 44,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            },
+            {
+              "x": 3,
+              "y": 5
+            },
+            {
+              "x": 2,
+              "y": 5
+            },
+            {
+              "x": 2,
+              "y": 6
+            }
+          ],
+          "blocked": true,
+          "moveClock": 0,
+          "gatherClock": 0,
+          "cooldown": 1250,
+          "action": null,
+          "ticket": null
+        },
+        {
+          "id": "e15",
+          "type": "slinger",
+          "side": "enemy",
+          "x": 4,
+          "y": 3,
+          "hp": 36,
+          "maxHP": 36,
+          "carry": 0,
+          "order": {
+            "kind": "advance",
+            "x": 1,
+            "y": 3
+          },
+          "path": [
+            {
+              "x": 3,
+              "y": 3
+            },
+            {
+              "x": 3,
+              "y": 4
+            }
+          ],
+          "blocked": false,
+          "moveClock": 0.03333333333333333,
+          "gatherClock": 0,
+          "cooldown": 1252,
+          "action": null,
+          "ticket": null
+        }
+      ],
+      "stats": {
+        "harvested": 60,
+        "delivered": 60,
+        "lost": 0,
+        "spent": 48,
+        "produced": 3,
+        "orders": 7,
+        "kills": 5,
+        "settlements": 1
+      },
+      "log": [
+        {
+          "tick": 0,
+          "kind": "order",
+          "ids": [
+            "p1"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "south"
+          }
+        },
+        {
+          "tick": 3,
+          "kind": "buy",
+          "type": "worker",
+          "token": 1,
+          "revision": 1
+        },
+        {
+          "tick": 6,
+          "kind": "order",
+          "ids": [
+            "p2"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 5
+          }
+        },
+        {
+          "tick": 9,
+          "kind": "order",
+          "ids": [
+            "p3"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 2,
+            "y": 6
+          }
+        },
+        {
+          "tick": 63,
+          "kind": "order",
+          "ids": [
+            "p8"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "north"
+          }
+        },
+        {
+          "tick": 111,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 2,
+          "revision": 5
+        },
+        {
+          "tick": 201,
+          "kind": "order",
+          "ids": [
+            "p9"
+          ],
+          "order": {
+            "kind": "advance",
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "tick": 249,
+          "kind": "buy",
+          "type": "ranger",
+          "token": 3,
+          "revision": 7
+        },
+        {
+          "tick": 339,
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3",
+            "p9",
+            "p10"
+          ],
+          "order": {
+            "kind": "escort",
+            "target": "p4"
+          }
+        },
+        {
+          "tick": 342,
+          "kind": "order",
+          "ids": [
+            "p4"
+          ],
+          "order": {
+            "kind": "move",
+            "x": 10,
+            "y": 6
+          }
+        }
+      ],
+      "ledger": [
+        {
+          "id": 1,
+          "tick": 54,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 2,
+          "tick": 84,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 3,
+          "tick": 109,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        },
+        {
+          "id": 4,
+          "tick": 109,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 5,
+          "tick": 139,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 6,
+          "tick": 156,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 7,
+          "tick": 163,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 8,
+          "tick": 193,
+          "type": "harvest",
+          "unit": "p1",
+          "qty": 3,
+          "node": "south"
+        },
+        {
+          "id": 9,
+          "tick": 202,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 10,
+          "tick": 218,
+          "type": "deliver",
+          "unit": "p1",
+          "qty": 6,
+          "node": "south"
+        },
+        {
+          "id": 11,
+          "tick": 232,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 12,
+          "tick": 249,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 13,
+          "tick": 295,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 14,
+          "tick": 325,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 15,
+          "tick": 342,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 16,
+          "tick": 399,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 17,
+          "tick": 429,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 18,
+          "tick": 446,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 19,
+          "tick": 492,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 20,
+          "tick": 522,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 21,
+          "tick": 539,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 22,
+          "tick": 585,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 23,
+          "tick": 615,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 24,
+          "tick": 632,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 25,
+          "tick": 678,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 26,
+          "tick": 708,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 27,
+          "tick": 725,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        },
+        {
+          "id": 28,
+          "tick": 771,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 29,
+          "tick": 801,
+          "type": "harvest",
+          "unit": "p8",
+          "qty": 3,
+          "node": "north"
+        },
+        {
+          "id": 30,
+          "tick": 818,
+          "type": "deliver",
+          "unit": "p8",
+          "qty": 6,
+          "node": "north"
+        }
+      ],
+      "reason": "营地失守。留一队护卫，再安排下一次出发。"
+    }
+  ]
+}
