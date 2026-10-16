@@ -32,7 +32,15 @@
 
 保存的是赛圈历史、已用时、已通过闸门和统计，恢复只采用声明的安全点，当前圈计时保留并加三秒。外部坐标、角度和车速不受信任。计圈所需的路线进度饱和在两圈长度，避免反复练习/复位使合法当前局超出保存边界。这是结构与边界校验，并非防恶意篡改本机成绩的安全系统。
 
-部署与公开全部八条验收、最终运行文件校验将在完成后追加。前十五款运行目录与本款开始前 `20b5ef5acc858d690fc01f0ef3d84318ce2888ac` 一致；仅增加新作品及必要的共享入口、清单和验证文件。本地预览不作为上线证明。
+代码提交 [`79abe37ba15683504f6bf8edb3e12139d44d7fb1`](https://github.com/yydshly/classic-games-atlas/commit/79abe37ba15683504f6bf8edb3e12139d44d7fb1)，对应 [Pages 成功运行 38900894329](https://github.com/yydshly/classic-games-atlas/actions/runs/38900894329)。[公开汇总](post-qa/live-summary.json)与 [A 组 1/4/7](post-qa/live-a/report.json)、[B 组 2/5/8](post-qa/live-b/report.json)、[C 组 3/6](post-qa/live-c/report.json)记录全部八条真实键盘通关，合计 20 圈、218 次有序过闸、零复位，并验证每条最佳圈速、全程、解锁和刷新全新起跑。
+
+[公网 22 项界面验收](post-qa/live-ui/report.json)、[图鉴完整回归](post-qa/live-atlas/browser-report.json)与 [122 个运行文件哈希](post-qa/code-integrity.json)均通过：HTTP 全部 200，SHA-256 与代码提交逐项相同，无传输重试；控制台、失败请求和错误响应为空。
+
+[公网界面首轮记录](post-qa/public-ui-first-attempt.json)保留固定 0.2 秒操作余量断言失败：首轮未捕获各分支数值，无法追溯确定失败子条件。现 [复位观察](post-qa/live-ui/manual-recovery.json)保存前后状态及操作墙钟时间，校验加三秒与运行中时钟实际经过时间；本次观察操作约 0.078 秒，比赛钟增量约 3.05 秒，顺序/圈数保持。引擎精确加三秒规则未改，时限、车辆和全部运行代码未改。
+
+后续只归档这些证据及测试脚本修正，归档后再次等待 Pages 成功并复核同一组 122 个运行文件。
+
+前十五款运行目录与本款开始前 `20b5ef5acc858d690fc01f0ef3d84318ce2888ac` 一致；仅增加新作品及必要的共享入口、清单和验证文件。本地预览不作为上线证明。
 
 ## 复查与限制
 

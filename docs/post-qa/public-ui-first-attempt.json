@@ -1,0 +1,12 @@
+{
+  "observedFailure": "Manual recovery assertion after first six UI checks; original assertion also required running race clock operation overhead under 0.2 seconds. No per-assert values captured in first script, so exact failing subcondition was not preserved.",
+  "correction": "Record before/after state and operation wall time; check unchanged lap/gate and reset count, and exact three-second penalty plus bounded real elapsed operation time. Engine isolated exact+3 rule remains unchanged.",
+  "checksCompleted": {
+    "TutorialAndCountdownCannotJumpStart": true,
+    "CountdownPauseResumeAndHeldInputClear": true,
+    "NativeLockedMenuCannotStartFutureCourse": true,
+    "NormalKeyboardThrottleAndRelativeSteering": true,
+    "NormalBrakingAndNativeKeyboardPauseFreeze": true,
+    "NaturalRoadEdgeRecoverySafeNoSkippedGate": true
+  }
+}
