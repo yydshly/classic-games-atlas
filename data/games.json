@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.16.4",
+  "version": "2026.10.16.5",
   "experiments": [
     {
       "id": "fortress",
@@ -52,6 +52,19 @@
       "levels": 12,
       "description": "接住一道光，改变下一条轨迹。十二座原创砖阵，多击砖、分束、宽板与缓速交织成新的节奏。",
       "relation": "本项目原创接球反射与清砖玩法实验，非原作或逐关复制。"
+    },
+    {
+      "id": "crate",
+      "number": "05",
+      "title": "仓格计划",
+      "english": "CRATE PLAN",
+      "sourceGame": "sokoban",
+      "status": "published",
+      "url": "./games/crate/",
+      "cover": "./assets/crate-cover.svg",
+      "levels": 20,
+      "description": "先给自己留一个站位。二十张原创仓格，从单箱转向到五箱调度，每一步都可以撤销。",
+      "relation": "本项目原创网格推箱与归位解谜实验，非原作题图复制。"
     }
   ],
   "groups": [
@@ -724,7 +737,20 @@
       "edition": "以原始 Sokoban 规则为代表，不把所有后继实现当作同一版本。",
       "sources": [
         "sokoban"
-      ]
+      ],
+      "experiment": {
+        "id": "crate",
+        "number": "05",
+        "title": "仓格计划",
+        "english": "CRATE PLAN",
+        "sourceGame": "sokoban",
+        "status": "published",
+        "url": "./games/crate/",
+        "cover": "./assets/crate-cover.svg",
+        "levels": 20,
+        "description": "先给自己留一个站位。二十张原创仓格，从单箱转向到五箱调度，每一步都可以撤销。",
+        "relation": "本项目原创网格推箱与归位解谜实验，非原作题图复制。"
+      }
     },
     {
       "id": "minesweeper",

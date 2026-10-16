@@ -1,0 +1,35 @@
+{
+  "testedAt": "2026-10-16T05:57:50.097109+00:00",
+  "url": "http://127.0.0.1:4174/games/crate/",
+  "kind": "real keyboard/mouse/touch inputs; fresh gameplay state and natural stage unlock",
+  "fixture": "only isolated invalid-storage and blocked-storage contexts, no board/box/goal/win mutation",
+  "checks": {
+    "firstVisitTeaching": true,
+    "blockedWallDoesNotCount": true,
+    "staticCornerAndSixUndos": true,
+    "reloadRestoresCurrentBoardAndUndo": true,
+    "victoryUndoAndRedo": true,
+    "rapidEightEdgesAndEightUndos": true,
+    "pauseAndHelpFreezeResume": true,
+    "heldKeyDoesNotCarryAcrossLevel": true,
+    "restartAndNaturalUnlockSelection": true,
+    "PersonalMetricsAndSoundPersist": true,
+    "shortTouchExactlyOneMoveAndUndo": true,
+    "longTouchRepeatsStopsAtWinNoScroll": true,
+    "responsiveWidths": [
+      320,
+      360,
+      390,
+      768,
+      1280
+    ],
+    "storageUnavailableStillPlayableAndUndo": true,
+    "invalidSavedActionLogFallsBackToFreshBoard": true,
+    "atlasAssociationAndFiveEntries": true,
+    "previousFourEntrances": true,
+    "atlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

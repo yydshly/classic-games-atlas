@@ -1,0 +1,249 @@
+{
+  "testedAt": "2026-10-16T05:57:53.881Z",
+  "kind": "logic fixtures and independent-search replays; not browser input",
+  "passed": 10,
+  "checks": [
+    {
+      "name": "20 original unique maps, valid borders/actors/goals, connected floor and 1–5 boxes",
+      "status": "passed"
+    },
+    {
+      "name": "walls, bounds and two adjacent crates block movement without counters/history",
+      "status": "passed"
+    },
+    {
+      "name": "walking away never pulls; one legal push increments both counters and preserves target geometry",
+      "status": "passed"
+    },
+    {
+      "name": "multi-step undo restores players, crates and both counters, including a winning push",
+      "status": "passed"
+    },
+    {
+      "name": "undo has no small move cap: 2000 moves undo to the exact initial actors",
+      "status": "passed"
+    },
+    {
+      "name": "static corner reminder ignores targets, ordinary wall edges and temporary crate neighbours",
+      "status": "passed"
+    },
+    {
+      "name": "legal action-log restore rebuilds undo history and paused board; bad/trailing actions reject safely",
+      "status": "passed"
+    },
+    {
+      "name": "pause blocks movement and undo and freezes time; restart is fresh",
+      "status": "passed"
+    },
+    {
+      "name": "snapshot cannot mutate live actors, goals or layout",
+      "status": "passed"
+    },
+    {
+      "name": "all 20 independently searched routes replay in production rules, undo fully and restore; verified route push curve is nondecreasing",
+      "status": "passed"
+    }
+  ],
+  "levels": [
+    {
+      "stage": 1,
+      "boxes": 1,
+      "moves": 2,
+      "pushes": 2,
+      "expanded": 3,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 2,
+      "boxes": 1,
+      "moves": 5,
+      "pushes": 3,
+      "expanded": 4,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 3,
+      "boxes": 1,
+      "moves": 6,
+      "pushes": 4,
+      "expanded": 5,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 4,
+      "boxes": 2,
+      "moves": 12,
+      "pushes": 4,
+      "expanded": 5,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 5,
+      "boxes": 2,
+      "moves": 10,
+      "pushes": 5,
+      "expanded": 6,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 6,
+      "boxes": 2,
+      "moves": 18,
+      "pushes": 6,
+      "expanded": 7,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 7,
+      "boxes": 2,
+      "moves": 17,
+      "pushes": 7,
+      "expanded": 8,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 8,
+      "boxes": 2,
+      "moves": 18,
+      "pushes": 8,
+      "expanded": 9,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 9,
+      "boxes": 3,
+      "moves": 20,
+      "pushes": 9,
+      "expanded": 10,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 10,
+      "boxes": 3,
+      "moves": 29,
+      "pushes": 10,
+      "expanded": 11,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 11,
+      "boxes": 3,
+      "moves": 40,
+      "pushes": 11,
+      "expanded": 24,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 12,
+      "boxes": 3,
+      "moves": 28,
+      "pushes": 12,
+      "expanded": 13,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 13,
+      "boxes": 4,
+      "moves": 38,
+      "pushes": 12,
+      "expanded": 44,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 14,
+      "boxes": 4,
+      "moves": 31,
+      "pushes": 14,
+      "expanded": 15,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 15,
+      "boxes": 4,
+      "moves": 42,
+      "pushes": 16,
+      "expanded": 17,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 16,
+      "boxes": 4,
+      "moves": 55,
+      "pushes": 18,
+      "expanded": 54,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 17,
+      "boxes": 5,
+      "moves": 42,
+      "pushes": 18,
+      "expanded": 19,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 18,
+      "boxes": 5,
+      "moves": 47,
+      "pushes": 20,
+      "expanded": 169,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 19,
+      "boxes": 5,
+      "moves": 56,
+      "pushes": 22,
+      "expanded": 23,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    },
+    {
+      "stage": 20,
+      "boxes": 5,
+      "moves": 63,
+      "pushes": 24,
+      "expanded": 25,
+      "result": "won",
+      "fullUndo": "initial actors restored",
+      "logRestore": "won"
+    }
+  ]
+}
