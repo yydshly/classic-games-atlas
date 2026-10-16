@@ -1,0 +1,30 @@
+"""Check editorial integrity and static local resources, without network access."""
+import collections
+import json
+import re
+from pathlib import Path
+from urllib.parse import urlparse
+
+ROOT = Path(__file__).resolve().parents[1]
+data = json.loads((ROOT/'data/games.json').read_text(encoding='utf-8'))
+games = data['games']
+assert len(games)==72
+assert len(data['groups'])==10
+assert len({game['id'] for game in games})==72
+assert len({game['title'] for game in games})==72
+counts=collections.Counter(game['group'] for game in games)
+assert list(counts.values())==[8,8,8,6,8,8,6,6,6,8],counts
+for game in games:
+    for field in ['title','english','aliases','scope','platforms','era','genres','play','classic','edition','sources']:
+        assert game[field],(game['id'],field)
+    assert game['group'] in {group['id'] for group in data['groups']}
+    for key in game['sources']:
+        source = data['sources'][key]
+        assert urlparse(source['url']).scheme=='https'
+        assert source['relation'] and source['status'] and source['note']
+html=(ROOT/'index.html').read_text(encoding='utf-8')
+for resource in re.findall(r'(?:src|href)="(\./[^"#]+)"',html):
+    assert (ROOT/resource).is_file(),resource
+assert '未实现' in html and '不是游戏平台分类' in html
+report=dict(entries=len(games),uniqueIds=72,uniqueTitles=72,groups=dict(counts),sourceRecords=len(data['sources']),sourceStatuses=dict(collections.Counter(source['status'] for source in data['sources'].values())),localResources='all present')
+print(json.dumps(report,ensure_ascii=True,indent=2))
