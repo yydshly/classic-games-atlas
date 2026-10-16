@@ -12,7 +12,43 @@
 
 ## 浏览器与公开部署
 
-待完成后补充全部十关公网真实操作、界面/原生触屏、图鉴回归和最终 Pages / 文件版本证据。在取得实际结果前，本段不表示已经上线。
+- 功能 / 最终运行代码提交：[`52c9e7b1b40908d0e0d0fd0fba26004499d41dec`](https://github.com/yydshly/classic-games-atlas/commit/52c9e7b1b40908d0e0d0fd0fba26004499d41dec)。[Pages run 38921302304](https://github.com/yydshly/classic-games-atlas/actions/runs/38921302304) 成功，原始元数据在 [code-pages.json](brook-qa/code-pages.json)。
+- [直接试玩](https://yydshly.github.io/classic-games-atlas/games/brook/) · [图鉴首页](https://yydshly.github.io/classic-games-atlas/) · [仓库](https://github.com/yydshly/classic-games-atlas)。后续证据提交只改变文档、报告、截图及测试，运行代码保持相同；最终 main 的 Pages 和142运行文件在交付时另行核对，SHA见交付消息。
+- [公网十关真实输入](brook-qa/public-browser/report.json)：普通卡片点击、行列选择、部署与收露按钮，正常预算和正式2×速度；10/10过关，全部160个来敌清除。后关隔离夹具仅解锁菜单/教学/静音，不改战场资源、血量、冷却、时钟、波次或胜利。没有把自动策略称作人工体验。
+- [实际操作重放](brook-qa/public-replay.json)：网页实际产生的 **348** 条普通指令逐条通过正式预算、冷却和占格校验。资源、每项统计、已出敌人数、成绩与公网结果完全相同。脚本 `scripts/test_brook_replay.mjs` 可重做该核对；没有为匹配结果改写状态。
+- [公网22项界面检查](brook-qa/public-ui/report.json)：原子扣费、重复操作、行列预览、原生Tab/Home/方向键、C收露、鼠标点资源、十四秒过期、暂停/失焦/菜单、波中刷新精确恢复再赢、自然不布防失败/重试、最佳与声音/速度保存、锁关/溪石、坏存档/禁用存储、六种宽度。原生touch完整首关以卡片、画布格、部署和收露大按钮操作；只有滚动定位使用测试辅助。
+- [142文件校验](brook-qa/public-integrity.json)全部HTTP200、SHA-256与功能提交相同，无连接重试。[图鉴公网回归](brook-qa/public-atlas.json)覆盖72条详情、10组、搜索/筛选/空结果/键盘与320–1440px；控制台、失败请求及HTTP资源错误均为零。
+- [保留验证](brook-qa/retention.json)：前18款运行文件、72条原作介绍、10组和71条来源记录未改。现为19款、238关。正常策略和UI夹具、两次选择工具失败、初稿平衡结果均在本目录保留。
+
+本轮公网实际结果：
+
+| 关卡 | 秒 | 清除 | 余露 | 装置损失 | 苔垒受击 | 减速命中 |
+|---|---:|---:|---:|---:|---:|---:|
+| 01 | 41.667 | 6 | 285 | 0 | 0 | 0 |
+| 02 | 50.917 | 12 | 180 | 0 | 0 | 0 |
+| 03 | 60.667 | 12 | 150 | 0 | 0 | 13 |
+| 04 | 59.667 | 14 | 90 | 0 | 6 | 14 |
+| 05 | 67.800 | 17 | 45 | 0 | 3 | 16 |
+| 06 | 67.667 | 18 | 0 | 0 | 2 | 14 |
+| 07 | 68.100 | 16 | 35 | 1 | 15 | 23 |
+| 08 | 70.700 | 17 | 15 | 0 | 0 | 15 |
+| 09 | 68.800 | 21 | 0 | 0 | 16 | 14 |
+| 10 | 81.983 | 27 | 135 | 0 | 5 | 25 |
+
+第6/9关本轮余露达到0，第7关损失一座装置但正常守住；不因损失改判失败，不把无损当作通关门槛。实际输入时刻会改变布防选择，所以不同运行的剩余资源/用时/损失可以不同。只有本轮实际日志的重放才要求逐项相同。
+
+截图：[中段战场](brook-qa/public-browser/level-05-field.png) · [终关胜利](brook-qa/public-browser/level-10-won.png) · [手机准备](brook-qa/public-ui/mobile-ready.png) · [原生触屏首关胜利](brook-qa/public-ui/mobile-won.png)。
+
+复查命令：
+
+```powershell
+node scripts/test_brook.mjs
+node scripts/test_brook_strategy.mjs
+python scripts/test_brook_browser.py --url https://yydshly.github.io/classic-games-atlas/games/brook/
+python scripts/test_brook_ui.py --url https://yydshly.github.io/classic-games-atlas/games/brook/
+node scripts/test_brook_replay.mjs docs/brook-qa/public-browser/report.json
+python scripts/verify_deployment.py --commit HEAD
+```
 
 ## 范围与限制
 
