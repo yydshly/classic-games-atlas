@@ -55,7 +55,14 @@ README 新增统一发布表，逐项列出十一款作品、关数、机制参�
 
 ## 部署与复现
 
-公开 Pages 成功和实际 URL 验证后追加部署证据，不能以本地预览替代。
+网站：[青藤回廊](https://yydshly.github.io/classic-games-atlas/games/vine/) · [图鉴](https://yydshly.github.io/classic-games-atlas/)。独立代码提交 `a440ef9ebfc7197393aaca805ba9b818d4ba08fe`，已 [成功部署 Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/38879996945)，精确任务步骤与 headSha 见 [pages-code-deployment.json](vine-qa/pages-code-deployment.json)。
+
+公开网站 16/16 关用真实方向键和正常节拍获胜，逐关实际存档、解锁、刷新整备通过。终局身体、方向、食物、RNG、收集、分数、格数与规则统计与正常模拟逐项一致；未移动食物、删身体或改慢节拍。原始记录：[公开 A](vine-qa/public-1-4-7-10-13-16/report.json)、[公开 B](vine-qa/public-2-5-8-11-14/report.json)、[公开 C](vine-qa/public-3-6-9-12-15/report.json)、[汇总](vine-qa/public-summary.json)。
+
+公开 17 项界面检查通过，含真实滑动与按钮转弯、手势取消、无滚动、自然失败重试、增长身体恢复、完整一拍、原生暂停、存储不可用和旧入口；见 [public-ui/report.json](vine-qa/public-ui/report.json)。滑动测试还检查抬手不会重复提交同一方向。图鉴搜索、筛选、72 个详情、空结果、键盘与六种宽度回归通过，见 [public-atlas](vine-qa/public-atlas/browser-report.json)。浏览器报告无控制台错误、HTTP 错误及失败请求。
+
+[84 文件核验](vine-qa/code-deployment-integrity.json)全部 HTTP 200，SHA-256 与代码提交一致，涵盖首页、数据、封面及十一款运行文件；保留正常 TLS 校验，持久连接本轮无重试。前十款目录与上一部署 `7535e7d8de8ab0fdbde1cc55da5920c8a43da668` 完全一致。README 发布总表保持机制参考与原创实现边界，未将原作标记为已完整复刻。
+
 
 ```powershell
 node scripts/test_vine.mjs
