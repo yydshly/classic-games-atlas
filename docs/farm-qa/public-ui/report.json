@@ -1,0 +1,393 @@
+{
+  "testedAt": "2026-10-16T18:36:39.701615+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/farm/",
+  "checks": [
+    "First tutorial is modal and elapsed wall time never starts, grows or funds a farm",
+    "Initial map lock and native dialog Escape work without consuming resources",
+    "Keyboard starts without cost, selects actual plots and crop without changing model resources",
+    "Plant preview exposes exact money/action outcomes and Escape cancels without cost",
+    "Native double-confirm and occupied-plot attempt charge only one seed and one action",
+    "Held care/confirm keys perform one watering; a full two-water plot cannot spend another action",
+    "Exhausted daily actions freeze farming until an explicit day-end; zero timer progression",
+    "Day-end preview is pure; confirmation grows once, uses water once and replenishes only daily actions",
+    "Rain supplies water automatically; mature crops remain on the land and do not enter inventory themselves",
+    "A real keyboard harvest adds two unique units once, frees land and gives no unearned money",
+    "Keyboard whole-order confirmation consumes actual warehouse units, credits once and unlocks the next map",
+    "320px result panel and primary action pass actual hit testing",
+    "Retry restores only this map while preserving a genuinely earned best score",
+    "Native selector retains keyboard behavior; pause blocks day-end, money, growth and warehouse changes",
+    "In-progress refresh replays all thirteen model fields, stays paused, then ordinary remaining actions win",
+    "A genuine unattended order misses its formal deadline; failure and retry occur without injected loss or resources",
+    "Actual cold-day care grows hardy grain and keeps non-hardy radish water without advancing its age",
+    "Handbook pauses and resumes its prior mode; explicit blur pauses without spending a day",
+    "Original local synthesized-sound preference persists across refresh",
+    "Field, workbench, warehouse, orders and native dialogs fit six widths from320 to1440",
+    "Malformed storage safely resets preferences and resources to the formal first level",
+    "An illegal replay and forged top-level money/stock cannot become production resources",
+    "A complete native touch sow/care/grow/harvest/deliver journey wins using actual conserved resources",
+    "Denied storage still permits a full normal-budget farm win"
+  ],
+  "fixture": "Only unlock/last-map/tutorial/sound preferences plus malformed/denied-storage and explicitly rejected forged-checkpoint fixtures. All successful money, age, inventory, deliveries and results use real ordinary controls. Blur is explicitly simulated.",
+  "keyboardWin": {
+    "state": "won",
+    "day": 3,
+    "cash": 9,
+    "stats": {
+      "actions": 5,
+      "plants": 2,
+      "waterings": 1,
+      "harvests": 1,
+      "produced": 2,
+      "delivered": 2,
+      "orders": 1,
+      "daysEnded": 2,
+      "growth": 4,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 1
+    },
+    "ledger": {
+      "seeds": 4,
+      "income": 7
+    },
+    "units": [
+      {
+        "id": "1:1",
+        "batch": 1,
+        "crop": "radish",
+        "place": "delivered",
+        "order": "basket"
+      },
+      {
+        "id": "1:2",
+        "batch": 1,
+        "crop": "radish",
+        "place": "delivered",
+        "order": "basket"
+      }
+    ],
+    "completed": [
+      {
+        "id": "basket",
+        "day": 3,
+        "units": [
+          "1:1",
+          "1:2"
+        ]
+      }
+    ],
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      },
+      {
+        "kind": "water",
+        "plot": 0
+      },
+      {
+        "kind": "plant",
+        "plot": 1,
+        "crop": "radish"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "harvest",
+        "plot": 0
+      },
+      {
+        "kind": "deliver",
+        "order": "basket"
+      }
+    ]
+  },
+  "restore": {
+    "exactFields": [
+      "day",
+      "actions",
+      "cash",
+      "plots",
+      "nextPlant",
+      "plantings",
+      "batches",
+      "units",
+      "completed",
+      "ledger",
+      "revision",
+      "log",
+      "stats"
+    ],
+    "day": 2,
+    "cash": 4,
+    "plots": [
+      {
+        "id": 1,
+        "crop": "radish",
+        "age": 1,
+        "moisture": 1,
+        "plantedDay": 1
+      },
+      null,
+      null,
+      null
+    ]
+  },
+  "restoreAndWin": {
+    "state": "won",
+    "day": 3,
+    "cash": 11,
+    "stats": {
+      "actions": 4,
+      "plants": 1,
+      "waterings": 1,
+      "harvests": 1,
+      "produced": 2,
+      "delivered": 2,
+      "orders": 1,
+      "daysEnded": 2,
+      "growth": 2,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 1
+    },
+    "ledger": {
+      "seeds": 2,
+      "income": 7
+    },
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      },
+      {
+        "kind": "water",
+        "plot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "harvest",
+        "plot": 0
+      },
+      {
+        "kind": "deliver",
+        "order": "basket"
+      }
+    ]
+  },
+  "naturalFailure": {
+    "state": "lost",
+    "day": 5,
+    "cash": 6,
+    "reason": "「早市绯萝」在第5天结束时仍未交付。",
+    "stats": {
+      "actions": 0,
+      "plants": 0,
+      "waterings": 0,
+      "harvests": 0,
+      "produced": 0,
+      "delivered": 0,
+      "orders": 0,
+      "daysEnded": 5,
+      "growth": 0,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "coldWeather": {
+    "day": 3,
+    "plots": [
+      {
+        "id": 1,
+        "crop": "grain",
+        "age": 2,
+        "moisture": 1,
+        "plantedDay": 1
+      },
+      {
+        "id": 2,
+        "crop": "radish",
+        "age": 1,
+        "moisture": 2,
+        "plantedDay": 1
+      },
+      null,
+      null
+    ],
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "grain"
+      },
+      {
+        "kind": "plant",
+        "plot": 1,
+        "crop": "radish"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "water",
+        "plot": 0
+      },
+      {
+        "kind": "water",
+        "plot": 1
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "day": 3,
+    "cash": 11,
+    "stats": {
+      "actions": 4,
+      "plants": 1,
+      "waterings": 1,
+      "harvests": 1,
+      "produced": 2,
+      "delivered": 2,
+      "orders": 1,
+      "daysEnded": 2,
+      "growth": 2,
+      "dryWaits": 0,
+      "coldWaits": 0,
+      "settlements": 1
+    },
+    "ledger": {
+      "seeds": 2,
+      "income": 7
+    },
+    "units": [
+      {
+        "id": "1:1",
+        "batch": 1,
+        "crop": "radish",
+        "place": "delivered",
+        "order": "basket"
+      },
+      {
+        "id": "1:2",
+        "batch": 1,
+        "crop": "radish",
+        "place": "delivered",
+        "order": "basket"
+      }
+    ],
+    "completed": [
+      {
+        "id": "basket",
+        "day": 3,
+        "units": [
+          "1:1",
+          "1:2"
+        ]
+      }
+    ],
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      },
+      {
+        "kind": "water",
+        "plot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "harvest",
+        "plot": 0
+      },
+      {
+        "kind": "deliver",
+        "order": "basket"
+      }
+    ],
+    "method": "Native tutorial/start/plot/action/confirmation/end-day/harvest/order taps; default first crop and scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
