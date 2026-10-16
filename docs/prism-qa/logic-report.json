@@ -1,0 +1,63 @@
+{
+  "testedAt": "2026-10-16T05:12:13.830Z",
+  "kind": "logic fixtures and simulations, not real browser input",
+  "passed": 14,
+  "checks": [
+    {
+      "name": "12 unique valid maps, finite targets, sparse steel and all three authored module types",
+      "status": "passed"
+    },
+    {
+      "name": "steel cannot enclose a breakable target: circle-centre flood through all permanent geometry",
+      "status": "passed"
+    },
+    {
+      "name": "swept high-speed faces and exact rounded corner contacts",
+      "status": "passed"
+    },
+    {
+      "name": "a high-speed ball cannot tunnel through a brick; one contact removes one hit",
+      "status": "passed"
+    },
+    {
+      "name": "high-speed paddle interception changes angle by left/right impact and prevents tunnelling",
+      "status": "passed"
+    },
+    {
+      "name": "same-brick overlap guard prevents duplicate damage; steel remains and gives no score",
+      "status": "passed"
+    },
+    {
+      "name": "near-horizontal directions are corrected to a minimum vertical component",
+      "status": "passed"
+    },
+    {
+      "name": "wide and slow modules apply, expire and clamp the paddle; split caps at four distinct balls",
+      "status": "passed"
+    },
+    {
+      "name": "falling capsule pickup happens once with its labelled effect",
+      "status": "passed"
+    },
+    {
+      "name": "multiple balls lost together cost exactly one life and prepare one new serve",
+      "status": "passed"
+    },
+    {
+      "name": "last brick wins once even when another ball is lost in the same step",
+      "status": "passed"
+    },
+    {
+      "name": "three complete losses fail, restart is clean, and repeated launch does not duplicate a ball",
+      "status": "passed"
+    },
+    {
+      "name": "pause freezes balls, buffs and time; snapshots cannot mutate the game",
+      "status": "passed"
+    },
+    {
+      "name": "all 12 maps clear using production rules and normal paddle inputs",
+      "status": "passed"
+    }
+  ]
+}

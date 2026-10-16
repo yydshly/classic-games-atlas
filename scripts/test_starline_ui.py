@@ -41,7 +41,7 @@ async def main(args):
    await m.set_viewport_size({'width':width,'height':900});await m.wait_for_timeout(80);assert not await m.evaluate('document.documentElement.scrollWidth>innerWidth'),width;widths.append(width)
   checks['responsiveWidths']=widths
   blocked=await b.new_context();await blocked.add_init_script('Object.defineProperty(window,"localStorage",{get(){throw new DOMException("Disabled","SecurityError")}})');bp=await blocked.new_page();bp.on('pageerror',lambda e:errors.append(str(e)));await bp.goto(args.url);assert not (await snap(bp))['storageAvailable'];await bp.locator('#primary-action').click();await bp.locator('#help-confirm').click();assert (await snap(bp))['state']=='playing';checks['storageUnavailableStillPlayable']=True;await blocked.close()
-  base=args.url.replace('games/starline/','');await p.goto(base);await p.wait_for_selector('.game-card');assert await p.locator('.game-card').count()==72;assert await p.locator('.lab-card').count()==3
+  base=args.url.replace('games/starline/','');await p.goto(base);await p.wait_for_selector('.game-card');assert await p.locator('.game-card').count()==72;assert await p.locator('.lab-card').count()==len(json.loads((ROOT/'data/experiments.json').read_text(encoding='utf-8')))
   for game in ['fortress','maze','starline']:assert await p.locator(f'a[href="./games/{game}/"]').count()==2
   await p.locator('[data-open="puzzle-bobble"]').click();assert '12' in await p.locator('.lab-detail').inner_text();await p.locator('.lab-detail a').click();assert '/games/starline/' in p.url;checks['atlasAssociationAndThreeEntries']=True
   for game in ['fortress','maze']:

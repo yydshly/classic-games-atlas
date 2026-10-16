@@ -16,3 +16,6 @@
 @media(max-width:950px){.experiments-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-planned{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr}.lab-planned .planned-art{height:100%;aspect-ratio:auto}.lab-planned .lab-card-copy>p{min-height:0}}@media(max-width:600px){.lab-heading{display:block}.lab-heading h2{font-size:25px}.experiments-grid{grid-template-columns:1fr}.lab-planned{display:block}.lab-planned .planned-art{aspect-ratio:5/2}.lab-card-copy{padding:22px}.lab-heading>p{margin-bottom:0}}
 
 .lab-card-copy>.eyebrow{min-height:0}
+
+.experiments-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.lab-card-copy>p:not(.eyebrow):not(.lab-english):not(.planned-label){min-height:92px}.lab-card-copy{padding:20px}
+@media(max-width:1100px){.experiments-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-card-copy>p:not(.eyebrow):not(.lab-english):not(.planned-label){min-height:68px}}@media(max-width:600px){.experiments-grid{grid-template-columns:1fr}.lab-card-copy>p:not(.eyebrow):not(.lab-english):not(.planned-label){min-height:0}.lab-card-copy{padding:22px}}
