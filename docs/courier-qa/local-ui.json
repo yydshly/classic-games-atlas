@@ -1,0 +1,365 @@
+{
+  "testedAt": "2026-10-16T20:07:15.575575+00:00",
+  "url": "http://127.0.0.1:4174/games/courier/",
+  "checks": [
+    "Fresh tutorial and ready screen do not start distance or time",
+    "Future route buttons are natively disabled and Escape closes the chooser",
+    "Real held/repeated direction changes one lane; repeated boundary input never leaves three lanes",
+    "Real jump/slide are mutually exclusive while lane changes remain available during an action",
+    "Pause freezes all physical/resource/log fields and disables action buttons",
+    "A direction held across pause cannot become a new action until released",
+    "Refresh exactly replays a mid-jump route paused, then real keyboard input finishes with full health",
+    "Winning unlocks only the next route, stores earned best and settles once despite later input",
+    "320px result primary button is visible and passes actual hit testing",
+    "Unattended natural collisions fail on the third distinct row and retry restores normal resources without erasing best",
+    "Actual sliding into the first orange jump bar causes one natural hit and no parcel",
+    "Handbook and route chooser freeze simulation, restore previous running state, and blur pauses immediately",
+    "Original synthesized sound preference persists",
+    "Road, real touch controls, route chooser and text fit six widths from320 to1440",
+    "Malformed storage returns to safe fresh defaults",
+    "Invalid replay and forged health/score fields cannot become runtime resources",
+    "Native CDP swipes change direction/jump once; short/cancelled gestures do nothing and opposing action is excluded",
+    "Native touchscreen buttons complete a normal-speed first route with nine real parcels and full health",
+    "Denied storage still permits a complete normal-resource keyboard route",
+    "No console/page errors, request failures orHTTP4xx/5xx resources"
+  ],
+  "fixtures": "Only explicit stage/unlock/tutorial/storage metadata fixtures; no distance/health/items/score/results writes.",
+  "restore": {
+    "level": 1,
+    "ticks": 271,
+    "distance": 45.166666666666664,
+    "x": 0,
+    "lane": 0,
+    "action": "jump",
+    "actionTick": 271,
+    "hp": 3,
+    "cargo": 1,
+    "score": 15,
+    "hitRows": [],
+    "resolved": [
+      "1-1"
+    ],
+    "collected": [
+      "1-1-p0"
+    ],
+    "log": [
+      {
+        "tick": 183,
+        "kind": "left"
+      },
+      {
+        "tick": 271,
+        "kind": "jump"
+      }
+    ],
+    "stats": {
+      "hits": 0,
+      "jumps": 1,
+      "slides": 0,
+      "laneChanges": 1,
+      "settlements": 0
+    }
+  },
+  "restoreAndWin": {
+    "state": "won",
+    "cargo": 9,
+    "hp": 3,
+    "score": 105,
+    "stats": {
+      "hits": 0,
+      "jumps": 3,
+      "slides": 2,
+      "laneChanges": 12,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 183,
+        "kind": "left"
+      },
+      {
+        "tick": 271,
+        "kind": "jump"
+      },
+      {
+        "tick": 341,
+        "kind": "right"
+      },
+      {
+        "tick": 341,
+        "kind": "right"
+      },
+      {
+        "tick": 495,
+        "kind": "left"
+      },
+      {
+        "tick": 537,
+        "kind": "jump"
+      },
+      {
+        "tick": 651,
+        "kind": "left"
+      },
+      {
+        "tick": 807,
+        "kind": "right"
+      },
+      {
+        "tick": 807,
+        "kind": "right"
+      },
+      {
+        "tick": 851,
+        "kind": "slide"
+      },
+      {
+        "tick": 1119,
+        "kind": "left"
+      },
+      {
+        "tick": 1119,
+        "kind": "left"
+      },
+      {
+        "tick": 1163,
+        "kind": "jump"
+      },
+      {
+        "tick": 1277,
+        "kind": "right"
+      },
+      {
+        "tick": 1277,
+        "kind": "right"
+      },
+      {
+        "tick": 1317,
+        "kind": "slide"
+      },
+      {
+        "tick": 1433,
+        "kind": "left"
+      }
+    ]
+  },
+  "naturalFailure": {
+    "ticks": 573,
+    "hp": 0,
+    "cargo": 0,
+    "stats": {
+      "hits": 3,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "settlements": 1
+    },
+    "actualLog": []
+  },
+  "wrongPoseCollision": {
+    "hp": 2,
+    "hitRows": [
+      "3-1"
+    ],
+    "actualLog": [
+      {
+        "tick": 213,
+        "kind": "slide"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "ticks": 1680,
+    "cargo": 9,
+    "hp": 3,
+    "score": 105,
+    "stats": {
+      "hits": 0,
+      "jumps": 2,
+      "slides": 2,
+      "laneChanges": 12,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 195,
+        "kind": "left"
+      },
+      {
+        "tick": 347,
+        "kind": "right"
+      },
+      {
+        "tick": 355,
+        "kind": "right"
+      },
+      {
+        "tick": 505,
+        "kind": "left"
+      },
+      {
+        "tick": 547,
+        "kind": "jump"
+      },
+      {
+        "tick": 659,
+        "kind": "left"
+      },
+      {
+        "tick": 817,
+        "kind": "right"
+      },
+      {
+        "tick": 825,
+        "kind": "right"
+      },
+      {
+        "tick": 859,
+        "kind": "slide"
+      },
+      {
+        "tick": 1127,
+        "kind": "left"
+      },
+      {
+        "tick": 1135,
+        "kind": "left"
+      },
+      {
+        "tick": 1171,
+        "kind": "jump"
+      },
+      {
+        "tick": 1283,
+        "kind": "right"
+      },
+      {
+        "tick": 1291,
+        "kind": "right"
+      },
+      {
+        "tick": 1325,
+        "kind": "slide"
+      },
+      {
+        "tick": 1441,
+        "kind": "left"
+      }
+    ],
+    "actions": [
+      {
+        "observedTick": 185,
+        "kind": "left",
+        "acceptedLogLength": 1
+      },
+      {
+        "observedTick": 339,
+        "kind": "right",
+        "acceptedLogLength": 2
+      },
+      {
+        "observedTick": 347,
+        "kind": "right",
+        "acceptedLogLength": 3
+      },
+      {
+        "observedTick": 495,
+        "kind": "left",
+        "acceptedLogLength": 4
+      },
+      {
+        "observedTick": 539,
+        "kind": "jump",
+        "acceptedLogLength": 5
+      },
+      {
+        "observedTick": 651,
+        "kind": "left",
+        "acceptedLogLength": 6
+      },
+      {
+        "observedTick": 809,
+        "kind": "right",
+        "acceptedLogLength": 7
+      },
+      {
+        "observedTick": 817,
+        "kind": "right",
+        "acceptedLogLength": 8
+      },
+      {
+        "observedTick": 849,
+        "kind": "slide",
+        "acceptedLogLength": 9
+      },
+      {
+        "observedTick": 1119,
+        "kind": "left",
+        "acceptedLogLength": 10
+      },
+      {
+        "observedTick": 1127,
+        "kind": "left",
+        "acceptedLogLength": 11
+      },
+      {
+        "observedTick": 1163,
+        "kind": "jump",
+        "acceptedLogLength": 12
+      },
+      {
+        "observedTick": 1275,
+        "kind": "right",
+        "acceptedLogLength": 13
+      },
+      {
+        "observedTick": 1283,
+        "kind": "right",
+        "acceptedLogLength": 14
+      },
+      {
+        "observedTick": 1317,
+        "kind": "slide",
+        "acceptedLogLength": 15
+      },
+      {
+        "observedTick": 1431,
+        "kind": "left",
+        "acceptedLogLength": 16
+      }
+    ],
+    "wallSeconds": 14.030999999988126,
+    "method": "Native touchscreen tutorial/start/action button taps at1x; separate genuine CDP swipe tests; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
