@@ -32,7 +32,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/paper-cover.svg','games/paper/index.html','games/paper/paper.css','games/paper/levels.mjs','games/paper/engine.mjs','games/paper/renderer.mjs','games/paper/game.mjs',
          'assets/harbor-cover.svg','games/harbor/index.html','games/harbor/harbor.css','games/harbor/levels.mjs','games/harbor/engine.mjs','games/harbor/renderer.mjs','games/harbor/game.mjs',
          'assets/farm-cover.svg','games/farm/index.html','games/farm/farm.css','games/farm/levels.mjs','games/farm/engine.mjs','games/farm/renderer.mjs','games/farm/game.mjs',
-         'assets/ruins-cover.svg','games/ruins/index.html','games/ruins/ruins.css','games/ruins/levels.mjs','games/ruins/engine.mjs','games/ruins/renderer.mjs','games/ruins/game.mjs']
+         'assets/ruins-cover.svg','games/ruins/index.html','games/ruins/ruins.css','games/ruins/levels.mjs','games/ruins/engine.mjs','games/ruins/renderer.mjs','games/ruins/game.mjs',
+         'assets/orchard-cover.svg','games/orchard/index.html','games/orchard/orchard.css','games/orchard/levels.mjs','games/orchard/engine.mjs','games/orchard/renderer.mjs','games/orchard/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
