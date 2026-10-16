@@ -1,5 +1,5 @@
 """Natural all-level browser campaign: normal keys, no unlock/battle fixtures."""
-import argparse,asyncio,datetime,json,time
+import argparse,asyncio,base64,datetime,json,time
 from pathlib import Path
 from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[1];SNAP='async()=> (await import("./game.mjs")).diagnostics()';KEYS={'U':'ArrowUp','R':'ArrowRight','D':'ArrowDown','L':'ArrowLeft'}
@@ -24,7 +24,7 @@ async def main(args):
   for solution in solutions:
    await ready_input(p);s=await snap(p);assert s['level']==solution['stage'] and s['state']=='playing' and s['moves']==0
    end=await move_keys(p,solution['actions']);assert end['state']=='won' and end['satisfied']==len(end['boxes']);assert end['moves']==solution['moves'] and end['pushes']==solution['pushes'];assert end['unlocked']==min(20,end['level']+1);await p.wait_for_timeout(200)
-   await p.locator('#battlefield').screenshot(path=str(out/f'stage-{end["level"]:02}-board.png'))
+   pixels=await p.locator('#battlefield').evaluate('c=>c.toDataURL("image/png")');(out/f'stage-{end["level"]:02}-board.png').write_bytes(base64.b64decode(pixels.split(',',1)[1]))
    if end['level'] in [1,10,20]:await p.screenshot(path=str(out/f'stage-{end["level"]:02}-result.png'),full_page=True)
    result={'stage':end['level'],'result':end['state'],'normalActions':solution['actions'],'moves':end['moves'],'pushes':end['pushes'],'unlocked':end['unlocked'],'end':end};report['results'].append(result)
    await p.reload();fresh=await snap(p);assert fresh['state']=='won' and fresh['moves']==end['moves'] and fresh['pushes']==end['pushes'] and fresh['historyDepth']==end['historyDepth'];assert fresh['best'][str(end['level'])]=={'moves':end['moves'],'pushes':end['pushes']};result['reloadVerified']=True

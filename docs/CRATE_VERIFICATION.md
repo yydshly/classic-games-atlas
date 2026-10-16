@@ -45,6 +45,14 @@
 
 ## 部署与边界
 
-待本次独立代码提交部署后，在此补充 Pages 成功记录、真实线上二十关与界面回归、42 个运行文件和提交内容的逐文件 SHA-256 核对。
+独立代码提交：`51937b27a9f3429663a7695fd9d1e36bf7d73ce9`。[Pages 构建与部署](https://github.com/yydshly/classic-games-atlas/actions/runs/38858736315)成功，2026-10-16 06:00:35 UTC 完成；[保存的构建元数据](crate-qa/pages-code.json)对应同一提交。站点状态为 `built`，来源为 main 根目录，HTTPS 开启。
+
+- 真实网址：[仓格计划](https://yydshly.github.io/classic-games-atlas/games/crate/) · [图鉴首页](https://yydshly.github.io/classic-games-atlas/)。
+- [线上二十关连续实测](crate-qa/online-campaign/report.json)：全新存档从第 1 关自然解锁到第 20 关，579 次真实按键，全部箱子归位；每关刷新恢复胜利、计数、撤销历史和个人纪录。没有实战状态注入或菜单解锁夹具。线上棋盘 PNG 直接导出实际 Canvas 像素，避免胜利浮层遮住目标与箱子的清晰状态，完整页面另有截图。
+- [线上界面与触控](crate-qa/online-ui/report.json)：18 组检查全通过，包括短按一步、长按重复/胜利停止、胜利撤销、快速输入、切关长按隔离、局中恢复及撤销、自然解锁、声音和个人记录、存储不可用与异常日志、五款关联及返回。前四款均检查桌面和 390px 窄屏入口，页面无横向溢出并保留截图。
+- [线上 72 条图鉴回归](crate-qa/online-atlas/browser-report.json)：全部详情、搜索/筛选/空结果、键盘焦点、深链、320–1440px 六种宽度通过。
+- [42 个线上运行文件](crate-qa/online-integrity.json)均为 HTTP 200，各文件 SHA-256 与上述代码提交完全一致。所有线上报告均无控制台错误、请求失败或资源 4xx/5xx。
+
+第四款余下九关的独立补验证据提交是 `160ea16242d8bc7277855d4868d620b71099a3d9`，已与第五款代码一同推送 main；运行代码没有修改。详见 [第四款记录](PRISM_VERIFICATION.md#第五款开始前的高效补验)。本次后续证据归档提交仅增加测试、截图与文档，不改变已验收的五款运行代码。
 
 移动检查使用已安装 Chromium 的触屏视口；未覆盖实体手机、Safari、Firefox、屏幕阅读器及真实用户难度评估。地图通过可解性验证，但不承诺最优路线或完整死锁识别。此处的自动操作通关证据不等同于人工试玩评价。无需账号、后端、模型调用或付费依赖。

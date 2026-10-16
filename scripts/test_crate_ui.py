@@ -47,8 +47,8 @@ async def main(args):
   for game in ['fortress','maze','starline','prism','crate']:assert await p.locator(f'a[href="./games/{game}/"]').count()==2
   await p.locator('[data-open="sokoban"]').click();assert '20' in await p.locator('.lab-detail').inner_text();await p.locator('.lab-detail a').click();assert '/games/crate/' in p.url;checks['atlasAssociationAndFiveEntries']=True
   for game in ['fortress','maze','starline','prism']:
-   await p.goto(base+f'games/{game}/');assert (await snap(p))['state']=='ready';await p.screenshot(path=str(out/f'previous-{game}.png'))
-  checks['previousFourEntrances']=True;await p.goto(args.url);await p.locator('.back-link').click();await p.wait_for_selector('.game-card');checks['atlasReturn']=True
+   await p.goto(base+f'games/{game}/');assert (await snap(p))['state']=='ready';await p.screenshot(path=str(out/f'previous-{game}.png'));await p.set_viewport_size({'width':390,'height':844});assert not await p.evaluate('document.documentElement.scrollWidth>innerWidth'),game;await p.screenshot(path=str(out/f'previous-{game}-mobile.png'),full_page=True);await p.set_viewport_size({'width':1280,'height':1000})
+  checks['previousFourEntrancesDesktopAndMobile']=True;await p.goto(args.url);await p.locator('.back-link').click();await p.wait_for_selector('.game-card');checks['atlasReturn']=True
   report={'testedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':args.url,'kind':'real keyboard/mouse/touch inputs; fresh gameplay state and natural stage unlock','fixture':'only isolated invalid-storage and blocked-storage contexts, no board/box/goal/win mutation','checks':checks,'consoleErrors':errors,'badResponses':bad,'requestFailures':failed};(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps(report,ensure_ascii=True));assert not errors and not bad and not failed,(errors,bad,failed);await mobile.close();await ctx.close();await b.close()
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('--url',default='http://127.0.0.1:4174/games/crate/');a.add_argument('--out',default='docs/crate-qa/ui');asyncio.run(main(a.parse_args()))
