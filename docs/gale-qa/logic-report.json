@@ -1,0 +1,20 @@
+{
+  "testedAt": "2026-10-16T11:43:04.467Z",
+  "passed": 13,
+  "fixtureBoundary": "Velocity, HP thresholds, position and projectiles in isolated rule fixtures only; all campaign wins are separate unmodified ordinary-control runs",
+  "tests": [
+    "eight distinct maps, three environments and safe authored checkpoint ground",
+    "long hold jumps higher than early release and held jump never auto-repeats",
+    "coyote jump and prelanding jump buffer work; expired air jump is rejected",
+    "one-way ledges pass upward and land from above; solid cover blocks movement",
+    "world and camera bounds are clamped at both ends while closed exits cannot win",
+    "left/right horizontal and upper-diagonal shots have correct direction; finite weapon reverts",
+    "swept bullets hit the earliest target, cover absorbs and one-way ledges do not absorb",
+    "expired and out-of-world projectiles clean up and never deal delayed damage",
+    "same-frame damage chain consumes one armor; fatal damage and pit consume one life and clear bullets",
+    "two pulse skills are finite, grant temporary protection without healing and cannot be held to refill",
+    "boss changes phases with fresh warning and clears old own bullets; final lethal player hit takes priority",
+    "checkpoint activation, battle-resource restore and corrupted saves reject without restoring arbitrary position",
+    "pause freezes player, bullets, AI warning and world time; victory settles uniquely at open exit"
+  ]
+}

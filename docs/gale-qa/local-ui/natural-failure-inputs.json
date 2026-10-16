@@ -1,0 +1,263 @@
+{
+  "normalInputs": [
+    {
+      "time": 5.7833333333334105,
+      "deaths": 0,
+      "action": "normal Right held without jumping or shooting"
+    },
+    {
+      "time": 8.450000000000161,
+      "deaths": 1,
+      "action": "normal Right held without jumping or shooting"
+    },
+    {
+      "time": 11.499999999999988,
+      "deaths": 2,
+      "action": "normal Right held without jumping or shooting"
+    }
+  ],
+  "end": {
+    "state": "lost",
+    "level": 1,
+    "width": 1950,
+    "height": 440,
+    "time": 14.516666666666483,
+    "accumulator": 0.007433333345256967,
+    "camera": 1182.0467149187104,
+    "solids": [
+      {
+        "id": "g0",
+        "x": 0,
+        "y": 350,
+        "w": 760,
+        "h": 90,
+        "oneWay": false
+      },
+      {
+        "id": "g1",
+        "x": 840,
+        "y": 350,
+        "w": 530,
+        "h": 90,
+        "oneWay": false
+      },
+      {
+        "id": "g2",
+        "x": 1455,
+        "y": 350,
+        "w": 495,
+        "h": 90,
+        "oneWay": false
+      },
+      {
+        "id": "b0",
+        "x": 570,
+        "y": 305,
+        "w": 90,
+        "h": 45,
+        "oneWay": false
+      },
+      {
+        "id": "l0",
+        "x": 460,
+        "y": 268,
+        "w": 115,
+        "h": 14,
+        "oneWay": true
+      },
+      {
+        "id": "l1",
+        "x": 1140,
+        "y": 272,
+        "w": 110,
+        "h": 14,
+        "oneWay": true
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "infantry",
+        "x": 390.9333333333316,
+        "y": 320,
+        "w": 28,
+        "h": 30,
+        "hp": 0,
+        "min": 325,
+        "max": 405,
+        "initialHp": 3,
+        "baseY": 320,
+        "vx": 32,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      },
+      {
+        "id": 2,
+        "kind": "turret",
+        "x": 1030,
+        "y": 318,
+        "w": 34,
+        "h": 32,
+        "hp": 0,
+        "min": 995,
+        "max": 1075,
+        "initialHp": 6,
+        "baseY": 318,
+        "vx": 0,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 1,
+        "engaged": true
+      },
+      {
+        "id": 3,
+        "kind": "infantry",
+        "x": 1522.3333333333323,
+        "y": 320,
+        "w": 28,
+        "h": 30,
+        "hp": 2,
+        "min": 1505,
+        "max": 1585,
+        "initialHp": 3,
+        "baseY": 320,
+        "vx": 32,
+        "cooldown": 1.8166666666666669,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 3,
+        "engaged": true
+      },
+      {
+        "id": 4,
+        "kind": "infantry",
+        "x": 1732.3333333333323,
+        "y": 320,
+        "w": 28,
+        "h": 30,
+        "hp": 3,
+        "min": 1715,
+        "max": 1795,
+        "initialHp": 3,
+        "baseY": 320,
+        "vx": 32,
+        "cooldown": 0.13333333333333613,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      }
+    ],
+    "pickups": [
+      {
+        "id": 1,
+        "x": 430,
+        "y": 325,
+        "kind": "scatter",
+        "collected": true
+      },
+      {
+        "id": 2,
+        "x": 1090,
+        "y": 325,
+        "kind": "rapid",
+        "collected": true
+      },
+      {
+        "id": 3,
+        "x": 1500,
+        "y": 325,
+        "kind": "repair",
+        "collected": false
+      }
+    ],
+    "player": {
+      "x": 1442.9166666666665,
+      "y": 511.74305555555554,
+      "w": 24,
+      "h": 36,
+      "vx": 0,
+      "vy": 0,
+      "hp": 5,
+      "facing": 1,
+      "grounded": false,
+      "coyote": 0,
+      "buffer": 0,
+      "invulnerable": 0,
+      "lock": 0,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "rapid",
+      "ammo": 60
+    },
+    "projectiles": [
+      {
+        "id": 56,
+        "owner": "enemy",
+        "x": 1517.6268317516365,
+        "y": 334.7575843589666,
+        "vx": -174.98001725487663,
+        "vy": -2.6445342658167723,
+        "source": 3,
+        "r": 5,
+        "ttl": 3.108333333333334
+      }
+    ],
+    "effects": [],
+    "nextBullet": 57,
+    "lives": 0,
+    "specials": 2,
+    "checkpointIndex": 1,
+    "checkpointPos": {
+      "x": 970,
+      "y": 314
+    },
+    "goal": 1860,
+    "reason": "跌落",
+    "stats": {
+      "score": 300,
+      "kills": 2,
+      "shots": 24,
+      "jumps": 3,
+      "hitsTaken": 0,
+      "deaths": 3,
+      "specialsUsed": 0,
+      "pickups": 2,
+      "checkpoints": 1,
+      "bossPhases": 1,
+      "settlements": 1
+    },
+    "unlocked": 2,
+    "best": {
+      "1": {
+        "score": 525,
+        "time": 14.924999999999793
+      }
+    },
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 760,
+      "camera": 1182.0467149187104
+    }
+  }
+}
