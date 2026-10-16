@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "groups": 21,
+  "checks": [
+    "sixteen unique feasible original layouts, three themes and 48 optional stars",
+    "ready is static; start admits only production zero velocity",
+    "taut multi-rope remains finite and feasible for twelve seconds",
+    "slack rope does not push the body outward",
+    "batch cut marks all before physics, ignores repeats, rejects stale commands",
+    "cut order changes trajectory using identical physical parameters",
+    "paused time, body, stars and cut log cannot advance",
+    "tap cut zones exclude anchors/body; crossing order and reversal are geometric",
+    "swept segment detects thin rectangles and circles between endpoints",
+    "solid CCD prevents a fast bell from crossing the top of a beam",
+    "hazard has priority over stars and an overlapping goal in the same substep",
+    "goal may accept zero stars; win is not full-star completion",
+    "wind accelerates east/west and upward components counter gravity",
+    "offscreen and time limit settle once",
+    "cut free bell resting away from goal fails after three seconds",
+    "overconstraint jam terminates with finite bounded velocities",
+    "60Hz, 120Hz and 240Hz partitions produce identical fixed-step flight",
+    "checkpoint replay reconstructs body, cuts, stars, statistics and residual time",
+    "ready saves remain ready; forged motion fields are ignored",
+    "malformed, duplicate, impossible and already ended replays are rejected",
+    "snapshot is an independent copy; authored levels untouched after simulations"
+  ],
+  "edgeFixtures": "Specific collision/jam/priority fixtures set test-world positions; normal solution suite never writes positions, velocity, lengths or results."
+}

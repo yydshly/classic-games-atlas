@@ -1,0 +1,74 @@
+{
+  "testedAt": "2026-10-16T14:13:59.256295+00:00",
+  "url": "http://127.0.0.1:4174/games/chime/",
+  "checks": [
+    "Preparation has no clock and shows all geometry without overlay obscuring the canvas",
+    "First level only on fresh storage; native dialog Escape and locked stages",
+    "Tutorial cancel/start and paused cuts/time are blocked",
+    "Normal keyboard win, one settlement, stars/best/unlock and replay retain progress",
+    "Anchor endpoints cannot be tapped to cut",
+    "Dragging the bell provides no movement/impulse command",
+    "Mouse point on a rope cuts and normally completes a level",
+    "Held/repeated keyboard digit cannot duplicate a cut",
+    "Canvas keyboard selection plus Space cuts the selected rope",
+    "Native Tab reaches a numbered cut button and Enter activates it",
+    "Uncut and mid-flight cut-log checkpoints replay exact positions/ticks and resume to a real win",
+    "Help freezes simulation; close resumes; browser blur pauses",
+    "Sound preference survives reload",
+    "Single mouse sweep crosses two cut zones as one simultaneous batch",
+    "A later faster/lower-star win cannot replace a three-star best",
+    "Pause/resume cancels an in-progress swipe; stale pointerup cannot cut",
+    "A normal bad cut order hits danger; retry clears current stars/cuts and never records a win",
+    "Malformed storage recovers safely",
+    "Illegal rope IDs in replay storage are rejected",
+    "Six widths 320/360/390/768/1024/1440 without horizontal overflow",
+    "Narrow-screen level dialog has no horizontal overflow",
+    "Unavailable localStorage still allows a complete normal win",
+    "Complete native touch wins for levels 1 and 12, including point and multi-rope swipe"
+  ],
+  "fixture": "Menu unlock/tutorial preferences only for later-level UI cases; explicitly corrupt storage and rejection fixtures separate from normal play. Native input throughout.",
+  "touch": [
+    {
+      "stage": 1,
+      "method": "Native touchscreen point on rope",
+      "state": "won",
+      "time": 1.3958333333333333,
+      "stars": 3,
+      "cuts": 1,
+      "cutLog": [
+        {
+          "tick": 54,
+          "ids": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 12,
+      "method": "Native CDP touchscreen sweep across both ropes; five moves over 175 ms",
+      "state": "won",
+      "time": 1.575,
+      "stars": 1,
+      "cuts": 2,
+      "cutLog": [
+        {
+          "tick": 59,
+          "ids": [
+            1
+          ]
+        },
+        {
+          "tick": 103,
+          "ids": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}

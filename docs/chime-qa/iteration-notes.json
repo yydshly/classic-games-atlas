@@ -1,0 +1,53 @@
+{
+  "earlyLayout": {
+    "level": 8,
+    "issue": "Original goal center 290 width 160 missed the ordinary west-wind release trajectory; moved to center 335 width 170 before final validation, and placed star lines on reachable paths."
+  },
+  "timing": {
+    "level": 14,
+    "originalPlan": [
+      {
+        "time": 0.2,
+        "ids": [
+          1
+        ]
+      },
+      {
+        "time": 0.85,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "failedIndependentJitter": {
+      "level": 14,
+      "state": "lost",
+      "stars": 1,
+      "time": 7.091666666666667,
+      "cuts": 2,
+      "reason": "风铃离开了场景",
+      "x": 108.62911855654372,
+      "y": 641.8699629014128,
+      "path": []
+    },
+    "finalPlan": [
+      {
+        "time": 0.2,
+        "ids": [
+          1
+        ]
+      },
+      {
+        "time": 0.95,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "resolution": "Moved the baseline second cut to .95 seconds, not the production body, force or collider. All final 90 jitter cases pass."
+  },
+  "testHarness": {
+    "restingReasonAssertion": "The expected Chinese substring omitted 了; corrected to the actual reason. The physics already stopped correctly.",
+    "reloadFixture": "Setting menu unlock before reload was overwritten by legitimate pagehide save; moved fixture to initialization. Initial UI report preserved."
+  }
+}
