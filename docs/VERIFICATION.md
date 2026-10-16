@@ -40,7 +40,7 @@
 
 ## 发布状态与阻塞
 
-已创建独立 **PRIVATE** 仓库 `yydshly/classic-games-atlas`，准备提交 `main` 供账号持有者审阅。
+已创建独立 **PRIVATE** 仓库 `yydshly/classic-games-atlas`，已提交并推送 `main` 供账号持有者审阅。远端默认分支已确认是 `main`；GitHub Pages 查询返回 404（未配置）。提交署名使用 `yydshly` 与 GitHub noreply 邮箱。
 
 **尚未部署 GitHub Pages，没有可直接访问的公开网站 URL，也没有线上版本一致性检查结果。**目标预期地址不应当被称为已上线。
 
