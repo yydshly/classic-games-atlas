@@ -28,11 +28,17 @@
 
 [1/4/7/10](beacon-qa/local-a/report.json)、[2/5/8](beacon-qa/local-b/report.json)、[3/6/9](beacon-qa/local-c/report.json)覆盖全部十关真实鼠标/键盘选择单位、范围、目标与确认，敌方按标准 0.38 秒间隔自动回应。后期菜单只用解锁/教学/声音偏好夹具，没有当前战局夹具。每次确认前检查护甲/AP/位置未变，确认后检查 AP 和实际目标结果，通关后核对最佳、解锁及刷新全新开局。
 
-[22 项本地界面验收](beacon-qa/local-ui/report.json)全部通过，包含完整教程、范围、非法目标、重复点击与确认、键盘选格、结束回合取消、重开确认、暂停、损坏/受限存储、五种宽度、17 款/212 关公共入口和前十六款手机入口。已完成[敌方回合中段暂停/刷新](beacon-qa/local-ui/mid-enemy-restore.json)，精确保留双方护甲、AP、位置、阶段和版本；继续正常通关，并以[正常反复结束回合让敌方造成失败](beacon-qa/local-ui/natural-idle-defeat.json)后重试。[390px 触摸计划](beacon-qa/local-ui/touch-planning-390.png)和[320px 终关](beacon-qa/local-ui/final-chapter-320.png)已目视检查。[完整首关原生触摸通关](beacon-qa/local-touch/report.json)使用真实 tap 进行单位、范围、目标、行动确认及回合确认，未使用鼠标或键盘代替战斗操作；正常完成四回合、最佳/解锁和刷新检查。公开部署证据将在收尾后追加。失焦测试使用合成 DOM blur，不冒充实体窗口焦点切换；触屏是 Chromium 原生事件模拟。
+[22 项本地界面验收](beacon-qa/local-ui/report.json)全部通过，包含完整教程、范围、非法目标、重复点击与确认、键盘选格、结束回合取消、重开确认、暂停、损坏/受限存储、五种宽度、17 款/212 关公共入口和前十六款手机入口。已完成[敌方回合中段暂停/刷新](beacon-qa/local-ui/mid-enemy-restore.json)，精确保留双方护甲、AP、位置、阶段和版本；继续正常通关，并以[正常反复结束回合让敌方造成失败](beacon-qa/local-ui/natural-idle-defeat.json)后重试。[390px 触摸计划](beacon-qa/local-ui/touch-planning-390.png)和[320px 终关](beacon-qa/local-ui/final-chapter-320.png)已目视检查。[完整首关原生触摸通关](beacon-qa/local-touch/report.json)使用真实 tap 进行单位、范围、目标、行动确认及回合确认，未使用鼠标或键盘代替战斗操作；正常完成四回合、最佳/解锁和刷新检查。公开部署证据见下节。失焦测试使用合成 DOM blur，不冒充实体窗口焦点切换；触屏是 Chromium 原生事件模拟。
 
 ## 发布与限制
 
-前十六款运行目录与本款开始前 `24b53237bc30103c8a7185d1c0312318219c28df` 保持一致。共享首页更新为 17 款、212 关，图鉴仍为 72 条。代码、Pages 成功、公开十关与最终 128 文件检查将在验证结束后记录，本地预览不算上线。
+前十六款运行目录与本款开始前 `24b53237bc30103c8a7185d1c0312318219c28df` 保持一致。共享首页更新为 17 款、212 关，图鉴仍为 72 条。代码提交 [`4b2028579cf7c432e97eff613a61844a7235dd41`](https://github.com/yydshly/classic-games-atlas/commit/4b2028579cf7c432e97eff613a61844a7235dd41) 已通过 [Pages 成功运行 38908739193](https://github.com/yydshly/classic-games-atlas/actions/runs/38908739193)。[公开汇总](beacon-qa/live-summary.json)、[A 组 1/4/7/10](beacon-qa/live-a/report.json)、[B 组 2/5/8](beacon-qa/live-b/report.json)、[C 组 3/6/9](beacon-qa/live-c/report.json)记录全部十关实际选择、预览与确认，共 310 条普通指令、35 个威胁，三关护送与三关连续守灯联合目标均通过。
+
+公开十关的双方护甲/AP/位置、回合、阶段、目标进度、版本、统计、AI 预算和日志，与生产模拟的离散状态逐项完全相同；每关检查最佳、解锁、全新重玩以及两个结算按钮未被遮挡。
+
+[公网完整触摸首关](beacon-qa/live-touch/report.json)用原生 tap 进行全部战斗操作，正常四回合通关；[公网 22 项界面](beacon-qa/live-ui/report.json)和[图鉴完整回归](beacon-qa/live-atlas/browser-report.json)通过。全部正式报告的控制台、失败请求与错误响应为空。[128 个运行文件](beacon-qa/code-integrity.json)全部 HTTP 200、SHA-256 与代码提交相同，无传输重试。
+
+证据归档提交不修改已验收运行文件，归档后再次等待 Pages 成功并复查同一组 128 文件及玩家回合恢复后完整首关。本地预览不算上线。
 
 ```powershell
 node scripts/test_beacon.mjs

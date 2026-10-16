@@ -1,0 +1,38 @@
+{
+  "testedAt": "2026-10-16T13:38:13.780225+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/beacon/",
+  "method": "Real mouse/keyboard/touch planning and confirmations; current enemy turn paused/reloaded with exact HP/AP/positions; normal continued victory and idle enemy-caused defeat. Only later menu, corrupt-save and unavailable-storage fixtures. Synthetic DOM blur separate from physical window focus testing.",
+  "checks": {
+    "TutorialGridSemanticsAndFreshAP": true,
+    "MovementAndFullAttackRangeInvalidTargetSpendsNothing": true,
+    "RepeatedBoardClicksOnlyPlanEscapeCancelsWithoutAP": true,
+    "KeyboardRovingTargetAndDoubleConfirmExecutesOnce": true,
+    "EndTurnNeedsConfirmationCancelKeepsPendingPlan": true,
+    "PauseClearsUnsubmittedPlanFreezesCommittedState": true,
+    "RestartConfirmationCanPreserveOrResetCurrentBattle": true,
+    "EnemyPhaseUsesVisibleFiniteActionsAndPausesMidReply": true,
+    "ReloadKeepsExactEnemyHPAPPositionsAndDoesNotRepeatTurn": true,
+    "NormalPostRestoreFullWinBestUnlockAndFreshReplay": true,
+    "CorruptCurrentSavePreservesIndependentBestAndUnlock": true,
+    "NormalEnemyDefeatAndRetryFreshResourcesBestKept": true,
+    "SyntheticBlurAndHelpCancelPendingPlansWithoutCombatChanges": true,
+    "ActualTouchSelectPreviewConfirmAndAP": true,
+    "RepeatedTouchTargetsDoNotCommitWithoutConfirmation": true,
+    "TouchScrollCannotSubmitOrLeaveNextTapStuck": true,
+    "FiveWidthsFullGridOverlayAndNoOverflow": [
+      320,
+      360,
+      390,
+      768,
+      1280
+    ],
+    "FinalChapterAt320ShowsFullGridAndCombinedGoal": true,
+    "UnavailableStorageStillAllowsNormalConfirmedAction": true,
+    "Atlas72SeventeenOriginals212LevelsAndMechanismBoundary": true,
+    "PreviousSixteenEntrancesAndMobileNoOverflow": true,
+    "ReferenceDeepLinkAndAtlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
