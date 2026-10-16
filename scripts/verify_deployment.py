@@ -19,7 +19,8 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/lantern-cover.svg','games/lantern/index.html','games/lantern/lantern.css','games/lantern/levels.mjs','games/lantern/engine.mjs','games/lantern/renderer.mjs','games/lantern/game.mjs',
          'assets/cloud-cover.svg','games/cloud/index.html','games/cloud/cloud.css','games/cloud/levels.mjs','games/cloud/engine.mjs','games/cloud/renderer.mjs','games/cloud/game.mjs',
          'assets/garden-cover.svg','games/garden/index.html','games/garden/garden.css','games/garden/levels.mjs','games/garden/engine.mjs','games/garden/renderer.mjs','games/garden/game.mjs',
-         'assets/vine-cover.svg','games/vine/index.html','games/vine/vine.css','games/vine/levels.mjs','games/vine/engine.mjs','games/vine/renderer.mjs','games/vine/game.mjs']
+         'assets/vine-cover.svg','games/vine/index.html','games/vine/vine.css','games/vine/levels.mjs','games/vine/engine.mjs','games/vine/renderer.mjs','games/vine/game.mjs',
+         'assets/petal-cover.svg','games/petal/index.html','games/petal/petal.css','games/petal/boards.mjs','games/petal/levels.mjs','games/petal/engine.mjs','games/petal/renderer.mjs','games/petal/game.mjs']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()

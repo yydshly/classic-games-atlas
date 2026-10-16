@@ -193,7 +193,7 @@ def main():
         if experiment:
             game['experiment'] = experiment
     assert len(games) == 72
-    catalogue = dict(version='2026.10.16.11', experiments=experiments, groups=[dict(id=i,title=t,number=n,tagline=ta,description=d) for i,t,n,ta,d in GROUPS], games=games, sources=sources)
+    catalogue = dict(version='2026.10.16.12', experiments=experiments, groups=[dict(id=i,title=t,number=n,tagline=ta,description=d) for i,t,n,ta,d in GROUPS], games=games, sources=sources)
     (root / 'data').mkdir(exist_ok=True)
     (root / 'data/games.json').write_text(json.dumps(catalogue, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'entries':len(games), 'groups': {g[1]:sum(x['group']==g[0] for x in games) for g in GROUPS}}, ensure_ascii=False))
