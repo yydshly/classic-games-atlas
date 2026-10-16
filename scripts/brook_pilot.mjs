@@ -1,0 +1,11 @@
+import{LEVELS,UNITS,cellPoint}from'../games/brook/levels.mjs';import{canPlace}from'../games/brook/engine.mjs';
+export function decide(g){if(g.state!=='playing')return null;const l=LEVELS[g.level-1];if(g.tokens.length)return{kind:'collect',ids:g.tokens.map(t=>t.id)};const rows=Array.from({length:l.rows},(_,row)=>{const foes=g.enemies.filter(e=>e.row===row),future=l.spawns.slice(g.nextSpawn).filter(e=>e.row===row),soon=future.filter(e=>e.at<g.time+18),units=g.plants.filter(p=>p.row===row);return{row,foes,soon,units,guns:units.filter(p=>p.type==='bolt').length,mist:units.some(p=>p.type==='mist'),wall:units.some(p=>p.type==='wall'),distance:Math.min(900,...foes.map(e=>e.x)),due:future[0]?.at??999,armor:foes.some(e=>e.type==='shell')||soon.some(e=>e.type==='shell'),load:foes.reduce((a,e)=>a+e.hp,0)+soon.reduce((a,e)=>a+(e.type==='shell'?220:80),0)};}).sort((a,b)=>(a.foes.length?a.distance:900+(a.due-g.time)*20)-(b.foes.length?b.distance:900+(b.due-g.time)*20));
+const place=(type,r,cols)=>{for(const col of cols)if(canPlace(g,type,r,col).valid)return{kind:'place',type,row:r,col};return null;};const producers=g.plants.filter(p=>p.type==='dew').length;
+if(!producers&&g.time<25){const c=place('dew',0,[0,1]);if(c)return c;}
+for(const r of rows)if(r.foes.length&&r.distance<660&&!r.wall&&l.allowed.includes('wall')){const cols=[6,5,4,3,2,1,0].filter(c=>cellPoint(r.row,c).x+34<r.distance),c=place('wall',r.row,cols);if(c)return c;}
+for(const r of rows)if(!r.guns&&(r.foes.length||r.due<g.time+18)){const c=place('bolt',r.row,[2,3,1,4,0,5]);if(c)return c;}
+if(producers<2&&g.time<24&&g.cooldown.dew<=g.time){const c=place('dew',l.rows-1,[0,1]);if(c)return c;}
+for(const r of rows)if(r.armor&&r.guns>=1&&!r.mist&&l.allowed.includes('mist')&&g.cooldown.mist<=g.time){if(g.resource<UNITS.mist.cost&&r.distance>500)return null;const c=place('mist',r.row,[1,3,4,0,5]);if(c)return c;}
+for(const r of [...rows].sort((a,b)=>b.load-a.load))if(r.guns<2&&r.guns>=1&&(r.load>120||r.soon.length>1)){const c=place('bolt',r.row,[3,4,1,5,0,6]);if(c)return c;}
+return null;}
+if(process.argv.includes('--stdio')){const rl=await import('node:readline');for await(const line of rl.createInterface({input:process.stdin})){try{console.log(JSON.stringify(decide(JSON.parse(line))));}catch(e){console.log(JSON.stringify({error:e.message}));}}}

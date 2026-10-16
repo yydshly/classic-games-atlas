@@ -1,0 +1,787 @@
+{
+  "testedAt": "2026-10-16T14:59:56.566451+00:00",
+  "url": "http://127.0.0.1:4174/games/brook/",
+  "checks": [
+    "Fresh ready state has no clock or free deployment; staged unit unlocks",
+    "Level locks, native dialog Escape and focus return",
+    "First tutorial can cancel back to static ready or start normal play",
+    "Explicit row/column selection previews without spending and matches displayed coordinates",
+    "Deploy spends exactly once; occupied and repeated Enter cannot duplicate cost or unit",
+    "Global per-type cooldown blocks different tiles and the UI explains why",
+    "Pause works from a focused selector; resources, cooldown and clock freeze",
+    "Canvas arrows select cells; X/Enter withdraws without refund or cooldown reset",
+    "Sky resource and collect-all are real timed income and cannot be double claimed",
+    "Pointing at a token collects that token before selecting an underlying tile",
+    "Ignoring a resource for fourteen simulation seconds expires it without credit",
+    "Midwave replay restores exact resources/cooldowns/HP/projectiles/tokens/spawns and continues to a real win",
+    "Doing nothing naturally breaches; failed retry resets current budget/log but preserves best/unlock",
+    "Help freezes and resumes; explicit synthetic blur verifies the browser event handler",
+    "Sound and offered speed preference survive reload",
+    "All four units unlock, rocks reject deployment, and mouse cell coordinates match the selected tile",
+    "Native Tab reaches large row/column controls from the canvas",
+    "Six widths and 320px level dialog have no horizontal overflow",
+    "Malformed storage recovers to a legal initial state",
+    "Invalid/null command logs are rejected without a page error",
+    "Unavailable localStorage still permits ordinary play and budget spending",
+    "Complete first level uses native touch card/cell/deploy/resource inputs with original budget"
+  ],
+  "fixture": "Menu unlock/tutorial/sound only for isolated later-stage and native touch tests. Corrupt/disabled storage is explicit; no game resources/HP/waves/results are written.",
+  "restoredWin": {
+    "midTicks": 787,
+    "fieldsMatched": [
+      "resource",
+      "cooldown",
+      "plants",
+      "enemies",
+      "bullets",
+      "tokens",
+      "nextSpawn",
+      "nextSky",
+      "stats",
+      "time",
+      "ticks",
+      "log",
+      "accumulator"
+    ],
+    "end": "won",
+    "score": 1055,
+    "actions": [
+      {
+        "observedTime": 0.016666666666666666,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 0,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 1
+      },
+      {
+        "observedTime": 0.2833333333333333,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 1,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.016666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.183333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.35,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 3
+      },
+      {
+        "observedTime": 4.55,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 0,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 4
+      },
+      {
+        "observedTime": 8.25,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 4
+      },
+      {
+        "observedTime": 8.383333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 5
+      },
+      {
+        "observedTime": 8.616666666666667,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 2,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 6
+      },
+      {
+        "observedTime": 10.05,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 6
+      },
+      {
+        "observedTime": 10.183333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 7
+      },
+      {
+        "observedTime": 16.066666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 7
+      },
+      {
+        "observedTime": 16.2,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4,
+            5
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 8
+      },
+      {
+        "observedTime": 16.433333333333334,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 2,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 9
+      },
+      {
+        "observedTime": 22.066666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 9
+      },
+      {
+        "observedTime": 22.233333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 10
+      },
+      {
+        "observedTime": 24.2,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 11
+      },
+      {
+        "observedTime": 24.7,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            8
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 12
+      },
+      {
+        "observedTime": 28,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 12
+      },
+      {
+        "observedTime": 28.133333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 13
+      },
+      {
+        "observedTime": 32.266666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 13
+      },
+      {
+        "observedTime": 32.4,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 14
+      },
+      {
+        "observedTime": 32.63333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            11
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 14
+      },
+      {
+        "observedTime": 32.766666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            11
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 15
+      },
+      {
+        "observedTime": 34.06666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 15
+      },
+      {
+        "observedTime": 34.233333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 16
+      },
+      {
+        "observedTime": 40,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 16
+      },
+      {
+        "observedTime": 40.166666666666664,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13,
+            14
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 17
+      },
+      {
+        "observedTime": 40.666666666666664,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 17
+      },
+      {
+        "observedTime": 40.766666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 18
+      }
+    ]
+  },
+  "nativeTouch": {
+    "stage": 1,
+    "state": "won",
+    "stats": {
+      "placed": 5,
+      "spent": 260,
+      "collected": 375,
+      "expired": 0,
+      "produced": 375,
+      "kills": 6,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 36,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 1
+    },
+    "time": 41.666666666666664,
+    "method": "Native touchscreen taps on cards, canvas cells, large deploy/collect buttons, standard 2x; scroll positioning helper only, no state writes",
+    "actions": [
+      {
+        "observedTime": 0.08333333333333333,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 0,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 1
+      },
+      {
+        "observedTime": 0.55,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 1,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.016666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.116666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 2
+      },
+      {
+        "observedTime": 4.25,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 3
+      },
+      {
+        "observedTime": 4.516666666666667,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 0,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 4
+      },
+      {
+        "observedTime": 8.483333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 4
+      },
+      {
+        "observedTime": 8.65,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 5
+      },
+      {
+        "observedTime": 8.916666666666666,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 2,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 6
+      },
+      {
+        "observedTime": 10.083333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 6
+      },
+      {
+        "observedTime": 10.216666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 7
+      },
+      {
+        "observedTime": 16.15,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 7
+      },
+      {
+        "observedTime": 16.28333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 8
+      },
+      {
+        "observedTime": 16.55,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            5
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 9
+      },
+      {
+        "observedTime": 16.816666666666666,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 2,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 10
+      },
+      {
+        "observedTime": 22.083333333333332,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 11
+      },
+      {
+        "observedTime": 24.416666666666668,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 11
+      },
+      {
+        "observedTime": 24.583333333333332,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 12
+      },
+      {
+        "observedTime": 25.25,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            8
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 13
+      },
+      {
+        "observedTime": 28.083333333333332,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 13
+      },
+      {
+        "observedTime": 28.216666666666665,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 14
+      },
+      {
+        "observedTime": 32.45,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 14
+      },
+      {
+        "observedTime": 32.583333333333336,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 15
+      },
+      {
+        "observedTime": 33.21666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            11
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 16
+      },
+      {
+        "observedTime": 34.016666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 16
+      },
+      {
+        "observedTime": 34.15,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 17
+      },
+      {
+        "observedTime": 40.016666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 18
+      },
+      {
+        "observedTime": 40.55,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            14
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 19
+      },
+      {
+        "observedTime": 41.21666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 20
+      }
+    ]
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
