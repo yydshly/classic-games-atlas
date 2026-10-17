@@ -12,8 +12,8 @@
     "assets/escort/art/cart.png"
   ],
   "discardedAttempts": "An earlier dawn-only concept was not materialized; a30-frame atlas call was interrupted and produced no usable output.",
-  "finalRivalEdit": "Preserved original eight-figure2x4atlas at1024x1536, original costume/pose identity, final transparency pass via image_gen with last generated atlas as sole target.",
-  "cart": "Original painted wooden handcart, worn walnut grain/joinery, aged brass hardware, rope and embroidered jade cloth, spoked wheels, warm lattice rice-paper lantern with tiled cap; side-on three-quarter, complete on true transparent square background, no text/scene/commercial references.",
+  "finalRivalEdit": "Use the last generated eight-figure rival sprite atlas as the edit target. Preserve ALL eight original figures, their costumes, faces, poses, exact2columns x4rows layout and1024x1536portrait framing. Preserve the rust-jacket lean brawler, indigo-vest ivory-scarf agile rival, broad maroon-vest heavy worker and tall silver-haired navy-coat elder; left column guard and right column punch. Keep the finely painted gouache/ink style and amber rim light. Ensure real transparent alpha around all figures, no scene, no solid backdrop, no labels or text. This is a production game sprite asset, not a screenshot.",
+  "cart": "ORIGINAL hand-painted gouache and ink transparent game sprite: one small two-wheeled wooden handcart carrying a tall glowing paper lantern, side-on three-quarter view facing right, entire object visible centered on a square canvas with generous transparent margins. Match a premium Chinese-inspired lantern-town2D indie action game: worn dark walnut planks, visible wood grain and joinery, aged brass corner hardware, rope lashings, a folded deep jade cloth with ochre embroidered border draped over the cart, two convincing spoked wooden wheels, short handle extending right. On top a warm amber rectangular lantern in a graceful dark wood frame with a small curved tiled cap; textured translucent rice paper, fine lattice bars, soft candle glow. Sophisticated convincing materials, warm gold rim lighting, cool indigo shadows. Rich painted brushwork and clean readable silhouette; not a flat icon or basic geometric illustration, no people, no ground, no cast floor shadow, no text or logos. True transparent alpha background. Original design only.",
   "assets": [
     {
       "file": "assets/escort/art/guardian.png",
@@ -68,5 +68,63 @@
       ],
       "sha256": "fc433af7bddb132cea9f70026f2fd46d71d7cf4306fdcab85e32e7314540fab5"
     }
-  ]
+  ],
+  "deliveryEncoding": {
+    "passed": true,
+    "method": "Installed Chromium Canvas WebP encoder, quality0.94; same content/dimensions, original PNGs retained. Pillow only inspects dimensions and alpha difference.",
+    "files": [
+      {
+        "source": "assets/escort/art/guardian.png",
+        "file": "assets/escort/art/guardian.webp",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "sourceBytes": 2383999,
+        "webBytes": 567794,
+        "maximumAlphaDifference": 0,
+        "sha256": "f48c400f1dc1da9c9d56a1985a54983fe70a4b6cabfd855b293a4c5273f579a7"
+      },
+      {
+        "source": "assets/escort/art/rivals.png",
+        "file": "assets/escort/art/rivals.webp",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "sourceBytes": 2384405,
+        "webBytes": 487278,
+        "maximumAlphaDifference": 0,
+        "sha256": "4e31f6eae33906ef2416a4c3ca04e2fc55c41d0be2ecae08850b2e5ec81f8b06"
+      },
+      {
+        "source": "assets/escort/art/scenery.png",
+        "file": "assets/escort/art/scenery.webp",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "sourceBytes": 3491260,
+        "webBytes": 786442,
+        "maximumAlphaDifference": 0,
+        "sha256": "47b698627e9f797161b7bf4a5982e0c77cc8b69bb222d4d49da9c24c04eac5c3"
+      },
+      {
+        "source": "assets/escort/art/cart.png",
+        "file": "assets/escort/art/cart.webp",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "sourceBytes": 1410181,
+        "webBytes": 386310,
+        "maximumAlphaDifference": 0,
+        "sha256": "8ac2852ffe0d50cd1bfcf3d19d06fae77480c4a7f2ddd3458851efc3beb42c22"
+      }
+    ],
+    "sourceTotalBytes": 9669845,
+    "webTotalBytes": 2227824,
+    "reductionPercent": 76.96
+  },
+  "deliveryNote": "Game loads same-size WebP copies with exact alpha; original generated PNGs above remain archived. No extra image generation or semantic artwork edits."
 }

@@ -9,7 +9,7 @@ async def main(args):
  async with async_playwright() as pw:
   b=await pw.chromium.launch();ctx=await b.new_context(viewport={'width':1440,'height':1100});p=await ctx.new_page();watch(p,errors,bad,failed)
   try:
-   await load(p,args.url);d=await Driver(p).start()
+   await load(p,args.url);report['artResources']=await p.evaluate('performance.getEntriesByType("resource").map(e=>e.name).filter(n=>n.includes("assets/escort/art/"))');assert all(any(n.endswith("/"+name+".webp") for n in report['artResources']) for name in ['guardian','rivals','scenery','cart']);d=await Driver(p).start()
    if await p.locator('#help-dialog').is_visible():await click(p,'#help-confirm')
    await p.screenshot(path=str(out/'opening-desktop.png'),full_page=False);report['captures'].append({'file':'opening-desktop.png','state':(await snap(p))['state']});save()
    for level in range(1,9):

@@ -42,7 +42,7 @@ FILES = ['index.html','app.js','styles.css','data/games.json','assets/atlas-cove
          'assets/expedition-cover.svg','games/expedition/index.html','games/expedition/expedition.css','games/expedition/levels.mjs','games/expedition/engine.mjs','games/expedition/renderer.mjs','games/expedition/game.mjs',
          'assets/feather-cover.svg','games/feather/index.html','games/feather/feather.css','games/feather/chapters.mjs','games/feather/engine.mjs','games/feather/renderer.mjs','games/feather/game.mjs',
          'assets/echo-cover.svg','games/echo/index.html','games/echo/echo.css','games/echo/levels.mjs','games/echo/engine.mjs','games/echo/renderer.mjs','games/echo/game.mjs',
-         'assets/escort-cover.svg','games/escort/index.html','games/escort/escort.css','games/escort/levels.mjs','games/escort/engine.mjs','games/escort/renderer.mjs','games/escort/game.mjs','assets/escort/art/guardian.png','assets/escort/art/scenery.png','assets/escort/art/rivals.png','assets/escort/art/cart.png','assets/escort-cover.jpg']
+         'assets/escort-cover.svg','games/escort/index.html','games/escort/escort.css','games/escort/levels.mjs','games/escort/engine.mjs','games/escort/renderer.mjs','games/escort/game.mjs','assets/escort/art/guardian.webp','assets/escort/art/scenery.webp','assets/escort/art/rivals.webp','assets/escort/art/cart.webp','assets/escort-cover.jpg']
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
