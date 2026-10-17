@@ -14,7 +14,7 @@ async def main(args):
    await p.screenshot(path=str(out/'opening-desktop.png'),full_page=False);report['captures'].append({'file':'opening-desktop.png','state':(await snap(p))['state']});save()
    for level in range(1,9):
     if level>1:await click(p,'#primary-action')
-    wall=time.monotonic();await begin(p,d)
+    ready=await snap(p);assert ready['state']=='ready' and ready['level']==level and ready['ticks']==0 and ready['player']['hp']==120 and ready['cart']['hp']==100 and ready['player']['energy']==100 and ready['heals']==2;report.setdefault('initialBudgets',[]).append({'level':level,'hp':120,'cartHP':100,'energy':100,'heals':2,'ticks':0});wall=time.monotonic();await begin(p,d)
     if level in [1,4,7,8]:
      partial,_,_=await complete(p,pilot,d,stop=lambda s:s['stats']['hits']>=1 and s['player']['action'] is not None and s['player']['action']['kind']=='attack');name={1:'dawn-combat',4:'rain-combat',7:'night-canal',8:'night-gate'}[level];await p.locator('#view').screenshot(path=str(out/(name+'.png')));await p.screenshot(path=str(out/(name+'-page.png')),full_page=False);report['captures'].append({'file':name+'.png','page':name+'-page.png','level':level,'ticks':partial['ticks'],'player':partial['player'],'cart':partial['cart'],'stats':partial['stats']});save()
      if level==1 and args.write_cover:await p.locator('#view').screenshot(path=str(ROOT/'assets/escort-cover.jpg'),type='jpeg',quality=88)

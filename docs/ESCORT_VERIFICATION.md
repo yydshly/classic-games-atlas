@@ -17,7 +17,19 @@
 
 ## 公开部署
 
-等待本次美术功能提交的Pages成功构建后，验证公网8关实景与真实输入、24组界面、直接刷新、图鉴/34入口/前作，以及253文件SHA-256。公开完成后补录，本地预览不视为上线。
+真实试玩：[街巷护送](https://yydshly.github.io/classic-games-atlas/games/escort/)。美术功能提交`8415cfbe824b2179fa03218bbef93ac9d9edbffc`，[Pages构建38997734294](https://github.com/yydshly/classic-games-atlas/actions/runs/38997734294)成功，HTTPS与main根目录发布。仅更新本项目，GitHub noreply署名。
+
+- [公网实景与8关实际操作](escort-qa/public-final/report.json)确认4张WebP正式美术素材已真实加载，普通120/100/100/2资源、实时60Hz1倍速、自然解锁，8关全胜，136次出手/155次命中/967条输入，24段/59名来敌，最低游戏/实耗比0.962。没有战斗值/时钟/结果写入或暂停规划，15项不变量成立，[24字段独立精确重放](escort-qa/public-final-replay.json)一致。
+- [公网24组界面](escort-qa/public-final-ui/report.json)检查教程/锁关、三连、有限闪步/恢复/车修复、死亡/终态/重试、暂停/失焦、坏/伪造/拒绝存储、键盘与多指、6种屏宽。真实触屏首关与素材加载一起验证。
+- [公网直接刷新](escort-qa/public-final-refresh.json)：实际方向闪步消耗20耐力，在攻击阶段刻度51附近重载，实际保存66；24字段与生产引擎独立重放一致，旧按住操作释放，暂停不推进，续玩获胜。
+- [公网34入口与发布回归](escort-qa/public-final-release.json)通过，前作回声走廊首关剩92光息/8光匣；本作精确恢复与原生多指方向闪步后正常获胜。[72项图鉴](escort-qa/public-final-atlas.json)搜索/别名/类型与分组/空结果/全部详情/键盘/6宽度通过；此报告复用37ab85a下已完成的根页验收，编码改动后根页/数据/封面字节未变，并由最终文件核对确认。
+- 发布回归的末段新页面进入曾有30秒超时；[完整初次报告](escort-qa/initial-final-release.json)保留34入口、前作和恢复的已通过记录，仅续验未完成的[390×844原生多指场景](escort-qa/public-final-native-followup.json)，确认4图加载并普通通关。未重复或丢弃前面已通过的流程。
+- [253运行文件](escort-qa/public-final-integrity.json)全部HTTP200、SHA-256与美术功能提交逐一相同；本次核对网络事件0。上述本轮浏览器报告没有控制台错误、失败请求或HTTP4xx/5xx资源。
+
+[公网开场](escort-qa/public-final/opening-desktop.png)、[晨街](escort-qa/public-final/dawn-combat.png)、[雨巷](escort-qa/public-final/rain-combat.png)、[夜岸](escort-qa/public-final/night-canal.png)、[终章](escort-qa/public-final/night-gate.png)、[手机](escort-qa/public-final/mobile-combat.png)均来自实际网站普通输入，已经逐张审视。生成素材不替代游戏实景；本地实景对比图另保留在视觉评审页。
+
+最终证据提交补充文档/公开产物和测试中的素材加载断言，253运行文件保持美术功能提交原样。交付前继续核对最终远端/main/Pages完整SHA，以及253运行文件与文档/实景图的线上实际字节。功能验收复用本次字节完全相同的运行版本，避免重复已通过的游戏流程；最终完整SHA与构建链接随交付提供。
+
 
 ## 实际边界
 

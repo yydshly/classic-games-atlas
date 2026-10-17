@@ -21,7 +21,7 @@
 
 最终本地实景已逐张审视：[开场](escort-qa/visual-v3/opening-desktop.png)、[晨街战斗](escort-qa/visual-v3/dawn-combat.png)、[雨巷](escort-qa/visual-v3/rain-combat.png)、[夜岸](escort-qa/visual-v3/night-canal.png)、[终章院门](escort-qa/visual-v3/night-gate.png)、[手机](escort-qa/visual-v3/mobile-combat.png)。人物与灯车保持透明边缘并落在地面，手套/围巾和对手轮廓能在场景中辨识；标题断行与灯车风格两处修正已落实。完整图片保留，不以生成素材替代实景。
 
-[实景对比图](escort-qa/visual-v3/review-board.png)只把真实截图排版并标注，旧版区域裁切坐标与源图SHA-256见[元数据](escort-qa/visual-v3/review-board.json)。[普通操作报告](escort-qa/visual-v3/report.json)包含8关、手机首关和实际输入；[24字段精确重放](escort-qa/visual-v3/replay.json)一致。公网最终实景与部署证据待补录。
+[实景对比图](escort-qa/visual-v3/review-board.png)只把真实截图排版并标注，旧版区域裁切坐标与源图SHA-256见[元数据](escort-qa/visual-v3/review-board.json)。[普通操作报告](escort-qa/visual-v3/report.json)包含8关、手机首关和实际输入；[24字段精确重放](escort-qa/visual-v3/replay.json)一致。公网打磨版已部署，真实网站的[开场](escort-qa/public-final/opening-desktop.png)、[晨街](escort-qa/public-final/dawn-combat.png)、[雨巷](escort-qa/public-final/rain-combat.png)、[夜岸](escort-qa/public-final/night-canal.png)、[终章](escort-qa/public-final/night-gate.png)、[手机](escort-qa/public-final/mobile-combat.png)已逐张审视；[操作与部署证据](ESCORT_VERIFICATION.md)记录4素材真实加载、8关、界面和253文件核对。技术通过不替代用户审美判断。
 
 ## 保留范围与边界
 
