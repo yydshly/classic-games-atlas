@@ -1,0 +1,2148 @@
+{
+  "testedAt": "2026-10-17T00:14:02.750209+00:00",
+  "url": "http://127.0.0.1:4174/games/echo/",
+  "method": "Real keys, mouse drag, native touch and ordinary combat. Only storage metadata/denied-storage boundary fixtures are injected; no combat fields or clocks/results written.",
+  "checks": [
+    "First tutorial and ready state do not advance simulation",
+    "Default motion bob off, ordinary pointer drag available, no pointer lock",
+    "Fresh eighth level locked; book close returns to ready",
+    "Actual first-person canvas raycast scene renders multiple wall/floor/sprite colors",
+    "Real bounded canvas drag turns viewpoint without position teleport",
+    "Slow and fast settings change real keyboard rotation at declared rates",
+    "Bob and route assist are separate optional persisted visual controls",
+    "Out-of-range interaction gives clear feedback without spending ammo",
+    "Pause releases held movement/fire and freezes22 complete fields",
+    "Help and level book pause and resume without stale held inputs",
+    "Original synthesized sound can be toggled and persisted",
+    "Actual held movement cannot leave outer walls",
+    "Held wall fire uses exactly8 finite rounds; empty fire and repeat input cannot create ammo",
+    "Expanded log exposes one warning/hit/pickup/open event per settlement",
+    "Visible normal warning causes real damage when ignored; ordinary route pickup heals actual bounded HP before win",
+    "Retry resets authored budget and retains earned best/unlock",
+    "Window blur auto-pauses and clears held inputs without movement backlog",
+    "Malformed storage falls back to playable normal setup",
+    "Forged checkpoint positions/HP/ammo ignored; only legal log reconstructs state",
+    "Denied storage still supports complete ordinary first level",
+    "Full first level through keyboard walk/turn/fire/use, without mouse look",
+    "Six widths320–1440 and handbook/result controls fit without page overflow",
+    "Native touchscreen holds and drags plus real door/exit taps complete normal first level",
+    "Actual undefended normal enemy beams cause death once; terminal inputs reject and retry restores normal resources"
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "ordinaryHitHeal": {
+    "player": {
+      "x": 4.840775571,
+      "y": 1.503855611,
+      "yaw": 0.012401064,
+      "hp": 100,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 324,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "守望光束1"
+      },
+      {
+        "id": 2,
+        "tick": 481,
+        "kind": "ammo",
+        "unit": "player",
+        "delta": -1,
+        "cause": "发出光脉冲"
+      },
+      {
+        "id": 3,
+        "tick": 481,
+        "kind": "hp",
+        "unit": "e0",
+        "delta": -12,
+        "cause": "光脉冲3"
+      },
+      {
+        "id": 4,
+        "tick": 499,
+        "kind": "ammo",
+        "unit": "player",
+        "delta": -1,
+        "cause": "发出光脉冲"
+      },
+      {
+        "id": 5,
+        "tick": 499,
+        "kind": "hp",
+        "unit": "e0",
+        "delta": -6,
+        "cause": "光脉冲4"
+      },
+      {
+        "id": 6,
+        "tick": 704,
+        "kind": "ammo",
+        "unit": "player",
+        "delta": 4,
+        "cause": "a0"
+      },
+      {
+        "id": 7,
+        "tick": 1080,
+        "kind": "hp",
+        "unit": "player",
+        "delta": 6,
+        "cause": "h0"
+      },
+      {
+        "id": 8,
+        "tick": 1342,
+        "kind": "ammo",
+        "unit": "player",
+        "delta": -1,
+        "cause": "发出光脉冲"
+      },
+      {
+        "id": 9,
+        "tick": 1342,
+        "kind": "hp",
+        "unit": "e1",
+        "delta": -12,
+        "cause": "光脉冲6"
+      },
+      {
+        "id": 10,
+        "tick": 1360,
+        "kind": "ammo",
+        "unit": "player",
+        "delta": -1,
+        "cause": "发出光脉冲"
+      },
+      {
+        "id": 11,
+        "tick": 1360,
+        "kind": "hp",
+        "unit": "e1",
+        "delta": -12,
+        "cause": "光脉冲7"
+      }
+    ],
+    "stats": {
+      "fired": 4,
+      "hits": 4,
+      "kills": 2,
+      "damageTaken": 6,
+      "healed": 6,
+      "ammoGained": 4,
+      "ammoDiscarded": 0,
+      "doors": 1,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "tick": 1,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 136,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 139,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 145,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 151,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 158,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 165,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 171,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 178,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 181,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 184,
+        "kind": "look",
+        "delta": -0.0219071044921875
+      },
+      {
+        "tick": 202,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 206,
+        "kind": "look",
+        "delta": -0.1378062744140625
+      },
+      {
+        "tick": 209,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 244,
+        "kind": "look",
+        "delta": -0.0155247802734375
+      },
+      {
+        "tick": 259,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 372,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 405,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 441,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 469,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 481,
+        "kind": "pulse"
+      },
+      {
+        "tick": 481,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 507,
+        "kind": "look",
+        "delta": -0.0159547119140625
+      },
+      {
+        "tick": 514,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 531,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 551,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 563,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 576,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 583,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 591,
+        "kind": "look",
+        "delta": 0.0185489501953125
+      },
+      {
+        "tick": 602,
+        "kind": "look",
+        "delta": 0.0173441162109375
+      },
+      {
+        "tick": 607,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 612,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 621,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 628,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 634,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 642,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 650,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 657,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 664,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 667,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 671,
+        "kind": "look",
+        "delta": -0.09214929199218751
+      },
+      {
+        "tick": 678,
+        "kind": "look",
+        "delta": -0.02277685546875
+      },
+      {
+        "tick": 690,
+        "kind": "look",
+        "delta": 0.1056778564453125
+      },
+      {
+        "tick": 696,
+        "kind": "look",
+        "delta": 0.02086083984375
+      },
+      {
+        "tick": 710,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 713,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 720,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 726,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 733,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 739,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 746,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 753,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 757,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 760,
+        "kind": "look",
+        "delta": 0.0342440185546875
+      },
+      {
+        "tick": 778,
+        "kind": "look",
+        "delta": 0.0161510009765625
+      },
+      {
+        "tick": 782,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 785,
+        "kind": "look",
+        "delta": 0.12883447265625
+      },
+      {
+        "tick": 788,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 805,
+        "kind": "look",
+        "delta": 0.017224365234375
+      },
+      {
+        "tick": 812,
+        "kind": "look",
+        "delta": -0.020056640625
+      },
+      {
+        "tick": 838,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 838,
+        "kind": "use"
+      },
+      {
+        "tick": 840,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 852,
+        "kind": "look",
+        "delta": -0.016762939453125
+      },
+      {
+        "tick": 855,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 858,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 865,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 872,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 879,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 886,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 892,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 899,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 903,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 906,
+        "kind": "look",
+        "delta": -0.0452515869140625
+      },
+      {
+        "tick": 923,
+        "kind": "look",
+        "delta": -0.021440185546875
+      },
+      {
+        "tick": 930,
+        "kind": "look",
+        "delta": -0.0923038330078125
+      },
+      {
+        "tick": 936,
+        "kind": "look",
+        "delta": -0.022437377929687502
+      },
+      {
+        "tick": 948,
+        "kind": "look",
+        "delta": 0.0175946044921875
+      },
+      {
+        "tick": 988,
+        "kind": "look",
+        "delta": 0.018711181640625
+      },
+      {
+        "tick": 991,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 995,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1001,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1008,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1014,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1021,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1027,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1034,
+        "kind": "look",
+        "delta": -0.18606005859375
+      },
+      {
+        "tick": 1037,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1057,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1060,
+        "kind": "look",
+        "delta": -0.165592529296875
+      },
+      {
+        "tick": 1063,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1083,
+        "kind": "look",
+        "delta": -0.0174664306640625
+      },
+      {
+        "tick": 1087,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1090,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1097,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1104,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1111,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1118,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1125,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1132,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1135,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1138,
+        "kind": "look",
+        "delta": -0.0796915283203125
+      },
+      {
+        "tick": 1148,
+        "kind": "look",
+        "delta": -0.0167779541015625
+      },
+      {
+        "tick": 1160,
+        "kind": "look",
+        "delta": -0.08326171875
+      },
+      {
+        "tick": 1168,
+        "kind": "look",
+        "delta": -0.019200439453125
+      },
+      {
+        "tick": 1180,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1183,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1189,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1196,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1202,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1209,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1216,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1223,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1230,
+        "kind": "look",
+        "delta": 0.1271846923828125
+      },
+      {
+        "tick": 1234,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1256,
+        "kind": "look",
+        "delta": 0.0491044921875
+      },
+      {
+        "tick": 1275,
+        "kind": "look",
+        "delta": 0.0161898193359375
+      },
+      {
+        "tick": 1303,
+        "kind": "look",
+        "delta": -0.0215614013671875
+      },
+      {
+        "tick": 1307,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1310,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1317,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1323,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1330,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1338,
+        "kind": "look",
+        "delta": 0.0883062744140625
+      },
+      {
+        "tick": 1342,
+        "kind": "pulse"
+      },
+      {
+        "tick": 1342,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 1362,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1365,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1372,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1378,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1385,
+        "kind": "look",
+        "delta": -0.19999987792968751
+      },
+      {
+        "tick": 1388,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1391,
+        "kind": "look",
+        "delta": -0.0772177734375
+      },
+      {
+        "tick": 1398,
+        "kind": "look",
+        "delta": -0.0174510498046875
+      },
+      {
+        "tick": 1404,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1407,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1414,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1421,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1428,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1435,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1441,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1448,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1451,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1454,
+        "kind": "look",
+        "delta": 0.049910888671875
+      },
+      {
+        "tick": 1469,
+        "kind": "look",
+        "delta": 0.01830615234375
+      },
+      {
+        "tick": 1476,
+        "kind": "look",
+        "delta": 0.11445410156250001
+      },
+      {
+        "tick": 1483,
+        "kind": "look",
+        "delta": 0.024996826171875
+      },
+      {
+        "tick": 1495,
+        "kind": "look",
+        "delta": 0.0189385986328125
+      },
+      {
+        "tick": 1499,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1502,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1508,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1515,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1521,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1528,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1535,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1542,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1549,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1553,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1567,
+        "kind": "look",
+        "delta": 0.0171346435546875
+      },
+      {
+        "tick": 1577,
+        "kind": "look",
+        "delta": -0.06946142578125
+      },
+      {
+        "tick": 1584,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1584,
+        "kind": "use"
+      }
+    ]
+  },
+  "nativeTouch": {
+    "player": {
+      "x": 4.881020647,
+      "y": 1.498660598,
+      "yaw": -0.014344142,
+      "hp": 92,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "stats": {
+      "fired": 4,
+      "hits": 4,
+      "kills": 2,
+      "damageTaken": 14,
+      "healed": 6,
+      "ammoGained": 4,
+      "ammoDiscarded": 0,
+      "doors": 1,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "tick": 5,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 143,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 149,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 160,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 171,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 182,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 194,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 206,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 217,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 228,
+        "kind": "look",
+        "delta": -0.15079916381835937
+      },
+      {
+        "tick": 237,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 265,
+        "kind": "look",
+        "delta": -0.017641754150390626
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 316,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 322,
+        "kind": "look",
+        "delta": -0.017121551513671875
+      },
+      {
+        "tick": 329,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 335,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 341,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 352,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 364,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 375,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 386,
+        "kind": "look",
+        "delta": -0.034108062744140626
+      },
+      {
+        "tick": 395,
+        "kind": "pulse"
+      },
+      {
+        "tick": 395,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 417,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 423,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 434,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 445,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 456,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 467,
+        "kind": "look",
+        "delta": 0.049197509765625
+      },
+      {
+        "tick": 474,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 493,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 499,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 510,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 522,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 533,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 544,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 555,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 567,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 579,
+        "kind": "look",
+        "delta": -0.114289306640625
+      },
+      {
+        "tick": 586,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 609,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 615,
+        "kind": "look",
+        "delta": -0.05206393432617187
+      },
+      {
+        "tick": 622,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 643,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 649,
+        "kind": "look",
+        "delta": -0.020050140380859376
+      },
+      {
+        "tick": 656,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 660,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 666,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 677,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 689,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 700,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 711,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 722,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 733,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 744,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 755,
+        "kind": "look",
+        "delta": 0.06440863037109375
+      },
+      {
+        "tick": 762,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 783,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 789,
+        "kind": "look",
+        "delta": -0.0664815673828125
+      },
+      {
+        "tick": 796,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 817,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 823,
+        "kind": "look",
+        "delta": -0.018487518310546874
+      },
+      {
+        "tick": 830,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 854,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 860,
+        "kind": "look",
+        "delta": 0.015608093261718753
+      },
+      {
+        "tick": 867,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 877,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 881,
+        "kind": "use"
+      },
+      {
+        "tick": 888,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 897,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 903,
+        "kind": "look",
+        "delta": -0.017139862060546875
+      },
+      {
+        "tick": 910,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 917,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 923,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 934,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 945,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 956,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 968,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 980,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 991,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1002,
+        "kind": "look",
+        "delta": -0.14780447387695314
+      },
+      {
+        "tick": 1011,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1039,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1045,
+        "kind": "look",
+        "delta": -0.01613690185546875
+      },
+      {
+        "tick": 1052,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1114,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1120,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1132,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1144,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1156,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1167,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1178,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1189,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1200,
+        "kind": "look",
+        "delta": -0.06804565429687501
+      },
+      {
+        "tick": 1207,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1228,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1234,
+        "kind": "look",
+        "delta": -0.08587271118164062
+      },
+      {
+        "tick": 1241,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1259,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1265,
+        "kind": "look",
+        "delta": -0.018536224365234374
+      },
+      {
+        "tick": 1272,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1279,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1285,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1297,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1308,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1319,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1330,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1341,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1352,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1364,
+        "kind": "look",
+        "delta": -0.1568023681640625
+      },
+      {
+        "tick": 1374,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1406,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1412,
+        "kind": "look",
+        "delta": -0.01570330810546875
+      },
+      {
+        "tick": 1419,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1431,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1437,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1448,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1459,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1471,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1482,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1493,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1504,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1516,
+        "kind": "look",
+        "delta": 0.08053253173828125
+      },
+      {
+        "tick": 1523,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1544,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1550,
+        "kind": "look",
+        "delta": 0.0805198974609375
+      },
+      {
+        "tick": 1557,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1575,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1581,
+        "kind": "look",
+        "delta": 0.017470184326171874
+      },
+      {
+        "tick": 1588,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1623,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1629,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1641,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1652,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1663,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1674,
+        "kind": "look",
+        "delta": 0.09458377075195312
+      },
+      {
+        "tick": 1683,
+        "kind": "pulse"
+      },
+      {
+        "tick": 1683,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 1704,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1710,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1721,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1732,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1743,
+        "kind": "look",
+        "delta": -0.19999996948242188
+      },
+      {
+        "tick": 1755,
+        "kind": "look",
+        "delta": -0.10032687377929687
+      },
+      {
+        "tick": 1762,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1780,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1786,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1798,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1810,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1822,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1833,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1844,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1855,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1867,
+        "kind": "look",
+        "delta": 0.15778134155273438
+      },
+      {
+        "tick": 1877,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1903,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1909,
+        "kind": "look",
+        "delta": 0.016369812011718752
+      },
+      {
+        "tick": 1916,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1934,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1940,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1952,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1964,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1976,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 1988,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 2000,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 2012,
+        "kind": "look",
+        "delta": 0.19999996948242188
+      },
+      {
+        "tick": 2023,
+        "kind": "look",
+        "delta": 0.07712017822265625
+      },
+      {
+        "tick": 2030,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 2052,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 2058,
+        "kind": "look",
+        "delta": 0.07867877197265626
+      },
+      {
+        "tick": 2065,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 2075,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 2080,
+        "kind": "use"
+      }
+    ],
+    "score": 1396
+  },
+  "passed": true
+}
