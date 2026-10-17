@@ -1,0 +1,10 @@
+{
+  "notes": [
+    "Core player-death fixture uses a drift enemy and separates cart depth so natural target switching after knockback does not invalidate the intended player-only test. Actual cart death has a separate heavy fixture; UI undefended real player death also passes.",
+    "Terminal model replay advances remaining ticks after the last input to the actual authored victory tick, then compares24 fields.",
+    "Bodies already overlapping can move outward; dodge can cross bodies but remains bounded by closed gates and road. Friendly cart does not permanently trap actors.",
+    "Mobile action buttons dispatch on pointerdown, permitting secondary dodge contact while movement is held. Click ignores duplicate physical clicks while keyboard activation remains supported. Native multi-touch actual directional dodge and full victory pass.",
+    "Original geometry and animation are reviewed in desktop/mobile normal combat screenshots. Contact range/depth/windup/invulnerability tests use explicitly isolated core fixtures, separate from ordinary8campaigns."
+  ],
+  "boundaries": "All normal campaigns, direct refresh, native touch and UI combat use actual controls. No HP/position/energy/supply/time/result writes. Bad/forged/denied storage fixtures are explicitly labeled. Existing source-reading gaps remain marked."
+}
