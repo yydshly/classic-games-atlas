@@ -1,0 +1,29 @@
+"""Focused regression for render/layout-only refinement; actual controls only."""
+import argparse,asyncio,datetime,json,time
+from pathlib import Path
+from playwright.async_api import async_playwright
+from test_escort_browser import ROOT,KEY,FIELDS,snap,watch,Pilot,Driver,click,begin,complete
+from capture_escort_refinement import navigate,shot
+async def main(a):
+ out=ROOT/a.out;out.mkdir(parents=True,exist_ok=True);report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':a.url,'checks':[],'results':[]};errors=[];bad=[];failed=[];pilot=await Pilot().start()
+ earned=json.loads((ROOT/'docs/escort-qa/visual-v3/report.json').read_text(encoding='utf8'))['results'][-1];progress={'version':1,'unlocked':8,'last':1,'tutorialSeen':True,'sound':False,'best':earned['best'],'resume':None}
+ def save():
+  report.update(consoleErrors=errors,badResponses=bad,requestFailures=failed);(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+ async with async_playwright() as pw:
+  b=await pw.chromium.launch()
+  try:
+   # Desktop keyboard, dialogs, saved attack state and two full ordinary wins.
+   ctx=await b.new_context(viewport={'width':1440,'height':1100});await ctx.add_init_script('if(!localStorage.getItem('+json.dumps(KEY)+'))localStorage.setItem('+json.dumps(KEY)+','+json.dumps(json.dumps(progress))+')');p=await ctx.new_page();watch(p,errors,bad,failed);await navigate(p,a.url)
+   await p.screenshot(path=str(out/'opening-desktop.png'));assert await p.locator('header').is_visible();d=await Driver(p).start();await begin(p,d);await d.set({'x':1});await d.action('dodge');await d.release();await complete(p,pilot,d,stop=lambda s:s['stats']['hits']>=1 and s['player']['action'] is not None);await d.release();await p.keyboard.press('p');expected=await snap(p);await p.reload(wait_until='domcontentloaded');s=await snap(p);assert all(s[k]==expected[k] for k in FIELDS),'refresh fields';report['checks'].append('mid-action refresh: exact24 fields, paused');await p.keyboard.press('p');await click(p,'#info');s=await snap(p);assert s['state']=='paused' and await p.locator('#info-dialog').is_visible(),'info did not pause';assert '出手' in await p.locator('#info-copy').inner_text(),'info missing stats';await p.keyboard.press('Escape');await p.wait_for_function('window.__escort.snapshot().state==="playing"');report['checks'].append('information dialog pauses, Escape restores prior running state');end,_,_=await complete(p,pilot,d);await d.release();assert end['state']=='won';report['results'].append({'device':'desktop','level':end['level'],'state':end['state'],'stats':end['stats'],'invariants':end['invariants']})
+   await click(p,'#levels');await click(p,'[data-level="7"]');await begin(p,d);end,_,_=await complete(p,pilot,d);await d.release();assert end['state']=='won';report['results'].append({'device':'desktop','level':7,'state':end['state'],'stats':end['stats'],'invariants':end['invariants']});await ctx.close();save()
+   # Both orientations record natively, using touch and natural commands.
+   for viewport,label in [({'width':390,'height':844},'portrait'),({'width':844,'height':390},'landscape')]:
+    vdir=ROOT/'.local/escort-refinement'/('final-'+label);vdir.mkdir(parents=True,exist_ok=True);ctx=await b.new_context(viewport=viewport,is_mobile=True,has_touch=True,record_video_dir=str(vdir),record_video_size=viewport);await ctx.add_init_script('if(!localStorage.getItem('+json.dumps(KEY)+'))localStorage.setItem('+json.dumps(KEY)+','+json.dumps(json.dumps(progress))+')');p=await ctx.new_page();watch(p,errors,bad,failed);await navigate(p,a.url);d=await Driver(p,touch=True).start();await begin(p,d);await d.set({'y':1});await d.action('dodge');await d.release();s,_,_=await complete(p,pilot,d,stop=lambda s:s['stats']['hits']>=1);await d.release();await p.screenshot(path=str(out/('phone-'+label+'-live.png')));await shot(p,out/('phone-'+label+'-canvas.png'));box=await p.locator('#view').bounding_box();assert box['y']<=50 and box['height']>300 and box['x']+box['width']<=viewport['width']+1;assert await p.evaluate('document.documentElement.scrollWidth')==viewport['width'];
+    for sel in ['#attack','#dodge','#heal','#escort','[data-hold="KeyA"]']:
+     r=await p.locator(sel).bounding_box();assert r['width']>=44 and r['height']>=44;assert r['y']>=0 and r['y']+r['height']<=viewport['height']+1,(sel,r)
+    report['checks'].append(label+' viewport fit and primary touch targets >=44px');await click(p,'#info',True);paused=await snap(p);await p.wait_for_timeout(200);assert (await snap(p))['ticks']==paused['ticks'];await click(p,'#info-close',True);await click(p,'#pause',True);frozen=await snap(p);swapped={'width':viewport['height'],'height':viewport['width']};await p.set_viewport_size(swapped);await p.wait_for_timeout(100);rotated=await snap(p);assert all(rotated[k]==frozen[k] for k in FIELDS);await p.set_viewport_size(viewport);await click(p,'#pause',True);report['checks'].append(label+' rotate while paused: exact24 fields');end,_,_=await complete(p,pilot,d);await d.release();assert end['state']=='won' and end['stats']['dodges']>=1;report['results'].append({'device':label,'state':end['state'],'canvas':box,'stats':end['stats'],'invariants':end['invariants']});video=p.video;await ctx.close();await video.save_as(str(out/('phone-'+label+'-action.webm')));save()
+   assert not errors and not bad and not failed,(errors,bad,failed);report['passed']=True;save();print(json.dumps({'passed':True,'checks':report['checks'],'wins':len(report['results'])},ensure_ascii=False))
+  except Exception as e:report['error']=type(e).__name__+': '+str(e);raise
+  finally:save();await b.close();await pilot.close()
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('--url',default='http://127.0.0.1:4174/games/escort/');p.add_argument('--out',default='docs/escort-qa/refinement/validation');asyncio.run(main(p.parse_args()))

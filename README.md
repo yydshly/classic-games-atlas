@@ -867,6 +867,8 @@ python scripts/test_browser.py --url http://127.0.0.1:4174/
 
 ## 后续候选
 
+第34项《街巷护送》限定修整只涉及环境光、接触影、多人辨识和手机实战布局。实景前后对照、原尺寸真实操作视频及本轮验证见 [修整评审记录](docs/ESCORT_REFINEMENT_REVIEW.md) 和 [在线评审页](https://yydshly.github.io/classic-games-atlas/docs/escort-qa/refinement/)。8关规则、美术文件、72条图鉴及前33项内容保留；没有启动第35项。
+
 - 补充早期作品的官方档案与更细的版本资料，提高来源覆盖。
 - 扩展别名、键盘导航说明及更多浏览器的无障碍验证。
 - 后续原创机制实验由主对话逐款确定范围；本轮交付街巷护送后报告验收结果，不承诺全面复刻。

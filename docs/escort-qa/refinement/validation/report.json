@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-17T03:57:02.182978+00:00",
+  "url": "http://127.0.0.1:4174/games/escort/",
+  "checks": [
+    "mid-action refresh: exact24 fields, paused",
+    "information dialog pauses, Escape restores prior running state",
+    "portrait viewport fit and primary touch targets >=44px",
+    "portrait rotate while paused: exact24 fields",
+    "landscape viewport fit and primary touch targets >=44px",
+    "landscape rotate while paused: exact24 fields"
+  ],
+  "results": [
+    {
+      "device": "desktop",
+      "level": 1,
+      "state": "won",
+      "stats": {
+        "attacks": 13,
+        "hits": 14,
+        "kills": 6,
+        "dodges": 1,
+        "evades": 0,
+        "healsUsed": 0,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "damageTaken": 0,
+        "cartDamage": 10,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "health": true,
+        "energy": true,
+        "supplies": true,
+        "uniqueActors": true,
+        "uniqueAttacks": true,
+        "oneContact": true,
+        "contactLedger": true,
+        "depthRange": true,
+        "activeWindow": true,
+        "stages": true,
+        "path": true,
+        "ledgerIds": true,
+        "tickBound": true,
+        "settlement": true
+      }
+    },
+    {
+      "device": "desktop",
+      "level": 7,
+      "state": "won",
+      "stats": {
+        "attacks": 17,
+        "hits": 21,
+        "kills": 8,
+        "dodges": 0,
+        "evades": 0,
+        "healsUsed": 0,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "damageTaken": 0,
+        "cartDamage": 17,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "health": true,
+        "energy": true,
+        "supplies": true,
+        "uniqueActors": true,
+        "uniqueAttacks": true,
+        "oneContact": true,
+        "contactLedger": true,
+        "depthRange": true,
+        "activeWindow": true,
+        "stages": true,
+        "path": true,
+        "ledgerIds": true,
+        "tickBound": true,
+        "settlement": true
+      }
+    },
+    {
+      "device": "portrait",
+      "state": "won",
+      "canvas": {
+        "x": 0,
+        "y": 48,
+        "width": 390,
+        "height": 582
+      },
+      "stats": {
+        "attacks": 18,
+        "hits": 14,
+        "kills": 6,
+        "dodges": 1,
+        "evades": 0,
+        "healsUsed": 2,
+        "healedPlayer": 31,
+        "healedCart": 40,
+        "damageTaken": 37,
+        "cartDamage": 62,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "health": true,
+        "energy": true,
+        "supplies": true,
+        "uniqueActors": true,
+        "uniqueAttacks": true,
+        "oneContact": true,
+        "contactLedger": true,
+        "depthRange": true,
+        "activeWindow": true,
+        "stages": true,
+        "path": true,
+        "ledgerIds": true,
+        "tickBound": true,
+        "settlement": true
+      }
+    },
+    {
+      "device": "landscape",
+      "state": "won",
+      "canvas": {
+        "x": 0,
+        "y": 42,
+        "width": 642,
+        "height": 348
+      },
+      "stats": {
+        "attacks": 19,
+        "hits": 14,
+        "kills": 6,
+        "dodges": 3,
+        "evades": 0,
+        "healsUsed": 0,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "damageTaken": 25,
+        "cartDamage": 22,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "health": true,
+        "energy": true,
+        "supplies": true,
+        "uniqueActors": true,
+        "uniqueAttacks": true,
+        "oneContact": true,
+        "contactLedger": true,
+        "depthRange": true,
+        "activeWindow": true,
+        "stages": true,
+        "path": true,
+        "ledgerIds": true,
+        "tickBound": true,
+        "settlement": true
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}
