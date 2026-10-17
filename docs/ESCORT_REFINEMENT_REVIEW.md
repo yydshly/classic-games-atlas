@@ -31,7 +31,7 @@
 
 ## 验证范围
 
-[本地回归报告](escort-qa/refinement/validation/report.json)：桌面晨街和夜岸、原生390×844触控、原生844×390触控共4次完整胜利。测试实际按键/触控，使用正常生命、有限补给及原60Hz规则；解锁元数据来自前轮实际完成的8关记录。
+[本地回归报告](escort-qa/refinement/validation/report.json)：桌面晨街和夜岸、390×844模拟触控视口、844×390模拟触控视口共4次完整胜利。测试实际按键/触控，使用正常生命、有限补给及原60Hz规则；解锁元数据来自前轮实际完成的8关记录。
 
 刷新中途攻击状态后24字段相等且先暂停；信息窗口暂停、原生 Escape 关闭后恢复；两个方向各暂停旋转后24字段相等。所有15项战斗不变量通过，无控制台错误、HTTP错误或资源失败。
 
@@ -39,7 +39,9 @@
 
 仅渲染和布局变更，沿用前轮39项核心规则及8关独立重放证据；本轮没有把那些旧测试冒充重新执行。采集器第一次对照初始化覆盖了存档、第一次回归未等待原生对话框关闭事件，已修正采集/等待方式；失败记录保留于忽略的本地证据目录，未修改游戏引擎。
 
-公开站构建、实际文件哈希与公开操作结果见本目录后续的 `refinement/public-validation/`、`refinement/public-runtime.json` 和发布记录；只有对应报告成功后才算本轮上线验证完成。
+公开站功能提交 `3c8b03b2e292c08752e93414c55753e592dad19a` 的 [Pages构建](https://github.com/yydshly/classic-games-atlas/actions/runs/39001052897) 成功。[公开站操作验收](escort-qa/refinement/public-validation/report.json)再次完成桌面晨街/夜岸与手机横竖屏4次正常胜利，并验证胜利后“下一街”恢复开场布局；刷新、暂停旋转、信息窗口和主触控尺寸通过，无控制台或资源错误。
+
+[253个运行文件](escort-qa/refinement/public-runtime.json)实际HTTP 200且SHA256均对应功能提交；[全部50个评审文件](escort-qa/refinement/public-review-files.json)实际HTTP内容与提交一致；[公开评审页6个主要视频](escort-qa/refinement/public-media.json)由浏览器实际解码得到正确尺寸和时长。素材核对先顺序完成5项，再保留已核对结果改为4路只读并发完成其余项。以上报告针对功能提交，文档证据提交不改变这253个运行文件，交回前另核最终Pages提交及更新证据。[发布记录](escort-qa/refinement/publication.json)
 
 ## 仍需真人评审
 
