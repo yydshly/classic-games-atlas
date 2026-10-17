@@ -6,5 +6,60 @@
     "Mobile action buttons dispatch on pointerdown, permitting secondary dodge contact while movement is held. Click ignores duplicate physical clicks while keyboard activation remains supported. Native multi-touch actual directional dodge and full victory pass.",
     "Original geometry and animation are reviewed in desktop/mobile normal combat screenshots. Contact range/depth/windup/invulnerability tests use explicitly isolated core fixtures, separate from ordinary8campaigns."
   ],
-  "boundaries": "All normal campaigns, direct refresh, native touch and UI combat use actual controls. No HP/position/energy/supply/time/result writes. Bad/forged/denied storage fixtures are explicitly labeled. Existing source-reading gaps remain marked."
+  "boundaries": "All normal campaigns, direct refresh, native touch and UI combat use actual controls. No HP/position/energy/supply/time/result writes. Bad/forged/denied storage fixtures are explicitly labeled. Existing source-reading gaps remain marked.",
+  "initialPublicUI": {
+    "report": "initial-public-ui.json",
+    "passedChecksBeforeStop": 11,
+    "failure": "energy<20 assertion during repeated ordinary dodge test; no final snapshot was saved, so exact initial cause remains unconfirmed",
+    "productionChanged": false,
+    "testChange": "Wait for actual enabled dodge button after action ends; capture full before/after snapshots and assert exactly20 spent for every accepted input, instead of an extra fixed110ms delay",
+    "isolatedOriginalSequence": [
+      {
+        "tick": 42,
+        "before": 88.4,
+        "after": 68.8,
+        "spent": 40,
+        "state": "playing"
+      },
+      {
+        "tick": 76,
+        "before": 75.2,
+        "after": 55.4,
+        "spent": 60,
+        "state": "playing"
+      },
+      {
+        "tick": 105,
+        "before": 61,
+        "after": 41.2,
+        "spent": 80,
+        "state": "playing"
+      },
+      {
+        "tick": 138,
+        "before": 47.6,
+        "after": 27.8,
+        "spent": 100,
+        "state": "playing"
+      },
+      {
+        "tick": 173,
+        "before": 34.6,
+        "after": 14.8,
+        "spent": 120,
+        "state": "playing"
+      }
+    ]
+  },
+  "executionRecovery": {
+    "interruption": "After feature push and Pages success, local exec transport disconnected before public tests started",
+    "resumed": "2026-10-17T01:37Z; confirmed clean feature checkout and existing successful Pages record; retained all prior work and started remaining public acceptance"
+  },
+  "publicReleaseTransient503": {
+    "original": "initial-public-release.json",
+    "followup": "public-release-followup.json",
+    "resource": "games/prism/engine.mjs",
+    "functionalScenariosRetained": "34entry titles, previous Echo normal win, current exact restore win, native multi-touch win",
+    "resolved": "Fresh affected page and resource200 with no browser errors and SHA256 matching feature; final full release will run fresh"
+  }
 }

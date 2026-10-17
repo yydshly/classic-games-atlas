@@ -1,0 +1,203 @@
+{
+  "testedAt": "2026-10-17T01:37:55.626393+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/escort/",
+  "method": "Real keys, held buttons and native multi-touch. Only malformed/denied/forged storage boundary fixtures; combat HP/position/meter/supplies/time/results are never written.",
+  "checks": [
+    "Tutorial/ready freeze and original120/100HP/2supplies are visible",
+    "Fresh eighth street locked; closing book preserves ready state",
+    "Original street, actors, path and gate canvas actually render",
+    "Real horizontal and depth movement changes both axes within road bounds",
+    "Full-health recovery is unavailable and cannot waste a supply",
+    "Ordinary live combat reaches connected1/2/3 combos with unique per-target contacts",
+    "Pause releases held input and freezes all24 physical/combo/cart/resource fields",
+    "Help and street book pause and resume without extra attack commands",
+    "Synthesized sound preference toggles with persisted state",
+    "Expanded log exposes stage, windup, actual hit, heal and escort events",
+    "Actual dodge cancels a pending own attack; held/repeat K pays exactly once"
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "ordinaryCombo": {
+    "attacks": [
+      {
+        "id": 1,
+        "owner": "player",
+        "start": 26,
+        "combo": 1,
+        "face": 1,
+        "target": null,
+        "name": "探灯",
+        "damage": 16,
+        "range": 62,
+        "depth": 22,
+        "wind": 7,
+        "active": 6,
+        "recovery": 10,
+        "knock": 14,
+        "hitIds": [
+          "e1"
+        ],
+        "resolved": true,
+        "canceled": false
+      },
+      {
+        "id": 2,
+        "owner": "player",
+        "start": 50,
+        "combo": 2,
+        "face": 1,
+        "target": null,
+        "name": "回风",
+        "damage": 20,
+        "range": 72,
+        "depth": 25,
+        "wind": 9,
+        "active": 6,
+        "recovery": 11,
+        "knock": 20,
+        "hitIds": [
+          "e1",
+          "e2"
+        ],
+        "resolved": true,
+        "canceled": false
+      },
+      {
+        "id": 3,
+        "owner": "e1",
+        "start": 50,
+        "combo": 0,
+        "face": -1,
+        "target": "player",
+        "name": "绕步客",
+        "hp": 32,
+        "speed": 88,
+        "damage": 6,
+        "range": 52,
+        "depth": 20,
+        "wind": 42,
+        "active": 7,
+        "recovery": 45,
+        "cool": 40,
+        "hitIds": [],
+        "resolved": true,
+        "canceled": true
+      },
+      {
+        "id": 4,
+        "owner": "player",
+        "start": 77,
+        "combo": 3,
+        "face": 1,
+        "target": null,
+        "name": "归巷",
+        "damage": 28,
+        "range": 86,
+        "depth": 29,
+        "wind": 12,
+        "active": 8,
+        "recovery": 13,
+        "knock": 30,
+        "hitIds": [],
+        "resolved": false,
+        "canceled": false
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "tick": 0,
+        "kind": "stage",
+        "text": "进入第1段 · 2名来敌",
+        "stage": 1
+      },
+      {
+        "id": 2,
+        "tick": 26,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 1,
+        "target": null
+      },
+      {
+        "id": 3,
+        "tick": 33,
+        "kind": "hit",
+        "text": "探灯命中 绕步客 −16",
+        "attack": 1,
+        "source": "player",
+        "target": "e1",
+        "damage": 16,
+        "dx": 56.823703792,
+        "dy": 3.970460626
+      },
+      {
+        "id": 4,
+        "tick": 50,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 2,
+        "target": null
+      },
+      {
+        "id": 5,
+        "tick": 50,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 3,
+        "target": "player"
+      },
+      {
+        "id": 6,
+        "tick": 59,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −16",
+        "attack": 2,
+        "source": "player",
+        "target": "e1",
+        "damage": 16,
+        "dx": 40.463703782,
+        "dy": 3.970460626
+      },
+      {
+        "id": 7,
+        "tick": 59,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −20",
+        "attack": 2,
+        "source": "player",
+        "target": "e2",
+        "damage": 20,
+        "dx": 66.537407495,
+        "dy": 3.888719892
+      },
+      {
+        "id": 8,
+        "tick": 77,
+        "kind": "wind",
+        "text": "归巷起手",
+        "actor": "player",
+        "attack": 4,
+        "target": null
+      }
+    ],
+    "stats": {
+      "attacks": 3,
+      "hits": 3,
+      "kills": 1,
+      "dodges": 0,
+      "evades": 0,
+      "healsUsed": 0,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "damageTaken": 0,
+      "cartDamage": 0,
+      "settlements": 0
+    }
+  },
+  "error": "AssertionError: "
+}

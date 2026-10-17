@@ -1,0 +1,6768 @@
+{
+  "testedAt": "2026-10-17T02:41:32.039616+00:00",
+  "url": "http://127.0.0.1:4174/games/escort/",
+  "method": "Real keys, held buttons and native multi-touch. Only malformed/denied/forged storage boundary fixtures; combat HP/position/meter/supplies/time/results are never written.",
+  "checks": [
+    "Tutorial/ready freeze and original120/100HP/2supplies are visible",
+    "Fresh eighth street locked; closing book preserves ready state",
+    "Original street, actors, path and gate canvas actually render",
+    "Real horizontal and depth movement changes both axes within road bounds",
+    "Full-health recovery is unavailable and cannot waste a supply",
+    "Ordinary live combat reaches connected1/2/3 combos with unique per-target contacts",
+    "Pause releases held input and freezes all24 physical/combo/cart/resource fields",
+    "Help and street book pause and resume without extra attack commands",
+    "Synthesized sound preference toggles with persisted state",
+    "Expanded log exposes stage, windup, actual hit, heal and escort events",
+    "Actual dodge cancels a pending own attack; held/repeat K pays exactly once",
+    "Ordinary repeated dodges exhaust bounded meter; no overspending or free repeat",
+    "Real E parks cart; distance stops it; ordinary return and cleared road resume actual path movement",
+    "Actual damaged cart receives bounded nearby repair using a finite charge, then normal escort victory",
+    "Retry restores original budget; best and earned unlock survive reload",
+    "Normal enemy damage and two actual H recoveries deplete inventory; empty recovery never adds HP",
+    "Undefended real melee causes one player death; terminal actions reject and retry is authored",
+    "Blur handler releases held movement and freezes battle without backlog",
+    "Malformed storage safely falls back to original setup",
+    "Forged combat snapshot fields cannot grant position/health/cart/supplies",
+    "Denied storage still supports complete ordinary first street",
+    "Full normal first street through keyboard depth/horizontal movement and combo controls",
+    "320/360/390/768/1024/1440 widths and help/result controls fit without overflow",
+    "Native simultaneous move/action touch points trigger directional dodge and full normal first-street victory"
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "ordinaryCombo": {
+    "attacks": [
+      {
+        "id": 1,
+        "owner": "player",
+        "start": 21,
+        "combo": 1,
+        "face": 1,
+        "target": null,
+        "name": "探灯",
+        "damage": 16,
+        "range": 62,
+        "depth": 22,
+        "wind": 7,
+        "active": 6,
+        "recovery": 10,
+        "knock": 14,
+        "hitIds": [
+          "e1"
+        ],
+        "resolved": true,
+        "canceled": false
+      },
+      {
+        "id": 2,
+        "owner": "player",
+        "start": 45,
+        "combo": 2,
+        "face": 1,
+        "target": null,
+        "name": "回风",
+        "damage": 20,
+        "range": 72,
+        "depth": 25,
+        "wind": 9,
+        "active": 6,
+        "recovery": 11,
+        "knock": 20,
+        "hitIds": [
+          "e1",
+          "e2"
+        ],
+        "resolved": true,
+        "canceled": false
+      },
+      {
+        "id": 3,
+        "owner": "e1",
+        "start": 51,
+        "combo": 0,
+        "face": -1,
+        "target": "player",
+        "name": "绕步客",
+        "hp": 32,
+        "speed": 88,
+        "damage": 6,
+        "range": 52,
+        "depth": 20,
+        "wind": 42,
+        "active": 7,
+        "recovery": 45,
+        "cool": 40,
+        "hitIds": [],
+        "resolved": true,
+        "canceled": true
+      },
+      {
+        "id": 4,
+        "owner": "player",
+        "start": 72,
+        "combo": 3,
+        "face": 1,
+        "target": null,
+        "name": "归巷",
+        "damage": 28,
+        "range": 86,
+        "depth": 29,
+        "wind": 12,
+        "active": 8,
+        "recovery": 13,
+        "knock": 30,
+        "hitIds": [],
+        "resolved": false,
+        "canceled": false
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "tick": 0,
+        "kind": "stage",
+        "text": "进入第1段 · 2名来敌",
+        "stage": 1
+      },
+      {
+        "id": 2,
+        "tick": 21,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 1,
+        "target": null
+      },
+      {
+        "id": 3,
+        "tick": 33,
+        "kind": "hit",
+        "text": "探灯命中 绕步客 −16",
+        "attack": 1,
+        "source": "player",
+        "target": "e1",
+        "damage": 16,
+        "dx": 60.123703791,
+        "dy": 3.970460626
+      },
+      {
+        "id": 4,
+        "tick": 45,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 2,
+        "target": null
+      },
+      {
+        "id": 5,
+        "tick": 51,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 3,
+        "target": "player"
+      },
+      {
+        "id": 6,
+        "tick": 54,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −16",
+        "attack": 2,
+        "source": "player",
+        "target": "e1",
+        "damage": 16,
+        "dx": 45.523703782,
+        "dy": 3.970460626
+      },
+      {
+        "id": 7,
+        "tick": 54,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −20",
+        "attack": 2,
+        "source": "player",
+        "target": "e2",
+        "damage": 20,
+        "dx": 71.597407495,
+        "dy": 3.888719892
+      },
+      {
+        "id": 8,
+        "tick": 72,
+        "kind": "wind",
+        "text": "归巷起手",
+        "actor": "player",
+        "attack": 4,
+        "target": null
+      }
+    ],
+    "stats": {
+      "attacks": 3,
+      "hits": 3,
+      "kills": 1,
+      "dodges": 0,
+      "evades": 0,
+      "healsUsed": 0,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "damageTaken": 0,
+      "cartDamage": 0,
+      "settlements": 0
+    }
+  },
+  "dodgeExhaustion": [
+    {
+      "before": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 34,
+        "accumulator": 3.333333333327068e-05,
+        "player": {
+          "id": "player",
+          "x": 346,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 86.8,
+          "gained": 6.8,
+          "spent": 20,
+          "action": null,
+          "stunUntil": 0,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 183.034478296,
+          "y": 157.394073704,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 63.466666678
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 125.095407398,
+            "hp": 32,
+            "maxHP": 32,
+            "face": -1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 388.88730162,
+            "y": 114.682740708,
+            "hp": 32,
+            "maxHP": 32,
+            "face": -1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 1,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 1,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 0.5666666666666667,
+        "cartStatus": "跟随中 · 沿灯绳前行",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      },
+      "after": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 34,
+        "accumulator": 3.333333333327068e-05,
+        "player": {
+          "id": "player",
+          "x": 346,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 66.8,
+          "gained": 6.8,
+          "spent": 40,
+          "action": {
+            "kind": "dodge",
+            "start": 34,
+            "dx": 1,
+            "dy": 0
+          },
+          "stunUntil": 34,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 183.034478296,
+          "y": 157.394073704,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 63.466666678
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 125.095407398,
+            "hp": 32,
+            "maxHP": 32,
+            "face": -1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 388.88730162,
+            "y": 114.682740708,
+            "hp": 32,
+            "maxHP": 32,
+            "face": -1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 1,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 2,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 0.5666666666666667,
+        "cartStatus": "跟随中 · 沿灯绳前行",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      }
+    },
+    {
+      "before": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 64,
+        "accumulator": 3.333333333327068e-05,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 72.8,
+          "gained": 12.8,
+          "spent": 40,
+          "action": null,
+          "stunUntil": 34,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 238.653135616,
+          "y": 163.918256384,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 119.466666688
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 2,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.0666666666666667,
+        "cartStatus": "跟随中 · 沿灯绳前行",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      },
+      "after": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 64,
+        "accumulator": 3.333333333327068e-05,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 52.8,
+          "gained": 12.8,
+          "spent": 60,
+          "action": {
+            "kind": "dodge",
+            "start": 64,
+            "dx": 1,
+            "dy": 0
+          },
+          "stunUntil": 64,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 238.653135616,
+          "y": 163.918256384,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 119.466666688
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 3,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.0666666666666667,
+        "cartStatus": "跟随中 · 沿灯绳前行",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      }
+    },
+    {
+      "before": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 91,
+        "accumulator": 3.333333333327068e-05,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 58.2,
+          "gained": 18.2,
+          "spent": 60,
+          "action": null,
+          "stunUntil": 64,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 253.484777568,
+          "y": 165.658038432,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 134.400000024
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 3,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.5166666666666666,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      },
+      "after": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 91,
+        "accumulator": 0.01663333333333318,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 38.2,
+          "gained": 18.2,
+          "spent": 80,
+          "action": {
+            "kind": "dodge",
+            "start": 91,
+            "dx": 1,
+            "dy": 0
+          },
+          "stunUntil": 91,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 253.484777568,
+          "y": 165.658038432,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 134.400000024
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": false,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 8,
+            "tick": 91,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          },
+          {
+            "tick": 91,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 4,
+          "evades": 0,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.5166666666666666,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      }
+    },
+    {
+      "before": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 118,
+        "accumulator": 0.016633333333333177,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 43.6,
+          "gained": 23.6,
+          "spent": 80,
+          "action": null,
+          "stunUntil": 91,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 253.484777568,
+          "y": 165.658038432,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 134.400000024
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [
+              "player"
+            ],
+            "resolved": true,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 8,
+            "tick": 91,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 9,
+            "tick": 98,
+            "kind": "evade",
+            "text": "闪步避开来招",
+            "attack": 3,
+            "target": "player"
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          },
+          {
+            "tick": 91,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 4,
+          "evades": 1,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.9666666666666666,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      },
+      "after": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 118,
+        "accumulator": 0.016633333333333177,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 23.6,
+          "gained": 23.6,
+          "spent": 100,
+          "action": {
+            "kind": "dodge",
+            "start": 118,
+            "dx": 1,
+            "dy": 0
+          },
+          "stunUntil": 118,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 253.484777568,
+          "y": 165.658038432,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 134.400000024
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 363.406560864,
+            "y": 132.707333324,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 2,
+              "start": 43,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [
+              "player"
+            ],
+            "resolved": true,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 8,
+            "tick": 91,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 9,
+            "tick": 98,
+            "kind": "evade",
+            "text": "闪步避开来招",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 10,
+            "tick": 118,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          },
+          {
+            "tick": 91,
+            "kind": "dodge"
+          },
+          {
+            "tick": 118,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 5,
+          "evades": 1,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 1.9666666666666666,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      }
+    },
+    {
+      "before": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 146,
+        "accumulator": 0.01656666666666688,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 29.2,
+          "gained": 29.2,
+          "spent": 100,
+          "action": null,
+          "stunUntil": 118,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 262.754553788,
+          "y": 166.745402212,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 143.733333359
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 372.740370378,
+            "y": 139.240999982,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 177,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [
+              "player"
+            ],
+            "resolved": true,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 8,
+            "tick": 91,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 9,
+            "tick": 98,
+            "kind": "evade",
+            "text": "闪步避开来招",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 10,
+            "tick": 118,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          },
+          {
+            "tick": 91,
+            "kind": "dodge"
+          },
+          {
+            "tick": 118,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 5,
+          "evades": 1,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 2.433333333333333,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      },
+      "after": {
+        "level": 1,
+        "state": "playing",
+        "ticks": 146,
+        "accumulator": 0.01656666666666688,
+        "player": {
+          "id": "player",
+          "x": 441,
+          "y": 150,
+          "hp": 120,
+          "maxHP": 120,
+          "face": 1,
+          "energy": 9.2,
+          "gained": 29.2,
+          "spent": 120,
+          "action": {
+            "kind": "dodge",
+            "start": 146,
+            "dx": 1,
+            "dy": 0
+          },
+          "stunUntil": 146,
+          "invulUntil": 0
+        },
+        "cart": {
+          "id": "cart",
+          "x": 262.754553788,
+          "y": 166.745402212,
+          "hp": 100,
+          "maxHP": 100,
+          "pathIndex": 1,
+          "following": true,
+          "invulUntil": 0,
+          "distance": 143.733333359
+        },
+        "controls": {
+          "x": 0,
+          "y": 0,
+          "attack": false
+        },
+        "stage": 0,
+        "cleared": [
+          false,
+          false,
+          false
+        ],
+        "spawned": [
+          true,
+          false,
+          false
+        ],
+        "enemies": [
+          {
+            "id": "e1",
+            "kind": "drift",
+            "x": 372.740370378,
+            "y": 139.240999982,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": null,
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 177,
+            "target": "player"
+          },
+          {
+            "id": "e2",
+            "kind": "drift",
+            "x": 400.295291026,
+            "y": 132.634296255,
+            "hp": 32,
+            "maxHP": 32,
+            "face": 1,
+            "stage": 0,
+            "action": {
+              "kind": "attack",
+              "id": 3,
+              "start": 56,
+              "combo": 0,
+              "face": 1,
+              "target": "player"
+            },
+            "stunUntil": 0,
+            "invulUntil": 0,
+            "nextAttack": 0,
+            "target": "player"
+          }
+        ],
+        "unitSerial": 2,
+        "serial": 3,
+        "attacks": [
+          {
+            "id": 1,
+            "owner": "player",
+            "start": 0,
+            "combo": 1,
+            "face": 1,
+            "target": null,
+            "name": "探灯",
+            "damage": 16,
+            "range": 62,
+            "depth": 22,
+            "wind": 7,
+            "active": 6,
+            "recovery": 10,
+            "knock": 14,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": true
+          },
+          {
+            "id": 2,
+            "owner": "e1",
+            "start": 43,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [],
+            "resolved": true,
+            "canceled": false
+          },
+          {
+            "id": 3,
+            "owner": "e2",
+            "start": 56,
+            "combo": 0,
+            "face": 1,
+            "target": "player",
+            "name": "绕步客",
+            "hp": 32,
+            "speed": 88,
+            "damage": 6,
+            "range": 52,
+            "depth": 20,
+            "wind": 42,
+            "active": 7,
+            "recovery": 45,
+            "cool": 40,
+            "hitIds": [
+              "player"
+            ],
+            "resolved": true,
+            "canceled": false
+          }
+        ],
+        "ledger": [],
+        "events": [
+          {
+            "id": 1,
+            "tick": 0,
+            "kind": "stage",
+            "text": "进入第1段 · 2名来敌",
+            "stage": 1
+          },
+          {
+            "id": 2,
+            "tick": 0,
+            "kind": "wind",
+            "text": "探灯起手",
+            "actor": "player",
+            "attack": 1,
+            "target": null
+          },
+          {
+            "id": 3,
+            "tick": 0,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 4,
+            "tick": 34,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 5,
+            "tick": 43,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e1",
+            "attack": 2,
+            "target": "player"
+          },
+          {
+            "id": 6,
+            "tick": 56,
+            "kind": "wind",
+            "text": "绕步客蓄势 → 守灯人",
+            "actor": "e2",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 7,
+            "tick": 64,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 8,
+            "tick": 91,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 9,
+            "tick": 98,
+            "kind": "evade",
+            "text": "闪步避开来招",
+            "attack": 3,
+            "target": "player"
+          },
+          {
+            "id": 10,
+            "tick": 118,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          },
+          {
+            "id": 11,
+            "tick": 146,
+            "kind": "dodge",
+            "text": "闪步消耗20耐力，短暂穿过包围",
+            "dx": 1,
+            "dy": 0
+          }
+        ],
+        "log": [
+          {
+            "tick": 0,
+            "kind": "attack"
+          },
+          {
+            "tick": 0,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": true
+          },
+          {
+            "tick": 0,
+            "kind": "dodge"
+          },
+          {
+            "tick": 1,
+            "kind": "controls",
+            "x": 0,
+            "y": 0,
+            "attack": false
+          },
+          {
+            "tick": 34,
+            "kind": "dodge"
+          },
+          {
+            "tick": 64,
+            "kind": "dodge"
+          },
+          {
+            "tick": 91,
+            "kind": "dodge"
+          },
+          {
+            "tick": 118,
+            "kind": "dodge"
+          },
+          {
+            "tick": 146,
+            "kind": "dodge"
+          }
+        ],
+        "combo": {
+          "count": 0,
+          "until": 0,
+          "face": 1
+        },
+        "heals": 2,
+        "healCooldown": 0,
+        "escortCooldown": 0,
+        "score": 0,
+        "reason": "",
+        "stats": {
+          "attacks": 1,
+          "hits": 0,
+          "kills": 0,
+          "dodges": 6,
+          "evades": 1,
+          "healsUsed": 0,
+          "healedPlayer": 0,
+          "healedCart": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "settlements": 0
+        },
+        "time": 2.433333333333333,
+        "cartStatus": "来敌靠近，灯车暂时停下",
+        "invariants": {
+          "bounds": true,
+          "health": true,
+          "energy": true,
+          "supplies": true,
+          "uniqueActors": true,
+          "uniqueAttacks": true,
+          "oneContact": true,
+          "contactLedger": true,
+          "depthRange": true,
+          "activeWindow": true,
+          "stages": true,
+          "path": true,
+          "ledgerIds": true,
+          "tickBound": true,
+          "settlement": true
+        },
+        "unlocked": 1,
+        "best": {},
+        "storageAvailable": true,
+        "sound": false
+      }
+    }
+  ],
+  "ordinaryRepair": {
+    "player": {
+      "id": "player",
+      "x": 1440,
+      "y": 142.985608638,
+      "hp": 120,
+      "maxHP": 120,
+      "face": 1,
+      "energy": 100,
+      "gained": 20,
+      "spent": 20,
+      "action": null,
+      "stunUntil": 79,
+      "invulUntil": 0
+    },
+    "cart": {
+      "id": "cart",
+      "x": 1410,
+      "y": 150,
+      "hp": 100,
+      "maxHP": 100,
+      "pathIndex": 5,
+      "following": true,
+      "invulUntil": 928,
+      "distance": 1300.910372985
+    },
+    "heals": 1,
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 129,
+        "kind": "hp",
+        "unit": "e2",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 3
+      },
+      {
+        "id": 2,
+        "tick": 155,
+        "kind": "hp",
+        "unit": "e1",
+        "delta": -20,
+        "cause": "近战命中",
+        "attack": 5
+      },
+      {
+        "id": 3,
+        "tick": 155,
+        "kind": "hp",
+        "unit": "e2",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 5
+      },
+      {
+        "id": 4,
+        "tick": 185,
+        "kind": "hp",
+        "unit": "e1",
+        "delta": -12,
+        "cause": "近战命中",
+        "attack": 6
+      },
+      {
+        "id": 5,
+        "tick": 416,
+        "kind": "hp",
+        "unit": "e3",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 8
+      },
+      {
+        "id": 6,
+        "tick": 439,
+        "kind": "hp",
+        "unit": "e3",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 9
+      },
+      {
+        "id": 7,
+        "tick": 464,
+        "kind": "hp",
+        "unit": "e4",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 11
+      },
+      {
+        "id": 8,
+        "tick": 490,
+        "kind": "hp",
+        "unit": "e4",
+        "delta": -20,
+        "cause": "近战命中",
+        "attack": 12
+      },
+      {
+        "id": 9,
+        "tick": 520,
+        "kind": "hp",
+        "unit": "e4",
+        "delta": -4,
+        "cause": "近战命中",
+        "attack": 15
+      },
+      {
+        "id": 10,
+        "tick": 825,
+        "kind": "hp",
+        "unit": "e5",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 17
+      },
+      {
+        "id": 11,
+        "tick": 851,
+        "kind": "hp",
+        "unit": "e5",
+        "delta": -20,
+        "cause": "近战命中",
+        "attack": 19
+      },
+      {
+        "id": 12,
+        "tick": 881,
+        "kind": "hp",
+        "unit": "e5",
+        "delta": -20,
+        "cause": "近战命中",
+        "attack": 21
+      },
+      {
+        "id": 13,
+        "tick": 910,
+        "kind": "hp",
+        "unit": "cart",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 20
+      },
+      {
+        "id": 14,
+        "tick": 913,
+        "kind": "hp",
+        "unit": "e6",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 22
+      },
+      {
+        "id": 15,
+        "tick": 924,
+        "kind": "supply",
+        "unit": "heals",
+        "delta": -1,
+        "cause": "使用灯露",
+        "attack": null
+      },
+      {
+        "id": 16,
+        "tick": 924,
+        "kind": "hp",
+        "unit": "cart",
+        "delta": 6,
+        "cause": "灯露",
+        "attack": null
+      },
+      {
+        "id": 17,
+        "tick": 935,
+        "kind": "hp",
+        "unit": "e6",
+        "delta": -16,
+        "cause": "近战命中",
+        "attack": 23
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "tick": 0,
+        "kind": "stage",
+        "text": "进入第1段 · 2名来敌",
+        "stage": 1
+      },
+      {
+        "id": 2,
+        "tick": 0,
+        "kind": "escort",
+        "text": "灯车停靠，等待你的手势"
+      },
+      {
+        "id": 3,
+        "tick": 46,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 1,
+        "target": "player"
+      },
+      {
+        "id": 4,
+        "tick": 53,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e2",
+        "attack": 2,
+        "target": "player"
+      },
+      {
+        "id": 5,
+        "tick": 69,
+        "kind": "escort",
+        "text": "灯车恢复跟随"
+      },
+      {
+        "id": 6,
+        "tick": 79,
+        "kind": "dodge",
+        "text": "闪步消耗20耐力，短暂穿过包围",
+        "dx": 0,
+        "dy": -1
+      },
+      {
+        "id": 7,
+        "tick": 122,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 3,
+        "target": null
+      },
+      {
+        "id": 8,
+        "tick": 129,
+        "kind": "hit",
+        "text": "探灯命中 绕步客 −16",
+        "attack": 3,
+        "source": "player",
+        "target": "e2",
+        "damage": 16,
+        "dx": 35.00071428,
+        "dy": 19.476100641
+      },
+      {
+        "id": 9,
+        "tick": 141,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e2",
+        "attack": 4,
+        "target": "player"
+      },
+      {
+        "id": 10,
+        "tick": 146,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 5,
+        "target": null
+      },
+      {
+        "id": 11,
+        "tick": 155,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −20",
+        "attack": 5,
+        "source": "player",
+        "target": "e1",
+        "damage": 20,
+        "dx": 58.148002662,
+        "dy": 3.570941274
+      },
+      {
+        "id": 12,
+        "tick": 155,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −16",
+        "attack": 5,
+        "source": "player",
+        "target": "e2",
+        "damage": 16,
+        "dx": 40.44472223,
+        "dy": 9.159681999
+      },
+      {
+        "id": 13,
+        "tick": 173,
+        "kind": "wind",
+        "text": "归巷起手",
+        "actor": "player",
+        "attack": 6,
+        "target": null
+      },
+      {
+        "id": 14,
+        "tick": 180,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 7,
+        "target": "player"
+      },
+      {
+        "id": 15,
+        "tick": 185,
+        "kind": "hit",
+        "text": "归巷命中 绕步客 −12",
+        "attack": 6,
+        "source": "player",
+        "target": "e1",
+        "damage": 12,
+        "dx": 39.501335983,
+        "dy": 3.570941274
+      },
+      {
+        "id": 16,
+        "tick": 185,
+        "kind": "clear",
+        "text": "第1段已清，带灯车走到路口。",
+        "stage": 1
+      },
+      {
+        "id": 17,
+        "tick": 394,
+        "kind": "stage",
+        "text": "进入第2段 · 2名来敌",
+        "stage": 2
+      },
+      {
+        "id": 18,
+        "tick": 406,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 8,
+        "target": null
+      },
+      {
+        "id": 19,
+        "tick": 416,
+        "kind": "hit",
+        "text": "探灯命中 绕步客 −16",
+        "attack": 8,
+        "source": "player",
+        "target": "e3",
+        "damage": 16,
+        "dx": 59.960859992,
+        "dy": 3.467763421
+      },
+      {
+        "id": 20,
+        "tick": 430,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 9,
+        "target": null
+      },
+      {
+        "id": 21,
+        "tick": 434,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e3",
+        "attack": 10,
+        "target": "player"
+      },
+      {
+        "id": 22,
+        "tick": 439,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −16",
+        "attack": 9,
+        "source": "player",
+        "target": "e3",
+        "damage": 16,
+        "dx": 43.747526649,
+        "dy": 3.467763421
+      },
+      {
+        "id": 23,
+        "tick": 457,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 11,
+        "target": null
+      },
+      {
+        "id": 24,
+        "tick": 464,
+        "kind": "hit",
+        "text": "探灯命中 纸鸢影 −16",
+        "attack": 11,
+        "source": "player",
+        "target": "e4",
+        "damage": 16,
+        "dx": 51.875501328,
+        "dy": 3.453689517
+      },
+      {
+        "id": 25,
+        "tick": 481,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 12,
+        "target": null
+      },
+      {
+        "id": 26,
+        "tick": 481,
+        "kind": "wind",
+        "text": "纸鸢影蓄势 → 守灯人",
+        "actor": "e4",
+        "attack": 13,
+        "target": "player"
+      },
+      {
+        "id": 27,
+        "tick": 490,
+        "kind": "hit",
+        "text": "回风命中 纸鸢影 −20",
+        "attack": 12,
+        "source": "player",
+        "target": "e4",
+        "damage": 20,
+        "dx": 39.495501322,
+        "dy": 3.453689517
+      },
+      {
+        "id": 28,
+        "tick": 505,
+        "kind": "wind",
+        "text": "纸鸢影蓄势 → 守灯人",
+        "actor": "e4",
+        "attack": 14,
+        "target": "player"
+      },
+      {
+        "id": 29,
+        "tick": 508,
+        "kind": "wind",
+        "text": "归巷起手",
+        "actor": "player",
+        "attack": 15,
+        "target": null
+      },
+      {
+        "id": 30,
+        "tick": 520,
+        "kind": "hit",
+        "text": "归巷命中 纸鸢影 −4",
+        "attack": 15,
+        "source": "player",
+        "target": "e4",
+        "damage": 4,
+        "dx": 41.995501317,
+        "dy": 3.453689517
+      },
+      {
+        "id": 31,
+        "tick": 520,
+        "kind": "clear",
+        "text": "第2段已清，带灯车走到路口。",
+        "stage": 2
+      },
+      {
+        "id": 32,
+        "tick": 777,
+        "kind": "stage",
+        "text": "进入第3段 · 2名来敌",
+        "stage": 3
+      },
+      {
+        "id": 33,
+        "tick": 794,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 16,
+        "target": null
+      },
+      {
+        "id": 34,
+        "tick": 818,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 17,
+        "target": null
+      },
+      {
+        "id": 35,
+        "tick": 822,
+        "kind": "wind",
+        "text": "岩肩守蓄势 → 灯车",
+        "actor": "e5",
+        "attack": 18,
+        "target": "cart"
+      },
+      {
+        "id": 36,
+        "tick": 825,
+        "kind": "hit",
+        "text": "探灯命中 岩肩守 −16",
+        "attack": 17,
+        "source": "player",
+        "target": "e5",
+        "damage": 16,
+        "dx": 38.400008111,
+        "dy": 10.34475093
+      },
+      {
+        "id": 37,
+        "tick": 842,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 19,
+        "target": null
+      },
+      {
+        "id": 38,
+        "tick": 851,
+        "kind": "hit",
+        "text": "回风命中 岩肩守 −20",
+        "attack": 19,
+        "source": "player",
+        "target": "e5",
+        "damage": 20,
+        "dx": 30.547213511,
+        "dy": 12.621373815
+      },
+      {
+        "id": 39,
+        "tick": 868,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 灯车",
+        "actor": "e6",
+        "attack": 20,
+        "target": "cart"
+      },
+      {
+        "id": 40,
+        "tick": 869,
+        "kind": "wind",
+        "text": "归巷起手",
+        "actor": "player",
+        "attack": 21,
+        "target": null
+      },
+      {
+        "id": 41,
+        "tick": 881,
+        "kind": "hit",
+        "text": "归巷命中 岩肩守 −20",
+        "attack": 21,
+        "source": "player",
+        "target": "e5",
+        "damage": 20,
+        "dx": 27.523827276,
+        "dy": 10.162410845
+      },
+      {
+        "id": 42,
+        "tick": 903,
+        "kind": "wind",
+        "text": "探灯起手",
+        "actor": "player",
+        "attack": 22,
+        "target": null
+      },
+      {
+        "id": 43,
+        "tick": 910,
+        "kind": "hit",
+        "text": "绕步客命中 灯车 −6",
+        "attack": 20,
+        "source": "e6",
+        "target": "cart",
+        "damage": 6,
+        "dx": 46.595472098,
+        "dy": 3.860133788
+      },
+      {
+        "id": 44,
+        "tick": 913,
+        "kind": "hit",
+        "text": "探灯命中 绕步客 −16",
+        "attack": 22,
+        "source": "player",
+        "target": "e6",
+        "damage": 16,
+        "dx": 61.413431176,
+        "dy": 9.857232486
+      },
+      {
+        "id": 45,
+        "tick": 913,
+        "kind": "escort",
+        "text": "灯车停靠，等待你的手势"
+      },
+      {
+        "id": 46,
+        "tick": 924,
+        "kind": "heal",
+        "text": "灯露 −1 · 自身 +0 · 灯车 +6",
+        "player": 0,
+        "cart": 6
+      },
+      {
+        "id": 47,
+        "tick": 926,
+        "kind": "wind",
+        "text": "回风起手",
+        "actor": "player",
+        "attack": 23,
+        "target": null
+      },
+      {
+        "id": 48,
+        "tick": 935,
+        "kind": "hit",
+        "text": "回风命中 绕步客 −16",
+        "attack": 23,
+        "source": "player",
+        "target": "e6",
+        "damage": 16,
+        "dx": 56.49380155,
+        "dy": 4.775491752
+      },
+      {
+        "id": 49,
+        "tick": 935,
+        "kind": "clear",
+        "text": "第3段已清，带灯车走到路口。",
+        "stage": 3
+      },
+      {
+        "id": 50,
+        "tick": 939,
+        "kind": "escort",
+        "text": "灯车恢复跟随"
+      },
+      {
+        "id": 51,
+        "tick": 1196,
+        "kind": "won",
+        "text": "灯车抵达归巷，整条街的光都接在了一起。"
+      }
+    ],
+    "stats": {
+      "attacks": 14,
+      "hits": 14,
+      "kills": 6,
+      "dodges": 1,
+      "evades": 0,
+      "healsUsed": 1,
+      "healedPlayer": 0,
+      "healedCart": 6,
+      "damageTaken": 0,
+      "cartDamage": 6,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "tick": 0,
+        "kind": "escort"
+      },
+      {
+        "tick": 1,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 69,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 69,
+        "kind": "escort"
+      },
+      {
+        "tick": 79,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 79,
+        "kind": "dodge"
+      },
+      {
+        "tick": 81,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 81,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 82,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 88,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": true
+      },
+      {
+        "tick": 91,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 114,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 122,
+        "kind": "attack"
+      },
+      {
+        "tick": 122,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": true
+      },
+      {
+        "tick": 129,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": true
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": true
+      },
+      {
+        "tick": 148,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 156,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 184,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 186,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 186,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 186,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 220,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 220,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 221,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 221,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 235,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 243,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 271,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 273,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 276,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 279,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 282,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 288,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 295,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 298,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 304,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 311,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 314,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 320,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 326,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 331,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 334,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 336,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 339,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 344,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 347,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 350,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 355,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 358,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 361,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 366,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 369,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 373,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 377,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 380,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 383,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 385,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 388,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 391,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 394,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 394,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 400,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 406,
+        "kind": "attack"
+      },
+      {
+        "tick": 406,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 439,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 439,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 439,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 453,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 482,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 490,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 505,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 522,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 523,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 523,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 579,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 592,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 595,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 598,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 601,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 604,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 607,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 610,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 615,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 621,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 626,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 629,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 632,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 635,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 639,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 645,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 650,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 653,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 656,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 659,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 662,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 665,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 668,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 673,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 676,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 679,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 684,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 688,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 690,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 693,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 696,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 699,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 703,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 705,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 708,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 711,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 714,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 719,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 722,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 725,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 728,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 731,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 735,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 737,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 740,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 743,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 746,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 749,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 752,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 758,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 763,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 766,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 770,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 775,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 779,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 779,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 791,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 794,
+        "kind": "attack"
+      },
+      {
+        "tick": 794,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 818,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 822,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 826,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 826,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 840,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 843,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 855,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 855,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 864,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 867,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 870,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 873,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 877,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 883,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 883,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 889,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 913,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 913,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 913,
+        "kind": "escort"
+      },
+      {
+        "tick": 924,
+        "kind": "heal"
+      },
+      {
+        "tick": 926,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 926,
+        "kind": "attack"
+      },
+      {
+        "tick": 926,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 939,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 939,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 939,
+        "kind": "escort"
+      },
+      {
+        "tick": 942,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 942,
+        "kind": "controls",
+        "x": 1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 961,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 993,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 996,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1000,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1006,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1012,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1018,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1024,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1030,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1036,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1042,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1047,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1051,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1058,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1064,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1067,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1070,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1073,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1076,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1079,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1082,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1085,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1089,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1092,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1096,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1102,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1108,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1113,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1116,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1120,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1126,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1132,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1135,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1138,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1141,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1144,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1148,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1154,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1160,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1167,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1175,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1182,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1188,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      }
+    ]
+  },
+  "ordinaryFiniteHealing": {
+    "player": {
+      "id": "player",
+      "x": 52,
+      "y": 60,
+      "hp": 118,
+      "maxHP": 120,
+      "face": 1,
+      "energy": 100,
+      "gained": 0,
+      "spent": 0,
+      "action": null,
+      "stunUntil": 1625,
+      "invulUntil": 1645
+    },
+    "cart": {
+      "id": "cart",
+      "x": 120,
+      "y": 150,
+      "hp": 100,
+      "maxHP": 100,
+      "pathIndex": 1,
+      "following": false,
+      "invulUntil": 0,
+      "distance": 0
+    },
+    "heals": 0,
+    "stats": {
+      "attacks": 0,
+      "hits": 0,
+      "kills": 0,
+      "dodges": 0,
+      "evades": 0,
+      "healsUsed": 2,
+      "healedPlayer": 70,
+      "healedCart": 0,
+      "damageTaken": 72,
+      "cartDamage": 0,
+      "settlements": 0
+    },
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 141,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 1
+      },
+      {
+        "id": 2,
+        "tick": 275,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 2
+      },
+      {
+        "id": 3,
+        "tick": 409,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 3
+      },
+      {
+        "id": 4,
+        "tick": 543,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 4
+      },
+      {
+        "id": 5,
+        "tick": 677,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 5
+      },
+      {
+        "id": 6,
+        "tick": 811,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 6
+      },
+      {
+        "id": 7,
+        "tick": 820,
+        "kind": "supply",
+        "unit": "heals",
+        "delta": -1,
+        "cause": "使用灯露",
+        "attack": null
+      },
+      {
+        "id": 8,
+        "tick": 820,
+        "kind": "hp",
+        "unit": "player",
+        "delta": 35,
+        "cause": "灯露",
+        "attack": null
+      },
+      {
+        "id": 9,
+        "tick": 945,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 7
+      },
+      {
+        "id": 10,
+        "tick": 1079,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 8
+      },
+      {
+        "id": 11,
+        "tick": 1213,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 9
+      },
+      {
+        "id": 12,
+        "tick": 1347,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 10
+      },
+      {
+        "id": 13,
+        "tick": 1481,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 11
+      },
+      {
+        "id": 14,
+        "tick": 1615,
+        "kind": "hp",
+        "unit": "player",
+        "delta": -6,
+        "cause": "近战命中",
+        "attack": 12
+      },
+      {
+        "id": 15,
+        "tick": 1624,
+        "kind": "supply",
+        "unit": "heals",
+        "delta": -1,
+        "cause": "使用灯露",
+        "attack": null
+      },
+      {
+        "id": 16,
+        "tick": 1624,
+        "kind": "hp",
+        "unit": "player",
+        "delta": 35,
+        "cause": "灯露",
+        "attack": null
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "tick": 0,
+        "kind": "stage",
+        "text": "进入第1段 · 2名来敌",
+        "stage": 1
+      },
+      {
+        "id": 2,
+        "tick": 0,
+        "kind": "escort",
+        "text": "灯车停靠，等待你的手势"
+      },
+      {
+        "id": 3,
+        "tick": 99,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 1,
+        "target": "player"
+      },
+      {
+        "id": 4,
+        "tick": 141,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 1,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.625767267,
+        "dy": 3.783592634
+      },
+      {
+        "id": 5,
+        "tick": 233,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 2,
+        "target": "player"
+      },
+      {
+        "id": 6,
+        "tick": 275,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 2,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 46.959100597,
+        "dy": 3.783592634
+      },
+      {
+        "id": 7,
+        "tick": 367,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 3,
+        "target": "player"
+      },
+      {
+        "id": 8,
+        "tick": 409,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 3,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.759100594,
+        "dy": 3.783592634
+      },
+      {
+        "id": 9,
+        "tick": 501,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 4,
+        "target": "player"
+      },
+      {
+        "id": 10,
+        "tick": 543,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 4,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.092433924,
+        "dy": 3.783592634
+      },
+      {
+        "id": 11,
+        "tick": 635,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 5,
+        "target": "player"
+      },
+      {
+        "id": 12,
+        "tick": 677,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 5,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.892433921,
+        "dy": 3.783592634
+      },
+      {
+        "id": 13,
+        "tick": 769,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 6,
+        "target": "player"
+      },
+      {
+        "id": 14,
+        "tick": 811,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 6,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.225767251,
+        "dy": 3.783592634
+      },
+      {
+        "id": 15,
+        "tick": 820,
+        "kind": "heal",
+        "text": "灯露 −1 · 自身 +35 · 灯车 +0",
+        "player": 35,
+        "cart": 0
+      },
+      {
+        "id": 16,
+        "tick": 903,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 7,
+        "target": "player"
+      },
+      {
+        "id": 17,
+        "tick": 945,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 7,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 46.559100581,
+        "dy": 3.783592634
+      },
+      {
+        "id": 18,
+        "tick": 1037,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 8,
+        "target": "player"
+      },
+      {
+        "id": 19,
+        "tick": 1079,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 8,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.359100578,
+        "dy": 3.783592634
+      },
+      {
+        "id": 20,
+        "tick": 1171,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 9,
+        "target": "player"
+      },
+      {
+        "id": 21,
+        "tick": 1213,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 9,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 46.692433908,
+        "dy": 3.783592634
+      },
+      {
+        "id": 22,
+        "tick": 1305,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 10,
+        "target": "player"
+      },
+      {
+        "id": 23,
+        "tick": 1347,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 10,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.492433905,
+        "dy": 3.783592634
+      },
+      {
+        "id": 24,
+        "tick": 1439,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 11,
+        "target": "player"
+      },
+      {
+        "id": 25,
+        "tick": 1481,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 11,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 46.825767235,
+        "dy": 3.783592634
+      },
+      {
+        "id": 26,
+        "tick": 1573,
+        "kind": "wind",
+        "text": "绕步客蓄势 → 守灯人",
+        "actor": "e1",
+        "attack": 12,
+        "target": "player"
+      },
+      {
+        "id": 27,
+        "tick": 1615,
+        "kind": "hit",
+        "text": "绕步客命中 守灯人 −6",
+        "attack": 12,
+        "source": "e1",
+        "target": "player",
+        "damage": 6,
+        "dx": 47.625767232,
+        "dy": 3.783592634
+      },
+      {
+        "id": 28,
+        "tick": 1624,
+        "kind": "heal",
+        "text": "灯露 −1 · 自身 +35 · 灯车 +0",
+        "player": 35,
+        "cart": 0
+      }
+    ]
+  },
+  "nativeMultiTouch": {
+    "player": {
+      "id": "player",
+      "x": 1408.228145196,
+      "y": 155.328456976,
+      "hp": 120,
+      "maxHP": 120,
+      "face": 1,
+      "energy": 100,
+      "gained": 60,
+      "spent": 60,
+      "action": null,
+      "stunUntil": 168,
+      "invulUntil": 0
+    },
+    "cart": {
+      "id": "cart",
+      "x": 1410,
+      "y": 150,
+      "hp": 78,
+      "maxHP": 100,
+      "pathIndex": 5,
+      "following": true,
+      "invulUntil": 1020,
+      "distance": 1300.910372985
+    },
+    "stats": {
+      "attacks": 14,
+      "hits": 14,
+      "kills": 6,
+      "dodges": 3,
+      "evades": 0,
+      "healsUsed": 0,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "damageTaken": 0,
+      "cartDamage": 22,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "tick": 6,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 9,
+        "kind": "dodge"
+      },
+      {
+        "tick": 12,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 26,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 26,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 60,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 60,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 64,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 73,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 102,
+        "kind": "attack"
+      },
+      {
+        "tick": 102,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 102,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 106,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 106,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 113,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 120,
+        "kind": "dodge"
+      },
+      {
+        "tick": 122,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 132,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 132,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 136,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 136,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "x": 1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 151,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 151,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 155,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 168,
+        "kind": "dodge"
+      },
+      {
+        "tick": 170,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 177,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 181,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 188,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 188,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 192,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 192,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 196,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 209,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 237,
+        "kind": "attack"
+      },
+      {
+        "tick": 237,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 237,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 248,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 248,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 254,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 254,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 265,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 265,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 272,
+        "kind": "attack"
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": true
+      },
+      {
+        "tick": 286,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 286,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 290,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 306,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 335,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 335,
+        "kind": "controls",
+        "x": 1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 349,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 387,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 419,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 424,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 430,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 430,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 435,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 435,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 447,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 447,
+        "kind": "attack"
+      },
+      {
+        "tick": 447,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 451,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 451,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 457,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 462,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 491,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 491,
+        "kind": "attack"
+      },
+      {
+        "tick": 491,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 495,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 495,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 499,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 504,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 535,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 535,
+        "kind": "attack"
+      },
+      {
+        "tick": 535,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 542,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 542,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 546,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 551,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 557,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 557,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 568,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 568,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 572,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 579,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 589,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 589,
+        "kind": "attack"
+      },
+      {
+        "tick": 589,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 644,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 644,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 648,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 653,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 661,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 661,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 702,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 702,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 706,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 750,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 777,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 801,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 824,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 849,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 872,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 898,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 911,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 911,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 916,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 916,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 924,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 924,
+        "kind": "controls",
+        "x": 1,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 928,
+        "kind": "controls",
+        "x": 0,
+        "y": -1,
+        "attack": false
+      },
+      {
+        "tick": 928,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 934,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 934,
+        "kind": "attack"
+      },
+      {
+        "tick": 934,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 964,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 964,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 971,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 978,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 987,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 987,
+        "kind": "controls",
+        "x": -1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 992,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 992,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 996,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1010,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1016,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1016,
+        "kind": "attack"
+      },
+      {
+        "tick": 1016,
+        "kind": "controls",
+        "x": -1,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 1069,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 1069,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1075,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": true
+      },
+      {
+        "tick": 1085,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1098,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1098,
+        "kind": "controls",
+        "x": 1,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 1118,
+        "kind": "controls",
+        "x": 0,
+        "y": 1,
+        "attack": false
+      },
+      {
+        "tick": 1118,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1122,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1193,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1222,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1251,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1278,
+        "kind": "controls",
+        "x": 1,
+        "y": 0,
+        "attack": false
+      },
+      {
+        "tick": 1306,
+        "kind": "controls",
+        "x": 0,
+        "y": 0,
+        "attack": false
+      }
+    ],
+    "score": 2426
+  },
+  "passed": true
+}
