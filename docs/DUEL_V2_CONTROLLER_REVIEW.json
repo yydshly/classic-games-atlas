@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "method": "Node VM integration: mocked DOM/window/pointer capture/RAF and real duel engine; not a real browser",
+  "script": "scripts/test_duel_v2_controller.mjs",
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "Directional jump and J airborne dispatch; I anti and O throw",
+      "status": "passed"
+    },
+    {
+      "name": "Repeated and duplicate keydown cannot repeat attacks; keyup rearms input",
+      "status": "passed"
+    },
+    {
+      "name": "Pointer cancel/lostcapture release movement and guard; multiple guard pointers",
+      "status": "passed"
+    },
+    {
+      "name": "Blur freezes clock and clears held input; explicit release required after resume",
+      "status": "passed"
+    },
+    {
+      "name": "Visibility hidden and pagehide suspend safely",
+      "status": "passed"
+    },
+    {
+      "name": "Help and levels dialogs freeze play, suppress commands and resume only previously running game",
+      "status": "passed"
+    },
+    {
+      "name": "V2 persistence isolated; airborne replay restores paused and advances only on resume",
+      "status": "passed"
+    },
+    {
+      "name": "V1 progress and checkpoint are not restored into V2",
+      "status": "passed"
+    }
+  ],
+  "manualReview": [
+    "All nine touch buttons disabled outside playing state.",
+    "Jump and aerial clear old held input while engine jumpDir retains trajectory.",
+    "Help/level dialog close only resumes if opened during play.",
+    "Paused checkpoint resumes original jump trajectory without wall-clock catch-up."
+  ],
+  "limitations": [
+    "No real browser, touch hardware, accessibility-tree, focus traversal or visual layout verification.",
+    "Mock pointer capture and synchronous close events do not establish real browser event ordering.",
+    "Home/v1 navigation target deployment availability is outside this controller test."
+  ]
+}
