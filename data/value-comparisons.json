@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "baseCommit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
   "checkedAt": "2026-10-18",
-  "scope": "原38条实现范围保留v1固定基线；37单独注明v2新重建。v2阶段状态以版本说明为准。",
+  "scope": "原38条基线与各v2阶段记录保留；37及40明确无完整可玩v1，逐项列出候选变化与验证边界。",
   "summary": {
-    "items": 39,
+    "items": 40,
     "published": 34,
-    "previews": 5,
+    "previews": 6,
     "officialPopularityFactsItems": 6,
-    "popularityNotEstablishedItems": 33,
+    "popularityNotEstablishedItems": 34,
     "emotionalValueUserValidated": 0
   },
   "items": [
@@ -3296,7 +3296,7 @@
         "label": "预期情绪价值假设，未经玩家验证",
         "primary": "看懂车头和下一段弯后，抓准漂移释放的熟练与出弯加速的期待；知道道具有没有有效目标，少一次不明原因的浪费。实际手感与感受未经过玩家验证。",
         "action": "读前方曲率并左右选线，弯中蓄漂移、过门槛后选出弯时机松开；使用脉冲前先看附近有效目标。起跑前可选辅助，仍自己控制路线与时机。",
-        "feedback": "火花显示真实蓄力门槛，速度依原公式变化；真实范围提示及命中数解释道具结果。手动和辅助成绩分别标记，不改AI或胜负目标。"
+        "feedback": "火花对应真实蓄力，速度依原公式变化；辅助首站实际双圈40.8秒第1、8次漂移冲刺并解锁第2站，手动/辅助成绩分列。该场经过多次暂停与刷新恢复，未证明连续手感；实际使用加速道具，脉冲/护盾实机效果未验。"
       },
       "missingValueMechanisms": [
         {
@@ -3307,8 +3307,8 @@
         },
         {
           "mechanism": "完整实机驾驶与真人同场体验",
-          "status": "模型检查已覆盖；公网一场驾驶验证中，真实手机多指/手感/音频仍待验；本机单人AI竞速，无联网",
-          "affectedValue": "路线反馈是否足够易读、辅助是否合适仍需实玩；AI顺位不能替代朋友间竞技和互动。",
+          "status": "辅助首站有限实机闭环、刷新隔离通过；手动及后七站未通测，无连续无暂停驾驶证明；真实手机多指/音频待验，本机单人AI竞速无联网",
+          "affectedValue": "宽屏底部约22CSS像素裁出、胜利卡需下滚、终局boost提示残留，说明操作与成果反馈仍有缺口；AI顺位也不能替代朋友间竞技互动。",
           "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
         }
       ],
@@ -3356,9 +3356,88 @@
           "claim": "v2可读性、真实漂移/道具提示、可选75%曲率辅助、成绩隔离与模型/实机边界"
         }
       ],
-      "verificationBoundary": "v2 首轮候选，未完成品质验收。当前依据源码、模型与模拟事件回归；公网一场真实驾驶验证进行中。关于页的v1/v2同状态图为原生离屏渲染，不是浏览器截图。正常速度完整比赛、胜负与解锁、400CSS外部HUD/赛道/触控同屏、暂停恢复、真实触屏多指、输入延迟、手感及音频仍需真实验收。本轮延续原有原创画风，不声称视觉质变。",
-      "implementationVersion": "v2 首轮候选（v1 保留）",
-      "implementationBoundary": "以下对应本轮独立v2源码与模型范围；下方真实桌面截图和67.6秒第4名记录仍是v1。v2关于页同状态图为离屏渲染，不代表实机驾驶或真实手机。尚未完成品质验收。"
+      "verificationBoundary": "本轮有限验证结束，交付候选，未完成整体品质验收。真实首站在默认关闭的可选辅助被主动开启后，正常键盘操作自然双圈第1、40.8秒、8次漂移冲刺，第2站解锁；多次暂停观察并做一次刷新恢复，不是不间断无暂停驾驶，也不是手动模式成绩。辅助起跑后锁定、暂停刷新恢复、手动/辅助成绩分列与v1记录隔离通过。400/500CSS为桌面缩窗，HUD/赛道/操作同屏且无横溢；宽屏底部约22CSS像素出视口，胜利卡需下滚，终局boost提示残留待处理。实际使用的是加速道具，脉冲/护盾未实机验证。后七站、手动通关、真实手机多指、连续低延迟手感及音频未验。本轮不再追加优化，沿原有画风，不是视觉质变。",
+      "implementationVersion": "v2 本轮交付候选（v1 保留）",
+      "implementationBoundary": "本轮有限辅助首站真验结束，交付候选未完成整体品质验收。下方原有桌面截图和67.6秒第4名仍对应v1，v2关于页为同状态离屏图。40.8秒第1为辅助成绩，包含多次暂停及一次刷新恢复，不是手动或不间断驾驶证明。"
+    },
+    {
+      "number": "40",
+      "slug": "meadow",
+      "title": "草甸联赛",
+      "implementationVersion": "v2 首轮候选",
+      "implementationBoundary": "承接未完成项目的独立v2；恢复渲染图不是已发布v1证明。以下为源码和模型支持的范围，有限公网真验进行中，未完成品质验收。",
+      "source": {
+        "title": "实况足球 / PES / Winning Eleven",
+        "referenceId": "pes",
+        "binding": "恢复页面明确参考PES风格，绑定系列；具体代际未锁定",
+        "version": "PES / Winning Eleven系列，未锁定具体代际与平台",
+        "versionNote": "PES 2019及eFootball 2022官方资料用于讨论传球、空间与射门取舍，不能反推本项目绑定这些具体版本。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "本轮官方资料用于核对玩法与控制机制，没有新增销量、下载或其他流行事实；机制解释不等于受欢迎原因的统计证明。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "带球吸引防守后，传给另一侧接应者再射门，让一次机会来自前几步判断；丢球后的切人补位又把攻守联系起来。空间、力量与时机的取舍可能带来组织成功和临门一脚的期待，但不是已经证实的流行因果。",
+        "sourceReferences": [
+          {
+            "label": "Konami PES 2019：团队配合与跑位",
+            "url": "https://dds.konami.com/games/manual/pes2019/PC/en/control_team.html"
+          },
+          {
+            "label": "Konami PES 2019：一对一与控球",
+            "url": "https://dds.konami.com/games/manual/pes2019/PC/en/control_player.html"
+          },
+          {
+            "label": "Konami eFootball 2022：空间与攻守选择",
+            "url": "https://www.konami.com/efootball/en-us/page/2022/season1_patch-notes_v1-0-0"
+          }
+        ]
+      },
+      "implemented": [
+        "原创3对3围场足球：两名外场队员与自动门将，8场短局；带球、传球/抢断、切人、蓄力射门、风雨、重赛和逐场解锁。",
+        "修复双方自动门将在近目标时低速意图被归一化为全速的问题；八场时间、AI反应、球速、球门与风雨参数保留。",
+        "金环显示实际持球人，白环显示控制对象，虚线环表示唯一可传队友；短箭头共用真实射门方向函数，只提示出脚方向，不保证进球。",
+        "球权文字对应实际球衣号7/11/9/6；主队深蓝。小屏仅裁画布重复比分与底栏，整个球场和两球门保留，外部比分/球权/按钮仍在，布局待实机验证。",
+        "独立v2存档键atlas-v2-meadow-20261018-progress-v1与atlas-v2-meadow-20261018-current-v1；不读写恢复项目或其他版本进度，刷新恢复先暂停。"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "拉开防守并成功传接后的配合成就、选准射门窗口的期待，以及失球后靠补位重新争取机会的参与感。是否清楚、好玩仍待玩家体验验证。",
+        "action": "沿边路推进内切，或带到一侧后J传给唯一接应队友；等球到脚下再面向球门蓄力射门，失球后K切人回防。",
+        "feedback": "金环球权、白环控制、虚线接应和真实方向短箭头说明谁能出脚；球可被拦截、门将可扑救，比分和逐场目标记录结果，箭头不保证进球。"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "完整球队战术与正式足球规则",
+          "status": "仅两名外场队员和自动门将；没有十一人阵型、越位/犯规/界外球/点球及独立二过一",
+          "affectedValue": "短局能呈现空间与传接的局部取舍，不能承担完整PES攻防组织和职业足球模拟的广度。",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "成熟AI、节奏容错与实机操作体验",
+          "status": "100ms DOM八场胜；300ms DOM第三场曾1:3败；熟练脚本仍可15:0；有限公网比赛、小屏与真机多指待验",
+          "affectedValue": "脚本胜利不能证明难度合适或人的传接顺手；失误原因是否可读、反应窗口是否公平尚待验证。",
+          "interpretationStatus": "实现/模型边界与体验待验，不冒称成熟难度"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "versions/v2/games/meadow/README.md",
+          "line_start": 3,
+          "line_end": 54,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/134e9211b8cf383830f660a3433e4574b4f26b0f/versions/v2/games/meadow/README.md#L3-L54",
+          "claim": "PES系列参考、实际改动、模型与DOM差异及未完成项目边界"
+        },
+        {
+          "path": "versions/v2/games/meadow/about.html",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/134e9211b8cf383830f660a3433e4574b4f26b0f/versions/v2/games/meadow/about.html",
+          "claim": "本轮两种进攻思路、原有画风保留、来源与功能差距"
+        }
+      ],
+      "verificationBoundary": "承接未完成项目的独立v2候选，未完成品质验收；恢复源码不等于已发布可玩v1。公网有限比赛验证进行中。100ms决策DOM事件替身完成八场；300ms公开引擎输入也完成八场，但300ms DOM试跑第三场1:3失败，不能混称所有控制节奏通关。熟练脚本仍可打出15:0，AI与平衡未成熟。前后对照图及手机目标裁切图均为离屏渲染，不是实机证据。完整人工比赛、小屏同屏布局、真实多指触控、恢复与操作手感待验；本轮沿用原有画风，不声称美术质变。"
     }
   ]
 }
