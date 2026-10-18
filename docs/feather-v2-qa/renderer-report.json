@@ -1,0 +1,247 @@
+{
+  "kind": "actual-runtime-renderer-offscreen-not-browser",
+  "shots": [
+    {
+      "tag": "camp-before",
+      "revision": 0,
+      "phase": "camp",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "explore-first",
+      "revision": 1,
+      "phase": "explore",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "encounter-before",
+      "revision": 6,
+      "phase": "encounter",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "capture-failed",
+      "revision": 7,
+      "phase": "encounter",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "capture-success-pending",
+      "revision": 19,
+      "phase": "explore",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "camp-recruited",
+      "revision": 20,
+      "phase": "camp",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "team-changed",
+      "revision": 22,
+      "phase": "camp",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "encounter-fin",
+      "revision": 32,
+      "phase": "encounter",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "growth-bud",
+      "revision": 50,
+      "phase": "explore",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "growth-fin",
+      "revision": 75,
+      "phase": "explore",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    },
+    {
+      "tag": "final-camp",
+      "revision": 86,
+      "phase": "camp",
+      "invariants": {
+        "uniqueRoster": true,
+        "knownSpecies": true,
+        "hp": true,
+        "energy": true,
+        "growth": true,
+        "team": true,
+        "active": true,
+        "bag": true,
+        "daylight": true,
+        "position": true,
+        "phase": true,
+        "wild": true,
+        "pending": true,
+        "revision": true
+      }
+    }
+  ],
+  "dimensions": [
+    [
+      1200,
+      675
+    ],
+    [
+      400,
+      225
+    ]
+  ],
+  "note": "Calls the shipped renderer on ordinary-input replay states. Phone images cover only the canvas, not DOM layout, input or browser rendering."
+}

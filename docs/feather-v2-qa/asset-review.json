@@ -1,0 +1,201 @@
+{
+  "kind": "asset-pixel-and-runtime-renderer-review-not-browser",
+  "original_art": "Original AI-assisted art created for this project; static keyposes, not animation frames.",
+  "sprite_source_sha256": "8b1077ebd2ca89bcbe1c50c1e182a50ff87b30ab7c2fe23f8693560e26b5f62c",
+  "background_source_sha256": "77afb206dfaa903813ae8735d4f676f887b14cb39e2cc2ef2f4fd38a2cbd9e48",
+  "source_dimensions": [
+    2172,
+    724
+  ],
+  "source_alpha_range": [
+    0,
+    255
+  ],
+  "runtime_assets": {
+    "a": {
+      "file": "lanling.webp",
+      "sourceRegion": [
+        0,
+        0,
+        475,
+        724
+      ],
+      "alpha32Bounds": [
+        35,
+        167,
+        438,
+        582
+      ],
+      "cropBounds": [
+        21,
+        153,
+        452,
+        596
+      ],
+      "size": [
+        431,
+        443
+      ],
+      "foot": [
+        0.7124,
+        0.9684
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "bytes": 203722
+    },
+    "b": {
+      "file": "taideng.webp",
+      "sourceRegion": [
+        475,
+        0,
+        895,
+        724
+      ],
+      "alpha32Bounds": [
+        513,
+        152,
+        882,
+        578
+      ],
+      "cropBounds": [
+        499,
+        138,
+        895,
+        592
+      ],
+      "size": [
+        396,
+        454
+      ],
+      "foot": [
+        0.4196,
+        0.9692
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "bytes": 187526
+    },
+    "c": {
+      "file": "chengxi.webp",
+      "sourceRegion": [
+        895,
+        0,
+        1245,
+        724
+      ],
+      "alpha32Bounds": [
+        910,
+        181,
+        1200,
+        576
+      ],
+      "cropBounds": [
+        896,
+        167,
+        1214,
+        590
+      ],
+      "size": [
+        318,
+        423
+      ],
+      "foot": [
+        0.4315,
+        0.9669
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "bytes": 120216
+    },
+    "bud": {
+      "file": "bud.webp",
+      "sourceRegion": [
+        1245,
+        0,
+        1630,
+        724
+      ],
+      "alpha32Bounds": [
+        1291,
+        148,
+        1588,
+        590
+      ],
+      "cropBounds": [
+        1277,
+        134,
+        1602,
+        604
+      ],
+      "size": [
+        325,
+        470
+      ],
+      "foot": [
+        0.4547,
+        0.9702
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "bytes": 159216
+    },
+    "fin": {
+      "file": "fin.webp",
+      "sourceRegion": [
+        1630,
+        0,
+        2172,
+        724
+      ],
+      "alpha32Bounds": [
+        1677,
+        270,
+        2134,
+        594
+      ],
+      "cropBounds": [
+        1663,
+        256,
+        2148,
+        608
+      ],
+      "size": [
+        485,
+        352
+      ],
+      "foot": [
+        0.669,
+        0.9602
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "bytes": 172790
+    }
+  },
+  "alpha_composite_observation": "Inspected actual RGBA composition over the scene and the runtime renderer at large encounter scale. The strong RGB fringe in transparent pixels was not visible as a colored outline in the actual alpha blend. Kept the first flawed-spacing source out of runtime.",
+  "crop_observation": "Five separate alpha>=32 regions found. Crops include 14px padding where available; no nontransparent body region touches crop edge. No recolor or alpha erasure applied. Lossless WebP sprites retain alpha.",
+  "anchors": "Each sprite uses an independent normalized foot anchor measured from the bottom opaque support region. The logical map uses 17 explicitly mapped dry-land anchors; paths were inspected over the actual background.",
+  "path_review": "Map line paths avoid the painted pond and large rocks. The path at logical x=5 was moved right of the central lower rock. Nodes and sprite feet use the same mapping.",
+  "scale_review": "1200x675 and 400x225 actual renderer frames examined. Small canvas text is supplemented by DOM wild HP, calm, chance, active/backup HP and resources. These phone frames do not prove full DOM layout.",
+  "selected_evidence": [
+    "encounter",
+    "new-partner-battle",
+    "camp-recruited",
+    "all-five-camp",
+    "path-anchors",
+    "phone-encounter",
+    "phone-camp"
+  ],
+  "browser_verified": false
+}

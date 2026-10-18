@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e34"><title>星羽同伴 · 回声浅滩 | 独立 v2 候选</title><link rel="stylesheet" href="feather.css"></head>
+<body>
+<header class="topbar"><a class="wordmark" href="../../../../">星羽同伴 <span>FEATHER / FIELD NOTES</span></a><nav aria-label="页面导航"><a href="../../../../games/feather/">旧版 8 章</a><button id="help" type="button">玩法</button><button id="pause" type="button">暂停</button></nav></header>
+<main id="main">
+<div class="heading"><div><p class="eyebrow">32 · 独立 v2 候选 · 一个小区域</p><h1>回声浅滩 <span>带谁一起，走这一小段？</span></h1></div><div id="save-status" class="save-status">本机自动记录</div></div>
+<section class="game-frame" aria-label="回声浅滩游戏">
+<div class="hud"><strong id="phase">归羽营地</strong><span id="daylight">日光 24</span><span id="knots">羽结 2</span><span id="berries">露莓 2</span><span id="collection">伙伴 3 / 5</span></div>
+<div class="game-grid"><div class="scene-column"><div class="scene-wrap"><canvas id="scene" width="1200" height="675" aria-label="可探索的回声浅滩；方向键或下方方向按钮移动"></canvas><p id="asset-error" class="asset-error" hidden>美术资源尚未加载完整。请稍后刷新，本页仍可用文字按钮操作。</p></div><div class="notice" id="notice" role="status" aria-live="polite"></div><div class="field-controls" id="field-controls" hidden><div class="dpad" aria-label="沿步道移动"><button data-action="move" data-arg="up" aria-label="向上一步">↑</button><button data-action="move" data-arg="left" aria-label="向左一步">←</button><button data-action="move" data-arg="down" aria-label="向下一步">↓</button><button data-action="move" data-arg="right" aria-label="向右一步">→</button></div><button id="path-toggle" type="button" aria-pressed="true">步道提示：开</button><button data-action="home" class="quiet">安全回营</button></div></div>
+<aside id="panel" aria-label="当前行动"></aside></div>
+</section>
+<details class="journal"><summary>旅途记录 <span id="journal-count"></span></summary><ol id="journal"></ol></details>
+<p class="scope">短出行 → 遇见 → 尝试招募 → 回营换队。2 个野外种类，每位伙伴只成长一次，无每日任务或等待倒计时。<a href="../../../../docs/FEATHER_V2_SCOPE.md">范围与参考说明</a> <button id="new-record" class="quiet" type="button">新旅途记录</button></p>
+</main>
+<div class="overlay" id="overlay" hidden><section role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1"><p class="eyebrow">星羽同伴 / 回声浅滩</p><h2 id="dialog-title"></h2><div id="dialog-body"></div><button id="resume" class="primary">继续</button><button id="confirm-reset" class="wide quiet" hidden>确认清空本版，重新开始</button></section></div>
+<script type="module" src="game.mjs"></script>
+</body></html>

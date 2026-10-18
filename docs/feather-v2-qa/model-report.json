@@ -1,0 +1,1666 @@
+{
+  "generatedAt": "2026-10-18T17:03:41.142Z",
+  "command": "node scripts/test_feather_v2.mjs",
+  "scope": "Independent v2 model only. Not browser, visual, device, audio, deployment, or human-play QA.",
+  "model": {
+    "path": "versions/v2/games/feather/model.mjs",
+    "sha256": "fc2a7d93e614fe01dc66d4556fc6248a7d616eab372fc1d626a76dce1ef21b1d",
+    "saveKey": "classic-atlas.feather.expedition.v2"
+  },
+  "passed": true,
+  "summary": {
+    "tests": 33,
+    "passed": 33,
+    "failed": 0,
+    "acceptedCommands": 40572,
+    "rejectedCommands": 3897,
+    "invariantChecks": 44470,
+    "ordinaryInputTests": 29,
+    "isolatedFixtures": 2,
+    "staticChecks": 2
+  },
+  "provenance": {
+    "ordinaryInput": "All scenario states are created with createGame(seed), then changed only through input with current revisions. Collected-partner setup replays the full ordinary-input collection campaign.",
+    "isolatedFixtures": "Exactly two named fixture tests directly change copied combat fields: probability clamp boundaries and exact-last-day capture. These do not count as full gameplay runs.",
+    "failureDisclosure": "Gameplay capture failures and a real full-team defeat are recorded below even when the corresponding tests pass. Assertion failures, if any, keep passed=false and exit code 1.",
+    "legacy": {
+      "referenceFilesUnchanged": true,
+      "hashes": {
+        "reference/README.md": "f5d8910a6b6fae93fa9cec1fa4cfe8983f788c093c161c0e4cfb7a5d02ac5388",
+        "reference/games/feather/chapters.mjs": "0b1cb5ca43cba82bd6fa070089b80b82157d41d62f1dd658f8237142a1a60461",
+        "reference/games/feather/engine.mjs": "caedbaec367b9df38d03143feacefa1d3206fde4f46559b7957812cf67aa0f07",
+        "reference/games/feather/game.mjs": "66f0312310cad453b106812a7bcc98ca5aa9a0cab727f155a8c050e10e1f7f1f",
+        "reference/games/feather/index.html": "1cfd617bff8df2f0ab2b740d23e30e259603d06255dce21f0aaceaa9f6b6ec19",
+        "reference/games/feather/renderer.mjs": "39085b89de7a12d52b772fcdd425e3591c7225160f82941bdba2bfb4c2a00dfe",
+        "reference/scripts/test_feather.mjs": "f3236c636a030d5634862f06a5dc086325be3d8098d2444b24ef81edcb978614"
+      },
+      "limitation": "This subtest hashes the available original reference files, or unchanged legacy runtime paths in a full checkout and did not execute the legacy harness. A separate baseline run completed the original legacy harness with all 33 groups passing; see docs/feather-v2-qa/legacy-model-baseline.log. No live deployed v1 was inspected."
+    },
+    "browser": {
+      "run": false,
+      "reason": "Task explicitly excludes local Chromium due to known socket denial. No substitute browser pass is claimed."
+    }
+  },
+  "findings": [
+    {
+      "id": "FEATHER-V2-001",
+      "severity": "medium",
+      "title": "Observation incorrectly consumed next-incoming-attack weakness",
+      "initialObservation": "Before the developer fix: depart, right, right, up, up, right, skill, guard changed weak 1 -> 0 on observation; subsequent heavy intent was 12 rather than 6. No state mutation was needed.",
+      "resolution": "The implementation now decrements weakness only on actual incoming attacks, excluding observation turns.",
+      "status": "fixed-and-regression-passed",
+      "regressionTests": [
+        "Two actual incoming attacks consume wind weakness; an observation consumes no charge (regression)",
+        "Recruited bud skill survives an observation and reduces exactly the next attack (regression)"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "name": "Independent storage namespace and no legacy engine imports; legacy baseline files remain byte-identical",
+      "mode": "static_read_only",
+      "status": "passed"
+    },
+    {
+      "name": "Initial camp exposes three original partners, two slots, 24 daylight and authored 2/2 resources",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "9 by 5 logical grid has connected walkable cells and reachable named sites",
+      "mode": "static_read_only",
+      "status": "passed"
+    },
+    {
+      "name": "Camp team selection refuses unowned/unknown species and requires exactly two before departure",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Ordinary walking spends one daylight, collects berry once and starts encounters only at their cells",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Real failed rolls are retained, free retry continues RNG, both recruits join only on return and each new partner grows once",
+      "mode": "ordinary_input",
+      "status": "passed",
+      "detail": {
+        "seed": 123456789,
+        "commands": 86,
+        "outings": 7,
+        "captures": 2,
+        "failedCaptures": 3,
+        "newPartners": [
+          "bud",
+          "fin"
+        ],
+        "growth": {
+          "bud": 1,
+          "fin": 1
+        }
+      }
+    },
+    {
+      "name": "A weakened target has higher capture chance; a high 88 percent chance can genuinely fail",
+      "mode": "ordinary_input",
+      "status": "passed",
+      "detail": {
+        "failedHighChance": {
+          "chance": 88,
+          "roll": 89
+        },
+        "retainedCaptureAttempts": 5
+      }
+    },
+    {
+      "name": "Each original partner also grows exactly once after ordinary encounters; a third reward cannot add another rank",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Already recruited species cannot consume another knot, roster duplicates remain impossible",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Departure freely replenishes all health, energy, shields, daylight, sites and bag without reseeding",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Checkpoint before failed capture restores exact RNG and cannot refresh-reroll that action",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Every prefix of the complete normal-input collection campaign restores an identical state",
+      "mode": "ordinary_input",
+      "status": "passed",
+      "detail": {
+        "prefixes": 86
+      }
+    },
+    {
+      "name": "Checkpoint is a detached command log; forged snapshot fields have no authority",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Malformed, old-version, out-of-range-seed and impossible checkpoints reject",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Duplicate/stale/future commands are atomic and cannot repeat RNG, spend or enemy replies",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Finite knots and berries reject spending at zero, invalid species and unsupported resource actions reject atomically",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Guard restores energy only to three, skill costs two, low energy rejects and guard shield is consumed once",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Attack uses cyclic type factors and defeating a wild rewards experience without recruiting it",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Two actual incoming attacks consume wind weakness; an observation consumes no charge (regression)",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Recruited bud skill survives an observation and reduces exactly the next attack (regression)",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "All five species skill effects execute with ordinary acquired partners",
+      "mode": "ordinary_input",
+      "status": "passed",
+      "detail": {
+        "a": "wind regression above",
+        "b": "bounded 28 heal",
+        "c": "bounded 18 heal and calm +10",
+        "bud": "bud regression above",
+        "fin": "7 type-adjusted damage and 18 shield absorb"
+      }
+    },
+    {
+      "name": "Soothe and heal share the same finite berry stock; healing is capped at max health",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Peaceful farewell requires 60 calm, rewards only participants and never recruits",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Switch costs one daylight and shares reward with both actual participants; free field lead does not",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Leave marks the encounter spent this outing and returning next outing permits a real retry",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Walking back to the camp safely recruits a captured pending partner",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Ordinary daylight exhaustion during exploration returns safely and free departure restores the full budget",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Ordinary daylight exhaustion during an encounter returns once without negative resources or a dangling wild",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Both partners genuinely fall through ordinary actions; automatic safe return and full retry work",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "Isolated arithmetic fixture clamps capture chance to 5..88 and never guarantees capture",
+      "mode": "isolated_fixture",
+      "status": "passed"
+    },
+    {
+      "name": "Isolated exact-last-day capture fixture settles/recruits once before safe automatic return",
+      "mode": "isolated_fixture",
+      "status": "passed"
+    },
+    {
+      "name": "Record capacity accepts 4000 ordinary commands then rejects atomically; its checkpoint remains restorable",
+      "mode": "ordinary_input",
+      "status": "passed"
+    },
+    {
+      "name": "80 seeded random legal-command campaigns preserve invariants, reject probes and replay sampled checkpoints",
+      "mode": "ordinary_input",
+      "status": "passed",
+      "detail": {
+        "seeds": 80,
+        "commandsPerSeed": 450,
+        "accepted": 36000,
+        "rejected": 3840,
+        "checkpoints": 640,
+        "phaseVisits": {
+          "camp": 12521,
+          "explore": 22255,
+          "encounter": 1224
+        },
+        "actions": {
+          "team": 4547,
+          "depart": 4652,
+          "move": 18671,
+          "home": 1942,
+          "lead": 3370,
+          "leadField": 1718,
+          "capture": 140,
+          "skill": 102,
+          "attack": 275,
+          "soothe": 127,
+          "switch": 141,
+          "heal": 64,
+          "guard": 127,
+          "farewell": 5,
+          "leave": 119
+        },
+        "aggregateGameplayOutcomes": {
+          "captures": 44,
+          "failedCaptures": 96,
+          "won": 43,
+          "calmed": 5,
+          "exhausted": 97
+        }
+      }
+    }
+  ],
+  "captureAttempts": [
+    {
+      "scenario": "collection:first-outing",
+      "seed": 123456789,
+      "outing": 1,
+      "before": {
+        "revision": 6,
+        "rng": 123456789,
+        "chance": 22,
+        "knots": 2,
+        "daylight": 19,
+        "wild": {
+          "id": "bud",
+          "hp": 42,
+          "maxHP": 42,
+          "power": 12,
+          "element": "moss",
+          "calm": 0,
+          "wariness": 0,
+          "weak": 0,
+          "turn": 0,
+          "participants": [
+            "a"
+          ]
+        }
+      },
+      "result": "failed",
+      "after": {
+        "rng": 2714967881,
+        "knots": 1,
+        "daylight": 18,
+        "phase": "encounter"
+      },
+      "notice": "羽结未能连起回应（22% / 判定64）。已消耗1羽结；安心−10，警觉+8。 晶雾芽的试探造成9伤害。"
+    },
+    {
+      "scenario": "collection:first-outing",
+      "seed": 123456789,
+      "outing": 1,
+      "before": {
+        "revision": 7,
+        "rng": 2714967881,
+        "chance": 14,
+        "knots": 1,
+        "daylight": 18,
+        "wild": {
+          "id": "bud",
+          "hp": 42,
+          "maxHP": 42,
+          "power": 12,
+          "element": "moss",
+          "calm": 0,
+          "wariness": 8,
+          "weak": 0,
+          "turn": 1,
+          "participants": [
+            "a"
+          ]
+        }
+      },
+      "result": "failed",
+      "after": {
+        "rng": 2238813396,
+        "knots": 0,
+        "daylight": 17,
+        "phase": "encounter"
+      },
+      "notice": "羽结未能连起回应（14% / 判定53）。已消耗1羽结；安心−10，警觉+8。 晶雾芽正在观察，没有出手。"
+    },
+    {
+      "scenario": "collection:retry-bud",
+      "seed": 123456789,
+      "outing": 2,
+      "before": {
+        "revision": 18,
+        "rng": 2238813396,
+        "chance": 88,
+        "knots": 2,
+        "daylight": 16,
+        "wild": {
+          "id": "bud",
+          "hp": 18,
+          "maxHP": 42,
+          "power": 12,
+          "element": "moss",
+          "calm": 56,
+          "wariness": 4,
+          "weak": 0,
+          "turn": 3,
+          "participants": [
+            "a"
+          ]
+        }
+      },
+      "result": "captured",
+      "after": {
+        "rng": 1250077441,
+        "knots": 1,
+        "daylight": 15,
+        "phase": "explore"
+      },
+      "notice": "羽结回应了！晶雾芽愿意同行。成功率88%，本次判定30。回营后可换入队伍。"
+    },
+    {
+      "scenario": "collection:first-fin",
+      "seed": 123456789,
+      "outing": 3,
+      "before": {
+        "revision": 35,
+        "rng": 1250077441,
+        "chance": 88,
+        "knots": 2,
+        "daylight": 13,
+        "wild": {
+          "id": "fin",
+          "hp": 36,
+          "maxHP": 54,
+          "power": 15,
+          "element": "water",
+          "calm": 60,
+          "wariness": 4,
+          "weak": 0,
+          "turn": 3,
+          "participants": [
+            "bud"
+          ]
+        }
+      },
+      "result": "failed",
+      "after": {
+        "rng": 3820100336,
+        "knots": 1,
+        "daylight": 12,
+        "phase": "encounter"
+      },
+      "notice": "羽结未能连起回应（88% / 判定89）。已消耗1羽结；安心−10，警觉+8。 露纹鳍的试探造成7伤害。"
+    },
+    {
+      "scenario": "collection:second-fin",
+      "seed": 123456789,
+      "outing": 3,
+      "before": {
+        "revision": 36,
+        "rng": 3820100336,
+        "chance": 76,
+        "knots": 1,
+        "daylight": 12,
+        "wild": {
+          "id": "fin",
+          "hp": 36,
+          "maxHP": 54,
+          "power": 15,
+          "element": "water",
+          "calm": 50,
+          "wariness": 12,
+          "weak": 0,
+          "turn": 4,
+          "participants": [
+            "bud"
+          ]
+        }
+      },
+      "result": "captured",
+      "after": {
+        "rng": 3177519686,
+        "knots": 0,
+        "daylight": 11,
+        "phase": "explore"
+      },
+      "notice": "羽结回应了！露纹鳍愿意同行。成功率76%，本次判定74。回营后可换入队伍。"
+    },
+    {
+      "scenario": "all-down",
+      "seed": 123456789,
+      "outing": 1,
+      "before": {
+        "revision": 23,
+        "rng": 123456789,
+        "chance": 22,
+        "knots": 2,
+        "daylight": 4,
+        "wild": {
+          "id": "fin",
+          "hp": 54,
+          "maxHP": 54,
+          "power": 15,
+          "element": "water",
+          "calm": 0,
+          "wariness": 0,
+          "weak": 0,
+          "turn": 12,
+          "participants": [
+            "a",
+            "c"
+          ]
+        }
+      },
+      "result": "failed",
+      "after": {
+        "rng": 2714967881,
+        "knots": 1,
+        "daylight": 3,
+        "phase": "encounter"
+      },
+      "notice": "羽结未能连起回应（22% / 判定64）。已消耗1羽结；安心−10，警觉+8。 露纹鳍的试探造成15伤害。"
+    },
+    {
+      "scenario": "all-down",
+      "seed": 123456789,
+      "outing": 1,
+      "before": {
+        "revision": 24,
+        "rng": 2714967881,
+        "chance": 14,
+        "knots": 1,
+        "daylight": 3,
+        "wild": {
+          "id": "fin",
+          "hp": 54,
+          "maxHP": 54,
+          "power": 15,
+          "element": "water",
+          "calm": 0,
+          "wariness": 8,
+          "weak": 0,
+          "turn": 13,
+          "participants": [
+            "a",
+            "c"
+          ]
+        }
+      },
+      "result": "failed",
+      "after": {
+        "rng": 2238813396,
+        "knots": 0,
+        "daylight": 2,
+        "phase": "encounter"
+      },
+      "notice": "羽结未能连起回应（14% / 判定53）。已消耗1羽结；安心−10，警觉+8。 露纹鳍正在观察，没有出手。"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "Real failed captures, return/retry, recruit both species, replace team and cap both new partners at one growth",
+      "mode": "ordinary_input",
+      "seed": 123456789,
+      "commands": [
+        {
+          "kind": "depart",
+          "revision": 0
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "capture",
+          "revision": 6
+        },
+        {
+          "kind": "capture",
+          "revision": 7
+        },
+        {
+          "kind": "home",
+          "revision": 8
+        },
+        {
+          "kind": "depart",
+          "revision": 9
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 10
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 11
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 12
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 13
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 14
+        },
+        {
+          "kind": "attack",
+          "revision": 15
+        },
+        {
+          "kind": "soothe",
+          "revision": 16
+        },
+        {
+          "kind": "soothe",
+          "revision": 17
+        },
+        {
+          "kind": "capture",
+          "revision": 18
+        },
+        {
+          "kind": "home",
+          "revision": 19
+        },
+        {
+          "kind": "team",
+          "arg": "a",
+          "revision": 20
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 21
+        },
+        {
+          "kind": "lead",
+          "arg": "bud",
+          "revision": 22
+        },
+        {
+          "kind": "depart",
+          "revision": 23
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 24
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 25
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 26
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 27
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 28
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 29
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 30
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 31
+        },
+        {
+          "kind": "attack",
+          "revision": 32
+        },
+        {
+          "kind": "soothe",
+          "revision": 33
+        },
+        {
+          "kind": "soothe",
+          "revision": 34
+        },
+        {
+          "kind": "capture",
+          "revision": 35
+        },
+        {
+          "kind": "capture",
+          "revision": 36
+        },
+        {
+          "kind": "home",
+          "revision": 37
+        },
+        {
+          "kind": "depart",
+          "revision": 38
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 39
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 40
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 41
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 42
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 43
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 44
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 45
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 46
+        },
+        {
+          "kind": "soothe",
+          "revision": 47
+        },
+        {
+          "kind": "soothe",
+          "revision": 48
+        },
+        {
+          "kind": "farewell",
+          "revision": 49
+        },
+        {
+          "kind": "home",
+          "revision": 50
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 51
+        },
+        {
+          "kind": "team",
+          "arg": "fin",
+          "revision": 52
+        },
+        {
+          "kind": "lead",
+          "arg": "fin",
+          "revision": 53
+        },
+        {
+          "kind": "depart",
+          "revision": 54
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 55
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 56
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 57
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 58
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 59
+        },
+        {
+          "kind": "attack",
+          "revision": 60
+        },
+        {
+          "kind": "attack",
+          "revision": 61
+        },
+        {
+          "kind": "attack",
+          "revision": 62
+        },
+        {
+          "kind": "attack",
+          "revision": 63
+        },
+        {
+          "kind": "home",
+          "revision": 64
+        },
+        {
+          "kind": "depart",
+          "revision": 65
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 66
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 67
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 68
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 69
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 70
+        },
+        {
+          "kind": "attack",
+          "revision": 71
+        },
+        {
+          "kind": "attack",
+          "revision": 72
+        },
+        {
+          "kind": "attack",
+          "revision": 73
+        },
+        {
+          "kind": "attack",
+          "revision": 74
+        },
+        {
+          "kind": "home",
+          "revision": 75
+        },
+        {
+          "kind": "depart",
+          "revision": 76
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 77
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 78
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 79
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 80
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 81
+        },
+        {
+          "kind": "attack",
+          "revision": 82
+        },
+        {
+          "kind": "attack",
+          "revision": 83
+        },
+        {
+          "kind": "attack",
+          "revision": 84
+        },
+        {
+          "kind": "home",
+          "revision": 85
+        }
+      ],
+      "stats": {
+        "moves": 41,
+        "captures": 2,
+        "failedCaptures": 3,
+        "won": 3,
+        "calmed": 1,
+        "returned": 7,
+        "exhausted": 0
+      },
+      "roster": [
+        {
+          "id": "a",
+          "hp": 84,
+          "energy": 3,
+          "shield": 0,
+          "xp": 1,
+          "rank": 0,
+          "encounters": 1
+        },
+        {
+          "id": "b",
+          "hp": 100,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "c",
+          "hp": 88,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "bud",
+          "hp": 78,
+          "energy": 3,
+          "shield": 0,
+          "xp": 2,
+          "rank": 1,
+          "encounters": 2
+        },
+        {
+          "id": "fin",
+          "hp": 66,
+          "energy": 3,
+          "shield": 0,
+          "xp": 2,
+          "rank": 1,
+          "encounters": 3
+        }
+      ],
+      "report": {
+        "outing": 7,
+        "recruited": [],
+        "outcomes": [
+          {
+            "id": "bud",
+            "outcome": "won"
+          }
+        ],
+        "grown": [],
+        "resolved": 1,
+        "reason": "你选择提前回营。",
+        "remaining": {
+          "knots": 2,
+          "berries": 2
+        },
+        "daylight": 16
+      }
+    },
+    {
+      "name": "Save/reload before the same failed roll does not reroll",
+      "mode": "ordinary_input",
+      "seed": 123456789,
+      "commands": [
+        {
+          "kind": "depart",
+          "revision": 0
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "capture",
+          "revision": 6
+        }
+      ],
+      "stats": {
+        "moves": 5,
+        "captures": 0,
+        "failedCaptures": 1,
+        "won": 0,
+        "calmed": 0,
+        "returned": 0,
+        "exhausted": 0
+      },
+      "roster": [
+        {
+          "id": "a",
+          "hp": 75,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "b",
+          "hp": 100,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "c",
+          "hp": 88,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        }
+      ],
+      "report": {
+        "outing": 1,
+        "recruited": [],
+        "outcomes": [],
+        "grown": [],
+        "resolved": 0,
+        "reason": ""
+      },
+      "restoresChecked": 6
+    },
+    {
+      "name": "Real daylight exhaustion by ordinary walking",
+      "mode": "ordinary_input",
+      "seed": 85949129,
+      "commands": [
+        {
+          "kind": "depart",
+          "revision": 0
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 5
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 7
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 8
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 9
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 10
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 11
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 12
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 13
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 14
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 15
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 16
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 17
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 18
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 19
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 20
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 21
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 22
+        },
+        {
+          "kind": "move",
+          "arg": "left",
+          "revision": 23
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 24
+        }
+      ],
+      "stats": {
+        "moves": 24,
+        "captures": 0,
+        "failedCaptures": 0,
+        "won": 0,
+        "calmed": 0,
+        "returned": 1,
+        "exhausted": 1
+      },
+      "roster": [
+        {
+          "id": "a",
+          "hp": 84,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "b",
+          "hp": 100,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "c",
+          "hp": 88,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        }
+      ],
+      "report": {
+        "outing": 1,
+        "recruited": [],
+        "outcomes": [],
+        "grown": [],
+        "resolved": 0,
+        "reason": "暮色到了，已沿安全路回营。",
+        "remaining": {
+          "knots": 2,
+          "berries": 2
+        },
+        "daylight": 0
+      }
+    },
+    {
+      "name": "Real daylight exhaustion during an unresolved encounter",
+      "mode": "ordinary_input",
+      "seed": 85949129,
+      "commands": [
+        {
+          "kind": "depart",
+          "revision": 0
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "guard",
+          "revision": 6
+        },
+        {
+          "kind": "guard",
+          "revision": 7
+        },
+        {
+          "kind": "guard",
+          "revision": 8
+        },
+        {
+          "kind": "guard",
+          "revision": 9
+        },
+        {
+          "kind": "guard",
+          "revision": 10
+        },
+        {
+          "kind": "guard",
+          "revision": 11
+        },
+        {
+          "kind": "guard",
+          "revision": 12
+        },
+        {
+          "kind": "guard",
+          "revision": 13
+        },
+        {
+          "kind": "guard",
+          "revision": 14
+        },
+        {
+          "kind": "guard",
+          "revision": 15
+        },
+        {
+          "kind": "guard",
+          "revision": 16
+        },
+        {
+          "kind": "guard",
+          "revision": 17
+        },
+        {
+          "kind": "guard",
+          "revision": 18
+        },
+        {
+          "kind": "guard",
+          "revision": 19
+        },
+        {
+          "kind": "guard",
+          "revision": 20
+        },
+        {
+          "kind": "guard",
+          "revision": 21
+        },
+        {
+          "kind": "guard",
+          "revision": 22
+        },
+        {
+          "kind": "guard",
+          "revision": 23
+        },
+        {
+          "kind": "guard",
+          "revision": 24
+        }
+      ],
+      "stats": {
+        "moves": 5,
+        "captures": 0,
+        "failedCaptures": 0,
+        "won": 0,
+        "calmed": 0,
+        "returned": 1,
+        "exhausted": 1
+      },
+      "roster": [
+        {
+          "id": "a",
+          "hp": 84,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "b",
+          "hp": 100,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "c",
+          "hp": 88,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        }
+      ],
+      "report": {
+        "outing": 1,
+        "recruited": [],
+        "outcomes": [],
+        "grown": [],
+        "resolved": 0,
+        "reason": "暮色到了，已沿安全路回营。",
+        "remaining": {
+          "knots": 2,
+          "berries": 2
+        },
+        "daylight": 0
+      }
+    },
+    {
+      "name": "Genuine full-team defeat, not an HP fixture",
+      "mode": "ordinary_input",
+      "seed": 123456789,
+      "commands": [
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 0
+        },
+        {
+          "kind": "team",
+          "arg": "c",
+          "revision": 1
+        },
+        {
+          "kind": "depart",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 7
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 8
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 9
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 10
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 11
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 12
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 13
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 14
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 15
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 16
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 17
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 18
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 19
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 20
+        },
+        {
+          "kind": "switch",
+          "arg": "c",
+          "revision": 21
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 22
+        },
+        {
+          "kind": "capture",
+          "revision": 23
+        },
+        {
+          "kind": "capture",
+          "revision": 24
+        },
+        {
+          "kind": "attack",
+          "revision": 25
+        }
+      ],
+      "stats": {
+        "moves": 8,
+        "captures": 0,
+        "failedCaptures": 2,
+        "won": 0,
+        "calmed": 0,
+        "returned": 1,
+        "exhausted": 0
+      },
+      "roster": [
+        {
+          "id": "a",
+          "hp": 0,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "b",
+          "hp": 100,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        },
+        {
+          "id": "c",
+          "hp": 0,
+          "energy": 3,
+          "shield": 0,
+          "xp": 0,
+          "rank": 0,
+          "encounters": 0
+        }
+      ],
+      "report": {
+        "outing": 1,
+        "recruited": [],
+        "outcomes": [],
+        "grown": [],
+        "resolved": 0,
+        "reason": "两位同伴都累倒了，已安全回营。",
+        "remaining": {
+          "knots": 0,
+          "berries": 2
+        },
+        "daylight": 1
+      }
+    }
+  ],
+  "fuzz": {
+    "seeds": 80,
+    "commandsPerSeed": 450,
+    "accepted": 36000,
+    "rejected": 3840,
+    "checkpoints": 640,
+    "phaseVisits": {
+      "camp": 12521,
+      "explore": 22255,
+      "encounter": 1224
+    },
+    "actions": {
+      "team": 4547,
+      "depart": 4652,
+      "move": 18671,
+      "home": 1942,
+      "lead": 3370,
+      "leadField": 1718,
+      "capture": 140,
+      "skill": 102,
+      "attack": 275,
+      "soothe": 127,
+      "switch": 141,
+      "heal": 64,
+      "guard": 127,
+      "farewell": 5,
+      "leave": 119
+    },
+    "aggregateGameplayOutcomes": {
+      "captures": 44,
+      "failedCaptures": 96,
+      "won": 43,
+      "calmed": 5,
+      "exhausted": 97
+    }
+  },
+  "limitations": [
+    "No browser/UI click, keyboard/touch, responsive layout, screen reader, screenshot or network/storage availability validation in this report.",
+    "Model invariants and deterministic random campaigns are finite tests, not a proof for every possible command sequence.",
+    "Same seed plus the same commands yields the same future roll. Alternate legal actions may intentionally change capture probability; that is distinct from refresh rerolling."
+  ]
+}

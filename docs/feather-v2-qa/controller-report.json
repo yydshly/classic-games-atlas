@@ -1,0 +1,23 @@
+{
+  "kind": "minimal-dom-controller-harness-not-browser",
+  "tests": 13,
+  "passed": [
+    "Fresh controller renders camp, roster and departure action",
+    "Real controller click and keyboard events change state and persist legal log",
+    "Pause blocks commands and Escape resumes without state loss",
+    "Help dialog explains failure cost and no reroll, then resumes",
+    "Restored encounter starts paused; actual capture click fails and spends once; stale repeated UI revision rejected",
+    "Reload of failed capture keeps RNG, result and resource deduction",
+    "Visible return and restart controls recover ordinary failed outing",
+    "Camp recruitment changes real roster and clicked team choice survives next departure",
+    "Denied storage does not block play and is disclosed",
+    "Malformed save is preserved; temporary play does not overwrite it",
+    "Valid JSON with invalid replay is preserved until explicit new-record confirmation",
+    "New-record reset requires an explicit confirmation and cancel preserves the run",
+    "Static old-mode link, live feedback, responsive CSS and keyboard focus rules present (not layout execution)"
+  ],
+  "limitations": [
+    "No browser layout, native focus/scroll, touch device, storage lifetime, audio, or public deployment claim.",
+    "Canvas draw calls execute through native offscreen canvas; HTML uses minimal test objects and asset loading is explicitly forced to its failure path. Separate renderer tests load the real art."
+  ]
+}
