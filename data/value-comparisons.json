@@ -1,0 +1,3241 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
+  "checkedAt": "2026-10-18",
+  "scope": "实现范围为 v1 固定基线；v2 状态与本轮变化以各条版本说明为准。",
+  "summary": {
+    "items": 38,
+    "published": 34,
+    "previews": 4,
+    "officialPopularityFactsItems": 6,
+    "popularityNotEstablishedItems": 32,
+    "emotionalValueUserValidated": 0
+  },
+  "items": [
+    {
+      "number": "01",
+      "slug": "fortress",
+      "title": "堡垒防线",
+      "source": {
+        "title": "坦克大战",
+        "referenceId": "battle-city",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指南梦宫《Battle City》，不泛指所有坦克游戏。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "保护基地让射击有明确牵挂；破墙既能开路也能暴露防线，玩家必须在出击和回防之间取舍。"
+      },
+      "implemented": [
+        "10张25×25原创基地防守地图；连续移动、射击、破砖、钢障和水域",
+        "3类敌人、维修/护盾/速射；基地3格耐久、玩家3次出击"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "守住重要目标的责任感、险情解除后的安心",
+        "action": "挡住接近基地的敌车，选择破墙路线并拾取维修",
+        "feedback": "敌车被击破、基地耐久保住、十关逐步解锁"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "双人互相掩护与救场",
+          "status": "未包含在当前单人范围",
+          "affectedValue": "共同扛住压力的默契无法由单人通关替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "基地告急、命中和胜利反馈的力度",
+          "status": "体验待验证",
+          "affectedValue": "反馈不够可读或有力时，守护目标容易只剩一个数值",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 3,
+          "line_end": 15,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L3-L15",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 586,
+          "line_end": 612,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L586-L612",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FORTRESS_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FORTRESS_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FORTRESS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "02",
+      "slug": "maze",
+      "title": "爆破迷宫",
+      "source": {
+        "title": "炸弹人",
+        "referenceId": "bomberman",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；以早期迷宫玩法为主，后续版本模式各异。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "先放炸弹再撤离，制造一个可预想又必须等待的结果；十字火线和连锁让一步布置可能改变整片空间。"
+      },
+      "implemented": [
+        "10张原创单人迷宫；定时炸弹、十字阻挡与连锁、自伤",
+        "3类敌人、容量/范围/速度强化；清敌后走到出口"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "算准风险的机敏感、连锁成功的惊喜",
+        "action": "预判引信和出口，放弹后躲进安全格",
+        "feedback": "货箱与敌人被爆破，通路和出口打开"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "人与人互相设局的对抗",
+          "status": "未包含在当前单人清关范围",
+          "affectedValue": "对手心理和临场反制的戏剧性被固定敌人行为替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "爆炸范围、逃生时间与失误原因是否易读",
+          "status": "体验待验证",
+          "affectedValue": "若失败看不懂，预判的紧张会变成不公平感",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 16,
+          "line_end": 28,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L16-L28",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 624,
+          "line_end": 650,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L624-L650",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/MAZE_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/MAZE_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/MAZE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "03",
+      "slug": "starline",
+      "title": "星泡航线",
+      "source": {
+        "title": "泡泡龙",
+        "referenceId": "puzzle-bobble",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指发射泡泡的 Puzzle Bobble 系列；不是跳跃动作《Bubble Bobble》。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "一次瞄准不仅消掉三颗，还能切断支撑让一大片坠落；少量操作造成大变化，反弹路线又给练习留下空间。"
+      },
+      "implemented": [
+        "12张原创泡泡图；六邻接、侧墙反弹、三连与顶端失联掉落",
+        "有限发数、当前/下一颗与每发一次交换、轨迹与落点提示"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "以小搏大的巧劲、清掉大片的释放感",
+        "action": "找同色连接点或反弹入口，优先打断悬挂支撑",
+        "feedback": "三连与悬岛掉落、剩余泡泡减少、有限发数下清场"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "实时下压带来的持续逼迫",
+          "status": "明确未加入",
+          "affectedValue": "目前主要是弹药规划，原先边打边逼近底线的压力需要另选版本才可对标",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "大面积掉落的节奏、声音与画面反馈",
+          "status": "体验待验证",
+          "affectedValue": "逻辑掉落成立不代表能形成期待中的连消回报",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 29,
+          "line_end": 41,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L29-L41",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1106,
+          "line_end": 1132,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1106-L1132",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/STARLINE_SPEC.md",
+          "line_start": 12,
+          "line_end": 13,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_SPEC.md#L12-L13",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/STARLINE_SPEC.md",
+          "line_start": 43,
+          "line_end": 44,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_SPEC.md#L43-L44",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/STARLINE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "04",
+      "slug": "prism",
+      "title": "光轨砖阵",
+      "source": {
+        "title": "打砖块／Arkanoid",
+        "referenceId": "arkanoid",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以 Taito《Arkanoid》为代表；打砖块也可指更广泛的玩法类别。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "挡板碰点改变下一条轨迹，玩家能从接住球逐步学会控制球；道具临时改变局势，打破反复接球的单调。"
+      },
+      "implemented": [
+        "12关挡板反弹清砖；普通/多击/不可破砖",
+        "宽板、多球、缓速3类道具；3条生命和逐关解锁"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "手眼协调的掌控感、把封闭砖阵逐渐打通的畅快",
+        "action": "移动挡板以不同碰点回球，接住宽板/多球/缓速道具",
+        "feedback": "反弹角度变化、砖块破碎、球数或挡板尺寸变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作各版道具、敌人或首领的完整变化",
+          "status": "未建立还原对照",
+          "affectedValue": "局面升级和阶段高潮不能仅靠12张砖图保证",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "撞击声、速度曲线与清砖节奏",
+          "status": "体验待验证",
+          "affectedValue": "接得住不等于手感清脆，也不证明后段仍有变化",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 42,
+          "line_end": 54,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L42-L54",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1145,
+          "line_end": 1171,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1145-L1171",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PRISM_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PRISM_SPEC.md",
+          "line_start": 15,
+          "line_end": 16,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_SPEC.md#L15-L16",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PRISM_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "05",
+      "slug": "crate",
+      "title": "仓格计划",
+      "source": {
+        "title": "推箱子",
+        "referenceId": "sokoban",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以原始 Sokoban 规则为代表，不把所有后继实现当作同一版本。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "只能推不能拉，让玩家必须为下一步保留站位；卡住后换个思路，常能发现原来很小的空间可以重新组织。"
+      },
+      "implemented": [
+        "20张原创题图；四向网格、只推不拉、箱子全部归位",
+        "无限撤销含胜利后撤销、动作日志恢复；仅提示非目标静态墙角"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "想通后的豁然开朗、整理到位的秩序感",
+        "action": "预留站位、让箱子互相让路，必要时撤销再试",
+        "feedback": "箱子逐一归位，步数与推数留下个人纪录"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "逐关教学是否真正传递新思路",
+          "status": "体验待验证",
+          "affectedValue": "可解性不证明每关都有清晰学习点或独特发现",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "复杂死局的解释",
+          "status": "当前只提示静态墙角",
+          "affectedValue": "长串错误若无可理解线索，重试可能变成盲试而非学习",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 55,
+          "line_end": 67,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L55-L67",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1185,
+          "line_end": 1211,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1185-L1211",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CRATE_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CRATE_SPEC.md",
+          "line_start": 14,
+          "line_end": 15,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_SPEC.md#L14-L15",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CRATE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "06",
+      "slug": "pass",
+      "title": "山口守望",
+      "source": {
+        "title": "王国保卫战",
+        "referenceId": "kingdom-rush",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；以初代为切入，不将各部的英雄与防御塔混用。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "先布阵再观察整波敌人通过，把选择的结果直接铺在路径上；不同威胁需要塔位、伤害和控制相互配合。"
+      },
+      "implemented": [
+        "8图，每图6波、固定建造点；单体/范围/减速3类塔",
+        "各塔仅I→II一次升级；4类敌人，建造/升级/出售和1×/2×"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "部署奏效的运筹感、守到最后一波的安心",
+        "action": "在预算内选择单体、范围或减速塔并安排升级",
+        "feedback": "敌人沿路被拦截，漏怪/基地余命和波次结果可见"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "英雄、技能树与多级分支",
+          "status": "明确未做；各塔仅一次升级",
+          "affectedValue": "临场补救与形成个人防守风格的空间被压缩",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "波次之间是否迫使改变方案",
+          "status": "体验待验证",
+          "affectedValue": "如果同一组合重复有效，建塔选择可能缺少紧迫性",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 68,
+          "line_end": 80,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L68-L80",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1383,
+          "line_end": 1409,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1383-L1409",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PASS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PASS_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PASS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "07",
+      "slug": "trail",
+      "title": "风行小径",
+      "source": {
+        "title": "冒险岛",
+        "referenceId": "adventure-island",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指 Hudson 的 FC 作品；与 Nexon《冒险岛 Online》无关。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "目录中的体力消耗迫使玩家边前进边收集，跳跃路线因此既关乎安全也关乎续航；推进不能无限拖延。"
+      },
+      "implemented": [
+        "8关原创横向平台；长短跳、移动台、巡逻敌人、风铃",
+        "3条生命、检查点、失误重生；刷新从关卡起点重开"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "跨过险处的轻盈感、从检查点重新站起来的韧性",
+        "action": "控制长短跳、借移动台前进并收集风铃",
+        "feedback": "落到平台、通过风旗检查点、最终到达终点"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "攻击和食物维持体力循环",
+          "status": "攻击明确没有；本作改用生命/检查点",
+          "affectedValue": "冒险岛式进攻、求生和抢节奏的情绪结构没有保留",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "空中动作和落地反馈",
+          "status": "体验待验证",
+          "affectedValue": "平台可达证明不了跳起来是否轻快、落地是否扎实",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 81,
+          "line_end": 93,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L81-L93",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 663,
+          "line_end": 689,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L663-L689",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/TRAIL_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TRAIL_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TRAIL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "08",
+      "slug": "lantern",
+      "title": "夜航拾光",
+      "source": {
+        "title": "吃豆人",
+        "referenceId": "pacman",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代街机版为主，不将其他吃豆人衍生作品混为一部。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "PAC-MAN官方历史页记载：1980年进入美国市场后，一年内售出超过10万台街机。",
+            "url": "https://www.pacman.com/en/history/",
+            "sourceLabel": "PAC-MAN官方历史",
+            "date": "历史事件：1980年推出后一年内；页面未标发布日期",
+            "scope": "初代PAC-MAN街机，不是本作，也不是全部后续系列",
+            "limit": "这是发行方历史回顾中的市场表现陈述，不能证明某一机制导致销量。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "原本必须躲避的追兵会在强化后变成可追逐目标；同一条路在不同状态下价值翻转，紧张和主动出击轮流出现。"
+      },
+      "implemented": [
+        "10座原创迷宫；四向连续移动与转向缓冲",
+        "光点全收集、3类追逐逻辑、限时辉光反制、3条生命"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "被追赶的紧张、短暂反制的解气、收完最后一点的松弛",
+        "action": "规划吃光路线，利用辉光窗口穿过或反制巡灯",
+        "feedback": "危险状态改变、巡灯返回泊位、光点逐步清空"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "具体原作幽灵性格与状态节奏",
+          "status": "未建立逐项还原对照",
+          "affectedValue": "追逐是否像可学习的对手而非杂乱威胁仍需实玩判断",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "最后光点与辉光即将结束的可读性",
+          "status": "体验待验证",
+          "affectedValue": "风险窗口不鲜明时，攻守反转的情绪峰值会减弱",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 94,
+          "line_end": 106,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L94-L106",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1067,
+          "line_end": 1093,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1067-L1093",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/LANTERN_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/LANTERN_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/LANTERN_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "09",
+      "slug": "cloud",
+      "title": "云隙巡航",
+      "source": {
+        "title": "雷电",
+        "referenceId": "raiden",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代《雷电》为主；参考合集还收录 Raiden Fighters 作品。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "路线记忆给玩家可练习的部分，临场弹道又要求即时判断；火力成长把生存表现转成可感知的战斗能力。"
+      },
+      "implemented": [
+        "8段原创纵向飞行射击；自动射击、3类敌机和直射/瞄准/扇形弹道",
+        "3点生命、武器最多3级、修复；每关2次清弹保护风幕与末段精英"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "穿过弹幕的从容、火力变强的进步感",
+        "action": "移动避开直射/瞄准/扇形弹道，拾取强化，必要时开风幕",
+        "feedback": "弹幕被清除、武器升至III级、精英被击破"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作火力体系与关卡高潮",
+          "status": "未建立完整对照",
+          "affectedValue": "三级武器和末段精英不能自动重现原作的升级与首领节奏",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "弹道预警、命中与强化的视听层次",
+          "status": "体验待验证",
+          "affectedValue": "可通关不等于每次险避和强化都能被玩家明显感到",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 107,
+          "line_end": 119,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L107-L119",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 989,
+          "line_end": 1015,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L989-L1015",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CLOUD_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CLOUD_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CLOUD_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "10",
+      "slug": "garden",
+      "title": "晶簇花园",
+      "source": {
+        "title": "宝石迷阵",
+        "referenceId": "bejeweled",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；参考《Bejeweled 3》，各代模式与特殊宝石有差异。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "交换动作简单，结果却可能连续扩散；玩家既能寻找眼前匹配，也会期待特殊块把局面一次改写。"
+      },
+      "implemented": [
+        "20关8×8有限步数三消；分数/收集/土层组合目标",
+        "横四清行、竖四清列、五连或T/L产生3×3花蕊；固定种子、提示与洗牌"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "连锁绽放的惊喜、把目标一点点清干净的满足",
+        "action": "交换形成四连/五连或交叉，组合特殊晶簇清土层",
+        "feedback": "清行/清列/3×3连锁、目标计数和土层变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "Bejeweled 3的具体模式与特殊宝石规则",
+          "status": "本作采用有限步数与自定义花蕊规则",
+          "affectedValue": "不能用同类三消外形推定原作模式的放松或限时压力",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "连锁速度、消除声音和特殊块辨识",
+          "status": "体验待验证",
+          "affectedValue": "数学上多次消除并不保证反馈层层递进",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 120,
+          "line_end": 132,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L120-L132",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1424,
+          "line_end": 1450,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1424-L1450",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/GARDEN_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GARDEN_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GARDEN_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "11",
+      "slug": "vine",
+      "title": "青藤回廊",
+      "source": {
+        "title": "贪吃蛇",
+        "referenceId": "snake",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "玩法谱系条目；以早期手机体验为代表，边界规则依实现而异。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "每次吃到食物既是进步，也让身体挤占更多空间；奖励同时制造下一次风险，使贪心与谨慎天然相互牵制。"
+      },
+      "implemented": [
+        "16关20×16生长挑战；吃芽增长、撞墙/身体失败",
+        "达数量后抵达出口；定向传送门、方向缓冲、逐步存档"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "成长的得意、险些咬到自己的屏息、找到回家路的释然",
+        "action": "连续转向收芽，绕开增长的身体并利用单向传送",
+        "feedback": "身体变长、出口点亮，成功回到出口"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "持续无尽冲高分循环",
+          "status": "明确无无限模式",
+          "affectedValue": "追求再多一口的长局张力被有限关卡目标替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "转向缓冲与传送后的方向理解",
+          "status": "体验待验证",
+          "affectedValue": "输入不合预期会让自我造成的风险变成操作挫败",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 133,
+          "line_end": 145,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L133-L145",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1262,
+          "line_end": 1288,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1262-L1288",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/VINE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VINE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VINE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "12",
+      "slug": "petal",
+      "title": "花笺连线",
+      "source": {
+        "title": "连连看",
+        "referenceId": "link-match",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "泛指连线配对玩法；并非单一品牌。常见两次转折限制不适用于所有版本。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "找到相同图案只是第一层，能否绕过遮挡才是第二层；清掉一对又会替别的配对打开路线。"
+      },
+      "implemented": [
+        "20关两折连线配对，可沿外圈；石障、留白",
+        "后段下/左归拢；2次洗牌、4次无通路容错、提示，无强制倒计时"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "观察到隐藏通路的小惊喜、清空棋盘的整洁感",
+        "action": "识别同图并规划两折路径，利用归拢后新空隙",
+        "feedback": "连线出现、成对消除、棋盘向下或向左归拢"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "单一原作与对应节奏",
+          "status": "尚无唯一原作；本作无强制倒计时",
+          "affectedValue": "目前不能把紧张竞速或悠闲观察其中一种说成原作必备体验",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "图案辨识与归拢的视觉连续性",
+          "status": "体验待验证",
+          "affectedValue": "若牌面难认或移动难追，观察解谜容易变成找图疲劳",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 146,
+          "line_end": 158,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L146-L158",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1301,
+          "line_end": 1327,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1301-L1327",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PETAL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PETAL_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PETAL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "13",
+      "slug": "sand",
+      "title": "星砂勘探",
+      "source": {
+        "title": "扫雷",
+        "referenceId": "minesweeper",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以经典 Windows 玩法为代表；现代版本可能加入额外模式。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "一条数字线索排除一个可能，几个确定判断又能连锁打开一大片；玩家得到的是自己证明了安全的把握。"
+      },
+      "implemented": [
+        "20关固定逻辑排雷；限定安全观测点开局、数字/旗标/快捷展开",
+        "可见线索推理提示、无倒计时、固定图重试与合法日志恢复"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把未知变成确定的踏实、正确推理的自信",
+        "action": "根据数字标旗，利用集合关系和快捷展开揭开安全区",
+        "feedback": "零区展开、数字关系显露，最后安全格揭开"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "随机开局与自由首点",
+          "status": "本作为固定地图且限定安全观测点",
+          "affectedValue": "重复游玩更多是重解题集，未知局面的探索张力不同",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "提示是否让人理解而非照做",
+          "status": "体验待验证",
+          "affectedValue": "有提示按钮不等于学会了下一次能独立使用的推理",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 159,
+          "line_end": 171,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L159-L171",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1224,
+          "line_end": 1250,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1224-L1250",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/SAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/SAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/SAND_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "14",
+      "slug": "pinfall",
+      "title": "落星弹庭",
+      "source": {
+        "title": "幻幻球",
+        "referenceId": "peggle",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代《Peggle Deluxe》为主；不是传统弹球台的同义词。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "玩家决定开头的角度，却不能逐下控制后续反弹；计划与有限意外共存，一颗球可能比预想多完成许多事。"
+      },
+      "implemented": [
+        "12关重力弹珠消钉；有限球数、回收后统一消钉",
+        "移动接球槽、涟漪钉和回弹石；接住且命中返球"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "看着弹跳结果展开的期待、意外多中几钉的惊喜",
+        "action": "选角发球，让反弹串联星钉并争取接球返还",
+        "feedback": "连续命中、涟漪点亮、球槽返球和目标清除"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作角色能力与章节变化",
+          "status": "未建立完整对应；现有以涟漪等原创规则替代",
+          "affectedValue": "不同玩法身份和阶段惊喜的来源较窄",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "反弹、钉点亮与最终收球的演出节奏",
+          "status": "体验待验证",
+          "affectedValue": "如果回报不够分明，等待球落下会显得被动而非期待",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 172,
+          "line_end": 184,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L172-L184",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1502,
+          "line_end": 1528,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1502-L1528",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PINFALL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PINFALL_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PINFALL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "15",
+      "slug": "gale",
+      "title": "钢岚突进",
+      "source": {
+        "title": "魂斗罗",
+        "referenceId": "contra",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以 FC / NES 版的回忆为主；参考合集也包含街机及其他作品。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "移动、射击与躲避同时发生，让熟练度在短时间内显现；武器变化和首领阶段提供练习后的突破目标。"
+      },
+      "implemented": [
+        "8关原创横版跑跳射击、3类普通敌人与终关3阶段首领",
+        "基础无限弹、有限散射/速射、上斜射；护甲/检查点/脉冲"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "边跑边打的进攻感、熬过首领新阶段的突破感",
+        "action": "跳过地形持续射击，选择散射/速射和有限脉冲时机",
+        "feedback": "敌人被清除、火力变化、首领阶段切换并开放出口"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "双人协作与纵深关卡",
+          "status": "现范围为单人横向战役",
+          "affectedValue": "互相救场和视角切换产生的变化未保留",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "原作高风险推进节奏",
+          "status": "改为护甲、检查点修复与脉冲",
+          "affectedValue": "容错结构已经改变；是否仍有紧张而不过度惩罚需玩家验证",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 185,
+          "line_end": 197,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L185-L197",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 547,
+          "line_end": 573,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L547-L573",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/GALE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GALE_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GALE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "16",
+      "slug": "post",
+      "title": "弯道邮差",
+      "source": {
+        "title": "极品飞车",
+        "referenceId": "need-speed",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；并非每一部都有开放世界、改装或警匪追逐。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "速度本身制造压力，入弯、刹车和出弯加速让玩家不断修正路线；个人纪录把细小进步变得可比较。"
+      },
+      "implemented": [
+        "8条原创闭环俯视赛道；油门、相对车头转向、刹车、路肩减速",
+        "单人2/3圈计时、闸门防跳圈、越界复位加时"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把弯道开顺的流畅、刷新个人圈速的自我超越",
+        "action": "判断刹车点，控制方向并连续穿过正确闸门",
+        "feedback": "车速、圈时、路肩减速与有效完圈即时变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "AI竞速对手",
+          "status": "明确没有",
+          "affectedValue": "追近、超越和守住领先的对抗情绪不存在",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "具体极品飞车作品的车辆身份与驾驶主题",
+          "status": "未锁定版本且未建立系统对应",
+          "affectedValue": "目前只能评价俯视计时驾驶，不能承诺系列的改装或追逐体验",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 198,
+          "line_end": 210,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L198-L210",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2440,
+          "line_end": 2466,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2440-L2466",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/POST_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/POST_SPEC.md",
+          "line_start": 10,
+          "line_end": 11,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_SPEC.md#L10-L11",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/POST_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "17",
+      "slug": "beacon",
+      "title": "灯塔小队",
+      "source": {
+        "title": "英雄无敌Ⅲ",
+        "referenceId": "heroes-3",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指第三代；参考 HD 版商店页，该版本不含原版全部资料片。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "原目录把探索所得、城镇建设和招募选择带进战斗，短期出手服务于更长的冒险计划；兵种搭配让胜利有自己的路径。"
+      },
+      "implemented": [
+        "10关8×7小队战术；2AP、固定伤害、移动/攻击/修复预览确认",
+        "清敌/护送/守灯三目标、有限回合、全图公开"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把有限行动排好顺序的掌控、护送同伴抵达的责任感",
+        "action": "预览移动/攻击/修复代价，确认行动并协调小队站位",
+        "feedback": "目标护甲、AP、护送位置和守灯进度按计划变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "大地图、城镇经济与招募成长",
+          "status": "当前只有独立小队战术；明确不加长期经济养成",
+          "affectedValue": "探索带来的发现和跨战斗经营回报被切断",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "固定三类队员是否形成足够战术差异",
+          "status": "体验待验证",
+          "affectedValue": "预览准确不证明选择有趣，也不证明玩家会形成个人打法",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 211,
+          "line_end": 223,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L211-L223",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1703,
+          "line_end": 1729,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1703-L1729",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/BEACON_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BEACON_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BEACON_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "18",
+      "slug": "chime",
+      "title": "风铃绳旅",
+      "source": {
+        "title": "割绳子",
+        "referenceId": "cut-rope",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；以初代为切入，各续作加入不同机关与角色能力。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "ZeptoLab的Cut the Rope产品页使用“990 million players worldwide”的玩家规模陈述。",
+            "url": "https://www.zeptolab.com/games/cut-the-rope",
+            "sourceLabel": "ZeptoLab官方产品页",
+            "date": "2026-10-18读取；页面未标统计截止日",
+            "scope": "官方产品页口径；未说明去重、平台与统计方法",
+            "limit": "只能按开发者自述引用，不改写为销量、付费用户或已独立审计的活跃玩家。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "一刀改变摆动路线，结果随重力展开，容易让人建立直觉；可过关和拿齐星点又允许不同程度的挑战。"
+      },
+      "implemented": [
+        "16关剪绳物理解谜，48可选星点；重力/双绳/风区/梁/危险",
+        "只能剪绳，点/划剪及编号按钮；达到收集台即可过关"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "剪对时机的巧妙感、补齐星点的精益求精",
+        "action": "观察摆幅与风向，按顺序剪绳让铃经过星点落台",
+        "feedback": "绳断、摆动改变、星点被收集，终点接住铃"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作角色和更多机关组合",
+          "status": "本作角色与关卡独立，只能剪绳",
+          "affectedValue": "角色被喂到的亲切回报与更广机关惊喜未直接保留",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "物理容错和星点路线是否可凭观察学会",
+          "status": "体验待验证",
+          "affectedValue": "自动定时通关不能证明普通玩家能从失败中学到时机",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 224,
+          "line_end": 236,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L224-L236",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2693,
+          "line_end": 2719,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2693-L2719",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CHIME_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CHIME_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CHIME_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "19",
+      "slug": "brook",
+      "title": "溪谷守芽",
+      "source": {
+        "title": "植物大战僵尸",
+        "referenceId": "pvz",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代为主，后续续作与衍生射击游戏另有规则。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "每条路线的威胁都看得见，资源花在生产还是防守上的取舍会很快显现；组合阵容让准备逐渐变成可靠防线。"
+      },
+      "implemented": [
+        "10关5×8分路布防；4种装置分别生产、远射、承伤、减速",
+        "3类敌人、手动收露、预算/冷却、公开波次、1×/2×"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把一条脆弱防线经营稳的安心、及时补位的能干",
+        "action": "收露，在受压行布置输出/承伤/减速并兼顾生产",
+        "feedback": "冷却结束、资源增加、来敌被挡住，各行逐步稳定"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作完整单位、场景和模式组合",
+          "status": "当前仅4装置与3类来敌的10关范围",
+          "affectedValue": "阵容试验和新发现的跨度受到限制",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "敌我个性与受压行的反馈层次",
+          "status": "体验待验证",
+          "affectedValue": "若单位只像图标与血量，熟悉它们的亲近感和应急感会偏弱",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 237,
+          "line_end": 249,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L237-L249",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1343,
+          "line_end": 1369,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1343-L1369",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/BROOK_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BROOK_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BROOK_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "20",
+      "slug": "tide",
+      "title": "潮汐珠径",
+      "source": {
+        "title": "祖玛",
+        "referenceId": "zuma",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代《Zuma Deluxe》为主，不泛指所有滚动珠链游戏。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "珠链不断向终点逼近，玩家必须在消眼前威胁和制造更大连锁之间取舍；断口回接提供计划实现的瞬间。"
+      },
+      "implemented": [
+        "12条原创曲线；移动珠链插珠三连、断口回接与连锁",
+        "固定有限珠链、2–4色、无隐藏补珠；缓潮2次/回汐1次逐步开放"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "压线前挽回局面的解压、连锁打通的节奏感",
+        "action": "瞄准插入同色组，利用断口与缓潮/回汐调整时机",
+        "feedback": "连消、链段回接、珠链后退或终点压力下降"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作珠链补充与关卡速度节奏",
+          "status": "当前为有限公开珠链、同基础速度",
+          "affectedValue": "持续拉扯的压力结构已经改写，不能直接等同Zuma Deluxe",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "断口回接、穿射与能力反馈的节奏",
+          "status": "体验待验证",
+          "affectedValue": "机制能触发不证明玩家能读懂并主动追求连锁",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 250,
+          "line_end": 262,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L250-L262",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1463,
+          "line_end": 1489,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1463-L1489",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/TIDE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TIDE_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TIDE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "21",
+      "slug": "paper",
+      "title": "纸翼投递",
+      "source": {
+        "title": "愤怒的小鸟",
+        "referenceId": "angry-birds",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代玩法为主；现存版本、续作与衍生作有差异。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "Rovio的Angry Birds品牌授权页称，品牌手机游戏下载累计超过50亿次。",
+            "url": "https://www.rovio.com/licensing/",
+            "sourceLabel": "Rovio官方品牌授权页",
+            "date": "2026-10-18读取；页面未标统计截止日",
+            "scope": "Angry Birds品牌/系列手机游戏口径，不能归给初代单一游戏",
+            "limit": "下载次数不等于独立玩家、销量或玩法因果证据。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "先设想弹道与结构弱点，再看碰撞和坍塌是否验证直觉；同一局面可用不同角度重试，失败也能提供信息。"
+      },
+      "implemented": [
+        "16关有限包裹弹弓抛射；可破轻板/木箱、投递站与邮票",
+        "3类包裹、2种空中能力；轻结构滑落、星级独立于通关"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "击中关键支点的聪明劲、倒塌连带完成目标的惊喜",
+        "action": "调角度与力度，使用空中能力撞击轻结构或投递站",
+        "feedback": "结构破坏/滑落、站点收到包裹、邮票和星级记录变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "结构旋转和复杂倒塌",
+          "status": "明确只平移/滑落，不模拟旋转",
+          "affectedValue": "结构结果更受限，连锁坍塌的丰富性不能视为原作水平",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "原作角色化投射物与目标表达",
+          "status": "改写为包裹和投递站",
+          "affectedValue": "命中对象的情绪意味变成送达，需要用自己的角色反馈成立",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 263,
+          "line_end": 275,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L263-L275",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2615,
+          "line_end": 2641,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2615-L2641",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PAPER_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PAPER_SPEC.md",
+          "line_start": 13,
+          "line_end": 14,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_SPEC.md#L13-L14",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PAPER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "22",
+      "slug": "harbor",
+      "title": "云港调度",
+      "source": {
+        "title": "运输大亨",
+        "referenceId": "transport",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以 TTD 为主要语境；OpenTTD 是受其启发的开源项目，不是原作本身。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "把分散的需求用线路连起来，效率问题会逐渐从局部变成整个网络；看到货物按计划抵达，是规划变成现实的反馈。"
+      },
+      "implemented": [
+        "12关固定候选航道；轻舟/驳艇、往返线、容量/出库/交付期限",
+        "离散回合、有限货物与预算，出航后方案冻结"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "让系统顺畅运转的满足、解决堵点的胜任感",
+        "action": "规划候选航道和往返线，匹配船舱与货物期限",
+        "feedback": "货物从仓库进入船舱再实际交付，账本和排队状态改变"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "开放交通网络与持续产业发展",
+          "status": "本作固定候选网络、有限货物、出航后冻结",
+          "affectedValue": "从小公司扩成运输帝国的长期建设感没有保留",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "换乘及多交通工具协同",
+          "status": "当前不支持船间换乘且仅船运",
+          "affectedValue": "网络组合的复杂度与自选经营路线较窄",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 276,
+          "line_end": 288,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L276-L288",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2226,
+          "line_end": 2252,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2226-L2252",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/HARBOR_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/HARBOR_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/HARBOR_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "23",
+      "slug": "farm",
+      "title": "四季小田",
+      "source": {
+        "title": "牧场物语",
+        "referenceId": "harvest-moon",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指日本「牧場物語」谱系，现以 Story of Seasons 等名发行；近年英文 Harvest Moon 是另一产品线。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "播种后需要照料和等待，季节变化让今天的安排服务于未来；劳动成果与居民关系使成长具有生活意味。"
+      },
+      "implemented": [
+        "12关4–6块土地、4种作物、每日3–4行动和订单交付",
+        "公开循环天气、主动日结生长、有限种子费与独立关卡预算"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "亲手养出收成的照料感、按季节安排日子的从容",
+        "action": "根据公开天气安排播种、浇水、收获与整单交付",
+        "feedback": "作物在日结生长、仓库入货、订单完成且预算回流"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "畜牧与居民关系",
+          "status": "明确不模拟",
+          "affectedValue": "被角色需要、长期相处和生活归属感缺少主要载体",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "跨关持续农场成长",
+          "status": "各关资源独立、固定地块与订单",
+          "affectedValue": "建设属于自己的长期生活被有限经营题替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 289,
+          "line_end": 301,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L289-L301",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2132,
+          "line_end": 2158,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2132-L2158",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FARM_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FARM_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FARM_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "24",
+      "slug": "ruins",
+      "title": "遗迹灯火",
+      "source": {
+        "title": "塞尔达传说",
+        "referenceId": "zelda",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；更接近动作冒险，不将其一概定义为回合制 RPG。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "发现新道具往往能重新解释旧空间，探索和解谜因此互相奖励；动作挑战让发现道路后仍需亲手走通。"
+      },
+      "implemented": [
+        "8关35间9×7石室；钥匙/灯座/门、横扫/闪步/药露",
+        "一键一拍，主动行动才推进敌方；2拍攻击预警可停下思考"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "读懂危险后的镇定、找到钥匙与归路的探索满足",
+        "action": "观察两拍预警，安排横扫/闪步，解钥匙门并点灯",
+        "feedback": "威胁按计划落空、房门打开、地图逐步可通行"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "实时动作反应",
+          "status": "本作明确一键一拍、站定可思考",
+          "affectedValue": "紧张反应转为审慎规划，情绪节奏不同",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "新装备重新打开旧地图的成长结构",
+          "status": "当前只列固定动作和有限石室机关",
+          "affectedValue": "原目录所描述的能力发现与地图再理解尚无完整实现证据",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 302,
+          "line_end": 314,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L302-L314",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2025,
+          "line_end": 2051,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2025-L2051",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/RUINS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/RUINS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/RUINS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "25",
+      "slug": "orchard",
+      "title": "节拍果园",
+      "source": {
+        "title": "水果忍者",
+        "referenceId": "fruit-ninja",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以早期经典玩法为主，不含其他品牌的同类切水果游戏。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "Halfbrick在2015年8月6日的五周年公告中宣布Fruit Ninja已达到10亿次下载。",
+            "url": "https://www.halfbrick.com/blog/fruit-ninja-celebrates-5th-anniversary-with-biggest-update-ever",
+            "sourceLabel": "Halfbrick官方五周年公告",
+            "date": "2015-08-06",
+            "scope": "Fruit Ninja公告的下载量口径；不是当前活跃度或本作数据",
+            "limit": "仅说明历史传播规模，不证明触屏反馈是唯一或已测定的成功原因。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "手的移动直接变成刀光与切割结果，输入和反馈距离很短；连切鼓励大胆划弧，危险物又要求及时收手。"
+      },
+      "implemented": [
+        "12关153枚果实/60波；真实拖动扫掠切割、连切与危险物",
+        "确定性抛物线/侧风，3次合计失误；切果数/总分/最高连切联合达标"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "手势与画面合拍的利落、一次连切多果的畅快",
+        "action": "拖出真实轨迹切过果实，绕开荆核并连切",
+        "feedback": "果实被切开、连切加分、刀光与失误反馈立即出现"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "原作具体模式和节奏",
+          "status": "尚未锁定，当前为固定波次关卡",
+          "affectedValue": "限时冲分、无尽生存等不同情绪目标不能混作一个原作标准",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "触屏切割阻滞、音效和果瓣反馈质量",
+          "status": "体验待验证",
+          "affectedValue": "扫掠碰撞正确不等于玩家觉得这一刀足够干脆",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 315,
+          "line_end": 327,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L315-L327",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2654,
+          "line_end": 2680,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2654-L2680",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ORCHARD_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORCHARD_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORCHARD_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "26",
+      "slug": "courier",
+      "title": "山径快递",
+      "source": {
+        "title": "神庙逃亡",
+        "referenceId": "temple-run",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以初代为主；续作与授权主题版本另有场景和机制。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "Imangi官网称Temple Run与Temple Run 2两款合计下载超过25亿次。",
+            "url": "https://imangistudios.com/",
+            "sourceLabel": "Imangi官方简介",
+            "date": "2026-10-18读取；页面未标统计截止日",
+            "scope": "初代与续作合计，不得单独归给Temple Run初代",
+            "limit": "开发者公开陈述的累计下载数；不等于独立玩家或持续留存。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "少量手势即可开始，但连续障碍让玩家很快进入读路节奏；一次失误的风险让再多跑一段具有分量。"
+      },
+      "implemented": [
+        "12条三道有限邮路，自动前进；换道、跳、滑、岔路收信",
+        "每路280–358m，3次碰撞失败；到终点且收信达标胜利"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "连续越障的专注、把有限来信送到的如释重负",
+        "action": "换道、跳栏、滑梁，并在岔路选择可收信路线",
+        "feedback": "险情被越过、来信增加、体力保留并抵达邮站"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "无尽延伸与持续加速挑战",
+          "status": "明确不提供无尽，当前为有限定速路线",
+          "affectedValue": "不断突破上一段距离的长局动机被任务终点替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "动作响应与障碍预警的实际容错",
+          "status": "体验待验证",
+          "affectedValue": "精确自动输入过关不证明普通玩家能稳定进入流畅节奏",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 328,
+          "line_end": 340,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L328-L340",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2733,
+          "line_end": 2759,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2733-L2759",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/COURIER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/COURIER_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/COURIER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "27",
+      "slug": "venture",
+      "title": "街角商旅",
+      "source": {
+        "title": "大富翁系列",
+        "referenceId": "richman",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指软星 Richman 系列；与 Monopoly 品牌分开。参考为系列后续作品。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "随机移动、地产收益和角色对抗会让计划遇上意外；玩家既安排资产，也会经历被反超或翻盘的棋盘故事。"
+      },
+      "implemented": [
+        "12关共用12格环路；公开步数卡移动、买/经营/升级/卖摊位",
+        "固定事件日历、10–15回合、资产与现金联合目标"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把现金流算稳的精明、看到资产组合开始回报的踏实",
+        "action": "用公开步数卡选停靠，购入/升级/出售摊位并应对日历",
+        "feedback": "逐笔流水、营业收入、资产价值和目标达成可追溯"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "掷骰与随机事件",
+          "status": "本作明确改为固定卡轮换和公开日历",
+          "affectedValue": "意外、赌运气式期待和局势戏剧性被确定规划替代",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "对手竞争与角色个性",
+          "status": "当前单人经济题，未见竞争角色系统",
+          "affectedValue": "互相卡位、租金冲突及翻盘关系没有主要载体",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 341,
+          "line_end": 353,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L341-L353",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1542,
+          "line_end": 1568,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1542-L1568",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/VENTURE_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VENTURE_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VENTURE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "28",
+      "slug": "island",
+      "title": "云岛工坊",
+      "source": {
+        "title": "模拟城市",
+        "referenceId": "simcity",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；参考《SimCity 4 Deluxe》发行资料，不把各代城市系统混用。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "道路、预算和居民需求相互影响，玩家能够提出一个布局假设并观察整座城市怎样回应；建设结果具有可见的个人印记。"
+      },
+      "implemented": [
+        "12关9×7或7×9固定土地；路连通、住宅/供水/食物/工坊/花园",
+        "离散回合供需、固定入住/税收、连续稳定目标与6–8回合期限"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "让岛屿稳定住人的经营感、修通供给后的秩序感",
+        "action": "铺路并安排供水、食物、工坊、住宅和花园覆盖",
+        "feedback": "连通/供需改变，人口入住、税收和稳定回合增加"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "开放城市持续发展",
+          "status": "本作是小网格、短回合、固定产链题",
+          "affectedValue": "长期打造一座自己的城市的表达空间较小",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "居民生活与城市反馈的细节",
+          "status": "现证据以需求与资源结算为主",
+          "affectedValue": "是否感到有人在这里生活，而非完成公式，需要另做体验验证",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 354,
+          "line_end": 366,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L354-L366",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2066,
+          "line_end": 2092,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2066-L2092",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ISLAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ISLAND_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ISLAND_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "29",
+      "slug": "orbit",
+      "title": "星环落块",
+      "source": {
+        "title": "俄罗斯方块",
+        "referenceId": "tetris",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；不同版本的旋转、保留与计分规则可能不同。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "official_fact",
+        "facts": [
+          {
+            "text": "Tetris官方2024年40周年公告称，Tetris全球累计售出超过5.2亿份。",
+            "url": "https://tetris.com/news/world-tetris-day-press-release-2024",
+            "sourceLabel": "Tetris官方40周年公告",
+            "date": "2024-06-06",
+            "scope": "Tetris品牌/历代累计口径，不是某一旋转规则版本",
+            "limit": "这证明官方报告的历史商业规模，不证明任何特定模式或机制的因果贡献。"
+          }
+        ],
+        "caveat": "流行事实与“为什么受欢迎”的因果解释分开。现有目录的classic字段是设计性描述，不是销量、留存或因果研究。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "几条规则不断产生新的空间问题，落块压力迫使玩家边整理边决策；一次清行能同时解决危险和创造新空间。"
+      },
+      "implemented": [
+        "12关8×16落块；7种四格、固定种子七袋、3枚预览",
+        "自定义踢墙、有限锁定额度，清行且清空原始星尘获胜"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把混乱拼整齐的秩序感、险局清行后的释放",
+        "action": "旋转、平移和软硬降，把缺口补成整行",
+        "feedback": "满行消除、堆高下降、星尘被清掉，下一枚留下空间"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "某个Tetris规则版本的连续节奏",
+          "status": "本作自定义棋盘/踢墙/计分且有限额度",
+          "affectedValue": "规则熟悉度和肌肉记忆不能直接沿用原作期待",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "无尽与对战",
+          "status": "明确没有",
+          "affectedValue": "持续保持专注或压过对手的情绪目标未包含",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 367,
+          "line_end": 379,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L367-L379",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1027,
+          "line_end": 1053,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1027-L1053",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ORBIT_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORBIT_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORBIT_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "30",
+      "slug": "duel",
+      "title": "风庭对决",
+      "source": {
+        "title": "街头霸王Ⅱ",
+        "referenceId": "street-fighter-2",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指《街头霸王Ⅱ》及其迭代语境；不同修订版并非完全相同。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "距离和出招时机让玩家既读对手也暴露自己；角色风格与招式克制让对抗值得反复钻研。"
+      },
+      "implemented": [
+        "8场单人横向攻防；短拍/长挑/定向格挡/退步闪避与耐力",
+        "60秒、固定对手节奏、不能换边穿身、剩余体力与时间计分"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "读中对手的敏锐、挡住重击后反击的利落",
+        "action": "观察前摇，保持距离、定向格挡或退步后出手",
+        "feedback": "格挡擦伤、耐力变化、空挥和命中反馈可辨"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "角色选择、跳跃、投技与完整招式维度",
+          "status": "明确没有",
+          "affectedValue": "个人打法身份、立体攻防和更深读招空间明显缩减",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "与真人互相适应",
+          "status": "本作为固定节奏的单人对手",
+          "affectedValue": "可学习AI提供练习，但不等于双方不断猜招的对抗张力",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 380,
+          "line_end": 392,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L380-L392",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 822,
+          "line_end": 848,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L822-L848",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/DUEL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/DUEL_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/DUEL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "31",
+      "slug": "expedition",
+      "title": "苔原远征",
+      "source": {
+        "title": "帝国时代Ⅱ",
+        "referenceId": "age-empires-2",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指《帝国时代Ⅱ》；参考决定版，重制内容与早期版本有差异。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "经济与军事争夺同一份资源，侦察结果会改变投入方向；玩家必须同时考虑眼前战斗与稍后发展的代价。"
+      },
+      "implemented": [
+        "8关12×8全图可见即时策略；一种晶露、工人及2类战士",
+        "采集/交付/排队生产、编队寻路、基地/据点/护送，120秒场景"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "同时照看采集和前线的统筹、计划按时兑现的胜任",
+        "action": "采露交付、排队生产，组织编队完成据点或护送",
+        "feedback": "资源变成援军，队伍到位并完成明确场景目标"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "多资源、建筑树与时代发展",
+          "status": "本作单资源且无建筑树",
+          "affectedValue": "从经济选择长出军事实力的长期决策链被压缩",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "雾战与完整经济AI",
+          "status": "明确没有，全图可见且公开有限增援",
+          "affectedValue": "侦察未知、判断对手发展和临场改计划的压力减少",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 393,
+          "line_end": 405,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L393-L405",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1609,
+          "line_end": 1635,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1609-L1635",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/EXPEDITION_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/EXPEDITION_SPEC.md",
+          "line_start": 13,
+          "line_end": 14,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_SPEC.md#L13-L14",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/EXPEDITION_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "32",
+      "slug": "feather",
+      "title": "星羽同伴",
+      "source": {
+        "title": "宝可梦",
+        "referenceId": "pokemon",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "以主系列为主；不同世代与外传的规则、平台和地图不同。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "发现、收集与培育把队伍变成个人旅程的一部分；属性配合提供策略，交换又把个人收藏延伸到玩家关系。"
+      },
+      "implemented": [
+        "8章固定3同伴短篇回合战斗；风/苔/泉相克、技能/护盾/状态",
+        "有限能量与补给、敌方意图预览，最多18轮；每章独立预算"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "固定同伴配合的信赖、救回队员后反败为胜的牵挂",
+        "action": "根据敌方意图选择技能、护盾、属性克制和有限补给",
+        "feedback": "队员承伤/恢复/复起，状态被解除，战斗推进至下一章"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "捕捉、地图探索与成长树",
+          "status": "明确没有",
+          "affectedValue": "发现新伙伴和亲手养成个人队伍的核心依恋途径缺失",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "交换与玩家连接",
+          "status": "无联网系统",
+          "affectedValue": "收藏互补和与他人分享队伍的关系价值未包含",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 406,
+          "line_end": 418,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L406-L418",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1984,
+          "line_end": 2010,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1984-L2010",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FEATHER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FEATHER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FEATHER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "33",
+      "slug": "echo",
+      "title": "回声走廊",
+      "source": {
+        "title": "DOOM",
+        "referenceId": "doom",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "指初代经典《DOOM》，不是同名的后期重启作品。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "空间探索与资源管理结合，玩家在找路时也得判断何时战斗、用什么武器；移动和火力选择让危险场面有不同解法。"
+      },
+      "implemented": [
+        "8张11×9单层第一人称迷宫；光线投射、水平移动/转向、钥匙门",
+        "单一光脉冲、有限弹药/生命，3类静止预警构体，90秒"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "转角找到出口的方向感、避开预警后击破威胁的冷静",
+        "action": "水平移动/侧移、瞄准射击，搜集钥匙并打开出口",
+        "feedback": "光束落空、构体平息、门锁开启和资源消耗可见"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "动态敌人压力与武器选择",
+          "status": "当前3类静止预警构体、单一光脉冲",
+          "affectedValue": "追击与不同武器解决局势的战斗张力被简化",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "多高度关卡与更大空间变化",
+          "status": "明确为8张单层小迷宫",
+          "affectedValue": "探索层次较窄；不能仅靠第一人称视角代表DOOM体验",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 419,
+          "line_end": 431,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L419-L431",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2265,
+          "line_end": 2291,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2265-L2291",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ECHO_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ECHO_SPEC.md",
+          "line_start": 19,
+          "line_end": 20,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_SPEC.md#L19-L20",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ECHO_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "34",
+      "slug": "escort",
+      "title": "街巷护送",
+      "source": {
+        "title": "双截龙",
+        "referenceId": "double-dragon",
+        "binding": "sourceGame明确绑定原目录条目",
+        "version": "系列条目；街机与 FC 各代的合作模式和招式有差别。",
+        "versionNote": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "近身距离、走位和连招把敌群变成可主动组织的战斗；一段段清场让推进有明确节拍。"
+      },
+      "implemented": [
+        "8关横向纵深推进与灯车护送；3段遭遇/关、4类对手",
+        "3式连击、闪步、2次恢复；原创AI辅助有限姿态精灵与分层场景"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "护着同行者向前的担当、连续击退来敌的力量感",
+        "action": "绕到有利纵深，用三式连击和闪步保护灯车",
+        "feedback": "命中/击退、连击衔接、路口开放，灯车继续前行"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "跳跃、投技和武器等动作变化",
+          "status": "当前明确无跳跃、投技或装备经济",
+          "affectedValue": "主动表达战斗风格和处理敌群的方式较少",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "商业规模逐帧动画与打击质感",
+          "status": "明确只有有限姿态；质感未获用户验收",
+          "affectedValue": "数值命中不能替代重量、接触感与完整动作演出",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 432,
+          "line_end": 444,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L432-L444",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 727,
+          "line_end": 753,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L727-L753",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ESCORT_SPEC.md",
+          "line_start": 19,
+          "line_end": 20,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_SPEC.md#L19-L20",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ESCORT_SPEC.md",
+          "line_start": 28,
+          "line_end": 29,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_SPEC.md#L28-L29",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ESCORT_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "35",
+      "slug": "court",
+      "title": "晴湾篮场",
+      "source": {
+        "title": "未明确",
+        "referenceId": null,
+        "binding": "未绑定，需确定",
+        "version": "未明确",
+        "versionNote": "不能根据题材相似性推定原作；需先确认原作和版本。",
+        "suggestedReference": {
+          "id": "nba-jam",
+          "title": "NBA Jam",
+          "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+          "catalogue_version": "以初代街机作品为主；后续 Tournament Edition 和重启作另有内容。",
+          "confirmationRequired": true
+        }
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "原作尚未确定，因此不把候选作品的流行事实归给本作。候选机制可用于讨论，不能写成既定来源。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "若选NBA Jam作参考，二对二简化规则能缩短上手距离，夸张动作把一次得分做成值得庆祝的事件；这只是待定方向的设计解释。"
+      },
+      "implemented": [
+        "8场原创2对2篮球；移动、蓄力投篮、传球/抢断、换人、篮板",
+        "2/3分、20秒进攻、20秒加时；只保存解锁/最好分差，刷新重新开场"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "与AI队友配合得分的默契、逆转比分的兴奋",
+        "action": "观察空位，传球后接近篮筐蓄力出手，失球后抢断或抢篮板",
+        "feedback": "球权转换、投篮结果、2/3分和加时改变比赛局势"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "源作品与具体版本",
+          "status": "尚未绑定",
+          "affectedValue": "不能先假定NBA Jam式超现实演出就是已约定目标",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "夸张得分演出与可感到的队友配合",
+          "status": "目前范围只证明基础对抗；体验待验证",
+          "affectedValue": "若每个进球只是加分，街机庆祝感与默契感可能不足",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "preview/court/index.html",
+          "line_start": 1,
+          "line_end": 2,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/index.html#L1-L2",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/court/index.html",
+          "line_start": 1,
+          "line_end": 2,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/index.html#L1-L2",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/court/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "docs/court-preview-qa/README.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/court-preview-qa/README.md",
+          "claim": "预览验证范围；不等同正式发布或真实浏览器完整验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "36",
+      "slug": "repair",
+      "title": "雨街修理所",
+      "source": {
+        "title": "未明确",
+        "referenceId": null,
+        "binding": "未绑定，需确定",
+        "version": "未明确",
+        "versionNote": "不能根据题材相似性推定原作；需先确认原作和版本。",
+        "suggestedReference": {
+          "id": "theme-hospital",
+          "title": "主题医院",
+          "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+          "catalogue_version": "指 Bullfrog 原作；《双点医院》是后来的不同作品。",
+          "confirmationRequired": true
+        }
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "原作尚未确定，因此不把候选作品的流行事实归给本作。候选机制可用于讨论，不能写成既定来源。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "原作把服务链、预算和排队冲突变成可观察、可干预的经营；开发者还以夸张的修复前后变化和就地图标提高可读性。我们的解释是：选择生效可承载掌控感，过程本身也能成为奖励。这不是销量因果证明。",
+        "sourceReferences": [
+          {
+            "label": "Theme Hospital PC manual, original publisher document hosted by a third-party archive",
+            "url": "https://retrogamer.biz/wp-content/uploads/2015/10/Theme-Hospital-manual.pdf",
+            "scope": "原作机制/开发者设计说明，非玩家情绪或销量因果验证"
+          },
+          {
+            "label": "PCGamesN — How the makers of Theme Hospital made hospital wards and diseases funny",
+            "url": "https://www.pcgamesn.com/theme-hospital/theme-hospital-peter-molyneux-making-of",
+            "scope": "原作机制/开发者设计说明，非玩家情绪或销量因果验证"
+          },
+          {
+            "label": "Retro Gamer / GamesRadar — The making of Theme Hospital",
+            "url": "https://www.gamesradar.com/the-making-of-theme-hospital-the-legendary-sim-that-paved-the-way-for-two-point-hospital/",
+            "scope": "原作机制/开发者设计说明，非玩家情绪或销量因果验证"
+          }
+        ]
+      },
+      "implemented": [
+        "8日机器人修理所；接待/诊断、机械与电路工位、收银排队",
+        "固定A–F工位、建造/派技师/升级、耐心流失、故障维修及工资；日程75–120秒"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "让拥堵流程恢复顺畅的能干、让街坊重新工作的小温暖",
+        "action": "建工位、派技师、升级或保养，机器人经过需求工序后实际结账",
+        "feedback": "队列与工时改变、维修动作出现、完成数/现金与次日解锁变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "个体需求与修后结果",
+          "status": "目前角色类型主要影响工序、收费和工时；未见个体需求/修后街区结果字段",
+          "affectedValue": "可能让玩家只看到订单完成，难以感到具体帮到了谁",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "经营选择的角色化后果",
+          "status": "当前后果主要体现在队列、现金、流失和数值目标",
+          "affectedValue": "流程优化具备承载胜任感的条件；牵挂与照料价值仍需可见人物结果承接",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "preview/repair/index.html",
+          "line_start": 81,
+          "line_end": 82,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/index.html#L81-L82",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/repair/index.html",
+          "line_start": 60,
+          "line_end": 61,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/index.html#L60-L61",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/repair/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "docs/repair-preview-qa/README.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/repair-preview-qa/README.md",
+          "claim": "预览验证范围；不等同正式发布或真实浏览器完整验收"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。",
+      "iterationSuggestion": {
+        "title": "Theme Hospital（1997，Bullfrog / EA）",
+        "focus": "本轮建议学习服务链、预算调度与可视化异常；继续使用原创机器人题材，不等价复刻医院内容。",
+        "boundary": "这是本轮建议，尚待确认；历史原作绑定仍为未明确，不表示已复刻或获得原作素材授权。",
+        "sourceUrl": "https://www.ea.com/games/theme/theme-hospital",
+        "sourceLabel": "EA 原作资料"
+      }
+    },
+    {
+      "number": "38",
+      "slug": "coaster",
+      "title": "云岬游乐园",
+      "source": {
+        "title": "未明确",
+        "referenceId": null,
+        "binding": "未绑定，需确定",
+        "version": "未明确",
+        "versionNote": "不能根据题材相似性推定原作；需先确认原作和版本。",
+        "suggestedReference": {
+          "id": "rollercoaster",
+          "title": "过山车大亨",
+          "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+          "catalogue_version": "系列条目；参考《Deluxe》所含初代与扩展，后续作品系统有别。",
+          "confirmationRequired": true
+        }
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "原作尚未确定，因此不把候选作品的流行事实归给本作。候选机制可用于讨论，不能写成既定来源。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "若选过山车大亨作参考，自由设计与经营约束会互相挑战：自己造出的轨道既要有趣，也得可靠并得到游客回应。"
+      },
+      "implemented": [
+        "8座固定公园，每园12段固定环线；为轨道配提升/驱动/制动/倾斜模块",
+        "预算内配置→空车试跑→安全评分→有限3班营收/口碑目标"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "把方案调安全的工程掌控、看列车顺利跑完的放心",
+        "action": "在固定轨段装提升/驱动/制动/倾斜模块，试车后修正",
+        "feedback": "诊断指出问题，速度/刺激/舒适达标，载客后营收与口碑增加"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "自由铺轨与公园经营系统",
+          "status": "轨形/高度/弯径固定，仅替换模块；原作绑定未定",
+          "affectedValue": "个人创作一座乐园的表达空间不在当前范围",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "游客具体反应与长期公园成长",
+          "status": "现范围为有限班次评分和收益",
+          "affectedValue": "被游客喜欢和看公园逐步繁荣的价值尚缺完整载体",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "preview/coaster/index.html",
+          "line_start": 28,
+          "line_end": 29,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/index.html#L28-L29",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/coaster/index.html",
+          "line_start": 39,
+          "line_end": 40,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/index.html#L39-L40",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/coaster/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    },
+    {
+      "number": "39",
+      "slug": "kart",
+      "title": "林野杯赛",
+      "source": {
+        "title": "马力欧卡丁车",
+        "referenceId": "mario-kart",
+        "binding": "页面机制参考链接明确绑定系列",
+        "version": "系列条目；角色、车辆与反重力等机制依版本不同。",
+        "versionNote": "未锁定具体对标版本。"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "现有已核目录/项目资料没有足以引用的销量、下载、活跃度或获奖证据；这里不补编流行数据，也不把有发行或被收入图鉴当成流行证明。下面只给设计解释。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "漂移让技术可以积累成出弯优势，道具又会改变名次；两者交替，使领先者需要防守、落后者仍能期待反超。"
+      },
+      "implemented": [
+        "8条原创赛道、4车同场2圈；自动加速、刹车、漂移蓄力冲刺",
+        "单槽3种道具：冲刺/护盾/近距脉冲；名次及时限目标、本地恢复"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "压好弯线的熟练、抓准道具时机反超的开心",
+        "action": "转向蓄漂移后释放冲刺，选择三种道具的使用时机",
+        "feedback": "速度短暂提高、对手受影响，实时名次和完赛顺位变化"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "具体Mario Kart版本与赛道机关体系",
+          "status": "只绑定系列；现为4车双圈与3种原创道具",
+          "affectedValue": "各代的比赛节奏和场景惊喜不能混称已保留",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        },
+        {
+          "mechanism": "真人同场的热闹与互相捣乱",
+          "status": "当前本机单人AI竞速，无联网",
+          "affectedValue": "AI名次变化不能代替朋友间竞赛与玩笑的关系价值",
+          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 48,
+          "line_end": 49,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L48-L49",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 49,
+          "line_end": 50,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L49-L50",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/kart/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 12,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L12-L12",
+          "claim": "机制参考链接绑定目录Mario Kart系列"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2480,
+          "line_end": 2505,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2480-L2505",
+          "claim": "原目录Mario Kart系列与版本说明"
+        }
+      ],
+      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+    }
+  ]
+}
