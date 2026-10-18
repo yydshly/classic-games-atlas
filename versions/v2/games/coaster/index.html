@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f6f1e6">
+  <meta name="description" content="云岬游乐园 v2：改三个峰顶的高程，实测速度与乘坐体验，看两类游客如何选择。八园独立进度，保留 v1。">
+  <title>云岬游乐园 v2 · 轨道设计与游客反馈</title>
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./coaster.css">
+  <script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <header class="page-header"><a href="../../../../#experiments" class="back-link">← 经典游戏图鉴</a><a class="version-link" href="../../../../preview/coaster/">保留的 v1</a><a class="version-link" href="./comparison.html">设计对照</a><span class="candidate-label" title="有限增强候选；v2 独立存档，不覆盖 v1。">v2 · 有限轨道设计</span></header>
+  <main>
+    <section class="masthead" aria-labelledby="page-title"><div><p class="eyebrow">A SMALL PARK. A GRAND LITTLE RIDE.</p><h1 id="page-title">云岬游乐园<span>CLOUDCAPE COASTER CLUB</span></h1></div><p class="masthead-note">把一点勇气，<br>建成快乐的形状。<span aria-hidden="true">✷</span></p></section>
+    <div class="game-layout">
+      <section class="park-column" aria-label="游乐园轨道与运行控制">
+        <div class="chapter-heading"><div><span id="chapter-number" class="chapter-number">PARK 01 / 08</span><strong id="chapter-name">云岬游乐园</strong></div><div class="toolbar"><button id="help" type="button" aria-haspopup="dialog">手册 <kbd>H</kbd></button><button id="pause" type="button" disabled>暂停 <kbd>P</kbd></button></div></div>
+        <div class="resource-ledger" aria-label="公园账本"><div><span>建造余额</span><strong id="cash">0</strong><small id="cost">轨道模块 0</small></div><div><span>累计营收</span><strong id="revenue">0</strong><small id="revenue-target">目标 0</small></div><div><span>公园口碑</span><strong id="reputation">0</strong><small id="reputation-target">目标 0</small></div><div><span>运营班次</span><strong id="runs">0 / 0</strong><small>有限班次 · 达标即完成</small></div></div>
+        <div class="canvas-wrap" id="canvas-wrap"><canvas id="park" width="1200" height="800" role="img" aria-label="云岬游乐园的十二段固定地面走向的环线。三个峰顶可以升降，可点选轨道；下方轨道索引提供全部键盘操作。"></canvas><span class="map-badge" id="map-badge">DESIGN STUDIO</span></div>
+        <div class="map-caption"><span id="map-status">轨道已就位，等待你的第一份设计。</span><span>点击选段 · 三处峰顶可升降</span></div>
+
+        <div class="operation-bar" role="group" aria-label="工程与运营"><button id="test-ride" type="button" class="primary">空车试跑 <span>T</span></button><button id="open-park" type="button">开放载客 <span>O</span></button><button id="redesign" type="button">返回设计 <span>D</span></button><button id="retry" type="button">重试本园 <span>R</span></button></div>
+        <section class="height-panel" aria-labelledby="height-title">
+          <div class="height-heading"><h2 id="height-title">把高程，变成你的设计。</h2><div class="height-picks" role="group" aria-label="快速选择可改造峰顶"><button id="height-pick-0" type="button">1号峰</button><button id="height-pick-3" type="button">4号峰</button><button id="height-pick-6" type="button">7号峰</button></div></div>
+          <p id="height-detail" class="detail-copy"></p><div class="height-controls" role="group" aria-label="当前峰顶高程"><button id="height-lower" type="button">降低 4 米</button><button id="height-raise" type="button">升高 4 米</button><button id="height-reset" type="button">恢复原高</button></div><p id="height-note" class="fine-note"></p>
+        </section>
+        <section class="module-panel" aria-labelledby="selected-title"><p class="panel-label">TRACK WORKSHOP <span id="selected-code">01 / 12</span></p><h2 id="selected-title">选择一段轨道</h2><p id="selected-facts" class="selected-facts"></p><p id="selected-description" class="detail-copy"></p><div id="module-controls" class="module-controls" role="group" aria-label="当前轨道可安装模块"></div><p id="module-note" class="fine-note"></p></section>
+
+        <section class="guest-panel" aria-labelledby="guest-heading"><div class="section-heading"><h2 id="guest-heading">游客会怎么选？</h2><span id="guest-status">先完成安全试车</span></div><div class="guest-groups">
+        <article id="guest-gentle" class="guest-card" data-mood="waiting"><span class="guest-face" aria-hidden="true"><i></i></span><div><h3>舒缓派</h3><strong id="guest-gentle-count">等待实测</strong><p id="guest-gentle-reason"></p></div></article>
+        <article id="guest-adventure" class="guest-card adventure" data-mood="waiting"><span class="guest-face" aria-hidden="true"><i></i></span><div><h3>挑战派</h3><strong id="guest-adventure-count">等待实测</strong><p id="guest-adventure-reason"></p></div></article>
+        </div><p id="guest-income" class="detail-copy"></p><p id="guest-return" class="fine-note"></p></section>
+        <section id="state-card" class="state-card" aria-labelledby="state-title"><div><p id="state-kicker" class="eyebrow">FIRST, THE BLUEPRINT</p><h2 id="state-title">让快乐，安全出发。</h2><p id="state-copy">为固定环线配置模块，然后派出空车试跑。</p><p id="state-summary" class="state-summary"></p></div><button id="primary-action" type="button" class="primary">开始试车 ↗</button></section>
+
+        <p id="operation-note" class="fine-note">试车不消耗运营班次。只有安全认证后的方案才能开放载客。</p>
+        <p id="live-message" class="live-message" role="status" aria-live="polite">先选轨道，再安装模块。每次修改后都需要重新试车。</p>
+        <section class="segment-section" aria-labelledby="segment-heading"><div class="section-heading"><h2 id="segment-heading">轨道索引</h2><span>← → 选段 · Enter / 空格确认</span></div><div id="segment-list" class="segment-list" role="group" aria-label="十二段轨道选择"></div><p class="fine-note">地面走向和转弯半径固定。1、4、7号段末端可以改高；每段仍只装一种模块。</p></section>
+      </section>
+      <aside class="planner" aria-label="公园任务、模块配置与试车诊断">
+        <section class="chapter-brief"><p class="panel-label">THE ASSIGNMENT <span>本园委托</span></p><h2 id="brief-title">把轨道变成旅程。</h2><p id="chapter-tip"></p><ul id="objectives" class="objectives"></ul><p id="brief-note" class="fine-note"></p><button id="chapters" type="button" class="text-button" aria-haspopup="dialog">查看八座公园 →</button></section>
+
+        <section class="diagnosis-panel" aria-labelledby="diagnosis-title"><p class="panel-label">THE TEST REPORT <span id="report-status">等待试车</span></p><h2 id="diagnosis-title">每一圈，都有答案。</h2><div class="report-metrics"><div><span>刺激度</span><strong id="thrill">—</strong><small id="thrill-goal"></small></div><div><span>舒适度</span><strong id="comfort">—</strong><small id="comfort-goal"></small></div><div><span>最高速度</span><strong id="max-speed">—</strong><small>米 / 秒</small></div></div><p id="report-summary" class="detail-copy">试车后，这里会给出安全状态、完整评分，以及需要调整的具体轨道。</p><ul id="diagnosis-list" class="diagnosis-list"></ul><div id="segment-report" class="segment-report"></div></section>
+        <section class="record-panel"><p class="panel-label">A LITTLE SOUVENIR <span>个人记录</span></p><p id="best-record">这座公园，等待第一张通关票根。</p><p id="save-note" class="fine-note">未结束的当前局保存方案；已结束的局保留通关记录与解锁。仅存本机，不上传数据。</p><p id="restore-note" class="warning-note" hidden></p></section>
+      </aside>
+    </div>
+
+    <details class="reference-notes"><summary>参考原作、这版做到了什么，以及差距</summary><div>
+      <h2>RollerCoaster Tycoon 1 / Deluxe · Windows</h2>
+      <p>参考价值：自己搭轨道、试车发现问题，再看游客愿不愿意坐。创造的自由与预算约束相遇，一点改动会连到速度、感受和生意，这也是本轮选择借鉴的乐趣。此判断是设计分析，不代表我们测量过原作受欢迎的全部原因。</p>
+      <p>v1 是固定高程的模块配置。v2 新增三处峰顶的有限升降：高程会真实改变相邻坡段长度、重力能量、速度与支架画面；两类游客的意愿影响实际上座、营收和口碑。原八园保留，两个版本分别存档。</p>
+      <p>明确差距：仍不能自由延伸、旋转或连接新轨道，也没有全园道路、商店、员工、独立游客寻路及长期经营。原作使用兴奋、强度、恶心评级；这里的刺激/舒适是原创简化模型，不能等同原作物理或真实工程。</p>
+      <p><a href="https://atari.com/products/rollercoaster-tycoon-deluxe" target="_blank" rel="noopener">Atari 官方 Deluxe 介绍</a> · <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/285310/manuals/rollercoaster_tycoon.pdf?t=1733161367" target="_blank" rel="noopener">原版 Windows 手册（轨道、试车、游客）</a> · <a href="https://www.arcadeattack.co.uk/chris-sawyer-interview/" target="_blank" rel="noopener">Chris Sawyer 访谈</a></p>
+      <p><a href="../../../../preview/coaster/">打开原 v1（八园与旧进度保留）</a> · <a href="./comparison.html">查看同一状态的设计对照与验证边界</a></p>
+    </div></details>
+    <footer class="page-footer"><span>38 / 云岬游乐园</span><p>原创有限轨道工程 · 八座公园 · 高程 / 试车 / 游客反馈</p><a href="../../../../#experiments">回到图鉴 ↗</a></footer>
+  </main>
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><div><p class="eyebrow">YOUR FIRST DAY AT THE PARK</p><h2 id="help-title">园长的随身手册</h2></div><button id="help-close" type="button" class="close-button" aria-label="关闭手册">×</button></div><div class="manual-grid"><section><b>01 / 读懂环线</b><p>每园有十二段环线，地面走向与弯道半径固定。点击选段，改造1、4、7号段末端的峰顶；同一节点连接的两个坡段、长度、速度和画面会一起变化。每段只装一种模块。</p></section><section><b>02 / 在预算内配置</b><p id="manual-budget"></p><div id="manual-modules" class="manual-modules"></div></section><section><b>03 / 先派空车</b><p>空车试跑不计入载客班次，也不产生营收。诊断会给出停滞、速度或转弯问题所在的轨道。修改高程或模块都会清除旧报告，必须重新试车。</p></section><section><b>04 / 安全与达标</b><p id="manual-rating"></p></section><section><b>05 / 有限班次的经营</b><p id="manual-operation"></p></section><section><b>06 / 随时停下来</b><p>暂停会停止列车和计时。离开窗口、打开手册或公园列表也会暂停；关闭弹窗后仍保持暂停，按“继续”才恢复。刷新后，未结束的当前局会恢复方案，保存中的试车或载客会暂停等待。已结束的局只保留通关记录与解锁；没有可恢复的当前局时，进入最新已解锁公园。</p></section></div><p class="fine-note" id="simulation-note">速度与受力是游戏简化模拟，不能用于真实设施设计或安全认证。</p><p class="shortcut-note">快捷键：P / Esc 暂停或继续，T 试车，O 开放，D 返回设计，R 重试，H 手册。输入框和弹窗内不触发全局快捷键。</p><button id="help-confirm" type="button" class="primary">明白了，回到公园</button></dialog>
+  <dialog id="chapters-dialog" aria-labelledby="chapters-title"><div class="dialog-heading"><div><p class="eyebrow">EIGHT PARKS, EIGHT LITTLE ADVENTURES</p><h2 id="chapters-title">沿着海岸，逐园启程。</h2></div><button id="chapters-close" type="button" class="close-button" aria-label="关闭公园列表">×</button></div><p class="detail-copy">完成本园的营收与口碑目标，解锁下一园。已完成的公园可以重访。</p><div id="chapter-list" class="chapter-list"></div></dialog>
+  <noscript><p class="noscript">此游戏需要开启 JavaScript。请启用后刷新；不会上传你的游玩数据。</p></noscript>
+</body>
+</html>
+

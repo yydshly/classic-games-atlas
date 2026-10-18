@@ -1,0 +1,683 @@
+{
+  "evidence": "原生 Canvas 离屏渲染，不是真浏览器/手机测试。All frames use frozen snapshots reached only through public commands and real fixed-step engine simulation. No fabricated certification, guests, train positions or revenue.",
+  "browserVerified": false,
+  "sourceHashes": {
+    "v1Engine": "54b15e62a5e3be6af4cf1f5426877ab6e6a5aea11383cc63c90d552851759ffd",
+    "v1Renderer": "7977174b5f390bc18b990942d802306ee4c15d5668a53a2edd9f02f5a97ef3f4",
+    "v1Levels": "5dbff9b3cd8a9653c6e57fd27725aa8b8cde52b4fb09504d6826854cd823601a",
+    "v2Engine": "dbb4f449612cca37f31ffa07f24c661d50ae4798aaad361d72cd920b1c49f6c2",
+    "v2Renderer": "7db4ae4c85c876808a034b8a030c2f3f382300bdc38d0b310d94310aea8f89f0",
+    "v2Levels": "5dbff9b3cd8a9653c6e57fd27725aa8b8cde52b4fb09504d6826854cd823601a"
+  },
+  "commonConfiguration": {
+    "level": 1,
+    "liftSegment": 1,
+    "brakeSegment": 12,
+    "otherSegments": "rail"
+  },
+  "checks": {
+    "legalCommandsOnly": true,
+    "completeTrialBeforeDesignCaptures": true,
+    "sameModuleConfiguration": true,
+    "sourcesStableDuringCapture": true,
+    "renderReadOnly": true,
+    "normalOperationProgress": true,
+    "aboardMatchesCohorts": true,
+    "completedCircuitFeedback": true
+  },
+  "captures": [
+    {
+      "file": "v1-28m-after-test-offscreen.png",
+      "note": "Reference v1. Chapter 1, 28 m first peak, segment 1 lift and segment 12 station brake, all others plain rail. Full safe empty trial completed; design state.",
+      "sha256": "61800697e33737cb51b588a0d2d8c11dd9a5ebe9655774cd7bbdf49c644bd8da",
+      "state": {
+        "version": "v1",
+        "level": 1,
+        "state": "design",
+        "tick": 1164,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          28,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": null,
+        "lengths": [
+          31.38470965295043,
+          34.655446902326915,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 220,
+        "cash": 160,
+        "train": {
+          "segment": 11,
+          "t": 1,
+          "speed": 10,
+          "x": 220,
+          "y": 440,
+          "z": 8,
+          "lap": 0
+        },
+        "runs": 0,
+        "aboard": 0,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 33.236372782253504,
+          "comfort": 97.19527196005409,
+          "maxSpeed": 20.778382688947932,
+          "riders": 10,
+          "rideRevenue": 160,
+          "rideReputation": 90,
+          "guestGroups": null
+        },
+        "lastGuestFeedback": null
+      }
+    },
+    {
+      "file": "v2-28m-after-test-offscreen.png",
+      "note": "Candidate v2. Same chapter and modules as v1, first peak 28 m. Public height offset 0 m; complete real safe empty-car trial; design state. Displayed cohort response is a test forecast, no ride completed.",
+      "sha256": "05715fd6ad8612df6afb449e2ae471ebcfc923104acb6cbf429507c0ae1ad1b4",
+      "state": {
+        "version": "v2",
+        "level": 1,
+        "state": "design",
+        "tick": 1164,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          28,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lengths": [
+          31.38470965295043,
+          34.655446902326915,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 220,
+        "cash": 160,
+        "train": {
+          "segment": 11,
+          "t": 1,
+          "speed": 10,
+          "x": 220,
+          "y": 440,
+          "z": 8,
+          "lap": 0
+        },
+        "runs": 0,
+        "aboard": 0,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 33.236372782253504,
+          "comfort": 97.19527196005409,
+          "maxSpeed": 20.778382688947932,
+          "riders": 8,
+          "rideRevenue": 128,
+          "rideReputation": 74,
+          "guestGroups": [
+            {
+              "id": "gentle",
+              "name": "舒缓派",
+              "waiting": 5,
+              "satisfaction": 100,
+              "reason": "起伏与转弯舒服，愿意带朋友再来。",
+              "boarding": 5
+            },
+            {
+              "id": "adventure",
+              "name": "挑战派",
+              "waiting": 5,
+              "satisfaction": 65,
+              "reason": "还想要更强的下坠感，部分游客留在站台。",
+              "boarding": 3
+            }
+          ]
+        },
+        "lastGuestFeedback": null
+      }
+    },
+    {
+      "file": "v2-32m-after-test-offscreen.png",
+      "note": "Candidate v2. Same chapter and modules as v1, first peak 32 m. Public height offset 4 m; complete real safe empty-car trial; design state. Displayed cohort response is a test forecast, no ride completed.",
+      "sha256": "6e58b512e926607a99ed7b97e2727eec48e743f69b7b7261dd715106233c8f89",
+      "state": {
+        "version": "v2",
+        "level": 1,
+        "state": "design",
+        "tick": 1104,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          32,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lengths": [
+          34.07345007480164,
+          37.107950630558946,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 252,
+        "cash": 128,
+        "train": {
+          "segment": 11,
+          "t": 1,
+          "speed": 10,
+          "x": 220,
+          "y": 440,
+          "z": 8,
+          "lap": 0
+        },
+        "runs": 0,
+        "aboard": 0,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 36.88933792010167,
+          "comfort": 95.17438832120608,
+          "maxSpeed": 22.54826899251046,
+          "riders": 9,
+          "rideRevenue": 144,
+          "rideReputation": 84,
+          "guestGroups": [
+            {
+              "id": "gentle",
+              "name": "舒缓派",
+              "waiting": 5,
+              "satisfaction": 100,
+              "reason": "起伏与转弯舒服，愿意带朋友再来。",
+              "boarding": 5
+            },
+            {
+              "id": "adventure",
+              "name": "挑战派",
+              "waiting": 5,
+              "satisfaction": 87,
+              "reason": "还想要更强的下坠感，部分游客留在站台。",
+              "boarding": 4
+            }
+          ]
+        },
+        "lastGuestFeedback": null
+      }
+    },
+    {
+      "file": "v2-36m-after-test-offscreen.png",
+      "note": "Candidate v2. Same chapter and modules as v1, first peak 36 m. Public height offset 8 m; complete real safe empty-car trial; design state. Displayed cohort response is a test forecast, no ride completed.",
+      "sha256": "8b7335926cf3dc2380ef5f935a0cf915333dd55f069fe0594960e9a4d3e0bb20",
+      "state": {
+        "version": "v2",
+        "level": 1,
+        "state": "design",
+        "tick": 1072,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          36,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": [
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lengths": [
+          37,
+          39.81205847478876,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 284,
+        "cash": 96,
+        "train": {
+          "segment": 11,
+          "t": 1,
+          "speed": 10,
+          "x": 220,
+          "y": 440,
+          "z": 8,
+          "lap": 0
+        },
+        "runs": 0,
+        "aboard": 0,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 40.2216968877132,
+          "comfort": 92.94993666995884,
+          "maxSpeed": 24.185358361365,
+          "riders": 9,
+          "rideRevenue": 144,
+          "rideReputation": 83,
+          "guestGroups": [
+            {
+              "id": "gentle",
+              "name": "舒缓派",
+              "waiting": 5,
+              "satisfaction": 84,
+              "reason": "有些游客觉得起伏太猛，选择留在站台。",
+              "boarding": 4
+            },
+            {
+              "id": "adventure",
+              "name": "挑战派",
+              "waiting": 5,
+              "satisfaction": 100,
+              "reason": "下坠与速度够过瘾，愿意排队体验。",
+              "boarding": 5
+            }
+          ]
+        },
+        "lastGuestFeedback": null
+      }
+    },
+    {
+      "file": "v2-32m-operating-offscreen.png",
+      "note": "Same 32 m design, eight actual simulation seconds after opening. Actual train progress and aboard passengers; no completed-ride feedback yet.",
+      "sha256": "f907655d30257e4228f00c4c87abe06422d96eea64bdbdc9bc83207d08d93c69",
+      "state": {
+        "version": "v2",
+        "level": 1,
+        "state": "operating",
+        "tick": 1584,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          32,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lengths": [
+          34.07345007480164,
+          37.107950630558946,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 252,
+        "cash": 128,
+        "train": {
+          "segment": 3,
+          "t": 0.012438971591530313,
+          "speed": 21.15983839431468,
+          "x": 422.23901488647545,
+          "y": 95.43536400570356,
+          "z": 10.087072801140712,
+          "lap": 0
+        },
+        "runs": 0,
+        "aboard": 9,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 36.88933792010167,
+          "comfort": 95.17438832120608,
+          "maxSpeed": 22.54826899251046,
+          "riders": 9,
+          "rideRevenue": 144,
+          "rideReputation": 84,
+          "guestGroups": [
+            {
+              "id": "gentle",
+              "name": "舒缓派",
+              "waiting": 5,
+              "satisfaction": 100,
+              "reason": "起伏与转弯舒服，愿意带朋友再来。",
+              "boarding": 5
+            },
+            {
+              "id": "adventure",
+              "name": "挑战派",
+              "waiting": 5,
+              "satisfaction": 87,
+              "reason": "还想要更强的下坠感，部分游客留在站台。",
+              "boarding": 4
+            }
+          ]
+        },
+        "lastGuestFeedback": null
+      }
+    },
+    {
+      "file": "v2-32m-returned-offscreen.png",
+      "note": "Same 32 m design after its first entire passenger circuit and return to station. lastGuestFeedback now contains actual completed-ride cohort feedback.",
+      "sha256": "0ddd8da55e9d6a14ceec90c915eaaf8564d5473c40c77f6df0530108820dddf3",
+      "state": {
+        "version": "v2",
+        "level": 1,
+        "state": "operating",
+        "tick": 2208,
+        "selected": 0,
+        "modules": [
+          "lift",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "rail",
+          "brake"
+        ],
+        "heights": [
+          8,
+          32,
+          8,
+          10,
+          17,
+          6,
+          6,
+          14,
+          6,
+          8,
+          8,
+          8
+        ],
+        "heightOffsets": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lengths": [
+          34.07345007480164,
+          37.107950630558946,
+          27.90273284106774,
+          28.38243294715941,
+          32.30325061042619,
+          24.73863375370596,
+          26.68332812825267,
+          27.101660465735307,
+          23.37199178504049,
+          19.209372712298546,
+          8.38525491562421,
+          9.75
+        ],
+        "cost": 252,
+        "cash": 128,
+        "train": {
+          "segment": 0,
+          "t": 0,
+          "speed": 8,
+          "x": 220,
+          "y": 440,
+          "z": 8,
+          "lap": 1
+        },
+        "runs": 1,
+        "aboard": 9,
+        "report": {
+          "safe": true,
+          "approved": true,
+          "testedSegments": 12,
+          "thrill": 36.88933792010167,
+          "comfort": 95.17438832120608,
+          "maxSpeed": 22.54826899251046,
+          "riders": 9,
+          "rideRevenue": 144,
+          "rideReputation": 84,
+          "guestGroups": [
+            {
+              "id": "gentle",
+              "name": "舒缓派",
+              "waiting": 5,
+              "satisfaction": 100,
+              "reason": "起伏与转弯舒服，愿意带朋友再来。",
+              "boarding": 5
+            },
+            {
+              "id": "adventure",
+              "name": "挑战派",
+              "waiting": 5,
+              "satisfaction": 87,
+              "reason": "还想要更强的下坠感，部分游客留在站台。",
+              "boarding": 4
+            }
+          ]
+        },
+        "lastGuestFeedback": [
+          {
+            "id": "gentle",
+            "name": "舒缓派",
+            "waiting": 5,
+            "satisfaction": 100,
+            "reason": "起伏与转弯舒服，愿意带朋友再来。",
+            "boarding": 5
+          },
+          {
+            "id": "adventure",
+            "name": "挑战派",
+            "waiting": 5,
+            "satisfaction": 87,
+            "reason": "还想要更强的下坠感，部分游客留在站台。",
+            "boarding": 4
+          }
+        ]
+      }
+    }
+  ]
+}
