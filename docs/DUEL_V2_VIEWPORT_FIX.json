@@ -1,0 +1,37 @@
+{
+  "kind": "bounded-wide-layout-fix",
+  "changed": [
+    "versions/v2/games/duel/index.html",
+    "versions/v2/games/duel/duel.css"
+  ],
+  "reason": "Public browser at 1181x757 showed battle area height 1153: HUD and lowest controls could not fit together.",
+  "changes": [
+    "At viewport width above 900px, HUD and large scene occupy the left column; 300px controls occupy the right column.",
+    "Reference instructions are below the battle area. Long keyboard explanation moved out of the controls.",
+    "Wide touch controls retain minimum 60px height, utility controls minimum 44px.",
+    "Compact wide header and intro reduce pre-game vertical space. Mobile retains its stacked control layout."
+  ],
+  "checks": {
+    "HTML_ID_set_unchanged": true,
+    "engine_levels_controller_renderer_assets_unchanged": true,
+    "rules": {
+      "passed": 16,
+      "failed": 0
+    },
+    "controller_VM": {
+      "passed": 8,
+      "failed": 0
+    },
+    "CSS_braces_balanced": true
+  },
+  "limitations": [
+    "No new browser run was performed for this patch. CSS fit is design intent until public geometry is measured again.",
+    "VM controller checks are not browser input, DOM layout or touch hardware verification."
+  ],
+  "no_changes": [
+    "rules",
+    "assets",
+    "storage",
+    "v1"
+  ]
+}
