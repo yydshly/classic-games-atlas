@@ -1,0 +1,142 @@
+PASS actual controller initialises with real renderer and readonly diagnostics
+PASS only explicit start and resume recenter the HUD once, never RAF or pause
+PASS day chooser only unlocks day one; locked choices do nothing
+PASS native command buttons allow ready building, hiring, assignment and focus repair
+PASS pause/resume freezes clock and huge RAF gap is clamped
+PASS P and Escape toggle once per fresh press; held key never resumes
+PASS modifier/editable shortcuts ignored; Enter and Space repeat defaults prevented
+PASS help and H pause; closing help never auto-resumes
+PASS dialog native cancel prevents default and stays paused
+PASS help then blur then close stays paused and requires explicit resume
+PASS visibility and pagehide persist paused checkpoint; return does not resume
+PASS retry cancel and dialog Escape retain exact run and records
+PASS retry confirm produces fresh ready day and keeps focus connected
+PASS canvas click selects correct projected station; buttons work while paused
+PASS pointer cancel, leave, capture loss and dragged contacts cannot select
+PASS unrelated pointer cancel/up preserves original contact and nonprimary is ignored
+PASS pause, blur and dialog invalidate held canvas contacts
+PASS object-fit letterbox input is rejected while painted coordinates still map
+PASS restored active checkpoint is paused and does not move until explicit resume
+PASS saved ready setup restores paused without losing spend
+FAIL malformed shift cleared without erasing valid campaign progress
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 2
+
+    at test.saved (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:392:47)
+    at test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:43)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:391:1
+PASS engine-invalid or locked-day checkpoint cannot jump the campaign
+PASS read/write storage failures are visible without preventing play
+PASS eight days naturally unlock via actual command buttons, maintain and finish
+PASS loss never unlocks next day; retry preserves previous victory
+PASS finished records survive active save reload and canceled day switch
+PASS terminal command buttons cannot spend money or mutate results
+PASS v2 dock stays next to slots and follows real selected station progress
+PASS v2 never imports or changes the separate v1 save keys
+FAIL first and second real victories reload directly into the newly unlocked ready day
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:475:57
+    at async test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:37)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:468:1
+FAIL eight completed days reopen day eight ready and retain all records
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 7
+
+    at test.saved.JSON.stringify.version (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:483:10)
+    at test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:43)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:482:1
+FAIL engine-invalid active save falls back to newest unlock without rewriting campaign
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 2
+
+    at test.saved (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:488:10)
+    at test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:43)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:487:1
+FAIL valid older active shift takes priority over newer unlocked day and stays paused
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /尚未结束的营业班次/. Input:
+
+'已恢复最近保存的营业进度。当前保持暂停，准备好后点“继续营业”。'
+
+    at test.saved (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:493:60)
+    at test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:43)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:491:1
+PASS valid older ready setup is restored paused instead of replaced by newest unlock
+FAIL failure clears the active shift and refresh readies the latest unlocked day without a false win
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at test.saved.JSON.stringify.version (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:502:10)
+    at test (file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:254:43)
+    at async file:///workspace/shared/repair-v2-refresh-resume-fix-20261018/reference/before/candidate/validation/repair-v2/test_repair_controller.mjs:501:1
+{
+  "suite": "NEW_NODE_CONTROLLER_REGRESSION",
+  "passed": 29,
+  "failed": 6,
+  "campaignResults": [
+    {
+      "day": 1,
+      "completed": 8,
+      "lost": 0,
+      "credits": 191,
+      "seconds": 75
+    },
+    {
+      "day": 2,
+      "completed": 10,
+      "lost": 0,
+      "credits": 161,
+      "seconds": 79.45
+    },
+    {
+      "day": 3,
+      "completed": 11,
+      "lost": 0,
+      "credits": 150,
+      "seconds": 80.4
+    },
+    {
+      "day": 4,
+      "completed": 12,
+      "lost": 0,
+      "credits": 151,
+      "seconds": 82.45
+    },
+    {
+      "day": 5,
+      "completed": 12,
+      "lost": 0,
+      "credits": 253,
+      "seconds": 93.9
+    },
+    {
+      "day": 6,
+      "completed": 13,
+      "lost": 0,
+      "credits": 62,
+      "seconds": 99.4
+    },
+    {
+      "day": 7,
+      "completed": 16,
+      "lost": 0,
+      "credits": 349,
+      "seconds": 98.65
+    },
+    {
+      "day": 8,
+      "completed": 17,
+      "lost": 0,
+      "credits": 480,
+      "seconds": 105.65
+    }
+  ],
+  "realBrowser": false,
+  "sourceHashesUnchanged": true
+}

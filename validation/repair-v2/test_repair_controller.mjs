@@ -389,7 +389,7 @@ await test('saved ready setup restores paused without losing spend',f=>{
   assert.equal(f.read().state,'paused');assert.equal(f.read().credits,30);assert.equal(f.read().stations.find(s=>s.slot==='D').level,2);frozen(f);f.click('primary-action');assert.equal(f.read().state,'playing');
 },{saved:{[SHIFT_KEY]:(()=>{const s=engine.createGame(0);engine.command(s,{type:'upgrade',stationId:'station-D'});return JSON.stringify({version:1,checkpoint:engine.checkpoint(s)});})()}});
 await test('malformed shift cleared without erasing valid campaign progress',f=>{
-  assert.equal(f.read().state,'ready');assert.equal(f.storage.has(SHIFT_KEY),false);assert.equal(f.el('restore-note').hidden,false);f.click('days');assert.equal(f.el('day-list').children.filter(b=>!b.disabled).length,3);
+  assert.equal(f.read().state,'ready');assert.equal(f.read().levelIndex,2);assert.equal(f.storage.has(SHIFT_KEY),false);assert.equal(f.el('restore-note').hidden,false);assert.match(f.el('restore-note').textContent,/通关记录与解锁仍保留/);f.click('days');assert.equal(f.el('day-list').children.filter(b=>!b.disabled).length,3);
 },{saved:{[SHIFT_KEY]:'bad json',[PROGRESS_KEY]:JSON.stringify({version:1,unlocked:2,best:{0:{completed:8,lost:0,credits:100}}})}});
 await test('engine-invalid or locked-day checkpoint cannot jump the campaign',f=>{
   assert.equal(f.read().state,'ready');assert.equal(f.read().levelIndex,0);assert.equal(f.storage.has(SHIFT_KEY),false);assert.equal(f.el('restore-note').hidden,false);
@@ -463,6 +463,46 @@ await test('v2 never imports or changes the separate v1 save keys', f => {
   assert.equal(SHIFT_KEY, 'atlas-v2-repair-20261018-shift-v1');
   assert.equal(PROGRESS_KEY, 'atlas-v2-repair-20261018-progress-v1');
 }, { saved: { 'atlas-preview-repair-20261018-progress-v1': 'v1-record-must-stay', 'atlas-preview-repair-20261018-shift-v1': 'v1-shift-must-stay' } });
+// Refresh destination is presentation-only; saved shifts still have priority over campaign selection.
+const twoWins = JSON.stringify({version:1,unlocked:2,best:{0:{completed:8,lost:0,credits:311},1:{completed:10,lost:0,credits:356}}});
+await test('first and second real victories reload directly into the newly unlocked ready day', async f => {
+  let current=f;
+  try {
+    for(let day=0;day<2;day++) {
+      assert.equal(current.read().levelIndex,day);prepare(current);start(current);assert.equal(runDay(current).state,'won');
+      assert.equal(current.storage.has(SHIFT_KEY),false);const campaign=current.storage.get(PROGRESS_KEY);const saved=Object.fromEntries(current.storage);
+      current.restoreGlobals();current=await fixture({saved});
+      assert.equal(current.read().state,'ready');assert.equal(current.read().levelIndex,day+1);assert.equal(current.read().tick,0);
+      assert.equal(current.storage.get(PROGRESS_KEY),campaign,'Initialization must not rewrite victory records');
+      assert.match(current.el('save-note').textContent,new RegExp(`${day+1} / 8 天通关记录`));
+      assert.match(current.el('save-note').textContent,/未结束班次单独保存/);frozen(current);
+    }
+  } finally { if(current!==f) current.restoreGlobals(); }
+});
+await test('eight completed days reopen day eight ready and retain all records', f => {
+  assert.equal(f.read().levelIndex,7);assert.equal(f.read().state,'ready');assert.equal(f.read().tick,0);
+  assert.equal(Object.keys(JSON.parse(f.storage.get(PROGRESS_KEY)).best).length,8);assert.match(f.el('save-note').textContent,/8 \/ 8 天通关记录/);
+  assert.match(f.el('save-note').textContent,/打开第 8 天/);frozen(f);
+}, {saved:{[PROGRESS_KEY]:JSON.stringify({version:1,unlocked:7,best:Object.fromEntries(Array.from({length:8},(_,day)=>[day,{completed:8+day,lost:0,credits:100}]))})}});
+await test('engine-invalid active save falls back to newest unlock without rewriting campaign', f => {
+  assert.equal(f.read().levelIndex,2);assert.equal(f.read().state,'ready');assert.equal(f.storage.has(SHIFT_KEY),false);
+  assert.equal(f.storage.get(PROGRESS_KEY),twoWins);assert.match(f.el('restore-note').textContent,/通关记录与解锁仍保留/);
+}, {saved:{[PROGRESS_KEY]:twoWins,[SHIFT_KEY]:JSON.stringify({version:1,checkpoint:{version:1,levelIndex:1,tick:-1,startIndex:0,commands:[]}})}});
+await test('valid older active shift takes priority over newer unlocked day and stays paused', f => {
+  assert.equal(f.read().levelIndex,0);assert.equal(f.read().state,'paused');assert.equal(f.read().tick,10);
+  assert.equal(f.storage.get(PROGRESS_KEY),twoWins);assert.match(f.el('restore-note').textContent,/尚未结束的营业班次/);frozen(f);
+  f.click('primary-action');f.frames(5);assert.equal(f.read().levelIndex,0);assert.ok(f.read().tick>10);
+}, {saved:{[PROGRESS_KEY]:twoWins,[SHIFT_KEY]:validShift(0)}});
+await test('valid older ready setup is restored paused instead of replaced by newest unlock', f => {
+  assert.equal(f.read().levelIndex,0);assert.equal(f.read().state,'paused');assert.equal(f.read().tick,0);
+  assert.equal(f.read().credits,30);assert.equal(f.read().stations.find(s=>s.slot==='D').level,2);
+  assert.equal(f.storage.get(PROGRESS_KEY),twoWins);frozen(f);
+}, {saved:{[PROGRESS_KEY]:twoWins,[SHIFT_KEY]:(()=>{const s=engine.createGame(0);engine.command(s,{type:'upgrade',stationId:'station-D'});return JSON.stringify({version:1,checkpoint:engine.checkpoint(s)});})()}});
+await test('failure clears the active shift and refresh readies the latest unlocked day without a false win', async f => {
+  assert.equal(f.read().levelIndex,1);start(f);assert.equal(runDay(f,()=>{}).state,'lost');
+  assert.equal(f.storage.has(SHIFT_KEY),false);const campaign=f.storage.get(PROGRESS_KEY),saved=Object.fromEntries(f.storage);f.restoreGlobals();const g=await fixture({saved});
+  try {assert.equal(g.read().levelIndex,1);assert.equal(g.read().state,'ready');assert.equal(g.read().tick,0);assert.equal(g.storage.get(PROGRESS_KEY),campaign);assert.deepEqual(Object.keys(JSON.parse(campaign).best),['0']);start(g);assert.equal(g.read().levelIndex,1);}finally{g.restoreGlobals();}
+}, {saved:{[PROGRESS_KEY]:JSON.stringify({version:1,unlocked:1,best:{0:{completed:8,lost:0,credits:311}}})}});
 assert.deepEqual(hashes(),beforeHashes,'Tests must not mutate runtime sources');
 console.log(JSON.stringify({suite:'NEW_NODE_CONTROLLER_REGRESSION',passed,failed,campaignResults,realBrowser:false,sourceHashesUnchanged:true},null,2));
 if(failed) process.exitCode=1;

@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-10-18T14:59:00Z",
+  "base_commit": "496fc328990477a3cbdab1743116db3e330b2c06",
+  "before": {
+    "controller_passed": 29,
+    "controller_failed": 6,
+    "note": "Five failures expose old fixed-day-1 initialization; one confirms the old restore text does not distinguish records from the active shift. Older valid-shift priority was already correct."
+  },
+  "after": {
+    "controller_passed": 35,
+    "controller_failed": 0,
+    "engine_passed": 40,
+    "progress_input_passed": 10,
+    "renderer_passed": 5,
+    "facing_passed": 5
+  },
+  "syntax": "all runtime mjs passed node --check",
+  "boundary": "Actual controller/engine exercised with a fake DOM and no-op canvas in Node. Not real-browser QA. Published r4 refresh checks remain for browser validation.",
+  "remote_writes": false,
+  "binary_changes": 0
+}

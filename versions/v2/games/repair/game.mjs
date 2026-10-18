@@ -38,7 +38,9 @@ let browserStorage;
 try { browserStorage = window.localStorage; } catch { browserStorage = null; }
 const store = createProgressStore(browserStorage);
 let progress = store.loadProgress();
-let game = createGame(0);
+// With no valid unfinished shift, reopen the newest unlocked day (including day 8 after completion).
+// A valid saved shift below still takes priority, even when it belongs to an older day.
+let game = createGame(progress.unlocked);
 let selectedSlot = 'A';
 let frameTime = null;
 let lastUiTime = -Infinity;
@@ -62,7 +64,7 @@ if (savedShift) {
     game = restored;
     restoredShift = true;
     $('restore-note').hidden = false;
-    $('restore-note').textContent = '已恢复最近保存的营业进度。当前保持暂停，准备好后点“继续营业”。';
+    $('restore-note').textContent = '已恢复尚未结束的营业班次，通关记录独立保留。当前保持暂停，准备好后点“继续营业”。';
   } else {
     store.rejectShift();
   }
@@ -112,11 +114,12 @@ function updateStorageNotice() {
   if (store.unavailable) {
     note.textContent = '此浏览器阻止了存档，或空间已满。本次仍可游玩，但刷新后可能丢失进度。';
   } else {
-    note.textContent = '本机自动保存 · 刷新后先暂停 · 最好成绩独立保留。';
+    const completedDays = Object.keys(progress.best).length;
+    note.textContent = `本机已保存 ${completedDays} / 8 天通关记录。未结束班次单独保存，刷新后暂停恢复；没有未结束班次时打开第 ${progress.unlocked + 1} 天。`;
   }
   if (store.damagedShift) {
     $('restore-note').hidden = false;
-    $('restore-note').textContent = '上次营业存档不完整或版本不兼容，已放弃该班次；有效的最好成绩与已解锁日期仍保留。';
+    $('restore-note').textContent = '上次未结束班次的存档不完整或版本不兼容，已放弃该班次；通关记录与解锁仍保留。';
   }
 }
 

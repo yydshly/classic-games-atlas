@@ -1,0 +1,100 @@
+PASS actual controller initialises with real renderer and readonly diagnostics
+PASS only explicit start and resume recenter the HUD once, never RAF or pause
+PASS day chooser only unlocks day one; locked choices do nothing
+PASS native command buttons allow ready building, hiring, assignment and focus repair
+PASS pause/resume freezes clock and huge RAF gap is clamped
+PASS P and Escape toggle once per fresh press; held key never resumes
+PASS modifier/editable shortcuts ignored; Enter and Space repeat defaults prevented
+PASS help and H pause; closing help never auto-resumes
+PASS dialog native cancel prevents default and stays paused
+PASS help then blur then close stays paused and requires explicit resume
+PASS visibility and pagehide persist paused checkpoint; return does not resume
+PASS retry cancel and dialog Escape retain exact run and records
+PASS retry confirm produces fresh ready day and keeps focus connected
+PASS canvas click selects correct projected station; buttons work while paused
+PASS pointer cancel, leave, capture loss and dragged contacts cannot select
+PASS unrelated pointer cancel/up preserves original contact and nonprimary is ignored
+PASS pause, blur and dialog invalidate held canvas contacts
+PASS object-fit letterbox input is rejected while painted coordinates still map
+PASS restored active checkpoint is paused and does not move until explicit resume
+PASS saved ready setup restores paused without losing spend
+PASS malformed shift cleared without erasing valid campaign progress
+PASS engine-invalid or locked-day checkpoint cannot jump the campaign
+PASS read/write storage failures are visible without preventing play
+PASS eight days naturally unlock via actual command buttons, maintain and finish
+PASS loss never unlocks next day; retry preserves previous victory
+PASS finished records survive active save reload and canceled day switch
+PASS terminal command buttons cannot spend money or mutate results
+PASS v2 dock stays next to slots and follows real selected station progress
+PASS v2 never imports or changes the separate v1 save keys
+PASS first and second real victories reload directly into the newly unlocked ready day
+PASS eight completed days reopen day eight ready and retain all records
+PASS engine-invalid active save falls back to newest unlock without rewriting campaign
+PASS valid older active shift takes priority over newer unlocked day and stays paused
+PASS valid older ready setup is restored paused instead of replaced by newest unlock
+PASS failure clears the active shift and refresh readies the latest unlocked day without a false win
+{
+  "suite": "NEW_NODE_CONTROLLER_REGRESSION",
+  "passed": 35,
+  "failed": 0,
+  "campaignResults": [
+    {
+      "day": 1,
+      "completed": 8,
+      "lost": 0,
+      "credits": 191,
+      "seconds": 75
+    },
+    {
+      "day": 2,
+      "completed": 10,
+      "lost": 0,
+      "credits": 161,
+      "seconds": 79.45
+    },
+    {
+      "day": 3,
+      "completed": 11,
+      "lost": 0,
+      "credits": 150,
+      "seconds": 80.4
+    },
+    {
+      "day": 4,
+      "completed": 12,
+      "lost": 0,
+      "credits": 151,
+      "seconds": 82.45
+    },
+    {
+      "day": 5,
+      "completed": 12,
+      "lost": 0,
+      "credits": 253,
+      "seconds": 93.9
+    },
+    {
+      "day": 6,
+      "completed": 13,
+      "lost": 0,
+      "credits": 62,
+      "seconds": 99.4
+    },
+    {
+      "day": 7,
+      "completed": 16,
+      "lost": 0,
+      "credits": 349,
+      "seconds": 98.65
+    },
+    {
+      "day": 8,
+      "completed": 17,
+      "lost": 0,
+      "credits": 480,
+      "seconds": 105.65
+    }
+  ],
+  "realBrowser": false,
+  "sourceHashesUnchanged": true
+}
