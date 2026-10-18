@@ -138,7 +138,7 @@ class FakeElement extends FakeEventTarget {
   click() { if (!this.disabled) return this.emit('click'); }
   showModal() { this.open = true; this.querySelector('button:not(:disabled)')?.focus(); }
   close() { this.open = false; this.emit('close'); }
-  scrollIntoView() {}
+  scrollIntoView(options) { this.scrollCalls = (this.scrollCalls || 0) + 1; this.lastScrollOptions = options; }
   matches(selector) { return selector.split(',').some(s => matches(this, s)); }
   getBoundingClientRect() { return { left: 0, top: 0, width: 100, height: 50, right: 100, bottom: 50, x: 0, y: 0 }; }
   setPointerCapture(id) { this.capturedPointers.add(id); }
@@ -303,6 +303,14 @@ await test('actual controller initialises with real renderer and readonly diagno
   const s=f.read(); assert.ok(Object.isFrozen(s)&&Object.isFrozen(s.stations)); assert.throws(()=>s.credits=999999,TypeError);
   assert.equal(f.window.repairSetState,undefined); frozen(f);
   assert.equal(f.el('canvas-wrap').dataset.state,'ready'); assert.equal(f.el('pause').disabled,true);
+});
+await test('only explicit start and resume recenter the HUD once, never RAF or pause',f=>{
+  const column=f.document.querySelector('.workshop-column');assert.equal(column.scrollCalls||0,0);
+  start(f);assert.equal(column.scrollCalls,1);assert.deepEqual(column.lastScrollOptions,{block:'start',behavior:'auto'});
+  f.frames(12);assert.equal(column.scrollCalls,1);f.click('pause');assert.equal(column.scrollCalls,1);
+  f.click('help');f.click('help-close');frozen(f);assert.equal(column.scrollCalls,1);
+  f.click('primary-action');assert.equal(column.scrollCalls,2);f.frames(10);assert.equal(column.scrollCalls,2);
+  keyPair(f,'p');assert.equal(column.scrollCalls,2);keyPair(f,'p');assert.equal(column.scrollCalls,3);
 });
 await test('day chooser only unlocks day one; locked choices do nothing',f=>{
   f.click('days'); const buttons=f.el('day-list').children;

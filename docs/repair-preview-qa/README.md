@@ -6,14 +6,15 @@ Prepared 2026-10-18. This is an unaccepted preview based on a documented recover
 
 - Original engine: 40 tests, eight-day ordinary-command pilot passed.
 - Original progress/input: 10 groups.
-- New actual-controller regression: 26 groups, including eight natural wins/unlocks through the actual UI button handlers.
+- New actual-controller regression: 27 groups, including eight natural wins/unlocks through the actual UI button handlers.
 - Recovered static layout contract: 5 checks.
+- New width/contain/cache-version contract: 5 checks.
 - New preview storage isolation: 2 groups.
 - Module syntax, relative dependencies, source fingerprints, and unchanged existing-file inheritance.
 
 The full test logs and their SHA-256 values are in `logs/` and `checks.json`. Tests use Node browser-surface substitutes; renderer drawing calls are no-ops. These are **not** real-browser, layout-pixel, real-device, accessibility, performance or human-difficulty acceptance.
 
-The runtime byte hashes in `runtime-manifest.json` identify the exact tested candidate. The shipped test scripts are path-only relocations of the passing local suites, with syntax and import checks. They were not redundantly rerun after relocation; `test-relocation.json` records both versions. Run all tests from a repository checkout with:
+The runtime byte hashes in `runtime-manifest.json` identify the exact tested candidate. The shipped suites were freshly executed after the viewport correction. The controller suite now includes an explicit-start/resume-only scroll regression. `test-relocation.json` preserves the earlier relocation provenance and current script hashes. Run all tests from a repository checkout with:
 
 ```sh
 bash validation/repair-preview/run_all.sh
@@ -60,4 +61,4 @@ Use the public cloud browser after verifying the exact deployed commit and all s
 7. Inspect queue C, cashier, payment queue and elevated C sign during motion. Moving people may temporarily occlude each other.
 8. Record reduced-motion, focus visibility, text enlargement, responsiveness/performance and human difficulty findings separately from model checks.
 
-No new screenshots or videos are represented as recovered historical media. See `SOURCE_PROVENANCE.md` for exact boundaries and the one new CSS fix.
+No new screenshots or videos are represented as recovered historical media. See `SOURCE_PROVENANCE.md` for exact boundaries and the recovery-time CSS fix. See `VIEWPORT_FIX.md` for the later real-browser overflow finding, width correction and explicit-start/resume HUD positioning.

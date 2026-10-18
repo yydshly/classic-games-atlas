@@ -23,12 +23,13 @@ No uncertain fragment was used to replace a complete controller or HTML file.
 
 ## Candidate source differences
 
-Only three of seven runtime files differ from the complete recovered source:
+Four of seven runtime files now differ from the complete recovered source:
 
-- `index.html`: preview title/description/label/footer and noindex metadata.
+- `index.html`: preview title/description/label/footer and noindex metadata; later matched CSS/controller cache-version query strings.
 - `progress.mjs`: the two preview-only localStorage keys.
-- `repair.css`: the minimal all-width briefing protection above, with a new explanatory comment.
+- `repair.css`: the minimal all-width briefing protection above, plus the later explicit width constraints, global contain mapping and 12px overview scroll margin documented in `VIEWPORT_FIX.md`.
+- `game.mjs`: a later minimal post-browser fix scrolls the overview into view only after explicit Start/Continue.
 
-The other four files (`engine.mjs`, `levels.mjs`, `renderer.mjs`, `game.mjs`) are byte-identical. Full reversible unified diffs for the three changes are in `diffs/`; their original and candidate hashes are in `runtime-manifest.json`. Thus complete original runtime bytes can be verified from unchanged files plus reverse-applied diffs, without presenting the candidate as an exact restoration of a missing final release.
+The other three files (`engine.mjs`, `levels.mjs`, `renderer.mjs`) are byte-identical. Full reversible unified diffs for the four changes are in `diffs/`; their original and candidate hashes are in `runtime-manifest.json`. Thus complete original runtime bytes can be verified from unchanged files plus reverse-applied diffs, without presenting the candidate as an exact restoration of a missing final release.
 
 The original engine/progress suites and pilot are preserved with only necessary relative paths and intentional preview-key expectations. `original-test-adaptations.json` records fingerprints. Fake-DOM primitives for the new controller suite came from the available recovered Kart event-test harness; its Repair scenarios and assertions were newly authored. No automated test silently lowers goals, supplies cash, unlocks days, assigns private state or awards a victory.

@@ -1,0 +1,12 @@
+--- recovered/game.mjs
++++ preview/repair/game.mjs
+@@ -140,6 +140,9 @@
+   lastMessage = game.message;
+   persist();
+   updateUI();
++  // Explicit start/resume restores the business overview after a scrolled card.
++  // Never recenter from RAF, pause, dialog close, or automatic restoration.
++  document.querySelector('.workshop-column')?.scrollIntoView({ block: 'start', behavior: 'auto' });
+ }
+ 
+ function togglePause() {

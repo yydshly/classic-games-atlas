@@ -1,71 +1,83 @@
 {
+  "date_utc": "2026-10-18",
   "checks": [
     {
       "name": "engine",
       "command": [
         "node",
-        "scripts/test_repair.mjs"
+        "validation/repair-preview/test_repair.mjs"
       ],
       "exit_code": 0,
-      "log": "validation/test_engine.log",
+      "log": "logs/test_engine.log",
       "sha256": "7f1f5ac9cbfa28ceca353f2f7974db49fdbe04c0ab73e480e540be18633a4d23"
     },
     {
       "name": "progress",
       "command": [
         "node",
-        "scripts/test_repair_progress.mjs"
+        "validation/repair-preview/test_repair_progress.mjs"
       ],
       "exit_code": 0,
-      "log": "validation/test_progress.log",
+      "log": "logs/test_progress.log",
       "sha256": "aac9a954673fd9f61d9934a8c015757adfbfe78a10a47c7c8e645777993d00bd"
     },
     {
       "name": "controller",
       "command": [
         "node",
-        "scripts/test_repair_controller.mjs"
+        "validation/repair-preview/test_repair_controller.mjs"
       ],
       "exit_code": 0,
-      "log": "validation/test_controller.log",
-      "sha256": "32fd4c53a0a739bb8679648586e0d7fa584ec8b787d12bad7d34d0c5e6d1ae99"
-    },
-    {
-      "name": "layout",
-      "command": [
-        "python",
-        "scripts/test_repair_layout.py"
-      ],
-      "exit_code": 0,
-      "log": "validation/test_layout.log",
-      "sha256": "1d28eef297733d2832ee03a56ffe6e74ec85cf6fc1c3148e5cbbcde34a39dd50"
+      "log": "logs/test_controller.log",
+      "sha256": "a3fd590528d550db30d554484509d834b3726c21d0b809caf4667ada6656a526"
     },
     {
       "name": "isolation",
       "command": [
         "node",
-        "scripts/test_preview_isolation.mjs"
+        "validation/repair-preview/test_preview_isolation.mjs"
       ],
       "exit_code": 0,
-      "log": "validation/test_isolation.log",
+      "log": "logs/test_isolation.log",
       "sha256": "6ae90653435d351bf77c65c5877a55ab26ffbf046ac76521c88069c34a3ee187"
+    },
+    {
+      "name": "layout",
+      "command": [
+        "python",
+        "validation/repair-preview/test_repair_layout.py"
+      ],
+      "exit_code": 0,
+      "log": "logs/test_layout.log",
+      "sha256": "1d28eef297733d2832ee03a56ffe6e74ec85cf6fc1c3148e5cbbcde34a39dd50"
+    },
+    {
+      "name": "width",
+      "command": [
+        "python",
+        "validation/repair-preview/test_repair_width.py"
+      ],
+      "exit_code": 0,
+      "log": "logs/test_width.log",
+      "sha256": "2c2f0899b9cdc262c51710959e201cb637ea287e11bfb543ec159f847f1a0582"
     }
   ],
   "engine_tests": 40,
   "progress_groups": 10,
-  "controller_groups": 26,
+  "controller_groups": 27,
   "layout_contracts": 5,
+  "width_contracts": 5,
   "isolation_groups": 2,
-  "campaign": "all eight days naturally unlocked and won through actual controller button handlers with simulated DOM; results match recovered engine pilot",
-  "visual_browser_device_performance_acceptance": "NOT_RUN",
-  "verification_boundary": "All suites were executed against these exact seven candidate runtime SHA-256 values. The shipped scripts below are path-only relocations of those passed tests; relocated module syntax/imports are checked, but suites were not redundantly rerun after relocation.",
+  "campaign": "Eight natural wins/unlocks through actual controller button handlers; deterministic results unchanged.",
+  "verification_boundary": "All six shipped suites freshly executed after the width and explicit-start/resume fixes. DOM and canvas are substitutes, not browser layout.",
   "runtime_hashes": {
     "preview/repair/engine.mjs": "6b647725c2b576bfc815b82b4bee04e461f94c9932dd6689c675acb39b87968b",
-    "preview/repair/game.mjs": "d2648b451b6796debe4f640961f4dd4d02ae74fadf79497b6020327aa9fcbeae",
-    "preview/repair/index.html": "4e42a80979b959cb4c63e7cafa4d52fa0f7715bd3606936fff89d3fbcaad7ce8",
+    "preview/repair/game.mjs": "3a25e92c555b6c1ebfd99a7ff31c9a0178beb766bfebeb0756b12a8b47507e3c",
+    "preview/repair/index.html": "916bdf4690c5f9929dc392ce587f006ce7131c84b906b9e83fff01f3ba469920",
     "preview/repair/levels.mjs": "0ff22d5264ea5f7cd5c6a47aac885d8bacfdcf0eb233051ce21af1b5864a5954",
     "preview/repair/progress.mjs": "d20fd907d9b06eceef709a83fbad620c66acff368d90c45d73f96b5d3e8957b3",
     "preview/repair/renderer.mjs": "b75424f0b3f85f4a5a5e561604c71d40c3e7ec322f66a603569fc0aa1fb4369e",
-    "preview/repair/repair.css": "90e08bab3a4cfa2f12783402eb8f02de0eb155a0b014b01ad5ca42509cfa5221"
-  }
+    "preview/repair/repair.css": "03ef4ed84d5a9cab541a8314b849c3c01d8948097e64f5049c2e0bba961bc857"
+  },
+  "real_browser_status": "Earlier deployed version failed 400px/500px ready-state overflow; patched version is not yet browser-verified."
 }

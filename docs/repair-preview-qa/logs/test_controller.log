@@ -1,4 +1,5 @@
 PASS actual controller initialises with real renderer and readonly diagnostics
+PASS only explicit start and resume recenter the HUD once, never RAF or pause
 PASS day chooser only unlocks day one; locked choices do nothing
 PASS native command buttons allow ready building, hiring, assignment and focus repair
 PASS pause/resume freezes clock and huge RAF gap is clamped
@@ -26,7 +27,7 @@ PASS finished records survive active save reload and canceled day switch
 PASS terminal command buttons cannot spend money or mutate results
 {
   "suite": "NEW_NODE_CONTROLLER_REGRESSION",
-  "passed": 26,
+  "passed": 27,
   "failed": 0,
   "campaignResults": [
     {

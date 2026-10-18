@@ -12,24 +12,24 @@
   },
   {
     "path": "preview/repair/game.mjs",
-    "bytes": 24774,
-    "sha256": "d2648b451b6796debe4f640961f4dd4d02ae74fadf79497b6020327aa9fcbeae",
-    "git_blob_sha": "240d09be318cbab7188a7946c623312660463aa3",
+    "bytes": 25032,
+    "sha256": "3a25e92c555b6c1ebfd99a7ff31c9a0178beb766bfebeb0756b12a8b47507e3c",
+    "git_blob_sha": "3dfd6b17259b6e83e0792bb95bb7aa712b27c179",
     "source_sha256": "d2648b451b6796debe4f640961f4dd4d02ae74fadf79497b6020327aa9fcbeae",
-    "unchanged_source_bytes": true,
+    "unchanged_source_bytes": false,
     "reasons": [
-      "Exact complete recovered file; no gameplay, controller, or illustration edits."
+      "New post-browser fix: explicitly starting or resuming scrolls the workshop overview into view once; RAF/pause/dialog closure never recenter."
     ]
   },
   {
     "path": "preview/repair/index.html",
-    "bytes": 8794,
-    "sha256": "4e42a80979b959cb4c63e7cafa4d52fa0f7715bd3606936fff89d3fbcaad7ce8",
-    "git_blob_sha": "a70c4db273abe51923f6461b65b4d5b829ccda6f",
+    "bytes": 8830,
+    "sha256": "916bdf4690c5f9929dc392ce587f006ce7131c84b906b9e83fff01f3ba469920",
+    "git_blob_sha": "5793afb2ce462bf8f599f8cce36464ff4326359d",
     "source_sha256": "fce3444c63ed1d07a73fb937758103dff1209f5f718bb492faf4e32b75311255",
     "unchanged_source_bytes": false,
     "reasons": [
-      "Preview metadata/title/label/footer and noindex,nofollow; layout, controls, favicon and homepage link remain intact."
+      "Retains preview metadata and requests matching CSS/controller query version 20261018-width1 to avoid stale entry artifacts."
     ]
   },
   {
@@ -67,13 +67,13 @@
   },
   {
     "path": "preview/repair/repair.css",
-    "bytes": 14974,
-    "sha256": "90e08bab3a4cfa2f12783402eb8f02de0eb155a0b014b01ad5ca42509cfa5221",
-    "git_blob_sha": "85de799f5916dc9fc661dbd36fb37af7c94d7a3d",
+    "bytes": 15064,
+    "sha256": "03ef4ed84d5a9cab541a8314b849c3c01d8948097e64f5049c2e0bba961bc857",
+    "git_blob_sha": "f4cd9c78e1fe5251a1936179f5bd1f923f5b8a8c",
     "source_sha256": "351a8837161d5fbccb94fe22acb3485eabbcba5b420e126313701e34c6d628b5",
     "unchanged_source_bytes": false,
     "reasons": [
-      "New minimal recovery-time fix moves existing briefing min-height and card-scroll guards out of the phone-only media query; original layout/art styles are unchanged. Historical composite CSS is evidence, not claimed final-source restoration."
+      "Retains recovered art/layout plus all-width briefing guard; explicitly constrains workshop width, uses contain globally and adds 12px scroll margin."
     ]
   }
 ]

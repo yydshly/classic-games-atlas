@@ -140,6 +140,9 @@ function continueShift() {
   lastMessage = game.message;
   persist();
   updateUI();
+  // Explicit start/resume restores the business overview after a scrolled card.
+  // Never recenter from RAF, pause, dialog close, or automatic restoration.
+  document.querySelector('.workshop-column')?.scrollIntoView({ block: 'start', behavior: 'auto' });
 }
 
 function togglePause() {

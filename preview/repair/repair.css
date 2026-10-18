@@ -39,7 +39,7 @@ h1 span { display: inline-block; vertical-align: middle; margin-left: 23px; font
 .masthead-note { position: relative; padding-right: 75px; font-family: "Songti SC", "SimSun", serif; font-size: 15px; line-height: 1.8; letter-spacing: .1em; }
 .masthead-note i { position: absolute; right: 0; top: -8px; font-style: normal; font-size: 58px; color: var(--amber); }
 .game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 306px; gap: 27px; align-items: start; }
-.workshop-column { min-width: 0; }
+.workshop-column { min-width: 0; scroll-margin-top: 12px; }
 .shift-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 15px; }
 .shift-heading > div:first-child { display: flex; align-items: center; gap: 13px; }
 .day-number { font-size: 10px; letter-spacing: .11em; border: 1px solid #bbc6b7; border-radius: 3px; padding: 6px 8px; white-space: nowrap; }
@@ -55,8 +55,8 @@ h1 span { display: inline-block; vertical-align: middle; margin-left: 23px; font
 .hud strong span { display: inline; }
 .hud strong em { font-style: normal; color: #a0aa9f; font-size: 20px; }
 .hud small { display: block; color: var(--muted); font-size: 9px; }
-.canvas-wrap { position: relative; aspect-ratio: 3 / 2; isolation: isolate; background: #d9e2d4; border: 1px solid var(--line); overflow: hidden; }
-canvas { width: 100%; height: 100%; display: block; touch-action: pan-y; }
+.canvas-wrap { position: relative; width: 100%; min-width: 0; max-width: 100%; aspect-ratio: 3 / 2; isolation: isolate; background: #d9e2d4; border: 1px solid var(--line); overflow: hidden; }
+canvas { width: 100%; height: 100%; display: block; object-fit: contain; touch-action: pan-y; }
 .overlay { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(40, 65, 58, .19); backdrop-filter: blur(2px); padding: 20px; }
 .overlay-card { width: min(372px, 100%); padding: 28px 31px 24px; background: rgba(255, 253, 244, .97); box-shadow: 0 15px 50px #23413626; border: 1px solid #e8e2d2; border-radius: 10px; text-align: center; }
 .overlay-card .eyebrow { color: var(--teal); font-size: 9px; }
