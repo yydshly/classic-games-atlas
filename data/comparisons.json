@@ -2885,8 +2885,20 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "in_progress",
-        "url": null
+        "status": "candidate_unaccepted",
+        "url": "./versions/v2/games/court/",
+        "label": "v2 首轮候选，未验收",
+        "release_commit": "aa5e322705733fd10cdbc5dba476257c06a5d9f2",
+        "changes": [
+          "保留海滨场景，改为更近的球场构图；放大原创球员，区分双方配色、控制对象和持球者。",
+          "区分运球、蓄力、传球、投篮、抢断及庆祝姿态；添加接球位置、球路和得分等事件反馈。",
+          "传球后新增短时切入；防守分配为一人压迫持球者、一人盯防无球者，减少重复追球。",
+          "新增原创合成音效，默认静音；精简重复蓄力提示，调整窄屏方向键。",
+          "v2 使用独立存档，不读取、迁移或覆盖 v1 进度。"
+        ],
+        "preserved": "保留 v1 及其入口。沿用 8 场配置、首场75秒、20秒球权、2/3分、加时与解锁规则；投篮概率公式和移动速度未上调。",
+        "validation_boundary": "以上为本轮代码实现说明，尚未通过完整体验验收。连续实玩、胜负与加时、真实触屏、声音听测和手感仍待验证；模型及离屏检查不等于真人体验或美术达标。",
+        "details_url": "./docs/court-v2/README.md"
       },
       "current_screenshot": {
         "image": "./assets/current-preview/court-desktop.webp",
