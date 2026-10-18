@@ -18,9 +18,11 @@ if (store.damagedCurrent) store.rejectCurrent();
 let restored = saved ? restore(saved) : null;
 if (restored && (restored.levelIndex > progress.unlocked || ['won', 'lost'].includes(restored.state))) restored = null;
 if (saved && !restored) store.rejectCurrent();
-let game = restored || createGame(0);
+// A finished attempt has no current checkpoint; keep the next unlocked park in view.
+let game = restored || createGame(progress.unlocked);
 if (live(game.state)) pause(game);
-let wasRestored = Boolean(restored), selected = game.selected || 0, press = null, generation = 0, accumulator = 0;
+let showRecoveryWarning = store.damagedCurrent;
+let wasRestored = Boolean(restored), wasProgressOpened = !restored && progress.unlocked > 0, selected = game.selected || 0, press = null, generation = 0, accumulator = 0;
 let previous = performance.now(), lastHud = 0, lastSave = 0, lastState = '', lastMessage = '', lastReport = undefined, victoryRecorded = false;
 let primaryAction = null, lastDialogTrigger = null, checkpointUnavailable = false, discardNextFrame = true;
 const board = $('park'), ctx = board.getContext('2d');
@@ -34,9 +36,10 @@ function storageNotice() {
   setText('save-note', store.unavailable
     ? '浏览器存储不可用。仍可正常游玩；刷新后可能无法保留方案、解锁和记录。'
     : checkpointUnavailable ? '当前操作记录已达到保存上限；本页可继续游玩，但最新进度无法恢复。完成记录仍会保存。'
-      : '本机保存方案、操作记录与通关票根；不上传数据。刷新后的活动列车会暂停等待。');
-  if (store.damagedCurrent) { $('restore-note').hidden = false; setText('restore-note', '当前局存档不完整、版本不兼容或无法恢复，已重新开始。独立保存的通关记录仍保留。'); }
+      : '仅存本机，不上传数据。未结束的当前局保留方案与操作记录，刷新后列车暂停；已结束的局不保留方案，通关票根与解锁独立保存。');
+  if (showRecoveryWarning) { $('restore-note').hidden = false; setText('restore-note', `当前局存档不完整、版本不兼容或无法恢复，已在第 ${progress.unlocked + 1} 园重新开始。独立保存的通关记录与解锁仍保留。`); }
   else if (wasRestored) { $('restore-note').hidden = false; setText('restore-note', game.state === 'paused' ? '已恢复保存中的列车与方案，目前暂停。请按“继续”恢复运行。' : '已恢复上次保存的设计与营业进度。'); }
+  else if (wasProgressOpened) { $('restore-note').hidden = false; setText('restore-note', Object.keys(progress.best).length === LEVELS.length ? '八园通关记录已保留，已打开第 8 园供你重访。重访从新方案开始。' : `通关记录与解锁已保留，已打开最新解锁的第 ${game.levelIndex + 1} 园。可在公园列表重访已完成的公园。`); }
   else $('restore-note').hidden = true;
 }
 function save() {
@@ -72,7 +75,7 @@ function run(input) {
   if (!allowed.ok) { announce(allowed.reason); return false; }
   const result = command(game, input);
   if (!result.ok) { announce(result.reason); return false; }
-  accumulator = 0; discardNextFrame = true; previous = performance.now(); wasRestored = false;
+  accumulator = 0; discardNextFrame = true; previous = performance.now(); wasRestored = wasProgressOpened = showRecoveryWarning = false;
   selected = game.selected;
   announce(game.message || '操作已更新。');
   refresh(); draw(); save();
@@ -87,7 +90,7 @@ function togglePause() {
   if (modalOpen()) return;
   clearPress();
   if (game.state === 'paused') {
-    resume(game); wasRestored = false; announce('继续运行。完整回站后才会结算载客收入。');
+    resume(game); wasRestored = wasProgressOpened = showRecoveryWarning = false; announce('继续运行。完整回站后才会结算载客收入。');
   } else if (live(game.state)) { pause(game); announce('已暂停。列车与计时停止；可以继续，或返回设计。'); }
   else return;
   accumulator = 0; discardNextFrame = true; previous = performance.now(); refresh(); draw(); save();
@@ -100,7 +103,7 @@ function autoPause() {
 function load(index) {
   if (modalOpen()) return;
   if (!Number.isInteger(index) || index < 0 || index >= LEVELS.length || index > progress.unlocked) return;
-  clearPress(); game = createGame(index); selected = 0; wasRestored = false; victoryRecorded = false;
+  clearPress(); game = createGame(index); selected = 0; wasRestored = wasProgressOpened = showRecoveryWarning = false; victoryRecorded = false;
   checkpointUnavailable = false; lastReport = undefined; lastState = ''; lastMessage = ''; accumulator = 0; discardNextFrame = true; previous = performance.now();
   announce(`${game.level.name}：${game.level.tip}`); refresh(); draw(); save();
 }
