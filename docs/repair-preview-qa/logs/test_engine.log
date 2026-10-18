@@ -1,0 +1,116 @@
+PASS eight distinct authored shifts, bounded times and documented tutorial exception
+PASS day 1: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 2: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 3: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 4: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 5: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 6: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 7: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 8: legal button-equivalent strategy wins, finite paths and budgets every tick
+PASS day 1: idle outcome is tutorial win
+PASS day 2: idle outcome is loss
+PASS day 3: idle outcome is loss
+PASS day 4: idle outcome is loss
+PASS day 5: idle outcome is loss
+PASS day 6: idle outcome is loss
+PASS day 7: idle outcome is loss
+PASS day 8: idle outcome is loss
+PASS ready planning, paused planning, duplicate purchase and invalid input are atomic
+PASS pause freezes live time, queues, walking, service, arrivals, wages and cash
+PASS active service freezes patience; reassignment visibly walks and interrupted service loses patience
+PASS scheduled fault and maintenance stop service, preserve progress, drain patience and cost once
+PASS queues reflow to distinct positions through more arrivals than capacity
+PASS bay C and checkout reserve visually separate queues even with three unstaffed C visitors
+PASS bay C queues horizontally without overlapping cashier or checkout service faces
+PASS bankruptcy is reachable by ordinary purchases before wage, never negative cash
+PASS snapshot is recursively immutable and disconnected from engine state
+PASS retry replaces all progress, stations, hires and timer with fresh same-day state
+PASS day 1: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 2: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 3: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 4: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 5: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 6: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 7: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS day 8: checkpoint replay is exact, paused, deterministic and cannot duplicate income
+PASS restore rejects corrupt, oversized, impossible, future and forged-resource logs
+PASS dual-repair visitor follows every station in order and pays exactly once
+PASS new hires need assignment and travel time before a vacant work bay can run
+PASS accepted command history is bounded and its maximum-size replay remains valid
+PASS delta clamping prevents background/offline catch-up and rejects invalid deltas
+
+40 repair engine checks passed.
+[
+  {
+    "day": 1,
+    "completed": 8,
+    "lost": 0,
+    "credits": 191,
+    "seconds": 75,
+    "commands": 3,
+    "maxQueue": 2
+  },
+  {
+    "day": 2,
+    "completed": 10,
+    "lost": 0,
+    "credits": 161,
+    "seconds": 79.45,
+    "commands": 7,
+    "maxQueue": 3
+  },
+  {
+    "day": 3,
+    "completed": 11,
+    "lost": 0,
+    "credits": 150,
+    "seconds": 80.4,
+    "commands": 6,
+    "maxQueue": 3
+  },
+  {
+    "day": 4,
+    "completed": 12,
+    "lost": 0,
+    "credits": 151,
+    "seconds": 82.45,
+    "commands": 7,
+    "maxQueue": 3
+  },
+  {
+    "day": 5,
+    "completed": 12,
+    "lost": 0,
+    "credits": 253,
+    "seconds": 93.9,
+    "commands": 9,
+    "maxQueue": 3
+  },
+  {
+    "day": 6,
+    "completed": 13,
+    "lost": 0,
+    "credits": 62,
+    "seconds": 99.4,
+    "commands": 10,
+    "maxQueue": 3
+  },
+  {
+    "day": 7,
+    "completed": 16,
+    "lost": 0,
+    "credits": 349,
+    "seconds": 98.65,
+    "commands": 11,
+    "maxQueue": 3
+  },
+  {
+    "day": 8,
+    "completed": 17,
+    "lost": 0,
+    "credits": 480,
+    "seconds": 105.65,
+    "commands": 11,
+    "maxQueue": 3
+  }
+]

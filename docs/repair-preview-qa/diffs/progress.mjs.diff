@@ -1,0 +1,11 @@
+--- recovered/progress.mjs
++++ preview/repair/progress.mjs
+@@ -1,6 +1,6 @@
+ /** Campaign records are independent from an interrupted shift. No browser globals. */
+-export const PROGRESS_KEY = 'atlas-repair-progress-v1';
+-export const SHIFT_KEY = 'atlas-repair-shift-v1';
++export const PROGRESS_KEY = 'atlas-preview-repair-20261018-progress-v1';
++export const SHIFT_KEY = 'atlas-preview-repair-20261018-shift-v1';
+ export const DAY_COUNT = 8;
+ 
+ export function emptyProgress() {
