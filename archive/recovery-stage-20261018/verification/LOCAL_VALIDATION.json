@@ -1,0 +1,124 @@
+{
+  "checkedAt": "2026-10-18T09:22:44.400958+00:00",
+  "nodeVersion": "v22.15.0",
+  "boundary": "Node engine/progress and simulated DOM controller tests only; no browser, layout, mobile, visual, or human difficulty acceptance",
+  "tests": [
+    {
+      "game": "court",
+      "cwd": "court35-v1",
+      "command": [
+        "node",
+        "scripts/test_court.mjs"
+      ],
+      "exitCode": 0,
+      "log": "court_engine.log"
+    },
+    {
+      "game": "court",
+      "cwd": "court35-v1",
+      "command": [
+        "node",
+        "scripts/test_court_progress.mjs"
+      ],
+      "exitCode": 0,
+      "log": "court_progress.log"
+    },
+    {
+      "game": "repair",
+      "cwd": "recovery-v9/repair",
+      "command": [
+        "node",
+        "scripts/test_repair.mjs"
+      ],
+      "exitCode": 0,
+      "log": "repair_engine.log"
+    },
+    {
+      "game": "repair",
+      "cwd": "recovery-v9/repair",
+      "command": [
+        "node",
+        "scripts/test_repair_progress.mjs"
+      ],
+      "exitCode": 0,
+      "log": "repair_progress.log"
+    },
+    {
+      "game": "civic",
+      "cwd": "recovery-v9/civic",
+      "command": [
+        "node",
+        "scripts/test_civic_progress.mjs"
+      ],
+      "exitCode": 0,
+      "log": "civic_progress.log"
+    },
+    {
+      "game": "coaster",
+      "cwd": "recovery-v9/coaster",
+      "command": [
+        "node",
+        "scripts/test_coaster.mjs"
+      ],
+      "exitCode": 0,
+      "log": "coaster_engine.log"
+    },
+    {
+      "game": "coaster",
+      "cwd": "recovery-v9/coaster",
+      "command": [
+        "node",
+        "scripts/test_coaster_progress.mjs"
+      ],
+      "exitCode": 0,
+      "log": "coaster_progress.log"
+    },
+    {
+      "game": "coaster",
+      "cwd": "recovery-v9/coaster",
+      "command": [
+        "node",
+        "scripts/test_coaster_events.mjs"
+      ],
+      "exitCode": 0,
+      "log": "coaster_events.log"
+    },
+    {
+      "game": "kart",
+      "cwd": "recovery-v9/kart",
+      "command": [
+        "node",
+        "scripts/test_kart.mjs"
+      ],
+      "exitCode": 0,
+      "log": "kart_engine.log"
+    },
+    {
+      "game": "kart",
+      "cwd": "recovery-v9/kart",
+      "command": [
+        "node",
+        "scripts/test_kart_progress.mjs"
+      ],
+      "exitCode": 0,
+      "log": "kart_progress.log"
+    },
+    {
+      "game": "kart",
+      "cwd": "recovery-v9/kart",
+      "command": [
+        "node",
+        "scripts/test_kart_events.mjs"
+      ],
+      "exitCode": 0,
+      "log": "kart_events.log"
+    }
+  ],
+  "importedFilesVerifiedBefore": 126,
+  "historicalRuntimeHashes": {
+    "coaster": 7,
+    "kart": 7
+  },
+  "importedFilesVerifiedAfter": 126,
+  "allSelectedSuitesPassed": true
+}

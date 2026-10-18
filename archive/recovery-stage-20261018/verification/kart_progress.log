@@ -1,0 +1,22 @@
+{
+  "passed": 16,
+  "checks": [
+    "Missing storage starts course one",
+    "Separate namespaced keys do not overlap earlier candidates",
+    "Malformed JSON is safely discarded",
+    "Damaged wrapper salvages only well-formed independent records",
+    "Boundary and type checks cover course numbers and preferences",
+    "Storage refusal is visible to callers and does not throw",
+    "Records round-trip in their own key",
+    "Winning settlements prefer place then time and remain idempotent",
+    "Invalid finish data never unlocks",
+    "Exact course time limit is accepted and slower records rejected",
+    "Final chapter unlock stays bounded at eight",
+    "Active current race round-trips through engine restore paused",
+    "Ready current race remains ready",
+    "Broken current save leaves independent wins intact",
+    "Terminal and locked current saves are discarded without settlement",
+    "Saving either terminal state removes the current key only"
+  ]
+}
+

@@ -1,0 +1,29 @@
+ok 1 eight distinct authored two-lap roads, real difficulty and bounded geometry
+ok 2 countdown, pause and resume preserve motion and return exact phase
+ok 3 invalid elapsed time and terminal states cannot fast-forward
+ok 4 fixed accumulator produces identical segmented and batched integration
+ok 5 literal independent straight-motion/curvature physics oracle
+ok 6 braking, grass, steering, weather and wind have actual mechanical effects
+ok 7 no steering produces a genuine grass/time failure rather than automatic following
+ok 8 AI uses the same acceleration/steering integrator, without catch-up position gains
+ok 9 road progress cannot teleport, reverse, or cut across a nearby track segment
+ok 10 one complete lap is not a finish; second crossing is subframe timed exactly once
+ok 11 literal finish oracle sorts subframe crossings and exact ties by stable driver id
+ok 12 out-of-time and finish outside requested place produce explicit failures
+ok 13 collision changes velocity but cannot move road progress, and cooldown prevents repeated hits
+ok 14 collision/obstacle final world pose and reload stay synchronized
+ok 15 deterministic item boxes enforce distance, single slot and shared five-second cooldown
+ok 16 boost and shield have exact bounded durations and item action guards
+ok 17 held item key cannot auto-spend a later pickup; only a fresh rising edge acts
+ok 18 short pulse range is local, shield blocks it, slow expires and has no progress mutation
+ok 19 drift requires steering/speed, release threshold, charge cap and genuine forward boost
+ok 20 wooden obstacles slow exposed cars, shields block impact but not grass penalty
+ok 21 snapshots and checkpoints are recursively frozen independent copies
+ok 22 strict bounded checkpoint restore rejects malformed, nonfinite and inconsistent states
+ok 23 ready/countdown/paused/live/won/lost phases round-trip without offline advancement
+ok 24 continued physical evolution after reload is bit-for-bit including timers and cooldowns
+ok 25 retry fully clears elapsed race state, pickup state and result
+{"digitalHoldMs":100,"campaign":[{"level":1,"time":37.88,"place":1,"driftBoosts":4},{"level":2,"time":36.87,"place":1,"driftBoosts":6},{"level":3,"time":40.45,"place":1,"driftBoosts":8},{"level":4,"time":38.13,"place":1,"driftBoosts":10},{"level":5,"time":43.93,"place":1,"driftBoosts":10},{"level":6,"time":41.58,"place":1,"driftBoosts":8},{"level":7,"time":47.37,"place":1,"driftBoosts":13},{"level":8,"time":46.88,"place":1,"driftBoosts":12}]}
+ok 26 all eight campaigns win with digital keys held for 100ms, never direct state edits
+{"passed":true,"tests":26,"checks":135780,"scope":"Mechanical unit oracles, lifecycle/restore, real four-car physics, 8 original tracks, 100ms digital-input campaign. Unit fixtures mutate setup only; campaign uses start/step inputs exclusively."}
+

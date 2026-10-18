@@ -1,0 +1,12 @@
+PASS only bounded recognized v1 campaign fields survive
+PASS synthetic victory fixtures unlock only available matching chapters; non-wins never unlock
+PASS best favors fewer runs then lower module cost; repeat award is idempotent
+PASS invalid values, mismatched chapters and prototype names are rejected
+PASS good record survives unrelated damaged fields
+PASS current checkpoint is separate; clearing cannot erase campaign
+PASS malformed or engine-rejected current data is discarded independently
+PASS unavailable or quota storage and circular serialization fail safely and remain visible
+PASS tap rejects drag, cancel, mismatched/incomplete/nonfinite contacts
+
+9 coaster progress/input groups passed. Pure Node fixtures, not browser/device verification.
+

@@ -1,0 +1,40 @@
+PASS eight authored levels, supported match durations, unique seeds
+PASS ready, pause, resume and retry preserve state correctly
+PASS 60 Hz stepping is independent of 30/60 Hz caller frames
+PASS movement is bounded, diagonal is normalized and invalid inputs are safe
+PASS pass transfers possession and control to teammate
+PASS release timing, defensive contest and range change shot chance
+PASS two-point and three-point shot values are fixed at release
+PASS holding then releasing charges a real shot
+PASS pause paths cancel charging without a spontaneous resume shot
+PASS passes can be intercepted without awarding points
+PASS missed shots create collectable rebounds while the game clock runs
+PASS loose balls bounce inside the bounds and do not stop the match clock
+PASS steals have a windup, cooldown and can change possession
+PASS shot clock turns possession over without awarding points
+PASS a missed pass remains on the possession clock until turnover
+PASS ties enter overtime; ahead and behind produce win/loss
+PASS a buzzer shot resolves before the match result
+PASS snapshot is detached and replay is deterministic
+  match 1: 15-0 won, shots 11/1, 4837 ticks
+  match 2: 8-0 won, shots 11/1, 4693 ticks
+  match 3: 12-0 won, shots 10/0, 5089 ticks
+  match 4: 12-5 won, shots 9/2, 5185 ticks
+  match 5: 10-0 won, shots 11/2, 5341 ticks
+  match 6: 12-8 won, shots 8/7, 5569 ticks
+  match 7: 12-4 won, shots 7/4, 5785 ticks
+  match 8: 10-4 won, shots 8/6, 5737 ticks
+PASS ordinary-play simulation completes all eight matches with invariants
+PASS idle-player simulations show all eight opponents can score and finish
+  winning match 1: 15-0, rebounds 3/2, shots 11/1, held ticks 224, release shots 7
+  winning match 2: 8-0, rebounds 2/6, shots 11/1, held ticks 224, release shots 7
+  winning match 3: 12-0, rebounds 0/4, shots 10/0, held ticks 192, release shots 6
+  winning match 4: 12-5, rebounds 2/1, shots 9/2, held ticks 192, release shots 6
+  winning match 5: 10-0, rebounds 5/3, shots 11/2, held ticks 128, release shots 4
+  winning match 6: 12-8, rebounds 0/5, shots 8/7, held ticks 192, release shots 6
+  winning match 7: 12-4, rebounds 1/2, shots 7/4, held ticks 224, release shots 7
+  winning match 8: 10-4, rebounds 1/6, shots 8/6, held ticks 128, release shots 4
+PASS discrete-key hold/release simulation wins all eight
+
+21 engine simulation checks passed. Browser visuals and input remain separate QA.
+

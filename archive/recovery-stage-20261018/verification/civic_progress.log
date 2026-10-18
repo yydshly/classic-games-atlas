@@ -1,0 +1,13 @@
+PASS defaults, malformed and oversized records are safe
+PASS actual wins unlock eight chapters, not locked or nonterminal games
+PASS best minimizes turns, then maximizes food and trade; duplicate award idempotent
+PASS invalid fields and prototype-like keys never enter records
+PASS valid records survive unrelated damage
+PASS current checkpoint uses separate key and clearing cannot erase campaign
+PASS corruption rejection discards only current log
+PASS engine-rejected log is removed without touching independent best
+PASS missing, blocked, quota and serialization storage failures stay visible
+PASS tap validity excludes drag, cancel, mismatched or incomplete contact
+
+10 civic progress/input unit groups passed. Pure Node only; no browser or device claim.
+
