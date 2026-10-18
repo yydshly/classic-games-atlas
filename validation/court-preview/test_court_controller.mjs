@@ -16,7 +16,7 @@ function test(name, fn) {
 function harness({ storage = null, storageEntries = [], storageGetThrows = false, storageSetThrows = false } = {}) {
   let document, clock = 1000, nextFrame, renders = 0;
   class Element {
-    constructor(tag = 'div', id = '') { this.tagName = tag.toUpperCase(); this.id = id; this.listeners = new Map(); this.children = []; this.dataset = {}; this.style = {}; this.attributes = {}; this.hidden = false; this.open = false; this.disabled = false; this.textContent = ''; }
+    constructor(tag = 'div', id = '') { this.tagName = tag.toUpperCase(); this.id = id; this.listeners = new Map(); this.children = []; this.dataset = {}; this.style = {}; this.attributes = {}; this.hidden = false; this.open = false; this.disabled = false; this.textContent = ''; this.scrolls = []; }
     addEventListener(type, fn) { const list = this.listeners.get(type) || []; list.push(fn); this.listeners.set(type, list); }
     dispatch(event) { for (const fn of this.listeners.get(event.type) || []) fn(event); }
     setAttribute(key, value) { this.attributes[key] = String(value); }
@@ -27,6 +27,7 @@ function harness({ storage = null, storageEntries = [], storageGetThrows = false
     focus() { const prior = document.activeElement; if (prior && prior !== this) prior.dispatch(event('blur', prior)); document.activeElement = this; }
     setPointerCapture(id) { this.pointerId = id; }
     getContext() { return {}; }
+    scrollIntoView(options) { this.scrolls.push({ ...options, panelHidden: document.getElementById('panel').hidden }); }
     showModal() { this.open = true; }
     close() { this.open = false; }
   }
@@ -236,6 +237,26 @@ test('unavailable preview storage does not fall back to a production key', () =>
   const h = harness({ storageEntries: [['atlas-court-v1', production]], storageGetThrows: true, storageSetThrows: true });
   h.click('sound'); h.play(); assert.equal(h.snapshot().state, 'playing'); assert.equal(h.el('storage-note').hidden, false);
   assert.deepEqual(h.reads, [progress.STORAGE_KEY]); assert.deepEqual(h.writeAttempts, [progress.STORAGE_KEY]); assert.equal(h.stored.get('atlas-court-v1'), production);
+});
+test('start reveals the whole arena only after hiding the ready panel', () => {
+  const h = harness(); assert.equal(h.el('arena').scrolls.length, 0); h.play();
+  assert.deepEqual(h.el('arena').scrolls, [{ block: 'start', inline: 'nearest', behavior: 'auto', panelHidden: true }]);
+});
+test('pause and both resume controls realign the arena after panel changes', () => {
+  const h = harness(); h.play(); h.click('pause'); assert.equal(h.el('arena').scrolls.at(-1).panelHidden, false);
+  h.click('pause'); assert.equal(h.el('arena').scrolls.at(-1).panelHidden, true);
+  h.click('pause'); h.click('primary'); assert.equal(h.el('arena').scrolls.at(-1).panelHidden, true);
+  assert.equal(h.el('arena').scrolls.length, 5);
+});
+test('help resume reveals the arena, while ready or background closes do not', () => {
+  const h = harness(); h.click('help'); h.click('help-done'); assert.equal(h.el('arena').scrolls.length, 0);
+  h.play(); h.click('help'); h.click('help-done'); assert.equal(h.el('arena').scrolls.length, 2); assert.equal(h.el('arena').scrolls.at(-1).panelHidden, true);
+  h.click('help'); h.document.hidden = true; h.dispatch(h.document, 'visibilitychange'); h.click('help-done');
+  assert.equal(h.snapshot().state, 'paused'); assert.equal(h.el('arena').scrolls.length, 2);
+});
+test('restart followed by start reveals the clean match without stale holds', () => {
+  const h = harness(); h.play(); h.key('keydown', 'd'); h.frames(10); h.click('restart'); h.play();
+  assert.equal(h.el('arena').scrolls.length, 2); assert.equal(h.el('arena').scrolls.at(-1).panelHidden, true); h.frames(3); assert.equal(h.snapshot().players[0].x, 290);
 });
 console.log(`\n${checks} controller model checks passed; ${failures} failed. Real browser/native input/layout acceptance remains pending.`);
 if (failures) process.exitCode = 1;

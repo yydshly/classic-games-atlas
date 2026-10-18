@@ -1,0 +1,149 @@
+{
+  "engine_checks": 21,
+  "controller_model_checks": 31,
+  "recovery_checks": 7,
+  "layout_source_and_sizing_checks": 7,
+  "progress_and_isolation": "passed",
+  "post_fix_browser_verified": false,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_court.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_court_progress.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_court_controller.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_court_recovery.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_preview_isolation.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "validation/court-preview/test_court_layout.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "preview/court/engine.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "preview/court/game.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "preview/court/levels.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "preview/court/progress.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "preview/court/renderer.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_court.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_court_controller.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_court_layout.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_court_progress.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_court_recovery.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "validation/court-preview/test_preview_isolation.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "syntax-compile",
+        "validation/court-preview/test_court_browser.py"
+      ],
+      "exit_code": 0,
+      "browser_executed": false
+    }
+  ]
+}
