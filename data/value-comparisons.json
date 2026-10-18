@@ -2657,30 +2657,44 @@
       },
       "appealHypothesis": {
         "label": "设计解释，非已证实的流行因果",
-        "text": "发现、收集与培育把队伍变成个人旅程的一部分；属性配合提供策略，交换又把个人收藏延伸到玩家关系。"
+        "text": "探索时发现不同伙伴、在削弱与照料之间取舍、回营换入队伍并看到成长，可能把战斗连接成个人旅途。这里是设计解释；官方机制资料证明这些机制存在，不证明它们解释销量，也不证明本实验已产生依恋或成长感。",
+        "sourceReferences": [
+          {
+            "label": "宝可梦官方家长指南：探索、捕获与多样伙伴",
+            "url": "https://parents.pokemon.com/en-us/video-games-and-apps/"
+          },
+          {
+            "label": "《晶灿钻石／明亮珍珠》官方战斗指南：机制例证，非本项目绑定版本",
+            "url": "https://diamondpearl.pokemon.com/en-us/trainersguide/fundamentals/battling/"
+          }
+        ]
       },
       "implemented": [
-        "8章固定3同伴短篇回合战斗；风/苔/泉相克、技能/护盾/状态",
-        "有限能量与补给、敌方意图预览，最多18轮；每章独立预算"
+        "一张回声浅滩地图：9×5逻辑空间、17个连通步点，真实移动到两种已有原创生灵的遭遇点；绕路采莓会消耗日光。",
+        "出行带2位伙伴，每次24日光、2羽结、2露莓；轻击削弱体力但增加警觉，分享露莓安抚也消耗可用于治疗的资源，打到0会错过本次招募。",
+        "羽结概率封顶88%，失败真实扣资源并改变安心/警觉；不是预设自动成功。成功先进入本次同行名单，回营后才加入名册，需实际换掉一位才能带进下一次相遇。",
+        "参与两次有结果的相遇只成长一次：体力上限+8、基础威力+2；新伙伴技能真实影响后续相遇，没有成长树或无限升级。",
+        "两位倒下、日光耗尽、主动回营均可安全重试；独立key classic-atlas.feather.expedition.v2以种子和合法命令日志恢复，同一次羽结刷新不重掷，损坏记录先保留。",
+        "接入原创AI辅助浅滩绘画与五位伙伴素材；使用独立脚锚与静态关键姿态，场景位置来自实际状态，未把离屏图称为实机或完整动作动画。"
       ],
       "intendedEmotionalValue": {
         "label": "预期情绪价值假设，未经玩家验证",
-        "primary": "固定同伴配合的信赖、救回队员后反败为胜的牵挂",
-        "action": "根据敌方意图选择技能、护盾、属性克制和有限补给",
-        "feedback": "队员承伤/恢复/复起，状态被解除，战斗推进至下一章"
+        "primary": "自己选择同行者、为失败承担资源代价后仍愿意照料伙伴，以及新伙伴加入并影响下一次相遇的期待。是否真正产生依恋和成长感未经过玩家验证。",
+        "action": "选择两位出行，在步点地图找遭遇；轻击或分享露莓后用有限羽结招募，失败后可回营重试；招募后换进队伍，让参与者获得一次有限成长。",
+        "feedback": "日光、体力、安心、警觉与招募概率按实际行动变化；失败扣费且刷新不重掷，回营后名册增加，换入伙伴的技能及成长后的数值影响下一次相遇。上述闭环当前为模型/控制器证据，实机待验。"
       },
       "missingValueMechanisms": [
         {
-          "mechanism": "捕捉、地图探索与成长树",
-          "status": "明确没有",
-          "affectedValue": "发现新伙伴和亲手养成个人队伍的核心依恋途径缺失",
-          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+          "mechanism": "长期探索与养成广度",
+          "status": "已补一处17步点地图、两种已有生灵招募及一次封顶成长；无大地区、进化、图鉴或完整成长树",
+          "affectedValue": "能验证一次发现与队伍变化的短链，尚不足以承载长期收集和培育旅程。",
+          "interpretationStatus": "设计推断，非玩家感受结论"
         },
         {
-          "mechanism": "交换与玩家连接",
-          "status": "无联网系统",
-          "affectedValue": "收藏互补和与他人分享队伍的关系价值未包含",
-          "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
+          "mechanism": "动作、声音与玩家连接",
+          "status": "伙伴是静态关键姿态；没有本轮新增声音、交易或联网，真实浏览器输入与窄屏待验",
+          "affectedValue": "美术素材和规则闭环可见，不等于动作生命感、顺手操作或社交分享价值已经成立。",
+          "interpretationStatus": "体验待验，不以离屏画面代替用户认可"
         }
       ],
       "evidence": [
@@ -2718,9 +2732,21 @@
           "line_end": null,
           "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_VERIFICATION.md",
           "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        },
+        {
+          "path": "docs/FEATHER_V2_SCOPE.md",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/dc4aeff3514b0b7e299446cdca3eb4e8ed968fab/docs/FEATHER_V2_SCOPE.md",
+          "claim": "v2有限地图、招募失败、换队与封顶成长范围"
+        },
+        {
+          "path": "docs/FEATHER_V2_IMPLEMENTATION.md",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/dc4aeff3514b0b7e299446cdca3eb4e8ed968fab/docs/FEATHER_V2_IMPLEMENTATION.md",
+          "claim": "模型/控制器与实际renderer证据；尚待真实浏览器验收"
         }
       ],
-      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+      "verificationBoundary": "独立v2有限候选，尚待真实浏览器验收，未获得用户品质认可。模型与控制器替身验证了招募失败扣费、回营重试、加入名册、换队、一次成长和合法日志恢复；不能代替真实UI操作、窄屏布局、原生触屏、长期存储或玩家感受。页面所列v2画面为实际renderer离屏输出，不是浏览器截图。原创AI辅助底图与五位伙伴采用统一绘制素材，伙伴仍为静态关键姿态，未完成行走/受击/施招动作动画，本轮没有新增声音。",
+      "implementationVersion": "v2 有限候选（v1八章保留）",
+      "implementationBoundary": "本栏说明本轮独立v2源码与模型范围，不代表公开浏览器验收。v1固定三同伴战斗保留；v2只有一处地图，不是新增八章或完整宝可梦复刻。"
     },
     {
       "number": "33",

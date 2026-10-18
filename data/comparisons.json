@@ -2597,8 +2597,9 @@
         "有限能量与补给、敌方意图预览，最多18轮；每章独立预算"
       ],
       "gaps": [
-        "宝可梦目录核心包括探索、发现、培育与组队；本作明确没有地图移动、捕捉或成长树",
-        "现有更接近固定队伍回合战斗短篇，缺少收集养成主循环；没有指定宝可梦世代或版本"
+        "v1仍是8章固定三伙伴战斗，没有地图移动、捕捉或持续养成；本轮v2仅补一处地图、两种可招募生灵、2人编队与一次封顶成长。",
+        "宝可梦仅绑定主系列，未指定世代；v2的羽结、安抚、日光和数值为原创规则，不等于任何世代完整捕获公式。",
+        "仍无大地区探索、图鉴、进化、育种、交易、联网社交或完整成长树；伙伴为静态关键姿态，本轮未新增音效/音乐。"
       ],
       "relation": "本项目原创短篇队伍回合冒险，仅参考队伍、技能、属性关系和有限补给等通用机制；角色、剧情、名称、美术与合成音原创，不复制商业作品资产，不宣称完整长篇RPG。",
       "levels": 8,
@@ -2637,6 +2638,16 @@
           "line_end": null,
           "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_VERIFICATION.md",
           "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        },
+        {
+          "path": "docs/FEATHER_V2_SCOPE.md",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/dc4aeff3514b0b7e299446cdca3eb4e8ed968fab/docs/FEATHER_V2_SCOPE.md",
+          "claim": "v2有限地图、招募失败、换队与封顶成长范围"
+        },
+        {
+          "path": "docs/FEATHER_V2_IMPLEMENTATION.md",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/dc4aeff3514b0b7e299446cdca3eb4e8ed968fab/docs/FEATHER_V2_IMPLEMENTATION.md",
+          "claim": "模型/控制器与实际renderer证据；尚待真实浏览器验收"
         }
       ],
       "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
@@ -2655,8 +2666,27 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "not_started",
-        "url": null
+        "status": "candidate_unaccepted",
+        "label": "v2 有限候选，未完成品质验收",
+        "url": "./versions/v2/games/feather/",
+        "details_url": "./docs/FEATHER_V2_IMPLEMENTATION.md",
+        "candidate_commit": "dc4aeff3514b0b7e299446cdca3eb4e8ed968fab",
+        "changes": [
+          "一张回声浅滩地图：9×5逻辑空间、17个连通步点，真实移动到两种已有原创生灵的遭遇点；绕路采莓会消耗日光。",
+          "出行带2位伙伴，每次24日光、2羽结、2露莓；轻击削弱体力但增加警觉，分享露莓安抚也消耗可用于治疗的资源，打到0会错过本次招募。",
+          "羽结概率封顶88%，失败真实扣资源并改变安心/警觉；不是预设自动成功。成功先进入本次同行名单，回营后才加入名册，需实际换掉一位才能带进下一次相遇。",
+          "参与两次有结果的相遇只成长一次：体力上限+8、基础威力+2；新伙伴技能真实影响后续相遇，没有成长树或无限升级。",
+          "两位倒下、日光耗尽、主动回营均可安全重试；独立key classic-atlas.feather.expedition.v2以种子和合法命令日志恢复，同一次羽结刷新不重掷，损坏记录先保留。",
+          "接入原创AI辅助浅滩绘画与五位伙伴素材；使用独立脚锚与静态关键姿态，场景位置来自实际状态，未把离屏图称为实机或完整动作动画。"
+        ],
+        "preserved": "原有v1八章固定三伙伴回合战斗、旧运行文件、classic-atlas.feather.v1存档与冻结v1保持原样。v2是独立旅途状态机，只沿用项目原创伙伴、属性相克概念与合法重放思路；不是原引擎隐藏功能，也不是完整宝可梦复刻。",
+        "validation_boundary": "独立v2有限候选，尚待真实浏览器验收，未获得用户品质认可。模型与控制器替身验证了招募失败扣费、回营重试、加入名册、换队、一次成长和合法日志恢复；不能代替真实UI操作、窄屏布局、原生触屏、长期存储或玩家感受。页面所列v2画面为实际renderer离屏输出，不是浏览器截图。原创AI辅助底图与五位伙伴采用统一绘制素材，伙伴仍为静态关键姿态，未完成行走/受击/施招动作动画，本轮没有新增声音。",
+        "renderer_image": {
+          "url": "./docs/feather-v2-qa/review-encounter.webp",
+          "width": 1200,
+          "height": 675,
+          "label": "v2实际renderer离屏输出：合法输入状态中的野外相遇。非浏览器截图、非手机实测；伙伴为静态关键姿态。"
+        }
       }
     },
     {
@@ -3338,6 +3368,11 @@
       "number": "40",
       "commit": "134e9211b8cf383830f660a3433e4574b4f26b0f",
       "scope": "新增独立v2草甸联赛候选；39本轮有限辅助首站真验结束，不代表手动或整体品质验收。"
+    },
+    {
+      "number": "32",
+      "commit": "dc4aeff3514b0b7e299446cdca3eb4e8ed968fab",
+      "scope": "独立v2有限探索→招募→回营换队→一次成长；v1八章保留，真实浏览器验收待做。"
     }
   ]
 }
