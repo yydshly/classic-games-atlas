@@ -5,15 +5,15 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'reference-review-r7-coaster-20261018';
+const DATA_REVISION = 'reference-review-r8-kart-20261018';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
  {number:'35',slug:'court',title:'晴湾篮场',play_url:'./preview/court/',levels:8},
  {number:'36',slug:'repair',title:'雨街修理所',play_url:'./preview/repair/',levels:8},
  {number:'37',slug:'civic',title:'潮原纪事',play_url:'./versions/v2/games/civic/',about_url:'./versions/v2/games/civic/about.html',levels:8,version:'v2',legacy_playable:false,next_version:{status:'candidate_unaccepted',url:'./versions/v2/games/civic/',label:'v2 可玩原型，视觉质感未达用户要求'}},
- {number:'38',slug:'coaster',title:'云岬游乐园',play_url:'./preview/coaster/',levels:8,next_version:{status:'candidate_unaccepted',url:'./versions/v2/games/coaster/',label:'v2 首轮候选，未完成品质验收'}},
- {number:'39',slug:'kart',title:'林野杯赛',play_url:'./preview/kart/',levels:8}
+ {number:'38',slug:'coaster',title:'云岬游乐园',play_url:'./preview/coaster/',levels:8,next_version:{status:'candidate_unaccepted',url:'./versions/v2/games/coaster/',label:'v2 本轮交付候选，未完成整体品质验收'}},
+ {number:'39',slug:'kart',title:'林野杯赛',play_url:'./preview/kart/',levels:8,next_version:{status:'candidate_unaccepted',url:'./versions/v2/games/kart/',label:'v2 首轮候选，未完成品质验收'}}
 ];
 const list = (items, className = '') => `<ul${className ? ` class="${className}"` : ''}>${(Array.isArray(items) ? items : items ? [items] : []).map(item => `<li>${escapeHtml(typeof item === 'string' ? item : JSON.stringify(item))}</li>`).join('')}</ul>`;
 const mediaFor = (id) => referenceMedia.find(item => item.gameId === id);
