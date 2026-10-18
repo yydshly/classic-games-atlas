@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';const require=createRequire(import.meta.url);const{createCanvas,loadImage}=require('@napi-rs/canvas');
+import {fileURLToPath} from 'node:url';import {createHash} from 'node:crypto';
+import{createGame,start,step,command,snapshot,FIXED_DT}from'../../versions/v2/games/repair/engine.mjs';
+import{render,renderDetail,preloadArt,hitSlot,project}from'../../versions/v2/games/repair/renderer.mjs';
+const digest=c=>createHash('sha256').update(c.toBuffer('image/png')).digest('hex');
+const draw=(s,time,reducedMotion=false,detail=false)=>{const c=createCanvas(detail?420:1200,detail?240:800);(detail?renderDetail:render)(c.getContext('2d'),s,{width:c.width,height:c.height,selectedSlot:'D',time,reducedMotion});return digest(c);};
+const s=createGame(1);command(s,{type:'build',slot:'B',stationType:'electrical'});command(s,{type:'hire'});command(s,{type:'assign',staffId:'t3',stationId:'station-B'});start(s);while(s.elapsed<18)step(s,FIXED_DT);const state=snapshot(s),before=JSON.stringify(state);
+const fallback=draw(state,18000);assert.equal(typeof fallback,'string');console.log('PASS vector fallback renders before optional atlas loading');
+assert.equal(await preloadArt(url=>loadImage(fileURLToPath(url))),true);assert.notEqual(draw(state,18000),fallback);console.log('PASS one original sprite atlas loads and replaces characters');
+assert.equal(draw(state,18000),draw(state,18000));assert.notEqual(draw(state,18000),draw(state,18300));assert.notEqual(draw(state,18000,false,true),draw(state,18300,false,true));console.log('PASS scene and actual selected-bay crop animate deterministically');
+assert.equal(draw(state,18000,true),draw(state,18300,true));assert.equal(draw(state,18000,true,true),draw(state,18300,true,true));console.log('PASS reduced motion freezes both scene and detail');
+assert.equal(JSON.stringify(state),before);for(const [slot,x,y]of[['A',340,190],['B',565,190],['C',790,190],['D',340,510],['E',565,510],['F',790,510]]){const p=project(x,y);assert.equal(hitSlot(p.x,p.y),slot);}console.log('PASS simulation immutable and all six original hit areas preserved');
+console.log('5 renderer groups passed; not browser or visual acceptance.');

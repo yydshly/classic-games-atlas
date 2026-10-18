@@ -1,0 +1,12 @@
+PASS campaign default, malformed JSON, incorrect schema and bounds are safe
+PASS valid victories unlock the next day; locked-day results are rejected
+PASS best compares completed, then fewer losses, then credits without downgrade
+PASS invalid result and prototype-like keys cannot enter records
+PASS valid best records survive other damaged progress fields
+PASS current-shift round trip is isolated from independent campaign records
+PASS corrupt or unsupported shift cannot erase a valid best or unlock
+PASS engine-rejected checkpoint removes only the shift key
+PASS blocked storage, missing storage and quota errors are nonfatal and sticky
+PASS cancel, drag, wrong contact and incomplete contact never activate
+
+10 repair progress/input unit groups passed. Pure Node checks only; no browser or touch-device claim.
