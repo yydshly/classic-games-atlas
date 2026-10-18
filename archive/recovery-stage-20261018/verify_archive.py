@@ -27,10 +27,10 @@ for folder,game,suffixes in cases:
   script=f'scripts/test_{game}{suffix}.mjs'
   p=subprocess.run(['node',script],cwd=ROOT/folder,capture_output=True,timeout=120)
   log=f'{game}{suffix or "_engine"}.log'
-  (out/log).write_bytes(p.stdout+b'\n'+p.stderr)
+  (out/log).write_bytes((p.stdout+b'\n'+p.stderr).rstrip()+b'\n')
   report['tests'].append({'game':game,'cwd':folder,'command':['node',script],'exitCode':p.returncode,'log':log})
   print(game,suffix or '_engine',p.returncode,flush=True)
 report['importedFilesVerifiedAfter']=verify_bytes()
 report['allSelectedSuitesPassed']=all(t['exitCode']==0 for t in report['tests'])
-(out/'LOCAL_VALIDATION.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(out/'LOCAL_VALIDATION.json').write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({'fileCount':report['importedFilesVerifiedAfter'],'suites':len(report['tests']),'passed':report['allSelectedSuitesPassed']}))
