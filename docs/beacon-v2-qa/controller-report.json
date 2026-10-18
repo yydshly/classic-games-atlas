@@ -1,0 +1,14 @@
+{
+  "kind": "minimal-dom-controller-harness-not-browser",
+  "checks": [
+    "46-command ordinary campaign through real controller button callbacks; old-key sentinel preserved",
+    "detached stale button cannot duplicate recruit",
+    "battle refresh restores paused; cancellation does not spend; confirmation spends once",
+    "visibility pause preserves exact progress",
+    "invalid save preserved until explicit reset; cancel leaves intact",
+    "storage denial disclosed while runtime still works"
+  ],
+  "passed": 6,
+  "limits": "No native browser layout, image decoding, pointer, focus, touch, or public deployment verification.",
+  "qualityAcceptance": false
+}

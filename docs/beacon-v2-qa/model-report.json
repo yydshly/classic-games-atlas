@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "full campaign via public commands; exact persistence at every accepted action",
+    "cargo not spendable before home; bank exact once",
+    "duplicate/stale commands rejected without mutation",
+    "invalid save rejected; isolated v2 key and event cap",
+    "cannot recruit away, repeat pickup, teleport, or craft early",
+    "retreat loss, wounds and 2 days persist",
+    "natural starvation and deadline fail without injected state",
+    "natural weak-team battle can lose; no synthetic combat state",
+    "day 33 cannot override deadline with victory",
+    "lost timber blocks warehouse before irrecoverable spending",
+    "camp can refill repeatedly without renewable money or wood",
+    "lost lens is explicit terminal failure, not a softlock",
+    "no reward after terminal state"
+  ],
+  "passed": 13,
+  "campaign": {
+    "day": 21,
+    "actions": 46,
+    "guardHP": 12,
+    "bowHP": 36,
+    "gold": 200
+  },
+  "qualityAcceptance": false
+}
