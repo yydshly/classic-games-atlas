@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#173f35"><meta name="description" content="林野杯赛：八条原创森林与高地赛道，四车同场、双圈竞速、漂移蓄力与单槽道具。独立 v2：读弯、漂移火花与近身道具反馈；原版独立保留。">
+  <title>林野杯赛 v2 · 读弯追风</title>
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./kart.css">
+  <script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <header class="site-header"><a class="back-link" href="../../../../#experiments">← 返回经典游戏图鉴</a><span class="candidate-label" title="v2 进度独立保存；弯道辅助默认关闭，成绩分开记录。">独立 v2 · 读弯追风 <b>39</b></span><a class="reference-link" href="../../../../#game=mario-kart">机制参考 ↗</a></header>
+  <main>
+    <section class="masthead" aria-labelledby="title"><div><p class="eyebrow">WOODLAND GRAND PRIX / READ THE BEND</p><h1 id="title">林野杯赛<span>v2 · 读弯，追风。</span></h1></div><div class="cup-seal" aria-hidden="true"><span>FOREST</span><b>39</b><span>CUP · 2 LAPS</span></div></section>
+    <div class="game-layout">
+      <section class="race-panel" aria-label="林野杯赛驾驶区">
+        <header class="race-heading"><div><span id="course-number">01 / 08</span><h2 id="course-name">林间起跑线</h2></div><div class="top-actions"><button id="help" type="button">驾驶手册</button><button id="pause" type="button" disabled>暂停 <kbd>P</kbd></button></div></header>
+        <div class="race-hud" aria-label="本场比赛状态"><div class="rank-cell"><span>当前名次</span><strong><b id="position">4</b><small> / 4</small></strong></div><div><span>圈数</span><strong id="lap">1 / 2</strong></div><div><span>比赛用时</span><strong id="elapsed">00:00.0</strong></div><div><span>剩余时限</span><strong id="remaining">—</strong></div></div>
+        <div class="cue-bar"><span id="drive-mode">手动驾驶</span><b id="driving-cue">读弯，准备出发</b></div><div class="race-frame"><canvas id="race" width="1200" height="800" tabindex="0" role="img" aria-label="原创俯视赛道，四辆赛车竞逐。橙色赛车是你；使用下方驾驶控制，比赛状态在画布外同步显示。"></canvas></div>
+        <section class="assist-setting"><label><input type="checkbox" id="assist-mode"> 开启弯道辅助</label><span>默认关闭；补偿 75% 弯道转向，仍须自己修正路线。左右仍选线，刹车、漂移和道具由你决定。成绩分开记录，仅起跑前可切换。</span></section><section id="state-card" class="state-card" aria-labelledby="state-title"><div class="state-copy"><span id="state-eyebrow" class="eyebrow">ROUND 01 / 08</span><h3 id="state-title">风，已经在等你。</h3><p id="state-description">从林间出发，完成两圈，在目标名次内冲过终点。</p><p id="state-summary" class="state-summary"></p></div><div class="state-actions"><button id="primary-action" type="button" class="primary">准备起跑 ↗</button><button id="secondary-action" type="button" class="secondary">选择赛道</button></div></section>
+        <div class="driving-strip"><div class="speed"><span>车速</span><b id="speed">0</b><small>赛道单位 / 秒</small></div><div class="drift-meter"><div><span>漂移蓄力</span><b id="drift-label">等待入弯</b></div><meter id="drift-meter" min="0" max="1" value="0" aria-label="漂移蓄力"></meter><small id="drift-hint">转向时按住漂移，蓄力后松开冲刺</small></div><div class="item-slot"><span>单槽道具</span><b id="item-name">空槽</b><small id="item-hint">驶过菱形补给箱</small></div></div>
+        <div class="touch-controls" role="group" aria-label="驾驶控制。转向、刹车与漂移可以同时按住。">
+          <button id="steer-left" data-control="left" type="button" aria-label="按住向左转向"><b aria-hidden="true">↶</b><span>左转</span><kbd>A / ←</kbd></button>
+          <button id="steer-right" data-control="right" type="button" aria-label="按住向右转向"><b aria-hidden="true">↷</b><span>右转</span><kbd>D / →</kbd></button>
+          <button id="brake" data-control="brake" type="button" aria-label="按住刹车"><b aria-hidden="true" class="brake-symbol"></b><span>刹车</span><kbd>S / ↓</kbd></button>
+          <button id="drift" data-control="drift" type="button" aria-label="转向时按住漂移，蓄力后松开"><b aria-hidden="true">≋</b><span>漂移</span><kbd>空格</kbd></button>
+          <button id="use-item" data-control="item" type="button" aria-label="使用当前道具"><b aria-hidden="true">◇</b><span>使用道具</span><kbd>E / J</kbd></button>
+        </div>
+        <p id="race-status" class="race-status" role="status" aria-live="polite">赛车自动加速。先用左右转向守住路面，急弯前按刹车。</p>
+        <p class="keyboard-guide">A D / ← → 转向 · S / ↓ 刹车 · 空格 / Shift 漂移 · E / J 道具 · P / Esc 暂停 · R 重开</p>
+      </section>
+      <aside class="field-notes" aria-label="赛程与比赛规则">
+        <div class="notes-heading"><span>THE COURSE BOOK</span><b>赛道手记</b></div>
+        <section class="briefing"><p class="eyebrow">本场任务</p><h3 id="goal">完成双圈，争取前三</h3><p id="course-tip">循着林间弯道，把速度留到出口。</p><div class="briefing-tags"><span>自动加速</span><span>四车同场</span><span>两圈定胜负</span></div></section>
+        <details class="order-panel"><summary>查看四车顺位</summary><h3>实时顺位 <span>RACE ORDER</span></h3><ol id="race-order"><li>等待起跑</li></ol></details>
+        <section class="field-rule"><span class="rule-number">01</span><div><h3>把速度，留给弯外。</h3><p>方向相对车头；弯前刹车，转向时按住漂移。蓄力够了再松开，会有短暂加速。</p></div></section>
+        <section class="field-rule"><span class="rule-number">02</span><div><h3>一份补给，一次机会。</h3><p>空槽才能拿补给。冲刺留在弯道出口；脉冲只有近身才有效；护盾用于争位和木桩。满槽不会覆盖。</p></div></section>
+        <section class="record-panel"><span>本场个人最佳</span><b id="best">等待第一份成绩</b><small>先比较名次，同名次再比较用时。</small></section>
+        <div class="side-actions"><button id="chapters" type="button">八站赛程 <span>↗</span></button><button id="retry" type="button">重新起跑 <kbd>R</kbd></button></div>
+        <p id="save-note" class="save-note">比赛进度与个人纪录仅保存在本机。</p><p id="restore-note" class="restore-note" hidden></p>
+      </aside>
+    </div>
+    <footer class="colophon"><p><b>原创玩法实验 39 · 独立 v2</b> · 八条手工设计的森林与高地赛道。四车竞速、漂移蓄力、道具与场景均为原创实现，仅参考卡丁车竞速通用机制；不使用原作角色、赛道或音画素材。</p><span><a href="../../../../preview/kart/">保留的 v1</a> · <a href="./about.html">原作乐趣与实现差异</a></span></footer>
+  </main>
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-content"><p class="eyebrow">DRIVER'S FIELD GUIDE</p><h2 id="help-title">先读弯，再追风。</h2><p class="dialog-intro">四辆赛车，两个完整圈。你驾驶橙色赛车，按当前赛道的名次目标与时限完成比赛。</p><ol class="manual-list">
+    <li><b>自动加速，自己掌方向。</b><p>三秒倒计时结束才开表。赛车自动向前加速；A / D 或左右箭头相对车头转向，S / 下箭头刹车，不会倒车。触屏按住下方按钮，可以同时转向、刹车或漂移。偏离路面会减速，持续转向会驶向路肩，及时回正。</p></li>
+    <li><b>漂移要转向，也要收手。</b><p id="manual-drift">转向时按住空格、Shift 或“漂移”蓄力；达到阈值后松开漂移，获得短暂加速。先在宽弯练习，急弯先刹车。蓄力条会显示是否可以释放。</p></li>
+    <li><b>一个槽位，等一个好时机。</b><p id="manual-items">空槽驶过菱形补给箱获得道具；满槽不拾取。E / J 或“使用道具”消耗当前道具。松果冲刺加速 1.3 秒，苔叶护盾保护 2.8 秒，铃果脉冲使附近前后方 54 赛道单位内未受保护的对手减速 1.1 秒。四车共享补给箱，拾取后 5 秒刷新。</p></li>
+    <li><b>两圈冲线，名次也要达标。</b><p>起跑后沿同一方向完成两圈。名次按比赛进度排列；冲线后看实际完赛顺位。须在时限内达到本场目标名次，否则本场失败；超时也失败。比赛结束即停止，重试同一赛道或完成后解锁下一站。</p></li>
+    <li><b>暂停之后，等你继续。</b><p>P / Esc 暂停；打开手册、赛程或离开页面也会暂停并松开全部驾驶输入。关闭弹窗仍然暂停，需要明确继续。刷新可接续未完成比赛，恢复后先暂停，不计算离线时间。损坏的当前局会舍弃，独立纪录尽量保留；存储不可用会明确提示。</p></li>
+  </ol><p class="manual-note">v2 可在起跑前选择弯道辅助（默认关闭）。它只通过普通转向输入补偿 75% 弯道曲率并稳住车头，不会自动选线、刹车、释放漂移或使用道具。辅助与手动纪录分开，赛道、AI、碰撞、拾取和名次规则相同。</p><p class="manual-note">按钮也可用 Tab 聚焦，再按住 Enter / 空格驾驶，松键或移开焦点停止该次输入。画布外提供圈数、名次、时限与道具文字；竞速仍需要观察赛道。</p><div class="dialog-actions"><button id="help-confirm" type="button" class="primary">记住了，准备出发 ↗</button><button id="help-close" type="button" class="secondary">返回</button></div></div></dialog>
+  <dialog id="chapters-dialog" aria-labelledby="chapters-title"><div class="dialog-content"><p class="eyebrow">EIGHT STOPS. ONE WOODLAND CUP.</p><h2 id="chapters-title">下一阵风，从哪里来？</h2><p class="dialog-intro">八条原创赛道依次解锁。每站两圈，先读名次目标与时限，再准备起跑。</p><div id="chapter-list" class="chapter-list"></div><button id="chapters-close" type="button" class="secondary">返回赛道</button></div></dialog>
+</body></html>

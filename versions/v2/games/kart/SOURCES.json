@@ -1,0 +1,56 @@
+{
+  "title": "林野杯赛 v2：机制参照与源码来源",
+  "checkedAt": "2026-10-18",
+  "reference": "Mario Kart 系列，具体代际未定；不是完整复刻",
+  "baselineCommit": "e7962cce8349573b6a7e1e516502d6b7b4bb6ddb",
+  "baselinePath": "preview/kart/",
+  "baselineBlobs": {
+    "renderer.mjs": {
+      "sha": "0099942068b4acd259be7f06d9a91a371f014f2f",
+      "bytes": 26262
+    },
+    "progress.mjs": {
+      "sha": "47ea16e946aa0b57a0cc4a04b4f0230545752af4",
+      "bytes": 4109
+    },
+    "levels.mjs": {
+      "sha": "d41be1bb29b0ecf4eeabc66a8dea0c774327ad49",
+      "bytes": 4696
+    },
+    "kart.css": {
+      "sha": "66289e61b9fae0093099a62e9554cad3cdcf4b29",
+      "bytes": 15932
+    },
+    "engine.mjs": {
+      "sha": "1bcb96e64c893cda196817aeb3903b5ce74579fa",
+      "bytes": 13999
+    },
+    "index.html": {
+      "sha": "75ed172addb700da7554d947aa1c5449e8630c09",
+      "bytes": 9857
+    },
+    "game.mjs": {
+      "sha": "249d54a96570d8941ced3396b3529c3008c38c60",
+      "bytes": 24076
+    }
+  },
+  "primarySources": [
+    {
+      "title": "Nintendo Mario Kart 7 Electronic Manual §5",
+      "url": "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_3ds_2/mario_kart_7/ElectronicManual_Nintendo3DS_MarioKart7_EN.pdf",
+      "supports": "漂移松手冲刺、火花阶段"
+    },
+    {
+      "title": "Nintendo Mario Kart 8 Deluxe tutorial (GameWith contributed)",
+      "url": "https://www.nintendo.com/jp/ichikara/aabpa/index_en.html",
+      "supports": "读弯、道具时机、该作落后名次更易取得强道具"
+    }
+  ],
+  "assetSources": "Existing project-original Canvas geometry; no downloaded third-party art.",
+  "evidence": "Native offscreen render from same 8-second state reached through public start/step controls; not browser screenshots.",
+  "acceptance": {
+    "browser": false,
+    "physicalTouchDevice": false,
+    "audio": false
+  }
+}
