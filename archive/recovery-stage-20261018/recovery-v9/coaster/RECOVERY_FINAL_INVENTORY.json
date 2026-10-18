@@ -1,0 +1,136 @@
+{
+  "createdAt": "2026-10-18T03:59:12.103210+00:00",
+  "kind": "New post-recovery validation; not historical evidence recovery",
+  "published": false,
+  "browserVerified": false,
+  "historicalRuntimeHashesMatched": 7,
+  "runtimeUnchangedAfterTests": true,
+  "newTestResults": {
+    "engine": 27,
+    "progress": 9,
+    "events": 28
+  },
+  "allSixSuiteExitCodes": 0,
+  "files": [
+    {
+      "path": "RECOVERY_ENGINE.md",
+      "bytes": 2278,
+      "sha256": "9104582716ccaaa283e26a0c33db7ddb84df888016b0fd7f2a6ff7b64917c8db"
+    },
+    {
+      "path": "RECOVERY_EVENTS.md",
+      "bytes": 2296,
+      "sha256": "00572a60d7d34a5de401ca5222891a625c1f0021d84bfd5108f7f362a69d38ce"
+    },
+    {
+      "path": "RECOVERY_INTERFACE.md",
+      "bytes": 2646,
+      "sha256": "4ccae33921415ced6c678fd148b5765e3b09d13ec133f51d418e7eac82cb22e2"
+    },
+    {
+      "path": "RECOVERY_INTERFACE_TEST.log",
+      "bytes": 755,
+      "sha256": "ff4f6b5cc39f74cc7a2a34b777df8d4490a054afe4d0c4272c12cd9385039dca"
+    },
+    {
+      "path": "RECOVERY_RENDERER.md",
+      "bytes": 2059,
+      "sha256": "b77f09ccbcd5dc9b837c9629215657446c91989a646141bc13983ea3a9e9b7c9"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_coaster.log",
+      "bytes": 2114,
+      "sha256": "a772f9237db081c25070bd5b298a18f77b5ec571a9cf7878d1f4f1dd716c5fb2"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_coaster_events.log",
+      "bytes": 2784,
+      "sha256": "87324ab65e11bf0032b9eadbc1672450a0bb08f8787b22c74962b1316098050b"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_coaster_progress.log",
+      "bytes": 755,
+      "sha256": "ff4f6b5cc39f74cc7a2a34b777df8d4490a054afe4d0c4272c12cd9385039dca"
+    },
+    {
+      "path": "RECOVERY_RUNTIME_HASH_CHECK.json",
+      "bytes": 2914,
+      "sha256": "4a33b92ade047503af0d1f6983a6421031726a85ab1b49cfd869a1e4642e8338"
+    },
+    {
+      "path": "games/coaster/coaster.css",
+      "bytes": 14849,
+      "sha256": "ea17aaf431d56cac834dbc58d170718a8441af62bb425d71616ca99eab851b64"
+    },
+    {
+      "path": "games/coaster/engine.mjs",
+      "bytes": 15630,
+      "sha256": "54b15e62a5e3be6af4cf1f5426877ab6e6a5aea11383cc63c90d552851759ffd"
+    },
+    {
+      "path": "games/coaster/game.mjs",
+      "bytes": 28661,
+      "sha256": "b3ed3af8386c18fd91bb774af95d87e5a7cd8b71c48b76ffeab6d8ef4ee6d3cd"
+    },
+    {
+      "path": "games/coaster/index.html",
+      "bytes": 8966,
+      "sha256": "8f1f28da91f5a16b025667da08251be1419e4c6c3c6aa7e3cb73607c4081e6ed"
+    },
+    {
+      "path": "games/coaster/levels.mjs",
+      "bytes": 6606,
+      "sha256": "5dbff9b3cd8a9653c6e57fd27725aa8b8cde52b4fb09504d6826854cd823601a"
+    },
+    {
+      "path": "games/coaster/progress.mjs",
+      "bytes": 4933,
+      "sha256": "f993cf2d16295b9c812485563cb81c0d0a1a9e70f1c3b35bfbe4c4c584cc971e"
+    },
+    {
+      "path": "games/coaster/renderer.mjs",
+      "bytes": 26783,
+      "sha256": "7977174b5f390bc18b990942d802306ee4c15d5668a53a2edd9f02f5a97ef3f4"
+    },
+    {
+      "path": "scripts/coaster_pilot.mjs",
+      "bytes": 2545,
+      "sha256": "a98c6a9f7705dda21558814e6382e6c7e14cb7660768fe9c9c852bcaa1916876"
+    },
+    {
+      "path": "scripts/render_coaster_preview.mjs",
+      "bytes": 12970,
+      "sha256": "5760fbe8d510b71e88f3da8c1553ab7a6a3137dadda452650487a0d3e7eb168f"
+    },
+    {
+      "path": "scripts/test_coaster.mjs",
+      "bytes": 13558,
+      "sha256": "06e5f2ec6035a1f646b6875eeacd123efbfabced46ad9272171db75db183f4e9"
+    },
+    {
+      "path": "scripts/test_coaster_events.mjs",
+      "bytes": 46346,
+      "sha256": "596637029a2174e175e39376b0095932166e9cae335e90d72ed99492af2ba03e"
+    },
+    {
+      "path": "scripts/test_coaster_progress.mjs",
+      "bytes": 6166,
+      "sha256": "591b850b3fbf789e9bcad6178804dcdf2662f04934294ad3e56acf51dc431e6f"
+    }
+  ],
+  "missingHistoricalArtifacts": [
+    "random-action test source",
+    "static layout test source",
+    "old-game isolation guard source",
+    "SPEC/RUN/VERIFICATION documentation",
+    "original QA logs and renderer checks",
+    "original images and videos",
+    "original candidate manifest"
+  ],
+  "limitations": [
+    "Node browser substitutes only; no real browser or device test",
+    "No recreated media",
+    "No original base repository in this recovery tree; old34 git isolation cannot be rerun here",
+    "Original artifact set is incomplete even though 7 runtime files match historical hashes"
+  ]
+}

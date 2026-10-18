@@ -1,0 +1,136 @@
+{
+  "createdAt": "2026-10-18T03:59:12.105002+00:00",
+  "kind": "New post-recovery validation; not historical evidence recovery",
+  "published": false,
+  "browserVerified": false,
+  "historicalRuntimeHashesMatched": 7,
+  "runtimeUnchangedAfterTests": true,
+  "newTestResults": {
+    "engine": 26,
+    "progress": 16,
+    "events": 32
+  },
+  "allSixSuiteExitCodes": 0,
+  "files": [
+    {
+      "path": "RECOVERY_ENGINE.md",
+      "bytes": 3825,
+      "sha256": "63705b47a796cae283551c272d7dc2f3dddaa002eed470c7995a0babdf0a8c36"
+    },
+    {
+      "path": "RECOVERY_ENGINE_TEST_OUTPUT.txt",
+      "bytes": 2848,
+      "sha256": "3dfcc8c6661d5f63eecb82595df91f36052d9dd9ad45abb7ac611ab2ad2d02b8"
+    },
+    {
+      "path": "RECOVERY_EVENTS.md",
+      "bytes": 3343,
+      "sha256": "ac6fa30edb5d4bdf4cad82ade9a01ee6b26bc5995c8b83c4947a9605e47b500b"
+    },
+    {
+      "path": "RECOVERY_INTERFACE.md",
+      "bytes": 2605,
+      "sha256": "01093b6832b3119dc1d7136c2382168f9b5f2977bf27a1d6f562193badad7db9"
+    },
+    {
+      "path": "RECOVERY_RENDERER.md",
+      "bytes": 2719,
+      "sha256": "5736d4452b0d4e39d3991e752e034e9480b413453e0ab08e171336761631271e"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_kart.log",
+      "bytes": 2848,
+      "sha256": "3dfcc8c6661d5f63eecb82595df91f36052d9dd9ad45abb7ac611ab2ad2d02b8"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_kart_events.log",
+      "bytes": 6175,
+      "sha256": "4ce99001cafe6c9c96ae9e1bf1713831270a9730c65ec9b8959b862eac948af5"
+    },
+    {
+      "path": "RECOVERY_RERUN_test_kart_progress.log",
+      "bytes": 972,
+      "sha256": "6c8cef7ea18a1eb83908475740a14dbfc6d86763128091a1d2665a62ce86b50d"
+    },
+    {
+      "path": "RECOVERY_RUNTIME_HASH_CHECK.json",
+      "bytes": 2890,
+      "sha256": "55c0e11609a010d0024b4d88058c85480214ac8ccbe27fc8e9dba17666585018"
+    },
+    {
+      "path": "games/kart/engine.mjs",
+      "bytes": 13999,
+      "sha256": "fbdeec6051ce98623ce30656d5d8c43f6bce65e857e640a245624779b655b5eb"
+    },
+    {
+      "path": "games/kart/game.mjs",
+      "bytes": 22966,
+      "sha256": "6a72eea073f9a96d7c5ec2000163c9111d019e880f2d460a38150d49d23b8fc4"
+    },
+    {
+      "path": "games/kart/index.html",
+      "bytes": 9621,
+      "sha256": "b0a18cc2b1459ba8ce11d2fb326e2ff3207f7abe2e5078c48fe792d1bd8e5afc"
+    },
+    {
+      "path": "games/kart/kart.css",
+      "bytes": 15932,
+      "sha256": "416b12487d095539b91067ccc087c1b80210804c79da4c08d5fd61213c1a6356"
+    },
+    {
+      "path": "games/kart/levels.mjs",
+      "bytes": 4696,
+      "sha256": "0b33259d6ff98e0320e6cde75838d520569247bb48cf556e7a214111512c684c"
+    },
+    {
+      "path": "games/kart/progress.mjs",
+      "bytes": 4075,
+      "sha256": "1d7080686fb73f30022a693786eae0cfb380d9b27a8f5c9e0ae89be15c9371b2"
+    },
+    {
+      "path": "games/kart/renderer.mjs",
+      "bytes": 26262,
+      "sha256": "2452644a9a14b7e90a0e04b470b28221e611ba2740824b31f3c62946182333d5"
+    },
+    {
+      "path": "scripts/kart_pilot.mjs",
+      "bytes": 2583,
+      "sha256": "ce6e83f9a4213cdcf65da4d669e87f223e53c6e4f115d6c320c1f6f4da2ba6e9"
+    },
+    {
+      "path": "scripts/render_kart_preview.mjs",
+      "bytes": 13506,
+      "sha256": "ab008124d02571007469ce73d053d25f17708f9b765d5a5f46fe9e46ecef5db5"
+    },
+    {
+      "path": "scripts/test_kart.mjs",
+      "bytes": 15336,
+      "sha256": "067a5259fc4de4149cb55906ccdf7d53e2ee59c5b0bb17da305e3dd9cc6d3321"
+    },
+    {
+      "path": "scripts/test_kart_events.mjs",
+      "bytes": 46026,
+      "sha256": "281efbc7dd8fb48b6e0f53f96995677da537036827b863809d9cfd71ba54cd63"
+    },
+    {
+      "path": "scripts/test_kart_progress.mjs",
+      "bytes": 6041,
+      "sha256": "0909f7cdbb4d3239146838a013087aff425f5bc136e5cc3bda5b39a43640ce03"
+    }
+  ],
+  "missingHistoricalArtifacts": [
+    "random-action test source",
+    "static layout test source",
+    "old-game isolation guard source",
+    "SPEC/RUN/VERIFICATION documentation",
+    "original QA logs and renderer checks",
+    "original images and videos",
+    "original candidate manifest"
+  ],
+  "limitations": [
+    "Node browser substitutes only; no real browser or device test",
+    "No recreated media",
+    "No original base repository in this recovery tree; old34 git isolation cannot be rerun here",
+    "Original artifact set is incomplete even though 7 runtime files match historical hashes"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "scope": "Meadow engine, authored levels, public-input pilot, focused tests only",
+  "recovery_method": "Replayed complete original cat writes and every subsequently successful Python string-replacement patch visible in the active conversation. The failed goalkeeper .03/.42 patch was not applied. No restricted session directory was accessed.",
+  "historical_hash_comparison": "Unavailable: these four files had no recorded pre-reset SHA-256 hashes. Current hashes identify the restored files only; matching test behavior is not proof of historical byte identity.",
+  "last_original_confirmed_execution_utc": "2026-10-18T03:30:55Z",
+  "restoration_confirmed_utc": "2026-10-18T03:42:08Z",
+  "completeness": [
+    {
+      "path": "games/meadow/engine.mjs",
+      "original_full_write_visible": true,
+      "all_successful_patches_visible": true,
+      "missing_source": false,
+      "restored_bytes": 20044,
+      "restored_sha256": "9bdefae4b37c1a864731163fa67a93d19453213f1f4e3e4158a1656fccf387b8"
+    },
+    {
+      "path": "games/meadow/levels.mjs",
+      "original_full_write_visible": true,
+      "all_successful_patches_visible": true,
+      "missing_source": false,
+      "restored_bytes": 3459,
+      "restored_sha256": "e466a231cca5ab83d9f263b2a6be8609659417cccfdbb1b34f8ba23dfb8bee17"
+    },
+    {
+      "path": "scripts/meadow_pilot.mjs",
+      "original_full_write_visible": true,
+      "all_successful_patches_visible": true,
+      "missing_source": false,
+      "restored_bytes": 2467,
+      "restored_sha256": "7c22232765e06de83cd7bc922dc2396f7f581059638ce673f9ca6dc6f8614230"
+    },
+    {
+      "path": "scripts/test_meadow.mjs",
+      "original_full_write_visible": true,
+      "all_successful_patches_visible": true,
+      "missing_source": false,
+      "restored_bytes": 14153,
+      "restored_sha256": "1dfbe00d8ce2476a9b403115ffb1adfa9744f13973f0a36d18fb8b861b46ecb2"
+    }
+  ],
+  "validation": {
+    "node_syntax_check": "passed",
+    "focused_test_command": "node scripts/test_meadow.mjs",
+    "focused_test_exit": 1,
+    "core_cases_passed": 37,
+    "campaign_wins": 7,
+    "campaign_cases": 8,
+    "known_failure": "Match 4 drawn 3–3, intentionally preserved from last original successful write.",
+    "campaign_scores": [
+      [
+        7,
+        0
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        11,
+        0
+      ],
+      [
+        16,
+        0
+      ]
+    ],
+    "behavior_matches_last_recorded_run": true,
+    "not_a_historical_hash_proof": true
+  },
+  "not_yet_applied": [
+    "Further goalkeeper anticipation / baseline tracking improvement",
+    "Dedicated diagonal goal-corner regression fixture",
+    "Additional semantic caps for restored player think, aim, facing, run phase and goalkeeper hold fields"
+  ],
+  "release_status": "Unfinished candidate, not frozen or released"
+}

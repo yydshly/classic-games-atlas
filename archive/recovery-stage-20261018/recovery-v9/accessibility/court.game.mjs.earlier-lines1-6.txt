@@ -1,0 +1,6 @@
+import {createGame,step,action,snapshot,start,pause,resume,LEVELS} from './engine.mjs';
+import {render} from './renderer.mjs';
+import {STORAGE_KEY,parseProgress,recordWin} from './progress.mjs';
+const $=id=>document.getElementById(id),canvas=$('court'),ctx=canvas.getContext('2d');
+const KEY=STORAGE_KEY;let saved=parseProgress(null);
+try{saved=parseProgress(localStorage.getItem(KEY));}catch{$('storage-note').hidden=false;}

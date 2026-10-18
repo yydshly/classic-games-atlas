@@ -1,0 +1,6 @@
+@media (max-width: 540px) {
+  /* The briefing needs more height than the illustration on a narrow phone.
+     Keep every action reachable without clipping the card inside the canvas. */
+  .canvas-wrap[data-state]:not([data-state="playing"]) { min-height: 390px; }
+  .overlay-card { max-height: 100%; overflow-y: auto; }
+}

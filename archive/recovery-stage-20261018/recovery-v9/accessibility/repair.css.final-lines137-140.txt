@@ -1,0 +1,4 @@
+/* Intermediate widths can have a short canvas too, especially with the ledger
+   alongside it. Reserve briefing space at every width and let enlarged text scroll. */
+.canvas-wrap[data-state]:not([data-state="playing"]) { min-height: 390px; }
+.overlay-card { max-height: 100%; overflow-y: auto; }
