@@ -1,0 +1,12 @@
+--- a/games/court/engine.mjs
++++ b/games/court/engine.mjs
+@@ -102,6 +102,9 @@
+   if (kind === 'resume') return resume(s);
+   if (kind === 'retry') return retry(s);
+   if (s.state !== 'playing') return s;
++  // New recovery compatibility fix: the captured controller cancels interrupted
++  // pointer/button holds. Clear the release edge without attempting a shot.
++  if (kind === 'cancel-shot') { s.charging = false; s.charge = 0; s.lastShoot = false; return s; }
+   if (kind === 'switch') { s.controlled = other(s.controlled); s.charging = false; s.charge = 0; s.pendingControl = null; return s; }
+   if (kind === 'pass') pass(s, s.controlled);
+   if (kind === 'steal') steal(s, s.controlled);

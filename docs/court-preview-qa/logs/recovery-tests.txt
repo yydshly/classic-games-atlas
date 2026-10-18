@@ -1,0 +1,9 @@
+PASS cancel-shot drops charge and release edge without points or a shot
+PASS cancel-shot is idempotent, and a fresh hold can still shoot normally
+PASS cancel-shot cannot change a ready or paused match
+PASS cancel-shot cannot recall an already released ball
+PASS all eight original match identifiers and durations remain unchanged
+PASS restored help dialog has an exact matching accessible heading
+PASS captured phone CSS retains intrinsic canvas and separate panel grid rows
+
+7 recovery-specific checks passed. CSS checks are source contracts, not browser rendering.

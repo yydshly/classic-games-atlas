@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {parseProgress,recordWin} from '../../preview/court/progress.mjs';
+const initial={unlocked:0,best:{},sound:false};
+for(const raw of [null,'bad','null','[]','1','{"unlocked":99,"best":{"0":-9,"7":1.5},"sound":"yes"}'])assert.deepEqual(parseProgress(raw),initial);
+let saved=recordWin(initial,0,[10,4]);assert.deepEqual(saved,{unlocked:1,best:{0:6},sound:false});
+saved=recordWin(saved,0,[4,2]);assert.equal(saved.best[0],6);assert.equal(saved.unlocked,1);
+saved=recordWin(saved,7,[15,12]);assert.equal(saved.unlocked,7);assert.equal(saved.best[7],3);
+const roundtrip=parseProgress(JSON.stringify({...saved,sound:true}));assert.equal(roundtrip.sound,true);assert.deepEqual(roundtrip.best,saved.best);
+for(const score of [[1,3],[1,1],[-2,0],[Infinity,0]])assert.deepEqual(recordWin(saved,2,score),saved);
+assert.deepEqual(recordWin(saved,9,[10,0]),saved);assert.deepEqual(parseProgress('{"unlocked":3,"best":{"0":6,"__proto__":{"polluted":true}},"sound":false}'),{unlocked:3,best:{0:6},sound:false});
+console.log('PASS progress: corrupt storage, range checks, valid wins, monotonic unlock, best-score retention, final cap, loss rejection, round-trip and prototype key rejection.');
