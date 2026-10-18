@@ -1,0 +1,40 @@
+/* Independent layout-only v2; original artwork, field and controls remain. */
+.game-header{padding:10px 24px}
+main{padding-top:14px}
+.game-heading{margin-bottom:14px}
+.game-heading h1{font-size:28px}
+.game-heading h1 span{font-size:8px}
+.game-layout{align-items:start}
+.arena-column{scroll-margin-top:12px}
+.arena{margin-inline:auto;max-width:100%;padding:5px;aspect-ratio:auto}
+.screen-grain,.overlay{inset:5px}
+.overlay{overflow:auto;padding:12px}
+.overlay-card{max-height:100%;overflow:auto;padding:18px}
+.overlay-card h2{font-size:26px;margin:6px 0 10px}
+.overlay-card p{margin-bottom:10px}
+.briefing{padding:8px 0;margin-bottom:12px}
+.mobile-hud{display:grid;grid-template-columns:repeat(3,1fr);padding:4px 0 7px;font-size:11px;gap:8px}
+.mobile-hud b{font-size:13px}
+.arena-heading{margin-bottom:5px;flex-wrap:wrap;gap:5px}
+.arena-actions button{min-height:36px;padding:5px 9px}
+.arena-actions #help{display:inline-block}
+.paddle-controls{margin-top:8px;gap:6px}
+.paddle-controls>button{min-width:44px;height:44px}
+.keyboard-guide{margin:5px 0 0;flex-wrap:wrap}
+.battle-status{margin:5px 0 0;line-height:1.5;font-size:10px}
+@media(max-width:900px){.game-layout{gap:18px}.tactical-panel{margin-top:0}}
+@media(max-width:600px){
+ .game-header{padding:9px 16px}main{padding:12px 12px 24px}
+ .game-heading h1{font-size:26px}.game-heading h1 span{display:none}
+ .game-heading .eyebrow{margin-bottom:5px}.game-heading{margin-bottom:12px}
+ .arena-heading strong{font-size:12px}.arena-heading>div:first-child{gap:6px}
+ .arena-actions button{font-size:10px;padding:5px 7px}
+ .overlay-card{padding:14px}.overlay-card h2{font-size:23px}
+}
+@media(max-height:500px){
+ .game-header,.game-heading{display:none}main{padding-top:12px}
+ .game-layout{grid-template-columns:minmax(0,540px);justify-content:center}
+ .keyboard-guide{display:none}.paddle-controls>div{display:none}
+ .overlay-card{padding:10px}.overlay-card h2{font-size:20px}
+ .overlay-card p,.briefing{font-size:10px}.overlay-eyebrow{font-size:8px}
+}
