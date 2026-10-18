@@ -1,3 +1,4 @@
+import { walkingPose, FACING_DIRECTIONS } from './facing.mjs';
 /** 雨街修理所 · v2 hybrid illustrated workshop + locally rendered 3D robot sprites. Logical stage: 1200 × 800. */
 const W=1200,H=800,TAU=Math.PI*2;
 const SLOT_DATA=[['A',340,190],['B',565,190],['C',790,190],['D',340,510],['E',565,510],['F',790,510]];
@@ -6,7 +7,12 @@ const art = new Map();
 export async function preloadArt(loader) {
  const load = loader || (url => new Promise((resolve,reject) => { const img=new Image(); img.onload=()=>resolve(img); img.onerror=reject; img.src=url; }));
  const keys=[...['courier','gardener','lantern','musician'].flatMap(type=>[0,1,2,3].map(frame=>`robot-${type}-${frame}`)),...[0,1,2].flatMap(type=>[0,1,2,3,4,5].map(frame=>`tech-${type}-${frame}`))];
- try { const image=await load(new URL('./assets/workshop-actors.png?v=20261018-r2',import.meta.url).href);keys.forEach((key,i)=>art.set(key,{image,x:i%6*256,y:Math.floor(i/6)*320}));return true; } catch { return false; }
+ const movingKeys=[...['courier','gardener','lantern','musician'].flatMap(type=>FACING_DIRECTIONS.flatMap(direction=>[0,1,2,3].map(frame=>`walk-robot-${type}-${direction}-${frame}`))),...[0,1,2].flatMap(type=>FACING_DIRECTIONS.flatMap(direction=>[0,1,2,3].map(frame=>`walk-tech-${type}-${direction}-${frame}`)))];
+ const results=await Promise.allSettled([
+  load(new URL('./assets/workshop-actors.png?v=20261018-r2',import.meta.url).href).then(image=>keys.forEach((key,i)=>art.set(key,{image,x:i%6*256,y:Math.floor(i/6)*320}))),
+  load(new URL('./assets/workshop-walking-r3.png?v=20261018-facing-r3',import.meta.url).href).then(image=>movingKeys.forEach((key,i)=>art.set(key,{image,x:i%14*256,y:Math.floor(i/14)*320})))
+ ]);
+ return results.every(result=>result.status==='fulfilled');
 }
 const COLORS={ink:'#293f43',cream:'#f4e9cc',brass:'#ddb966',mint:'#8ab7a5',teal:'#3c7979',rust:'#bb6b4f'};
 const stationNames={diagnosis:'诊断台',mechanical:'机械台',electrical:'电路台',reception:'接待处',payment:'交付柜台'};
@@ -124,19 +130,31 @@ function human(c,s,time,reduced){if(humanArt(c,s,time,reduced))return;const p=pr
  if(seed%2){ellipse(c,0,-69,13,7,'#5d5541');ellipse(c,11,-72,6,6,'#5d5541');path(c,[[-11,-70],[-12,-57],[-8,-63],[-6,-69]],'#5d5541');}else{round(c,-14,-76,27,11,4,'#678579','#35574b',1);round(c,-16,-68,32,4,2,'#8da389','#38564b',1);line(c,-7,-73,4,-73,'#cdd0a0',1);}
  line(c,-6,-59,-3,-59,'#514e3e',1.4);line(c,3,-59,6,-59,'#514e3e',1.4);c.beginPath();c.arc(0,-55,3,0,Math.PI);c.strokeStyle='#8e6048';c.lineWidth=.8;c.stroke();if(seed%3===0){ellipse(c,-5,-59,4,3,null,'#65705b',.8);ellipse(c,5,-59,4,3,null,'#65705b',.8);line(c,-1,-59,1,-59,'#65705b',.8);}if(!s.fixed){round(c,-12,-87,24,12,4,'#32584bb8','#bfd0a477',.7);text(c,String(s.name||s.id||'技师').slice(0,3),0,-81,7,'#e8dfb5','center',500);}c.restore();}
 function lighting(c,day,time){const mode=day%3;if(mode===1){const g=c.createLinearGradient(75,200,1125,700);g.addColorStop(0,'#e4d6a50b');g.addColorStop(1,'#e9ae6a14');c.fillStyle=g;c.fillRect(74,205,1053,510);}if(mode===2){c.fillStyle='#183b6320';c.fillRect(74,205,1053,510);for(const[x,y]of[[363,270],[749,270],[1084,270]])glow(c,x,y,135,'#f9d39a1a');}const g=c.createRadialGradient(610,400,270,610,400,740);g.addColorStop(0,'transparent');g.addColorStop(1,'#0b2f3a43');c.fillStyle=g;c.fillRect(0,0,W,H);}
-/** Sprite feet remain on engine paths; 4 offline-rendered poses are keyed by walk phase. */
+/** Walking uses four true 3D headings from the next engine waypoint; standing/work art remains r2. */
+/** Direction-correct low-detail fallback while the optional atlases load. */
+function fallbackMover(c,e,pose,tech){
+ const p=project(e.x,e.y),dx=pose.direction==='right'?1:pose.direction==='left'?-1:0,dy=pose.direction==='down'?1:pose.direction==='up'?-1:0;
+ const color=tech?'#c4aa77':({courier:'#dca64a',gardener:'#6aa78c',lantern:'#c87c58',musician:'#a18cba'})[e.type]||'#dca64a';
+ c.save();c.translate(p.x,p.y);ellipse(c,0,0,19,6,'#16373d55');
+ for(const side of[-1,1]){const phase=pose.frame*Math.PI/2+(side<0?Math.PI:0),reach=-Math.sin(phase)*8,lift=Math.max(0,-Math.cos(phase))*5;line(c,side*6,-21,side*6+dx*reach,-5+dy*reach*.4-lift,'#455851',6);round(c,side*6+dx*reach-6,-7+dy*reach*.4-lift,12,7,2,'#364b46');}
+ round(c,-16,-52,32,33,7,color,'#304d45',1.5);round(c,dx?-12:-20,-82,dx?24:40,30,6,tech?'#c5a57e':color,'#304d45',1.5);
+ if(dx){round(c,dx>0?9:-15,-74,6,14,2,'#173f43');round(c,dx>0?10:-14,-70,3,4,1,'#d8f3b5');}
+ else if(dy>0){round(c,-14,-74,28,14,4,'#173f43');for(const x of[-8,6])round(c,x,-70,4,4,1,'#d8f3b5');}
+ else{round(c,-11,-74,22,14,3,null,'#8f926f',1);line(c,-7,-66,7,-66,'#636f5e',1.5);}
+ c.restore();return true;
+}
 function robotArt(c,r,time,reduced){
- const walk=r.status==='walking'||r.status==='leaving',frame=walk&&!reduced?Math.floor(time/150+Number(String(r.id).replace(/\D/g,'')))%4:0;
- const sprite=art.get(`robot-${r.type||'courier'}-${frame}`);if(!sprite)return false;
- const p=project(r.x,r.y),bob=walk&&!reduced?Math.sin(time*.013)*1.3:0;
+ const pose=walkingPose(r,time,reduced),walk=pose.moving;
+ const sprite=art.get(walk?`walk-robot-${r.type||'courier'}-${pose.direction}-${pose.frame}`:`robot-${r.type||'courier'}-0`);if(!sprite)return walk?fallbackMover(c,r,pose,false):false;
+ const p=project(r.x,r.y),bob=0;
  c.save();c.translate(p.x,p.y+bob);ellipse(c,0,-1,25,7,'#102f4159');
  // 96px tall rendered figure, with the camera's padded transparent sprite anchored to its feet.
- c.drawImage(sprite.image,sprite.x,sprite.y,256,320,-52,-112.5,104,130);c.restore();return true;
+ c.drawImage(sprite.image,sprite.x,sprite.y,256,320,-52,-107.507,104,130);c.restore();return true;
 }
 function humanArt(c,s,time,reduced){
- const seed=String(s.id||'').split('').reduce((a,v)=>a+v.charCodeAt(0),0),frame=s.status==='working'?(reduced?4:4+Math.floor(time/260)%2):s.status==='walking'&&!reduced?Math.floor(time/150+seed)%4:0;
- const sprite=art.get(`tech-${seed%3}-${frame}`);if(!sprite)return false;
- const p=project(s.x,s.y);c.save();c.translate(p.x,p.y);ellipse(c,0,0,21,6,'#16373d55');c.drawImage(sprite.image,sprite.x,sprite.y,256,320,-52,-112.5,104,130);c.restore();return true;
+ const seed=String(s.id||'').split('').reduce((a,v)=>a+v.charCodeAt(0),0),pose=walkingPose(s,time,reduced),frame=s.status==='working'?(reduced?4:4+Math.floor(time/260)%2):0;
+ const sprite=art.get(pose.moving?`walk-tech-${seed%3}-${pose.direction}-${pose.frame}`:`tech-${seed%3}-${frame}`);if(!sprite)return pose.moving?fallbackMover(c,s,pose,true):false;
+ const p=project(s.x,s.y);c.save();c.translate(p.x,p.y);ellipse(c,0,0,21,6,'#16373d55');c.drawImage(sprite.image,sprite.x,sprite.y,256,320,-52,-107.507,104,130);c.restore();return true;
 }
 function bolt(c,x,y,size,color){path(c,[[x+size*.1,y-size],[x-size*.5,y+size*.05],[x-size*.04,y+size*.05],[x-size*.25,y+size],[x+size*.55,y-size*.15],[x+size*.09,y-size*.15]],color);}
 function stationBanner(c,s,p,selected){

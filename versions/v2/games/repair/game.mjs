@@ -14,7 +14,7 @@ import {
   checkpoint,
   restore,
 } from './engine.mjs';
-import { render, renderDetail, preloadArt, hitSlot } from './renderer.mjs';
+import { render, renderDetail, preloadArt, hitSlot } from './renderer.mjs?v=20261018-facing-r3';
 import { createProgressStore, recordVictory, isPointerActivation } from './progress.mjs';
 
 const $ = id => document.getElementById(id);
