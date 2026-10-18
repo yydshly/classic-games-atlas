@@ -3083,7 +3083,7 @@
       "slug": "civic",
       "title": "潮原纪事",
       "implementationVersion": "v2 新重建",
-      "implementationBoundary": "37的旧版仅部分源码归档，非完整可玩v1；以下是本轮独立v2的实现范围，仍待实测。",
+      "implementationBoundary": "37旧版仅部分源码归档，非完整可玩v1。以下是本轮独立v2实现范围；首章有限功能已实测，视觉质感未达用户要求，不代表整体品质通过。",
       "source": {
         "title": "未明确",
         "referenceId": null,
@@ -3144,7 +3144,7 @@
           "claim": "八章新编地图与目标"
         }
       ],
-      "verificationBoundary": "v2 新重建候选，待真实浏览器验收。已有合法操作、控制器模型与离屏绘制检查不等于真人体验、真实手机或全面品质验收；平衡、可选路线和长期重玩性仍待验证。"
+      "verificationBoundary": "可玩原型，视觉质感未达用户要求，未完成整体品质验收。真实浏览器仅完成首章有限功能检查：建田与派工、收支预览和结算、撤回、自然胜利与缺粮失败、重试、刷新恢复及第2章解锁；400/500 CSS为桌面缩窗，不是真实手机。第2–8章、更多经营组合、平衡和长期重玩性未验。功能可玩不代表视觉质量、沉浸感或预期情绪价值已达标。"
     },
     {
       "number": "38",
@@ -3171,29 +3171,45 @@
       },
       "appealHypothesis": {
         "label": "设计解释，非已证实的流行因果",
-        "text": "若选过山车大亨作参考，自由设计与经营约束会互相挑战：自己造出的轨道既要有趣，也得可靠并得到游客回应。"
+        "text": "本轮参考原作的设计循环：先用轨道表达一个想法，再让试车和游客选择检验它。创造欲、解决问题的满足，以及看人们使用自己设施的期待，是由机制推导的可能吸引力；并非已证实的流行因果。",
+        "sourceReferences": [
+          {
+            "label": "Atari 官方介绍",
+            "url": "https://atari.com/products/rollercoaster-tycoon-deluxe"
+          },
+          {
+            "label": "原版手册：搭建、测试与游客（印刷页10–13、50–56、80–82）",
+            "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/285310/manuals/rollercoaster_tycoon.pdf?t=1733161367"
+          },
+          {
+            "label": "Chris Sawyer 访谈",
+            "url": "https://www.arcadeattack.co.uk/chris-sawyer-interview/"
+          }
+        ]
       },
       "implemented": [
-        "8座固定公园，每园12段固定环线；为轨道配提升/驱动/制动/倾斜模块",
-        "预算内配置→空车试跑→安全评分→有限3班营收/口碑目标"
+        "1、4、7号段末端的三个峰顶可相对原高程上下8米，每步4米；每米改造费8，降低也收费，复原退费。地面走向和弯道半径仍固定。",
+        "改高同步重算相邻两段长度、坡度和重力能量；若已装模块会失去合法坡度则拒绝改造。结构变动清除旧安全报告，需重新试车。",
+        "舒缓派与挑战派两个简化群体分别计算愿上/拒乘人数和满意；实际上车人数进入收入，满意进入口碑，完整回站才结算。不是独立游客寻路AI。",
+        "保留原8园、12段固定地面环线、模块配置、试车和有限班次经营；新增独立v2存档，不覆盖v1。"
       ],
       "intendedEmotionalValue": {
         "label": "预期情绪价值假设，未经玩家验证",
-        "primary": "把方案调安全的工程掌控、看列车顺利跑完的放心",
-        "action": "在固定轨段装提升/驱动/制动/倾斜模块，试车后修正",
-        "feedback": "诊断指出问题，速度/刺激/舒适达标，载客后营收与口碑增加"
+        "primary": "在预算与游客偏好之间做出自己的取舍，再看到选择进入营收的掌控与期待；是否真能带来这些感受仍待玩家验证。",
+        "action": "挑选三个可改高节点，比较28m省预算与32m少跑一班的模型方案；继续升到36m观察舒缓派拒乘，再决定是否重改。",
+        "feedback": "费用、坡度与试车指标随改高变化；舒缓派/挑战派显示不同意愿，完整回站后收入和口碑结算。模型中28m为3班达标、32m为2班，等待实机对照。"
       },
       "missingValueMechanisms": [
         {
-          "mechanism": "自由铺轨与公园经营系统",
-          "status": "轨形/高度/弯径固定，仅替换模块；原作绑定未定",
-          "affectedValue": "个人创作一座乐园的表达空间不在当前范围",
+          "mechanism": "自由创造整座乐园",
+          "status": "仅三处峰顶±8米；地面走向/弯径仍固定，无自由铺轨、道路商店、员工与长期全园经济",
+          "affectedValue": "可以做有限方案取舍，还不足以承载自由造园和长期成长的表达空间。",
           "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
         },
         {
-          "mechanism": "游客具体反应与长期公园成长",
-          "status": "现范围为有限班次评分和收益",
-          "affectedValue": "被游客喜欢和看公园逐步繁荣的价值尚缺完整载体",
+          "mechanism": "游客自主反应与方案体验",
+          "status": "已实现两类简化意愿、拒乘与实际结算；没有独立游客路径AI，首园两方案实机对照及长期耐玩性待验",
+          "affectedValue": "反馈进入了收益，但玩家能否清楚理解取舍、感到被游客认可仍未验证。",
           "interpretationStatus": "对情绪影响的设计推断，不是玩家实测结论"
         }
       ],
@@ -3218,9 +3234,25 @@
           "line_end": 10,
           "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/levels.mjs#L1-L10",
           "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "versions/v2/games/coaster/README.md",
+          "line_start": 3,
+          "line_end": 54,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/c1a57923d172bab9ca5656966c9534583e4e997a/versions/v2/games/coaster/README.md#L3-L54",
+          "claim": "v2有限改高、两类游客收益与设计参考；方案数值为正常命令模型，情绪效果未验证"
         }
       ],
-      "verificationBoundary": "玩法范围以固定提交及项目范围/验证资料为依据；情绪解释未经过用户访谈、可用性研究或留存实验。流行事实仅限另列已打开的官方页面，不把存量来源可读状态当成逐条新核验。"
+      "verificationBoundary": "v2 首轮候选，未完成品质验收。首园28m/32m/36m的费用、意愿和收益对照来自正常命令驱动的引擎模型；有限首园真实浏览器验证进行中，模型达标不等于实机通关。比较页图像和视频是已标注的原生Canvas离屏渲染，不是浏览器实机证据。后七园、真实手机、可访问性、平衡与长期重玩性待验；本轮延续原有代码绘制风格，不声称美术质感升级。",
+      "iterationSuggestion": {
+        "title": "RollerCoaster Tycoon 1 / Deluxe（Windows；初代与两部资料片）",
+        "focus": "本轮建议学习逐段设计→试车验证→观察游客选择→再调整的循环。",
+        "boundary": "历史原作绑定仍为未明确；这是本轮v2的设计参考，不回填历史复刻关系，也不把原作销量或口碑当作本作体验证据。",
+        "sourceUrl": "https://atari.com/products/rollercoaster-tycoon-deluxe",
+        "sourceLabel": "Atari 官方原作介绍"
+      },
+      "implementationVersion": "v2 首轮候选（v1 保留）",
+      "implementationBoundary": "以下是独立v2的源码与模型验证范围；下方真实桌面截图及前两园实测仍对应v1。v2比较页另有明确标注的离屏图，不作为真实浏览器证据。未完成品质验收，未声称美术质变。"
     },
     {
       "number": "39",

@@ -3000,7 +3000,7 @@
       "slug": "civic",
       "title": "潮原纪事",
       "status": "preview",
-      "status_label": "独立 v2 候选，待验；不计入34个已有试玩目录",
+      "status_label": "独立 v2 可玩原型；视觉质感未达用户要求，未完成品质验收",
       "play_url": "./versions/v2/games/civic/",
       "about_url": "./versions/v2/games/civic/about.html",
       "levels": 8,
@@ -3024,7 +3024,7 @@
         "旧版只有部分源码归档，地图/网页/样式/渲染不完整，不能提供已验证可玩的 v1 入口。"
       ],
       "relation": "原创小岛回合经营候选；建议参照不代表原作授权或等价复刻。",
-      "validation_boundary": "v2 新重建候选，待真实浏览器验收。已有合法操作、控制器模型与离屏绘制检查不等于真人体验、真实手机或全面品质验收；平衡、可选路线和长期重玩性仍待验证。",
+      "validation_boundary": "可玩原型，视觉质感未达用户要求，未完成整体品质验收。真实浏览器仅完成首章有限功能检查：建田与派工、收支预览和结算、撤回、自然胜利与缺粮失败、重试、刷新恢复及第2章解锁；400/500 CSS为桌面缩窗，不是真实手机。第2–8章、更多经营组合、平衡和长期重玩性未验。功能可玩不代表视觉质量、沉浸感或预期情绪价值已达标。",
       "evidence": [
         {
           "path": "versions/v2/games/civic/about.html",
@@ -3040,7 +3040,7 @@
       "next_version": {
         "version": "v2",
         "status": "candidate_unaccepted",
-        "label": "v2 新重建候选，待验",
+        "label": "v2 可玩原型，视觉质感未达用户要求",
         "url": "./versions/v2/games/civic/",
         "details_url": "./versions/v2/games/civic/about.html",
         "candidate_commit": "16f53790171fe580eb4bbf9fb23621fdb9a04da5",
@@ -3050,7 +3050,7 @@
           "章节目标、逐章解锁、胜负重试、本轮撤回和独立本机存档；网页与等距绘制为本轮新建。"
         ],
         "preserved": "继承有恢复记录的部分规则引擎、控制器与存档逻辑；旧源码归档继续保留。旧地图/HTML/CSS/renderer并未完整恢复，本轮重新创作，存档隔离。",
-        "validation_boundary": "v2 新重建候选，待真实浏览器验收。已有合法操作、控制器模型与离屏绘制检查不等于真人体验、真实手机或全面品质验收；平衡、可选路线和长期重玩性仍待验证。"
+        "validation_boundary": "可玩原型，视觉质感未达用户要求，未完成整体品质验收。真实浏览器仅完成首章有限功能检查：建田与派工、收支预览和结算、撤回、自然胜利与缺粮失败、重试、刷新恢复及第2章解锁；400/500 CSS为桌面缩窗，不是真实手机。第2–8章、更多经营组合、平衡和长期重玩性未验。功能可玩不代表视觉质量、沉浸感或预期情绪价值已达标。"
       }
     },
     {
@@ -3066,15 +3066,16 @@
       "reference_id": null,
       "reference_binding": "未绑定，需确定",
       "reference_version": "未明确",
-      "version_note": "不能根据题材相似性推定原作；需先确认原作和版本。",
+      "version_note": "历史v1未明确绑定原作。本轮v2建议参考Windows版RollerCoaster Tycoon 1 / Deluxe；这是本轮设计参考，不倒填为历史复刻关系。",
       "original_core": "原作未确定，暂不能作为既定原作逐项评分。",
       "implemented": [
         "8座固定公园，每园12段固定环线；为轨道配提升/驱动/制动/倾斜模块",
         "预算内配置→空车试跑→安全评分→有限3班营收/口碑目标"
       ],
       "gaps": [
-        "当前页未绑定RollerCoaster Tycoon，原作及版本待确定",
-        "轨道形状、高度、弯径全部固定，只能换模块；若对标过山车大亨目录中的自由铺轨/道路/商店/游客经营，现有仅是轨道工程解谜的一小部分，不能称为完整游乐园复刻"
+        "历史v1未绑定具体原作；本轮v2建议参考RollerCoaster Tycoon 1 / Deluxe，不能称完整或等价复刻。",
+        "v1的轨形、高度和弯径固定；v2仅新增三个峰顶的±8米有限改高。两版均无自由延伸/连接轨道、道路商店、独立游客寻路、员工故障检修及长期全园经济。",
+        "v2的刺激/舒适与安全门槛是原创简化模型，不等于原作兴奋/强度/恶心评级或真实工程物理。"
       ],
       "relation": "页面自述原创玩法实验；不是原作或等价复刻。",
       "levels": 8,
@@ -3099,6 +3100,13 @@
           "line_end": 10,
           "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/levels.mjs#L1-L10",
           "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "versions/v2/games/coaster/README.md",
+          "line_start": 3,
+          "line_end": 54,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/c1a57923d172bab9ca5656966c9534583e4e997a/versions/v2/games/coaster/README.md#L3-L54",
+          "claim": "本轮v2实现、正常命令模型方案对照、原作参考与离屏/实机证据边界"
         }
       ],
       "validation_boundary": "保留独立预览身份；本次只读盘点，不代替正在进行的真实浏览器验收或用户质量评审。",
@@ -3112,14 +3120,28 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "not_started",
-        "url": null
+        "status": "candidate_unaccepted",
+        "label": "v2 首轮候选，未完成品质验收",
+        "url": "./versions/v2/games/coaster/",
+        "details_url": "./versions/v2/games/coaster/comparison.html",
+        "candidate_commit": "c1a57923d172bab9ca5656966c9534583e4e997a",
+        "validation_boundary": "v2 首轮候选，未完成品质验收。首园28m/32m/36m的费用、意愿和收益对照来自正常命令驱动的引擎模型；有限首园真实浏览器验证进行中，模型达标不等于实机通关。比较页图像和视频是已标注的原生Canvas离屏渲染，不是浏览器实机证据。后七园、真实手机、可访问性、平衡与长期重玩性待验；本轮延续原有代码绘制风格，不声称美术质感升级。",
+        "changes": [
+          "1、4、7号段末端的三个峰顶可相对原高程上下8米，每步4米；每米改造费8，降低也收费，复原退费。地面走向和弯道半径仍固定。",
+          "改高同步重算相邻两段长度、坡度和重力能量；若已装模块会失去合法坡度则拒绝改造。结构变动清除旧安全报告，需重新试车。",
+          "舒缓派与挑战派两个简化群体分别计算愿上/拒乘人数和满意；实际上车人数进入收入，满意进入口碑，完整回站才结算。不是独立游客寻路AI。",
+          "首园模型对照：相同提升/制动配置，28m建造220、每班128收入/74口碑，3班达标；32m建造252、每班144/84，2班达标。该结果待真实浏览器方案对照验证。",
+          "继续升至36m时，模型中舒缓派从5/5降到4/5、挑战派升至5/5；每班仍144收入但口碑83，略低于32m的84，并非越高越好。",
+          "独立v2存档键与当前局schema；不读取、迁移或覆盖v1。比较页并列保留v1与v2同场景离屏图、方案取舍及其证据边界。"
+        ],
+        "preserved": "v1入口与存档、原有8园、每园12段地面环线、模块种类和有限班次经营保留。海岛、人物、轨道与列车延续既有绘制风格；没有自由延伸/连接轨道、道路商店、独立游客路径或长期全园经济。"
       },
       "current_screenshot": {
         "image": "./assets/current-preview/coaster-desktop.webp",
         "label": "本项目v1真实桌面截图；非手机实测、非美术验收"
       },
-      "actual_qa_summary": "前两园真实设计、试车、载客及通关；结束局刷新进入最新解锁园，活动局方案与暂停接续通过。后六园及真实手机待验。"
+      "actual_qa_summary": "前两园真实设计、试车、载客及通关；结束局刷新进入最新解锁园，活动局方案与暂停接续通过。后六园及真实手机待验。",
+      "reference_suggestion_label": "本轮建议参考：RollerCoaster Tycoon 1 / Deluxe 的搭建、试车与游客反馈循环；历史绑定仍未明确"
     },
     {
       "number": "39",
@@ -3214,6 +3236,11 @@
       "number": "37",
       "commit": "16f53790171fe580eb4bbf9fb23621fdb9a04da5",
       "scope": "独立v2新重建候选；原38条历史实现依据保留，仅修理所阶段状态更新"
+    },
+    {
+      "number": "38",
+      "commit": "c1a57923d172bab9ca5656966c9534583e4e997a",
+      "scope": "新增独立v2有限高程设计与两类游客反馈；v1、原截图及其有限实测保留。37另记录首章有限功能真验与用户未认可视觉品质。"
     }
   ]
 }
