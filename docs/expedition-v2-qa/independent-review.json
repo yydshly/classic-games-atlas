@@ -1,0 +1,137 @@
+{
+  "scope": "Expedition v2 independent static and Node model review. No browser execution or quality acceptance.",
+  "reviewed_files": [
+    "versions/v2/games/expedition/engine.mjs",
+    "versions/v2/games/expedition/game.mjs",
+    "versions/v2/games/expedition/index.html",
+    "versions/v2/games/expedition/style.css"
+  ],
+  "status": "no_remaining_confirmed_model_or_controller_blocker",
+  "model_evidence": {
+    "deterministic_random_runs": 100,
+    "conservation_assertions": 95928,
+    "accepted_random_commands": 3398,
+    "periodic_replay_state_comparison": "781 comparisons passed, normalizing the documented restore pause",
+    "conservation_equations": [
+      "stock + spent = initial stock + delivered",
+      "node remaining + delivered + carried + lost = initial node total"
+    ],
+    "coverage_limits": [
+      "No rendered browser, accessibility interaction or visual acceptance performed.",
+      "Random model checks are not exhaustive proof of balance or exploit resistance."
+    ],
+    "targeted_rechecks": [
+      "Loaded chapter-2 wood reassignment to idle preserves four-second return, delivering at t=10 rather than t=8.",
+      "2400 pause/resume cycles leave canonical log length at one.",
+      "Full 2400-action checkpoint restores paused, resumes, steps, pauses and restores again."
+    ],
+    "repository_scripts_rerun": [
+      "scripts/test_expedition_v2.mjs: passed",
+      "scripts/test_expedition_v2_controller.mjs: passed; simulated DOM/callback harness, not a browser"
+    ],
+    "final_revision_checks": [
+      "Both repository model/controller scripts rerun successfully after simultaneous chapter-3 raid addition.",
+      "Six ordinary-command policies win. Same-cost simultaneous-raid comparison: concentrated defense loses 22 base HP; split defense loses zero base HP with greater guard injury.",
+      "Static review confirms toBuild uses return-route interpolation rather than immediate construction-site placement.",
+      "Independent 100-run randomized conservation/replay check repeated against final reviewed hashes."
+    ]
+  },
+  "positive_findings": [
+    "Resource conservation held across random accepted/rejected command interleavings.",
+    "Resources are credited only on return or builder arrival, and finite nodes bound total harvest.",
+    "Paused stepping freezes model time; terminal stepping does not advance the model.",
+    "Replay reconstructs accepted commands rather than trusting resource snapshots.",
+    "Documented goals are cumulative delivered resources, so spending does not erase goal progress."
+  ],
+  "acceptance_statement": "Model review evidence only. This report does not establish browser usability, visual quality, fun, or final release acceptance.",
+  "reviewed_sha256": {
+    "versions/v2/games/expedition/engine.mjs": "6497cd653799355ee0aff83baafbc59e72e9e8acd362c296a1b9897a6d6fb8b0",
+    "versions/v2/games/expedition/game.mjs": "ed5a21929444201aca9d2c57b567a2778deea4ea07e944dfc03bdbffa0afe0ce",
+    "versions/v2/games/expedition/index.html": "41ca74229dd470957b3f47c2d5be643dcbaf06f1d7e7b539e4c7586b0aa6cdca",
+    "versions/v2/games/expedition/style.css": "4baebd82a6f99f9d876b2c52edcb02b609cdc4b1f90d126f42ee486dc9c3c5f1"
+  },
+  "resolved_findings": [
+    {
+      "id": "focus-replacement",
+      "severity": "high",
+      "file": "game.mjs",
+      "finding": "Running render replaces worker selects and action/deployment buttons every 250 ms, removing focus and interfering with keyboard operation.",
+      "status": "resolved_in_reviewed_candidate",
+      "evidence": "frame invokes render after each simulation step; render uses replaceChildren on workers/actions/deployment and creates replacement controls.",
+      "verification": "Static review confirms persistent worker/action/deployment nodes; controller harness passes identity retention. Actual browser keyboard interaction remains unverified."
+    },
+    {
+      "id": "replay-cap-lock",
+      "severity": "medium",
+      "file": "engine.mjs",
+      "finding": "A valid running checkpoint with 2399 commands is restored paused at 2400 commands and can never resume.",
+      "status": "resolved_in_reviewed_candidate",
+      "reproduction": [
+        "Start a game.",
+        "Execute 1199 pause/resume pairs without stepping; accepted log length becomes 2399.",
+        "Restore checkpoint; automatic pause makes log length 2400.",
+        "Resume is rejected with command-limit error."
+      ],
+      "verification": "Independent exact-cap restore/resume/step assertions pass; pause/resume do not consume canonical replay budget."
+    },
+    {
+      "id": "cargo-route-shortcut",
+      "severity": "medium",
+      "file": "engine.mjs",
+      "finding": "Reassigning loaded workers recomputes return duration using the new task, enabling shorter delivery routes.",
+      "status": "resolved_in_reviewed_candidate",
+      "reproduction": [
+        "In chapter 2, assign worker 1 to wood at t=0.",
+        "At t=6 the worker carries 6 wood with 4 seconds remaining on the return.",
+        "Assign idle; remaining becomes 2 seconds and cargo arrives at t=8 instead of t=10."
+      ],
+      "impact": "Conserves resources but rewards unintended task-switch micro-management.",
+      "verification": "Independent original reproduction now delivers at t=10; remaining return duration is unchanged by assignment."
+    },
+    {
+      "id": "battle-copy",
+      "severity": "low",
+      "file": "index.html",
+      "finding": "Defense hint describes continuous attacks although each wave resolves once five seconds after its advertised arrival.",
+      "status": "resolved_in_reviewed_candidate",
+      "verification": "Defense hint now explicitly describes five-second response window and one-time damage settlement."
+    },
+    {
+      "id": "lifetime-recruitment-cap",
+      "severity": "low",
+      "file": "engine.mjs",
+      "finding": "Caps count dead as well as living workers/guards; displayed living counts can be below the cap while recruitment is rejected.",
+      "status": "resolved_in_reviewed_candidate",
+      "recommendation": "Document lifetime caps, or count living units if replacement recruitment is intended.",
+      "verification": "Recruitment now counts living units plus queued units; repository replacement-worker regression passes."
+    },
+    {
+      "id": "movement-illustration",
+      "severity": "low",
+      "file": "game.mjs",
+      "finding": "Worker interpolation assumes a four-second trip and marching guard art is placed at its target immediately. Engine itself does retain movement delays.",
+      "status": "resolved_in_reviewed_candidate",
+      "verification": "Worker interpolation uses stored original route/travel duration; guards interpolate from prior front to target."
+    },
+    {
+      "id": "builder-art-transit",
+      "status": "resolved_in_reviewed_candidate",
+      "verification": "toBuild now uses original-route return interpolation; no browser visual acceptance claimed."
+    }
+  ],
+  "blockers": [],
+  "bounded_limitations": [
+    {
+      "id": "command-budget",
+      "description": "2400 substantive accepted commands remain a bounded per-game action limit; pause/resume and restore remain available at the cap."
+    },
+    {
+      "id": "browser-unverified",
+      "description": "No actual browser rendering, keyboard/select behavior, layout or visual-quality acceptance performed."
+    },
+    {
+      "id": "draft-save-compatibility",
+      "description": "Pre-remediation draft checkpoints containing pause/resume commands now fail strict restore. Existing invalid bytes remain protected until confirmed reset; draft schema migration was not implemented."
+    }
+  ]
+}
