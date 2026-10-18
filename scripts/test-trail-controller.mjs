@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import * as engine from '../versions/v2/games/trail/engine.mjs';
+import {LEVELS} from '../versions/v2/games/trail/levels.mjs';
+import {SAVE_KEY,readSave,writeSave,createInput} from '../versions/v2/games/trail/game.mjs';
+let passed=0;
+function test(name,fn){fn();passed++;console.log('PASS',name);}
+function storage(raw=null){return {raw,writes:0,getItem(key){assert.equal(key,SAVE_KEY);return this.raw;},setItem(key,value){assert.equal(key,SAVE_KEY);this.raw=value;this.writes++;}};}
+test('empty save starts unblocked',()=>{assert.deepEqual(readSave(storage()),{game:null,blocked:false});});
+test('playing save restores paused and retains progress',()=>{const g=engine.createGame();engine.start(g);g.player.x=300;g.energy=43;g.coins[1].collected=true;const s=storage();assert.equal(writeSave(s,g,false),true);const r=readSave(s);assert.equal(r.blocked,false);assert.equal(r.game.state,'paused');assert.equal(r.game.player.x,300);assert.equal(r.game.energy,43);assert.equal(r.game.stats.collected,1);});
+for(const raw of ['broken','null','{}','{"version":999,"game":{}}'])test('bad save retained: '+raw,()=>{const s=storage(raw),r=readSave(s);assert.equal(r.blocked,true);assert.equal(writeSave(s,engine.createGame(),r.blocked),false);assert.equal(s.raw,raw);assert.equal(s.writes,0);});
+test('storage read/write errors are contained',()=>{assert.equal(readSave({getItem(){throw Error('denied');}}).blocked,true);assert.equal(writeSave({setItem(){throw Error('quota');}},engine.createGame(),false),false);});
+test('keyboard alias release preserves other physical key',()=>{const i=createInput();i.down('left',undefined,'KeyA');i.down('left',undefined,'ArrowLeft');i.up('left',undefined,'KeyA');assert.equal(i.sample().axis,-1);i.up('left',undefined,'ArrowLeft');assert.equal(i.sample().axis,0);});
+test('multiple touches on one control release independently',()=>{const i=createInput();i.down('right',1);i.down('right',2);i.up('right',1);assert.equal(i.sample().axis,1);i.up('right',2);assert.equal(i.sample().axis,0);});
+test('touch and keyboard release independently',()=>{const i=createInput();i.down('right');i.down('right',1);i.up('right',1);assert.equal(i.sample().axis,1);});
+test('opposing directions cancel',()=>{const i=createInput();i.down('left',1);i.down('right',2);assert.equal(i.sample().axis,0);});
+test('edge actions occur once, repeats suppressed',()=>{const i=createInput();i.down('jump');i.down('attack',2);assert.equal(i.sample().jumpPressed,true);i.down('jump');i.down('attack',2);const s=i.sample();assert.equal(s.jumpPressed,false);assert.equal(s.attackPressed,false);assert.equal(s.jumpHeld,true);});
+test('clear removes held keys, pointers and queued edges',()=>{const i=createInput();i.down('right');i.down('jump',1);i.down('attack',2);i.clear();assert.deepEqual(i.sample(),{axis:0,jumpHeld:false,jumpPressed:false,attackPressed:false});});
+const source=fs.readFileSync(new URL('../versions/v2/games/trail/game.mjs',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace(/export /g,'');
+function mount({raw=null,denied=false}={}){
+ class Element{constructor(){this.handlers={};this.dataset={};}addEventListener(n,fn){this.handlers[n]=fn;}click(){if(!this.disabled)this.onclick?.();}setPointerCapture(){} }
+ const ids=Object.fromEntries(['band','level','energy','energyText','stats','pause','overlay','eyebrow','title','description','primary','retry','message'].map(id=>[id,new Element()]));
+ const controls=['left','right','jump','attack'].map(k=>Object.assign(new Element(),{dataset:{control:k}})),wh={},dh={},s=storage(raw);let frame,drawn;
+ const window={addEventListener(n,f){wh[n]=f;}};Object.defineProperty(window,'localStorage',{get(){if(denied)throw Error('SecurityError');return s;}});
+ const document={hidden:false,getElementById:id=>ids[id],querySelector:()=>({}),querySelectorAll:()=>controls,addEventListener(n,f){dh[n]=f;}};
+ vm.runInNewContext(source,{...engine,LEVELS,document,window,HTMLButtonElement:Element,createRenderer:()=>g=>{drawn=g;},requestAnimationFrame:f=>{frame=f;}});
+ return {ids,controls,wh,dh,s,document,tick(t){frame(t);return drawn;},key(type,code,repeat=false){wh[type]({code,repeat,target:{},preventDefault(){}});},pointer(index,type,pointerId){controls[index].handlers[type]({pointerId,preventDefault(){}});}};
+}
+test('denied localStorage getter still initializes playable page',()=>{const a=mount({denied:true});a.ids.primary.click();assert.equal(a.tick(10).state,'playing');assert.match(a.ids.message.textContent,/不会覆盖/);});
+test('invalid save remains intact through retry and periodic save',()=>{const a=mount({raw:'DO NOT OVERWRITE'});a.ids.primary.click();a.ids.retry.click();for(let t=0;t<2000;t+=50)a.tick(t);assert.equal(a.s.raw,'DO NOT OVERWRITE');assert.equal(a.s.writes,0);});
+test('pause clears queued attack/jump and all movement',()=>{const a=mount();a.ids.primary.click();a.key('keydown','ArrowRight');a.pointer(2,'pointerdown',1);a.pointer(3,'pointerdown',2);a.ids.pause.click();a.ids.pause.click();a.tick(1);const g=a.tick(51);assert.equal(g.player.vx,0);assert.equal(g.stats.jumps,0);assert.equal(g.projectiles.length,0);});
+test('retry resets progress and held controls',()=>{const a=mount();a.ids.primary.click();a.tick(1);a.key('keydown','ArrowRight');a.tick(51);a.ids.retry.click();const g=a.tick(101);assert.equal(g.player.vx,0);assert.equal(g.lives,3);assert.equal(g.stats.collected,0);assert.ok(g.time<.06);});
+for(const event of ['blur','pagehide','visibilitychange'])test(event+' pauses, saves and clears controls',()=>{const a=mount();a.ids.primary.click();a.tick(1);a.key('keydown','ArrowRight');if(event==='visibilitychange'){a.document.hidden=true;a.dh[event]();}else a.wh[event]();assert.equal(a.tick(51).state,'paused');assert.equal(JSON.parse(a.s.raw).game.state,'paused');a.ids.primary.click();assert.equal(a.tick(101).player.vx,0);});
+test('pointercancel and lost capture clear input',()=>{const a=mount();a.ids.primary.click();a.tick(1);a.pointer(1,'pointerdown',9);a.pointer(1,'pointercancel',9);assert.equal(a.tick(51).player.vx,0);a.pointer(1,'pointerdown',10);a.pointer(1,'lostpointercapture',10);assert.equal(a.tick(101).player.vx,0);});
+test('keyboard aliases also work through DOM event wiring',()=>{const a=mount();a.ids.primary.click();a.tick(1);a.key('keydown','KeyD');a.key('keydown','ArrowRight');a.key('keyup','KeyD');assert.ok(a.tick(51).player.vx>0);});
+test('paused time does not consume energy or simulation time',()=>{const a=mount();a.ids.primary.click();a.tick(1);const g=a.tick(51);a.ids.pause.click();const time=g.time,energy=g.energy;a.tick(10051);assert.equal(g.time,time);assert.equal(g.energy,energy);});
+console.log(`Trail controller: ${passed} tests passed.`);

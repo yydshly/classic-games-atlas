@@ -1,0 +1,185 @@
+{
+  "method": "120 Hz fixed-step public inputs; moving right at full speed; gap-triggered jumps; attack tapped every 40 frames when enabled. No-attacks uses the ground route, not an optimized pacifist strategy. Avoid-food hops stop briefly beyond each ground fruit to land safely before the next gap. Run ends at won/lost or 150 simulated seconds.",
+  "caveats": [
+    "Limited deterministic strategies, not a balance or user-experience proof.",
+    "High-platform pickups cost no horizontal distance or time with this policy. They are effectively free if the player executes the jumps correctly.",
+    "Deaths reset energy to 72, so ending energy cannot be read alone as a strategy reward.",
+    "No-attacks results show this specific policy failing to evade patrols, not that attacks are necessary to win."
+  ],
+  "results": [
+    {
+      "level": 1,
+      "strategy": "fast-ground-route",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 94.92,
+      "food": 5,
+      "hits": 3,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 4,
+      "reasons": []
+    },
+    {
+      "level": 1,
+      "strategy": "high-platform-food",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 94.92,
+      "food": 5,
+      "hits": 3,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 4,
+      "reasons": []
+    },
+    {
+      "level": 1,
+      "strategy": "no-attacks",
+      "state": "lost",
+      "seconds": 15.84,
+      "endingEnergy": 72,
+      "food": 2,
+      "hits": 0,
+      "deaths": 3,
+      "lives": 0,
+      "jumps": 3,
+      "reasons": [
+        "碰到巡游者",
+        "碰到巡游者",
+        "碰到巡游者"
+      ]
+    },
+    {
+      "level": 1,
+      "strategy": "avoid-all-food",
+      "state": "won",
+      "seconds": 24.47,
+      "endingEnergy": 21.71,
+      "food": 0,
+      "hits": 3,
+      "deaths": 1,
+      "lives": 2,
+      "jumps": 12,
+      "reasons": [
+        "体力耗尽"
+      ]
+    },
+    {
+      "level": 2,
+      "strategy": "fast-ground-route",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 77.62,
+      "food": 3,
+      "hits": 4,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 4,
+      "reasons": []
+    },
+    {
+      "level": 2,
+      "strategy": "high-platform-food",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 94.92,
+      "food": 5,
+      "hits": 4,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 6,
+      "reasons": []
+    },
+    {
+      "level": 2,
+      "strategy": "no-attacks",
+      "state": "lost",
+      "seconds": 14.16,
+      "endingEnergy": 72,
+      "food": 1,
+      "hits": 0,
+      "deaths": 3,
+      "lives": 0,
+      "jumps": 3,
+      "reasons": [
+        "碰到巡游者",
+        "碰到巡游者",
+        "碰到巡游者"
+      ]
+    },
+    {
+      "level": 2,
+      "strategy": "avoid-all-food",
+      "state": "won",
+      "seconds": 24.17,
+      "endingEnergy": 23.17,
+      "food": 0,
+      "hits": 4,
+      "deaths": 1,
+      "lives": 2,
+      "jumps": 10,
+      "reasons": [
+        "体力耗尽"
+      ]
+    },
+    {
+      "level": 3,
+      "strategy": "fast-ground-route",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 77.62,
+      "food": 3,
+      "hits": 4,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 4,
+      "reasons": []
+    },
+    {
+      "level": 3,
+      "strategy": "high-platform-food",
+      "state": "won",
+      "seconds": 18.07,
+      "endingEnergy": 94.92,
+      "food": 5,
+      "hits": 4,
+      "deaths": 0,
+      "lives": 3,
+      "jumps": 7,
+      "reasons": []
+    },
+    {
+      "level": 3,
+      "strategy": "no-attacks",
+      "state": "lost",
+      "seconds": 14.01,
+      "endingEnergy": 72,
+      "food": 1,
+      "hits": 0,
+      "deaths": 3,
+      "lives": 0,
+      "jumps": 3,
+      "reasons": [
+        "碰到巡游者",
+        "碰到巡游者",
+        "碰到巡游者"
+      ]
+    },
+    {
+      "level": 3,
+      "strategy": "avoid-all-food",
+      "state": "won",
+      "seconds": 24.17,
+      "endingEnergy": 23.17,
+      "food": 0,
+      "hits": 4,
+      "deaths": 1,
+      "lives": 2,
+      "jumps": 9,
+      "reasons": [
+        "体力耗尽"
+      ]
+    }
+  ]
+}
