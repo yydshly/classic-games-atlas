@@ -1,0 +1,23 @@
+{
+  "scope": "Minimal sprite lifecycle static review and Node-only simulated DOM checks.",
+  "status": "No confirmed lifecycle blocker; public in-progress visual recheck pending.",
+  "public_in_progress_visual_recheck": "pending",
+  "qualityAcceptance": false,
+  "reviewed_sha256": {
+    "versions/v2/games/expedition/game.mjs": "221b8075ffa412a08c60ff21ef31a0b7126d2bb44c32b526f4cd85aa339b394d",
+    "scripts/test_expedition_v2_controller.mjs": "604a6ad2aaca3738ab933b4cf34e65eaaa0e364e36d2c4c3129aab7a87bc6bb1"
+  },
+  "checks": [
+    "Key namespaces distinguish camp/buildings, workers, guards, and raids; current keys never change sprite kind.",
+    "Each newly created sprite gets one src assignment; existing nodes update position, label and classes without replacement.",
+    "Independent 100-frame simulated DOM check retained image identity and one src write, updated position/label/class, removed absent raider, and removed all keys for an empty frame.",
+    "Reset calls render synchronously, reconciling retained keys and removing stale units, buildings and raids; same-key base sprites may safely persist across chapters.",
+    "Repository controller script passed, including sprite identity/src-write assertions and retry removing enemy sprites."
+  ],
+  "bounded_limitations": [
+    "No browser was used. Image fetch/decode/paint and actual on-screen visibility were not verified.",
+    "Stable append order can differ from the previous complete-render order when new buildings or units appear. Check visual overlap/layering in the public run.",
+    "This code change addresses repeated image-node recreation; it does not independently prove the root cause or resolution of the observed browser symptom."
+  ],
+  "required_next_evidence": "Public browser recheck during active simulation, including visible moving workers/guards, construction, raid appearance/disappearance, and retry. Do not infer visual acceptance from simulated DOM tests."
+}

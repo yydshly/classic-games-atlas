@@ -1,0 +1,10 @@
+{
+  "kind": "targeted-sprite-render-lifecycle-fix",
+  "observed": "Public running and just-ended captures show labels but no sprites. After terminal page reload, sprites are visible. Image natural dimensions, boxes and opacity are valid.",
+  "causeAssessment": "The controller replaced all entity img nodes every 250ms. Repeated image creation is the targeted lifecycle defect; public running-pixel recheck is required to establish resolution.",
+  "change": "Stable nodes keyed by building name, worker ID, guard ID, and raid time/front. Image src is set only on creation. Each render updates position, class and text. Missing entities are removed.",
+  "unchanged": ["economy and combat rules", "save format and key", "art assets", "CSS filters and layout", "v1"],
+  "tests": ["sprite node identity preserved across frames", "image src written only once per creation", "old raid nodes absent after retry", "all three ordinary controller campaigns", "failure and retry", "cargo restore", "bad save preserved", "storage denial"],
+  "publicRunningVisualRecheck": "pending after patch publication",
+  "qualityAcceptance": false
+}
