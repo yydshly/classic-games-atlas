@@ -1,0 +1,4 @@
+import{LEVELS}from'../games/vine/levels.mjs';import{reachable,transition,bodyBlocks,opposite}from'../games/vine/engine.mjs';
+// Ordinary visible-state route planning; no food/body/clock mutation or speed override.
+export function chooseDirection(g){const target=g.collected>=LEVELS[g.level-1].target?LEVELS[g.level-1].exit:g.food,known=target===null?null:reachable(g).get(target);if(known?.first!==null&&known?.first!==undefined)return known.first;for(const d of[g.dir,(g.dir+1)%4,(g.dir+3)%4]){if(d===opposite(g.dir))continue;const t=transition(LEVELS[g.level-1],g.body[0],d);if(t&&!bodyBlocks(g,t,t.dest===g.food))return d;}return g.dir;}
+if(process.argv.includes('--stdio')){const rl=await import('node:readline');for await(const line of rl.createInterface({input:process.stdin})){try{console.log(JSON.stringify({dir:chooseDirection(JSON.parse(line))}));}catch(e){console.log(JSON.stringify({error:e.message}));}}}

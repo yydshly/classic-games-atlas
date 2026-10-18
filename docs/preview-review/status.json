@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "base_commit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
+  "base_tree": "c7128827a06db4b24e017309eb82b5bc66d284be",
+  "formal_release_count_unchanged": 34,
+  "formal_level_count_unchanged": 398,
+  "candidate_count": 4,
+  "candidate_levels_each": 8,
+  "all_candidates_formally_accepted": false,
+  "environment": "Desktop Chromium, keyboard and mouse",
+  "mobile_real_device_tested": false,
+  "visual_art_acceptance": false,
+  "games": [
+    {
+      "key": "court",
+      "number": 35,
+      "title": "晴湾篮场",
+      "unit": "场",
+      "genre": "二对二篮球",
+      "status": "首场闭环已验证",
+      "commit": "6a43b6169237818c3d27c7b8d2ed1f1d31e6ff94",
+      "commits": [
+        [
+          "独立预览",
+          "99814b283c6bf03094499f176308cfa66121f8b8"
+        ],
+        [
+          "布局修复",
+          "f19a1e1ca6b903ad3ab37a3ec68435a6c0fe8250"
+        ],
+        [
+          "资产版本更新",
+          "6a43b6169237818c3d27c7b8d2ed1f1d31e6ff94"
+        ]
+      ],
+      "verified": [
+        "首场自然结束，8:6 获胜；第二场解锁，刷新保留最佳分差 +2。",
+        "宽屏与桌面 400 CSS px 布局回归通过；投篮按钮失焦取消通过。"
+      ],
+      "gaps": [
+        "第 2–8 场完整比赛、加时、失败重试、pointercancel 与多指触控尚未实玩。"
+      ],
+      "time": "2026-10-18 12:00–12:30 UTC"
+    },
+    {
+      "key": "repair",
+      "number": 36,
+      "title": "雨街修理所",
+      "unit": "天",
+      "genre": "修理所经营",
+      "status": "前两日闭环与布局回归通过",
+      "commit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
+      "commits": [
+        [
+          "独立预览",
+          "1c2c2b308e7cd315601473f468191098ceae973e"
+        ],
+        [
+          "布局与资产版本修复",
+          "86bb3267f50c1970c97f0dc875b9e0e0e690a36f"
+        ]
+      ],
+      "verified": [
+        "首日 8 单 / 311 币，次日 10 单 / 356 币，均 0 流失；刷新保留前两日最佳与第三日解锁。",
+        "桌面 400 / 500 CSS px 无横向溢出；第二天建站、雇用、派工后刷新保留。"
+      ],
+      "gaps": [
+        "宽屏底部工位按钮仍需约 13 px 微滚；第 3–8 天完整经营、失败分支与真实触屏仍待验。"
+      ],
+      "time": "2026-10-18 12:31–12:44 UTC"
+    },
+    {
+      "key": "coaster",
+      "number": 38,
+      "title": "云岬游乐园",
+      "unit": "园",
+      "genre": "过山车建造经营",
+      "status": "前两园闭环已验证",
+      "commit": "b6d69f5b9b95d92e0189da1f721afe6bbdf16615",
+      "commits": [
+        [
+          "独立预览",
+          "fdee19458dee014e0ef7680ec9f8b9454b81ed5f"
+        ],
+        [
+          "进度接续修复",
+          "b6d69f5b9b95d92e0189da1f721afe6bbdf16615"
+        ]
+      ],
+      "verified": [
+        "前两园均真实完成设计、试车、载客与通关；第二园营收 396、口碑 180。",
+        "结束局刷新进入最新解锁园；活动方案、认证与暂停恢复已复验。"
+      ],
+      "gaps": [
+        "第 3–8 园完整经营、全部边界条件和真实手机未验；窄屏配置操作仍需上下滚动。"
+      ],
+      "time": "2026-10-18 11:19–11:35 UTC"
+    },
+    {
+      "key": "kart",
+      "number": 39,
+      "title": "林野杯赛",
+      "unit": "站",
+      "genre": "俯视竞速",
+      "status": "双圈完赛；胜利解锁待验",
+      "commit": "65126f41f7c3908cdf064bffb63a35ba501f07c7",
+      "commits": [
+        [
+          "独立预览",
+          "1e8e9ea7d93b16bb500de0b927bab33c80976340"
+        ],
+        [
+          "赛道定位修复",
+          "65126f41f7c3908cdf064bffb63a35ba501f07c7"
+        ]
+      ],
+      "verified": [
+        "首站双圈 67.6 秒、第 4 名，正确判为未达标；其余七站仍锁定。",
+        "超时失败、重试、道具拾取与使用入口、暂停恢复和宽窄布局已验证。"
+      ],
+      "gaps": [
+        "真实胜利→解锁→刷新保留尚待人工驾驶验证；成功漂移、全道具效果及第 2–8 站仍待验。"
+      ],
+      "time": "2026-10-18 11:27–11:57 UTC"
+    }
+  ]
+}

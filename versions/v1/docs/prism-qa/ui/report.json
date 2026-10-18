@@ -1,0 +1,39 @@
+{
+  "testedAt": "2026-10-16T05:21:19.193197+00:00",
+  "url": "http://127.0.0.1:4174/games/prism/",
+  "kind": "real keyboard/mouse/touch inputs; failure uses ordinary paddle movement",
+  "checks": {
+    "firstVisitTeaching": true,
+    "keyboardPaddle": true,
+    "repeatedLaunchDoesNotDuplicate": true,
+    "pauseFreezesPhysicsAndTimers": true,
+    "helpEscResumes": true,
+    "twelveStageMenuAndLocks": true,
+    "restartResets": true,
+    "teachingPersists": true,
+    "normalInputThreeLifeFailure": {
+      "time": 10.683333333333444,
+      "livesLost": 3,
+      "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。"
+    },
+    "failureRetry": true,
+    "soundPersists": true,
+    "touchDragWithoutPageScroll": true,
+    "shortTouchNudge": true,
+    "touchLaunchAndPause": true,
+    "responsiveWidths": [
+      320,
+      360,
+      390,
+      768,
+      1280
+    ],
+    "storageUnavailableStillPlayable": true,
+    "atlasAssociationAndFourEntries": true,
+    "previousThreeEntrances": true,
+    "atlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

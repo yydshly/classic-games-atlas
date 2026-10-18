@@ -1,0 +1,2185 @@
+{
+  "testedAt": "2026-10-16T22:58:24.965878+00:00",
+  "url": "http://127.0.0.1:4174/games/expedition/",
+  "checks": [
+    "Tutorial/ready freezes resources, units, queue, enemies and waves until Start",
+    "Unplayed maps are native locked buttons; Escape closes expedition book",
+    "Normal1x enemies move while idle workers do not invent resources",
+    "Actual group/keyboard mode/cursor/Enter moves a formation; H replaces routes with stop",
+    "Real replacement order cancels gather travel/clock and reaches the new destination without teleport",
+    "Production receipt shows current/cost/after/time/queue, freezes both sides and cancel charges nothing",
+    "Native Enter hold/repeat confirms exactly one ticket and one18-resource payment",
+    "Real production clock spawns one distinct paid reinforcement and group selection includes it",
+    "Actual carried resource and active queue restore22 exact fields paused, then a worker-plus-ranger production route wins normally",
+    "Real victory records best/unlock once, rejects more orders and has a hittable320px next action",
+    "Refresh during an unconfirmed cost preview cancels the receipt without charging or producing",
+    "Help/chooser freeze live work and resume asynchronously; synthetic blur pauses all actors",
+    "Original synthesized-sound preference persists",
+    "Six widths320–1440 avoid page overflow; small-screen map honestly pans with44px cells and fitting dialogs",
+    "Actual enemy windup shows attacker, target marker/accessible description and readable target text with hostile route",
+    "Final-map normal enemies genuinely destroy130HP base; dead units cancel work/path/action/cargo and leave selection",
+    "Failure retry restores original resource/HP/node amounts while preserving earned best",
+    "Malformed storage returns normal safe defaults",
+    "Illegal logs/forged resource and life snapshots cannot become game state",
+    "Native touchscreen multi-select adds/removes real units with visible pressed feedback",
+    "Complete normal-resource first map wins through native group/map/production touch taps",
+    "Denied storage still permits a full normal-resource map",
+    "No console/page errors, failed requests orHTTP4xx/5xx resources"
+  ],
+  "fixtures": "Only stage/unlock/tutorial metadata for no-input final-map failure and malformed/forged/denied storage; no HP/resource/coordinate/AI/clock/result writes.",
+  "singlePayment": {
+    "stock": 6,
+    "tickets": [
+      {
+        "id": 1,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 0.4333333333333333,
+        "spawned": null
+      }
+    ],
+    "log": [
+      {
+        "tick": 3,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 0
+      }
+    ]
+  },
+  "realCargo": {
+    "stock": 24,
+    "worker": {
+      "id": "p1",
+      "type": "worker",
+      "side": "player",
+      "x": 3,
+      "y": 5,
+      "hp": 40,
+      "maxHP": 40,
+      "carry": 3,
+      "order": {
+        "kind": "gather",
+        "target": "south",
+        "returning": false
+      },
+      "path": [],
+      "blocked": false,
+      "moveClock": 0,
+      "gatherClock": 0,
+      "cooldown": 0,
+      "action": null,
+      "ticket": null
+    },
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 59,
+        "type": "harvest",
+        "unit": "p1",
+        "qty": 3,
+        "node": "south"
+      }
+    ]
+  },
+  "cargoQueueRestore": {
+    "level": 1,
+    "ticks": 64,
+    "stock": 12,
+    "home": {
+      "id": "home",
+      "side": "player",
+      "x": 1,
+      "y": 3,
+      "hp": 130,
+      "maxHP": 130
+    },
+    "core": {
+      "id": "core",
+      "side": "enemy",
+      "x": 10,
+      "y": 3,
+      "hp": 70,
+      "maxHP": 70
+    },
+    "nodes": [
+      {
+        "id": "south",
+        "x": 3,
+        "y": 6,
+        "initial": 48,
+        "remaining": 45
+      },
+      {
+        "id": "north",
+        "x": 3,
+        "y": 1,
+        "initial": 48,
+        "remaining": 48
+      }
+    ],
+    "units": [
+      {
+        "id": "p1",
+        "type": "worker",
+        "side": "player",
+        "x": 3,
+        "y": 5,
+        "hp": 40,
+        "maxHP": 40,
+        "carry": 3,
+        "order": {
+          "kind": "gather",
+          "target": "south",
+          "returning": false
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0.16666666666666666,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "p2",
+        "type": "ranger",
+        "side": "player",
+        "x": 2,
+        "y": 4,
+        "hp": 70,
+        "maxHP": 70,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 90,
+        "action": {
+          "shot": 1,
+          "age": 0
+        },
+        "ticket": null
+      },
+      {
+        "id": "p3",
+        "type": "guard",
+        "side": "player",
+        "x": 2,
+        "y": 2,
+        "hp": 110,
+        "maxHP": 110,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 94,
+        "action": {
+          "shot": 2,
+          "age": 0
+        },
+        "ticket": null
+      },
+      {
+        "id": "e4",
+        "type": "raider",
+        "side": "enemy",
+        "x": 3,
+        "y": 2,
+        "hp": 44,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 100,
+        "action": {
+          "shot": 3,
+          "age": 0
+        },
+        "ticket": null
+      }
+    ],
+    "unitSerial": 4,
+    "shotSerial": 3,
+    "shots": [
+      {
+        "id": 1,
+        "source": "p2",
+        "target": "e4",
+        "start": 64,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      },
+      {
+        "id": 2,
+        "source": "p3",
+        "target": "e4",
+        "start": 64,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      },
+      {
+        "id": 3,
+        "source": "e4",
+        "target": "p3",
+        "start": 64,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      }
+    ],
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 59,
+        "type": "harvest",
+        "unit": "p1",
+        "qty": 3,
+        "node": "south"
+      }
+    ],
+    "queue": [
+      {
+        "id": 1,
+        "type": "worker",
+        "cost": 12,
+        "progress": 0.1,
+        "spawned": null
+      }
+    ],
+    "tickets": [
+      {
+        "id": 1,
+        "type": "worker",
+        "cost": 12,
+        "progress": 0.1,
+        "spawned": null
+      }
+    ],
+    "nextToken": 2,
+    "revision": 2,
+    "waves": [
+      {
+        "at": 12,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      },
+      {
+        "at": 26,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      }
+    ],
+    "log": [
+      {
+        "tick": 5,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 61,
+        "kind": "buy",
+        "type": "worker",
+        "token": 1,
+        "revision": 1
+      }
+    ],
+    "capture": 0,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "harvested": 3,
+      "delivered": 0,
+      "lost": 0,
+      "spent": 12,
+      "produced": 0,
+      "orders": 1,
+      "kills": 0,
+      "settlements": 0
+    },
+    "invariants": {
+      "stock": true,
+      "nodeStock": true,
+      "cargo": true,
+      "workerCargo": true,
+      "resourceStats": true,
+      "paidOnce": true,
+      "production": true,
+      "queue": true,
+      "unitIds": true,
+      "occupancy": true,
+      "terrain": true,
+      "health": true,
+      "deadInactive": true,
+      "shotIds": true,
+      "hitRange": true,
+      "settlement": true
+    }
+  },
+  "alternateProductionWin": {
+    "state": "won",
+    "stock": 24,
+    "stats": {
+      "harvested": 30,
+      "delivered": 30,
+      "lost": 0,
+      "spent": 30,
+      "produced": 2,
+      "orders": 3,
+      "kills": 1,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 5,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 61,
+        "kind": "buy",
+        "type": "worker",
+        "token": 1,
+        "revision": 1
+      },
+      {
+        "tick": 117,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 2,
+        "revision": 2
+      },
+      {
+        "tick": 133,
+        "kind": "order",
+        "ids": [
+          "p5"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "north"
+        }
+      },
+      {
+        "tick": 220,
+        "kind": "order",
+        "ids": [
+          "p2",
+          "p3",
+          "p6"
+        ],
+        "order": {
+          "kind": "attack",
+          "target": "core"
+        }
+      }
+    ],
+    "tickets": [
+      {
+        "id": 1,
+        "type": "worker",
+        "cost": 12,
+        "progress": 2,
+        "spawned": "p5"
+      },
+      {
+        "id": 2,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 2.999999999999999,
+        "spawned": "p6"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "pageOverflow": false,
+      "map": {
+        "visible": 290,
+        "total": 579
+      }
+    },
+    {
+      "width": 360,
+      "pageOverflow": false,
+      "map": {
+        "visible": 330,
+        "total": 579
+      }
+    },
+    {
+      "width": 390,
+      "pageOverflow": false,
+      "map": {
+        "visible": 360,
+        "total": 579
+      }
+    },
+    {
+      "width": 768,
+      "pageOverflow": false,
+      "map": {
+        "visible": 716,
+        "total": 716
+      }
+    },
+    {
+      "width": 1024,
+      "pageOverflow": false,
+      "map": {
+        "visible": 665,
+        "total": 665
+      }
+    },
+    {
+      "width": 1440,
+      "pageOverflow": false,
+      "map": {
+        "visible": 1043,
+        "total": 1043
+      }
+    }
+  ],
+  "realTelegraph": {
+    "text": "下次敌方援军：9.8秒 · 霜行者 / 霜枝手 · 右侧入口 · 起手：霜行者→苔盾卫",
+    "attackers": 1,
+    "targets": 1
+  },
+  "naturalFailure": {
+    "time": 30.866666666666667,
+    "homeHP": 0,
+    "units": [
+      {
+        "id": "p1",
+        "type": "worker",
+        "side": "player",
+        "x": 2,
+        "y": 3,
+        "hp": 0,
+        "maxHP": 40,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "p2",
+        "type": "ranger",
+        "side": "player",
+        "x": 1,
+        "y": 2,
+        "hp": 16,
+        "maxHP": 70,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 947,
+        "action": {
+          "shot": 82,
+          "age": 0.16666666666666666
+        },
+        "ticket": null
+      },
+      {
+        "id": "p3",
+        "type": "guard",
+        "side": "player",
+        "x": 2,
+        "y": 2,
+        "hp": 0,
+        "maxHP": 110,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 462,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e4",
+        "type": "raider",
+        "side": "enemy",
+        "x": 3,
+        "y": 2,
+        "hp": 0,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 136,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e5",
+        "type": "slinger",
+        "side": "enemy",
+        "x": 4,
+        "y": 2,
+        "hp": 0,
+        "maxHP": 36,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 613,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e6",
+        "type": "raider",
+        "side": "enemy",
+        "x": 2,
+        "y": 3,
+        "hp": 0,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 217,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e7",
+        "type": "slinger",
+        "side": "enemy",
+        "x": 3,
+        "y": 3,
+        "hp": 0,
+        "maxHP": 36,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 735,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e8",
+        "type": "raider",
+        "side": "enemy",
+        "x": 2,
+        "y": 2,
+        "hp": 0,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "stop"
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 540,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e9",
+        "type": "slinger",
+        "side": "enemy",
+        "x": 4,
+        "y": 3,
+        "hp": 36,
+        "maxHP": 36,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "blocked": false,
+        "moveClock": 0.03333333333333333,
+        "gatherClock": 0,
+        "cooldown": 928,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e10",
+        "type": "raider",
+        "side": "enemy",
+        "x": 2,
+        "y": 2,
+        "hp": 17,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 933,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e11",
+        "type": "raider",
+        "side": "enemy",
+        "x": 2,
+        "y": 3,
+        "hp": 44,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "blocked": false,
+        "moveClock": 0.03333333333333333,
+        "gatherClock": 0,
+        "cooldown": 952,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e12",
+        "type": "slinger",
+        "side": "enemy",
+        "x": 4,
+        "y": 2,
+        "hp": 36,
+        "maxHP": 36,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 927,
+        "action": null,
+        "ticket": null
+      }
+    ],
+    "shots": [
+      {
+        "id": 1,
+        "source": "p2",
+        "target": "e4",
+        "start": 55,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 63,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 2,
+        "source": "p3",
+        "target": "e4",
+        "start": 64,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 14,
+        "impact": 73,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 3,
+        "source": "e4",
+        "target": "p3",
+        "start": 64,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 74,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 4,
+        "source": "e5",
+        "target": "p3",
+        "start": 67,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 78,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 5,
+        "source": "e6",
+        "target": "p1",
+        "start": 73,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 83,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 6,
+        "source": "p2",
+        "target": "e4",
+        "start": 81,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 89,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 7,
+        "source": "p3",
+        "target": "e4",
+        "start": 94,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 12,
+        "impact": 103,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 8,
+        "source": "e4",
+        "target": "p3",
+        "start": 100,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "cancelled",
+        "actualDamage": 0,
+        "impact": 103
+      },
+      {
+        "id": 9,
+        "source": "e5",
+        "target": "p3",
+        "start": 106,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 117,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 10,
+        "source": "p2",
+        "target": "e6",
+        "start": 107,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 115,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 11,
+        "source": "e6",
+        "target": "p1",
+        "start": 109,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 119,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 12,
+        "source": "e7",
+        "target": "p1",
+        "start": 111,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 122,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 13,
+        "source": "p2",
+        "target": "e6",
+        "start": 133,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 141,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 14,
+        "source": "e5",
+        "target": "p3",
+        "start": 145,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 156,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 15,
+        "source": "e6",
+        "target": "p1",
+        "start": 145,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 155,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 16,
+        "source": "e7",
+        "target": "p1",
+        "start": 150,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 161,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 17,
+        "source": "p2",
+        "target": "e6",
+        "start": 159,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 167,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 18,
+        "source": "e6",
+        "target": "p1",
+        "start": 181,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 4,
+        "impact": 191,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 19,
+        "source": "e5",
+        "target": "p3",
+        "start": 184,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 195,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 20,
+        "source": "p2",
+        "target": "e6",
+        "start": 185,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 193,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 21,
+        "source": "e7",
+        "target": "p1",
+        "start": 189,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "miss",
+        "actualDamage": 0,
+        "impact": 200,
+        "distance": null,
+        "clear": false
+      },
+      {
+        "id": 22,
+        "source": "p3",
+        "target": "e6",
+        "start": 200,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 209,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 23,
+        "source": "e5",
+        "target": "p3",
+        "start": 223,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 234,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 24,
+        "source": "e7",
+        "target": "p3",
+        "start": 228,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 239,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 25,
+        "source": "e5",
+        "target": "p3",
+        "start": 262,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 273,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 26,
+        "source": "e7",
+        "target": "p3",
+        "start": 267,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 278,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 27,
+        "source": "e5",
+        "target": "p3",
+        "start": 301,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 312,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 28,
+        "source": "e7",
+        "target": "p3",
+        "start": 306,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 317,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 29,
+        "source": "e5",
+        "target": "p3",
+        "start": 340,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 351,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 30,
+        "source": "e7",
+        "target": "p3",
+        "start": 345,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 356,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 31,
+        "source": "e5",
+        "target": "p3",
+        "start": 379,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 390,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 32,
+        "source": "e7",
+        "target": "p3",
+        "start": 384,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 395,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 33,
+        "source": "e5",
+        "target": "p3",
+        "start": 418,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 429,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 34,
+        "source": "p2",
+        "target": "e8",
+        "start": 423,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 431,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 35,
+        "source": "e7",
+        "target": "p3",
+        "start": 423,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 434,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 36,
+        "source": "p3",
+        "target": "e8",
+        "start": 432,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 14,
+        "impact": 441,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 37,
+        "source": "e8",
+        "target": "p3",
+        "start": 432,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 442,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 38,
+        "source": "p2",
+        "target": "e8",
+        "start": 449,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 457,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 39,
+        "source": "e5",
+        "target": "p2",
+        "start": 457,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 468,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 40,
+        "source": "e9",
+        "target": "home",
+        "start": 460,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 471,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 41,
+        "source": "e7",
+        "target": "home",
+        "start": 462,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 473,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 42,
+        "source": "e8",
+        "target": "p2",
+        "start": 468,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 478,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 43,
+        "source": "p2",
+        "target": "e8",
+        "start": 475,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 483,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 44,
+        "source": "e5",
+        "target": "p2",
+        "start": 496,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 507,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 45,
+        "source": "e9",
+        "target": "home",
+        "start": 499,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 510,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 46,
+        "source": "p2",
+        "target": "e8",
+        "start": 501,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 3,
+        "impact": 509,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 47,
+        "source": "e7",
+        "target": "home",
+        "start": 501,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 512,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 48,
+        "source": "e8",
+        "target": "p2",
+        "start": 504,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "cancelled",
+        "actualDamage": 0,
+        "impact": 509
+      },
+      {
+        "id": 49,
+        "source": "p2",
+        "target": "e5",
+        "start": 527,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 535,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 50,
+        "source": "e5",
+        "target": "p2",
+        "start": 535,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 546,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 51,
+        "source": "e9",
+        "target": "home",
+        "start": 538,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 549,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 52,
+        "source": "e7",
+        "target": "home",
+        "start": 540,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 551,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 53,
+        "source": "p2",
+        "target": "e5",
+        "start": 553,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 561,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 54,
+        "source": "e5",
+        "target": "p2",
+        "start": 574,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 585,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 55,
+        "source": "e9",
+        "target": "home",
+        "start": 577,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 588,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 56,
+        "source": "p2",
+        "target": "e5",
+        "start": 579,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 587,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 57,
+        "source": "e7",
+        "target": "home",
+        "start": 579,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 590,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 58,
+        "source": "p2",
+        "target": "e5",
+        "start": 605,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 613,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 59,
+        "source": "e9",
+        "target": "home",
+        "start": 616,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 627,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 60,
+        "source": "e7",
+        "target": "home",
+        "start": 618,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 629,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 61,
+        "source": "p2",
+        "target": "e7",
+        "start": 631,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 639,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 62,
+        "source": "e9",
+        "target": "home",
+        "start": 655,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 666,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 63,
+        "source": "p2",
+        "target": "e7",
+        "start": 657,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 665,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 64,
+        "source": "e7",
+        "target": "home",
+        "start": 657,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 668,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 65,
+        "source": "p2",
+        "target": "e7",
+        "start": 683,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 691,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 66,
+        "source": "e9",
+        "target": "home",
+        "start": 694,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 705,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 67,
+        "source": "e7",
+        "target": "home",
+        "start": 696,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 707,
+        "distance": 2,
+        "clear": true
+      },
+      {
+        "id": 68,
+        "source": "p2",
+        "target": "e7",
+        "start": 709,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 717,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 69,
+        "source": "e9",
+        "target": "home",
+        "start": 733,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 744,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 70,
+        "source": "e9",
+        "target": "home",
+        "start": 772,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 783,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 71,
+        "source": "e9",
+        "target": "home",
+        "start": 811,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 822,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 72,
+        "source": "p2",
+        "target": "e10",
+        "start": 843,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 851,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 73,
+        "source": "e9",
+        "target": "home",
+        "start": 850,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 861,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 74,
+        "source": "e10",
+        "target": "p2",
+        "start": 861,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 871,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 75,
+        "source": "p2",
+        "target": "e10",
+        "start": 869,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 877,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 76,
+        "source": "e11",
+        "target": "home",
+        "start": 880,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 890,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 77,
+        "source": "e12",
+        "target": "p2",
+        "start": 888,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 899,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 78,
+        "source": "e9",
+        "target": "home",
+        "start": 889,
+        "wind": 0.36,
+        "range": 3,
+        "damage": 6,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 6,
+        "impact": 900,
+        "distance": 3,
+        "clear": true
+      },
+      {
+        "id": 79,
+        "source": "p2",
+        "target": "e10",
+        "start": 895,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 9,
+        "impact": 903,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 80,
+        "source": "e10",
+        "target": "p2",
+        "start": 897,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 907,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 81,
+        "source": "e11",
+        "target": "home",
+        "start": 916,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": true,
+        "result": "hit",
+        "actualDamage": 8,
+        "impact": 926,
+        "distance": 1,
+        "clear": true
+      },
+      {
+        "id": 82,
+        "source": "p2",
+        "target": "e10",
+        "start": 921,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      }
+    ],
+    "ledger": [],
+    "actualLog": []
+  },
+  "nativeTouch": {
+    "state": "won",
+    "score": 1317,
+    "stats": {
+      "harvested": 24,
+      "delivered": 24,
+      "lost": 0,
+      "spent": 36,
+      "produced": 2,
+      "orders": 2,
+      "kills": 2,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 12,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 19,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 1
+      },
+      {
+        "tick": 238,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 2,
+        "revision": 2
+      },
+      {
+        "tick": 339,
+        "kind": "order",
+        "ids": [
+          "p2",
+          "p3",
+          "p5",
+          "p6"
+        ],
+        "order": {
+          "kind": "attack",
+          "target": "core"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "observedTick": 0,
+        "intended": {
+          "kind": "order",
+          "ids": [
+            "p1"
+          ],
+          "order": {
+            "kind": "gather",
+            "target": "south"
+          }
+        },
+        "accepted": true
+      },
+      {
+        "observedTick": 15,
+        "intended": {
+          "kind": "buy",
+          "type": "ranger",
+          "token": 1,
+          "revision": 1
+        },
+        "accepted": true
+      },
+      {
+        "observedTick": 232,
+        "intended": {
+          "kind": "buy",
+          "type": "ranger",
+          "token": 2,
+          "revision": 2
+        },
+        "accepted": true
+      },
+      {
+        "observedTick": 330,
+        "intended": {
+          "kind": "order",
+          "ids": [
+            "p2",
+            "p3",
+            "p5",
+            "p6"
+          ],
+          "order": {
+            "kind": "attack",
+            "target": "core"
+          }
+        },
+        "accepted": true
+      }
+    ],
+    "wallSeconds": 16.812000000005355,
+    "method": "Native unit/group/mode/map/cost preview/confirmation taps at authored1x; map scrolling helpers only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

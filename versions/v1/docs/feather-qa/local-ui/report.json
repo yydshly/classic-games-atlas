@@ -1,0 +1,5603 @@
+{
+  "testedAt": "2026-10-16T23:38:14.992825+00:00",
+  "url": "http://127.0.0.1:4174/games/feather/",
+  "method": "Actual UI controls. Boundary scenarios seed only tutorial/unlock/chapter metadata; no HP/energy/items/turn/win writes. These are separate from fresh-storage natural8chapter acceptance.",
+  "checks": [
+    "First tutorial and event never advance without confirmation",
+    "Chapter8 is locked on fresh progress; menu close resumes exact event",
+    "Event preview and cancel preserve budget, order and log",
+    "Scout confirms once with exact12shields and extra ether",
+    "Skill preview actual affinity/cost and Escape cancellation are free",
+    "Held Enter/repeated confirmation consumes one action and one energy charge",
+    "Revive has no legal target while all companions live",
+    "Skill hotkeys, arrows, Enter preview and Escape work without changing battle",
+    "Pause freezes initiative/status/ledger and resumes with same resources",
+    "Help and chapter book pause and close back to exact battle",
+    "Original sound toggle has state and local persistence",
+    "Expanded log includes each event/player/enemy/status in order",
+    "Actual ether gain clamps at8, decrements once and disables exhausted item",
+    "Actual wounded ally healing consumes finite item and records actual bounded HP gain",
+    "Pause/reload reconstructs18 full physical fields including items and statuses, then ordinary win",
+    "Retry resets authored budget and retains best/unlock",
+    "Refresh cancels unconfirmed preview without payment or extra turn",
+    "Natural KO clears statuses/energy; dead target rejects healing; ordinary revive restores30 exactly once without insertion",
+    "Natural defeat displays single result; terminal inputs do not consume; retry is playable",
+    "Live enemy mist weakness and shields survive exact checkpoint restore",
+    "Ordinary澄心 clears actual enemy weakness with exact skill cost",
+    "Malformed storage falls back to safe fresh chapter",
+    "Combat snapshot forgeries cannot grant HP or inventory",
+    "Denied localStorage remains playable through normal first-chapter win",
+    "Entire normal first battle through native focus/Enter keyboard skill-target-confirm controls",
+    "320/360/390/768/1024/1440 width and modal fit without page overflow",
+    "Native touchscreen first chapter event/skill/target/preview/confirm and result hit testing"
+  ],
+  "ordinaryRevive": {
+    "before": {
+      "chapter": 8,
+      "state": "battle",
+      "pausedFrom": null,
+      "choice": "camp",
+      "round": 13,
+      "order": [
+        "a",
+        "e0",
+        "c",
+        "e1",
+        "b"
+      ],
+      "cursor": 4,
+      "revision": 39,
+      "serial": 65,
+      "units": [
+        {
+          "id": "a",
+          "name": "岚翎",
+          "role": "风羽向导",
+          "element": "wind",
+          "maxHP": 84,
+          "maxEnergy": 8,
+          "speed": 12,
+          "skills": [
+            "gust",
+            "shear",
+            "snare"
+          ],
+          "side": "party",
+          "hp": 0,
+          "energy": 0,
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "b",
+          "name": "苔灯",
+          "role": "苔息医者",
+          "element": "moss",
+          "maxHP": 100,
+          "maxEnergy": 8,
+          "speed": 8,
+          "skills": [
+            "twig",
+            "mend",
+            "veil"
+          ],
+          "side": "party",
+          "hp": 94,
+          "energy": 8,
+          "actions": 12,
+          "weak": null,
+          "shield": {
+            "amount": 20,
+            "expiresAfter": 13
+          },
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "c",
+          "name": "澄汐",
+          "role": "泉声旅人",
+          "element": "water",
+          "maxHP": 88,
+          "maxEnergy": 8,
+          "speed": 10,
+          "skills": [
+            "ripple",
+            "surge",
+            "cleanse"
+          ],
+          "side": "party",
+          "hp": 82,
+          "energy": 8,
+          "actions": 13,
+          "weak": null,
+          "shield": {
+            "amount": 20,
+            "expiresAfter": 14
+          },
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "e0",
+          "kind": "boss",
+          "name": "暮壳守望者",
+          "element": "moss",
+          "speed": 11,
+          "maxHP": 360,
+          "hp": 360,
+          "energy": 0,
+          "maxEnergy": 0,
+          "side": "enemy",
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 13
+        },
+        {
+          "id": "e1",
+          "kind": "lamp",
+          "name": "镜潮灯",
+          "element": "water",
+          "speed": 9,
+          "maxHP": 65,
+          "hp": 65,
+          "energy": 0,
+          "maxEnergy": 0,
+          "side": "enemy",
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 13
+        }
+      ],
+      "items": {
+        "heal": 3,
+        "ether": 1,
+        "revive": 1
+      },
+      "changes": [
+        {
+          "id": 1,
+          "action": 1,
+          "kind": "item",
+          "unit": "heal",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 2,
+          "action": 1,
+          "kind": "energy",
+          "unit": "a",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 3,
+          "action": 1,
+          "kind": "energy",
+          "unit": "b",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 4,
+          "action": 1,
+          "kind": "energy",
+          "unit": "c",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 5,
+          "action": 2,
+          "kind": "energy",
+          "unit": "a",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 6,
+          "action": 4,
+          "kind": "energy",
+          "unit": "c",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 7,
+          "action": 5,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -14,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 8,
+          "action": 6,
+          "kind": "energy",
+          "unit": "b",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 9,
+          "action": 10,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -1,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 10,
+          "action": 18,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 11,
+          "action": 18,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 12,
+          "action": 18,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 13,
+          "action": 20,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -15,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 14,
+          "action": 25,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -20,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 15,
+          "action": 38,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 16,
+          "action": 38,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 17,
+          "action": 38,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 18,
+          "action": 40,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -21,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 19,
+          "action": 55,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -1,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 20,
+          "action": 58,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 21,
+          "action": 58,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 22,
+          "action": 58,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 23,
+          "action": 65,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -6,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 24,
+          "action": 65,
+          "kind": "energy",
+          "unit": "a",
+          "delta": -8,
+          "cause": "倒下时清空能量"
+        }
+      ],
+      "history": [
+        {
+          "id": 1,
+          "action": 1,
+          "round": 0,
+          "type": "event",
+          "text": "整备：多1苔露瓶，三人各恢复1能量。"
+        },
+        {
+          "id": 2,
+          "action": 1,
+          "round": 1,
+          "type": "round",
+          "text": "第1轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 3,
+          "action": 2,
+          "round": 1,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 4,
+          "action": 3,
+          "round": 1,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "action": 4,
+          "round": 1,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 6,
+          "action": 5,
+          "round": 1,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 1,
+              "actual": 14,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "action": 6,
+          "round": 1,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 8,
+          "action": 6,
+          "round": 2,
+          "type": "round",
+          "text": "第2轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 9,
+          "action": 7,
+          "round": 2,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 10,
+          "action": 8,
+          "round": 2,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 11,
+          "action": 9,
+          "round": 2,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 12,
+          "action": 10,
+          "round": 2,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 20,
+              "actual": 1,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "action": 11,
+          "round": 2,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 14,
+          "action": 11,
+          "round": 3,
+          "type": "round",
+          "text": "第3轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 15,
+          "action": 12,
+          "round": 3,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 16,
+          "action": 12,
+          "round": 3,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 17,
+          "action": 13,
+          "round": 3,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 18,
+          "action": 13,
+          "round": 3,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 19,
+          "action": 14,
+          "round": 3,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 20,
+          "action": 15,
+          "round": 3,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 21,
+          "action": 16,
+          "round": 3,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 22,
+          "action": 16,
+          "round": 4,
+          "type": "round",
+          "text": "第4轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 23,
+          "action": 17,
+          "round": 4,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 24,
+          "action": 18,
+          "round": 4,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "action": 19,
+          "round": 4,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 26,
+          "action": 20,
+          "round": 4,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 0,
+              "actual": 15,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "action": 20,
+          "round": 4,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 28,
+          "action": 21,
+          "round": 4,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 29,
+          "action": 21,
+          "round": 5,
+          "type": "round",
+          "text": "第5轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 30,
+          "action": 22,
+          "round": 5,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 31,
+          "action": 23,
+          "round": 5,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "action": 24,
+          "round": 5,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 33,
+          "action": 25,
+          "round": 5,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 1,
+              "actual": 20,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "action": 26,
+          "round": 5,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 35,
+          "action": 26,
+          "round": 6,
+          "type": "round",
+          "text": "第6轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 36,
+          "action": 27,
+          "round": 6,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 37,
+          "action": 27,
+          "round": 6,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 38,
+          "action": 28,
+          "round": 6,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 39,
+          "action": 29,
+          "round": 6,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 40,
+          "action": 30,
+          "round": 6,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 41,
+          "action": 31,
+          "round": 6,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 42,
+          "action": 31,
+          "round": 7,
+          "type": "round",
+          "text": "第7轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 43,
+          "action": 32,
+          "round": 7,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 44,
+          "action": 33,
+          "round": 7,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 45,
+          "action": 33,
+          "round": 7,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 46,
+          "action": 34,
+          "round": 7,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 47,
+          "action": 35,
+          "round": 7,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 15,
+              "actual": 0,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "action": 35,
+          "round": 7,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 49,
+          "action": 36,
+          "round": 7,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 50,
+          "action": 36,
+          "round": 8,
+          "type": "round",
+          "text": "第8轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 51,
+          "action": 37,
+          "round": 8,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 52,
+          "action": 38,
+          "round": 8,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 53,
+          "action": 39,
+          "round": 8,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 54,
+          "action": 40,
+          "round": 8,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 0,
+              "actual": 21,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "action": 41,
+          "round": 8,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 56,
+          "action": 41,
+          "round": 9,
+          "type": "round",
+          "text": "第9轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 57,
+          "action": 42,
+          "round": 9,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 58,
+          "action": 42,
+          "round": 9,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 59,
+          "action": 43,
+          "round": 9,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "action": 44,
+          "round": 9,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 61,
+          "action": 45,
+          "round": 9,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 62,
+          "action": 46,
+          "round": 9,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 63,
+          "action": 46,
+          "round": 10,
+          "type": "round",
+          "text": "第10轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 64,
+          "action": 47,
+          "round": 10,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 65,
+          "action": 48,
+          "round": 10,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 66,
+          "action": 49,
+          "round": 10,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 67,
+          "action": 50,
+          "round": 10,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 15,
+              "actual": 0,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "action": 50,
+          "round": 10,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 69,
+          "action": 51,
+          "round": 10,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 70,
+          "action": 51,
+          "round": 11,
+          "type": "round",
+          "text": "第11轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 71,
+          "action": 52,
+          "round": 11,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 72,
+          "action": 53,
+          "round": 11,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 73,
+          "action": 53,
+          "round": 11,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 74,
+          "action": 54,
+          "round": 11,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 75,
+          "action": 55,
+          "round": 11,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 20,
+              "actual": 1,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 76,
+          "action": 56,
+          "round": 11,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 77,
+          "action": 56,
+          "round": 12,
+          "type": "round",
+          "text": "第12轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 78,
+          "action": 57,
+          "round": 12,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 79,
+          "action": 57,
+          "round": 12,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 80,
+          "action": 58,
+          "round": 12,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "action": 59,
+          "round": 12,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 82,
+          "action": 60,
+          "round": 12,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 83,
+          "action": 61,
+          "round": 12,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 84,
+          "action": 61,
+          "round": 13,
+          "type": "round",
+          "text": "第13轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 85,
+          "action": 62,
+          "round": 13,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 86,
+          "action": 63,
+          "round": 13,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "action": 64,
+          "round": 13,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 88,
+          "action": 65,
+          "round": 13,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 1,
+              "actual": 6,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 89,
+          "action": 65,
+          "round": 13,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        }
+      ],
+      "log": [
+        {
+          "kind": "choice",
+          "choice": "camp",
+          "revision": 0
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 1,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 2,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 3,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 4,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 5,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 6,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 7,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 8,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 9,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 10,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 11,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 12,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 13,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 14,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 15,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 16,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 17,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 18,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 19,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 20,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 21,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 22,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 23,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 24,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 25,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 26,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 27,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 28,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 29,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 30,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 31,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 32,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 33,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 34,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 35,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 36,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 37,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 38,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        }
+      ],
+      "score": 0,
+      "reason": "",
+      "stats": {
+        "playerActions": 38,
+        "enemyActions": 26,
+        "damage": 96,
+        "healed": 0,
+        "absorbed": 329,
+        "itemsUsed": 0,
+        "revived": 0,
+        "settlements": 0
+      },
+      "active": "b",
+      "intents": [
+        {
+          "id": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": "e1",
+          "mode": "strike"
+        }
+      ],
+      "invariants": {
+        "unitIds": true,
+        "hp": true,
+        "energy": true,
+        "items": true,
+        "changeIds": true,
+        "historyIds": true,
+        "initiative": true,
+        "revision": true,
+        "choiceOnce": true,
+        "actions": true,
+        "turnCap": true,
+        "deadClear": true,
+        "statuses": true,
+        "settlement": true
+      },
+      "unlocked": 8,
+      "best": {},
+      "storageAvailable": true,
+      "ui": {
+        "move": null,
+        "target": null,
+        "pending": null,
+        "legal": [],
+        "allLog": false
+      }
+    },
+    "after": {
+      "chapter": 8,
+      "state": "battle",
+      "pausedFrom": null,
+      "choice": "camp",
+      "round": 14,
+      "order": [
+        "a",
+        "e0",
+        "c",
+        "e1",
+        "b"
+      ],
+      "cursor": 0,
+      "revision": 40,
+      "serial": 66,
+      "units": [
+        {
+          "id": "a",
+          "name": "岚翎",
+          "role": "风羽向导",
+          "element": "wind",
+          "maxHP": 84,
+          "maxEnergy": 8,
+          "speed": 12,
+          "skills": [
+            "gust",
+            "shear",
+            "snare"
+          ],
+          "side": "party",
+          "hp": 30,
+          "energy": 0,
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "b",
+          "name": "苔灯",
+          "role": "苔息医者",
+          "element": "moss",
+          "maxHP": 100,
+          "maxEnergy": 8,
+          "speed": 8,
+          "skills": [
+            "twig",
+            "mend",
+            "veil"
+          ],
+          "side": "party",
+          "hp": 94,
+          "energy": 8,
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "c",
+          "name": "澄汐",
+          "role": "泉声旅人",
+          "element": "water",
+          "maxHP": 88,
+          "maxEnergy": 8,
+          "speed": 10,
+          "skills": [
+            "ripple",
+            "surge",
+            "cleanse"
+          ],
+          "side": "party",
+          "hp": 82,
+          "energy": 8,
+          "actions": 13,
+          "weak": null,
+          "shield": {
+            "amount": 20,
+            "expiresAfter": 14
+          },
+          "phase": 1,
+          "plan": 0
+        },
+        {
+          "id": "e0",
+          "kind": "boss",
+          "name": "暮壳守望者",
+          "element": "moss",
+          "speed": 11,
+          "maxHP": 360,
+          "hp": 360,
+          "energy": 0,
+          "maxEnergy": 0,
+          "side": "enemy",
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 13
+        },
+        {
+          "id": "e1",
+          "kind": "lamp",
+          "name": "镜潮灯",
+          "element": "water",
+          "speed": 9,
+          "maxHP": 65,
+          "hp": 65,
+          "energy": 0,
+          "maxEnergy": 0,
+          "side": "enemy",
+          "actions": 13,
+          "weak": null,
+          "shield": null,
+          "phase": 1,
+          "plan": 13
+        }
+      ],
+      "items": {
+        "heal": 3,
+        "ether": 1,
+        "revive": 0
+      },
+      "changes": [
+        {
+          "id": 1,
+          "action": 1,
+          "kind": "item",
+          "unit": "heal",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 2,
+          "action": 1,
+          "kind": "energy",
+          "unit": "a",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 3,
+          "action": 1,
+          "kind": "energy",
+          "unit": "b",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 4,
+          "action": 1,
+          "kind": "energy",
+          "unit": "c",
+          "delta": 1,
+          "cause": "苔茶整备"
+        },
+        {
+          "id": 5,
+          "action": 2,
+          "kind": "energy",
+          "unit": "a",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 6,
+          "action": 4,
+          "kind": "energy",
+          "unit": "c",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 7,
+          "action": 5,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -14,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 8,
+          "action": 6,
+          "kind": "energy",
+          "unit": "b",
+          "delta": 2,
+          "cause": "守息恢复"
+        },
+        {
+          "id": 9,
+          "action": 10,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -1,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 10,
+          "action": 18,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 11,
+          "action": 18,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 12,
+          "action": 18,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 13,
+          "action": 20,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -15,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 14,
+          "action": 25,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -20,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 15,
+          "action": 38,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 16,
+          "action": 38,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 17,
+          "action": 38,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 18,
+          "action": 40,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -21,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 19,
+          "action": 55,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -1,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 20,
+          "action": 58,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 21,
+          "action": 58,
+          "kind": "hp",
+          "unit": "c",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 22,
+          "action": 58,
+          "kind": "hp",
+          "unit": "b",
+          "delta": -2,
+          "cause": "暮壳守望者的伤害"
+        },
+        {
+          "id": 23,
+          "action": 65,
+          "kind": "hp",
+          "unit": "a",
+          "delta": -6,
+          "cause": "镜潮灯的伤害"
+        },
+        {
+          "id": 24,
+          "action": 65,
+          "kind": "energy",
+          "unit": "a",
+          "delta": -8,
+          "cause": "倒下时清空能量"
+        },
+        {
+          "id": 25,
+          "action": 66,
+          "kind": "item",
+          "unit": "revive",
+          "delta": -1,
+          "cause": "归羽结使用"
+        },
+        {
+          "id": 26,
+          "action": 66,
+          "kind": "hp",
+          "unit": "a",
+          "delta": 30,
+          "cause": "归羽结"
+        }
+      ],
+      "history": [
+        {
+          "id": 1,
+          "action": 1,
+          "round": 0,
+          "type": "event",
+          "text": "整备：多1苔露瓶，三人各恢复1能量。"
+        },
+        {
+          "id": 2,
+          "action": 1,
+          "round": 1,
+          "type": "round",
+          "text": "第1轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 3,
+          "action": 2,
+          "round": 1,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 4,
+          "action": 3,
+          "round": 1,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "action": 4,
+          "round": 1,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 6,
+          "action": 5,
+          "round": 1,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 1,
+              "actual": 14,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "action": 6,
+          "round": 1,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 6,
+            "energyAfterCost": 6,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 2,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 8,
+          "action": 6,
+          "round": 2,
+          "type": "round",
+          "text": "第2轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 9,
+          "action": 7,
+          "round": 2,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 10,
+          "action": 8,
+          "round": 2,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 11,
+          "action": 9,
+          "round": 2,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 12,
+          "action": 10,
+          "round": 2,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 20,
+              "actual": 1,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "action": 11,
+          "round": 2,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 14,
+          "action": 11,
+          "round": 3,
+          "type": "round",
+          "text": "第3轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 15,
+          "action": 12,
+          "round": 3,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 16,
+          "action": 12,
+          "round": 3,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 17,
+          "action": 13,
+          "round": 3,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 18,
+          "action": 13,
+          "round": 3,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 19,
+          "action": 14,
+          "round": 3,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 20,
+          "action": 15,
+          "round": 3,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 21,
+          "action": 16,
+          "round": 3,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 22,
+          "action": 16,
+          "round": 4,
+          "type": "round",
+          "text": "第4轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 23,
+          "action": 17,
+          "round": 4,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 24,
+          "action": 18,
+          "round": 4,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "action": 19,
+          "round": 4,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 26,
+          "action": 20,
+          "round": 4,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 0,
+              "actual": 15,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "action": 20,
+          "round": 4,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 28,
+          "action": 21,
+          "round": 4,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 29,
+          "action": 21,
+          "round": 5,
+          "type": "round",
+          "text": "第5轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 30,
+          "action": 22,
+          "round": 5,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 31,
+          "action": 23,
+          "round": 5,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "action": 24,
+          "round": 5,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 33,
+          "action": 25,
+          "round": 5,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 1,
+              "actual": 20,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "action": 26,
+          "round": 5,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 35,
+          "action": 26,
+          "round": 6,
+          "type": "round",
+          "text": "第6轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 36,
+          "action": 27,
+          "round": 6,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 37,
+          "action": 27,
+          "round": 6,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 38,
+          "action": 28,
+          "round": 6,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 39,
+          "action": 29,
+          "round": 6,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 40,
+          "action": 30,
+          "round": 6,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 41,
+          "action": 31,
+          "round": 6,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 42,
+          "action": 31,
+          "round": 7,
+          "type": "round",
+          "text": "第7轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 43,
+          "action": 32,
+          "round": 7,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 44,
+          "action": 33,
+          "round": 7,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 45,
+          "action": 33,
+          "round": 7,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 46,
+          "action": 34,
+          "round": 7,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 47,
+          "action": 35,
+          "round": 7,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 15,
+              "actual": 0,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "action": 35,
+          "round": 7,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 49,
+          "action": 36,
+          "round": 7,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 50,
+          "action": 36,
+          "round": 8,
+          "type": "round",
+          "text": "第8轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 51,
+          "action": 37,
+          "round": 8,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 52,
+          "action": 38,
+          "round": 8,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 53,
+          "action": 39,
+          "round": 8,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 54,
+          "action": 40,
+          "round": 8,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 0,
+              "actual": 21,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "action": 41,
+          "round": 8,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 56,
+          "action": 41,
+          "round": 9,
+          "type": "round",
+          "text": "第9轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 57,
+          "action": 42,
+          "round": 9,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 58,
+          "action": 42,
+          "round": 9,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 59,
+          "action": 43,
+          "round": 9,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "action": 44,
+          "round": 9,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 61,
+          "action": 45,
+          "round": 9,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 62,
+          "action": 46,
+          "round": 9,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 63,
+          "action": 46,
+          "round": 10,
+          "type": "round",
+          "text": "第10轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 64,
+          "action": 47,
+          "round": 10,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 65,
+          "action": 48,
+          "round": 10,
+          "type": "enemy",
+          "text": "暮壳守望者结起24点护盾",
+          "actor": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": 66,
+          "action": 49,
+          "round": 10,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 67,
+          "action": 50,
+          "round": 10,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 15,
+              "actual": 0,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "action": 50,
+          "round": 10,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 69,
+          "action": 51,
+          "round": 10,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 70,
+          "action": 51,
+          "round": 11,
+          "type": "round",
+          "text": "第11轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 71,
+          "action": 52,
+          "round": 11,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 72,
+          "action": 53,
+          "round": 11,
+          "type": "enemy",
+          "text": "暮壳守望者蓄起星光，下次行动将施展群体回响",
+          "actor": "e0",
+          "mode": "charge"
+        },
+        {
+          "id": 73,
+          "action": 53,
+          "round": 11,
+          "type": "status",
+          "text": "暮壳守望者的护盾到期"
+        },
+        {
+          "id": 74,
+          "action": 54,
+          "round": 11,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 75,
+          "action": 55,
+          "round": 11,
+          "type": "enemy",
+          "text": "镜潮灯使用星纹冲击",
+          "actor": "e1",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 21,
+              "absorbed": 20,
+              "actual": 1,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 76,
+          "action": 56,
+          "round": 11,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 77,
+          "action": 56,
+          "round": 12,
+          "type": "round",
+          "text": "第12轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 78,
+          "action": 57,
+          "round": 12,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 79,
+          "action": 57,
+          "round": 12,
+          "type": "status",
+          "text": "岚翎的弱化结束"
+        },
+        {
+          "id": 80,
+          "action": 58,
+          "round": 12,
+          "type": "enemy",
+          "text": "暮壳守望者使用群星回响",
+          "actor": "e0",
+          "mode": "nova",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "c",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            },
+            {
+              "target": "b",
+              "raw": 22,
+              "absorbed": 20,
+              "actual": 2,
+              "factor": 1
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "action": 59,
+          "round": 12,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 82,
+          "action": 60,
+          "round": 12,
+          "type": "enemy",
+          "text": "镜潮灯结起24点护盾",
+          "actor": "e1",
+          "mode": "guard"
+        },
+        {
+          "id": 83,
+          "action": 61,
+          "round": 12,
+          "type": "player",
+          "text": "苔灯使用守息 → 苔灯",
+          "actor": "b",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "b",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 84,
+          "action": 61,
+          "round": 13,
+          "type": "round",
+          "text": "第13轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        },
+        {
+          "id": 85,
+          "action": 62,
+          "round": 13,
+          "type": "player",
+          "text": "岚翎使用守息 → 岚翎",
+          "actor": "a",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "a",
+            "target": "a",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 86,
+          "action": 63,
+          "round": 13,
+          "type": "enemy",
+          "text": "暮壳守望者使用星纹冲击",
+          "actor": "e0",
+          "mode": "strike",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 19,
+              "absorbed": 19,
+              "actual": 0,
+              "factor": 0.75
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "action": 64,
+          "round": 13,
+          "type": "player",
+          "text": "澄汐使用守息 → 澄汐",
+          "actor": "c",
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "c",
+            "target": "c",
+            "name": "守息",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": null,
+            "itemBefore": null,
+            "itemAfter": null,
+            "damage": null,
+            "heal": 0,
+            "shield": 20,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "自获20盾，保留至自己下次行动结束；回2能量，另有行动结束回1。"
+          },
+          "effects": []
+        },
+        {
+          "id": 88,
+          "action": 65,
+          "round": 13,
+          "type": "enemy",
+          "text": "镜潮灯使用雾纹侵扰",
+          "actor": "e1",
+          "mode": "mist",
+          "effects": [
+            {
+              "target": "a",
+              "raw": 15,
+              "absorbed": 1,
+              "actual": 6,
+              "factor": 1.5
+            }
+          ]
+        },
+        {
+          "id": 89,
+          "action": 65,
+          "round": 13,
+          "type": "status",
+          "text": "镜潮灯的护盾到期"
+        },
+        {
+          "id": 90,
+          "action": 66,
+          "round": 13,
+          "type": "player",
+          "text": "苔灯使用归羽结 → 岚翎",
+          "actor": "b",
+          "move": {
+            "kind": "item",
+            "item": "revive",
+            "target": "a"
+          },
+          "preview": {
+            "valid": true,
+            "actor": "b",
+            "target": "a",
+            "name": "归羽结",
+            "cost": 0,
+            "energyBefore": 8,
+            "energyAfterCost": 8,
+            "energyAfterOwnTurn": 8,
+            "item": "revive",
+            "itemBefore": 1,
+            "itemAfter": 0,
+            "damage": null,
+            "heal": 30,
+            "shield": 0,
+            "energyGain": 0,
+            "weak": 0,
+            "cleanse": false,
+            "note": "让倒下同伴以30体力复起；不插队、不回退已过的行动位。"
+          },
+          "effects": [
+            {
+              "target": "a",
+              "healed": 30
+            }
+          ]
+        },
+        {
+          "id": 91,
+          "action": 66,
+          "round": 13,
+          "type": "status",
+          "text": "苔灯的护盾到期"
+        },
+        {
+          "id": 92,
+          "action": 66,
+          "round": 14,
+          "type": "round",
+          "text": "第14轮开始",
+          "order": [
+            "a",
+            "e0",
+            "c",
+            "e1",
+            "b"
+          ]
+        }
+      ],
+      "log": [
+        {
+          "kind": "choice",
+          "choice": "camp",
+          "revision": 0
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 1,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 2,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 3,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 4,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 5,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 6,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 7,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 8,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 9,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 10,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 11,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 12,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 13,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 14,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 15,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 16,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 17,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 18,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 19,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 20,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 21,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 22,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 23,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 24,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 25,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 26,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 27,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 28,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 29,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 30,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 31,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 32,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 33,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 34,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 35,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 36,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "b"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "a",
+          "revision": 37,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "a"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "c",
+          "revision": 38,
+          "move": {
+            "kind": "skill",
+            "skill": "guard",
+            "target": "c"
+          }
+        },
+        {
+          "kind": "act",
+          "actor": "b",
+          "revision": 39,
+          "move": {
+            "kind": "item",
+            "item": "revive",
+            "target": "a"
+          }
+        }
+      ],
+      "score": 0,
+      "reason": "",
+      "stats": {
+        "playerActions": 39,
+        "enemyActions": 26,
+        "damage": 96,
+        "healed": 30,
+        "absorbed": 329,
+        "itemsUsed": 1,
+        "revived": 1,
+        "settlements": 0
+      },
+      "active": "a",
+      "intents": [
+        {
+          "id": "e0",
+          "mode": "guard"
+        },
+        {
+          "id": "e1",
+          "mode": "strike"
+        }
+      ],
+      "invariants": {
+        "unitIds": true,
+        "hp": true,
+        "energy": true,
+        "items": true,
+        "changeIds": true,
+        "historyIds": true,
+        "initiative": true,
+        "revision": true,
+        "choiceOnce": true,
+        "actions": true,
+        "turnCap": true,
+        "deadClear": true,
+        "statuses": true,
+        "settlement": true
+      },
+      "unlocked": 8,
+      "best": {},
+      "storageAvailable": true,
+      "ui": {
+        "move": null,
+        "target": null,
+        "pending": null,
+        "legal": [],
+        "allLog": false
+      }
+    }
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

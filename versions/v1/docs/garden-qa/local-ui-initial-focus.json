@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-16T08:34:23.918194+00:00",
+  "step": "keyboard roving focus and adjacent exchange",
+  "failure": "test focused cell 0 after an invalid swap, while internal selection cursor still pointed to the invalid exchange destination",
+  "finding": "focusin did not synchronize keyboard cursor with the actually focused cell",
+  "fix": "synchronize cursor and roving tabindex on cell focusin; keep automatic post-animation focus return",
+  "scope": "keyboard focus synchronization only; production matching, goals, steps and RNG unchanged"
+}

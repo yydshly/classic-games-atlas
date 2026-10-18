@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14262a"><meta name="description" content="堡垒防线：一款原创坦克基地防守游戏。10张原创关卡，键盘与触屏操作，无需账户。经典游戏图鉴玩法实验01。">
+  <title>堡垒防线 · 经典玩法实验 01</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fortress.css"><script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <header class="game-header"><a href="../../#experiments" class="back-link">← 返回经典游戏图鉴</a><span>PLAY LAB <b>01</b></span><a href="../../#game=battle-city">查看原作资料 ↗</a></header>
+  <main>
+    <div class="game-heading"><div><p class="eyebrow">ORIGINAL ARCADE EXPERIMENT</p><h1>堡垒防线 <span>BEACON BASTION</span></h1></div><p>守住信标。<br>让最后一盏灯继续亮着。</p></div>
+    <div class="game-layout">
+      <section class="arena-column" aria-label="游戏战场">
+        <div class="arena-heading"><div><span id="mission-number">01 / 10</span><strong id="mission-name">晨雾哨站</strong></div><div class="arena-actions"><button id="sound" type="button" aria-pressed="true">声音：开</button><button id="help" type="button">操作说明</button><button id="pause" type="button" disabled>暂停 <kbd>P</kbd></button></div></div>
+        <div class="mobile-hud" aria-label="即时战况"><span>基地 <b id="base-mobile">▰▰▰</b></span><span>出击 <b id="lives-mobile">3</b></span><span>剩余 <b id="remaining-mobile">6</b></span><span>得分 <b id="score-mobile">0</b></span></div>
+        <div class="arena" id="arena"><canvas id="battlefield" width="600" height="600" tabindex="0" aria-label="坦克基地防守战场。使用方向键或WASD移动，空格或J射击。游戏战况显示在旁边文字区域。"></canvas><div class="screen-grain" aria-hidden="true"></div>
+          <div class="overlay" id="overlay"><div class="overlay-card"><span class="overlay-eyebrow" id="overlay-eyebrow">OPERATION 01</span><h2 id="overlay-title">晨雾哨站</h2><p id="overlay-copy">先熟悉炮口与履带。宽阔的中路是你的第一条防线。</p><div class="briefing" id="overlay-summary">清除全部来敌 · 基地不能熄灭</div><button class="primary" id="primary-action" type="button">开始防守 <span>↗</span></button><button class="secondary" id="secondary-action" type="button">选择关卡</button></div></div>
+        </div>
+        <div class="touch-controls" aria-label="触屏操作"><div class="dpad"><button data-direction="0" class="up" aria-label="向上移动" type="button">↑</button><button data-direction="3" class="left" aria-label="向左移动" type="button">←</button><span aria-hidden="true"></span><button data-direction="1" class="right" aria-label="向右移动" type="button">→</button><button data-direction="2" class="down" aria-label="向下移动" type="button">↓</button></div><div class="touch-label">按住方向移动<br>按住开火连续射击</div><button id="touch-fire" aria-label="持续开火" class="fire-control" type="button"><span>◎</span>开火</button></div>
+        <div class="keyboard-guide"><span><kbd>↑ ↓ ← →</kbd> / <kbd>W A S D</kbd> 移动</span><span><kbd>空格</kbd> / <kbd>J</kbd> 开火</span><span><kbd>P</kbd> 暂停 <kbd>R</kbd> 重开</span></div>
+        <p id="battle-status" class="battle-status" role="status" aria-live="polite">整备就绪。开始前可阅读操作说明。</p>
+      </section>
+      <aside class="tactical-panel" aria-label="作战信息">
+        <div class="panel-label">FIELD TELEMETRY <span class="status-dot"></span></div>
+        <div class="scoreboard"><span>本关得分</span><strong id="score">000000</strong><p>本关最佳 <b id="best-score">—</b></p></div>
+        <div class="health-block"><div><span>信标耐久</span><strong id="base-health" aria-label="基地耐久3">▰ ▰ ▰</strong></div><div><span>剩余出击</span><strong id="lives">3 <small>辆</small></strong></div></div>
+        <div class="wave-block"><div><span>来袭目标</span><b><span id="destroyed">0</span> / <span id="enemy-total">6</span></b></div><div id="wave-dots" class="wave-dots" aria-label="敌人清除进度"></div><p id="elapsed">行动时间 00:00</p></div>
+        <div id="buffs" class="buffs"><span>暂无持续强化</span></div>
+        <div class="mission-note"><span>战术提示</span><p id="mission-tip">中央通道视野开阔；在敌人接近基地前拦截。</p></div>
+        <div class="panel-buttons"><button type="button" id="levels">关卡地图 <span>↗</span></button><button type="button" id="restart">重新整备 <kbd>R</kbd></button></div>
+        <details class="field-guide"><summary>识别敌人与补给</summary><div class="legend"><p><i class="enemy scout">Ⅰ</i><span><b>侦察车</b>轻甲 / 快速推进</span></p><p><i class="enemy gunner">Ⅱ</i><span><b>突击炮</b>双层装甲 / 蓄力瞄准</span></p><p><i class="enemy heavy">Ⅲ</i><span><b>重装车</b>四层装甲 / 重型压制</span></p><hr><p><i>＋</i><span><b>维修包</b>恢复基地与出击各1格</span></p><p><i>ϟ</i><span><b>速射模组</b>10秒高速射击 / 双倍伤害</span></p><p><i>◇</i><span><b>护盾电池</b>基地与战车8秒保护</span></p></div></details>
+        <p class="save-note" id="save-note">进度仅保存在本浏览器。</p>
+      </aside>
+    </div>
+    <section class="game-colophon"><p><b>原创玩法实验 01</b>以坦克射击、可破墙与基地保护机制为灵感。10 张地图、名称、美术及音效均为原创，不是《坦克大战》原作或逐关复制。</p><a href="../../#collection">继续翻阅 72 条经典图鉴 ↗</a></section>
+  </main>
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-content"><span class="eyebrow">FIELD MANUAL / 操作手册</span><h2 id="help-title">先记住这三件事。</h2><ol><li><b>移动，瞄准，持续开火。</b><p>方向键 / WASD 移动与转向，空格 / J 射击。手机按住方向键与开火键。</p></li><li><b>保护底部的绿色信标。</b><p>基地耐久为 3。砖墙能被打穿，钢障无法摧毁，水面只阻挡车辆。你的炮弹不会损伤基地。基地受击后有短暂保护，及时回防。</p></li><li><b>清除本关全部来敌。</b><p>战车有 3 次出击，受击后短暂保护。拾取维修、速射与护盾补给；每清除两个敌人会掉落补给。</p></li></ol><p class="manual-note">P / Esc 暂停，R 重新整备。切出页面自动暂停。通关解锁下一关，进度自动保存在本浏览器。</p><button type="button" id="help-confirm" class="primary">我准备好了 <span>↗</span></button><button type="button" id="help-close" class="secondary">返回整备</button></div></dialog>
+  <dialog id="levels-dialog" aria-labelledby="levels-title"><div class="dialog-content level-dialog-content"><span class="eyebrow">CAMPAIGN MAP / 十座哨站</span><h2 id="levels-title">选择下一道防线。</h2><p>通关后解锁下一关。已解锁关卡可反复挑战。</p><div id="level-list" class="level-list"></div><button type="button" id="levels-close" class="secondary">返回战场</button></div></dialog>
+</body>
+</html>

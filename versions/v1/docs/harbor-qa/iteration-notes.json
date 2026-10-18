@@ -1,0 +1,33 @@
+{
+  "initialStrategy": {
+    "level": 5,
+    "ships": [
+      "skiff",
+      "skiff"
+    ],
+    "state": "lost",
+    "turn": 9,
+    "cash": 0,
+    "delivered": 2,
+    "total": 4,
+    "cause": "Insufficient operating liquidity before second deliveries; no resource-invariant failure."
+  },
+  "repairedStrategy": {
+    "level": 5,
+    "ships": [
+      "barge",
+      "skiff"
+    ],
+    "sameInitialBudget": 37,
+    "sameCargo": 4,
+    "state": "won",
+    "turn": 11,
+    "cash": 5,
+    "change": "Strategy only; no budget, stock, fare, deadline or production rule changes."
+  },
+  "uiProbe": {
+    "issue": "Playwright is_disabled() on fieldset returned false despite native disabled=true and route input disabled=true.",
+    "resolution": "Assert the actual input disabled state; ordinary repeated Space advances once. No production guard relaxed."
+  },
+  "runningLayout": "Frozen planning forms collapse after departure so the live ledger and fleet remain near the map."
+}

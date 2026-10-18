@@ -1,0 +1,79 @@
+[
+  {
+    "path": "preview/repair/engine.mjs",
+    "bytes": 20143,
+    "sha256": "6b647725c2b576bfc815b82b4bee04e461f94c9932dd6689c675acb39b87968b",
+    "git_blob_sha": "d79cfda162346a36c0a4399c2bcb23541bc5f756",
+    "source_sha256": "6b647725c2b576bfc815b82b4bee04e461f94c9932dd6689c675acb39b87968b",
+    "unchanged_source_bytes": true,
+    "reasons": [
+      "Exact complete recovered file; no gameplay, controller, or illustration edits."
+    ]
+  },
+  {
+    "path": "preview/repair/game.mjs",
+    "bytes": 25032,
+    "sha256": "3a25e92c555b6c1ebfd99a7ff31c9a0178beb766bfebeb0756b12a8b47507e3c",
+    "git_blob_sha": "3dfd6b17259b6e83e0792bb95bb7aa712b27c179",
+    "source_sha256": "d2648b451b6796debe4f640961f4dd4d02ae74fadf79497b6020327aa9fcbeae",
+    "unchanged_source_bytes": false,
+    "reasons": [
+      "New post-browser fix: explicitly starting or resuming scrolls the workshop overview into view once; RAF/pause/dialog closure never recenter."
+    ]
+  },
+  {
+    "path": "preview/repair/index.html",
+    "bytes": 8830,
+    "sha256": "916bdf4690c5f9929dc392ce587f006ce7131c84b906b9e83fff01f3ba469920",
+    "git_blob_sha": "5793afb2ce462bf8f599f8cce36464ff4326359d",
+    "source_sha256": "fce3444c63ed1d07a73fb937758103dff1209f5f718bb492faf4e32b75311255",
+    "unchanged_source_bytes": false,
+    "reasons": [
+      "Retains preview metadata and requests matching CSS/controller query version 20261018-width1 to avoid stale entry artifacts."
+    ]
+  },
+  {
+    "path": "preview/repair/levels.mjs",
+    "bytes": 5078,
+    "sha256": "0ff22d5264ea5f7cd5c6a47aac885d8bacfdcf0eb233051ce21af1b5864a5954",
+    "git_blob_sha": "cbd713cd03723c533607318bbfd28bff36c9ba58",
+    "source_sha256": "0ff22d5264ea5f7cd5c6a47aac885d8bacfdcf0eb233051ce21af1b5864a5954",
+    "unchanged_source_bytes": true,
+    "reasons": [
+      "Exact complete recovered file; no gameplay, controller, or illustration edits."
+    ]
+  },
+  {
+    "path": "preview/repair/progress.mjs",
+    "bytes": 5062,
+    "sha256": "d20fd907d9b06eceef709a83fbad620c66acff368d90c45d73f96b5d3e8957b3",
+    "git_blob_sha": "d551cc10ef1e4f1e7f9a5a01bc39bf25fdd7ce92",
+    "source_sha256": "2b485bba6663670d362350410ed3b5c62759da011628ad7472f59fb01e8de4c6",
+    "unchanged_source_bytes": false,
+    "reasons": [
+      "Only the two storage constants change to preview-specific keys; no migration or production-save reads/writes."
+    ]
+  },
+  {
+    "path": "preview/repair/renderer.mjs",
+    "bytes": 28763,
+    "sha256": "b75424f0b3f85f4a5a5e561604c71d40c3e7ec322f66a603569fc0aa1fb4369e",
+    "git_blob_sha": "cd27cabf3b091098cfefd18ecaee07a0cda02e8d",
+    "source_sha256": "b75424f0b3f85f4a5a5e561604c71d40c3e7ec322f66a603569fc0aa1fb4369e",
+    "unchanged_source_bytes": true,
+    "reasons": [
+      "Exact complete recovered file; no gameplay, controller, or illustration edits."
+    ]
+  },
+  {
+    "path": "preview/repair/repair.css",
+    "bytes": 15064,
+    "sha256": "03ef4ed84d5a9cab541a8314b849c3c01d8948097e64f5049c2e0bba961bc857",
+    "git_blob_sha": "f4cd9c78e1fe5251a1936179f5bd1f923f5b8a8c",
+    "source_sha256": "351a8837161d5fbccb94fe22acb3485eabbcba5b420e126313701e34c6d628b5",
+    "unchanged_source_bytes": false,
+    "reasons": [
+      "Retains recovered art/layout plus all-width briefing guard; explicitly constrains workshop width, uses contain globally and adds 12px scroll margin."
+    ]
+  }
+]

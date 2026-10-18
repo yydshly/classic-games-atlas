@@ -1,0 +1,58 @@
+{
+  "earlyLayout": {
+    "level": 8,
+    "issue": "Original goal center 290 width 160 missed the ordinary west-wind release trajectory; moved to center 335 width 170 before final validation, and placed star lines on reachable paths."
+  },
+  "timing": {
+    "level": 14,
+    "originalPlan": [
+      {
+        "time": 0.2,
+        "ids": [
+          1
+        ]
+      },
+      {
+        "time": 0.85,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "failedIndependentJitter": {
+      "level": 14,
+      "state": "lost",
+      "stars": 1,
+      "time": 7.091666666666667,
+      "cuts": 2,
+      "reason": "风铃离开了场景",
+      "x": 108.62911855654372,
+      "y": 641.8699629014128,
+      "path": []
+    },
+    "finalPlan": [
+      {
+        "time": 0.2,
+        "ids": [
+          1
+        ]
+      },
+      {
+        "time": 0.95,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "resolution": "Moved the baseline second cut to .95 seconds, not the production body, force or collider. All final 90 jitter cases pass."
+  },
+  "testHarness": {
+    "restingReasonAssertion": "The expected Chinese substring omitted 了; corrected to the actual reason. The physics already stopped correctly.",
+    "reloadFixture": "Setting menu unlock before reload was overwritten by legitimate pagehide save; moved fixture to initialization. Initial UI report preserved."
+  },
+  "narrowResult": {
+    "issue": "At 320px the long level-16 result card was 246.08px tall inside a 222.44px scene and overlapped lower controls. Primary button remained hittable, but the panel did not fit.",
+    "fix": "Only CSS: a visible paused/result overlay at <=380px reserves min-height 300px; normal playing and planning scene sizes are unchanged.",
+    "newCheck": "Actual level-16 normal inputs, card contained in scene, hit test and real replay click at 320px."
+  }
+}

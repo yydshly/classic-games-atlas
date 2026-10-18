@@ -1,0 +1,20 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+const names=['初泊微光','弯港灯语','雾桥回声','双堤航线','潮声回廊','星港分岔','远汐回环','风廊夜信','灯塔外湾','群星归港'];
+let seed=1;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;},shuffle=a=>a.map(v=>({v,r:random()})).sort((a,b)=>a.r-b.r).map(o=>o.v);
+const dirs=[[0,-1],[1,0],[0,1],[-1,0]],key=(x,y)=>`${x},${y}`;
+function reach(grid,start,blocked=new Set()){const q=[start],d=new Map([[key(start.x,start.y),0]]);for(let i=0;i<q.length;i++)for(const [dx,dy]of dirs){const x=q[i].x+dx,y=q[i].y+dy,k=key(x,y);if(grid[y]?.[x]!=='.'||blocked.has(k)||d.has(k))continue;d.set(k,d.get(key(q[i].x,q[i].y))+1);q.push({x,y});}return d;}
+const levels=[];
+for(let i=0;i<10;i++){
+ seed=810013+i*1033;const authoredSeed=seed,w=i<3?13:15,h=i<6?13:15,grid=Array.from({length:h},()=>Array(w).fill('#')),stack=[{x:1,y:1}];grid[1][1]='.';
+ while(stack.length){const p=stack.at(-1),options=shuffle(dirs).map(([dx,dy])=>({x:p.x+dx*2,y:p.y+dy*2,dx,dy})).filter(n=>n.x>0&&n.y>0&&n.x<w-1&&n.y<h-1&&grid[n.y][n.x]==='#');if(!options.length){stack.pop();continue;}const n=options[0];grid[p.y+n.dy][p.x+n.dx]='.';grid[n.y][n.x]='.';stack.push({x:n.x,y:n.y});}
+ // Braid dead ends and add fixed-seed loops. Generation happens here, never at runtime.
+ for(let y=1;y<h-1;y+=2)for(let x=1;x<w-1;x+=2){const openings=dirs.filter(([dx,dy])=>grid[y+dy]?.[x+dx]==='.');if(openings.length===1){const [dx,dy]=shuffle(dirs).find(([dx,dy])=>x+dx*2>0&&x+dx*2<w-1&&y+dy*2>0&&y+dy*2<h-1&&grid[y+dy][x+dx]==='#');grid[y+dy][x+dx]='.';}}
+ const walls=[];for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++)if(grid[y][x]==='#'&&((x%2===0&&y%2===1&&grid[y][x-1]==='.'&&grid[y][x+1]==='.')||(y%2===0&&x%2===1&&grid[y-1][x]==='.'&&grid[y+1][x]==='.')))walls.push({x,y});for(const p of shuffle(walls).slice(0,3+i%4))grid[p.y][p.x]='.';
+ const start={x:1,y:1},floors=[];for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(grid[y][x]==='.')floors.push({x,y});const distance=reach(grid,start),home=floors.slice().sort((a,b)=>distance.get(key(b.x,b.y))-distance.get(key(a.x,a.y))||b.y-a.y||b.x-a.x)[0],safe=[start];
+ for(const p of floors.filter(p=>distance.get(key(p.x,p.y))===1)){const blocked=new Set([...safe,p].map(p=>key(p.x,p.y))),first=floors.find(p=>!blocked.has(key(p.x,p.y)));if(reach(grid,first,blocked).size===floors.length-blocked.size)safe.push(p);}
+ const powers=[{x:3,y:1}];while(powers.length<6){const candidates=floors.filter(p=>!safe.some(s=>key(p.x,p.y)===key(s.x,s.y))&&!powers.some(s=>key(p.x,p.y)===key(s.x,s.y))&&key(p.x,p.y)!==key(home.x,home.y));const distances=powers.map(p=>reach(grid,p));candidates.sort((a,b)=>Math.min(...distances.map(d=>d.get(key(b.x,b.y))))-Math.min(...distances.map(d=>d.get(key(a.x,a.y))))||a.y-b.y||a.x-b.x);powers.push(candidates[0]);}
+ const waypoints=[floors.filter(p=>!safe.some(s=>key(s.x,s.y)===key(p.x,p.y))).sort((a,b)=>a.x+a.y-b.x-b.y)[0],{...home}];while(waypoints.length<4){const ds=waypoints.map(p=>reach(grid,p)),p=floors.filter(p=>!safe.some(s=>key(s.x,s.y)===key(p.x,p.y))).sort((a,b)=>Math.min(...ds.map(d=>d.get(key(b.x,b.y))))-Math.min(...ds.map(d=>d.get(key(a.x,a.y)))))[0];waypoints.push(p);}
+ if(distance.size!==floors.length)throw Error('disconnected maze');
+ levels.push({id:i+1,name:names[i],band:i<3?'雾港':i<6?'星桥':'远汐',palette:i<3?0:i<6?1:2,grid:grid.map(r=>r.join('')),start,home,safe,powers,waypoints,playerSpeed:4.3+i*.075,enemySpeed:2.25+i*.055,powerDuration:7.4-i*.12,enemyTypes:i<4?['tracker','cutter','roamer']:['tracker','cutter','roamer','tracker'],generation:{method:'original fixed-seed carved maze, braided dead ends and added loops, BFS verified',seed:authoredSeed,floorCells:floors.length},tip:i===0?'提前按下转向，风帆会在下一处可行路口拐弯。先拾起附近的辉光，再向远方收光。':i<4?'循迹灯跟随、截路灯预判、巡航灯走固定航线。看准剩余辉光时间，再穿过交汇处。':'环路给你绕行的机会。辉光会刷新时长，不会无限叠加；泊位与起点都各有短暂的安全节奏。'});
+}
+mkdirSync('games/lantern',{recursive:true});writeFileSync('games/lantern/levels.mjs','// Generated offline from original fixed seeds; do not regenerate at runtime.\nexport const LEVELS='+JSON.stringify(levels,null,2)+';\n');console.log(levels.map(l=>({id:l.id,cells:l.generation.floorCells,safe:l.safe.length,powers:l.powers.length})));

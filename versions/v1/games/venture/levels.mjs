@@ -1,0 +1,15 @@
+export const TYPES={tea:{name:'茶食',icon:'☕',color:'#c57a46'},craft:{name:'手作',icon:'◇',color:'#4c8278'},book:{name:'书纸',icon:'▤',color:'#6a7095'}};
+export const THEMES={lane:{name:'栖梧里',background:'#f1e9da',accent:'#ac653b'},river:{name:'河灯街',background:'#e7eee5',accent:'#477f76'},star:{name:'星桥巷',background:'#eeebee',accent:'#6c6689'}};
+export const EVENTS={calm:{name:'平常好日',note:'各摊按常规营业，没有额外收支。',bonus:{},fee:0},tea:{name:'茶香小集',note:'每处茶食摊本回合营业收入额外+2币。',bonus:{tea:2},fee:0},craft:{name:'手作展日',note:'每处手作摊本回合营业收入额外+3币。',bonus:{craft:3},fee:0},book:{name:'街角读书会',note:'每处书纸摊本回合营业收入额外+3币。',bonus:{book:3},fee:0},rain:{name:'细雨整备',note:'每处摊位营业收入-1币（最低0）；街区另收2币整备费。',bonus:{},fee:2,reduction:1},lantern:{name:'灯会散步',note:'每处摊位营业收入额外+1币；本站主动经营或公共短工额外+2币。',bonus:{tea:1,craft:1,book:1},fee:0,active:2}};
+const positions=[[0,0],[1,0],[2,0],[3,0],[3,1],[3,2],[3,3],[2,3],[1,3],[0,3],[0,2],[0,1]],shopPositions=[1,2,4,5,7,8,10,11];
+const names=[['梧叶茶摊','纸鸢手作','晴窗书铺','栗香小灶','竹编小铺','溪声书亭','青团茶屋','木印工坊'],['河畔茶桌','苇灯作坊','水纹书摊','桂糖小铺','蒲草手作','桥头纸铺','露荷茶馆','陶铃小店'],['晚星茶摊','银线手作','月窗书铺','暖栗小店','风扣工坊','星桥纸亭','灯下茶屋','云纹小铺']];
+const titles=['第一张摊位牌','沿街的两种生意','把零钱留在手边','一条街的晨光','桥头开张','让收入跟上脚步','三种颜色的招牌','雨前留一笔周转','星桥的第一晚','灯会之前','把账算到下一站','街角，也能远行'];
+const goals=[[2,1,18,42],[2,2,24,50],[3,2,28,58],[3,2,32,66],[3,2,28,62],[3,2,34,70],[3,3,38,78],[4,3,42,86],[3,3,40,82],[4,3,44,92],[4,3,48,102],[4,3,52,112]];
+const basePrices=[11,14,12,18,16,10,20,15],baseIncome=[4,5,4,6,5,4,7,5],baseUpgrade=[9,11,10,13,12,8,15,10];
+export const LEVELS=titles.map((name,index)=>{const district=Math.floor(index/4),variation=index%4,theme=['lane','river','star'][district],limit=10+district*2+index%2;
+ const tiles=positions.map(([col,row],i)=>{const shop=shopPositions.indexOf(i);if(shop<0)return{id:i,col,row,kind:'public',name:({0:'街口驿站',3:'花树广场',6:'巷尾公所',9:'钟声小亭'})[i],work:6+district};const k=(shop+variation)%8,type=['tea','craft','book','tea','craft','book','tea','craft'][k];return{id:i,col,row,kind:'shop',name:names[district][k],type,price:basePrices[k]+district*2,income:baseIncome[k],upgrade:baseUpgrade[k]+district,extra:3,operate:5+Math.floor(baseIncome[k]/2)};});
+ const schedule=district===0?['calm','tea','calm','book','calm','craft','lantern','calm','tea','calm','book']:district===1?['calm','tea','craft','rain','book','lantern','calm','rain','craft','tea','book','lantern','calm']:['calm','rain','tea','craft','book','lantern','rain','calm','craft','tea','rain','book','lantern','calm','lantern'];
+ const events=Array.from({length:limit},(_,i)=>schedule[(i+variation)%schedule.length]);const [assets,types,cash,worth]=goals[index];
+ return{id:index+1,name,theme,budget:28+district*4+variation*2,rent:3+district,limit,lapGrant:7+district,resale:.65,goals:{assets,types,cash,worth},tiles,events,cards:district===0?[[1,2,3],[1,2,3],[1,3,4]]:district===1?[[1,2,4],[1,3,4],[2,3,5]]:[[1,3,5],[2,3,4],[1,2,5]],hint:index<4?'先买能负担的摊位，再把一笔周转钱留到回合结束。':index<8?'不同招牌在不同集日有额外收入，整张日历都是公开信息。':'四处资产不等于现金充足；升级、经营、出售和前进都要照着下一次清算安排。'};});
+export const eventAt=(l,turn)=>EVENTS[l.events[turn-1]];
+export const cardsAt=(l,turn)=>l.cards[(turn-1)%l.cards.length];

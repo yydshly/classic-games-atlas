@@ -1,0 +1,128 @@
+{
+  "rect": {
+    "x": 22,
+    "y": 281.15625,
+    "width": 346,
+    "height": 274.390625
+  },
+  "touchAction": "none",
+  "records": [
+    {
+      "before": {
+        "state": "playing",
+        "ticks": 11,
+        "time": 2.249899999999998,
+        "accumulator": 0.014900000000000635,
+        "dir": 0,
+        "queue": [],
+        "gestureActive": false,
+        "body": [
+          76,
+          75,
+          74,
+          73
+        ]
+      }
+    },
+    {
+      "touchStart": {
+        "state": "playing",
+        "ticks": 11,
+        "time": 2.399899999999998,
+        "accumulator": 0.16490000000000063,
+        "dir": 0,
+        "queue": [],
+        "gestureActive": true,
+        "body": [
+          76,
+          75,
+          74,
+          73
+        ]
+      }
+    },
+    {
+      "touchMove": {
+        "state": "lost",
+        "ticks": 11,
+        "time": 2.449799999999998,
+        "accumulator": 0.013800000000000756,
+        "dir": 0,
+        "queue": [],
+        "gestureActive": false,
+        "body": [
+          76,
+          75,
+          74,
+          73
+        ]
+      }
+    },
+    {
+      "touchEnd": {
+        "state": "lost",
+        "ticks": 11,
+        "time": 2.449799999999998,
+        "accumulator": 0.013800000000000756,
+        "dir": 0,
+        "queue": [],
+        "gestureActive": false,
+        "body": [
+          76,
+          75,
+          74,
+          73
+        ]
+      }
+    },
+    {
+      "after": {
+        "state": "lost",
+        "ticks": 11,
+        "time": 2.449799999999998,
+        "accumulator": 0.013800000000000756,
+        "dir": 0,
+        "queue": [],
+        "gestureActive": false,
+        "body": [
+          76,
+          75,
+          74,
+          73
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "pointerdown",
+      "x": 195,
+      "y": 363.47344970703125,
+      "id": 2,
+      "time": 2558.300000011921
+    },
+    {
+      "type": "pointermove",
+      "x": 195,
+      "y": 418.47344970703125,
+      "id": 2,
+      "time": 2723.100000023842
+    },
+    {
+      "type": "pointerup",
+      "x": 195,
+      "y": 418.47344970703125,
+      "id": 2,
+      "time": 2774.300000011921
+    },
+    {
+      "type": "lostpointercapture",
+      "x": 195,
+      "y": 418.47344970703125,
+      "id": 2,
+      "time": 2774.300000011921
+    }
+  ],
+  "finding": "Remote touchStart/move/end delivery crossed the roughly 201 ms turning window. Initial implementation committed only at pointerup, after the actor had already hit the wall.",
+  "correction": "Commit once when pointermove exceeds 14 px, retain pointerup fallback; test begins holding before the corner and moves at the corner. No actor, food or speed modifications."
+}

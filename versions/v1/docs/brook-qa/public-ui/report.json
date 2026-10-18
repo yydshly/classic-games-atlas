@@ -1,0 +1,1099 @@
+{
+  "testedAt": "2026-10-16T15:09:20.347755+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/brook/",
+  "checks": [
+    "Fresh ready state has no clock or free deployment; staged unit unlocks",
+    "Level locks, native dialog Escape and focus return",
+    "First tutorial can cancel back to static ready or start normal play",
+    "Explicit row/column selection previews without spending and matches displayed coordinates",
+    "Deploy spends exactly once; occupied and repeated Enter cannot duplicate cost or unit",
+    "Global per-type cooldown blocks different tiles and the UI explains why",
+    "Pause works from a focused selector; resources, cooldown and clock freeze",
+    "Canvas arrows select cells; X/Enter withdraws without refund or cooldown reset",
+    "Sky resource and collect-all are real timed income and cannot be double claimed",
+    "Pointing at a token collects that token before selecting an underlying tile",
+    "Resources expire after fourteen seconds without credit; C collects remaining live tokens exactly",
+    "Midwave replay restores exact resources/cooldowns/HP/projectiles/tokens/spawns and continues to a real win",
+    "Doing nothing naturally breaches; failed retry resets current budget/log but preserves best/unlock",
+    "Help freezes and resumes; explicit synthetic blur verifies the browser event handler",
+    "Sound and offered speed preference survive reload",
+    "All four units unlock, rocks reject deployment, and mouse cell coordinates match the selected tile",
+    "Native Tab and Home/ArrowDown select the correct displayed row/column",
+    "Six widths and 320px level dialog have no horizontal overflow",
+    "Malformed storage recovers to a legal initial state",
+    "Invalid/null command logs are rejected without a page error",
+    "Unavailable localStorage still permits ordinary play and budget spending",
+    "Complete first level uses native touch card/cell/deploy/resource inputs with original budget"
+  ],
+  "fixture": "Menu unlock/tutorial/sound only for isolated later-stage and native touch tests. Corrupt/disabled storage is explicit; no game resources/HP/waves/results are written.",
+  "restoredWin": {
+    "midTicks": 785,
+    "fieldsMatched": [
+      "resource",
+      "cooldown",
+      "plants",
+      "enemies",
+      "bullets",
+      "tokens",
+      "nextSpawn",
+      "nextSky",
+      "stats",
+      "time",
+      "ticks",
+      "log",
+      "accumulator"
+    ],
+    "end": "won",
+    "score": 1055,
+    "actions": [
+      {
+        "observedTime": 0.016666666666666666,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 0,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 1,
+        "actualCommands": [
+          {
+            "tick": 11,
+            "kind": "place",
+            "type": "dew",
+            "row": 0,
+            "col": 0
+          }
+        ]
+      },
+      {
+        "observedTime": 0.35,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 1,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 2,
+        "actualCommands": [
+          {
+            "tick": 29,
+            "kind": "place",
+            "type": "bolt",
+            "row": 1,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 3.9833333333333334,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 0,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 3,
+        "actualCommands": [
+          {
+            "tick": 251,
+            "kind": "place",
+            "type": "bolt",
+            "row": 0,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 4.35,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 4,
+        "actualCommands": [
+          {
+            "tick": 265,
+            "kind": "collect",
+            "ids": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 8.216666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 4,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 8.383333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 5,
+        "actualCommands": [
+          {
+            "tick": 507,
+            "kind": "collect",
+            "ids": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 8.616666666666667,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 2,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 6,
+        "actualCommands": [
+          {
+            "tick": 525,
+            "kind": "place",
+            "type": "bolt",
+            "row": 2,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 10.083333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 7,
+        "actualCommands": [
+          {
+            "tick": 609,
+            "kind": "collect",
+            "ids": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 16,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 7,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 16.166666666666668,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 8,
+        "actualCommands": [
+          {
+            "tick": 976,
+            "kind": "collect",
+            "ids": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 16.433333333333334,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 2,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 9,
+        "actualCommands": [
+          {
+            "tick": 994,
+            "kind": "place",
+            "type": "dew",
+            "row": 2,
+            "col": 0
+          }
+        ]
+      },
+      {
+        "observedTime": 22.03333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 9,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 22.166666666666668,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 10,
+        "actualCommands": [
+          {
+            "tick": 1334,
+            "kind": "collect",
+            "ids": [
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 24.266666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 10,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 24.4,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 11,
+        "actualCommands": [
+          {
+            "tick": 1470,
+            "kind": "collect",
+            "ids": [
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 24.633333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            8
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 12,
+        "actualCommands": [
+          {
+            "tick": 1484,
+            "kind": "collect",
+            "ids": [
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 28,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 13,
+        "actualCommands": [
+          {
+            "tick": 1684,
+            "kind": "collect",
+            "ids": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 32.266666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 13,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 32.43333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 14,
+        "actualCommands": [
+          {
+            "tick": 1950,
+            "kind": "collect",
+            "ids": [
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 32.63333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            11
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 15,
+        "actualCommands": [
+          {
+            "tick": 1964,
+            "kind": "collect",
+            "ids": [
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 34.06666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 15,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 34.233333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 16,
+        "actualCommands": [
+          {
+            "tick": 2058,
+            "kind": "collect",
+            "ids": [
+              12
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 40.1,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 16,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 40.233333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13,
+            14
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 17,
+        "actualCommands": [
+          {
+            "tick": 2420,
+            "kind": "collect",
+            "ids": [
+              13,
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 40.63333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 18,
+        "actualCommands": [
+          {
+            "tick": 2442,
+            "kind": "collect",
+            "ids": [
+              15
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "nativeTouch": {
+    "stage": 1,
+    "state": "won",
+    "stats": {
+      "placed": 5,
+      "spent": 260,
+      "collected": 375,
+      "expired": 0,
+      "produced": 375,
+      "kills": 6,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 36,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 1
+    },
+    "time": 41.666666666666664,
+    "method": "Native touchscreen taps on cards, canvas cells, large deploy/collect buttons, standard 2x; scroll positioning helper only, no state writes",
+    "actions": [
+      {
+        "observedTime": 0.08333333333333333,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 0,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 1,
+        "actualCommands": [
+          {
+            "tick": 25,
+            "kind": "place",
+            "type": "dew",
+            "row": 0,
+            "col": 0
+          }
+        ]
+      },
+      {
+        "observedTime": 0.55,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 1,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 2,
+        "actualCommands": [
+          {
+            "tick": 55,
+            "kind": "place",
+            "type": "bolt",
+            "row": 1,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 4.083333333333333,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 2,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 4.183333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            1
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 3,
+        "actualCommands": [
+          {
+            "tick": 259,
+            "kind": "collect",
+            "ids": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 4.483333333333333,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 0,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 4,
+        "actualCommands": [
+          {
+            "tick": 289,
+            "kind": "place",
+            "type": "bolt",
+            "row": 0,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 8.55,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 4,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 8.683333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            2
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 5,
+        "actualCommands": [
+          {
+            "tick": 527,
+            "kind": "collect",
+            "ids": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 8.95,
+        "command": {
+          "kind": "place",
+          "type": "bolt",
+          "row": 2,
+          "col": 2
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 6,
+        "actualCommands": [
+          {
+            "tick": 557,
+            "kind": "place",
+            "type": "bolt",
+            "row": 2,
+            "col": 2
+          }
+        ]
+      },
+      {
+        "observedTime": 10.05,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 6,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 10.183333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            3
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 7,
+        "actualCommands": [
+          {
+            "tick": 617,
+            "kind": "collect",
+            "ids": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 16.116666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 7,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 16.25,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            4
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 8,
+        "actualCommands": [
+          {
+            "tick": 981,
+            "kind": "collect",
+            "ids": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 16.483333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            5
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 8,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 16.616666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            5
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 9,
+        "actualCommands": [
+          {
+            "tick": 1005,
+            "kind": "collect",
+            "ids": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 16.916666666666668,
+        "command": {
+          "kind": "place",
+          "type": "dew",
+          "row": 2,
+          "col": 0
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 10,
+        "actualCommands": [
+          {
+            "tick": 1035,
+            "kind": "place",
+            "type": "dew",
+            "row": 2,
+            "col": 0
+          }
+        ]
+      },
+      {
+        "observedTime": 22.05,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 10,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 22.183333333333334,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            6
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 11,
+        "actualCommands": [
+          {
+            "tick": 1337,
+            "kind": "collect",
+            "ids": [
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 24.416666666666668,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            7
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 12,
+        "actualCommands": [
+          {
+            "tick": 1471,
+            "kind": "collect",
+            "ids": [
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 25.316666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            8
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 13,
+        "actualCommands": [
+          {
+            "tick": 1527,
+            "kind": "collect",
+            "ids": [
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 28.15,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            9
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 14,
+        "actualCommands": [
+          {
+            "tick": 1695,
+            "kind": "collect",
+            "ids": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 32.416666666666664,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 14,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 32.55,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 14,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 32.65,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            10
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 15,
+        "actualCommands": [
+          {
+            "tick": 1967,
+            "kind": "collect",
+            "ids": [
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 33.35,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            11
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 16,
+        "actualCommands": [
+          {
+            "tick": 2007,
+            "kind": "collect",
+            "ids": [
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 34.11666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            12
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 17,
+        "actualCommands": [
+          {
+            "tick": 2053,
+            "kind": "collect",
+            "ids": [
+              12
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 40.016666666666666,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 17,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 40.11666666666667,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            13
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 18,
+        "actualCommands": [
+          {
+            "tick": 2415,
+            "kind": "collect",
+            "ids": [
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 40.55,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            14
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 19,
+        "actualCommands": [
+          {
+            "tick": 2439,
+            "kind": "collect",
+            "ids": [
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "observedTime": 41.35,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": false,
+        "accepted": false,
+        "revision": 19,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 41.45,
+        "command": {
+          "kind": "collect",
+          "ids": [
+            15
+          ]
+        },
+        "uiAttempted": true,
+        "accepted": true,
+        "revision": 20,
+        "actualCommands": [
+          {
+            "tick": 2495,
+            "kind": "collect",
+            "ids": [
+              15
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

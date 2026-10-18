@@ -1,0 +1,39 @@
+import {LEVELS,TYPES} from './levels.mjs';
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+export function hitTime(ax,ay,bx,by,cx,cy,r){const x=ax-cx,y=ay-cy,dx=bx-ax,dy=by-ay,c=x*x+y*y-r*r;if(c<=0)return 0;const a=dx*dx+dy*dy;if(a<1e-12)return null;const b=2*(x*dx+y*dy),dis=b*b-4*a*c;if(dis<0)return null;const t=(-b-Math.sqrt(dis))/(2*a);return t>=0&&t<=1?t:null;}
+export function createGame(index=0){const l=LEVELS[clamp(index,0,7)],schedule=l.waves.flatMap((w,i)=>w.craft.map(e=>({...e,at:w.at+e.delay,wave:i+1}))).concat([{at:l.eliteAt,type:'elite',x:300,phase:0,wave:9}]).sort((a,b)=>a.at-b.at);return {state:'ready',level:l.id,time:0,player:{x:300,y:640,prevX:300,prevY:640,r:5,hp:3,maxHP:3,invulnerable:1.5,power:1,fire:0,shield:0,charges:2},enemies:[],shots:[],bullets:[],items:[],effects:[],schedule,spawnIndex:0,dropIndex:0,eliteSpawned:false,eliteDefeated:false,nextId:1,stats:{score:0,kills:0,hits:0,escaped:0,picked:0,upgrades:0,repairs:0,shields:0,cleared:0,patterns:{straight:0,aim:0,fan:0}},events:[],reason:''};}
+export function start(g){if(g.state==='ready')g.state='playing';}
+export function pause(g){if(g.state==='playing')g.state='paused';else if(g.state==='paused')g.state='playing';}
+export function shield(g){const p=g.player;if(g.state!=='playing'||p.charges<=0||p.shield>0)return false;p.charges--;p.shield=1.8;g.stats.shields++;g.stats.cleared+=g.bullets.filter(b=>!b.dead).length;g.bullets=[];g.effects.push({kind:'shield',x:p.x,y:p.y,age:0,life:.5});g.events.push({type:'shield'});return true;}
+export function hurt(g){const p=g.player;if(g.state!=='playing'||p.invulnerable>0||p.shield>0)return false;p.hp=Math.max(0,p.hp-1);p.invulnerable=1.35;g.stats.hits++;g.events.push({type:'hurt'});if(p.hp===0){g.state='lost';g.reason='机体生命耗尽';g.events.push({type:'lost'});}return true;}
+export function pickup(g,item){if(item.taken)return false;item.taken=true;g.stats.picked++;if(item.type==='upgrade'){if(g.player.power<3){g.player.power++;g.stats.upgrades++;}else g.stats.score+=100;}else{const old=g.player.hp;g.player.hp=Math.min(3,g.player.hp+1);if(g.player.hp>old)g.stats.repairs++;else g.stats.score+=70;}g.events.push({type:'pickup',kind:item.type});return true;}
+export function spawnEnemy(g,entry){const l=LEVELS[g.level-1],spec=TYPES[entry.type],hp=entry.type==='elite'?l.eliteHP:Math.ceil(spec.hp*l.enemyScale),e={id:g.nextId++,type:entry.type,x:entry.x,y:-42,prevX:entry.x,prevY:-42,baseX:entry.x,vx:0,vy:0,age:0,phase:entry.phase||0,hp,maxHP:hp,r:spec.r,cooldown:1.1+(g.nextId%3)*.16,warning:0,pattern:null,aimX:0,aimY:1,cycle:0,dead:false};g.enemies.push(e);if(e.type==='elite'){g.eliteSpawned=true;g.events.push({type:'elite'});}return e;}
+function shot(g,x,y,vx,vy,pattern){g.bullets.push({id:g.nextId++,x,y,prevX:x,prevY:y,vx,vy,r:pattern==='fan'?4.5:pattern==='aim'?4:3.5,pattern,dead:false});}
+export function fireEnemy(g,e){const l=LEVELS[g.level-1],pattern=e.pattern||'straight',speed=l.bulletSpeed+(e.type==='elite'?25:0);if(e.y<35||e.y>410||Math.hypot(e.x-g.player.x,e.y-g.player.y)<150)return false;
+ if(pattern==='straight'){for(const dx of e.type==='elite'?[-54,0,54]:[0])shot(g,e.x+dx,e.y+e.r,0,speed,pattern);}
+ if(pattern==='aim'){for(const dx of e.type==='elite'?[-18,18]:[0])shot(g,e.x+dx,e.y+e.r,e.aimX*speed,e.aimY*speed,pattern);}
+ if(pattern==='fan'){const count=e.type==='elite'?l.fanCount:3;for(let i=0;i<count;i++){const a=Math.PI/2+(i-(count-1)/2)*.34;shot(g,e.x,e.y+e.r,Math.cos(a)*speed,Math.sin(a)*speed,pattern);}}
+ g.stats.patterns[pattern]++;g.events.push({type:'enemyFire',pattern});return true;
+}
+export function damageEnemy(g,e,damage){if(e.dead)return false;e.hp=Math.max(0,e.hp-damage);if(e.hp===0){e.dead=true;g.stats.kills++;g.stats.score+=TYPES[e.type].score+(e.type==='elite'?g.level*80:0);g.effects.push({kind:'burst',x:e.x,y:e.y,age:0,life:.38});g.events.push({type:'kill',kind:e.type});if(e.type==='elite')g.eliteDefeated=true;}return true;}
+function tick(g,dt,input){g.time+=dt;const l=LEVELS[g.level-1],p=g.player;p.prevX=p.x;p.prevY=p.y;p.invulnerable=Math.max(0,p.invulnerable-dt);p.shield=Math.max(0,p.shield-dt);let dx=input.axisX||0,dy=input.axisY||0;
+ if(input.target){dx=input.target.x-p.x;dy=input.target.y-p.y;const n=Math.hypot(dx,dy),step=Math.min(n,320*dt);if(n){p.x+=dx/n*step;p.y+=dy/n*step;}}else{const n=Math.max(1,Math.hypot(dx,dy));p.x+=dx/n*320*dt;p.y+=dy/n*320*dt;}p.x=clamp(p.x,24,576);p.y=clamp(p.y,85,680);
+ p.fire-=dt;if(p.fire<=0){const offsets=p.power===1?[0]:p.power===2?[-9,9]:[-15,0,15];for(const offset of offsets)g.shots.push({id:g.nextId++,x:p.x+offset,y:p.y-20,prevX:p.x+offset,prevY:p.y-20,vx:0,vy:-850,r:3,damage:1.7,dead:false});p.fire+=.14;g.events.push({type:'autoFire'});}
+ while(g.spawnIndex<g.schedule.length&&g.time>=g.schedule[g.spawnIndex].at){spawnEnemy(g,g.schedule[g.spawnIndex++]);}
+ while(g.dropIndex<l.drops.length&&g.time>=l.drops[g.dropIndex].at){const d=l.drops[g.dropIndex++];g.items.push({id:g.nextId++,type:d.type,x:d.x,y:-12,dead:false,taken:false});}
+ for(const e of g.enemies){e.prevX=e.x;e.prevY=e.y;e.age+=dt;if(e.type==='elite'){e.x=300+Math.sin(e.age*.7+e.phase)*110;e.y=Math.min(104,-42+e.age*115);}else if(e.type==='fan'){e.x=e.baseX+Math.sin(e.age*1.2+e.phase)*35;e.y=e.age<3?-42+e.age*62:144+(e.age-3)*37;}else{e.x=e.baseX+Math.sin(e.age*(e.type==='dart'?1.8:1.1)+e.phase)*(e.type==='dart'?58:22);e.y=-42+e.age*(e.type==='dart'?63:73+g.level*2);}e.vx=(e.x-e.prevX)/dt;e.vy=(e.y-e.prevY)/dt;
+  if(e.y>780||e.x<-90||e.x>690){e.dead=true;g.stats.escaped++;continue;}
+  if(e.warning>0){e.warning=Math.max(0,e.warning-dt);if(e.warning===0){fireEnemy(g,e);e.cooldown=e.type==='elite'?Math.max(.72,1.1-g.level*.035):e.type==='fan'?1.7:1.35;}}
+  else{e.cooldown-=dt;if(e.cooldown<=0&&e.y>=60&&e.y<405&&Math.hypot(e.x-p.x,e.y-p.y)>165){e.pattern=e.type==='elite'?['straight','aim','fan'][(e.cycle++ + g.level-1)%3]:e.type==='dart'?'aim':e.type==='fan'?'fan':'straight';e.warning=e.type==='elite'?.62:.55;const n=Math.hypot(p.x-e.x,p.y-e.y)||1;e.aimX=(p.x-e.x)/n;e.aimY=(p.y-e.y)/n;g.events.push({type:'warning',pattern:e.pattern});}}
+ }
+ for(const b of g.shots){b.prevX=b.x;b.prevY=b.y;b.x+=b.vx*dt;b.y+=b.vy*dt;let chosen=null,t0=Infinity;for(const e of g.enemies){if(e.dead)continue;const t=hitTime(b.prevX-e.prevX,b.prevY-e.prevY,b.x-e.x,b.y-e.y,0,0,b.r+e.r);if(t!==null&&t<t0){chosen=e;t0=t;}}if(chosen){b.dead=true;damageEnemy(g,chosen,b.damage);}if(b.y< -55)b.dead=true;}
+ for(const b of g.bullets){b.prevX=b.x;b.prevY=b.y;b.x+=b.vx*dt;b.y+=b.vy*dt;if(hitTime(b.prevX-p.prevX,b.prevY-p.prevY,b.x-p.x,b.y-p.y,0,0,b.r+p.r)!==null){b.dead=true;hurt(g);}if(b.y>770||b.y< -70||b.x< -70||b.x>670)b.dead=true;}
+ for(const e of g.enemies)if(!e.dead&&hitTime(e.prevX-p.prevX,e.prevY-p.prevY,e.x-p.x,e.y-p.y,0,0,e.r+p.r)!==null)hurt(g);
+ for(const item of g.items){item.y+=105*dt;if(g.state==='playing'&&Math.hypot(item.x-p.x,item.y-p.y)<23)pickup(g,item);if(item.y>755)item.dead=true;}
+ g.enemies=g.enemies.filter(e=>!e.dead);g.shots=g.shots.filter(b=>!b.dead);g.bullets=g.bullets.filter(b=>!b.dead);g.items=g.items.filter(i=>!i.dead&&!i.taken);g.effects.forEach(e=>e.age+=dt);g.effects=g.effects.filter(e=>e.age<e.life);
+ // Loss takes priority over a simultaneous last elite kill. No late repair revives a lost run.
+ if(g.state==='lost')return;
+ if(g.eliteSpawned&&g.eliteDefeated&&g.spawnIndex===g.schedule.length&&!g.enemies.length){g.stats.score+=p.hp*200+p.charges*100;g.state='won';g.events.push({type:'won'});}
+}
+export function update(g,realDt,input={}){if(g.state!=='playing'||!Number.isFinite(realDt)||realDt<=0)return;if(input.shieldPressed)shield(g);let left=Math.min(.1,realDt);while(left>1e-8&&g.state==='playing'){const dt=Math.min(1/120,left);tick(g,dt,input);left-=dt;}}
+export const snapshot=g=>JSON.parse(JSON.stringify(g,(k,v)=>k==='events'?undefined:v));

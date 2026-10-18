@@ -1,0 +1,14 @@
+import{LEVELS,TYPES}from'../games/beacon/levels.mjs';import{paths,walkable,terrain,attackInfo,healInfo,lineClear,approachField}from'../games/beacon/engine.mjs';
+const idx=(x,y)=>y*8+x,man=(a,b)=>Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
+function fieldTo(g,u,predicate){const field=Array(56).fill(Infinity),q=[];for(let y=0;y<7;y++)for(let x=0;x<8;x++)if(walkable(g,x,y,u.id)&&predicate({x,y})){field[idx(x,y)]=0;q.push({x,y});}for(let i=0;i<q.length;i++)for(const[dx,dy]of[[0,-1],[-1,0],[1,0],[0,1]]){const x=q[i].x+dx,y=q[i].y+dy,n=field[idx(q[i].x,q[i].y)]+1;if(walkable(g,x,y,u.id)&&field[idx(x,y)]>n){field[idx(x,y)]=n;q.push({x,y});}}return field;}
+export function decide(g){const l=LEVELS[g.level-1],friends=g.units.filter(u=>u.side==='blue'&&u.hp>0),foes=g.units.filter(u=>u.side==='red'&&u.hp>0);let best=null,bestScore=0;const candidate=(c,n)=>{if(n>bestScore){bestScore=n;best={...c,revision:g.revision};}};
+ for(const u of friends.filter(u=>u.ap>0)){
+  for(const t of foes){const a=attackInfo(g,u,t);if(a.legal)candidate({kind:'attack',unit:u.id,target:t.id},80+a.damage*20+(t.hp<=a.damage?220:0)+(t.type==='ranger'?8:0));}
+  for(const t of friends){const h=healInfo(g,u,t);if(h.legal)candidate({kind:'heal',unit:u.id,target:t.id},20+h.amount*35+(t.hp<=3?150:0));}
+  if(u.type==='courier'&&foes.length)continue;
+  let field,objective=false,support=null;
+  if(!foes.length){if(l.goal==='escort'&&u.type==='courier'){field=fieldTo(g,u,p=>terrain(g,p.x,p.y)==='E');objective=true;}else if(l.goal==='hold'&&!friends.some(t=>t.type!=='courier'&&terrain(g,t.x,t.y)==='S')){field=fieldTo(g,u,p=>terrain(g,p.x,p.y)==='S');objective=true;}else continue;}
+  else{field=approachField(g,u,foes);if(u.type==='medic'){const front=friends.filter(t=>t.id!==u.id&&t.type!=='courier').sort((a,b)=>a.hp/TYPES[a.type].hp-b.hp/TYPES[b.type].hp||Math.min(...foes.map(t=>man(a,t)))-Math.min(...foes.map(t=>man(b,t))))[0];if(front)support=fieldTo(g,u,p=>man(p,front)<=2&&lineClear(g,{...u,...p},front));}}
+  const before=field[idx(u.x,u.y)],supportBefore=support?.[idx(u.x,u.y)];for(const[k,path]of paths(g,u)){if(!path.length)continue;const p=path.at(-1),ghost={...u,...p},after=field[k],gain=Number.isFinite(before)?before-after:Number.isFinite(after)?6:0;if(!Number.isFinite(gain))continue;const danger=foes.filter(t=>attackInfo(g,t,ghost).legal).length,attack=foes.some(t=>attackInfo(g,ghost,t).legal),cover=['=','S'].includes(terrain(g,p.x,p.y))?3:0,supportGain=support&&Number.isFinite(supportBefore)&&Number.isFinite(support[k])?supportBefore-support[k]:0;const n=objective?gain*22+25:gain*(u.type==='medic'?7:15)+supportGain*14+(attack?(u.ap>=2?22:5):0)+cover-danger*12-path.length*.03;if(gain>0||supportGain>0)candidate({kind:'move',unit:u.id,...p},n);}
+ }
+ return best||{kind:'end-turn',revision:g.revision};}

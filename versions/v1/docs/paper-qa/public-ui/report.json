@@ -1,0 +1,163 @@
+{
+  "testedAt": "2026-10-16T17:04:55.221303+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/paper/",
+  "checks": [
+    "Ready stays static with a visible start button, finite ammo and complete field",
+    "Initial menu locks stages 2–16; native Escape closes without starting",
+    "First tutorial blocks gameplay until confirmed",
+    "A tap on the package or away from the sling does not waste ammunition",
+    "Excess pull clamps at full power; releasing outside the canvas cancels",
+    "Explicit pointer-cancel notification clears a pending gesture without firing",
+    "Pause interrupts a drag and resuming cannot release an old launch",
+    "Native range Home/End/arrows persist under HUD updates; focused R resets both controls",
+    "Real Space fires once; repeat events and active flight reject another parcel",
+    "In-flight pause and refresh restore exact projectile/structure/ammo/score fields and editable aim",
+    "A genuine native-keyboard shot collects both stamps, delivers and earns three stars",
+    "320px winning overlay fits and its primary button is actually hit-testable",
+    "A later normal two-star win preserves the genuinely earned three-star best",
+    "Three ordinary missed launches lose only after final flight/settling and preserve best",
+    "Retry resets the current budget and structures without erasing unlocked best",
+    "Six viewport widths 320–1440 and native level dialogs have no horizontal overflow",
+    "Actual heavy ability button consumes once; pause/refresh never refills or reactivates it",
+    "Help pauses/resumes the current flight; explicit blur pauses without an old input",
+    "Original synthesized-sound preference survives reload",
+    "Malformed storage safely returns to default progress without throwing",
+    "Illegal/null command replay rejects the current run while retaining valid unlocks",
+    "Denied storage still allows a complete ordinary three-star run"
+  ],
+  "fixture": "Only level menu/tutorial/sound/storage validation fixtures. Normal drags/keys/buttons earn all wins and stamps. Blur/pointercancel notifications explicitly simulate lifecycle interruption.",
+  "restore": {
+    "exactFields": [
+      "ticks",
+      "time",
+      "accumulator",
+      "blocks",
+      "ball",
+      "fragments",
+      "targets",
+      "stamps",
+      "quiet",
+      "phase",
+      "revision",
+      "log",
+      "deliveredIds",
+      "brokenIds",
+      "stats"
+    ],
+    "ticks": 114,
+    "ballType": "letter"
+  },
+  "keyboardThreeStars": {
+    "state": "won",
+    "stars": 3,
+    "stats": {
+      "shots": 1,
+      "abilities": 0,
+      "sails": 0,
+      "stampsUsed": 0,
+      "delivered": 1,
+      "stamps": 2,
+      "broken": 0,
+      "contacts": 1,
+      "misses": 0,
+      "settlements": 1,
+      "collisionCaps": 0
+    },
+    "actualLog": [
+      {
+        "tick": 106,
+        "kind": "launch",
+        "angle": 62,
+        "power": 0.46
+      }
+    ],
+    "best": {
+      "stars": 3,
+      "score": 1572,
+      "shots": 1,
+      "time": 2.7666666666666666
+    }
+  },
+  "lowerStarReplay": {
+    "stars": 2,
+    "bestStars": 3,
+    "actualLog": [
+      {
+        "tick": 72,
+        "kind": "launch",
+        "angle": 68,
+        "power": 0.55
+      }
+    ]
+  },
+  "naturalFailure": {
+    "time": 6.766666666666667,
+    "stats": {
+      "shots": 3,
+      "abilities": 0,
+      "sails": 0,
+      "stampsUsed": 0,
+      "delivered": 0,
+      "stamps": 0,
+      "broken": 0,
+      "contacts": 3,
+      "misses": 3,
+      "settlements": 1,
+      "collisionCaps": 0
+    },
+    "actualLog": [
+      {
+        "tick": 70,
+        "kind": "launch",
+        "angle": 78,
+        "power": 0.15
+      },
+      {
+        "tick": 606,
+        "kind": "launch",
+        "angle": 78,
+        "power": 0.15
+      },
+      {
+        "tick": 1150,
+        "kind": "launch",
+        "angle": 78,
+        "power": 0.15
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/games/paper/",
+      "failure": "net::ERR_CONNECTION_CLOSED"
+    }
+  ]
+}

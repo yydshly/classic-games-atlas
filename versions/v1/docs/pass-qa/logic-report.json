@@ -1,0 +1,17 @@
+{
+  "testedAt": "2026-10-16T06:19:13.174Z",
+  "passed": 11,
+  "checks": [
+    "8 unique original maps, 6 waves each, valid sites away from road, 3 two-level towers and 4 enemies",
+    "normal build, affordability, duplicate/invalid site and upgrade prices; sale refunds 70% once",
+    "target picks furthest progress within circular range, skips dead/escaped and stable ties",
+    "damage kills and rewards once; later hits cannot duplicate income",
+    "splash hits neighbours inside radius only; single target does not splash",
+    "slow uses strongest active effect without multiplication, then weaker and normal on expiry",
+    "frost impact applies visible timed slow and damage",
+    "escaped enemy deducts its base damage once, awards no kill gold",
+    "pause freezes combat/time and rejects purchases; 2x advances exactly twice",
+    "wave start cannot duplicate queue; clear pays once; base loss beats simultaneous final wave",
+    "last valid clear wins only with living base; restart and snapshot are independent"
+  ]
+}

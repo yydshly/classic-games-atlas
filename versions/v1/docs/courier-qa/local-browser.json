@@ -1,0 +1,3619 @@
+{
+  "testedAt": "2026-10-16T20:05:52.273786+00:00",
+  "url": "http://127.0.0.1:4174/games/courier/",
+  "method": "Fresh storage, one page load, natural Next/unlocks. Real Arrow key press/release at normal RAF1x. Only copies of visible road signs and pose are read; no resource/distance/speed/result writes.",
+  "results": [
+    {
+      "level": 1,
+      "ticks": 1680,
+      "distance": 280,
+      "x": 1,
+      "lane": 1,
+      "action": null,
+      "actionTick": 1319,
+      "hp": 3,
+      "cargo": 9,
+      "score": 105,
+      "hitRows": [],
+      "resolved": [
+        "1-1",
+        "1-2",
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6",
+        "1-7",
+        "1-8",
+        "1-9"
+      ],
+      "collected": [
+        "1-1-p0",
+        "1-2-p0",
+        "1-3-p0",
+        "1-4-p0",
+        "1-5-p0",
+        "1-6-p1",
+        "1-7-p0",
+        "1-8-p0",
+        "1-9-p0"
+      ],
+      "log": [
+        {
+          "tick": 185,
+          "kind": "left"
+        },
+        {
+          "tick": 341,
+          "kind": "right"
+        },
+        {
+          "tick": 343,
+          "kind": "right"
+        },
+        {
+          "tick": 495,
+          "kind": "left"
+        },
+        {
+          "tick": 539,
+          "kind": "jump"
+        },
+        {
+          "tick": 653,
+          "kind": "left"
+        },
+        {
+          "tick": 807,
+          "kind": "right"
+        },
+        {
+          "tick": 809,
+          "kind": "right"
+        },
+        {
+          "tick": 849,
+          "kind": "slide"
+        },
+        {
+          "tick": 1119,
+          "kind": "left"
+        },
+        {
+          "tick": 1119,
+          "kind": "left"
+        },
+        {
+          "tick": 1163,
+          "kind": "jump"
+        },
+        {
+          "tick": 1277,
+          "kind": "right"
+        },
+        {
+          "tick": 1277,
+          "kind": "right"
+        },
+        {
+          "tick": 1319,
+          "kind": "slide"
+        },
+        {
+          "tick": 1433,
+          "kind": "left"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 2,
+        "slides": 2,
+        "laneChanges": 12,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14,
+      "goal": 7,
+      "unlocked": 2,
+      "best": {
+        "score": 105,
+        "cargo": 9,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 185,
+          "kind": "left"
+        },
+        {
+          "tick": 341,
+          "kind": "right"
+        },
+        {
+          "tick": 343,
+          "kind": "right"
+        },
+        {
+          "tick": 495,
+          "kind": "left"
+        },
+        {
+          "tick": 539,
+          "kind": "jump"
+        },
+        {
+          "tick": 653,
+          "kind": "left"
+        },
+        {
+          "tick": 807,
+          "kind": "right"
+        },
+        {
+          "tick": 809,
+          "kind": "right"
+        },
+        {
+          "tick": 849,
+          "kind": "slide"
+        },
+        {
+          "tick": 1119,
+          "kind": "left"
+        },
+        {
+          "tick": 1119,
+          "kind": "left"
+        },
+        {
+          "tick": 1163,
+          "kind": "jump"
+        },
+        {
+          "tick": 1277,
+          "kind": "right"
+        },
+        {
+          "tick": 1277,
+          "kind": "right"
+        },
+        {
+          "tick": 1319,
+          "kind": "slide"
+        },
+        {
+          "tick": 1433,
+          "kind": "left"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 183,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 341,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 343,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 495,
+          "kind": "left",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 539,
+          "kind": "jump",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 653,
+          "kind": "left",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 807,
+          "kind": "right",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 807,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 849,
+          "kind": "slide",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 1119,
+          "kind": "left",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 1119,
+          "kind": "left",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1163,
+          "kind": "jump",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1277,
+          "kind": "right",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1277,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1319,
+          "kind": "slide",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1433,
+          "kind": "left",
+          "acceptedLogLength": 16
+        }
+      ],
+      "wallSeconds": 14.078999999997905,
+      "simulationToWallRatio": 0.994388806023303
+    },
+    {
+      "level": 2,
+      "ticks": 1644,
+      "distance": 280,
+      "x": 2,
+      "lane": 2,
+      "action": null,
+      "actionTick": 1289,
+      "hp": 3,
+      "cargo": 9,
+      "score": 100,
+      "hitRows": [],
+      "resolved": [
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4",
+        "2-5",
+        "2-6",
+        "2-7",
+        "2-8",
+        "2-9"
+      ],
+      "collected": [
+        "2-1-p0",
+        "2-2-p0",
+        "2-3-p0",
+        "2-4-p0",
+        "2-5-p0",
+        "2-6-p0",
+        "2-7-p1",
+        "2-8-p0",
+        "2-9-p0"
+      ],
+      "log": [
+        {
+          "tick": 331,
+          "kind": "left"
+        },
+        {
+          "tick": 483,
+          "kind": "right"
+        },
+        {
+          "tick": 483,
+          "kind": "right"
+        },
+        {
+          "tick": 523,
+          "kind": "jump"
+        },
+        {
+          "tick": 637,
+          "kind": "left"
+        },
+        {
+          "tick": 787,
+          "kind": "left"
+        },
+        {
+          "tick": 829,
+          "kind": "slide"
+        },
+        {
+          "tick": 943,
+          "kind": "right"
+        },
+        {
+          "tick": 943,
+          "kind": "right"
+        },
+        {
+          "tick": 981,
+          "kind": "jump"
+        },
+        {
+          "tick": 1245,
+          "kind": "left"
+        },
+        {
+          "tick": 1245,
+          "kind": "left"
+        },
+        {
+          "tick": 1289,
+          "kind": "slide"
+        },
+        {
+          "tick": 1399,
+          "kind": "right"
+        },
+        {
+          "tick": 1399,
+          "kind": "right"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 2,
+        "slides": 2,
+        "laneChanges": 11,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 13.7,
+      "goal": 7,
+      "unlocked": 3,
+      "best": {
+        "score": 100,
+        "cargo": 9,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 331,
+          "kind": "left"
+        },
+        {
+          "tick": 483,
+          "kind": "right"
+        },
+        {
+          "tick": 483,
+          "kind": "right"
+        },
+        {
+          "tick": 523,
+          "kind": "jump"
+        },
+        {
+          "tick": 637,
+          "kind": "left"
+        },
+        {
+          "tick": 787,
+          "kind": "left"
+        },
+        {
+          "tick": 829,
+          "kind": "slide"
+        },
+        {
+          "tick": 943,
+          "kind": "right"
+        },
+        {
+          "tick": 943,
+          "kind": "right"
+        },
+        {
+          "tick": 981,
+          "kind": "jump"
+        },
+        {
+          "tick": 1245,
+          "kind": "left"
+        },
+        {
+          "tick": 1245,
+          "kind": "left"
+        },
+        {
+          "tick": 1289,
+          "kind": "slide"
+        },
+        {
+          "tick": 1399,
+          "kind": "right"
+        },
+        {
+          "tick": 1399,
+          "kind": "right"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 331,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 483,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 483,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 523,
+          "kind": "jump",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 637,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 787,
+          "kind": "left",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 829,
+          "kind": "slide",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 943,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 943,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 981,
+          "kind": "jump",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 1245,
+          "kind": "left",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1245,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1289,
+          "kind": "slide",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1399,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1399,
+          "kind": "right",
+          "acceptedLogLength": 15
+        }
+      ],
+      "wallSeconds": 13.73399999999674,
+      "simulationToWallRatio": 0.9975243920200416
+    },
+    {
+      "level": 3,
+      "ticks": 1608,
+      "distance": 280,
+      "x": 0,
+      "lane": 0,
+      "action": null,
+      "actionTick": 1407,
+      "hp": 3,
+      "cargo": 9,
+      "score": 100,
+      "hitRows": [],
+      "resolved": [
+        "3-1",
+        "3-2",
+        "3-3",
+        "3-4",
+        "3-5",
+        "3-6",
+        "3-7",
+        "3-8",
+        "3-9"
+      ],
+      "collected": [
+        "3-1-p0",
+        "3-2-p0",
+        "3-3-p0",
+        "3-4-p0",
+        "3-5-p0",
+        "3-6-p0",
+        "3-7-p0",
+        "3-8-p0",
+        "3-9-p0"
+      ],
+      "log": [
+        {
+          "tick": 173,
+          "kind": "right"
+        },
+        {
+          "tick": 215,
+          "kind": "jump"
+        },
+        {
+          "tick": 323,
+          "kind": "left"
+        },
+        {
+          "tick": 471,
+          "kind": "left"
+        },
+        {
+          "tick": 513,
+          "kind": "slide"
+        },
+        {
+          "tick": 769,
+          "kind": "right"
+        },
+        {
+          "tick": 811,
+          "kind": "jump"
+        },
+        {
+          "tick": 921,
+          "kind": "left"
+        },
+        {
+          "tick": 959,
+          "kind": "slide"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1219,
+          "kind": "left"
+        },
+        {
+          "tick": 1257,
+          "kind": "jump"
+        },
+        {
+          "tick": 1367,
+          "kind": "left"
+        },
+        {
+          "tick": 1407,
+          "kind": "slide"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 3,
+        "laneChanges": 9,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 13.4,
+      "goal": 7,
+      "unlocked": 4,
+      "best": {
+        "score": 100,
+        "cargo": 9,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 173,
+          "kind": "right"
+        },
+        {
+          "tick": 215,
+          "kind": "jump"
+        },
+        {
+          "tick": 323,
+          "kind": "left"
+        },
+        {
+          "tick": 471,
+          "kind": "left"
+        },
+        {
+          "tick": 513,
+          "kind": "slide"
+        },
+        {
+          "tick": 769,
+          "kind": "right"
+        },
+        {
+          "tick": 811,
+          "kind": "jump"
+        },
+        {
+          "tick": 921,
+          "kind": "left"
+        },
+        {
+          "tick": 959,
+          "kind": "slide"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1219,
+          "kind": "left"
+        },
+        {
+          "tick": 1257,
+          "kind": "jump"
+        },
+        {
+          "tick": 1367,
+          "kind": "left"
+        },
+        {
+          "tick": 1407,
+          "kind": "slide"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 173,
+          "kind": "right",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 213,
+          "kind": "jump",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 323,
+          "kind": "left",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 471,
+          "kind": "left",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 513,
+          "kind": "slide",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 769,
+          "kind": "right",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 811,
+          "kind": "jump",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 921,
+          "kind": "left",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 959,
+          "kind": "slide",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 1069,
+          "kind": "right",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 1069,
+          "kind": "right",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1219,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1257,
+          "kind": "jump",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1367,
+          "kind": "left",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1407,
+          "kind": "slide",
+          "acceptedLogLength": 15
+        }
+      ],
+      "wallSeconds": 13.437999999994645,
+      "simulationToWallRatio": 0.9971721982441837
+    },
+    {
+      "level": 4,
+      "ticks": 1720,
+      "distance": 306,
+      "x": 0,
+      "lane": 0,
+      "action": null,
+      "actionTick": 1525,
+      "hp": 3,
+      "cargo": 10,
+      "score": 115,
+      "hitRows": [],
+      "resolved": [
+        "4-1",
+        "4-2",
+        "4-3",
+        "4-4",
+        "4-5",
+        "4-6",
+        "4-7",
+        "4-8",
+        "4-9",
+        "4-10"
+      ],
+      "collected": [
+        "4-1-p0",
+        "4-2-p0",
+        "4-3-p0",
+        "4-4-p0",
+        "4-5-p0",
+        "4-6-p0",
+        "4-7-p0",
+        "4-8-p0",
+        "4-9-p0",
+        "4-10-p0"
+      ],
+      "log": [
+        {
+          "tick": 167,
+          "kind": "left"
+        },
+        {
+          "tick": 315,
+          "kind": "right"
+        },
+        {
+          "tick": 315,
+          "kind": "right"
+        },
+        {
+          "tick": 353,
+          "kind": "jump"
+        },
+        {
+          "tick": 461,
+          "kind": "left"
+        },
+        {
+          "tick": 501,
+          "kind": "slide"
+        },
+        {
+          "tick": 605,
+          "kind": "left"
+        },
+        {
+          "tick": 751,
+          "kind": "right"
+        },
+        {
+          "tick": 751,
+          "kind": "right"
+        },
+        {
+          "tick": 897,
+          "kind": "left"
+        },
+        {
+          "tick": 939,
+          "kind": "slide"
+        },
+        {
+          "tick": 1043,
+          "kind": "left"
+        },
+        {
+          "tick": 1085,
+          "kind": "jump"
+        },
+        {
+          "tick": 1191,
+          "kind": "right"
+        },
+        {
+          "tick": 1191,
+          "kind": "right"
+        },
+        {
+          "tick": 1337,
+          "kind": "left"
+        },
+        {
+          "tick": 1379,
+          "kind": "jump"
+        },
+        {
+          "tick": 1481,
+          "kind": "left"
+        },
+        {
+          "tick": 1525,
+          "kind": "slide"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 3,
+        "laneChanges": 13,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.333333333333334,
+      "goal": 8,
+      "unlocked": 5,
+      "best": {
+        "score": 115,
+        "cargo": 10,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 167,
+          "kind": "left"
+        },
+        {
+          "tick": 315,
+          "kind": "right"
+        },
+        {
+          "tick": 315,
+          "kind": "right"
+        },
+        {
+          "tick": 353,
+          "kind": "jump"
+        },
+        {
+          "tick": 461,
+          "kind": "left"
+        },
+        {
+          "tick": 501,
+          "kind": "slide"
+        },
+        {
+          "tick": 605,
+          "kind": "left"
+        },
+        {
+          "tick": 751,
+          "kind": "right"
+        },
+        {
+          "tick": 751,
+          "kind": "right"
+        },
+        {
+          "tick": 897,
+          "kind": "left"
+        },
+        {
+          "tick": 939,
+          "kind": "slide"
+        },
+        {
+          "tick": 1043,
+          "kind": "left"
+        },
+        {
+          "tick": 1085,
+          "kind": "jump"
+        },
+        {
+          "tick": 1191,
+          "kind": "right"
+        },
+        {
+          "tick": 1191,
+          "kind": "right"
+        },
+        {
+          "tick": 1337,
+          "kind": "left"
+        },
+        {
+          "tick": 1379,
+          "kind": "jump"
+        },
+        {
+          "tick": 1481,
+          "kind": "left"
+        },
+        {
+          "tick": 1525,
+          "kind": "slide"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 167,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 315,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 315,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 353,
+          "kind": "jump",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 461,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 501,
+          "kind": "slide",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 605,
+          "kind": "left",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 751,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 751,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 897,
+          "kind": "left",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 939,
+          "kind": "slide",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1043,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1085,
+          "kind": "jump",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1191,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1191,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1337,
+          "kind": "left",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1379,
+          "kind": "jump",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1481,
+          "kind": "left",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1525,
+          "kind": "slide",
+          "acceptedLogLength": 19
+        }
+      ],
+      "wallSeconds": 14.375,
+      "simulationToWallRatio": 0.9971014492753624
+    },
+    {
+      "level": 5,
+      "ticks": 1685,
+      "distance": 306,
+      "x": 1,
+      "lane": 1,
+      "action": null,
+      "actionTick": 1347,
+      "hp": 3,
+      "cargo": 10,
+      "score": 115,
+      "hitRows": [],
+      "resolved": [
+        "5-1",
+        "5-2",
+        "5-3",
+        "5-4",
+        "5-5",
+        "5-6",
+        "5-7",
+        "5-8",
+        "5-9",
+        "5-10"
+      ],
+      "collected": [
+        "5-1-p0",
+        "5-2-p0",
+        "5-3-p0",
+        "5-4-p0",
+        "5-5-p0",
+        "5-6-p0",
+        "5-7-p1",
+        "5-8-p0",
+        "5-9-p0",
+        "5-10-p0"
+      ],
+      "log": [
+        {
+          "tick": 161,
+          "kind": "left"
+        },
+        {
+          "tick": 447,
+          "kind": "right"
+        },
+        {
+          "tick": 447,
+          "kind": "right"
+        },
+        {
+          "tick": 489,
+          "kind": "jump"
+        },
+        {
+          "tick": 591,
+          "kind": "left"
+        },
+        {
+          "tick": 631,
+          "kind": "slide"
+        },
+        {
+          "tick": 735,
+          "kind": "left"
+        },
+        {
+          "tick": 877,
+          "kind": "right"
+        },
+        {
+          "tick": 877,
+          "kind": "right"
+        },
+        {
+          "tick": 919,
+          "kind": "jump"
+        },
+        {
+          "tick": 1165,
+          "kind": "left"
+        },
+        {
+          "tick": 1165,
+          "kind": "left"
+        },
+        {
+          "tick": 1205,
+          "kind": "slide"
+        },
+        {
+          "tick": 1307,
+          "kind": "right"
+        },
+        {
+          "tick": 1307,
+          "kind": "right"
+        },
+        {
+          "tick": 1347,
+          "kind": "jump"
+        },
+        {
+          "tick": 1449,
+          "kind": "left"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 2,
+        "laneChanges": 12,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.041666666666666,
+      "goal": 8,
+      "unlocked": 6,
+      "best": {
+        "score": 115,
+        "cargo": 10,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 161,
+          "kind": "left"
+        },
+        {
+          "tick": 447,
+          "kind": "right"
+        },
+        {
+          "tick": 447,
+          "kind": "right"
+        },
+        {
+          "tick": 489,
+          "kind": "jump"
+        },
+        {
+          "tick": 591,
+          "kind": "left"
+        },
+        {
+          "tick": 631,
+          "kind": "slide"
+        },
+        {
+          "tick": 735,
+          "kind": "left"
+        },
+        {
+          "tick": 877,
+          "kind": "right"
+        },
+        {
+          "tick": 877,
+          "kind": "right"
+        },
+        {
+          "tick": 919,
+          "kind": "jump"
+        },
+        {
+          "tick": 1165,
+          "kind": "left"
+        },
+        {
+          "tick": 1165,
+          "kind": "left"
+        },
+        {
+          "tick": 1205,
+          "kind": "slide"
+        },
+        {
+          "tick": 1307,
+          "kind": "right"
+        },
+        {
+          "tick": 1307,
+          "kind": "right"
+        },
+        {
+          "tick": 1347,
+          "kind": "jump"
+        },
+        {
+          "tick": 1449,
+          "kind": "left"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 161,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 447,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 447,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 489,
+          "kind": "jump",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 591,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 631,
+          "kind": "slide",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 735,
+          "kind": "left",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 877,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 877,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 919,
+          "kind": "jump",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 1163,
+          "kind": "left",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1165,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1205,
+          "kind": "slide",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1307,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1307,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1347,
+          "kind": "jump",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1449,
+          "kind": "left",
+          "acceptedLogLength": 17
+        }
+      ],
+      "wallSeconds": 14.078999999997905,
+      "simulationToWallRatio": 0.99734829651742
+    },
+    {
+      "level": 6,
+      "ticks": 1651,
+      "distance": 306,
+      "x": 0,
+      "lane": 0,
+      "action": null,
+      "actionTick": 1321,
+      "hp": 3,
+      "cargo": 10,
+      "score": 110,
+      "hitRows": [],
+      "resolved": [
+        "6-1",
+        "6-2",
+        "6-3",
+        "6-4",
+        "6-5",
+        "6-6",
+        "6-7",
+        "6-8",
+        "6-9",
+        "6-10"
+      ],
+      "collected": [
+        "6-1-p0",
+        "6-2-p0",
+        "6-3-p0",
+        "6-4-p0",
+        "6-5-p0",
+        "6-6-p0",
+        "6-7-p0",
+        "6-8-p0",
+        "6-9-p0",
+        "6-10-p0"
+      ],
+      "log": [
+        {
+          "tick": 157,
+          "kind": "right"
+        },
+        {
+          "tick": 199,
+          "kind": "jump"
+        },
+        {
+          "tick": 297,
+          "kind": "left"
+        },
+        {
+          "tick": 337,
+          "kind": "slide"
+        },
+        {
+          "tick": 437,
+          "kind": "left"
+        },
+        {
+          "tick": 717,
+          "kind": "right"
+        },
+        {
+          "tick": 759,
+          "kind": "slide"
+        },
+        {
+          "tick": 857,
+          "kind": "left"
+        },
+        {
+          "tick": 901,
+          "kind": "jump"
+        },
+        {
+          "tick": 999,
+          "kind": "right"
+        },
+        {
+          "tick": 999,
+          "kind": "right"
+        },
+        {
+          "tick": 1139,
+          "kind": "left"
+        },
+        {
+          "tick": 1179,
+          "kind": "slide"
+        },
+        {
+          "tick": 1281,
+          "kind": "left"
+        },
+        {
+          "tick": 1321,
+          "kind": "jump"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 3,
+        "laneChanges": 9,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 13.758333333333333,
+      "goal": 8,
+      "unlocked": 7,
+      "best": {
+        "score": 110,
+        "cargo": 10,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 157,
+          "kind": "right"
+        },
+        {
+          "tick": 199,
+          "kind": "jump"
+        },
+        {
+          "tick": 297,
+          "kind": "left"
+        },
+        {
+          "tick": 337,
+          "kind": "slide"
+        },
+        {
+          "tick": 437,
+          "kind": "left"
+        },
+        {
+          "tick": 717,
+          "kind": "right"
+        },
+        {
+          "tick": 759,
+          "kind": "slide"
+        },
+        {
+          "tick": 857,
+          "kind": "left"
+        },
+        {
+          "tick": 901,
+          "kind": "jump"
+        },
+        {
+          "tick": 999,
+          "kind": "right"
+        },
+        {
+          "tick": 999,
+          "kind": "right"
+        },
+        {
+          "tick": 1139,
+          "kind": "left"
+        },
+        {
+          "tick": 1179,
+          "kind": "slide"
+        },
+        {
+          "tick": 1281,
+          "kind": "left"
+        },
+        {
+          "tick": 1321,
+          "kind": "jump"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 157,
+          "kind": "right",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 197,
+          "kind": "jump",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 297,
+          "kind": "left",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 337,
+          "kind": "slide",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 437,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 717,
+          "kind": "right",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 759,
+          "kind": "slide",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 857,
+          "kind": "left",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 901,
+          "kind": "jump",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 999,
+          "kind": "right",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 999,
+          "kind": "right",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1139,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1179,
+          "kind": "slide",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1281,
+          "kind": "left",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1321,
+          "kind": "jump",
+          "acceptedLogLength": 15
+        }
+      ],
+      "wallSeconds": 13.796999999991385,
+      "simulationToWallRatio": 0.9971974583852956
+    },
+    {
+      "level": 7,
+      "ticks": 1756,
+      "distance": 332,
+      "x": 2,
+      "lane": 2,
+      "action": null,
+      "actionTick": 1432,
+      "hp": 3,
+      "cargo": 11,
+      "score": 125,
+      "hitRows": [],
+      "resolved": [
+        "7-1",
+        "7-2",
+        "7-3",
+        "7-4",
+        "7-5",
+        "7-6",
+        "7-7",
+        "7-8",
+        "7-9",
+        "7-10",
+        "7-11"
+      ],
+      "collected": [
+        "7-1-p0",
+        "7-2-p0",
+        "7-3-p1",
+        "7-4-p0",
+        "7-5-p0",
+        "7-6-p0",
+        "7-7-p0",
+        "7-8-p0",
+        "7-9-p0",
+        "7-10-p0",
+        "7-11-p0"
+      ],
+      "log": [
+        {
+          "tick": 153,
+          "kind": "left"
+        },
+        {
+          "tick": 291,
+          "kind": "right"
+        },
+        {
+          "tick": 291,
+          "kind": "right"
+        },
+        {
+          "tick": 333,
+          "kind": "jump"
+        },
+        {
+          "tick": 566,
+          "kind": "left"
+        },
+        {
+          "tick": 566,
+          "kind": "left"
+        },
+        {
+          "tick": 606,
+          "kind": "slide"
+        },
+        {
+          "tick": 702,
+          "kind": "right"
+        },
+        {
+          "tick": 702,
+          "kind": "right"
+        },
+        {
+          "tick": 744,
+          "kind": "jump"
+        },
+        {
+          "tick": 840,
+          "kind": "left"
+        },
+        {
+          "tick": 978,
+          "kind": "left"
+        },
+        {
+          "tick": 1020,
+          "kind": "slide"
+        },
+        {
+          "tick": 1252,
+          "kind": "right"
+        },
+        {
+          "tick": 1294,
+          "kind": "jump"
+        },
+        {
+          "tick": 1390,
+          "kind": "left"
+        },
+        {
+          "tick": 1432,
+          "kind": "slide"
+        },
+        {
+          "tick": 1526,
+          "kind": "right"
+        },
+        {
+          "tick": 1526,
+          "kind": "right"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 3,
+        "laneChanges": 13,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.633333333333333,
+      "goal": 9,
+      "unlocked": 8,
+      "best": {
+        "score": 125,
+        "cargo": 11,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 153,
+          "kind": "left"
+        },
+        {
+          "tick": 291,
+          "kind": "right"
+        },
+        {
+          "tick": 291,
+          "kind": "right"
+        },
+        {
+          "tick": 333,
+          "kind": "jump"
+        },
+        {
+          "tick": 566,
+          "kind": "left"
+        },
+        {
+          "tick": 566,
+          "kind": "left"
+        },
+        {
+          "tick": 606,
+          "kind": "slide"
+        },
+        {
+          "tick": 702,
+          "kind": "right"
+        },
+        {
+          "tick": 702,
+          "kind": "right"
+        },
+        {
+          "tick": 744,
+          "kind": "jump"
+        },
+        {
+          "tick": 840,
+          "kind": "left"
+        },
+        {
+          "tick": 978,
+          "kind": "left"
+        },
+        {
+          "tick": 1020,
+          "kind": "slide"
+        },
+        {
+          "tick": 1252,
+          "kind": "right"
+        },
+        {
+          "tick": 1294,
+          "kind": "jump"
+        },
+        {
+          "tick": 1390,
+          "kind": "left"
+        },
+        {
+          "tick": 1432,
+          "kind": "slide"
+        },
+        {
+          "tick": 1526,
+          "kind": "right"
+        },
+        {
+          "tick": 1526,
+          "kind": "right"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 151,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 289,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 291,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 333,
+          "kind": "jump",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 566,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 566,
+          "kind": "left",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 606,
+          "kind": "slide",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 702,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 702,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 744,
+          "kind": "jump",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 840,
+          "kind": "left",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 978,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1020,
+          "kind": "slide",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1252,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1294,
+          "kind": "jump",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1390,
+          "kind": "left",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1432,
+          "kind": "slide",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1526,
+          "kind": "right",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1526,
+          "kind": "right",
+          "acceptedLogLength": 19
+        }
+      ],
+      "wallSeconds": 14.671000000002095,
+      "simulationToWallRatio": 0.9974325767385483
+    },
+    {
+      "level": 8,
+      "ticks": 1721,
+      "distance": 332,
+      "x": 0,
+      "lane": 0,
+      "action": null,
+      "actionTick": 1539,
+      "hp": 3,
+      "cargo": 11,
+      "score": 125,
+      "hitRows": [],
+      "resolved": [
+        "8-1",
+        "8-2",
+        "8-3",
+        "8-4",
+        "8-5",
+        "8-6",
+        "8-7",
+        "8-8",
+        "8-9",
+        "8-10",
+        "8-11"
+      ],
+      "collected": [
+        "8-1-p0",
+        "8-2-p0",
+        "8-3-p0",
+        "8-4-p0",
+        "8-5-p0",
+        "8-6-p0",
+        "8-7-p0",
+        "8-8-p0",
+        "8-9-p0",
+        "8-10-p1",
+        "8-11-p0"
+      ],
+      "log": [
+        {
+          "tick": 189,
+          "kind": "slide"
+        },
+        {
+          "tick": 285,
+          "kind": "left"
+        },
+        {
+          "tick": 323,
+          "kind": "jump"
+        },
+        {
+          "tick": 419,
+          "kind": "right"
+        },
+        {
+          "tick": 419,
+          "kind": "right"
+        },
+        {
+          "tick": 551,
+          "kind": "left"
+        },
+        {
+          "tick": 595,
+          "kind": "slide"
+        },
+        {
+          "tick": 689,
+          "kind": "left"
+        },
+        {
+          "tick": 821,
+          "kind": "right"
+        },
+        {
+          "tick": 821,
+          "kind": "right"
+        },
+        {
+          "tick": 863,
+          "kind": "jump"
+        },
+        {
+          "tick": 959,
+          "kind": "left"
+        },
+        {
+          "tick": 997,
+          "kind": "slide"
+        },
+        {
+          "tick": 1091,
+          "kind": "left"
+        },
+        {
+          "tick": 1227,
+          "kind": "right"
+        },
+        {
+          "tick": 1227,
+          "kind": "right"
+        },
+        {
+          "tick": 1267,
+          "kind": "jump"
+        },
+        {
+          "tick": 1497,
+          "kind": "left"
+        },
+        {
+          "tick": 1497,
+          "kind": "left"
+        },
+        {
+          "tick": 1539,
+          "kind": "slide"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 4,
+        "laneChanges": 13,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.341666666666667,
+      "goal": 9,
+      "unlocked": 9,
+      "best": {
+        "score": 125,
+        "cargo": 11,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 189,
+          "kind": "slide"
+        },
+        {
+          "tick": 285,
+          "kind": "left"
+        },
+        {
+          "tick": 323,
+          "kind": "jump"
+        },
+        {
+          "tick": 419,
+          "kind": "right"
+        },
+        {
+          "tick": 419,
+          "kind": "right"
+        },
+        {
+          "tick": 551,
+          "kind": "left"
+        },
+        {
+          "tick": 595,
+          "kind": "slide"
+        },
+        {
+          "tick": 689,
+          "kind": "left"
+        },
+        {
+          "tick": 821,
+          "kind": "right"
+        },
+        {
+          "tick": 821,
+          "kind": "right"
+        },
+        {
+          "tick": 863,
+          "kind": "jump"
+        },
+        {
+          "tick": 959,
+          "kind": "left"
+        },
+        {
+          "tick": 997,
+          "kind": "slide"
+        },
+        {
+          "tick": 1091,
+          "kind": "left"
+        },
+        {
+          "tick": 1227,
+          "kind": "right"
+        },
+        {
+          "tick": 1227,
+          "kind": "right"
+        },
+        {
+          "tick": 1267,
+          "kind": "jump"
+        },
+        {
+          "tick": 1497,
+          "kind": "left"
+        },
+        {
+          "tick": 1497,
+          "kind": "left"
+        },
+        {
+          "tick": 1539,
+          "kind": "slide"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 189,
+          "kind": "slide",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 285,
+          "kind": "left",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 323,
+          "kind": "jump",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 419,
+          "kind": "right",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 419,
+          "kind": "right",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 551,
+          "kind": "left",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 595,
+          "kind": "slide",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 689,
+          "kind": "left",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 821,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 821,
+          "kind": "right",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 863,
+          "kind": "jump",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 959,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 997,
+          "kind": "slide",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1091,
+          "kind": "left",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1227,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1227,
+          "kind": "right",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1267,
+          "kind": "jump",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1497,
+          "kind": "left",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1497,
+          "kind": "left",
+          "acceptedLogLength": 19
+        },
+        {
+          "observedTick": 1539,
+          "kind": "slide",
+          "acceptedLogLength": 20
+        }
+      ],
+      "wallSeconds": 14.39100000000326,
+      "simulationToWallRatio": 0.9965719315310554
+    },
+    {
+      "level": 9,
+      "ticks": 1689,
+      "distance": 332,
+      "x": 1,
+      "lane": 1,
+      "action": null,
+      "actionTick": 1373,
+      "hp": 3,
+      "cargo": 11,
+      "score": 125,
+      "hitRows": [],
+      "resolved": [
+        "9-1",
+        "9-2",
+        "9-3",
+        "9-4",
+        "9-5",
+        "9-6",
+        "9-7",
+        "9-8",
+        "9-9",
+        "9-10",
+        "9-11"
+      ],
+      "collected": [
+        "9-1-p0",
+        "9-2-p0",
+        "9-3-p0",
+        "9-4-p0",
+        "9-5-p0",
+        "9-6-p0",
+        "9-7-p0",
+        "9-8-p0",
+        "9-9-p0",
+        "9-10-p0",
+        "9-11-p0"
+      ],
+      "log": [
+        {
+          "tick": 145,
+          "kind": "left"
+        },
+        {
+          "tick": 275,
+          "kind": "right"
+        },
+        {
+          "tick": 317,
+          "kind": "jump"
+        },
+        {
+          "tick": 407,
+          "kind": "left"
+        },
+        {
+          "tick": 451,
+          "kind": "slide"
+        },
+        {
+          "tick": 541,
+          "kind": "right"
+        },
+        {
+          "tick": 541,
+          "kind": "right"
+        },
+        {
+          "tick": 671,
+          "kind": "left"
+        },
+        {
+          "tick": 713,
+          "kind": "jump"
+        },
+        {
+          "tick": 805,
+          "kind": "left"
+        },
+        {
+          "tick": 847,
+          "kind": "slide"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1201,
+          "kind": "left"
+        },
+        {
+          "tick": 1241,
+          "kind": "slide"
+        },
+        {
+          "tick": 1333,
+          "kind": "right"
+        },
+        {
+          "tick": 1335,
+          "kind": "right"
+        },
+        {
+          "tick": 1373,
+          "kind": "jump"
+        },
+        {
+          "tick": 1465,
+          "kind": "left"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 3,
+        "slides": 3,
+        "laneChanges": 12,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.075,
+      "goal": 9,
+      "unlocked": 10,
+      "best": {
+        "score": 125,
+        "cargo": 11,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 145,
+          "kind": "left"
+        },
+        {
+          "tick": 275,
+          "kind": "right"
+        },
+        {
+          "tick": 317,
+          "kind": "jump"
+        },
+        {
+          "tick": 407,
+          "kind": "left"
+        },
+        {
+          "tick": 451,
+          "kind": "slide"
+        },
+        {
+          "tick": 541,
+          "kind": "right"
+        },
+        {
+          "tick": 541,
+          "kind": "right"
+        },
+        {
+          "tick": 671,
+          "kind": "left"
+        },
+        {
+          "tick": 713,
+          "kind": "jump"
+        },
+        {
+          "tick": 805,
+          "kind": "left"
+        },
+        {
+          "tick": 847,
+          "kind": "slide"
+        },
+        {
+          "tick": 1069,
+          "kind": "right"
+        },
+        {
+          "tick": 1201,
+          "kind": "left"
+        },
+        {
+          "tick": 1241,
+          "kind": "slide"
+        },
+        {
+          "tick": 1333,
+          "kind": "right"
+        },
+        {
+          "tick": 1335,
+          "kind": "right"
+        },
+        {
+          "tick": 1373,
+          "kind": "jump"
+        },
+        {
+          "tick": 1465,
+          "kind": "left"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 145,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 275,
+          "kind": "right",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 317,
+          "kind": "jump",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 407,
+          "kind": "left",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 451,
+          "kind": "slide",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 541,
+          "kind": "right",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 541,
+          "kind": "right",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 671,
+          "kind": "left",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 713,
+          "kind": "jump",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 805,
+          "kind": "left",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 847,
+          "kind": "slide",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1069,
+          "kind": "right",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1201,
+          "kind": "left",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1241,
+          "kind": "slide",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1333,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1333,
+          "kind": "right",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1373,
+          "kind": "jump",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1465,
+          "kind": "left",
+          "acceptedLogLength": 18
+        }
+      ],
+      "wallSeconds": 14.109000000025844,
+      "simulationToWallRatio": 0.9975901906566176
+    },
+    {
+      "level": 10,
+      "ticks": 1787,
+      "distance": 358,
+      "x": 1,
+      "lane": 1,
+      "action": null,
+      "actionTick": 1482,
+      "hp": 3,
+      "cargo": 12,
+      "score": 135,
+      "hitRows": [],
+      "resolved": [
+        "10-1",
+        "10-2",
+        "10-3",
+        "10-4",
+        "10-5",
+        "10-6",
+        "10-7",
+        "10-8",
+        "10-9",
+        "10-10",
+        "10-11",
+        "10-12"
+      ],
+      "collected": [
+        "10-1-p0",
+        "10-2-p0",
+        "10-3-p0",
+        "10-4-p0",
+        "10-5-p0",
+        "10-6-p0",
+        "10-7-p0",
+        "10-8-p0",
+        "10-9-p1",
+        "10-10-p0",
+        "10-11-p0",
+        "10-12-p0"
+      ],
+      "log": [
+        {
+          "tick": 140,
+          "kind": "left"
+        },
+        {
+          "tick": 180,
+          "kind": "jump"
+        },
+        {
+          "tick": 270,
+          "kind": "right"
+        },
+        {
+          "tick": 270,
+          "kind": "right"
+        },
+        {
+          "tick": 400,
+          "kind": "left"
+        },
+        {
+          "tick": 440,
+          "kind": "slide"
+        },
+        {
+          "tick": 528,
+          "kind": "left"
+        },
+        {
+          "tick": 658,
+          "kind": "right"
+        },
+        {
+          "tick": 660,
+          "kind": "right"
+        },
+        {
+          "tick": 698,
+          "kind": "jump"
+        },
+        {
+          "tick": 790,
+          "kind": "left"
+        },
+        {
+          "tick": 830,
+          "kind": "slide"
+        },
+        {
+          "tick": 920,
+          "kind": "left"
+        },
+        {
+          "tick": 1050,
+          "kind": "right"
+        },
+        {
+          "tick": 1050,
+          "kind": "right"
+        },
+        {
+          "tick": 1088,
+          "kind": "jump"
+        },
+        {
+          "tick": 1308,
+          "kind": "left"
+        },
+        {
+          "tick": 1310,
+          "kind": "left"
+        },
+        {
+          "tick": 1348,
+          "kind": "slide"
+        },
+        {
+          "tick": 1438,
+          "kind": "right"
+        },
+        {
+          "tick": 1440,
+          "kind": "right"
+        },
+        {
+          "tick": 1482,
+          "kind": "jump"
+        },
+        {
+          "tick": 1566,
+          "kind": "left"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 4,
+        "slides": 3,
+        "laneChanges": 16,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.891666666666666,
+      "goal": 10,
+      "unlocked": 11,
+      "best": {
+        "score": 135,
+        "cargo": 12,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 140,
+          "kind": "left"
+        },
+        {
+          "tick": 180,
+          "kind": "jump"
+        },
+        {
+          "tick": 270,
+          "kind": "right"
+        },
+        {
+          "tick": 270,
+          "kind": "right"
+        },
+        {
+          "tick": 400,
+          "kind": "left"
+        },
+        {
+          "tick": 440,
+          "kind": "slide"
+        },
+        {
+          "tick": 528,
+          "kind": "left"
+        },
+        {
+          "tick": 658,
+          "kind": "right"
+        },
+        {
+          "tick": 660,
+          "kind": "right"
+        },
+        {
+          "tick": 698,
+          "kind": "jump"
+        },
+        {
+          "tick": 790,
+          "kind": "left"
+        },
+        {
+          "tick": 830,
+          "kind": "slide"
+        },
+        {
+          "tick": 920,
+          "kind": "left"
+        },
+        {
+          "tick": 1050,
+          "kind": "right"
+        },
+        {
+          "tick": 1050,
+          "kind": "right"
+        },
+        {
+          "tick": 1088,
+          "kind": "jump"
+        },
+        {
+          "tick": 1308,
+          "kind": "left"
+        },
+        {
+          "tick": 1310,
+          "kind": "left"
+        },
+        {
+          "tick": 1348,
+          "kind": "slide"
+        },
+        {
+          "tick": 1438,
+          "kind": "right"
+        },
+        {
+          "tick": 1440,
+          "kind": "right"
+        },
+        {
+          "tick": 1482,
+          "kind": "jump"
+        },
+        {
+          "tick": 1566,
+          "kind": "left"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 138,
+          "kind": "left",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 180,
+          "kind": "jump",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 268,
+          "kind": "right",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 270,
+          "kind": "right",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 400,
+          "kind": "left",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 440,
+          "kind": "slide",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 528,
+          "kind": "left",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 658,
+          "kind": "right",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 660,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 698,
+          "kind": "jump",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 790,
+          "kind": "left",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 830,
+          "kind": "slide",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 920,
+          "kind": "left",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1050,
+          "kind": "right",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1050,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1088,
+          "kind": "jump",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1308,
+          "kind": "left",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1310,
+          "kind": "left",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1348,
+          "kind": "slide",
+          "acceptedLogLength": 19
+        },
+        {
+          "observedTick": 1438,
+          "kind": "right",
+          "acceptedLogLength": 20
+        },
+        {
+          "observedTick": 1440,
+          "kind": "right",
+          "acceptedLogLength": 21
+        },
+        {
+          "observedTick": 1480,
+          "kind": "jump",
+          "acceptedLogLength": 22
+        },
+        {
+          "observedTick": 1566,
+          "kind": "left",
+          "acceptedLogLength": 23
+        }
+      ],
+      "wallSeconds": 14.953000000008615,
+      "simulationToWallRatio": 0.9958982589887037
+    },
+    {
+      "level": 11,
+      "ticks": 1754,
+      "distance": 358,
+      "x": 2,
+      "lane": 2,
+      "action": null,
+      "actionTick": 1577,
+      "hp": 3,
+      "cargo": 12,
+      "score": 135,
+      "hitRows": [],
+      "resolved": [
+        "11-1",
+        "11-2",
+        "11-3",
+        "11-4",
+        "11-5",
+        "11-6",
+        "11-7",
+        "11-8",
+        "11-9",
+        "11-10",
+        "11-11",
+        "11-12"
+      ],
+      "collected": [
+        "11-1-p0",
+        "11-2-p0",
+        "11-3-p0",
+        "11-4-p1",
+        "11-5-p0",
+        "11-6-p0",
+        "11-7-p0",
+        "11-8-p0",
+        "11-9-p0",
+        "11-10-p1",
+        "11-11-p0",
+        "11-12-p0"
+      ],
+      "log": [
+        {
+          "tick": 175,
+          "kind": "slide"
+        },
+        {
+          "tick": 263,
+          "kind": "left"
+        },
+        {
+          "tick": 303,
+          "kind": "jump"
+        },
+        {
+          "tick": 389,
+          "kind": "right"
+        },
+        {
+          "tick": 389,
+          "kind": "right"
+        },
+        {
+          "tick": 647,
+          "kind": "left"
+        },
+        {
+          "tick": 647,
+          "kind": "left"
+        },
+        {
+          "tick": 687,
+          "kind": "slide"
+        },
+        {
+          "tick": 773,
+          "kind": "right"
+        },
+        {
+          "tick": 775,
+          "kind": "right"
+        },
+        {
+          "tick": 813,
+          "kind": "jump"
+        },
+        {
+          "tick": 899,
+          "kind": "left"
+        },
+        {
+          "tick": 1027,
+          "kind": "left"
+        },
+        {
+          "tick": 1067,
+          "kind": "slide"
+        },
+        {
+          "tick": 1153,
+          "kind": "right"
+        },
+        {
+          "tick": 1155,
+          "kind": "right"
+        },
+        {
+          "tick": 1195,
+          "kind": "jump"
+        },
+        {
+          "tick": 1411,
+          "kind": "left"
+        },
+        {
+          "tick": 1411,
+          "kind": "left"
+        },
+        {
+          "tick": 1451,
+          "kind": "slide"
+        },
+        {
+          "tick": 1537,
+          "kind": "right"
+        },
+        {
+          "tick": 1539,
+          "kind": "right"
+        },
+        {
+          "tick": 1577,
+          "kind": "jump"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 4,
+        "slides": 4,
+        "laneChanges": 15,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.616666666666667,
+      "goal": 10,
+      "unlocked": 12,
+      "best": {
+        "score": 135,
+        "cargo": 12,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 175,
+          "kind": "slide"
+        },
+        {
+          "tick": 263,
+          "kind": "left"
+        },
+        {
+          "tick": 303,
+          "kind": "jump"
+        },
+        {
+          "tick": 389,
+          "kind": "right"
+        },
+        {
+          "tick": 389,
+          "kind": "right"
+        },
+        {
+          "tick": 647,
+          "kind": "left"
+        },
+        {
+          "tick": 647,
+          "kind": "left"
+        },
+        {
+          "tick": 687,
+          "kind": "slide"
+        },
+        {
+          "tick": 773,
+          "kind": "right"
+        },
+        {
+          "tick": 775,
+          "kind": "right"
+        },
+        {
+          "tick": 813,
+          "kind": "jump"
+        },
+        {
+          "tick": 899,
+          "kind": "left"
+        },
+        {
+          "tick": 1027,
+          "kind": "left"
+        },
+        {
+          "tick": 1067,
+          "kind": "slide"
+        },
+        {
+          "tick": 1153,
+          "kind": "right"
+        },
+        {
+          "tick": 1155,
+          "kind": "right"
+        },
+        {
+          "tick": 1195,
+          "kind": "jump"
+        },
+        {
+          "tick": 1411,
+          "kind": "left"
+        },
+        {
+          "tick": 1411,
+          "kind": "left"
+        },
+        {
+          "tick": 1451,
+          "kind": "slide"
+        },
+        {
+          "tick": 1537,
+          "kind": "right"
+        },
+        {
+          "tick": 1539,
+          "kind": "right"
+        },
+        {
+          "tick": 1577,
+          "kind": "jump"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 175,
+          "kind": "slide",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 263,
+          "kind": "left",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 303,
+          "kind": "jump",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 389,
+          "kind": "right",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 389,
+          "kind": "right",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 647,
+          "kind": "left",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 647,
+          "kind": "left",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 685,
+          "kind": "slide",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 773,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 775,
+          "kind": "right",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 813,
+          "kind": "jump",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 899,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1027,
+          "kind": "left",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1067,
+          "kind": "slide",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1153,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1153,
+          "kind": "right",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1195,
+          "kind": "jump",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1411,
+          "kind": "left",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1411,
+          "kind": "left",
+          "acceptedLogLength": 19
+        },
+        {
+          "observedTick": 1449,
+          "kind": "slide",
+          "acceptedLogLength": 20
+        },
+        {
+          "observedTick": 1537,
+          "kind": "right",
+          "acceptedLogLength": 21
+        },
+        {
+          "observedTick": 1537,
+          "kind": "right",
+          "acceptedLogLength": 22
+        },
+        {
+          "observedTick": 1577,
+          "kind": "jump",
+          "acceptedLogLength": 23
+        }
+      ],
+      "wallSeconds": 14.671999999991385,
+      "simulationToWallRatio": 0.9962286441299925
+    },
+    {
+      "level": 12,
+      "ticks": 1722,
+      "distance": 358,
+      "x": 0,
+      "lane": 0,
+      "action": null,
+      "actionTick": 1549,
+      "hp": 3,
+      "cargo": 12,
+      "score": 135,
+      "hitRows": [],
+      "resolved": [
+        "12-1",
+        "12-2",
+        "12-3",
+        "12-4",
+        "12-5",
+        "12-6",
+        "12-7",
+        "12-8",
+        "12-9",
+        "12-10",
+        "12-11",
+        "12-12"
+      ],
+      "collected": [
+        "12-1-p0",
+        "12-2-p0",
+        "12-3-p0",
+        "12-4-p0",
+        "12-5-p0",
+        "12-6-p0",
+        "12-7-p0",
+        "12-8-p0",
+        "12-9-p0",
+        "12-10-p0",
+        "12-11-p0",
+        "12-12-p0"
+      ],
+      "log": [
+        {
+          "tick": 133,
+          "kind": "right"
+        },
+        {
+          "tick": 257,
+          "kind": "left"
+        },
+        {
+          "tick": 299,
+          "kind": "jump"
+        },
+        {
+          "tick": 381,
+          "kind": "left"
+        },
+        {
+          "tick": 423,
+          "kind": "slide"
+        },
+        {
+          "tick": 631,
+          "kind": "right"
+        },
+        {
+          "tick": 675,
+          "kind": "jump"
+        },
+        {
+          "tick": 757,
+          "kind": "left"
+        },
+        {
+          "tick": 881,
+          "kind": "right"
+        },
+        {
+          "tick": 881,
+          "kind": "right"
+        },
+        {
+          "tick": 923,
+          "kind": "slide"
+        },
+        {
+          "tick": 1007,
+          "kind": "left"
+        },
+        {
+          "tick": 1047,
+          "kind": "jump"
+        },
+        {
+          "tick": 1133,
+          "kind": "left"
+        },
+        {
+          "tick": 1257,
+          "kind": "right"
+        },
+        {
+          "tick": 1259,
+          "kind": "right"
+        },
+        {
+          "tick": 1299,
+          "kind": "slide"
+        },
+        {
+          "tick": 1381,
+          "kind": "left"
+        },
+        {
+          "tick": 1509,
+          "kind": "left"
+        },
+        {
+          "tick": 1549,
+          "kind": "jump"
+        }
+      ],
+      "stats": {
+        "hits": 0,
+        "jumps": 4,
+        "slides": 3,
+        "laneChanges": 13,
+        "settlements": 1
+      },
+      "state": "won",
+      "time": 14.35,
+      "goal": 10,
+      "unlocked": 12,
+      "best": {
+        "score": 135,
+        "cargo": 12,
+        "hits": 0
+      },
+      "actualLog": [
+        {
+          "tick": 133,
+          "kind": "right"
+        },
+        {
+          "tick": 257,
+          "kind": "left"
+        },
+        {
+          "tick": 299,
+          "kind": "jump"
+        },
+        {
+          "tick": 381,
+          "kind": "left"
+        },
+        {
+          "tick": 423,
+          "kind": "slide"
+        },
+        {
+          "tick": 631,
+          "kind": "right"
+        },
+        {
+          "tick": 675,
+          "kind": "jump"
+        },
+        {
+          "tick": 757,
+          "kind": "left"
+        },
+        {
+          "tick": 881,
+          "kind": "right"
+        },
+        {
+          "tick": 881,
+          "kind": "right"
+        },
+        {
+          "tick": 923,
+          "kind": "slide"
+        },
+        {
+          "tick": 1007,
+          "kind": "left"
+        },
+        {
+          "tick": 1047,
+          "kind": "jump"
+        },
+        {
+          "tick": 1133,
+          "kind": "left"
+        },
+        {
+          "tick": 1257,
+          "kind": "right"
+        },
+        {
+          "tick": 1259,
+          "kind": "right"
+        },
+        {
+          "tick": 1299,
+          "kind": "slide"
+        },
+        {
+          "tick": 1381,
+          "kind": "left"
+        },
+        {
+          "tick": 1509,
+          "kind": "left"
+        },
+        {
+          "tick": 1549,
+          "kind": "jump"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 133,
+          "kind": "right",
+          "acceptedLogLength": 1
+        },
+        {
+          "observedTick": 257,
+          "kind": "left",
+          "acceptedLogLength": 2
+        },
+        {
+          "observedTick": 299,
+          "kind": "jump",
+          "acceptedLogLength": 3
+        },
+        {
+          "observedTick": 381,
+          "kind": "left",
+          "acceptedLogLength": 4
+        },
+        {
+          "observedTick": 423,
+          "kind": "slide",
+          "acceptedLogLength": 5
+        },
+        {
+          "observedTick": 631,
+          "kind": "right",
+          "acceptedLogLength": 6
+        },
+        {
+          "observedTick": 675,
+          "kind": "jump",
+          "acceptedLogLength": 7
+        },
+        {
+          "observedTick": 757,
+          "kind": "left",
+          "acceptedLogLength": 8
+        },
+        {
+          "observedTick": 881,
+          "kind": "right",
+          "acceptedLogLength": 9
+        },
+        {
+          "observedTick": 881,
+          "kind": "right",
+          "acceptedLogLength": 10
+        },
+        {
+          "observedTick": 923,
+          "kind": "slide",
+          "acceptedLogLength": 11
+        },
+        {
+          "observedTick": 1007,
+          "kind": "left",
+          "acceptedLogLength": 12
+        },
+        {
+          "observedTick": 1047,
+          "kind": "jump",
+          "acceptedLogLength": 13
+        },
+        {
+          "observedTick": 1133,
+          "kind": "left",
+          "acceptedLogLength": 14
+        },
+        {
+          "observedTick": 1257,
+          "kind": "right",
+          "acceptedLogLength": 15
+        },
+        {
+          "observedTick": 1259,
+          "kind": "right",
+          "acceptedLogLength": 16
+        },
+        {
+          "observedTick": 1299,
+          "kind": "slide",
+          "acceptedLogLength": 17
+        },
+        {
+          "observedTick": 1381,
+          "kind": "left",
+          "acceptedLogLength": 18
+        },
+        {
+          "observedTick": 1509,
+          "kind": "left",
+          "acceptedLogLength": 19
+        },
+        {
+          "observedTick": 1549,
+          "kind": "jump",
+          "acceptedLogLength": 20
+        }
+      ],
+      "wallSeconds": 14.421999999991385,
+      "simulationToWallRatio": 0.9950076272367613
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "persisted": {
+    "unlocked": 12,
+    "bestLevels": 12
+  },
+  "passed": true
+}

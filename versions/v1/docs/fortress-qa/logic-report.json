@@ -1,0 +1,76 @@
+{
+  "testedAt": "2026-10-16T03:57:25.639Z",
+  "kind": "deterministic engine simulation, not browser input",
+  "passed": 17,
+  "total": 17,
+  "results": [
+    {
+      "name": "Ten distinct 25x25 maps, valid symbols, clear staging and increasing waves",
+      "status": "passed"
+    },
+    {
+      "name": "All ten stages: player, supplies and three enemy entrances reachable without crossing steel or water",
+      "status": "passed"
+    },
+    {
+      "name": "Ready and pause freeze simulation; resume advances fixed-step time",
+      "status": "passed"
+    },
+    {
+      "name": "Vehicle collides with steel, brick, water and another tank",
+      "status": "passed"
+    },
+    {
+      "name": "Two normal projectile hits destroy brick; steel survives; shots do not tunnel",
+      "status": "passed"
+    },
+    {
+      "name": "Three enemy classes have distinct armour, speed and firing cadence",
+      "status": "passed"
+    },
+    {
+      "name": "Enemy AI advances, saves fire until a target is close, then fires",
+      "status": "passed"
+    },
+    {
+      "name": "Heavy armour absorbs normal hits; rapid damage destroys enemies and scores",
+      "status": "passed"
+    },
+    {
+      "name": "Opposing projectiles intercept each other",
+      "status": "passed"
+    },
+    {
+      "name": "Enemy shots damage beacon and cause base-loss after three effective hits",
+      "status": "passed"
+    },
+    {
+      "name": "Player damage respawns with protection and exhausts three deployments",
+      "status": "passed"
+    },
+    {
+      "name": "Player shots never damage their own beacon",
+      "status": "passed"
+    },
+    {
+      "name": "Repair caps health; shield prevents damage; rapid fire expires and emits labelled feedback",
+      "status": "passed"
+    },
+    {
+      "name": "All queued targets cleared triggers victory; restart creates independent clean state",
+      "status": "passed"
+    },
+    {
+      "name": "Enemy stops and visibly winds up before firing at a nearby player",
+      "status": "passed"
+    },
+    {
+      "name": "Off-centre enemies align their hull before turning beside a steel pillar",
+      "status": "passed"
+    },
+    {
+      "name": "Every undefended map naturally resolves to defeat within 180 simulated seconds",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "testedAt": "2026-10-16T04:24:36.251457+00:00",
+  "url": "http://127.0.0.1:4174/games/maze/",
+  "checks": {
+    "firstVisitTutorial": true,
+    "pauseResumeClock": true,
+    "capacityPickup": true,
+    "realTwoBombChain": {
+      "chains": 1,
+      "hp": 3,
+      "planted": 3
+    },
+    "restartReset": true,
+    "actualSelfDamageFailure": {
+      "hp": 0,
+      "reason": "被爆风击中。放下炸弹后，转过一个拐角再等待。"
+    },
+    "failureRetry": true,
+    "soundPersists": true,
+    "tutorialPersists": true,
+    "helpEscResumes": true,
+    "lockedStages": true,
+    "touchMoveAndPlant": true,
+    "responsiveWidths": [
+      {
+        "width": 360,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 768,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 1280,
+        "horizontalOverflow": false
+      }
+    ],
+    "atlas72AndHonestReleaseLabels": true,
+    "atlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": []
+}

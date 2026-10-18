@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-10-16T10:17:56.383Z",
+  "passed": 12,
+  "fixtureBoundary": "Exceptional rule states use isolated buildGame instances, never production map edits or actual-win evidence",
+  "tests": [
+    "all twenty authored mine counts, eight-neighbor numbers, void masks and safe zero starting points",
+    "public observation and checkpoint contain no unrevealed number or mine location",
+    "first reveal is restricted to disclosed safe point; arbitrary first reveal and premature flags do nothing",
+    "zero flood stops at voids and preserves flags, then unflagging a safe cell permits final clear",
+    "flag cap, toggle and covered/open guards preserve public counts",
+    "chord requires exact neighbor flag count; wrong flags cause mine failure and cannot win simultaneously",
+    "correct chord opens multiple safe cells; normal campaign victory settles only once",
+    "pause freezes time and all actions, hints explain public constraints without acting",
+    "hint assumptions are explicit; contradictory visible flags are reported without an answer lookup",
+    "versioned operation-log restore replays rules; empty started run restores paused; corrupt versions/actions reject",
+    "fresh restart retains no flags, revealed cells, hints or elapsed time",
+    "twenty production-rule runs complete using only public-clue deductions; after-choice audit confirms each conclusion"
+  ]
+}

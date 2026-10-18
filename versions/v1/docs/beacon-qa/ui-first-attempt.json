@@ -1,0 +1,21 @@
+{
+  "reason": "A follow-up tap immediately during native inertial scrolling produced pointerdown/up but no click. After 550ms settling the next tap produced a click and selected b1, with no AP/revision change. No stale dragged flag on the follow-up target.",
+  "fix": "Wait for native page scrolling to settle, then test one actual tap and immediately assert selection before attempting mode activation. No battle rule or health/AP changes.",
+  "completedChecks": {
+    "TutorialGridSemanticsAndFreshAP": true,
+    "MovementAndFullAttackRangeInvalidTargetSpendsNothing": true,
+    "RepeatedBoardClicksOnlyPlanEscapeCancelsWithoutAP": true,
+    "KeyboardRovingTargetAndDoubleConfirmExecutesOnce": true,
+    "EndTurnNeedsConfirmationCancelKeepsPendingPlan": true,
+    "PauseClearsUnsubmittedPlanFreezesCommittedState": true,
+    "RestartConfirmationCanPreserveOrResetCurrentBattle": true,
+    "EnemyPhaseUsesVisibleFiniteActionsAndPausesMidReply": true,
+    "ReloadKeepsExactEnemyHPAPPositionsAndDoesNotRepeatTurn": true,
+    "NormalPostRestoreFullWinBestUnlockAndFreshReplay": true,
+    "CorruptCurrentSavePreservesIndependentBestAndUnlock": true,
+    "NormalEnemyDefeatAndRetryFreshResourcesBestKept": true,
+    "SyntheticBlurAndHelpCancelPendingPlansWithoutCombatChanges": true,
+    "ActualTouchSelectPreviewConfirmAndAP": true,
+    "RepeatedTouchTargetsDoNotCommitWithoutConfirmation": true
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "testedAt": "2026-10-16T22:24:33.982141+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/duel/",
+  "passed": true,
+  "method": "Actual live heavy start plus held movement then direct reload, with no manual pause. Pagehide may occur after additional legitimate ticks; persisted checkpoint is independently replayed in a separate production-engine Node instance. No browser state writes.",
+  "beforeRefresh": {
+    "level": 1,
+    "ticks": 17,
+    "player": {
+      "id": "player",
+      "x": 270,
+      "face": 1,
+      "hp": 100,
+      "maxHP": 100,
+      "energy": 81.86666666666656,
+      "gained": 1.8666666666665606,
+      "spent": 20,
+      "move": 1,
+      "guard": false,
+      "guardUntil": 0,
+      "action": {
+        "id": 1,
+        "kind": "heavy",
+        "age": 0.13333333333333333,
+        "facing": 1,
+        "wind": 0.38,
+        "active": 0.12,
+        "recovery": 0.42,
+        "range": 148,
+        "damage": 26,
+        "resolved": false
+      },
+      "cooldown": 123,
+      "stunUntil": 0,
+      "invulUntil": 0,
+      "nextThink": 0,
+      "cycle": 0,
+      "damageTaken": 0
+    },
+    "enemy": {
+      "id": "enemy",
+      "x": 615.125,
+      "face": -1,
+      "hp": 80,
+      "maxHP": 80,
+      "energy": 100,
+      "gained": 0,
+      "spent": 0,
+      "move": -1,
+      "guard": false,
+      "guardUntil": 0,
+      "action": null,
+      "cooldown": 0,
+      "stunUntil": 0,
+      "invulUntil": 0,
+      "nextThink": 37,
+      "cycle": 0,
+      "damageTaken": 0
+    },
+    "serial": 1,
+    "swings": [
+      {
+        "id": 1,
+        "owner": "player",
+        "kind": "heavy",
+        "start": 1,
+        "facing": 1,
+        "wind": 0.38,
+        "active": 0.12,
+        "recovery": 0.42,
+        "range": 148,
+        "damage": 26
+      }
+    ],
+    "events": [],
+    "log": [
+      {
+        "tick": 1,
+        "kind": "heavy"
+      },
+      {
+        "tick": 17,
+        "kind": "move",
+        "value": 1
+      }
+    ],
+    "reason": "",
+    "score": 0,
+    "stats": {
+      "attacks": 1,
+      "hits": 0,
+      "blocks": 0,
+      "evades": 0,
+      "breaks": 0,
+      "settlements": 0
+    },
+    "invariants": {
+      "bounds": true,
+      "separation": true,
+      "health": true,
+      "damageLedger": true,
+      "energyBounds": true,
+      "energyLedger": true,
+      "uniqueSwings": true,
+      "oneContact": true,
+      "declaredRange": true,
+      "activeWindow": true,
+      "guardDirection": true,
+      "settlement": true
+    },
+    "playerPhase": "前摇",
+    "enemyPhase": "移动"
+  },
+  "savedCheckpoint": {
+    "version": 1,
+    "level": 1,
+    "ticks": 57,
+    "commands": [
+      {
+        "tick": 1,
+        "kind": "heavy"
+      },
+      {
+        "tick": 17,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 57,
+        "kind": "move",
+        "value": 0
+      }
+    ]
+  },
+  "restored": {
+    "level": 1,
+    "ticks": 57,
+    "player": {
+      "id": "player",
+      "x": 270,
+      "face": 1,
+      "hp": 100,
+      "maxHP": 100,
+      "energy": 86.53333333333296,
+      "gained": 6.533333333332962,
+      "spent": 20,
+      "move": 0,
+      "guard": false,
+      "guardUntil": 0,
+      "action": {
+        "id": 1,
+        "kind": "heavy",
+        "age": 0.4666666666666673,
+        "facing": 1,
+        "wind": 0.38,
+        "active": 0.12,
+        "recovery": 0.42,
+        "range": 148,
+        "damage": 26,
+        "resolved": false
+      },
+      "cooldown": 123,
+      "stunUntil": 0,
+      "invulUntil": 0,
+      "nextThink": 0,
+      "cycle": 0,
+      "damageTaken": 0
+    },
+    "enemy": {
+      "id": "enemy",
+      "x": 580.125,
+      "face": -1,
+      "hp": 80,
+      "maxHP": 80,
+      "energy": 100,
+      "gained": 0,
+      "spent": 0,
+      "move": -1,
+      "guard": false,
+      "guardUntil": 0,
+      "action": null,
+      "cooldown": 0,
+      "stunUntil": 0,
+      "invulUntil": 0,
+      "nextThink": 73,
+      "cycle": 0,
+      "damageTaken": 0
+    },
+    "serial": 1,
+    "swings": [
+      {
+        "id": 1,
+        "owner": "player",
+        "kind": "heavy",
+        "start": 1,
+        "facing": 1,
+        "wind": 0.38,
+        "active": 0.12,
+        "recovery": 0.42,
+        "range": 148,
+        "damage": 26
+      }
+    ],
+    "events": [],
+    "log": [
+      {
+        "tick": 1,
+        "kind": "heavy"
+      },
+      {
+        "tick": 17,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 57,
+        "kind": "move",
+        "value": 0
+      }
+    ],
+    "reason": "",
+    "score": 0,
+    "stats": {
+      "attacks": 1,
+      "hits": 0,
+      "blocks": 0,
+      "evades": 0,
+      "breaks": 0,
+      "settlements": 0
+    },
+    "invariants": {
+      "bounds": true,
+      "separation": true,
+      "health": true,
+      "damageLedger": true,
+      "energyBounds": true,
+      "energyLedger": true,
+      "uniqueSwings": true,
+      "oneContact": true,
+      "declaredRange": true,
+      "activeWindow": true,
+      "guardDirection": true,
+      "settlement": true
+    },
+    "playerPhase": "出招",
+    "enemyPhase": "移动"
+  },
+  "exactFields": [
+    "level",
+    "ticks",
+    "player",
+    "enemy",
+    "serial",
+    "swings",
+    "events",
+    "log",
+    "reason",
+    "score",
+    "stats",
+    "invariants",
+    "playerPhase",
+    "enemyPhase"
+  ],
+  "continuedWin": {
+    "hp": 92,
+    "score": 1184,
+    "stats": {
+      "attacks": 5,
+      "hits": 4,
+      "blocks": 4,
+      "evades": 0,
+      "breaks": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 1,
+        "kind": "heavy"
+      },
+      {
+        "tick": 17,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 57,
+        "kind": "move",
+        "value": 0
+      },
+      {
+        "tick": 116,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 172,
+        "kind": "move",
+        "value": 0
+      },
+      {
+        "tick": 186,
+        "kind": "guard",
+        "value": true
+      },
+      {
+        "tick": 266,
+        "kind": "guard",
+        "value": false
+      },
+      {
+        "tick": 266,
+        "kind": "heavy"
+      },
+      {
+        "tick": 380,
+        "kind": "guard",
+        "value": true
+      },
+      {
+        "tick": 432,
+        "kind": "guard",
+        "value": false
+      },
+      {
+        "tick": 432,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 438,
+        "kind": "move",
+        "value": 0
+      },
+      {
+        "tick": 440,
+        "kind": "heavy"
+      },
+      {
+        "tick": 554,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 560,
+        "kind": "move",
+        "value": 0
+      },
+      {
+        "tick": 566,
+        "kind": "guard",
+        "value": true
+      },
+      {
+        "tick": 644,
+        "kind": "guard",
+        "value": false
+      },
+      {
+        "tick": 646,
+        "kind": "heavy"
+      },
+      {
+        "tick": 762,
+        "kind": "guard",
+        "value": true
+      },
+      {
+        "tick": 814,
+        "kind": "guard",
+        "value": false
+      },
+      {
+        "tick": 814,
+        "kind": "move",
+        "value": 1
+      },
+      {
+        "tick": 820,
+        "kind": "move",
+        "value": 0
+      },
+      {
+        "tick": 820,
+        "kind": "heavy"
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

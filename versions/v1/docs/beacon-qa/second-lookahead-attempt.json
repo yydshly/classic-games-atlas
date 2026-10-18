@@ -1,0 +1,3410 @@
+{
+  "testedAt": "2026-10-16T13:01:35.629Z",
+  "method": "Read-only state policy emits ordinary move/attack/heal/end-turn commands with production rules. No live HP/AP/position/enemy/objective/result writes; enemy actions use shared production rules.",
+  "results": [
+    {
+      "stage": 1,
+      "end": {
+        "level": 1,
+        "state": "won",
+        "phase": "player",
+        "round": 4,
+        "held": 0,
+        "revision": 25,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 4,
+            "hp": 3,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 3,
+            "hp": 2,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 3,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 9,
+          "attacks": 10,
+          "heals": 0,
+          "kills": 2,
+          "blueLosses": 0,
+          "damageTaken": 11,
+          "enemyActions": 8,
+          "endTurns": 3,
+          "settlements": 1
+        },
+        "log": [
+          "第 3 回合，小队行动",
+          "小队弧手造成 2 点伤害",
+          "小队弧手移动 1 格",
+          "小队礁卫移动 3 格",
+          "小队礁卫造成 3 点伤害",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手造成 3 点伤害",
+          "第 4 回合，小队行动",
+          "小队礁卫造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b1",
+          "x": 2,
+          "y": 4,
+          "target": "r2"
+        }
+      },
+      "score": 1092,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 5,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 1,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 2
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 8
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 9
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 3,
+          "revision": 10
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 11
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 12
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 16
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 3,
+          "revision": 17
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 4,
+          "revision": 18
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 19
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 20
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 24
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "end": {
+        "level": 2,
+        "state": "won",
+        "phase": "player",
+        "round": 4,
+        "held": 0,
+        "revision": 35,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 0,
+            "y": 4,
+            "hp": 4,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "medic",
+            "x": 0,
+            "y": 2,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 3,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "warden",
+            "x": 1,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "ranger",
+            "x": 4,
+            "y": 4,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 12,
+          "attacks": 15,
+          "heals": 2,
+          "kills": 3,
+          "blueLosses": 1,
+          "damageTaken": 18,
+          "enemyActions": 14,
+          "endTurns": 3,
+          "settlements": 1
+        },
+        "log": [
+          "小队弧手造成 3 点伤害",
+          "小队灯医移动 2 格",
+          "小队灯医修复 3 点",
+          "小队弧手造成 3 点伤害",
+          "敌方回合开始",
+          "敌方礁卫造成 3 点伤害",
+          "敌方礁卫移动 1 格",
+          "第 4 回合，小队行动",
+          "小队弧手造成 3 点伤害",
+          "小队弧手造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b2",
+          "x": 0,
+          "y": 4,
+          "target": "r2"
+        }
+      },
+      "score": 1071,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 1,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 1
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 9
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 1,
+          "revision": 10
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 11
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 1,
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 15
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 23
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 24
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 25
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 2,
+          "revision": 26
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b2",
+          "revision": 27
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 28
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 29
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 33
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 34
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "end": {
+        "level": 3,
+        "state": "won",
+        "phase": "player",
+        "round": 5,
+        "held": 0,
+        "revision": 42,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 4,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 3,
+            "y": 2,
+            "hp": 7,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "medic",
+            "x": 3,
+            "y": 1,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 4,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "medic",
+            "x": 5,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 14,
+          "attacks": 17,
+          "heals": 3,
+          "kills": 3,
+          "blueLosses": 1,
+          "damageTaken": 18,
+          "enemyActions": 16,
+          "endTurns": 4,
+          "settlements": 1
+        },
+        "log": [
+          "小队礁卫造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队弧手移动 3 格",
+          "小队弧手造成 3 点伤害",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手造成 3 点伤害",
+          "第 5 回合，小队行动",
+          "小队弧手造成 3 点伤害",
+          "小队弧手造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b2",
+          "x": 3,
+          "y": 2,
+          "target": "r2"
+        }
+      },
+      "score": 1046,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 4,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 1
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 9
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 10
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 11
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 1,
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 3,
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b2",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 15
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 1,
+          "revision": 21
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 3,
+          "y": 1,
+          "revision": 22
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 23
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 24
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 25
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 31
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 32
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 33
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b2",
+          "x": 3,
+          "y": 2,
+          "revision": 34
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 35
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 36
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 40
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 41
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "end": {
+        "level": 4,
+        "state": "won",
+        "phase": "player",
+        "round": 7,
+        "held": 0,
+        "revision": 58,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 2,
+            "hp": 9,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 3,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "medic",
+            "x": 1,
+            "y": 2,
+            "hp": 5,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "courier",
+            "x": 7,
+            "y": 3,
+            "hp": 8,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "medic",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          }
+        ],
+        "stats": {
+          "moves": 22,
+          "attacks": 18,
+          "heals": 6,
+          "kills": 3,
+          "blueLosses": 0,
+          "damageTaken": 16,
+          "enemyActions": 20,
+          "endTurns": 6,
+          "settlements": 1
+        },
+        "log": [
+          "敌方弧手造成 3 点伤害",
+          "第 6 回合，小队行动",
+          "小队弧手造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格",
+          "小队引航员移动 3 格",
+          "敌方回合开始",
+          "第 7 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格"
+        ],
+        "reason": "威胁清除，引航员安全抵达",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b4",
+          "x": 7,
+          "y": 3
+        }
+      },
+      "score": 1102,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 3,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 3,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 1,
+          "revision": 2
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 0,
+          "revision": 3
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 4
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 2,
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 3,
+          "y": 0,
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 18
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 1,
+          "revision": 24
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 2,
+          "revision": 25
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 26
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 32
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 33
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 34
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 35
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 41
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 42
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 43
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 44
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b1",
+          "revision": 45
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 46
+        },
+        {
+          "round": 6,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 50
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b2",
+          "revision": 51
+        },
+        {
+          "round": 6,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 4,
+          "revision": 52
+        },
+        {
+          "round": 6,
+          "kind": "move",
+          "unit": "b4",
+          "x": 4,
+          "y": 3,
+          "revision": 53
+        },
+        {
+          "round": 6,
+          "kind": "end-turn",
+          "revision": 54
+        },
+        {
+          "round": 7,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b2",
+          "revision": 56
+        },
+        {
+          "round": 7,
+          "kind": "move",
+          "unit": "b4",
+          "x": 7,
+          "y": 3,
+          "revision": 57
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "end": {
+        "level": 5,
+        "state": "won",
+        "phase": "enemy",
+        "round": 13,
+        "held": 3,
+        "revision": 80,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 4,
+            "y": 3,
+            "hp": 3,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "medic",
+            "x": 2,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "warden",
+            "x": 1,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 26,
+          "attacks": 24,
+          "heals": 5,
+          "kills": 3,
+          "blueLosses": 2,
+          "damageTaken": 35,
+          "enemyActions": 28,
+          "endTurns": 13,
+          "settlements": 1
+        },
+        "log": [
+          "小队礁卫移动 3 格",
+          "小队礁卫移动 1 格",
+          "敌方回合开始",
+          "灯台已连续守住 1 轮",
+          "第 12 回合，小队行动",
+          "敌方回合开始",
+          "灯台已连续守住 2 轮",
+          "第 13 回合，小队行动",
+          "敌方回合开始",
+          "灯台已连续守住 3 轮"
+        ],
+        "reason": "威胁清除，灯台已守稳",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 3
+        }
+      },
+      "score": 695,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 0,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 2,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 2
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 10
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 0,
+          "y": 0,
+          "revision": 11
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 0,
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 1,
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 15
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 23
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r1",
+          "revision": 24
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 3,
+          "revision": 25
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b1",
+          "x": 1,
+          "y": 1,
+          "revision": 26
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b3",
+          "revision": 27
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 28
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 29
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 35
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b3",
+          "revision": 36
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 2,
+          "revision": 37
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 38
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b3",
+          "revision": 42
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 43
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b3",
+          "revision": 47
+        },
+        {
+          "round": 6,
+          "kind": "end-turn",
+          "revision": 48
+        },
+        {
+          "round": 7,
+          "kind": "heal",
+          "unit": "b3",
+          "target": "b3",
+          "revision": 52
+        },
+        {
+          "round": 7,
+          "kind": "end-turn",
+          "revision": 53
+        },
+        {
+          "round": 8,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 1,
+          "revision": 57
+        },
+        {
+          "round": 8,
+          "kind": "end-turn",
+          "revision": 58
+        },
+        {
+          "round": 9,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 62
+        },
+        {
+          "round": 9,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 0,
+          "revision": 63
+        },
+        {
+          "round": 9,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 0,
+          "revision": 64
+        },
+        {
+          "round": 9,
+          "kind": "end-turn",
+          "revision": 65
+        },
+        {
+          "round": 10,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 69
+        },
+        {
+          "round": 10,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 70
+        },
+        {
+          "round": 10,
+          "kind": "end-turn",
+          "revision": 71
+        },
+        {
+          "round": 11,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 2,
+          "revision": 73
+        },
+        {
+          "round": 11,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 3,
+          "revision": 74
+        },
+        {
+          "round": 11,
+          "kind": "end-turn",
+          "revision": 75
+        },
+        {
+          "round": 12,
+          "kind": "end-turn",
+          "revision": 77
+        },
+        {
+          "round": 13,
+          "kind": "end-turn",
+          "revision": 79
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "end": {
+        "level": 6,
+        "state": "won",
+        "phase": "player",
+        "round": 4,
+        "held": 0,
+        "revision": 43,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 1,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 2,
+            "hp": 9,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 0,
+            "y": 3,
+            "hp": 7,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 1,
+            "y": 2,
+            "hp": 7,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "ranger",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "medic",
+            "x": 3,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 19,
+          "attacks": 17,
+          "heals": 1,
+          "kills": 4,
+          "blueLosses": 1,
+          "damageTaken": 12,
+          "enemyActions": 16,
+          "endTurns": 3,
+          "settlements": 1
+        },
+        "log": [
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手移动 2 格",
+          "第 4 回合，小队行动",
+          "小队弧手移动 2 格",
+          "小队弧手造成 2 点伤害",
+          "小队灯医移动 3 格",
+          "小队灯医造成 1 点伤害",
+          "小队礁卫移动 3 格",
+          "小队礁卫造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b2",
+          "x": 2,
+          "y": 2,
+          "target": "r3"
+        }
+      },
+      "score": 1189,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 0
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 10
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 11
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 3,
+          "y": 4,
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 3,
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 4,
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 18
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 26
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b2",
+          "revision": 27
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 28
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 29
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 30
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 5,
+          "revision": 31
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 32
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 33
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 3,
+          "revision": 37
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 38
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 2,
+          "revision": 39
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b4",
+          "target": "r3",
+          "revision": 40
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 2,
+          "revision": 41
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 42
+        }
+      ]
+    },
+    {
+      "stage": 7,
+      "end": {
+        "level": 7,
+        "state": "won",
+        "phase": "player",
+        "round": 6,
+        "held": 0,
+        "revision": 70,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 5,
+            "y": 2,
+            "hp": 3,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 1,
+            "y": 5,
+            "hp": 6,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 2,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 2,
+            "y": 1,
+            "hp": 4,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "b5",
+            "side": "blue",
+            "type": "courier",
+            "x": 7,
+            "y": 3,
+            "hp": 8,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 2,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "medic",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          }
+        ],
+        "stats": {
+          "moves": 30,
+          "attacks": 24,
+          "heals": 6,
+          "kills": 4,
+          "blueLosses": 0,
+          "damageTaken": 27,
+          "enemyActions": 24,
+          "endTurns": 5,
+          "settlements": 1
+        },
+        "log": [
+          "小队灯医移动 1 格",
+          "小队弧手造成 3 点伤害",
+          "小队弧手造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格",
+          "小队引航员移动 3 格",
+          "敌方回合开始",
+          "第 6 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队引航员移动 1 格"
+        ],
+        "reason": "威胁清除，引航员安全抵达",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b5",
+          "x": 7,
+          "y": 3
+        }
+      },
+      "score": 1194,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 2,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 1,
+          "y": 0,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 1,
+          "revision": 2
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 5,
+          "revision": 3
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 6,
+          "revision": 4
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 5
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 5,
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 18
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 6,
+          "revision": 19
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 2,
+          "revision": 20
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 21
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 22
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 32
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 33
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 34
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 4,
+          "revision": 35
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b3",
+          "revision": 36
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 0,
+          "y": 5,
+          "revision": 37
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 38
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 44
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 2,
+          "revision": 45
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 46
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 47
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 0,
+          "revision": 48
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 5,
+          "revision": 49
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 50
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 5,
+          "y": 2,
+          "revision": 51
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 52
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 58
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 59
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 1,
+          "revision": 60
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 61
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 62
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b3",
+          "revision": 63
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b5",
+          "x": 3,
+          "y": 3,
+          "revision": 64
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b5",
+          "x": 6,
+          "y": 3,
+          "revision": 65
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 66
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 68
+        },
+        {
+          "round": 6,
+          "kind": "move",
+          "unit": "b5",
+          "x": 7,
+          "y": 3,
+          "revision": 69
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "end": {
+        "level": 8,
+        "state": "won",
+        "phase": "enemy",
+        "round": 8,
+        "held": 4,
+        "revision": 60,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 3,
+            "y": 3,
+            "hp": 9,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 4,
+            "y": 1,
+            "hp": 8,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 2,
+            "y": 5,
+            "hp": 5,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 4,
+            "y": 3,
+            "hp": 4,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "warden",
+            "x": 3,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "medic",
+            "x": 3,
+            "y": 4,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 18,
+          "attacks": 21,
+          "heals": 6,
+          "kills": 4,
+          "blueLosses": 0,
+          "damageTaken": 24,
+          "enemyActions": 16,
+          "endTurns": 8,
+          "settlements": 1
+        },
+        "log": [
+          "敌方回合开始",
+          "灯台已连续守住 2 轮",
+          "第 7 回合，小队行动",
+          "小队灯医修复 3 点",
+          "敌方回合开始",
+          "灯台已连续守住 3 轮",
+          "第 8 回合，小队行动",
+          "小队灯医修复 3 点",
+          "敌方回合开始",
+          "灯台已连续守住 4 轮"
+        ],
+        "reason": "威胁清除，灯台已守稳",
+        "lastAction": {
+          "kind": "heal",
+          "unit": "b4",
+          "x": 4,
+          "y": 3,
+          "target": "b2"
+        }
+      },
+      "score": 1153,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 5,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 2
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 12
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 13
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r1",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 3,
+          "y": 6,
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 3,
+          "revision": 18
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b3",
+          "revision": 19
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 20
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b4",
+          "x": 2,
+          "y": 2,
+          "revision": 26
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 27
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 28
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 3,
+          "y": 5,
+          "revision": 29
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 30
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b4",
+          "x": 3,
+          "y": 4,
+          "revision": 31
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 32
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 36
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b4",
+          "target": "r2",
+          "revision": 37
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 2,
+          "revision": 38
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 3,
+          "revision": 39
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 40
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 44
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 45
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 46
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b2",
+          "x": 4,
+          "y": 3,
+          "revision": 47
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b2",
+          "x": 4,
+          "y": 1,
+          "revision": 48
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b4",
+          "x": 4,
+          "y": 3,
+          "revision": 49
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 50
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b2",
+          "revision": 52
+        },
+        {
+          "round": 6,
+          "kind": "end-turn",
+          "revision": 53
+        },
+        {
+          "round": 7,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 55
+        },
+        {
+          "round": 7,
+          "kind": "end-turn",
+          "revision": 56
+        },
+        {
+          "round": 8,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b2",
+          "revision": 58
+        },
+        {
+          "round": 8,
+          "kind": "end-turn",
+          "revision": 59
+        }
+      ]
+    },
+    {
+      "stage": 9,
+      "end": {
+        "level": 9,
+        "state": "won",
+        "phase": "player",
+        "round": 6,
+        "held": 0,
+        "revision": 65,
+        "enemySteps": 0,
+        "enemyBudget": 0,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 1,
+            "hp": 6,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 1,
+            "y": 3,
+            "hp": 7,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 0,
+            "y": 0,
+            "hp": 4,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 1,
+            "y": 2,
+            "hp": 4,
+            "ap": 1,
+            "repairUsed": true
+          },
+          {
+            "id": "b5",
+            "side": "blue",
+            "type": "courier",
+            "x": 7,
+            "y": 3,
+            "hp": 7,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 1,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "medic",
+            "x": 2,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 27,
+          "attacks": 23,
+          "heals": 5,
+          "kills": 4,
+          "blueLosses": 0,
+          "damageTaken": 27,
+          "enemyActions": 22,
+          "endTurns": 5,
+          "settlements": 1
+        },
+        "log": [
+          "第 5 回合，小队行动",
+          "小队礁卫造成 3 点伤害",
+          "小队礁卫造成 3 点伤害",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格",
+          "小队引航员移动 3 格",
+          "敌方回合开始",
+          "第 6 回合，小队行动",
+          "小队灯医修复 3 点",
+          "小队引航员移动 3 格"
+        ],
+        "reason": "威胁清除，引航员安全抵达",
+        "lastAction": {
+          "kind": "move",
+          "unit": "b5",
+          "x": 7,
+          "y": 3
+        }
+      },
+      "score": 1194,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 3,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 0,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b3",
+          "x": 2,
+          "y": 1,
+          "revision": 2
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 0,
+          "revision": 3
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 4
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 0,
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 2,
+          "revision": 18
+        },
+        {
+          "round": 2,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b5",
+          "revision": 19
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 0,
+          "revision": 20
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 21
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 0,
+          "y": 0,
+          "revision": 29
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b1",
+          "x": 0,
+          "y": 1,
+          "revision": 30
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 31
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r1",
+          "revision": 32
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 3,
+          "revision": 33
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 34
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 2,
+          "revision": 35
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b1",
+          "x": 0,
+          "y": 2,
+          "revision": 36
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 37
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 45
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r4",
+          "revision": 46
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r1",
+          "revision": 47
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r1",
+          "revision": 48
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 49
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 1,
+          "revision": 50
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 51
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 52
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 56
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r2",
+          "revision": 57
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 58
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b5",
+          "x": 2,
+          "y": 4,
+          "revision": 59
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b5",
+          "x": 4,
+          "y": 3,
+          "revision": 60
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 61
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 63
+        },
+        {
+          "round": 6,
+          "kind": "move",
+          "unit": "b5",
+          "x": 7,
+          "y": 3,
+          "revision": 64
+        }
+      ]
+    },
+    {
+      "stage": 10,
+      "end": {
+        "level": 10,
+        "state": "lost",
+        "phase": "enemy",
+        "round": 9,
+        "held": 0,
+        "revision": 104,
+        "enemySteps": 1,
+        "enemyBudget": 4,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 4,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "warden",
+            "x": 0,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b3",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 6,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "b4",
+            "side": "blue",
+            "type": "medic",
+            "x": 0,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 0,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "warden",
+            "x": 2,
+            "y": 4,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r3",
+            "side": "red",
+            "type": "ranger",
+            "x": 3,
+            "y": 1,
+            "hp": 1,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "r4",
+            "side": "red",
+            "type": "warden",
+            "x": 0,
+            "y": 0,
+            "hp": 6,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r5",
+            "side": "red",
+            "type": "medic",
+            "x": 1,
+            "y": 3,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": true
+          }
+        ],
+        "stats": {
+          "moves": 45,
+          "attacks": 34,
+          "heals": 8,
+          "kills": 3,
+          "blueLosses": 4,
+          "damageTaken": 50,
+          "enemyActions": 47,
+          "endTurns": 9,
+          "settlements": 1
+        },
+        "log": [
+          "小队礁卫造成 3 点伤害",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手移动 2 格",
+          "敌方礁卫移动 1 格",
+          "敌方礁卫造成 3 点伤害",
+          "灯台守点中断",
+          "第 9 回合，小队行动",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害"
+        ],
+        "reason": "小队已全部倒下",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "r3",
+          "x": 3,
+          "y": 1,
+          "target": "b4"
+        }
+      },
+      "score": 650,
+      "normalActions": [
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b2",
+          "x": 2,
+          "y": 5,
+          "revision": 0
+        },
+        {
+          "round": 1,
+          "kind": "move",
+          "unit": "b1",
+          "x": 2,
+          "y": 1,
+          "revision": 1
+        },
+        {
+          "round": 1,
+          "kind": "end-turn",
+          "revision": 2
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r2",
+          "revision": 14
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b2",
+          "x": 1,
+          "y": 5,
+          "revision": 15
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 16
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r2",
+          "revision": 17
+        },
+        {
+          "round": 2,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 18
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 3,
+          "revision": 19
+        },
+        {
+          "round": 2,
+          "kind": "move",
+          "unit": "b1",
+          "x": 1,
+          "y": 0,
+          "revision": 20
+        },
+        {
+          "round": 2,
+          "kind": "end-turn",
+          "revision": 21
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 31
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r1",
+          "revision": 32
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 0,
+          "y": 5,
+          "revision": 33
+        },
+        {
+          "round": 3,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r3",
+          "revision": 34
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b3",
+          "x": 1,
+          "y": 6,
+          "revision": 35
+        },
+        {
+          "round": 3,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b2",
+          "revision": 36
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 2,
+          "revision": 37
+        },
+        {
+          "round": 3,
+          "kind": "move",
+          "unit": "b2",
+          "x": 0,
+          "y": 6,
+          "revision": 38
+        },
+        {
+          "round": 3,
+          "kind": "end-turn",
+          "revision": 39
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b1",
+          "x": 0,
+          "y": 1,
+          "revision": 47
+        },
+        {
+          "round": 4,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b1",
+          "revision": 48
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 49
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b3",
+          "target": "r4",
+          "revision": 50
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b4",
+          "target": "r5",
+          "revision": 51
+        },
+        {
+          "round": 4,
+          "kind": "move",
+          "unit": "b2",
+          "x": 0,
+          "y": 3,
+          "revision": 52
+        },
+        {
+          "round": 4,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r5",
+          "revision": 53
+        },
+        {
+          "round": 4,
+          "kind": "end-turn",
+          "revision": 54
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r5",
+          "revision": 62
+        },
+        {
+          "round": 5,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b2",
+          "revision": 63
+        },
+        {
+          "round": 5,
+          "kind": "attack",
+          "unit": "b2",
+          "target": "r3",
+          "revision": 64
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b1",
+          "x": 3,
+          "y": 1,
+          "revision": 65
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 3,
+          "revision": 66
+        },
+        {
+          "round": 5,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 2,
+          "revision": 67
+        },
+        {
+          "round": 5,
+          "kind": "end-turn",
+          "revision": 68
+        },
+        {
+          "round": 6,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 74
+        },
+        {
+          "round": 6,
+          "kind": "move",
+          "unit": "b4",
+          "x": 1,
+          "y": 0,
+          "revision": 75
+        },
+        {
+          "round": 6,
+          "kind": "end-turn",
+          "revision": 76
+        },
+        {
+          "round": 7,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 82
+        },
+        {
+          "round": 7,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 0,
+          "revision": 83
+        },
+        {
+          "round": 7,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 1,
+          "revision": 84
+        },
+        {
+          "round": 7,
+          "kind": "move",
+          "unit": "b1",
+          "x": 5,
+          "y": 1,
+          "revision": 85
+        },
+        {
+          "round": 7,
+          "kind": "end-turn",
+          "revision": 86
+        },
+        {
+          "round": 8,
+          "kind": "heal",
+          "unit": "b4",
+          "target": "b4",
+          "revision": 92
+        },
+        {
+          "round": 8,
+          "kind": "move",
+          "unit": "b4",
+          "x": 0,
+          "y": 1,
+          "revision": 93
+        },
+        {
+          "round": 8,
+          "kind": "move",
+          "unit": "b1",
+          "x": 4,
+          "y": 3,
+          "revision": 94
+        },
+        {
+          "round": 8,
+          "kind": "attack",
+          "unit": "b1",
+          "target": "r3",
+          "revision": 95
+        },
+        {
+          "round": 8,
+          "kind": "end-turn",
+          "revision": 96
+        },
+        {
+          "round": 9,
+          "kind": "end-turn",
+          "revision": 102
+        }
+      ]
+    }
+  ]
+}

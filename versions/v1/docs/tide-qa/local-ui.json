@@ -1,0 +1,406 @@
+{
+  "testedAt": "2026-10-16T15:59:24.355615+00:00",
+  "url": "http://127.0.0.1:4174/games/tide/",
+  "checks": [
+    "Ready is static, whole path visible, and no free firing before start",
+    "Four colors have distinct shape SVGs; current and next preview carry names",
+    "Native level dialog and fresh progression locks",
+    "Tutorial cancel/start behavior preserves the initial pearls",
+    "X swaps only two previews and rapid/repeated key events cannot redraw ammo",
+    "Native range Home/End/arrow endpoints remain editable without wrapping focus races",
+    "Keyboard rotation continues across Enter firing and stops on keyup",
+    "Held Space cannot shoot twice even after flight and reload finish",
+    "Pause freezes an actual in-flight pearl, chain, RNG, counters and fire input",
+    "Refresh replays exact flight/geometry/ammo/score/power/cooldown state and resumes",
+    "Pause/resume cancels a mouse gesture; old pointerup cannot fire",
+    "Releasing a captured drag outside the canvas cancels the shot",
+    "Help freezes and resumes; explicit synthetic blur checks the focus handler",
+    "Sound preference survives reload",
+    "Normal Space-fire win records best/unlock and the 320px result fully contains usable controls",
+    "No-input production chain naturally reaches the endpoint; retry resets current play but preserves best",
+    "Six widths 320–1440 and narrow level dialog have no horizontal overflow",
+    "Staged powers consume finite charges and refresh never refills power or resets the slow timer",
+    "An actual ordinary shot into a rock is blocked without deleting chain pearls",
+    "Malformed storage safely resets progress defaults",
+    "Illegal/null replay commands are rejected without a page error",
+    "Denied localStorage still allows ordinary firing with a clear save notice",
+    "Native center tap cancellation, drag-release shot and full touch campaign win"
+  ],
+  "fixture": "Only menu unlock/tutorial/sound for later-level feature inspection and native touch. Explicit bad/blocked storage fixtures are separate. Natural failure uses no inputs or time/world edits.",
+  "keyboardFireWin": {
+    "state": "won",
+    "method": "Mouse aim with actual Space firing",
+    "stats": {
+      "initial": 12,
+      "shots": 6,
+      "swaps": 1,
+      "slowUsed": 0,
+      "backUsed": 0,
+      "popped": 18,
+      "originalCleared": 12,
+      "groups": 6,
+      "comboGroups": 1,
+      "maxCombo": 2,
+      "misses": 0,
+      "blocked": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 11,
+        "kind": "fire",
+        "angle": -1.8096065669539376
+      },
+      {
+        "tick": 137,
+        "kind": "fire",
+        "angle": -1.6605622132635844
+      },
+      {
+        "tick": 241,
+        "kind": "fire",
+        "angle": -1.4747264532170627
+      },
+      {
+        "tick": 321,
+        "kind": "swap"
+      },
+      {
+        "tick": 329,
+        "kind": "fire",
+        "angle": -1.717717169187406
+      },
+      {
+        "tick": 415,
+        "kind": "fire",
+        "angle": -1.5368766406313907
+      },
+      {
+        "tick": 501,
+        "kind": "fire",
+        "angle": -1.555180508740143
+      }
+    ],
+    "actions": [
+      {
+        "observedTime": 0.008333333333333333,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.8096065189011072,
+          "swap": false,
+          "predictedValue": 5402.285576538858
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 11,
+            "kind": "fire",
+            "angle": -1.8096065669539376
+          }
+        ]
+      },
+      {
+        "observedTime": 1.075,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.6605623749741933,
+          "swap": false,
+          "predictedValue": 2158.961914797185
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 137,
+            "kind": "fire",
+            "angle": -1.6605622132635844
+          }
+        ]
+      },
+      {
+        "observedTime": 1.9416666666666667,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.4747265029677623,
+          "swap": false,
+          "predictedValue": 2159.2528977097554
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 241,
+            "kind": "fire",
+            "angle": -1.4747264532170627
+          }
+        ]
+      },
+      {
+        "observedTime": 2.675,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.717717301643085,
+          "swap": true,
+          "predictedValue": 2159.0962292650756
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 321,
+            "kind": "swap"
+          },
+          {
+            "tick": 329,
+            "kind": "fire",
+            "angle": -1.717717169187406
+          }
+        ]
+      },
+      {
+        "observedTime": 3.408333333333333,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.5368765928205919,
+          "swap": false,
+          "predictedValue": -82.05916573140955
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 415,
+            "kind": "fire",
+            "angle": -1.5368766406313907
+          }
+        ]
+      },
+      {
+        "observedTime": 4.125,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.5551805573000808,
+          "swap": false,
+          "predictedValue": 10001160.6
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 501,
+            "kind": "fire",
+            "angle": -1.555180508740143
+          }
+        ]
+      }
+    ]
+  },
+  "naturalFailure": {
+    "state": "lost",
+    "time": 93.425,
+    "stats": {
+      "initial": 12,
+      "shots": 0,
+      "swaps": 0,
+      "slowUsed": 0,
+      "backUsed": 0,
+      "popped": 0,
+      "originalCleared": 0,
+      "groups": 0,
+      "comboGroups": 0,
+      "maxCombo": 0,
+      "misses": 0,
+      "blocked": 0,
+      "settlements": 1
+    },
+    "reason": "有海珠触及珠径终点"
+  },
+  "nativeTouch": {
+    "stage": 1,
+    "state": "won",
+    "stats": {
+      "initial": 12,
+      "shots": 7,
+      "swaps": 2,
+      "slowUsed": 0,
+      "backUsed": 0,
+      "popped": 18,
+      "originalCleared": 12,
+      "groups": 6,
+      "comboGroups": 1,
+      "maxCombo": 2,
+      "misses": 1,
+      "blocked": 0,
+      "settlements": 1
+    },
+    "time": 5.825,
+    "actualLog": [
+      {
+        "tick": 48,
+        "kind": "fire",
+        "angle": 3.597742991409798e-07
+      },
+      {
+        "tick": 142,
+        "kind": "swap"
+      },
+      {
+        "tick": 150,
+        "kind": "fire",
+        "angle": -1.7390936462932085
+      },
+      {
+        "tick": 274,
+        "kind": "fire",
+        "angle": -1.6207645943249456
+      },
+      {
+        "tick": 384,
+        "kind": "swap"
+      },
+      {
+        "tick": 392,
+        "kind": "fire",
+        "angle": -1.4330753313457623
+      },
+      {
+        "tick": 476,
+        "kind": "fire",
+        "angle": -1.4848246123653752
+      },
+      {
+        "tick": 562,
+        "kind": "fire",
+        "angle": -1.4594647549471838
+      },
+      {
+        "tick": 648,
+        "kind": "fire",
+        "angle": -1.5907814484823122
+      }
+    ],
+    "method": "Native center tap cancels, then a five-move touch drag fires once, followed by native tap aiming/swap/power controls; only scroll positioning is a helper.",
+    "actions": [
+      {
+        "observedTime": 1.1166666666666667,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.7390938550310087,
+          "swap": true,
+          "predictedValue": 5402.101528957983
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 142,
+            "kind": "swap"
+          },
+          {
+            "tick": 150,
+            "kind": "fire",
+            "angle": -1.7390936462932085
+          }
+        ]
+      },
+      {
+        "observedTime": 2.2333333333333334,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.6207644997082153,
+          "swap": false,
+          "predictedValue": 2158.873410147628
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 274,
+            "kind": "fire",
+            "angle": -1.6207645943249456
+          }
+        ]
+      },
+      {
+        "observedTime": 3.1,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.434792097939214,
+          "swap": true,
+          "predictedValue": 2159.064393060199
+        },
+        "uiAttempted": false,
+        "actualCommands": []
+      },
+      {
+        "observedTime": 3.15,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.433075493741422,
+          "swap": true,
+          "predictedValue": 2159.060572715614
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 384,
+            "kind": "swap"
+          },
+          {
+            "tick": 392,
+            "kind": "fire",
+            "angle": -1.4330753313457623
+          }
+        ]
+      },
+      {
+        "observedTime": 3.9,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.4848247106363017,
+          "swap": false,
+          "predictedValue": -82.26864795949665
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 476,
+            "kind": "fire",
+            "angle": -1.4848246123653752
+          }
+        ]
+      },
+      {
+        "observedTime": 4.633333333333333,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.459464794801903,
+          "swap": false,
+          "predictedValue": 1158.6191513325864
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 562,
+            "kind": "fire",
+            "angle": -1.4594647549471838
+          }
+        ]
+      },
+      {
+        "observedTime": 5.35,
+        "intended": {
+          "kind": "fire",
+          "angle": -1.590781368079353,
+          "swap": false,
+          "predictedValue": 10002161.2
+        },
+        "uiAttempted": true,
+        "actualCommands": [
+          {
+            "tick": 648,
+            "kind": "fire",
+            "angle": -1.5907814484823122
+          }
+        ]
+      }
+    ]
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

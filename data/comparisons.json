@@ -1,0 +1,3128 @@
+{
+  "schema_version": 1,
+  "commit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
+  "checked_at": "2026-10-18",
+  "repository": "https://github.com/yydshly/classic-games-atlas",
+  "methodology": [
+    "只读指定提交的data、34份SPEC/VERIFICATION、4预览HTML/关卡及恢复记录；不修改main。",
+    "原作描述和版本口径来自仓库原目录，保留每条的原来源URL与旧核读状态；本次没有把旧来源标记升级成独立新核验。",
+    "已实现栏表示当前仓库源码/范围文档声明及既有验证支持的范围，不代表本次逐关手玩。",
+    "差距优先列明确删减、改变和未对齐范围，不臆造历史原作细节；资料未说明时写未明确或未见还原证据。",
+    "正式目录published仅是发布状态；34款均有原创实验关系声明，不能换称34款完成复刻。"
+  ],
+  "summary": {
+    "published_games": 34,
+    "published_levels": 398,
+    "previews": 4,
+    "preview_numbers": [
+      "35",
+      "36",
+      "38",
+      "39"
+    ],
+    "preview_levels": 32,
+    "confirmed_reference_bindings": 35,
+    "unconfirmed_reference_bindings": [
+      "35",
+      "36",
+      "38"
+    ],
+    "quality_verdict": "属于原创机制实验集合；不少作品删去了对标游戏的核心系统，差距不仅是美术粗糙。数量及自动化通关不能证明成品品质或原作还原度。",
+    "version_caveat": "原目录已有作品/系列说明，但不等于实现已锁定具体版本、模式与逐项还原验收标准。"
+  },
+  "items": [
+    {
+      "number": "01",
+      "slug": "fortress",
+      "title": "堡垒防线",
+      "english": "BEACON BASTION",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/fortress/",
+      "original_title": "坦克大战",
+      "original_english": "Battle City",
+      "reference_id": "battle-city",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指南梦宫《Battle City》，不泛指所有坦克游戏。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "驾驶坦克穿越砖墙和障碍，在击退敌方坦克的同时保护基地。",
+      "implemented": [
+        "10张25×25原创基地防守地图；连续移动、射击、破砖、钢障和水域",
+        "3类敌人、维修/护盾/速射；基地3格耐久、玩家3次出击"
+      ],
+      "gaps": [
+        "保留坦克射击与护基地循环，但地图、角色、美术、声音均重新创作，并非Battle City逐关还原",
+        "基地耐久、敌人种类和补给为本作定义；未建立原作数值、敌军编排或操作手感的一致性对照"
+      ],
+      "relation": "本项目原创基地防守玩法实验，非原作或逐关复制。",
+      "levels": 10,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 3,
+          "line_end": 15,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L3-L15",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 586,
+          "line_end": 612,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L586-L612",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FORTRESS_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FORTRESS_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FORTRESS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FORTRESS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "battle",
+          "label": "Bandai Namco · Namco Museum Archives",
+          "url": "https://en.bandainamcoent.eu/namco-museum/namco-museum-archives-vol-1-vol-2",
+          "kind": "official",
+          "relation": "含原作的合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "02",
+      "slug": "maze",
+      "title": "爆破迷宫",
+      "english": "EMBER MAZE",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/maze/",
+      "original_title": "炸弹人",
+      "original_english": "Bomberman",
+      "reference_id": "bomberman",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；以早期迷宫玩法为主，后续版本模式各异。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在网格迷宫放置炸弹、清除障碍，计算爆炸范围并及时躲避。",
+      "implemented": [
+        "10张原创单人迷宫；定时炸弹、十字阻挡与连锁、自伤",
+        "3类敌人、容量/范围/速度强化；清敌后走到出口"
+      ],
+      "gaps": [
+        "保留早期炸弹人核心循环，关卡、角色与音画全部替换",
+        "仅实现单人清关实验；原作条目覆盖系列且各版模式不同，不能据此代表整个Bomberman或某个明确版本"
+      ],
+      "relation": "本项目原创定时爆破迷宫玩法实验，非原作或逐关复制。",
+      "levels": 10,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 16,
+          "line_end": 28,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L16-L28",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 624,
+          "line_end": 650,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L624-L650",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/MAZE_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/MAZE_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/MAZE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/MAZE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "bomberman",
+          "label": "Konami · 炸弹人经典合集",
+          "url": "https://www.konami.com/games/bomberman/collection/us/en/",
+          "kind": "official",
+          "relation": "含早期作品的合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "03",
+      "slug": "starline",
+      "title": "星泡航线",
+      "english": "STARLINE BUBBLES",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/starline/",
+      "original_title": "泡泡龙",
+      "original_english": "Puzzle Bobble / Bust-A-Move",
+      "reference_id": "puzzle-bobble",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指发射泡泡的 Puzzle Bobble 系列；不是跳跃动作《Bubble Bobble》。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "瞄准并发射彩色泡泡，连接同色泡泡消除，避免泡泡压到下方。",
+      "implemented": [
+        "12张原创泡泡图；六邻接、侧墙反弹、三连与顶端失联掉落",
+        "有限发数、当前/下一颗与每发一次交换、轨迹与落点提示"
+      ],
+      "gaps": [
+        "玩法改为有限弹药清场，不额外引入实时下压，失败节奏由发数和底线决定",
+        "未锁定Puzzle Bobble具体一代/模式；原创题图与弹药规则不等于原作关卡与节奏还原"
+      ],
+      "relation": "本项目原创瞄准反弹与泡泡消除玩法实验，非原作或逐关复制。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 29,
+          "line_end": 41,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L29-L41",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1106,
+          "line_end": 1132,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1106-L1132",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/STARLINE_SPEC.md",
+          "line_start": 12,
+          "line_end": 13,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_SPEC.md#L12-L13",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/STARLINE_SPEC.md",
+          "line_start": 43,
+          "line_end": 44,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_SPEC.md#L43-L44",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/STARLINE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/STARLINE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "bubble",
+          "label": "Wikipedia · Puzzle Bobble",
+          "url": "https://en.wikipedia.org/wiki/Puzzle_Bobble",
+          "kind": "secondary",
+          "relation": "原作百科；官方历史档案待补",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "04",
+      "slug": "prism",
+      "title": "光轨砖阵",
+      "english": "PRISM BREAKER",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/prism/",
+      "original_title": "打砖块／Arkanoid",
+      "original_english": "Arkanoid",
+      "reference_id": "arkanoid",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以 Taito《Arkanoid》为代表；打砖块也可指更广泛的玩法类别。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "移动挡板反弹小球，击碎场上砖块，并利用道具改变局势。",
+      "implemented": [
+        "12关挡板反弹清砖；普通/多击/不可破砖",
+        "宽板、多球、缓速3类道具；3条生命和逐关解锁"
+      ],
+      "gaps": [
+        "保留接球清砖机制，具体砖阵、画面和声音均原创",
+        "只列本作3类道具和12关范围，没有原作关卡、道具体系、敌人/首领或速度曲线的逐项一致性证据"
+      ],
+      "relation": "本项目原创接球反射与清砖玩法实验，非原作或逐关复制。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 42,
+          "line_end": 54,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L42-L54",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1145,
+          "line_end": 1171,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1145-L1171",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PRISM_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PRISM_SPEC.md",
+          "line_start": 15,
+          "line_end": 16,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_SPEC.md#L15-L16",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PRISM_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PRISM_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "arkanoid",
+          "label": "Taito · Arkanoid Eternal Battle",
+          "url": "https://store.steampowered.com/app/1717270/",
+          "kind": "publisher-store",
+          "relation": "后续作品；含复古模式",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "05",
+      "slug": "crate",
+      "title": "仓格计划",
+      "english": "CRATE PLAN",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/crate/",
+      "original_title": "推箱子",
+      "original_english": "Sokoban",
+      "reference_id": "sokoban",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以原始 Sokoban 规则为代表，不把所有后继实现当作同一版本。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在狭小地图中把箱子逐一推到目标格，避免把箱子卡进死角。",
+      "implemented": [
+        "20张原创题图；四向网格、只推不拉、箱子全部归位",
+        "无限撤销含胜利后撤销、动作日志恢复；仅提示非目标静态墙角"
+      ],
+      "gaps": [
+        "核心推箱规则保留较完整，但关卡是手工/验证生成的原创题，非原版题集",
+        "只实现有限题集与基础死角提示，不承诺最优解或完整死锁识别；原作版本/题集未锁定"
+      ],
+      "relation": "本项目原创网格推箱与归位解谜实验，非原作题图复制。",
+      "levels": 20,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 55,
+          "line_end": 67,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L55-L67",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1185,
+          "line_end": 1211,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1185-L1211",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CRATE_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CRATE_SPEC.md",
+          "line_start": 14,
+          "line_end": 15,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_SPEC.md#L14-L15",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CRATE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CRATE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "sokoban",
+          "label": "Thinking Rabbit · Sokoban",
+          "url": "https://www.sokoban.jp/",
+          "kind": "official",
+          "relation": "原权利方系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "06",
+      "slug": "pass",
+      "title": "山口守望",
+      "english": "PASS WATCH",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/pass/",
+      "original_title": "王国保卫战",
+      "original_english": "Kingdom Rush",
+      "reference_id": "kingdom-rush",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；以初代为切入，不将各部的英雄与防御塔混用。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "沿敌人行进路线修建防御塔，升级分支并结合援军等能力守住出口。",
+      "implemented": [
+        "8图，每图6波、固定建造点；单体/范围/减速3类塔",
+        "各塔仅I→II一次升级；4类敌人，建造/升级/出售和1×/2×"
+      ],
+      "gaps": [
+        "王国保卫战目录强调升级分支与援军；本作收缩为3塔各一次升级的固定波次塔防",
+        "明确不做英雄、技能树或无尽；未提供原作援军等能力及对应关卡的还原证据"
+      ],
+      "relation": "本项目原创路径塔防玩法实验，不是原作关卡或素材复刻。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 68,
+          "line_end": 80,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L68-L80",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1383,
+          "line_end": 1409,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1383-L1409",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PASS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PASS_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PASS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PASS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "ironhide",
+          "label": "Ironhide · 游戏目录",
+          "url": "https://www.ironhidegames.com/Games",
+          "kind": "official",
+          "relation": "系列作品目录",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "07",
+      "slug": "trail",
+      "title": "风行小径",
+      "english": "WINDWARD TRAIL",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/trail/",
+      "original_title": "冒险岛",
+      "original_english": "Adventure Island",
+      "reference_id": "adventure-island",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指 Hudson 的 FC 作品；与 Nexon《冒险岛 Online》无关。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在横向关卡中跳跃、投掷武器并收集食物，维持体力走向终点。",
+      "implemented": [
+        "8关原创横向平台；长短跳、移动台、巡逻敌人、风铃",
+        "3条生命、检查点、失误重生；刷新从关卡起点重开"
+      ],
+      "gaps": [
+        "原作目录包含投掷武器与吃食物维持体力；本作明确没有攻击和Boss，核心变成平台避险收集",
+        "采用生命/检查点与风铃体系，未实现原目录描述的体力消耗维持循环；不是冒险岛完整动作系统"
+      ],
+      "relation": "本项目原创横向平台跳跃实验，不复制原作角色、关卡、画面或音乐。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 81,
+          "line_end": 93,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L81-L93",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 663,
+          "line_end": 689,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L663-L689",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/TRAIL_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TRAIL_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TRAIL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TRAIL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "adventure",
+          "label": "Wikipedia · Adventure Island（游戏）",
+          "url": "https://en.wikipedia.org/wiki/Adventure_Island_(video_game)",
+          "kind": "secondary",
+          "relation": "原作百科；官方档案待补",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "08",
+      "slug": "lantern",
+      "title": "夜航拾光",
+      "english": "LANTERN WAKE",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/lantern/",
+      "original_title": "吃豆人",
+      "original_english": "Pac-Man",
+      "reference_id": "pacman",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代街机版为主，不将其他吃豆人衍生作品混为一部。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在迷宫中吃完豆子并躲开幽灵，利用能量豆创造反击机会。",
+      "implemented": [
+        "10座原创迷宫；四向连续移动与转向缓冲",
+        "光点全收集、3类追逐逻辑、限时辉光反制、3条生命"
+      ],
+      "gaps": [
+        "保留迷宫收集与短时反制循环，但迷宫、巡灯身份及行为、美术配色与声音均原创",
+        "没有建立初代街机迷宫、幽灵行为和计分/节奏逐项对应；刷新从本关重新出发"
+      ],
+      "relation": "本项目原创迷宫收集追逐实验，不复制经典角色、迷宫、配色布局或音乐。",
+      "levels": 10,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 94,
+          "line_end": 106,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L94-L106",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1067,
+          "line_end": 1093,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1067-L1093",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/LANTERN_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/LANTERN_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/LANTERN_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/LANTERN_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "pacman",
+          "label": "Bandai Namco · Pac-Man 历史",
+          "url": "https://www.pacman.com/en/history/",
+          "kind": "official",
+          "relation": "系列历史",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "09",
+      "slug": "cloud",
+      "title": "云隙巡航",
+      "english": "CLOUD SEAM",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/cloud/",
+      "original_title": "雷电",
+      "original_english": "Raiden",
+      "reference_id": "raiden",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代《雷电》为主；参考合集还收录 Raiden Fighters 作品。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "驾驶战机沿纵向战场飞行，切换火力、躲避弹幕并适时投放炸弹。",
+      "implemented": [
+        "8段原创纵向飞行射击；自动射击、3类敌机和直射/瞄准/扇形弹道",
+        "3点生命、武器最多3级、修复；每关2次清弹保护风幕与末段精英"
+      ],
+      "gaps": [
+        "将雷电式射击抽取为自动开火、预警弹道与有限风幕的独立短关卡",
+        "原机体、关卡、火力和首领编排不还原；现有3级火力及末段精英不等于原作完整武器/关卡体系"
+      ],
+      "relation": "本项目原创纵向飞行射击实验，不复制原作角色、关卡、画面或音乐。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 107,
+          "line_end": 119,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L107-L119",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 989,
+          "line_end": 1015,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L989-L1015",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CLOUD_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CLOUD_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CLOUD_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CLOUD_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "raiden",
+          "label": "Dotemu · Raiden Legacy",
+          "url": "https://store.steampowered.com/app/407600/",
+          "kind": "publisher-store",
+          "relation": "含初代的合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "10",
+      "slug": "garden",
+      "title": "晶簇花园",
+      "english": "CLUSTER GARDEN",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/garden/",
+      "original_title": "宝石迷阵",
+      "original_english": "Bejeweled",
+      "reference_id": "bejeweled",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；参考《Bejeweled 3》，各代模式与特殊宝石有差异。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "交换相邻宝石，使同色宝石连成一线，触发消除并创造新的组合。",
+      "implemented": [
+        "20关8×8有限步数三消；分数/收集/土层组合目标",
+        "横四清行、竖四清列、五连或T/L产生3×3花蕊；固定种子、提示与洗牌"
+      ],
+      "gaps": [
+        "目录参考Bejeweled 3，但本作是有限步数和土层目标的原创关卡制",
+        "特殊块规则自定义，两枚特殊交换无额外组合规则；不能视为Bejeweled 3模式和特殊宝石体系还原"
+      ],
+      "relation": "本项目原创相邻交换与连锁三消实验，不复制经典品牌图形、关卡或音效。",
+      "levels": 20,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 120,
+          "line_end": 132,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L120-L132",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1424,
+          "line_end": 1450,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1424-L1450",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/GARDEN_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GARDEN_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GARDEN_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GARDEN_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "bejeweled",
+          "label": "PopCap / EA · 宝石迷阵3",
+          "url": "https://store.steampowered.com/app/78000/",
+          "kind": "publisher-store",
+          "relation": "系列第三作",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "11",
+      "slug": "vine",
+      "title": "青藤回廊",
+      "english": "VINE CORRIDOR",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/vine/",
+      "original_title": "贪吃蛇",
+      "original_english": "Snake",
+      "reference_id": "snake",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "玩法谱系条目；以早期手机体验为代表，边界规则依实现而异。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "改变蛇的方向寻找食物，身体逐渐变长，同时避免撞上自身或障碍。",
+      "implemented": [
+        "16关20×16生长挑战；吃芽增长、撞墙/身体失败",
+        "达数量后抵达出口；定向传送门、方向缓冲、逐步存档"
+      ],
+      "gaps": [
+        "贪吃蛇仅作为玩法谱系参照；本作加入关卡出口和单向传送，并明确无无限模式",
+        "没有唯一原作或手机版本可逐项对应；地图、边界规则与节拍需要先指定对标版本"
+      ],
+      "relation": "本项目原创生长与转向关卡挑战；参考贪吃蛇机制，不复制诺基亚画面或原作关卡。",
+      "levels": 16,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 133,
+          "line_end": 145,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L133-L145",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1262,
+          "line_end": 1288,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1262-L1288",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/VINE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VINE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VINE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VINE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "snake",
+          "label": "Google · Play Games 内置游戏",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.play.games&hl=zh",
+          "kind": "official",
+          "relation": "含贪吃蛇的现代实现；非诺基亚原作资料",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "12",
+      "slug": "petal",
+      "title": "花笺连线",
+      "english": "PETAL LETTERS",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/petal/",
+      "original_title": "连连看",
+      "original_english": "Tile-link Matching",
+      "reference_id": "link-match",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "泛指连线配对玩法；并非单一品牌。常见两次转折限制不适用于所有版本。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "寻找相同图案，在允许的连线路径内成对消除，逐步清空棋盘。",
+      "implemented": [
+        "20关两折连线配对，可沿外圈；石障、留白",
+        "后段下/左归拢；2次洗牌、4次无通路容错、提示，无强制倒计时"
+      ],
+      "gaps": [
+        "连连看在目录中是通用玩法而非单一品牌，当前不能称为某款经典游戏复刻",
+        "两折、归拢、容错和无倒计时构成本作独立规则组合；原题图与原画面均未还原"
+      ],
+      "relation": "本项目原创两折连线配对解谜，参考连连看机制，不复制既有游戏图案、关卡或音画。",
+      "levels": 20,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 146,
+          "line_end": 158,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L146-L158",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1301,
+          "line_end": 1327,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1301-L1327",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PETAL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PETAL_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PETAL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PETAL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "shisen",
+          "label": "KDE · KShisen 规则",
+          "url": "https://apps.kde.org/kshisen/",
+          "kind": "project",
+          "relation": "同类实现规则；不是某个连连看品牌",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "13",
+      "slug": "sand",
+      "title": "星砂勘探",
+      "english": "STARDUST SURVEY",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/sand/",
+      "original_title": "扫雷",
+      "original_english": "Minesweeper",
+      "reference_id": "minesweeper",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以经典 Windows 玩法为代表；现代版本可能加入额外模式。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "根据已揭开格子的数字推断周围地雷位置，标记危险并找出安全区域。",
+      "implemented": [
+        "20关固定逻辑排雷；限定安全观测点开局、数字/旗标/快捷展开",
+        "可见线索推理提示、无倒计时、固定图重试与合法日志恢复"
+      ],
+      "gaps": [
+        "目录以经典Windows扫雷为代表，本作改为20张固定地图战役，明确没有随机模式",
+        "首次揭开位置被限定，增加解释式提示；未锁定某个Windows版本及其随机开局/界面口径"
+      ],
+      "relation": "本项目原创固定逻辑排雷战役，参考扫雷机制，不复制既有游戏地图、美术、界面或声音。",
+      "levels": 20,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 159,
+          "line_end": 171,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L159-L171",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1224,
+          "line_end": 1250,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1224-L1250",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/SAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/SAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/SAND_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/SAND_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "mines",
+          "label": "Xbox · Microsoft Minesweeper",
+          "url": "https://www.xbox.com/en-US/games/store/microsoft-minesweeper/9wzdncrfhwcn",
+          "kind": "official",
+          "relation": "现代官方实现",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "14",
+      "slug": "pinfall",
+      "title": "落星弹庭",
+      "english": "ASTRAL PINCOURT",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/pinfall/",
+      "original_title": "幻幻球",
+      "original_english": "Peggle",
+      "reference_id": "peggle",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代《Peggle Deluxe》为主；不是传统弹球台的同义词。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "选择发射角度，让弹球在钉子间反弹，在有限球数内清除目标。",
+      "implemented": [
+        "12关重力弹珠消钉；有限球数、回收后统一消钉",
+        "移动接球槽、涟漪钉和回弹石；接住且命中返球"
+      ],
+      "gaps": [
+        "保留Peggle式规划反弹，但关卡、角色、音画与能力替换为原创内容",
+        "能力范围收缩为涟漪钉等自定义机制；低速轻推和12秒回收也是公开的本作规则，没有原作物理/能力/反馈一致性对照"
+      ],
+      "relation": "本项目原创瞄准弹珠消钉实验，参考 Peggle 式规划反弹机制，不复制原作关卡、角色、美术或声音。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 172,
+          "line_end": 184,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L172-L184",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1502,
+          "line_end": 1528,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1502-L1528",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PINFALL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PINFALL_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PINFALL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PINFALL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "peggle",
+          "label": "PopCap / EA · Peggle Deluxe",
+          "url": "https://store.steampowered.com/app/3480/",
+          "kind": "publisher-store",
+          "relation": "初代版本",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "15",
+      "slug": "gale",
+      "title": "钢岚突进",
+      "english": "STEEL GALE",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/gale/",
+      "original_title": "魂斗罗",
+      "original_english": "Contra",
+      "reference_id": "contra",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以 FC / NES 版的回忆为主；参考合集也包含街机及其他作品。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在横向与纵深关卡中移动射击，拾取不同武器，挑战敌人与首领。",
+      "implemented": [
+        "8关原创横版跑跳射击、3类普通敌人与终关3阶段首领",
+        "基础无限弹、有限散射/速射、上斜射；护甲/检查点/脉冲"
+      ],
+      "gaps": [
+        "魂斗罗目录包含横向与纵深关卡及双人合作，本作范围为原创单人横向跑跳射击",
+        "5格护甲、检查点修复和两次脉冲重写容错与推进节奏；并非FC/NES原关卡、武器和难度还原"
+      ],
+      "relation": "本项目原创横版跑跳射击战役，参考经典移动射击类型，不复制 Contra 或 Metal Slug 角色、地图、美术或声音。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 185,
+          "line_end": 197,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L185-L197",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 547,
+          "line_end": 573,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L547-L573",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/GALE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GALE_SPEC.md",
+          "line_start": 8,
+          "line_end": 9,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_SPEC.md#L8-L9",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/GALE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/GALE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "contra",
+          "label": "Konami · 魂斗罗周年合集",
+          "url": "https://www.konami.com/games/50th/ac/contra/asia/en/",
+          "kind": "official",
+          "relation": "含原作的合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "16",
+      "slug": "post",
+      "title": "弯道邮差",
+      "english": "BEND & LETTER",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/post/",
+      "original_title": "极品飞车",
+      "original_english": "Need for Speed",
+      "reference_id": "need-speed",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；并非每一部都有开放世界、改装或警匪追逐。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "驾驶不同车辆在道路或赛道竞速，依据作品体验改装、追逐等模式。",
+      "implemented": [
+        "8条原创闭环俯视赛道；油门、相对车头转向、刹车、路肩减速",
+        "单人2/3圈计时、闸门防跳圈、越界复位加时"
+      ],
+      "gaps": [
+        "与极品飞车目录的多车辆道路竞速仅有类型关联，本作明确是俯视单人计时且没有AI对手",
+        "未锁定极品飞车哪一代，改装、追逐等不能当作该系列通用必备，也没有本作相应系统的实现证据"
+      ],
+      "relation": "本项目原创俯视角单人计时竞速；仅参考街机竞速类型的驾驶和路线机制，不复制极品飞车等作品车辆、赛道、画面或声音。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 198,
+          "line_end": 210,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L198-L210",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2440,
+          "line_end": 2466,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2440-L2466",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/POST_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/POST_SPEC.md",
+          "line_start": 10,
+          "line_end": 11,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_SPEC.md#L10-L11",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/POST_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/POST_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "nfs",
+          "label": "EA · Need for Speed",
+          "url": "https://www.ea.com/games/need-for-speed",
+          "kind": "official",
+          "relation": "系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "17",
+      "slug": "beacon",
+      "title": "灯塔小队",
+      "english": "BEACON SQUAD",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/beacon/",
+      "original_title": "英雄无敌Ⅲ",
+      "original_english": "Heroes of Might and Magic III",
+      "reference_id": "heroes-3",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指第三代；参考 HD 版商店页，该版本不含原版全部资料片。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "让英雄在大地图探索、招募部队和经营城镇，在战斗网格上轮流行动。",
+      "implemented": [
+        "10关8×7小队战术；2AP、固定伤害、移动/攻击/修复预览确认",
+        "清敌/护送/守灯三目标、有限回合、全图公开"
+      ],
+      "gaps": [
+        "英雄无敌Ⅲ目录核心是大地图探索、招募、城镇经营加战斗；本作只保留独立方格战术",
+        "明确不增加长期经济或养成，不复制英雄无敌Ⅲ经济；缺少连接战斗的战略层，玩法结构差异大"
+      ],
+      "relation": "本项目原创网格回合战术，仅参考经典战棋通用机制；不复制英雄无敌Ⅲ的角色、地图、剧情、经济或原作资源。",
+      "levels": 10,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 211,
+          "line_end": 223,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L211-L223",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1703,
+          "line_end": 1729,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1703-L1729",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/BEACON_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BEACON_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BEACON_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BEACON_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "heroes3",
+          "label": "Ubisoft · 英雄无敌III HD",
+          "url": "https://store.steampowered.com/app/297000/",
+          "kind": "publisher-store",
+          "relation": "HD版本；非完整版资料片集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "18",
+      "slug": "chime",
+      "title": "风铃绳旅",
+      "english": "CHIME TRAIL",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/chime/",
+      "original_title": "割绳子",
+      "original_english": "Cut the Rope",
+      "reference_id": "cut-rope",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；以初代为切入，各续作加入不同机关与角色能力。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "按顺序切断绳索，利用摆动、气泡等装置，让糖果抵达小怪兽嘴边。",
+      "implemented": [
+        "16关剪绳物理解谜，48可选星点；重力/双绳/风区/梁/危险",
+        "只能剪绳，点/划剪及编号按钮；达到收集台即可过关"
+      ],
+      "gaps": [
+        "原目录包含剪绳、摆动、气泡等机关；本作把操作限定为剪绳，以风区和梁组合成新题",
+        "无拖动铃、额外冲量、移动支点或风力开关；角色/地图/音画独立，非原作机关与关卡还原"
+      ],
+      "relation": "本项目原创剪绳物理解谜，只参考割绳子所代表的重力剪绳通用机制；不使用原作角色、关卡、美术、音频或品牌资源。",
+      "levels": 16,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 224,
+          "line_end": 236,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L224-L236",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2693,
+          "line_end": 2719,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2693-L2719",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/CHIME_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CHIME_SPEC.md",
+          "line_start": 6,
+          "line_end": 7,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_SPEC.md#L6-L7",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/CHIME_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/CHIME_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "rope",
+          "label": "ZeptoLab · Cut the Rope",
+          "url": "https://www.cuttherope.net/",
+          "kind": "official",
+          "relation": "系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "19",
+      "slug": "brook",
+      "title": "溪谷守芽",
+      "english": "BROOKWARD",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/brook/",
+      "original_title": "植物大战僵尸",
+      "original_english": "Plants vs. Zombies",
+      "reference_id": "pvz",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代为主，后续续作与衍生射击游戏另有规则。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "收集阳光、种植功能不同的植物，守住草坪各条路线的防线。",
+      "implemented": [
+        "10关5×8分路布防；4种装置分别生产、远射、承伤、减速",
+        "3类敌人、手动收露、预算/冷却、公开波次、1×/2×"
+      ],
+      "gaps": [
+        "把初代植物大战僵尸抽取为4装置与3来敌的有限战役；角色、植物、敌人、关卡和音画均重做",
+        "现有范围只有固定行防守和冷却资源循环，没有原作完整植物/僵尸/场景/模式体系的一致性对照"
+      ],
+      "relation": "本项目原创固定分路布防，参考经典分行防守的资源、冷却与互补装置通用机制；不使用植物大战僵尸角色、图形、关卡或音频。",
+      "levels": 10,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 237,
+          "line_end": 249,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L237-L249",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1343,
+          "line_end": 1369,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1343-L1369",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/BROOK_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BROOK_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/BROOK_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/BROOK_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "pvz",
+          "label": "PopCap / EA · 植物大战僵尸 GOTY",
+          "url": "https://store.steampowered.com/app/3590/",
+          "kind": "publisher-store",
+          "relation": "初代年度版",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "20",
+      "slug": "tide",
+      "title": "潮汐珠径",
+      "english": "TIDAL THREAD",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/tide/",
+      "original_title": "祖玛",
+      "original_english": "Zuma",
+      "reference_id": "zuma",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代《Zuma Deluxe》为主，不泛指所有滚动珠链游戏。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "转动发射器将彩珠射入移动珠链，凑成同色组合，阻止珠链抵达终点。",
+      "implemented": [
+        "12条原创曲线；移动珠链插珠三连、断口回接与连锁",
+        "固定有限珠链、2–4色、无隐藏补珠；缓潮2次/回汐1次逐步开放"
+      ],
+      "gaps": [
+        "保留Zuma珠链消除机制，但采用同基础速度的有限公开珠链与原创礁屏题型",
+        "能力、颜色规模、关卡路径和补珠方式为本作定义；不是Zuma Deluxe全部关卡/能力/节奏还原"
+      ],
+      "relation": "本项目原创沿路径珠链消除，仅参考Zuma所代表的瞄准发射与珠链三连通用机制；不使用原作角色、图形、关卡、音频或品牌资源。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 250,
+          "line_end": 262,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L250-L262",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1463,
+          "line_end": 1489,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1463-L1489",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/TIDE_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TIDE_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/TIDE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/TIDE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "zuma",
+          "label": "PopCap / EA · Zuma Deluxe",
+          "url": "https://store.steampowered.com/app/3330/",
+          "kind": "publisher-store",
+          "relation": "初代版本",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "21",
+      "slug": "paper",
+      "title": "纸翼投递",
+      "english": "PAPER POST",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/paper/",
+      "original_title": "愤怒的小鸟",
+      "original_english": "Angry Birds",
+      "reference_id": "angry-birds",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代玩法为主；现存版本、续作与衍生作有差异。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "拉动弹弓调整角度和力度，发射小鸟撞击结构，处理藏在其中的目标。",
+      "implemented": [
+        "16关有限包裹弹弓抛射；可破轻板/木箱、投递站与邮票",
+        "3类包裹、2种空中能力；轻结构滑落、星级独立于通关"
+      ],
+      "gaps": [
+        "把愤怒的小鸟的摧毁目标改写成送包裹/结构接触投递站，角色与目标语义均改变",
+        "矩形结构只平移、不模拟旋转；结构倒塌物理与原作体验不能据测试通关视为一致"
+      ],
+      "relation": "本项目原创弹弓抛射物理解谜，只参考经典抛射解谜通用机制；不使用Angry Birds角色、表达、美术、地图、声音或品牌资源。",
+      "levels": 16,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 263,
+          "line_end": 275,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L263-L275",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2615,
+          "line_end": 2641,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2615-L2641",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/PAPER_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PAPER_SPEC.md",
+          "line_start": 13,
+          "line_end": 14,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_SPEC.md#L13-L14",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/PAPER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/PAPER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "angry",
+          "label": "Rovio · Angry Birds",
+          "url": "https://www.angrybirds.com/",
+          "kind": "official",
+          "relation": "系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "22",
+      "slug": "harbor",
+      "title": "云港调度",
+      "english": "CLOUD HARBOR",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/harbor/",
+      "original_title": "运输大亨",
+      "original_english": "Transport Tycoon",
+      "reference_id": "transport",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以 TTD 为主要语境；OpenTTD 是受其启发的开源项目，不是原作本身。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "连接城镇和工业设施，建设铁路、公路等交通网络，运送乘客与货物。",
+      "implemented": [
+        "12关固定候选航道；轻舟/驳艇、往返线、容量/出库/交付期限",
+        "离散回合、有限货物与预算，出航后方案冻结"
+      ],
+      "gaps": [
+        "运输大亨目录包含铁路、公路等交通网络；本作缩为固定候选网络上的船运解谜",
+        "明确不是完整运输模拟，不支持船间换乘；不存在以现有证据证明的开放多交通工具与持续经济发展体系"
+      ],
+      "relation": "本项目原创小型运输经营解谜，只参考运输模拟通用资源与路线规划机制；不复制Transport Tycoon地图、美术、角色、音频或品牌资源。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 276,
+          "line_end": 288,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L276-L288",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2226,
+          "line_end": 2252,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2226-L2252",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/HARBOR_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/HARBOR_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/HARBOR_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/HARBOR_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "openttd",
+          "label": "OpenTTD · About",
+          "url": "https://www.openttd.org/about",
+          "kind": "project",
+          "relation": "受 TTD 启发的开源项目；非原版发行页",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "23",
+      "slug": "farm",
+      "title": "四季小田",
+      "english": "SEASONAL PLOT",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/farm/",
+      "original_title": "牧场物语",
+      "original_english": "Bokujō Monogatari / Story of Seasons",
+      "reference_id": "harvest-moon",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指日本「牧場物語」谱系，现以 Story of Seasons 等名发行；近年英文 Harvest Moon 是另一产品线。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "照顾农作物和动物，安排每天的体力与时间，并与镇上的居民往来。",
+      "implemented": [
+        "12关4–6块土地、4种作物、每日3–4行动和订单交付",
+        "公开循环天气、主动日结生长、有限种子费与独立关卡预算"
+      ],
+      "gaps": [
+        "牧场物语目录包含种植、动物和居民交往；本作明确不模拟社交或畜牧",
+        "玩法收缩为固定地块、回合行动和订单解谜，不能等同原目录中的种植、畜牧与居民交往组合；具体原作一代也未定"
+      ],
+      "relation": "本项目原创小型回合农场经营解谜，只参考经典播种、照料、收获与订单通用机制；不使用Harvest Moon / Story of Seasons原作角色、地图、美术或音频，不作完整牧场模拟。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 289,
+          "line_end": 301,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L289-L301",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2132,
+          "line_end": 2158,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2132-L2158",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FARM_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FARM_SPEC.md",
+          "line_start": 7,
+          "line_end": 8,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_SPEC.md#L7-L8",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FARM_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "farm",
+          "label": "Marvelous / XSEED · Story of Seasons",
+          "url": "https://www.storyofseasons.com/",
+          "kind": "official",
+          "relation": "日本牧场物语谱系的英文发行入口",
+          "checkedAt": "2026-10-16",
+          "status": "访问受限或失效",
+          "note": "本次 HTTP 检查未取得可用正文（HTTP 200）；链接保留作资料线索。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "24",
+      "slug": "ruins",
+      "title": "遗迹灯火",
+      "english": "RUINLIGHT",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/ruins/",
+      "original_title": "塞尔达传说",
+      "original_english": "The Legend of Zelda",
+      "reference_id": "zelda",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；更接近动作冒险，不将其一概定义为回合制 RPG。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "探索世界与迷宫，利用装备、环境线索和动作技巧解开前进的道路。",
+      "implemented": [
+        "8关35间9×7石室；钥匙/灯座/门、横扫/闪步/药露",
+        "一键一拍，主动行动才推进敌方；2拍攻击预警可停下思考"
+      ],
+      "gaps": [
+        "目录定义塞尔达为动作冒险；本作明确改为格子节拍，非实时反应型动作",
+        "仅有限房间、钥匙机关与固定动作，未提供特定塞尔达作品的世界、装备解谜、关卡和战斗还原证据"
+      ],
+      "relation": "本项目原创小型格子节拍地牢冒险，只参考经典俯视探索、钥匙机关、战斗与有限恢复通用机制；不使用The Legend of Zelda原作角色、地图、音画或品牌资源，不宣称大型RPG或即时反应型动作游戏。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 302,
+          "line_end": 314,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L302-L314",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2025,
+          "line_end": 2051,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2025-L2051",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/RUINS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/RUINS_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/RUINS_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/RUINS_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "zelda",
+          "label": "任天堂 · 塞尔达传说",
+          "url": "https://zelda.nintendo.com/",
+          "kind": "official",
+          "relation": "系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "未能读取",
+          "note": "本次连接未取得正文（SSLError）；链接保留作资料线索。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "25",
+      "slug": "orchard",
+      "title": "节拍果园",
+      "english": "ORCHARD RHYTHM",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/orchard/",
+      "original_title": "水果忍者",
+      "original_english": "Fruit Ninja",
+      "reference_id": "fruit-ninja",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以早期经典玩法为主，不含其他品牌的同类切水果游戏。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "滑动手指切开飞起的水果，按模式追求连切或躲避炸弹。",
+      "implemented": [
+        "12关153枚果实/60波；真实拖动扫掠切割、连切与危险物",
+        "确定性抛物线/侧风，3次合计失误；切果数/总分/最高连切联合达标"
+      ],
+      "gaps": [
+        "保留Fruit Ninja划切与避险机制，但改为显式固定波次、三项过关目标的有限战役",
+        "没有锁定早期经典玩法的具体模式，不能将12关通关证明视为原模式、节奏或触感还原"
+      ],
+      "relation": "本项目原创抛物线划线游戏，只参考切水果的通用轨迹切割、连击与避险机制；不使用Fruit Ninja原作美术、音频、角色或关卡，不提供自动收集或减速模式。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 315,
+          "line_end": 327,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L315-L327",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2654,
+          "line_end": 2680,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2654-L2680",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ORCHARD_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORCHARD_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORCHARD_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORCHARD_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "fruit",
+          "label": "Halfbrick · Fruit Ninja",
+          "url": "https://www.halfbrick.com/games/fruit-ninja",
+          "kind": "official",
+          "relation": "作品官方介绍",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "26",
+      "slug": "courier",
+      "title": "山径快递",
+      "english": "TRAIL COURIER",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/courier/",
+      "original_title": "神庙逃亡",
+      "original_english": "Temple Run",
+      "reference_id": "temple-run",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以初代为主；续作与授权主题版本另有场景和机制。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在持续延伸的路径中转向、跳跃和滑行，躲开障碍并收集奖励。",
+      "implemented": [
+        "12条三道有限邮路，自动前进；换道、跳、滑、岔路收信",
+        "每路280–358m，3次碰撞失败；到终点且收信达标胜利"
+      ],
+      "gaps": [
+        "神庙逃亡目录是持续延伸路径；本作明确不提供无尽，改成短路线任务关卡",
+        "路线和操作收缩为三道换道/跳滑，没有原作具体转弯、世界场景或长期进程的还原证据"
+      ],
+      "relation": "本项目原创三道有限路线跑酷，只参考自动前进、换道、跳跃与滑行的通用机制；不使用Temple Run原作角色、场景、素材、音频或品牌表达，不是原作复刻。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 328,
+          "line_end": 340,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L328-L340",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2733,
+          "line_end": 2759,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2733-L2759",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/COURIER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/COURIER_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/COURIER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/COURIER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "temple",
+          "label": "Imangi · Temple Run",
+          "url": "https://imangistudios.com/",
+          "kind": "official",
+          "relation": "开发者游戏目录",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "27",
+      "slug": "venture",
+      "title": "街角商旅",
+      "english": "CORNER VENTURES",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/venture/",
+      "original_title": "大富翁系列",
+      "original_english": "Richman",
+      "reference_id": "richman",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指软星 Richman 系列；与 Monopoly 品牌分开。参考为系列后续作品。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "掷骰移动、买地盖楼，运用卡片和资金管理与其他角色竞争。",
+      "implemented": [
+        "12关共用12格环路；公开步数卡移动、买/经营/升级/卖摊位",
+        "固定事件日历、10–15回合、资产与现金联合目标"
+      ],
+      "gaps": [
+        "大富翁目录以掷骰、买地盖楼并与其他角色竞争；本作改为确定性的公开卡与日历",
+        "当前是单人有限经济题，没有联网对手，未见电脑竞争角色范围；随机掷骰竞争被资产周转解谜替代"
+      ],
+      "relation": "本项目原创小型棋盘经济策略，仅参考路线移动、资产交易与现金流管理的通用机制；不使用大富翁等原作地图、角色、美术、音频或品牌资源，不涉及真钱或随机赌博。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 341,
+          "line_end": 353,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L341-L353",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1542,
+          "line_end": 1568,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1542-L1568",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/VENTURE_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VENTURE_SPEC.md",
+          "line_start": 11,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_SPEC.md#L11-L12",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/VENTURE_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/VENTURE_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "richman",
+          "label": "软星 · 大富翁11",
+          "url": "https://store.steampowered.com/app/2074800/",
+          "kind": "publisher-store",
+          "relation": "系列后续作品",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "28",
+      "slug": "island",
+      "title": "云岛工坊",
+      "english": "CLOUD ISLAND WORKS",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/island/",
+      "original_title": "模拟城市",
+      "original_english": "SimCity",
+      "reference_id": "simcity",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；参考《SimCity 4 Deluxe》发行资料，不把各代城市系统混用。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "划分城市用地、铺设交通和公共设施，在预算内应对城市发展的需求。",
+      "implemented": [
+        "12关9×7或7×9固定土地；路连通、住宅/供水/食物/工坊/花园",
+        "离散回合供需、固定入住/税收、连续稳定目标与6–8回合期限"
+      ],
+      "gaps": [
+        "SimCity目录的城市发展被缩为小网格和固定生产链布局题",
+        "明确不作完整城市模拟；没有开放城市长期发展、分区/交通等系统的完整实现证据，具体版本仍需锁定"
+      ],
+      "relation": "本项目原创小型离散回合建设解谜，仅参考城市建设中的空间布局、道路连通、生产和居民需求通用机制；不使用SimCity等原作地图、建筑、美术、音频或品牌资源，不宣称完整城市模拟。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 354,
+          "line_end": 366,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L354-L366",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2066,
+          "line_end": 2092,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2066-L2092",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ISLAND_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ISLAND_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ISLAND_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ISLAND_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "simcity",
+          "label": "EA · SimCity 4 Deluxe",
+          "url": "https://store.steampowered.com/app/24780/",
+          "kind": "publisher-store",
+          "relation": "系列第四作与扩展",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "29",
+      "slug": "orbit",
+      "title": "星环落块",
+      "english": "ORBIT STACK",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/orbit/",
+      "original_title": "俄罗斯方块",
+      "original_english": "Tetris",
+      "reference_id": "tetris",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；不同版本的旋转、保留与计分规则可能不同。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "移动和旋转下落的方块，填满横行以消除，并避免堆叠到顶部。",
+      "implemented": [
+        "12关8×16落块；7种四格、固定种子七袋、3枚预览",
+        "自定义踢墙、有限锁定额度，清行且清空原始星尘获胜"
+      ],
+      "gaps": [
+        "保留落块消行，但棋盘、旋转踢墙、分数和星尘目标均由本作定义，未对应某个Tetris规则版本",
+        "明确没有无尽、储存块或对战；不能因为使用七种形状就称为俄罗斯方块某一商业版本复刻"
+      ],
+      "relation": "本项目原创落块挑战，仅参考旋转、横移、重力、锁定和满行消除通用机制；布局、目标、配色、画面与声音原创，不使用商业游戏整体外观、品牌、美术或音乐。",
+      "levels": 12,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 367,
+          "line_end": 379,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L367-L379",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1027,
+          "line_end": 1053,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1027-L1053",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ORBIT_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORBIT_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ORBIT_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ORBIT_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "tetris",
+          "label": "Tetris · 官方版本",
+          "url": "https://tetris.com/play-tetris",
+          "kind": "official",
+          "relation": "现代官方网页实现",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "30",
+      "slug": "duel",
+      "title": "风庭对决",
+      "english": "BREEZE DUEL",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/duel/",
+      "original_title": "街头霸王Ⅱ",
+      "original_english": "Street Fighter II",
+      "reference_id": "street-fighter-2",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指《街头霸王Ⅱ》及其迭代语境；不同修订版并非完全相同。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "选择格斗家，结合移动、普通攻击、防守与必杀技进行对战。",
+      "implemented": [
+        "8场单人横向攻防；短拍/长挑/定向格挡/退步闪避与耐力",
+        "60秒、固定对手节奏、不能换边穿身、剩余体力与时间计分"
+      ],
+      "gaps": [
+        "街头霸王Ⅱ目录是选格斗家、普通技/防守/必杀技对战；本作只保留距离与前后摇攻防",
+        "明确无跳跃、空中连段、投技、角色选择或联网；缺少格斗游戏核心动作维度，不能等价SFⅡ"
+      ],
+      "relation": "本项目原创小型单人攻防挑战，仅参考距离、攻击前摇与收招、格挡、闪避及反击通用机制；人物、庭院、美术、声音与动作图形原创，不使用知名角色、招式资源或品牌，不宣称完整格斗游戏或联网对战。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 380,
+          "line_end": 392,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L380-L392",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 822,
+          "line_end": 848,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L822-L848",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/DUEL_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/DUEL_SPEC.md",
+          "line_start": 5,
+          "line_end": 6,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_SPEC.md#L5-L6",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/DUEL_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/DUEL_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "sf",
+          "label": "Capcom · 街霸 30 周年合集",
+          "url": "https://store.steampowered.com/app/586200/",
+          "kind": "publisher-store",
+          "relation": "含多个 II 版本的合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "31",
+      "slug": "expedition",
+      "title": "苔原远征",
+      "english": "MOSSBOUND EXPEDITION",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/expedition/",
+      "original_title": "帝国时代Ⅱ",
+      "original_english": "Age of Empires II",
+      "reference_id": "age-empires-2",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指《帝国时代Ⅱ》；参考决定版，重制内容与早期版本有差异。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "采集多种资源、发展城镇与时代，运用不同兵种组织进攻和防守。",
+      "implemented": [
+        "8关12×8全图可见即时策略；一种晶露、工人及2类战士",
+        "采集/交付/排队生产、编队寻路、基地/据点/护送，120秒场景"
+      ],
+      "gaps": [
+        "帝国时代Ⅱ目录包含多资源、城镇、时代和兵种发展；本作是单资源有限场景战术",
+        "明确无雾战、建筑树、完整经济AI或联网；对手为公开限量增援，非原作完整RTS"
+      ],
+      "relation": "本项目原创小型全图可见即时策略，仅参考采集、生产、编队移动与基地目标等通用机制；地图、单位、名称、美术和声音原创，不复制经典作品资产，不宣称完整RTS。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 393,
+          "line_end": 405,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L393-L405",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1609,
+          "line_end": 1635,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1609-L1635",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/EXPEDITION_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/EXPEDITION_SPEC.md",
+          "line_start": 13,
+          "line_end": 14,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_SPEC.md#L13-L14",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/EXPEDITION_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/EXPEDITION_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "aoe2",
+          "label": "Xbox Game Studios · 帝国时代II决定版",
+          "url": "https://store.steampowered.com/app/813780/",
+          "kind": "publisher-store",
+          "relation": "决定版",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "32",
+      "slug": "feather",
+      "title": "星羽同伴",
+      "english": "STARFEATHER COMPANIONS",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/feather/",
+      "original_title": "宝可梦",
+      "original_english": "Pokémon",
+      "reference_id": "pokemon",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "以主系列为主；不同世代与外传的规则、平台和地图不同。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "在地区中探索，发现和培育宝可梦，安排队伍并参与对战。",
+      "implemented": [
+        "8章固定3同伴短篇回合战斗；风/苔/泉相克、技能/护盾/状态",
+        "有限能量与补给、敌方意图预览，最多18轮；每章独立预算"
+      ],
+      "gaps": [
+        "宝可梦目录核心包括探索、发现、培育与组队；本作明确没有地图移动、捕捉或成长树",
+        "现有更接近固定队伍回合战斗短篇，缺少收集养成主循环；没有指定宝可梦世代或版本"
+      ],
+      "relation": "本项目原创短篇队伍回合冒险，仅参考队伍、技能、属性关系和有限补给等通用机制；角色、剧情、名称、美术与合成音原创，不复制商业作品资产，不宣称完整长篇RPG。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 406,
+          "line_end": 418,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L406-L418",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 1984,
+          "line_end": 2010,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L1984-L2010",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/FEATHER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FEATHER_SPEC.md",
+          "line_start": 3,
+          "line_end": 4,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_SPEC.md#L3-L4",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/FEATHER_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FEATHER_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "pokemon",
+          "label": "The Pokémon Company · 游戏目录",
+          "url": "https://www.pokemon.com/us/pokemon-video-games",
+          "kind": "official",
+          "relation": "系列目录",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "33",
+      "slug": "echo",
+      "title": "回声走廊",
+      "english": "ECHO CORRIDORS",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/echo/",
+      "original_title": "DOOM",
+      "original_english": "DOOM",
+      "reference_id": "doom",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "指初代经典《DOOM》，不是同名的后期重启作品。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "以第一人称穿越基地和迷宫，管理弹药与生命，寻找钥匙并击退敌人。",
+      "implemented": [
+        "8张11×9单层第一人称迷宫；光线投射、水平移动/转向、钥匙门",
+        "单一光脉冲、有限弹药/生命，3类静止预警构体，90秒"
+      ],
+      "gaps": [
+        "保留DOOM式导航、射击、钥匙出口，但敌人改为静止预警构体，地图为单层小迷宫",
+        "只有一套光脉冲火力；明确不支持多高度关卡，未呈现初代DOOM完整武器/动态怪物/关卡体系。跳跃和垂直瞄准不是这里对初代DOOM的缺失判据"
+      ],
+      "relation": "本项目原创轻量光线投射第一人称探索射击，仅参考空间导航、瞄准、有限弹药、钥匙和出口等通用机制；地图、几何、美术、敌人、名称与合成音原创，不复制DOOM等品牌素材，无写实血腥。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 419,
+          "line_end": 431,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L419-L431",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2265,
+          "line_end": 2291,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2265-L2291",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ECHO_SPEC.md",
+          "line_start": 9,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_SPEC.md#L9-L10",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ECHO_SPEC.md",
+          "line_start": 19,
+          "line_end": 20,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_SPEC.md#L19-L20",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ECHO_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ECHO_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "doom",
+          "label": "Bethesda · DOOM + DOOM II",
+          "url": "https://store.steampowered.com/app/2280/",
+          "kind": "publisher-store",
+          "relation": "现代经典版合集",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "34",
+      "slug": "escort",
+      "title": "街巷护送",
+      "english": "ALLEYLIGHT ESCORT",
+      "status": "published",
+      "status_label": "正式目录已发布；不代表用户质量验收",
+      "play_url": "./games/escort/",
+      "original_title": "双截龙",
+      "original_english": "Double Dragon",
+      "reference_id": "double-dragon",
+      "reference_binding": "sourceGame明确绑定原目录条目",
+      "reference_version": "系列条目；街机与 FC 各代的合作模式和招式有差别。",
+      "version_note": "这是原目录的作品/系列口径；本实现没有单独锁定逐版本复刻验收标准。",
+      "original_core": "沿街道与场景前进，运用拳脚、投技和武器击退成群敌人。",
+      "implemented": [
+        "8关横向纵深推进与灯车护送；3段遭遇/关、4类对手",
+        "3式连击、闪步、2次恢复；原创AI辅助有限姿态精灵与分层场景"
+      ],
+      "gaps": [
+        "双截龙目录强调拳脚、投技与武器；本作改写为灯车护送，并明确无跳跃、投技或装备经济",
+        "采用有限姿态精灵，文档明确并非商业规模逐帧动画；技术通过不等于原作动作质感或用户美术验收"
+      ],
+      "relation": "本项目原创横向纵深清关护送动作，仅参考移动、近战连击、闪避、分段遇敌与护送等通用机制。原创角色与环境图像由imagegen辅助制作并程序整合，名称、关卡、界面、反馈与合成音为本项目制作；不复制商业角色、关卡或音效，无写实血腥。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "data/experiments.json",
+          "line_start": 432,
+          "line_end": 444,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/experiments.json#L432-L444",
+          "claim": "原作绑定、关数、公开状态及原创关系声明"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 727,
+          "line_end": 753,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L727-L753",
+          "claim": "原目录对原作玩法与版本的描述"
+        },
+        {
+          "path": "docs/ESCORT_SPEC.md",
+          "line_start": 19,
+          "line_end": 20,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_SPEC.md#L19-L20",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ESCORT_SPEC.md",
+          "line_start": 28,
+          "line_end": 29,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_SPEC.md#L28-L29",
+          "claim": "本作已声明范围与差异依据"
+        },
+        {
+          "path": "docs/ESCORT_VERIFICATION.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/ESCORT_VERIFICATION.md",
+          "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        }
+      ],
+      "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
+      "original_sources": [
+        {
+          "key": "double",
+          "label": "Dotemu · 双截龙三部曲",
+          "url": "https://store.steampowered.com/app/314150/",
+          "kind": "publisher-store",
+          "relation": "街机三部曲",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "number": "35",
+      "slug": "court",
+      "title": "晴湾篮场",
+      "english": "SUNLIT COURTS",
+      "status": "preview",
+      "status_label": "独立预览，尚未验收；不计入34款正式作品",
+      "play_url": "./preview/court/",
+      "original_title": "未明确",
+      "original_english": "未明确",
+      "reference_id": null,
+      "reference_binding": "未绑定，需确定",
+      "reference_version": "未明确",
+      "version_note": "不能根据题材相似性推定原作；需先确认原作和版本。",
+      "original_core": "原作未确定，暂不能作为既定原作逐项评分。",
+      "implemented": [
+        "8场原创2对2篮球；移动、蓄力投篮、传球/抢断、换人、篮板",
+        "2/3分、20秒进攻、20秒加时；只保存解锁/最好分差，刷新重新开场"
+      ],
+      "gaps": [
+        "当前页只写参考街机2对2篮球，没有sourceGame或原作详情绑定，不能直接认定为NBA Jam复刻",
+        "如选择NBA Jam对标，现有范围只证明基础篮球对抗；夸张扣篮/演出、原作角色与版本特性未建立对照。它目前仍是尚未验收的预览"
+      ],
+      "relation": "页面自述原创玩法实验；不是原作或等价复刻。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "preview/court/index.html",
+          "line_start": 1,
+          "line_end": 2,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/index.html#L1-L2",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/court/index.html",
+          "line_start": 1,
+          "line_end": 2,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/index.html#L1-L2",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/court/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/court/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "docs/court-preview-qa/README.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/court-preview-qa/README.md",
+          "claim": "预览验证范围；不等同正式发布或真实浏览器完整验收"
+        }
+      ],
+      "validation_boundary": "保留独立预览身份；本次只读盘点，不代替正在进行的真实浏览器验收或用户质量评审。",
+      "original_sources": [],
+      "candidate_reference": {
+        "id": "nba-jam",
+        "title": "NBA Jam",
+        "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+        "catalogue_version": "以初代街机作品为主；后续 Tournament Edition 和重启作另有内容。"
+      },
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "in_progress",
+        "url": null
+      },
+      "current_screenshot": {
+        "image": "./assets/current-preview/court-desktop.webp",
+        "label": "本项目v1真实桌面截图；非手机实测、非美术验收"
+      },
+      "actual_qa_summary": "首场8:6获胜，第二场解锁与刷新保留最佳+2；宽窄布局和按钮失焦取消通过。后七场及真实手机待验。"
+    },
+    {
+      "number": "36",
+      "slug": "repair",
+      "title": "雨街修理所",
+      "english": "RAINY STREET REPAIR",
+      "status": "preview",
+      "status_label": "独立预览，尚未验收；不计入34款正式作品",
+      "play_url": "./preview/repair/",
+      "original_title": "未明确",
+      "original_english": "未明确",
+      "reference_id": null,
+      "reference_binding": "未绑定，需确定",
+      "reference_version": "未明确",
+      "version_note": "不能根据题材相似性推定原作；需先确认原作和版本。",
+      "original_core": "原作未确定，暂不能作为既定原作逐项评分。",
+      "implemented": [
+        "8日机器人修理所；接待/诊断、机械与电路工位、收银排队",
+        "固定A–F工位、建造/派技师/升级、耐心流失、故障维修及工资；日程75–120秒"
+      ],
+      "gaps": [
+        "当前页与恢复说明没有原作绑定，不能把主题医院作为已经确定的复刻对象",
+        "本作实际是机器人修理流程和固定工位调度。若对标Theme Hospital，医院病症/诊室表达与更广经营范围未形成对应；原作替换成修理题材是玩法包装与内容的改写"
+      ],
+      "relation": "页面自述原创玩法实验；不是原作或等价复刻。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "preview/repair/index.html",
+          "line_start": 81,
+          "line_end": 82,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/index.html#L81-L82",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/repair/index.html",
+          "line_start": 60,
+          "line_end": 61,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/index.html#L60-L61",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/repair/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/repair/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "docs/repair-preview-qa/README.md",
+          "line_start": 1,
+          "line_end": null,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/repair-preview-qa/README.md",
+          "claim": "预览验证范围；不等同正式发布或真实浏览器完整验收"
+        }
+      ],
+      "validation_boundary": "保留独立预览身份；本次只读盘点，不代替正在进行的真实浏览器验收或用户质量评审。",
+      "original_sources": [],
+      "candidate_reference": {
+        "id": "theme-hospital",
+        "title": "主题医院",
+        "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+        "catalogue_version": "指 Bullfrog 原作；《双点医院》是后来的不同作品。"
+      },
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      },
+      "current_screenshot": {
+        "image": "./assets/current-preview/repair-desktop.webp",
+        "label": "本项目v1真实桌面截图；非手机实测、非美术验收"
+      },
+      "actual_qa_summary": "前两日分别8单/311币、10单/356币，均0流失；刷新保留前两日最佳及第三日解锁。400/500 CSS三态布局通过，宽屏底按钮仍需约13px微滚；第3–8日待验。"
+    },
+    {
+      "number": "38",
+      "slug": "coaster",
+      "title": "云岬游乐园",
+      "english": "CLOUDCAPE COASTER CLUB",
+      "status": "preview",
+      "status_label": "独立预览，尚未验收；不计入34款正式作品",
+      "play_url": "./preview/coaster/",
+      "original_title": "未明确",
+      "original_english": "未明确",
+      "reference_id": null,
+      "reference_binding": "未绑定，需确定",
+      "reference_version": "未明确",
+      "version_note": "不能根据题材相似性推定原作；需先确认原作和版本。",
+      "original_core": "原作未确定，暂不能作为既定原作逐项评分。",
+      "implemented": [
+        "8座固定公园，每园12段固定环线；为轨道配提升/驱动/制动/倾斜模块",
+        "预算内配置→空车试跑→安全评分→有限3班营收/口碑目标"
+      ],
+      "gaps": [
+        "当前页未绑定RollerCoaster Tycoon，原作及版本待确定",
+        "轨道形状、高度、弯径全部固定，只能换模块；若对标过山车大亨目录中的自由铺轨/道路/商店/游客经营，现有仅是轨道工程解谜的一小部分，不能称为完整游乐园复刻"
+      ],
+      "relation": "页面自述原创玩法实验；不是原作或等价复刻。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "preview/coaster/index.html",
+          "line_start": 28,
+          "line_end": 29,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/index.html#L28-L29",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/coaster/index.html",
+          "line_start": 39,
+          "line_end": 40,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/index.html#L39-L40",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/coaster/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/coaster/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        }
+      ],
+      "validation_boundary": "保留独立预览身份；本次只读盘点，不代替正在进行的真实浏览器验收或用户质量评审。",
+      "original_sources": [],
+      "candidate_reference": {
+        "id": "rollercoaster",
+        "title": "过山车大亨",
+        "note": "仅为目录内相近题材的待确认候选，不是已确认对应关系。",
+        "catalogue_version": "系列条目；参考《Deluxe》所含初代与扩展，后续作品系统有别。"
+      },
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      },
+      "current_screenshot": {
+        "image": "./assets/current-preview/coaster-desktop.webp",
+        "label": "本项目v1真实桌面截图；非手机实测、非美术验收"
+      },
+      "actual_qa_summary": "前两园真实设计、试车、载客及通关；结束局刷新进入最新解锁园，活动局方案与暂停接续通过。后六园及真实手机待验。"
+    },
+    {
+      "number": "39",
+      "slug": "kart",
+      "title": "林野杯赛",
+      "english": "WOODLAND GRAND PRIX",
+      "status": "preview",
+      "status_label": "独立预览，尚未验收；不计入34款正式作品",
+      "play_url": "./preview/kart/",
+      "original_title": "马力欧卡丁车",
+      "original_english": "Mario Kart",
+      "reference_id": "mario-kart",
+      "reference_binding": "页面机制参考链接明确绑定系列",
+      "reference_version": "系列条目；角色、车辆与反重力等机制依版本不同。",
+      "version_note": "未锁定具体对标版本。",
+      "original_core": "在主题赛道驾驶卡丁车，利用漂移、路线与道具争取领先。",
+      "implemented": [
+        "8条原创赛道、4车同场2圈；自动加速、刹车、漂移蓄力冲刺",
+        "单槽3种道具：冲刺/护盾/近距脉冲；名次及时限目标、本地恢复"
+      ],
+      "gaps": [
+        "页上机制参考链接指向Mario Kart系列，未确定哪一代、平台或比赛模式",
+        "4车双圈、自动加速和3种原创道具构成简化小型竞速；原角色、车辆、赛道与音画不使用，无法据此代表系列具体版本的完整内容与手感"
+      ],
+      "relation": "页面自述原创玩法实验；不是原作或等价复刻。",
+      "levels": 8,
+      "evidence": [
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 48,
+          "line_end": 49,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L48-L49",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 49,
+          "line_end": 50,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L49-L50",
+          "claim": "预览身份、现有玩法及原作关系"
+        },
+        {
+          "path": "preview/kart/levels.mjs",
+          "line_start": 1,
+          "line_end": 10,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/levels.mjs#L1-L10",
+          "claim": "本作8关显式配置/预算与玩法范围"
+        },
+        {
+          "path": "preview/kart/index.html",
+          "line_start": 12,
+          "line_end": 12,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/preview/kart/index.html#L12-L12",
+          "claim": "机制参考链接绑定目录Mario Kart系列"
+        },
+        {
+          "path": "data/games.json",
+          "line_start": 2480,
+          "line_end": 2505,
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/data/games.json#L2480-L2505",
+          "claim": "原目录Mario Kart系列与版本说明"
+        }
+      ],
+      "validation_boundary": "保留独立预览身份；本次只读盘点，不代替正在进行的真实浏览器验收或用户质量评审。",
+      "original_sources": [
+        {
+          "key": "mk",
+          "label": "任天堂 · 马力欧历史",
+          "url": "https://mario.nintendo.com/history/",
+          "kind": "official",
+          "relation": "系列历史中的卡丁车作品",
+          "checkedAt": "2026-10-16",
+          "status": "未能读取",
+          "note": "本次连接未取得正文（SSLError）；链接保留作资料线索。"
+        }
+      ],
+      "version": "v1",
+      "next_version": {
+        "version": "v2",
+        "status": "not_started",
+        "url": null
+      },
+      "current_screenshot": {
+        "image": "./assets/current-preview/kart-desktop.webp",
+        "label": "本项目v1真实桌面截图；非手机实测、非美术验收"
+      },
+      "actual_qa_summary": "首站双圈67.6秒第4名，正确未达标；失败、重试与道具使用入口已测。胜利解锁、成功漂移、后七站及真实手机待验。"
+    }
+  ]
+}

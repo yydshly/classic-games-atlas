@@ -1,0 +1,23 @@
+{
+  "testedAt": "2026-10-16T14:08:12.716513+00:00",
+  "url": "http://127.0.0.1:4174/games/chime/",
+  "checks": [
+    "Preparation has no clock and shows all geometry without overlay obscuring the canvas",
+    "First level only on fresh storage; native dialog Escape and locked stages",
+    "Tutorial cancel/start and paused cuts/time are blocked",
+    "Normal keyboard win, one settlement, stars/best/unlock and replay retain progress",
+    "Anchor endpoints cannot be tapped to cut",
+    "Dragging the bell provides no movement/impulse command",
+    "Mouse point on a rope cuts and normally completes a level",
+    "Held/repeated keyboard digit cannot duplicate a cut",
+    "Canvas keyboard selection plus Space cuts the selected rope",
+    "Uncut and mid-flight cut-log checkpoints replay exact positions/ticks and resume to a real win",
+    "Help freezes simulation; close resumes; browser blur pauses",
+    "Sound preference survives reload"
+  ],
+  "fixture": "Menu unlock/tutorial preferences only for later-level UI cases; explicitly corrupt storage and rejection fixtures separate from normal play. Native input throughout.",
+  "touch": [],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

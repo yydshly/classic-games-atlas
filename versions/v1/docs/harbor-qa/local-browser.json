@@ -1,0 +1,5113 @@
+{
+  "testedAt": "2026-10-16T17:47:25.196201+00:00",
+  "url": "http://127.0.0.1:4174/games/harbor/",
+  "method": "One public navigation then actual Next buttons and naturally earned unlocks. Actual edge preview/confirm clicks, ship-type select, route text and purchase confirmation, start and one-step buttons. No inventory, cash, cargo, clock or delivery-state writes.",
+  "fixture": "Only initial starting-level unlock/tutorial/sound preferences if start>1.",
+  "results": [
+    {
+      "stage": 1,
+      "state": "won",
+      "turn": 11,
+      "cash": 4,
+      "score": 1045,
+      "stats": {
+        "planChanges": 3,
+        "undos": 0,
+        "turns": 11,
+        "departures": 10,
+        "arrivals": 10,
+        "deliveries": 3,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 0,
+        "loaded": 3,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 6,
+        "fleet": 5,
+        "fares": 10,
+        "income": 9
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "C",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 3
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "C",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "C",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 11
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "skiff",
+          "route": [
+            "A",
+            "B",
+            "C"
+          ],
+          "index": 2,
+          "node": "C",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1045,
+        "turn": 11,
+        "cash": 4,
+        "ships": 1,
+        "fares": 10
+      },
+      "unlocked": 2,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 3,
+        "places": {
+          "delivered": 3
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 4,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 4,
+            "income": 3
+          },
+          "delivered": 1,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 1,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 3,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 5,
+            "income": 3
+          },
+          "delivered": 1,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 1,
+              "aboard": 1,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 2,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 6,
+            "income": 3
+          },
+          "delivered": 1,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 1,
+              "aboard": 1,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 4,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 7,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 2,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 3,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 8,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 2,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 2,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 9,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 2,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 1,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 10,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 2,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 4,
+          "ledger": {
+            "build": 6,
+            "fleet": 5,
+            "fares": 10,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 3,
+            "places": {
+              "delivered": 3
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "state": "won",
+      "turn": 10,
+      "cash": 9,
+      "score": 1230,
+      "stats": {
+        "planChanges": 4,
+        "undos": 0,
+        "turns": 10,
+        "departures": 9,
+        "arrivals": 9,
+        "deliveries": 4,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 0,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 6,
+        "fleet": 9,
+        "fares": 9,
+        "income": 12
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        },
+        {
+          "id": 4,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "index": 3,
+          "node": "D",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CD"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1230,
+        "turn": 10,
+        "cash": 9,
+        "ships": 1,
+        "fares": 9
+      },
+      "unlocked": 3,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 8,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 4,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 7,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 5,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 6,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 5,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 7,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 4,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 8,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 3,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 9,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 9,
+          "ledger": {
+            "build": 6,
+            "fleet": 9,
+            "fares": 9,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "state": "won",
+      "turn": 11,
+      "cash": 8,
+      "score": 1165,
+      "stats": {
+        "planChanges": 7,
+        "undos": 0,
+        "turns": 11,
+        "departures": 15,
+        "arrivals": 15,
+        "deliveries": 4,
+        "capacityWaits": 1,
+        "moneyWaits": 0,
+        "cargoWaits": 4,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 15,
+        "fleet": 10,
+        "fares": 15,
+        "income": 12
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 11
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "E",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 3
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "E",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "skiff",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "index": 3,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "skiff",
+          "route": [
+            "B",
+            "C",
+            "E"
+          ],
+          "index": 2,
+          "node": "E",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AC"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CD"
+        },
+        {
+          "kind": "build",
+          "edge": "CE"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1165,
+        "turn": 11,
+        "cash": 8,
+        "ships": 2,
+        "fares": 15
+      },
+      "unlocked": 4,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 7,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 7,
+            "income": 3
+          },
+          "delivered": 1,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "aboard": 1,
+              "waiting": 2,
+              "delivered": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 8,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 9,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 6,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 11,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 8,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 12,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 7,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 13,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 6,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 14,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 5,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 15,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 8,
+          "ledger": {
+            "build": 15,
+            "fleet": 10,
+            "fares": 15,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "state": "won",
+      "turn": 7,
+      "cash": 12,
+      "score": 1275,
+      "stats": {
+        "planChanges": 4,
+        "undos": 0,
+        "turns": 7,
+        "departures": 6,
+        "arrivals": 6,
+        "deliveries": 4,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 0,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 9,
+        "fleet": 9,
+        "fares": 6,
+        "income": 12
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "D",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "D",
+          "destination": "A",
+          "release": 3,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "D",
+          "destination": "A",
+          "release": 3,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "index": 0,
+          "node": "A",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CD"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1275,
+        "turn": 7,
+        "cash": 12,
+        "ships": 1,
+        "fares": 6
+      },
+      "unlocked": 5,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 8,
+          "ledger": {
+            "build": 9,
+            "fleet": 9,
+            "fares": 4,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 7,
+          "ledger": {
+            "build": 9,
+            "fleet": 9,
+            "fares": 5,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 6,
+          "ledger": {
+            "build": 9,
+            "fleet": 9,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 12,
+          "ledger": {
+            "build": 9,
+            "fleet": 9,
+            "fares": 6,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "state": "won",
+      "turn": 11,
+      "cash": 5,
+      "score": 1135,
+      "stats": {
+        "planChanges": 8,
+        "undos": 0,
+        "turns": 11,
+        "departures": 12,
+        "arrivals": 12,
+        "deliveries": 4,
+        "capacityWaits": 1,
+        "moneyWaits": 0,
+        "cargoWaits": 7,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 18,
+        "fleet": 14,
+        "fares": 12,
+        "income": 12
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "G",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "G",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 11
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ],
+          "index": 3,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        },
+        {
+          "id": 2,
+          "type": "skiff",
+          "route": [
+            "B",
+            "D",
+            "E",
+            "G"
+          ],
+          "index": 3,
+          "node": "G",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AC"
+        },
+        {
+          "kind": "build",
+          "edge": "BD"
+        },
+        {
+          "kind": "build",
+          "edge": "CE"
+        },
+        {
+          "kind": "build",
+          "edge": "DE"
+        },
+        {
+          "kind": "build",
+          "edge": "EF"
+        },
+        {
+          "kind": "build",
+          "edge": "EG"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "B",
+            "D",
+            "E",
+            "G"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1135,
+        "turn": 11,
+        "cash": 5,
+        "ships": 2,
+        "fares": 12
+      },
+      "unlocked": 6,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 5,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 1,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 7,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 7,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 6,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 8,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 5,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 9,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "waiting": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 4,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 10,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 3,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 11,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 2,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 12,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 5,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 12,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "state": "won",
+      "turn": 10,
+      "cash": 11,
+      "score": 1210,
+      "stats": {
+        "planChanges": 7,
+        "undos": 0,
+        "turns": 10,
+        "departures": 12,
+        "arrivals": 12,
+        "deliveries": 5,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 6,
+        "loaded": 5,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 13,
+        "fleet": 14,
+        "fares": 12,
+        "income": 15
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        },
+        {
+          "id": 4,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        },
+        {
+          "id": 5,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "D",
+          "release": 1,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "index": 3,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "skiff",
+          "route": [
+            "C",
+            "G",
+            "B",
+            "D"
+          ],
+          "index": 3,
+          "node": "D",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BD"
+        },
+        {
+          "kind": "build",
+          "edge": "BG"
+        },
+        {
+          "kind": "build",
+          "edge": "CG"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "C",
+            "G",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1210,
+        "turn": 10,
+        "cash": 11,
+        "ships": 2,
+        "fares": 12
+      },
+      "unlocked": 7,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 5,
+        "places": {
+          "delivered": 5
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 10,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 7,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 9,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 8,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 8,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 9,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 7,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 10,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 6,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 11,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 5,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 12,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 11,
+          "ledger": {
+            "build": 13,
+            "fleet": 14,
+            "fares": 12,
+            "income": 15
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 5
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 7,
+      "state": "won",
+      "turn": 17,
+      "cash": 11,
+      "score": 1165,
+      "stats": {
+        "planChanges": 7,
+        "undos": 0,
+        "turns": 17,
+        "departures": 18,
+        "arrivals": 18,
+        "deliveries": 6,
+        "capacityWaits": 6,
+        "moneyWaits": 0,
+        "cargoWaits": 2,
+        "loaded": 6,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 14,
+        "fleet": 18,
+        "fares": 18,
+        "income": 18
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 8
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 8
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 17
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 5,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 6,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "F",
+          "release": 0,
+          "due": null,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 15
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ],
+          "index": 3,
+          "node": "E",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "barge",
+          "route": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "index": 3,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AC"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CD"
+        },
+        {
+          "kind": "build",
+          "edge": "DE"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1165,
+        "turn": 17,
+        "cash": 11,
+        "ships": 2,
+        "fares": 18
+      },
+      "unlocked": 8,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 6,
+        "places": {
+          "delivered": 6
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 6,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 5,
+            "income": 0
+          },
+          "delivered": 0,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "aboard": 4,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 11,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "aboard": 2,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 10,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 7,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "aboard": 2,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 9,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 8,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "aboard": 2,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 13,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 10,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 11,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 12,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 11,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 12,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 10,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 13,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 12,
+          "cash": 8,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 15,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 13,
+          "cash": 8,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 15,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 14,
+          "cash": 6,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 17,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 4,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 15,
+          "cash": 9,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 17,
+            "income": 15
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 5,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 16,
+          "cash": 8,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 18,
+            "income": 15
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 5,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 17,
+          "cash": 11,
+          "ledger": {
+            "build": 14,
+            "fleet": 18,
+            "fares": 18,
+            "income": 18
+          },
+          "delivered": 6,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 6,
+            "places": {
+              "delivered": 6
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "state": "won",
+      "turn": 11,
+      "cash": 11,
+      "score": 1175,
+      "stats": {
+        "planChanges": 5,
+        "undos": 0,
+        "turns": 11,
+        "departures": 10,
+        "arrivals": 10,
+        "deliveries": 4,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 0,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 10,
+        "fleet": 9,
+        "fares": 10,
+        "income": 12
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 11,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 11,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 11,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "A",
+          "destination": "F",
+          "release": 2,
+          "due": 14,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 11
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "E",
+            "F"
+          ],
+          "index": 4,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CE"
+        },
+        {
+          "kind": "build",
+          "edge": "EF"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1175,
+        "turn": 11,
+        "cash": 11,
+        "ships": 1,
+        "fares": 10
+      },
+      "unlocked": 9,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 11,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 4,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 10,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 5,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 9,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 8,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 7,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 7,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 8,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 6,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 9,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 8,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 10,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 11,
+          "ledger": {
+            "build": 10,
+            "fleet": 9,
+            "fares": 10,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 9,
+      "state": "won",
+      "turn": 13,
+      "cash": 8,
+      "score": 1195,
+      "stats": {
+        "planChanges": 7,
+        "undos": 0,
+        "turns": 13,
+        "departures": 18,
+        "arrivals": 18,
+        "deliveries": 4,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 3,
+        "loaded": 4,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 14,
+        "fleet": 14,
+        "fares": 18,
+        "income": 16
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "anchor",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": 18,
+          "weight": 2,
+          "reward": 5,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 2,
+          "kind": "anchor",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": 18,
+          "weight": 2,
+          "reward": 5,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 13
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "D",
+          "release": 1,
+          "due": 15,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "D",
+          "release": 1,
+          "due": 15,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 10
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "index": 3,
+          "node": "F",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "skiff",
+          "route": [
+            "C",
+            "G",
+            "B",
+            "D"
+          ],
+          "index": 3,
+          "node": "D",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BD"
+        },
+        {
+          "kind": "build",
+          "edge": "BG"
+        },
+        {
+          "kind": "build",
+          "edge": "CG"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "C",
+            "G",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1195,
+        "turn": 13,
+        "cash": 8,
+        "ships": 2,
+        "fares": 18
+      },
+      "unlocked": 10,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 4,
+        "places": {
+          "delivered": 4
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 6,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 7,
+            "income": 3
+          },
+          "delivered": 1,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "aboard": 1,
+              "waiting": 2,
+              "delivered": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 9,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 9,
+            "income": 8
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 8,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 10,
+            "income": 8
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 6,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 12,
+            "income": 8
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 4,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 14,
+            "income": 8
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 2,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 16,
+            "income": 8
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 2,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 4,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 17,
+            "income": 11
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 3,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 18,
+            "income": 11
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 12,
+          "cash": 3,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 18,
+            "income": 11
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 13,
+          "cash": 8,
+          "ledger": {
+            "build": 14,
+            "fleet": 14,
+            "fares": 18,
+            "income": 16
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 4,
+            "places": {
+              "delivered": 4
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 10,
+      "state": "won",
+      "turn": 12,
+      "cash": 23,
+      "score": 1390,
+      "stats": {
+        "planChanges": 7,
+        "undos": 0,
+        "turns": 12,
+        "departures": 12,
+        "arrivals": 12,
+        "deliveries": 7,
+        "capacityWaits": 3,
+        "moneyWaits": 0,
+        "cargoWaits": 3,
+        "loaded": 7,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 16,
+        "fleet": 18,
+        "fares": 12,
+        "income": 23
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 12,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 8
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 12,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 8
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "E",
+          "destination": "A",
+          "release": 3,
+          "due": 18,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 12
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "E",
+          "destination": "A",
+          "release": 3,
+          "due": 18,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 12
+        },
+        {
+          "id": 5,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "F",
+          "release": 0,
+          "due": 14,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 6,
+          "kind": "wick",
+          "origin": "B",
+          "destination": "F",
+          "release": 0,
+          "due": 14,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 7,
+          "kind": "anchor",
+          "origin": "F",
+          "destination": "B",
+          "release": 5,
+          "due": 21,
+          "weight": 2,
+          "reward": 5,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 9
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ],
+          "index": 0,
+          "node": "A",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "barge",
+          "route": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "index": 0,
+          "node": "B",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AC"
+        },
+        {
+          "kind": "build",
+          "edge": "BC"
+        },
+        {
+          "kind": "build",
+          "edge": "CD"
+        },
+        {
+          "kind": "build",
+          "edge": "DE"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1390,
+        "turn": 12,
+        "cash": 23,
+        "ships": 2,
+        "fares": 12
+      },
+      "unlocked": 11,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 7,
+        "places": {
+          "delivered": 7
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 7,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 5,
+            "income": 0
+          },
+          "delivered": 0,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "aboard": 4,
+              "waiting": 2,
+              "pending": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 12,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 6,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "aboard": 3,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 11,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 7,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "aboard": 3,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 10,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 8,
+            "income": 6
+          },
+          "delivered": 2,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "aboard": 3,
+              "waiting": 2,
+              "delivered": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 14,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 10,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "delivered": 4,
+              "aboard": 3
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 18,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 11,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "delivered": 5,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 18,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 11,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "delivered": 5,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 17,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 12,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "delivered": 5,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 12,
+          "cash": 23,
+          "ledger": {
+            "build": 16,
+            "fleet": 18,
+            "fares": 12,
+            "income": 23
+          },
+          "delivered": 7,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 7,
+            "places": {
+              "delivered": 7
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 11,
+      "state": "won",
+      "turn": 7,
+      "cash": 17,
+      "score": 1375,
+      "stats": {
+        "planChanges": 8,
+        "undos": 0,
+        "turns": 7,
+        "departures": 10,
+        "arrivals": 10,
+        "deliveries": 5,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 2,
+        "loaded": 5,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 18,
+        "fleet": 14,
+        "fares": 10,
+        "income": 17
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": 13,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "F",
+          "release": 0,
+          "due": 13,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "G",
+          "release": 1,
+          "due": 14,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 3
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "G",
+          "release": 1,
+          "due": 14,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        },
+        {
+          "id": 5,
+          "kind": "anchor",
+          "origin": "F",
+          "destination": "H",
+          "release": 2,
+          "due": 18,
+          "weight": 2,
+          "reward": 5,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F",
+            "H"
+          ],
+          "index": 4,
+          "node": "H",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        },
+        {
+          "id": 2,
+          "type": "skiff",
+          "route": [
+            "C",
+            "E",
+            "G"
+          ],
+          "index": 2,
+          "node": "G",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BD"
+        },
+        {
+          "kind": "build",
+          "edge": "CE"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "build",
+          "edge": "EG"
+        },
+        {
+          "kind": "build",
+          "edge": "FH"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "F",
+            "H"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "skiff",
+          "route": [
+            "C",
+            "E",
+            "G"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1375,
+        "turn": 7,
+        "cash": 17,
+        "ships": 2,
+        "fares": 10
+      },
+      "unlocked": 12,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 5,
+        "places": {
+          "delivered": 5
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 11,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 8,
+            "income": 9
+          },
+          "delivered": 3,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 3,
+              "waiting": 1,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 15,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 9,
+            "income": 14
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 4,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 14,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 10,
+            "income": 14
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 4,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 17,
+          "ledger": {
+            "build": 18,
+            "fleet": 14,
+            "fares": 10,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 5,
+            "places": {
+              "delivered": 5
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    },
+    {
+      "stage": 12,
+      "state": "won",
+      "turn": 12,
+      "cash": 22,
+      "score": 1440,
+      "stats": {
+        "planChanges": 8,
+        "undos": 0,
+        "turns": 12,
+        "departures": 16,
+        "arrivals": 16,
+        "deliveries": 9,
+        "capacityWaits": 0,
+        "moneyWaits": 0,
+        "cargoWaits": 3,
+        "loaded": 9,
+        "settlements": 1
+      },
+      "ledger": {
+        "build": 20,
+        "fleet": 18,
+        "fares": 19,
+        "income": 29
+      },
+      "units": [
+        {
+          "id": 1,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 15,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 2,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 15,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 4
+        },
+        {
+          "id": 3,
+          "kind": "cotton",
+          "origin": "A",
+          "destination": "E",
+          "release": 0,
+          "due": 15,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 12
+        },
+        {
+          "id": 4,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "F",
+          "release": 1,
+          "due": 16,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 3
+        },
+        {
+          "id": 5,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "F",
+          "release": 1,
+          "due": 16,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 3
+        },
+        {
+          "id": 6,
+          "kind": "wick",
+          "origin": "C",
+          "destination": "F",
+          "release": 1,
+          "due": 16,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 7
+        },
+        {
+          "id": 7,
+          "kind": "anchor",
+          "origin": "E",
+          "destination": "G",
+          "release": 4,
+          "due": 20,
+          "weight": 2,
+          "reward": 5,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 5
+        },
+        {
+          "id": 8,
+          "kind": "cotton",
+          "origin": "F",
+          "destination": "B",
+          "release": 5,
+          "due": 23,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 9
+        },
+        {
+          "id": 9,
+          "kind": "cotton",
+          "origin": "F",
+          "destination": "B",
+          "release": 5,
+          "due": 23,
+          "weight": 1,
+          "reward": 3,
+          "place": "delivered",
+          "ship": null,
+          "deliveredAt": 9
+        }
+      ],
+      "ships": [
+        {
+          "id": 1,
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "G"
+          ],
+          "index": 3,
+          "node": "E",
+          "trip": null,
+          "cargo": [],
+          "wait": "在途"
+        },
+        {
+          "id": 2,
+          "type": "barge",
+          "route": [
+            "C",
+            "F",
+            "D",
+            "B"
+          ],
+          "index": 3,
+          "node": "B",
+          "trip": null,
+          "cargo": [],
+          "wait": "候货"
+        }
+      ],
+      "actualLog": [
+        {
+          "kind": "build",
+          "edge": "AB"
+        },
+        {
+          "kind": "build",
+          "edge": "BD"
+        },
+        {
+          "kind": "build",
+          "edge": "CF"
+        },
+        {
+          "kind": "build",
+          "edge": "DE"
+        },
+        {
+          "kind": "build",
+          "edge": "DF"
+        },
+        {
+          "kind": "build",
+          "edge": "EG"
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "G"
+          ]
+        },
+        {
+          "kind": "buy",
+          "type": "barge",
+          "route": [
+            "C",
+            "F",
+            "D",
+            "B"
+          ]
+        },
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        },
+        {
+          "kind": "step"
+        }
+      ],
+      "best": {
+        "score": 1440,
+        "turn": 12,
+        "cash": 22,
+        "ships": 2,
+        "fares": 19
+      },
+      "unlocked": 12,
+      "invariants": {
+        "cashMatches": true,
+        "nonnegative": true,
+        "unitCount": 9,
+        "places": {
+          "delivered": 9
+        },
+        "allAccounted": true,
+        "uniqueCargo": true,
+        "capacity": true,
+        "edgeCapacity": true,
+        "nodeSlots": true,
+        "uniqueDelivery": true
+      },
+      "actions": [
+        {
+          "turn": 4,
+          "cash": 16,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 8,
+            "income": 12
+          },
+          "delivered": 4,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 4,
+              "waiting": 2,
+              "aboard": 1,
+              "pending": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 5,
+          "cash": 18,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 11,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 5,
+              "waiting": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 6,
+          "cash": 17,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 12,
+            "income": 17
+          },
+          "delivered": 5,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 5,
+              "waiting": 3,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 7,
+          "cash": 18,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 14,
+            "income": 20
+          },
+          "delivered": 6,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 6,
+              "waiting": 1,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 8,
+          "cash": 16,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 16,
+            "income": 20
+          },
+          "delivered": 6,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 6,
+              "waiting": 1,
+              "aboard": 2
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 9,
+          "cash": 21,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 17,
+            "income": 26
+          },
+          "delivered": 8,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 8,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 10,
+          "cash": 20,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 18,
+            "income": 26
+          },
+          "delivered": 8,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 8,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 11,
+          "cash": 19,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 19,
+            "income": 26
+          },
+          "delivered": 8,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 8,
+              "aboard": 1
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        },
+        {
+          "turn": 12,
+          "cash": 22,
+          "ledger": {
+            "build": 20,
+            "fleet": 18,
+            "fares": 19,
+            "income": 29
+          },
+          "delivered": 9,
+          "invariants": {
+            "cashMatches": true,
+            "nonnegative": true,
+            "unitCount": 9,
+            "places": {
+              "delivered": 9
+            },
+            "allAccounted": true,
+            "uniqueCargo": true,
+            "capacity": true,
+            "edgeCapacity": true,
+            "nodeSlots": true,
+            "uniqueDelivery": true
+          }
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}

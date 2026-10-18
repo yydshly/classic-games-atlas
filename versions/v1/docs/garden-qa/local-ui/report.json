@@ -1,0 +1,824 @@
+{
+  "testedAt": "2026-10-16T08:39:08.749810+00:00",
+  "url": "http://127.0.0.1:4174/games/garden/",
+  "method": "normal adjacent clicks, native keys, CDP touch; only map10 menu unlock and blocked-storage fixture",
+  "checks": {
+    "firstVisitTeachingStablePlayableBoardAnd64Cells": true,
+    "legalHintHighlightsTwoWithoutSpendingMove": true,
+    "invalidSwapReturnsExactBoardAndCostsNothing": true,
+    "keyboardRovingFocusAdjacentExchangeAndFocusReturns": true,
+    "pauseFreezesAnimationAndBusyInputIgnored": true,
+    "restartDuringAnimationCancelsOldResolution": true,
+    "reloadDuringAnimationRestoresPreviousCompleteTransaction": true,
+    "stableBoardRngGoalsStepsAndSoundRestoredExactly": true,
+    "naturalWinBestUnlockAndTwentyMapMenu": true,
+    "helpEscapeResumeAndNativeSpacePause": true,
+    "normalLegalPoorStrategyExhaustsMoves": {
+      "seed": 88510,
+      "movesUsed": 26,
+      "score": 2220,
+      "blueCollected": 9,
+      "required": 16,
+      "swaps": [
+        {
+          "a": 4,
+          "b": 5,
+          "before": {
+            "moves": 26,
+            "score": 0,
+            "collected": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "layers": 0
+          },
+          "after": {
+            "moves": 25,
+            "score": 90,
+            "collected": [
+              3,
+              0,
+              0,
+              3,
+              0,
+              0
+            ],
+            "layers": 2
+          }
+        },
+        {
+          "a": 9,
+          "b": 17,
+          "before": {
+            "moves": 25,
+            "score": 90,
+            "collected": [
+              3,
+              0,
+              0,
+              3,
+              0,
+              0
+            ],
+            "layers": 2
+          },
+          "after": {
+            "moves": 24,
+            "score": 120,
+            "collected": [
+              3,
+              0,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 5
+          }
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "before": {
+            "moves": 24,
+            "score": 120,
+            "collected": [
+              3,
+              0,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 5
+          },
+          "after": {
+            "moves": 23,
+            "score": 150,
+            "collected": [
+              3,
+              3,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 7
+          }
+        },
+        {
+          "a": 24,
+          "b": 32,
+          "before": {
+            "moves": 23,
+            "score": 150,
+            "collected": [
+              3,
+              3,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 7
+          },
+          "after": {
+            "moves": 22,
+            "score": 180,
+            "collected": [
+              6,
+              3,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 8
+          }
+        },
+        {
+          "a": 16,
+          "b": 24,
+          "before": {
+            "moves": 22,
+            "score": 180,
+            "collected": [
+              6,
+              3,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 8
+          },
+          "after": {
+            "moves": 21,
+            "score": 210,
+            "collected": [
+              6,
+              6,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 9
+          }
+        },
+        {
+          "a": 35,
+          "b": 36,
+          "before": {
+            "moves": 21,
+            "score": 210,
+            "collected": [
+              6,
+              6,
+              0,
+              6,
+              0,
+              0
+            ],
+            "layers": 9
+          },
+          "after": {
+            "moves": 20,
+            "score": 450,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              3,
+              3
+            ],
+            "layers": 12
+          }
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "before": {
+            "moves": 20,
+            "score": 450,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              3,
+              3
+            ],
+            "layers": 12
+          },
+          "after": {
+            "moves": 19,
+            "score": 480,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              6,
+              3
+            ],
+            "layers": 12
+          }
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "before": {
+            "moves": 19,
+            "score": 480,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              6,
+              3
+            ],
+            "layers": 12
+          },
+          "after": {
+            "moves": 18,
+            "score": 510,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 12
+          }
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "before": {
+            "moves": 18,
+            "score": 510,
+            "collected": [
+              12,
+              6,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 12
+          },
+          "after": {
+            "moves": 17,
+            "score": 540,
+            "collected": [
+              15,
+              6,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 12
+          }
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "before": {
+            "moves": 17,
+            "score": 540,
+            "collected": [
+              15,
+              6,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 12
+          },
+          "after": {
+            "moves": 16,
+            "score": 570,
+            "collected": [
+              15,
+              9,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 13
+          }
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "before": {
+            "moves": 16,
+            "score": 570,
+            "collected": [
+              15,
+              9,
+              0,
+              6,
+              6,
+              6
+            ],
+            "layers": 13
+          },
+          "after": {
+            "moves": 15,
+            "score": 780,
+            "collected": [
+              19,
+              9,
+              0,
+              12,
+              6,
+              6
+            ],
+            "layers": 13
+          }
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "before": {
+            "moves": 15,
+            "score": 780,
+            "collected": [
+              19,
+              9,
+              0,
+              12,
+              6,
+              6
+            ],
+            "layers": 13
+          },
+          "after": {
+            "moves": 14,
+            "score": 810,
+            "collected": [
+              19,
+              9,
+              0,
+              12,
+              6,
+              9
+            ],
+            "layers": 14
+          }
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "before": {
+            "moves": 14,
+            "score": 810,
+            "collected": [
+              19,
+              9,
+              0,
+              12,
+              6,
+              9
+            ],
+            "layers": 14
+          },
+          "after": {
+            "moves": 13,
+            "score": 840,
+            "collected": [
+              19,
+              12,
+              0,
+              12,
+              6,
+              9
+            ],
+            "layers": 14
+          }
+        },
+        {
+          "a": 4,
+          "b": 12,
+          "before": {
+            "moves": 13,
+            "score": 840,
+            "collected": [
+              19,
+              12,
+              0,
+              12,
+              6,
+              9
+            ],
+            "layers": 14
+          },
+          "after": {
+            "moves": 12,
+            "score": 870,
+            "collected": [
+              19,
+              12,
+              0,
+              12,
+              6,
+              12
+            ],
+            "layers": 15
+          }
+        },
+        {
+          "a": 7,
+          "b": 15,
+          "before": {
+            "moves": 12,
+            "score": 870,
+            "collected": [
+              19,
+              12,
+              0,
+              12,
+              6,
+              12
+            ],
+            "layers": 15
+          },
+          "after": {
+            "moves": 11,
+            "score": 900,
+            "collected": [
+              19,
+              12,
+              0,
+              15,
+              6,
+              12
+            ],
+            "layers": 15
+          }
+        },
+        {
+          "a": 48,
+          "b": 49,
+          "before": {
+            "moves": 11,
+            "score": 900,
+            "collected": [
+              19,
+              12,
+              0,
+              15,
+              6,
+              12
+            ],
+            "layers": 15
+          },
+          "after": {
+            "moves": 10,
+            "score": 930,
+            "collected": [
+              19,
+              12,
+              0,
+              15,
+              9,
+              12
+            ],
+            "layers": 15
+          }
+        },
+        {
+          "a": 52,
+          "b": 53,
+          "before": {
+            "moves": 10,
+            "score": 930,
+            "collected": [
+              19,
+              12,
+              0,
+              15,
+              9,
+              12
+            ],
+            "layers": 15
+          },
+          "after": {
+            "moves": 9,
+            "score": 960,
+            "collected": [
+              19,
+              12,
+              0,
+              18,
+              9,
+              12
+            ],
+            "layers": 18
+          }
+        },
+        {
+          "a": 17,
+          "b": 18,
+          "before": {
+            "moves": 9,
+            "score": 960,
+            "collected": [
+              19,
+              12,
+              0,
+              18,
+              9,
+              12
+            ],
+            "layers": 18
+          },
+          "after": {
+            "moves": 8,
+            "score": 1200,
+            "collected": [
+              22,
+              14,
+              3,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          }
+        },
+        {
+          "a": 28,
+          "b": 29,
+          "before": {
+            "moves": 8,
+            "score": 1200,
+            "collected": [
+              22,
+              14,
+              3,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          },
+          "after": {
+            "moves": 7,
+            "score": 1230,
+            "collected": [
+              22,
+              14,
+              6,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          }
+        },
+        {
+          "a": 19,
+          "b": 27,
+          "before": {
+            "moves": 7,
+            "score": 1230,
+            "collected": [
+              22,
+              14,
+              6,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          },
+          "after": {
+            "moves": 6,
+            "score": 1260,
+            "collected": [
+              22,
+              17,
+              6,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          }
+        },
+        {
+          "a": 5,
+          "b": 13,
+          "before": {
+            "moves": 6,
+            "score": 1260,
+            "collected": [
+              22,
+              17,
+              6,
+              20,
+              10,
+              16
+            ],
+            "layers": 19
+          },
+          "after": {
+            "moves": 5,
+            "score": 1350,
+            "collected": [
+              22,
+              17,
+              6,
+              23,
+              13,
+              16
+            ],
+            "layers": 20
+          }
+        },
+        {
+          "a": 36,
+          "b": 37,
+          "before": {
+            "moves": 5,
+            "score": 1350,
+            "collected": [
+              22,
+              17,
+              6,
+              23,
+              13,
+              16
+            ],
+            "layers": 20
+          },
+          "after": {
+            "moves": 4,
+            "score": 1440,
+            "collected": [
+              22,
+              20,
+              6,
+              26,
+              13,
+              16
+            ],
+            "layers": 21
+          }
+        },
+        {
+          "a": 51,
+          "b": 52,
+          "before": {
+            "moves": 4,
+            "score": 1440,
+            "collected": [
+              22,
+              20,
+              6,
+              26,
+              13,
+              16
+            ],
+            "layers": 21
+          },
+          "after": {
+            "moves": 3,
+            "score": 1740,
+            "collected": [
+              22,
+              23,
+              6,
+              29,
+              13,
+              22
+            ],
+            "layers": 21
+          }
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "before": {
+            "moves": 3,
+            "score": 1740,
+            "collected": [
+              22,
+              23,
+              6,
+              29,
+              13,
+              22
+            ],
+            "layers": 21
+          },
+          "after": {
+            "moves": 2,
+            "score": 1770,
+            "collected": [
+              25,
+              23,
+              6,
+              29,
+              13,
+              22
+            ],
+            "layers": 21
+          }
+        },
+        {
+          "a": 12,
+          "b": 20,
+          "before": {
+            "moves": 2,
+            "score": 1770,
+            "collected": [
+              25,
+              23,
+              6,
+              29,
+              13,
+              22
+            ],
+            "layers": 21
+          },
+          "after": {
+            "moves": 1,
+            "score": 1920,
+            "collected": [
+              25,
+              23,
+              9,
+              29,
+              16,
+              25
+            ],
+            "layers": 21
+          }
+        },
+        {
+          "a": 9,
+          "b": 17,
+          "before": {
+            "moves": 1,
+            "score": 1920,
+            "collected": [
+              25,
+              23,
+              9,
+              29,
+              16,
+              25
+            ],
+            "layers": 21
+          },
+          "after": {
+            "moves": 0,
+            "score": 2220,
+            "collected": [
+              28,
+              23,
+              9,
+              32,
+              19,
+              28
+            ],
+            "layers": 21
+          }
+        }
+      ]
+    },
+    "failureRetryRestoresSeedBoardAndTargets": true,
+    "mobileTargetsVisibleAboveBoard": true,
+    "realTouchSwipeAdjacentExchangeWithoutPageScroll": true,
+    "touchCancelAndPause": true,
+    "responsiveWidthsAndOverlayButtonsFit": [
+      320,
+      360,
+      390,
+      768,
+      1280
+    ],
+    "storageUnavailableStillPlayable": true,
+    "atlasAssociationAndTenEntries": true,
+    "previousNineEntrancesAndMobile": true,
+    "atlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

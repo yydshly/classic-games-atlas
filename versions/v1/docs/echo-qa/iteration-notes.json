@@ -1,0 +1,67 @@
+{
+  "notes": [
+    "Initial ordinary model and browser campaigns passed; strict cross-runtime replay exposed about1e-16 trigonometric tail differences. Position/yaw/ray-distance values now quantize at1e-9. Repeated final-physics all8 real-input acceptance and exact22field replay pass.",
+    "Real keyboard-rate check uses actual accepted key-down/up tick receipts, avoiding browser API timing overhead. Keyboard shortcuts are tested with the scene focused after settings.",
+    "Direct refresh correctly clears game-held controls. The test also releases the real pre-refresh browser keyboard before new key-down events; saved checkpoint and independent production replay match exactly.",
+    "Release fixture closes the first tutorial before reset. Previously verified33 entries and previous-game win were retained; only unfinished current restore/native scenarios were continued locally. Public release acceptance runs the full flow fresh.",
+    "UI fixtures now close prior contexts, avoiding many idle raycast pages consuming resources. Normal driver releases walk/fire before beginning a new turn; it uses real ordinary input, not a world-state shortcut.",
+    "Mobile same-view guide and distinct key diamonds/ammo squares improve spatial reading. Original visual review uses normal walking and drag-look to a warning construct.",
+    "First public normal run won floor1 in80.85seconds but floor2 reached the normal90second timeout after all combat/key/door goals; the distance-only waypoint observer missed centers between input observations and repeatedly turned back. Revised read-only policy accepts a passed route segment within corridor width. Original game movement/time/resources and all241 runtime files unchanged. Normal model/core pass and public8map acceptance repeated with this observer.",
+    "The range boundary now uses a truly beyond9grid target; the door occlusion fixture keeps the door within interaction range but puts a wall on the segment, so wall/range tests are not confounded.33groups pass."
+  ],
+  "boundaries": "Only explicitly named core geometry fixtures mutate setup. Normal8campaigns, direct refresh and native input acceptance never write HP/ammo/coordinates/time/results. UI storage cases may seed only progress metadata or denied-storage behavior.",
+  "failedPublicNormalStrategy": [
+    {
+      "level": 1,
+      "state": "won",
+      "ticks": 4851,
+      "player": {
+        "x": 5.59151766,
+        "y": 1.454686854,
+        "yaw": 0.019545599,
+        "hp": 100,
+        "ammo": 8,
+        "cooldown": 0
+      },
+      "stats": {
+        "fired": 4,
+        "hits": 4,
+        "kills": 2,
+        "damageTaken": 0,
+        "healed": 0,
+        "ammoGained": 4,
+        "ammoDiscarded": 0,
+        "doors": 1,
+        "settlements": 1
+      },
+      "reason": "钥匙与回声归位，出口为你亮起。",
+      "simulationToWallRatio": 0.995076923076923
+    },
+    {
+      "level": 2,
+      "state": "lost",
+      "ticks": 5400,
+      "player": {
+        "x": 6.349226839,
+        "y": 3.454795156,
+        "yaw": 2.491290527,
+        "hp": 92,
+        "ammo": 8,
+        "cooldown": 0
+      },
+      "stats": {
+        "fired": 4,
+        "hits": 4,
+        "kills": 2,
+        "damageTaken": 8,
+        "healed": 0,
+        "ammoGained": 4,
+        "ammoDiscarded": 0,
+        "doors": 1,
+        "settlements": 1
+      },
+      "reason": "本层回声已散。九十秒内找到出口，再试一条更清晰的路线。",
+      "simulationToWallRatio": 0.9937833331493582
+    }
+  ]
+}

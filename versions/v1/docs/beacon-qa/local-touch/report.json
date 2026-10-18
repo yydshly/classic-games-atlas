@@ -1,0 +1,303 @@
+{
+  "testedAt": "2026-10-16T13:31:59.234048+00:00",
+  "url": "http://127.0.0.1:4174/games/beacon/",
+  "method": "Native mouse/keyboard unit selection, mode/range preview, target cell and explicit confirmation. Enemy replies run at production UI pace. Strategy forecasts on separate rule copies; live state is never written.",
+  "fixture": "Later-stage menu unlock/tutorial/sound preference only; no HP/AP/position/enemy/objective/result fixture for campaign wins",
+  "results": [
+    {
+      "stage": 1,
+      "end": {
+        "level": 1,
+        "state": "won",
+        "phase": "player",
+        "round": 4,
+        "held": 0,
+        "revision": 25,
+        "enemySteps": 2,
+        "enemyBudget": 2,
+        "units": [
+          {
+            "id": "b1",
+            "side": "blue",
+            "type": "warden",
+            "x": 2,
+            "y": 4,
+            "hp": 3,
+            "ap": 1,
+            "repairUsed": false
+          },
+          {
+            "id": "b2",
+            "side": "blue",
+            "type": "ranger",
+            "x": 1,
+            "y": 3,
+            "hp": 2,
+            "ap": 2,
+            "repairUsed": false
+          },
+          {
+            "id": "r1",
+            "side": "red",
+            "type": "warden",
+            "x": 3,
+            "y": 1,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          },
+          {
+            "id": "r2",
+            "side": "red",
+            "type": "ranger",
+            "x": 2,
+            "y": 5,
+            "hp": 0,
+            "ap": 0,
+            "repairUsed": false
+          }
+        ],
+        "stats": {
+          "moves": 9,
+          "attacks": 10,
+          "heals": 0,
+          "kills": 2,
+          "blueLosses": 0,
+          "damageTaken": 11,
+          "enemyActions": 8,
+          "endTurns": 3,
+          "settlements": 1
+        },
+        "log": [
+          "第 3 回合，小队行动",
+          "小队弧手造成 2 点伤害",
+          "小队弧手移动 1 格",
+          "小队礁卫移动 3 格",
+          "小队礁卫造成 3 点伤害",
+          "敌方回合开始",
+          "敌方弧手造成 3 点伤害",
+          "敌方弧手造成 3 点伤害",
+          "第 4 回合，小队行动",
+          "小队礁卫造成 3 点伤害"
+        ],
+        "reason": "全部威胁已清除",
+        "lastAction": {
+          "kind": "attack",
+          "unit": "b1",
+          "x": 2,
+          "y": 4,
+          "target": "r2"
+        },
+        "selected": null,
+        "mode": "move",
+        "plan": null,
+        "focus": {
+          "x": 2,
+          "y": 5
+        },
+        "unlocked": 2,
+        "best": {
+          "1": {
+            "score": 1092,
+            "rounds": 4,
+            "damage": 11
+          }
+        },
+        "sound": true,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "discardedResume": false
+      },
+      "normalUIActions": [
+        {
+          "beforeRound": 1,
+          "beforeRevision": 0,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 5,
+            "revision": 0
+          },
+          "afterRevision": 1,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 1,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 1,
+            "revision": 1
+          },
+          "afterRevision": 2,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 1,
+          "beforeRevision": 2,
+          "command": {
+            "kind": "end-turn",
+            "revision": 2
+          },
+          "afterRevision": 8,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 8,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 8
+          },
+          "afterRevision": 9,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 9,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r1",
+            "revision": 9
+          },
+          "afterRevision": 10,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 10,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 2,
+            "y": 3,
+            "revision": 10
+          },
+          "afterRevision": 11,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 11,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r1",
+            "revision": 11
+          },
+          "afterRevision": 12,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 2,
+          "beforeRevision": 12,
+          "command": {
+            "kind": "end-turn",
+            "revision": 12
+          },
+          "afterRevision": 16,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 16,
+          "command": {
+            "kind": "attack",
+            "unit": "b2",
+            "target": "r2",
+            "revision": 16
+          },
+          "afterRevision": 17,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 17,
+          "command": {
+            "kind": "move",
+            "unit": "b2",
+            "x": 1,
+            "y": 3,
+            "revision": 17
+          },
+          "afterRevision": 18,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 18,
+          "command": {
+            "kind": "move",
+            "unit": "b1",
+            "x": 2,
+            "y": 4,
+            "revision": 18
+          },
+          "afterRevision": 19,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 19,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r2",
+            "revision": 19
+          },
+          "afterRevision": 20,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 3,
+          "beforeRevision": 20,
+          "command": {
+            "kind": "end-turn",
+            "revision": 20
+          },
+          "afterRevision": 24,
+          "afterPhase": "player",
+          "state": "playing"
+        },
+        {
+          "beforeRound": 4,
+          "beforeRevision": 24,
+          "command": {
+            "kind": "attack",
+            "unit": "b1",
+            "target": "r2",
+            "revision": 24
+          },
+          "afterRevision": 25,
+          "afterPhase": "player",
+          "state": "won"
+        }
+      ],
+      "actualNativeTouch": true,
+      "resultOverlayButtonsUnobstructed": true,
+      "bestUnlockAndFreshReplayVerified": true
+    }
+  ],
+  "inputMode": "actual native touch",
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

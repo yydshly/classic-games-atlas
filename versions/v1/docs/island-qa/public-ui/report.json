@@ -1,0 +1,2915 @@
+{
+  "testedAt": "2026-10-16T21:23:19.556475+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/island/",
+  "checks": [
+    "Fresh tutorial, untouched normal budget and supplies, no wall-clock growth",
+    "Native locked routes and keyboard cursor movement never change geometry or resources",
+    "Real road preview/cancel is free; confirmation charges one coin and connects to the dock",
+    "Occupied, water and stone cells expose invalid placement without a second charge",
+    "Both two-cell right-edge and rotated bottom-edge overflow are rejected through visible controls",
+    "Shore-water and fertile-soil restrictions are shown and cannot spend on invalid terrain",
+    "Planning demolition previews/full-refunds exactly once; cancel does not remove the road",
+    "Expanded player receipt shows real building names, map coordinates and Chinese production/consumption units",
+    "Actual keyboard-only layout uses roads/rotation/tools and shows complete production forecast without applying it",
+    "A held native Enter confirmation clears only one round and cannot reopen/pay another receipt",
+    "First production ledger is exact; paused refresh replays all structures/stocks, then ordinary keyboard round confirmation wins",
+    "Victory is single, next route unlocks, and320px result button remains on top of selected map cells and receives real hits",
+    "Actual post-operation road removal returns0, disconnects supply and resets stability; a paid repair permits genuine recovery and victory",
+    "A real alternate garden location and added road win through geometry/demand rules, not matching a stored solution",
+    "A newly built farm after operation refunds floor50percent and never reverses existing production",
+    "Help/chooser pause; blur and refresh cancel an unpaid blueprint without geometry or money changes",
+    "Original synthesized-audio preference persists",
+    "A real isolated house fails after3 unsatisfied rounds without taking phantom supplies; retry restores normal budget",
+    "A no-build run genuinely reaches the deadline with no passive growth or fabricated success",
+    "Normal paid disconnected overbuilding produces nothing yet pays6 upkeep and naturally bankrupts at-4 once, retaining best",
+    "Six widths320–1440 keep page free of horizontal overflow; narrow map has an explicit contained pan area and native cells",
+    "Malformed storage returns to safe defaults",
+    "Invalid replay or resource snapshots cannot become production cash, supplies or geometry",
+    "Complete native touchscreen first island wins through actual tools/grid/paid confirmations/manual rounds",
+    "Denied storage still supports a complete normal-resource island",
+    "No console/page errors, failed requests orHTTP4xx/5xx resources"
+  ],
+  "fixtures": "Stage/unlock/tutorial/storage preferences only; no cash, stock, geometry, connection, population or result writes.",
+  "restore": {
+    "level": 1,
+    "turn": 2,
+    "cash": 6,
+    "stock": {
+      "water": 5,
+      "food": 5,
+      "goods": 1
+    },
+    "buildings": [
+      {
+        "id": 1,
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0,
+        "cells": [
+          [
+            1,
+            3
+          ]
+        ],
+        "cost": 1
+      },
+      {
+        "id": 2,
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0,
+        "cells": [
+          [
+            2,
+            3
+          ]
+        ],
+        "cost": 1
+      },
+      {
+        "id": 3,
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0,
+        "cells": [
+          [
+            3,
+            3
+          ]
+        ],
+        "cost": 1
+      },
+      {
+        "id": 4,
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0,
+        "cells": [
+          [
+            4,
+            3
+          ]
+        ],
+        "cost": 1
+      },
+      {
+        "id": 5,
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0,
+        "cells": [
+          [
+            5,
+            3
+          ]
+        ],
+        "cost": 1
+      },
+      {
+        "id": 6,
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0,
+        "cells": [
+          [
+            1,
+            2
+          ]
+        ],
+        "cost": 8
+      },
+      {
+        "id": 7,
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0,
+        "cells": [
+          [
+            2,
+            2
+          ]
+        ],
+        "cost": 9
+      },
+      {
+        "id": 8,
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0,
+        "cells": [
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "cost": 11
+      },
+      {
+        "id": 9,
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0,
+        "cells": [
+          [
+            4,
+            2
+          ]
+        ],
+        "cost": 6
+      },
+      {
+        "id": 10,
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0,
+        "cells": [
+          [
+            3,
+            2
+          ]
+        ],
+        "cost": 7
+      },
+      {
+        "id": 11,
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0,
+        "cells": [
+          [
+            5,
+            2
+          ]
+        ],
+        "cost": 7
+      }
+    ],
+    "nextId": 12,
+    "transactions": [
+      {
+        "id": 1,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "build",
+        "building": 1,
+        "type": "road",
+        "cost": 1
+      },
+      {
+        "id": 2,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "build",
+        "building": 2,
+        "type": "road",
+        "cost": 1
+      },
+      {
+        "id": 3,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "build",
+        "building": 3,
+        "type": "road",
+        "cost": 1
+      },
+      {
+        "id": 4,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "build",
+        "building": 4,
+        "type": "road",
+        "cost": 1
+      },
+      {
+        "id": 5,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "build",
+        "building": 5,
+        "type": "road",
+        "cost": 1
+      },
+      {
+        "id": 6,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -8,
+        "kind": "build",
+        "building": 6,
+        "type": "pump",
+        "cost": 8
+      },
+      {
+        "id": 7,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -9,
+        "kind": "build",
+        "building": 7,
+        "type": "farm",
+        "cost": 9
+      },
+      {
+        "id": 8,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -11,
+        "kind": "build",
+        "building": 8,
+        "type": "work",
+        "cost": 11
+      },
+      {
+        "id": 9,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -6,
+        "kind": "build",
+        "building": 9,
+        "type": "park",
+        "cost": 6
+      },
+      {
+        "id": 10,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -7,
+        "kind": "build",
+        "building": 10,
+        "type": "home",
+        "cost": 7
+      },
+      {
+        "id": 11,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -7,
+        "kind": "build",
+        "building": 11,
+        "type": "home",
+        "cost": 7
+      },
+      {
+        "id": 12,
+        "turn": 1,
+        "resource": "water",
+        "amount": 5,
+        "kind": "produce",
+        "building": 6
+      },
+      {
+        "id": 13,
+        "turn": 1,
+        "resource": "water",
+        "amount": -1,
+        "kind": "input",
+        "building": 7
+      },
+      {
+        "id": 14,
+        "turn": 1,
+        "resource": "food",
+        "amount": 4,
+        "kind": "produce",
+        "building": 7
+      },
+      {
+        "id": 15,
+        "turn": 1,
+        "resource": "water",
+        "amount": -1,
+        "kind": "input",
+        "building": 8
+      },
+      {
+        "id": 16,
+        "turn": 1,
+        "resource": "food",
+        "amount": -1,
+        "kind": "input",
+        "building": 8
+      },
+      {
+        "id": 17,
+        "turn": 1,
+        "resource": "goods",
+        "amount": 1,
+        "kind": "produce",
+        "building": 8
+      },
+      {
+        "id": 18,
+        "turn": 1,
+        "resource": "water",
+        "amount": -1,
+        "kind": "household",
+        "building": 10
+      },
+      {
+        "id": 19,
+        "turn": 1,
+        "resource": "food",
+        "amount": -1,
+        "kind": "household",
+        "building": 10
+      },
+      {
+        "id": 20,
+        "turn": 1,
+        "resource": "cash",
+        "amount": 2,
+        "kind": "tax",
+        "building": 10
+      },
+      {
+        "id": 21,
+        "turn": 1,
+        "resource": "water",
+        "amount": -1,
+        "kind": "household",
+        "building": 11
+      },
+      {
+        "id": 22,
+        "turn": 1,
+        "resource": "food",
+        "amount": -1,
+        "kind": "household",
+        "building": 11
+      },
+      {
+        "id": 23,
+        "turn": 1,
+        "resource": "cash",
+        "amount": 2,
+        "kind": "tax",
+        "building": 11
+      },
+      {
+        "id": 24,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "maintenance",
+        "building": 6
+      },
+      {
+        "id": 25,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "maintenance",
+        "building": 7
+      },
+      {
+        "id": 26,
+        "turn": 1,
+        "resource": "cash",
+        "amount": -1,
+        "kind": "maintenance",
+        "building": 8
+      }
+    ],
+    "rounds": [
+      {
+        "turn": 1,
+        "before": {
+          "cash": 5,
+          "water": 4,
+          "food": 4,
+          "goods": 0
+        },
+        "after": {
+          "cash": 6,
+          "water": 5,
+          "food": 5,
+          "goods": 1
+        },
+        "network": {
+          "roads": [
+            "0,3",
+            "1,3",
+            "2,3",
+            "3,3",
+            "4,3",
+            "5,3"
+          ],
+          "connected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "covered": [
+            10,
+            11
+          ]
+        },
+        "running": [
+          6,
+          7,
+          8
+        ],
+        "served": [
+          10,
+          11
+        ],
+        "bad": [],
+        "population": 4,
+        "freeJobs": 0,
+        "good": true,
+        "changes": [
+          {
+            "resource": "water",
+            "amount": 5,
+            "kind": "produce",
+            "building": 6
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 7
+          },
+          {
+            "resource": "food",
+            "amount": 4,
+            "kind": "produce",
+            "building": 7
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "goods",
+            "amount": 1,
+            "kind": "produce",
+            "building": 8
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 10
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 6
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 8
+          }
+        ],
+        "portfolio": [
+          {
+            "id": 1,
+            "type": "road",
+            "x": 1,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 2,
+            "type": "road",
+            "x": 2,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 3,
+            "type": "road",
+            "x": 3,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 4,
+            "type": "road",
+            "x": 4,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 5,
+            "type": "road",
+            "x": 5,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 6,
+            "type": "pump",
+            "x": 1,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                2
+              ]
+            ],
+            "cost": 8
+          },
+          {
+            "id": 7,
+            "type": "farm",
+            "x": 2,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "cost": 9
+          },
+          {
+            "id": 8,
+            "type": "work",
+            "x": 4,
+            "y": 4,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "cost": 11
+          },
+          {
+            "id": 9,
+            "type": "park",
+            "x": 4,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                2
+              ]
+            ],
+            "cost": 6
+          },
+          {
+            "id": 10,
+            "type": "home",
+            "x": 3,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 11,
+            "type": "home",
+            "x": 5,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                2
+              ]
+            ],
+            "cost": 7
+          }
+        ]
+      }
+    ],
+    "stable": 1,
+    "strain": 0,
+    "lastReport": {
+      "turn": 1,
+      "before": {
+        "cash": 5,
+        "water": 4,
+        "food": 4,
+        "goods": 0
+      },
+      "after": {
+        "cash": 6,
+        "water": 5,
+        "food": 5,
+        "goods": 1
+      },
+      "network": {
+        "roads": [
+          "0,3",
+          "1,3",
+          "2,3",
+          "3,3",
+          "4,3",
+          "5,3"
+        ],
+        "connected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "covered": [
+          10,
+          11
+        ]
+      },
+      "running": [
+        6,
+        7,
+        8
+      ],
+      "served": [
+        10,
+        11
+      ],
+      "bad": [],
+      "population": 4,
+      "freeJobs": 0,
+      "good": true,
+      "changes": [
+        {
+          "resource": "water",
+          "amount": 5,
+          "kind": "produce",
+          "building": 6
+        },
+        {
+          "resource": "water",
+          "amount": -1,
+          "kind": "input",
+          "building": 7
+        },
+        {
+          "resource": "food",
+          "amount": 4,
+          "kind": "produce",
+          "building": 7
+        },
+        {
+          "resource": "water",
+          "amount": -1,
+          "kind": "input",
+          "building": 8
+        },
+        {
+          "resource": "food",
+          "amount": -1,
+          "kind": "input",
+          "building": 8
+        },
+        {
+          "resource": "goods",
+          "amount": 1,
+          "kind": "produce",
+          "building": 8
+        },
+        {
+          "resource": "water",
+          "amount": -1,
+          "kind": "household",
+          "building": 10
+        },
+        {
+          "resource": "food",
+          "amount": -1,
+          "kind": "household",
+          "building": 10
+        },
+        {
+          "resource": "cash",
+          "amount": 2,
+          "kind": "tax",
+          "building": 10
+        },
+        {
+          "resource": "water",
+          "amount": -1,
+          "kind": "household",
+          "building": 11
+        },
+        {
+          "resource": "food",
+          "amount": -1,
+          "kind": "household",
+          "building": 11
+        },
+        {
+          "resource": "cash",
+          "amount": 2,
+          "kind": "tax",
+          "building": 11
+        },
+        {
+          "resource": "cash",
+          "amount": -1,
+          "kind": "maintenance",
+          "building": 6
+        },
+        {
+          "resource": "cash",
+          "amount": -1,
+          "kind": "maintenance",
+          "building": 7
+        },
+        {
+          "resource": "cash",
+          "amount": -1,
+          "kind": "maintenance",
+          "building": 8
+        }
+      ],
+      "portfolio": [
+        {
+          "id": 1,
+          "type": "road",
+          "x": 1,
+          "y": 3,
+          "rot": 0,
+          "cells": [
+            [
+              1,
+              3
+            ]
+          ],
+          "cost": 1
+        },
+        {
+          "id": 2,
+          "type": "road",
+          "x": 2,
+          "y": 3,
+          "rot": 0,
+          "cells": [
+            [
+              2,
+              3
+            ]
+          ],
+          "cost": 1
+        },
+        {
+          "id": 3,
+          "type": "road",
+          "x": 3,
+          "y": 3,
+          "rot": 0,
+          "cells": [
+            [
+              3,
+              3
+            ]
+          ],
+          "cost": 1
+        },
+        {
+          "id": 4,
+          "type": "road",
+          "x": 4,
+          "y": 3,
+          "rot": 0,
+          "cells": [
+            [
+              4,
+              3
+            ]
+          ],
+          "cost": 1
+        },
+        {
+          "id": 5,
+          "type": "road",
+          "x": 5,
+          "y": 3,
+          "rot": 0,
+          "cells": [
+            [
+              5,
+              3
+            ]
+          ],
+          "cost": 1
+        },
+        {
+          "id": 6,
+          "type": "pump",
+          "x": 1,
+          "y": 2,
+          "rot": 0,
+          "cells": [
+            [
+              1,
+              2
+            ]
+          ],
+          "cost": 8
+        },
+        {
+          "id": 7,
+          "type": "farm",
+          "x": 2,
+          "y": 2,
+          "rot": 0,
+          "cells": [
+            [
+              2,
+              2
+            ]
+          ],
+          "cost": 9
+        },
+        {
+          "id": 8,
+          "type": "work",
+          "x": 4,
+          "y": 4,
+          "rot": 0,
+          "cells": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "cost": 11
+        },
+        {
+          "id": 9,
+          "type": "park",
+          "x": 4,
+          "y": 2,
+          "rot": 0,
+          "cells": [
+            [
+              4,
+              2
+            ]
+          ],
+          "cost": 6
+        },
+        {
+          "id": 10,
+          "type": "home",
+          "x": 3,
+          "y": 2,
+          "rot": 0,
+          "cells": [
+            [
+              3,
+              2
+            ]
+          ],
+          "cost": 7
+        },
+        {
+          "id": 11,
+          "type": "home",
+          "x": 5,
+          "y": 2,
+          "rot": 0,
+          "cells": [
+            [
+              5,
+              2
+            ]
+          ],
+          "cost": 7
+        }
+      ]
+    },
+    "revision": 13,
+    "log": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      }
+    ],
+    "reason": "",
+    "stats": {
+      "placed": 11,
+      "removed": 0,
+      "rounds": 1,
+      "settlements": 0
+    },
+    "network": {
+      "roads": [
+        "0,3",
+        "1,3",
+        "2,3",
+        "3,3",
+        "4,3",
+        "5,3"
+      ],
+      "connected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "covered": [
+        10,
+        11
+      ]
+    },
+    "score": 285,
+    "invariants": {
+      "cashLedger": true,
+      "waterLedger": true,
+      "foodLedger": true,
+      "goodsLedger": true,
+      "nonnegativeStock": true,
+      "uniqueTransactions": true,
+      "uniqueStructures": true,
+      "geometry": true,
+      "costs": true,
+      "roundPhysics": true,
+      "rounds": true,
+      "roundLedger": true,
+      "sourceFlows": true,
+      "oncePerRound": true,
+      "counts": true,
+      "settlement": true
+    }
+  },
+  "keyboardRestoreWin": {
+    "state": "won",
+    "cash": 7,
+    "stock": {
+      "water": 6,
+      "food": 6,
+      "goods": 2
+    },
+    "stats": {
+      "placed": 11,
+      "removed": 0,
+      "rounds": 2,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "disconnectRepair": {
+    "state": "won",
+    "strain": 1,
+    "rounds": [
+      {
+        "turn": 1,
+        "before": {
+          "cash": 5,
+          "water": 4,
+          "food": 4,
+          "goods": 0
+        },
+        "after": {
+          "cash": 6,
+          "water": 5,
+          "food": 5,
+          "goods": 1
+        },
+        "network": {
+          "roads": [
+            "0,3",
+            "1,3",
+            "2,3",
+            "3,3",
+            "4,3",
+            "5,3"
+          ],
+          "connected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "covered": [
+            10,
+            11
+          ]
+        },
+        "running": [
+          6,
+          7,
+          8
+        ],
+        "served": [
+          10,
+          11
+        ],
+        "bad": [],
+        "population": 4,
+        "freeJobs": 0,
+        "good": true,
+        "changes": [
+          {
+            "resource": "water",
+            "amount": 5,
+            "kind": "produce",
+            "building": 6
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 7
+          },
+          {
+            "resource": "food",
+            "amount": 4,
+            "kind": "produce",
+            "building": 7
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "goods",
+            "amount": 1,
+            "kind": "produce",
+            "building": 8
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 10
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 6
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 8
+          }
+        ],
+        "portfolio": [
+          {
+            "id": 1,
+            "type": "road",
+            "x": 1,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 2,
+            "type": "road",
+            "x": 2,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 3,
+            "type": "road",
+            "x": 3,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 4,
+            "type": "road",
+            "x": 4,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 5,
+            "type": "road",
+            "x": 5,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 6,
+            "type": "pump",
+            "x": 1,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                2
+              ]
+            ],
+            "cost": 8
+          },
+          {
+            "id": 7,
+            "type": "farm",
+            "x": 2,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "cost": 9
+          },
+          {
+            "id": 8,
+            "type": "work",
+            "x": 4,
+            "y": 4,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "cost": 11
+          },
+          {
+            "id": 9,
+            "type": "park",
+            "x": 4,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                2
+              ]
+            ],
+            "cost": 6
+          },
+          {
+            "id": 10,
+            "type": "home",
+            "x": 3,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 11,
+            "type": "home",
+            "x": 5,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                2
+              ]
+            ],
+            "cost": 7
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "before": {
+          "cash": 6,
+          "water": 5,
+          "food": 5,
+          "goods": 1
+        },
+        "after": {
+          "cash": 3,
+          "water": 9,
+          "food": 9,
+          "goods": 1
+        },
+        "network": {
+          "roads": [
+            "0,3",
+            "1,3",
+            "2,3"
+          ],
+          "connected": [
+            1,
+            2,
+            6,
+            7
+          ],
+          "covered": []
+        },
+        "running": [
+          6,
+          7
+        ],
+        "served": [],
+        "bad": [
+          {
+            "id": 10,
+            "reason": "道路未连通"
+          },
+          {
+            "id": 11,
+            "reason": "道路未连通"
+          }
+        ],
+        "population": 0,
+        "freeJobs": 0,
+        "good": false,
+        "changes": [
+          {
+            "resource": "water",
+            "amount": 5,
+            "kind": "produce",
+            "building": 6
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 7
+          },
+          {
+            "resource": "food",
+            "amount": 4,
+            "kind": "produce",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 6
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 8
+          }
+        ],
+        "portfolio": [
+          {
+            "id": 1,
+            "type": "road",
+            "x": 1,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 2,
+            "type": "road",
+            "x": 2,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 4,
+            "type": "road",
+            "x": 4,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 5,
+            "type": "road",
+            "x": 5,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 6,
+            "type": "pump",
+            "x": 1,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                2
+              ]
+            ],
+            "cost": 8
+          },
+          {
+            "id": 7,
+            "type": "farm",
+            "x": 2,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "cost": 9
+          },
+          {
+            "id": 8,
+            "type": "work",
+            "x": 4,
+            "y": 4,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "cost": 11
+          },
+          {
+            "id": 9,
+            "type": "park",
+            "x": 4,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                2
+              ]
+            ],
+            "cost": 6
+          },
+          {
+            "id": 10,
+            "type": "home",
+            "x": 3,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 11,
+            "type": "home",
+            "x": 5,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                2
+              ]
+            ],
+            "cost": 7
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "before": {
+          "cash": 2,
+          "water": 9,
+          "food": 9,
+          "goods": 1
+        },
+        "after": {
+          "cash": 3,
+          "water": 10,
+          "food": 10,
+          "goods": 2
+        },
+        "network": {
+          "roads": [
+            "0,3",
+            "1,3",
+            "2,3",
+            "3,3",
+            "4,3",
+            "5,3"
+          ],
+          "connected": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "covered": [
+            10,
+            11
+          ]
+        },
+        "running": [
+          6,
+          7,
+          8
+        ],
+        "served": [
+          10,
+          11
+        ],
+        "bad": [],
+        "population": 4,
+        "freeJobs": 0,
+        "good": true,
+        "changes": [
+          {
+            "resource": "water",
+            "amount": 5,
+            "kind": "produce",
+            "building": 6
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 7
+          },
+          {
+            "resource": "food",
+            "amount": 4,
+            "kind": "produce",
+            "building": 7
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "goods",
+            "amount": 1,
+            "kind": "produce",
+            "building": 8
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 10
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 6
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 8
+          }
+        ],
+        "portfolio": [
+          {
+            "id": 1,
+            "type": "road",
+            "x": 1,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 2,
+            "type": "road",
+            "x": 2,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 4,
+            "type": "road",
+            "x": 4,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 5,
+            "type": "road",
+            "x": 5,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 6,
+            "type": "pump",
+            "x": 1,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                2
+              ]
+            ],
+            "cost": 8
+          },
+          {
+            "id": 7,
+            "type": "farm",
+            "x": 2,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "cost": 9
+          },
+          {
+            "id": 8,
+            "type": "work",
+            "x": 4,
+            "y": 4,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "cost": 11
+          },
+          {
+            "id": 9,
+            "type": "park",
+            "x": 4,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                2
+              ]
+            ],
+            "cost": 6
+          },
+          {
+            "id": 10,
+            "type": "home",
+            "x": 3,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 11,
+            "type": "home",
+            "x": 5,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 12,
+            "type": "road",
+            "x": 3,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ],
+            "cost": 1
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "before": {
+          "cash": 3,
+          "water": 10,
+          "food": 10,
+          "goods": 2
+        },
+        "after": {
+          "cash": 4,
+          "water": 11,
+          "food": 11,
+          "goods": 3
+        },
+        "network": {
+          "roads": [
+            "0,3",
+            "1,3",
+            "2,3",
+            "3,3",
+            "4,3",
+            "5,3"
+          ],
+          "connected": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "covered": [
+            10,
+            11
+          ]
+        },
+        "running": [
+          6,
+          7,
+          8
+        ],
+        "served": [
+          10,
+          11
+        ],
+        "bad": [],
+        "population": 4,
+        "freeJobs": 0,
+        "good": true,
+        "changes": [
+          {
+            "resource": "water",
+            "amount": 5,
+            "kind": "produce",
+            "building": 6
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 7
+          },
+          {
+            "resource": "food",
+            "amount": 4,
+            "kind": "produce",
+            "building": 7
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "input",
+            "building": 8
+          },
+          {
+            "resource": "goods",
+            "amount": 1,
+            "kind": "produce",
+            "building": 8
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 10
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 10
+          },
+          {
+            "resource": "water",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "food",
+            "amount": -1,
+            "kind": "household",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": 2,
+            "kind": "tax",
+            "building": 11
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 6
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 7
+          },
+          {
+            "resource": "cash",
+            "amount": -1,
+            "kind": "maintenance",
+            "building": 8
+          }
+        ],
+        "portfolio": [
+          {
+            "id": 1,
+            "type": "road",
+            "x": 1,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 2,
+            "type": "road",
+            "x": 2,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 4,
+            "type": "road",
+            "x": 4,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 5,
+            "type": "road",
+            "x": 5,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                3
+              ]
+            ],
+            "cost": 1
+          },
+          {
+            "id": 6,
+            "type": "pump",
+            "x": 1,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                1,
+                2
+              ]
+            ],
+            "cost": 8
+          },
+          {
+            "id": 7,
+            "type": "farm",
+            "x": 2,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "cost": 9
+          },
+          {
+            "id": 8,
+            "type": "work",
+            "x": 4,
+            "y": 4,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "cost": 11
+          },
+          {
+            "id": 9,
+            "type": "park",
+            "x": 4,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                4,
+                2
+              ]
+            ],
+            "cost": 6
+          },
+          {
+            "id": 10,
+            "type": "home",
+            "x": 3,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 11,
+            "type": "home",
+            "x": 5,
+            "y": 2,
+            "rot": 0,
+            "cells": [
+              [
+                5,
+                2
+              ]
+            ],
+            "cost": 7
+          },
+          {
+            "id": 12,
+            "type": "road",
+            "x": 3,
+            "y": 3,
+            "rot": 0,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ],
+            "cost": 1
+          }
+        ]
+      }
+    ],
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "remove",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "alternateLayout": {
+    "cash": 6,
+    "stock": {
+      "water": 6,
+      "food": 6,
+      "goods": 2
+    },
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "remove",
+        "x": 4,
+        "y": 2
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 1,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "naturalDemandFailure": {
+    "state": "lost",
+    "strain": 3,
+    "cash": 51,
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "naturalTimeout": {
+    "cash": 58,
+    "turn": 6,
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "naturalBankruptcy": {
+    "cash": -4,
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 6,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": true
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": true
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": true
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false,
+      "mapHasContainedPan": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "cash": 7,
+    "stock": {
+      "water": 6,
+      "food": 6,
+      "goods": 2
+    },
+    "actualLog": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 2,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 3,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 4,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 5,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "pump",
+        "x": 1,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "farm",
+        "x": 2,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "work",
+        "x": 4,
+        "y": 4,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "park",
+        "x": 4,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 3,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "place",
+        "type": "home",
+        "x": 5,
+        "y": 2,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      },
+      {
+        "kind": "end"
+      }
+    ],
+    "method": "Native touchscreen tool, contained-pan grid selection, rotate when needed, cost receipt and explicit-round taps; positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

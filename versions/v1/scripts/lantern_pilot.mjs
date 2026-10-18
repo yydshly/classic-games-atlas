@@ -1,0 +1,10 @@
+import {distances,neighbours,tileKey} from '../games/lantern/engine.mjs';
+import {createInterface} from 'node:readline';
+export function createPilot(){return {decision:'',recent:[],level:0,deaths:0};}
+export function decide(g,m){const p=g.player;if(g.state!=='playing'||p.moving&&p.progress<.22)return null;if(m.level!==g.level||m.deaths!==g.stats.deaths){m.decision='';m.recent=[];m.level=g.level;m.deaths=g.stats.deaths;}const token=`${p.segment}:${p.moving?'next':'rest'}`;if(m.decision===token)return null;m.decision=token;
+ const origin={x:p.moving?p.toX:Math.round(p.x),y:p.moving?p.toY:Math.round(p.y)},start=tileKey(origin.x,origin.y),risks=g.enemies.filter(e=>e.mode==='active'&&e.harmless<.4).map(e=>distances(g,{x:e.moving?e.toX:Math.round(e.x),y:e.moving?e.toY:Math.round(e.y)})),best=new Map([[start,0]]),first=new Map(),open=[{...origin,cost:0}];
+ while(open.length){open.sort((a,b)=>a.cost-b.cost);const n=open.shift(),nk=tileKey(n.x,n.y);if(n.cost!==best.get(nk))continue;for(const next of neighbours(g,n)){const k=tileKey(next.x,next.y),danger=Math.min(...risks.map(d=>d.get(k)??99)),penalty=g.power>1.8?0:danger<=1?160:danger===2?35:danger===3?7:danger===4?1.5:0,conserve=g.power>3&&g.dots.some(d=>d.power&&!d.taken&&d.x===next.x&&d.y===next.y)?1.5:0,cost=n.cost+1+penalty+conserve+(m.recent.includes(k)?.08:0);if(cost>=(best.get(k)??Infinity))continue;best.set(k,cost);first.set(k,nk===start?next.dir:first.get(nk));open.push({...next,cost});}}
+ let goal=null,score=Infinity;for(const d of g.dots){const k=tileKey(d.x,d.y);if(d.taken||k===start||!first.has(k))continue;const cost=best.get(k),value=d.power?(g.power<2.5?cost*.45-1.5:cost*1.6+3):cost;if(value<score){score=value;goal=k;}}
+ if(!goal)return null;m.recent.push(start);if(m.recent.length>10)m.recent.shift();return first.get(goal);
+}
+if(process.argv.includes('--stdio')){const m=createPilot();createInterface({input:process.stdin,crlfDelay:Infinity}).on('line',line=>{try{process.stdout.write(JSON.stringify({dir:decide(JSON.parse(line),m)})+'\n');}catch(e){process.stdout.write(JSON.stringify({error:String(e)})+'\n');}});}

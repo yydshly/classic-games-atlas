@@ -1,0 +1,23 @@
+/** New preview-storage regression, not a real-browser persistence test. */
+import assert from 'node:assert/strict';
+import * as progress from '../../preview/repair/progress.mjs';
+import * as engine from '../../preview/repair/engine.mjs';
+const {PROGRESS_KEY, SHIFT_KEY}=progress;
+assert.equal(PROGRESS_KEY,'atlas-preview-repair-20261018-progress-v1');
+assert.equal(SHIFT_KEY,'atlas-preview-repair-20261018-shift-v1');
+const sentinelKeys=['atlas-repair-progress-v1','atlas-repair-shift-v1','atlas-preview-court-20261018-v1','atlas-preview-coaster-20261018-progress-v1','atlas-preview-coaster-20261018-current-v1','atlas-preview-kart-20261018-progress-v1','atlas-preview-kart-20261018-current-v1','atlas-escort-progress-v1','unrelated-preference'];
+const values=new Map(sentinelKeys.map((key,i)=>[key,`original-value-${i}`])),ops=[];
+const storage={getItem(k){ops.push(['read',k]);return values.get(k)??null;},setItem(k,v){ops.push(['write',k]);values.set(k,v);},removeItem(k){ops.push(['remove',k]);values.delete(k);}};
+let store=progress.createProgressStore(storage);
+assert.deepEqual(store.loadProgress(),progress.emptyProgress());assert.equal(store.loadShift(),null);
+const campaign=progress.recordVictory(progress.emptyProgress(),0,{completed:8,lost:0,credits:191});
+assert.equal(store.saveProgress(campaign),true);
+const game=engine.createGame(1);engine.command(game,{type:'build',slot:'B',stationType:'electrical'});engine.start(game);engine.step(game,.25);
+assert.equal(store.saveShift(engine.checkpoint(game)),true);store=progress.createProgressStore(storage);
+assert.deepEqual(store.loadProgress(),campaign);const resumed=engine.restore(store.loadShift());assert.equal(resumed.state,'paused');assert.equal(resumed.tick,game.tick);assert.equal(resumed.credits,game.credits);
+assert.equal(store.clearShift(),true);assert.equal(store.loadShift(),null);assert.deepEqual(store.loadProgress(),campaign);
+values.set(SHIFT_KEY,'invalid');store=progress.createProgressStore(storage);assert.equal(store.loadShift(),null);assert.equal(store.damagedShift,true);store.rejectShift();assert.equal(values.has(SHIFT_KEY),false);assert.deepEqual(store.loadProgress(),campaign);
+assert.ok(ops.every(([,key])=>[PROGRESS_KEY,SHIFT_KEY].includes(key)));sentinelKeys.forEach((key,i)=>assert.equal(values.get(key),`original-value-${i}`));
+console.log('PASS preview-only reads, writes, active-save reload, paused restore, terminal cleanup and corrupt-save rejection');
+console.log('PASS production Repair, Court/Coaster/Kart previews, original-game and unrelated sentinels are byte-identical');
+console.log('2 storage-isolation groups passed. Node model only; browser persistence is not claimed.');

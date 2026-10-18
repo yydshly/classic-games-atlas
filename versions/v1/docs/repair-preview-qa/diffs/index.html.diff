@@ -1,0 +1,36 @@
+--- recovered/index.html
++++ preview/repair/index.html
+@@ -3,18 +3,19 @@
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
++  <meta name="robots" content="noindex, nofollow">
+   <meta name="theme-color" content="#f4efe3">
+-  <meta name="description" content="雨街修理所：八个营业日的原创机器人修理经营游戏。布置工位、调度技师，让每一位来客重新亮起。单人、本地存档。">
+-  <title>雨街修理所 · 原创玩法实验 36</title>
++  <meta name="description" content="雨街修理所：八个营业日的原创机器人修理经营游戏。布置工位、调度技师，让每一位来客重新亮起。单人、本地存档。独立预览，尚未完成真实浏览器与移动端验收。">
++  <title>雨街修理所 · 独立预览 36</title>
+   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+-  <link rel="stylesheet" href="./repair.css">
+-  <script type="module" src="./game.mjs"></script>
++  <link rel="stylesheet" href="./repair.css?v=20261018-width1">
++  <script type="module" src="./game.mjs?v=20261018-width1"></script>
+ </head>
+ <body>
+   <header class="page-header">
+     <a href="../../#experiments" class="back-link">← 经典游戏图鉴</a>
+     <span class="edition">PLAY LAB <b>36</b></span>
+-    <span class="candidate-label">本地候选 · 单人经营</span>
++    <span class="candidate-label" title="尚未完成真实浏览器与移动端验收；预览存档与正式游戏分开保存。">独立预览 · 尚未验收</span>
+   </header>
+   <main>
+     <section class="masthead" aria-labelledby="page-title">
+@@ -77,7 +78,7 @@
+         </section>
+       </aside>
+     </div>
+-    <footer class="colophon"><p><b>原创玩法实验 36</b> · 八日修理所经营。机器人、街景与关卡原创；仅本地候选，尚未发布。</p><span>LOCAL / SINGLE PLAYER / 8 DAYS</span></footer>
++    <footer class="colophon"><p><b>原创玩法实验 36</b> · 八日修理所经营。机器人、街景与关卡原创；独立预览，尚未验收；不计入已发布游戏。</p><span>PREVIEW / SINGLE PLAYER / 8 DAYS</span></footer>
+   </main>
+   <dialog id="help-dialog" aria-labelledby="help-title">
+     <div class="dialog-content">

@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-16T08:44:55.050922+00:00",
+  "test": "isolated horizontal/vertical intersection fixture",
+  "initialExpectation": 5,
+  "actual": 7,
+  "cause": "fixture used color 0 already present at neighboring cells 36 and 42, extending the authored cross",
+  "correction": "use color 5 for the five isolated cross cells; expected unique match cells 5, one retained bloom anchor and four removals",
+  "productionRuleChange": false
+}

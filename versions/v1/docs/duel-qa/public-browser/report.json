@@ -1,0 +1,4878 @@
+{
+  "testedAt": "2026-10-16T22:23:15.984849+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/duel/",
+  "method": "Fresh storage, authored100HP/80–115HP, normal1x RAF, visible current distance/telegraph/recovery policy, actual keyboard press/release, natural Next/unlocks. No health/stamina/position/AI/clock/result writes or pause-to-aim.",
+  "results": [
+    {
+      "level": 1,
+      "ticks": 843,
+      "player": {
+        "id": "player",
+        "x": 393.0416666666684,
+        "face": 1,
+        "hp": 92,
+        "maxHP": 100,
+        "energy": 6.466666666666979,
+        "gained": 50.66666666666616,
+        "spent": 144.19999999999908,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 8,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 919,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 8
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 544.5,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 80,
+        "energy": 95.28333333333246,
+        "gained": 75.28333333333246,
+        "spent": 80,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": null,
+        "cooldown": 862,
+        "stunUntil": 880,
+        "invulUntil": 857,
+        "nextThink": 748,
+        "cycle": 4,
+        "damageTaken": 80
+      },
+      "serial": 8,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 109,
+          "facing": -1,
+          "wind": 0.5509999999999999,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 191,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 310,
+          "facing": -1,
+          "wind": 0.5509999999999999,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 393,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 512,
+          "facing": -1,
+          "wind": 0.5509999999999999,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 593,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 712,
+          "facing": -1,
+          "wind": 0.5509999999999999,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 797,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 175,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 122.66666666666498,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5583333333333338,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 237,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 132.66666666666498,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 376,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 123.54166666666498,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5583333333333338,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 439,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 133.54166666666498,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 578,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 120.83333333333161,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5583333333333338,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 639,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 130.8333333333316,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 778,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 123.45833333333161,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5583333333333338,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 843,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 133.4583333333316,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 2,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 109,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 191,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 191,
+          "kind": "heavy"
+        },
+        {
+          "tick": 313,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 393,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 393,
+          "kind": "heavy"
+        },
+        {
+          "tick": 505,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 507,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 515,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 593,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 593,
+          "kind": "heavy"
+        },
+        {
+          "tick": 713,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 797,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 797,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1185,
+      "stats": {
+        "attacks": 4,
+        "hits": 4,
+        "blocks": 4,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 7.0249999999999995,
+      "unlocked": 2,
+      "best": {
+        "score": 1185,
+        "time": 7.025,
+        "hp": 92
+      },
+      "actualLog": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 109,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 191,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 191,
+          "kind": "heavy"
+        },
+        {
+          "tick": 313,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 393,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 393,
+          "kind": "heavy"
+        },
+        {
+          "tick": 505,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 507,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 515,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 593,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 593,
+          "kind": "heavy"
+        },
+        {
+          "tick": 713,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 797,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 797,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 89,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 109,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 191,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 313,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 391,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 505,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 507,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 515,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 593,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 713,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 795,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 7.171999999991385,
+      "simulationToWallRatio": 0.9795036252103232
+    },
+    {
+      "level": 2,
+      "ticks": 707,
+      "player": {
+        "id": "player",
+        "x": 387.66666666666833,
+        "face": 1,
+        "hp": 94,
+        "maxHP": 100,
+        "energy": 29.866666666666603,
+        "gained": 53.46666666666617,
+        "spent": 123.59999999999957,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 8,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 783,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 6
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 528.9666666666624,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 85,
+        "energy": 93.88333333333254,
+        "gained": 49.883333333332544,
+        "spent": 56,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": null,
+        "cooldown": 732,
+        "stunUntil": 744,
+        "invulUntil": 721,
+        "nextThink": 620,
+        "cycle": 4,
+        "damageTaken": 85
+      },
+      "serial": 8,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 129,
+          "facing": -1,
+          "wind": 0.195,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 167,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 250,
+          "facing": -1,
+          "wind": 0.49400000000000005,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 323,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 470,
+          "facing": -1,
+          "wind": 0.195,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 505,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 588,
+          "facing": -1,
+          "wind": 0.49400000000000005,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 661,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 152,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.36666666666133,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.19999999999999998,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 213,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 95.36666666666133,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 309,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 113.36666666666133,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5000000000000007,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 369,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 123.36666666666133,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 493,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.29999999999404,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.19999999999999998,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 551,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 95.29999999999404,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 647,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 113.29999999999404,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.5000000000000007,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 707,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 123.29999999999404,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 7,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 131,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 167,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 167,
+          "kind": "heavy"
+        },
+        {
+          "tick": 281,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 323,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 323,
+          "kind": "heavy"
+        },
+        {
+          "tick": 475,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 505,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 505,
+          "kind": "heavy"
+        },
+        {
+          "tick": 617,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 661,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 661,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1211,
+      "stats": {
+        "attacks": 4,
+        "hits": 4,
+        "blocks": 4,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 5.891666666666667,
+      "unlocked": 3,
+      "best": {
+        "score": 1211,
+        "time": 5.891666666666667,
+        "hp": 94
+      },
+      "actualLog": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 131,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 167,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 167,
+          "kind": "heavy"
+        },
+        {
+          "tick": 281,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 323,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 323,
+          "kind": "heavy"
+        },
+        {
+          "tick": 475,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 505,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 505,
+          "kind": "heavy"
+        },
+        {
+          "tick": 617,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 661,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 661,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 89,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 131,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 167,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 281,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 323,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 473,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 505,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 617,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 661,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 5.969000000011874,
+      "simulationToWallRatio": 0.9870441726679421
+    },
+    {
+      "level": 3,
+      "ticks": 907,
+      "player": {
+        "id": "player",
+        "x": 387.66666666666833,
+        "face": 1,
+        "hp": 94,
+        "maxHP": 100,
+        "energy": 46.26666666666665,
+        "gained": 72.2666666666664,
+        "spent": 125.99999999999943,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 8,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 983,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 6
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 501,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 90,
+        "energy": 100,
+        "gained": 61.99999999999966,
+        "spent": 61.99999999999966,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 580,
+        "action": null,
+        "cooldown": 909,
+        "stunUntil": 944,
+        "invulUntil": 921,
+        "nextThink": 857,
+        "cycle": 6,
+        "damageTaken": 90
+      },
+      "serial": 8,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 185,
+          "facing": -1,
+          "wind": 0.4636,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 257,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 402,
+          "facing": -1,
+          "wind": 0.183,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 437,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 611,
+          "facing": -1,
+          "wind": 0.4636,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 681,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 826,
+          "facing": -1,
+          "wind": 0.183,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 861,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 240,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 116.33333333333167,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4666666666666673,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 303,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 126.33333333333167,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 423,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.33333333333167,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.18333333333333332,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 483,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 95.33333333333167,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 666,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 113.33333333333167,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4666666666666673,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 727,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 123.33333333333167,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 847,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.33333333333167,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.18333333333333332,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 907,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 95.33333333333167,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 12,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 189,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 255,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 257,
+          "kind": "heavy"
+        },
+        {
+          "tick": 403,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 437,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 437,
+          "kind": "heavy"
+        },
+        {
+          "tick": 613,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 681,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 681,
+          "kind": "heavy"
+        },
+        {
+          "tick": 829,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 861,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 861,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1202,
+      "stats": {
+        "attacks": 4,
+        "hits": 4,
+        "blocks": 4,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 7.558333333333334,
+      "unlocked": 4,
+      "best": {
+        "score": 1202,
+        "time": 7.558333333333334,
+        "hp": 94
+      },
+      "actualLog": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 89,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 189,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 255,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 257,
+          "kind": "heavy"
+        },
+        {
+          "tick": 403,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 437,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 437,
+          "kind": "heavy"
+        },
+        {
+          "tick": 613,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 681,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 681,
+          "kind": "heavy"
+        },
+        {
+          "tick": 829,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 861,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 861,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 89,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 189,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 255,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 403,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 437,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 613,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 681,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 829,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 861,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 7.60899999999674,
+      "simulationToWallRatio": 0.9933412187326287
+    },
+    {
+      "level": 4,
+      "ticks": 707,
+      "player": {
+        "id": "player",
+        "x": 378.7083333333349,
+        "face": 1,
+        "hp": 93,
+        "maxHP": 100,
+        "energy": 19.366666666666745,
+        "gained": 51.46666666666617,
+        "spent": 132.09999999999943,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 8,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 783,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 7
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 522.6999999999963,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 95,
+        "energy": 93.4166666666659,
+        "gained": 61.416666666665904,
+        "spent": 68,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": null,
+        "cooldown": 729,
+        "stunUntil": 744,
+        "invulUntil": 721,
+        "nextThink": 621,
+        "cycle": 4,
+        "damageTaken": 95
+      },
+      "serial": 8,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 88,
+          "facing": -1,
+          "wind": 0.44079999999999997,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 155,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 267,
+          "facing": -1,
+          "wind": 0.44079999999999997,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 335,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 476,
+          "facing": -1,
+          "wind": 0.174,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 509,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 592,
+          "facing": -1,
+          "wind": 0.44079999999999997,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 661,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 140,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 121.09166666666323,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4416666666666672,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 201,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 131.09166666666323,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 319,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 123.7916666666627,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4416666666666672,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 381,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 133.7916666666627,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 496,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 87.99166666666139,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.175,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 555,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 97.99166666666139,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 644,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 115.99166666666139,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4416666666666672,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 707,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 125.99166666666139,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 17,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 83,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 91,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 155,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 155,
+          "kind": "heavy"
+        },
+        {
+          "tick": 267,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 335,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 335,
+          "kind": "heavy"
+        },
+        {
+          "tick": 479,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 509,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 509,
+          "kind": "heavy"
+        },
+        {
+          "tick": 621,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 661,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 661,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1201,
+      "stats": {
+        "attacks": 4,
+        "hits": 4,
+        "blocks": 4,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 5.891666666666667,
+      "unlocked": 5,
+      "best": {
+        "score": 1201,
+        "time": 5.891666666666667,
+        "hp": 93
+      },
+      "actualLog": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 83,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 91,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 155,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 155,
+          "kind": "heavy"
+        },
+        {
+          "tick": 267,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 335,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 335,
+          "kind": "heavy"
+        },
+        {
+          "tick": 479,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 509,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 509,
+          "kind": "heavy"
+        },
+        {
+          "tick": 621,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 661,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 661,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 83,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 89,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 155,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 267,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 335,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 479,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 509,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 621,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 661,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 5.952999999979511,
+      "simulationToWallRatio": 0.9896970715079698
+    },
+    {
+      "level": 5,
+      "ticks": 643,
+      "player": {
+        "id": "player",
+        "x": 373.33333333333485,
+        "face": 1,
+        "hp": 95,
+        "maxHP": 100,
+        "energy": 34.26666666666607,
+        "gained": 50.666666666665705,
+        "spent": 116.39999999999964,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 8,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 719,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 5
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 476.77499999999446,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 100,
+        "energy": 100,
+        "gained": 44,
+        "spent": 44,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": null,
+        "cooldown": 645,
+        "stunUntil": 680,
+        "invulUntil": 657,
+        "nextThink": 590,
+        "cycle": 4,
+        "damageTaken": 100
+      },
+      "serial": 8,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 105,
+          "facing": -1,
+          "wind": 0.165,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 137,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 246,
+          "facing": -1,
+          "wind": 0.165,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 279,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 362,
+          "facing": -1,
+          "wind": 0.41800000000000004,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 429,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 564,
+          "facing": -1,
+          "wind": 0.165,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 597,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 124,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 92.73333333332658,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.16666666666666666,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 183,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 92.00833333332662,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 265,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 84.98333333332664,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.16666666666666666,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 325,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 94.98333333332664,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 412,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 112.98333333332664,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.4250000000000005,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 475,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 122.98333333332664,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 583,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 84.97499999999292,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.16666666666666666,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 643,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 85.44166666665961,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 22,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 81,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 105,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 137,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 137,
+          "kind": "heavy"
+        },
+        {
+          "tick": 251,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 279,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 279,
+          "kind": "heavy"
+        },
+        {
+          "tick": 391,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 429,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 429,
+          "kind": "heavy"
+        },
+        {
+          "tick": 567,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 597,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 597,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1223,
+      "stats": {
+        "attacks": 4,
+        "hits": 4,
+        "blocks": 4,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 5.358333333333333,
+      "unlocked": 6,
+      "best": {
+        "score": 1223,
+        "time": 5.358333333333333,
+        "hp": 95
+      },
+      "actualLog": [
+        {
+          "tick": 1,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 81,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 105,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 137,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 137,
+          "kind": "heavy"
+        },
+        {
+          "tick": 251,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 279,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 279,
+          "kind": "heavy"
+        },
+        {
+          "tick": 391,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 429,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 429,
+          "kind": "heavy"
+        },
+        {
+          "tick": 567,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 597,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 597,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 1,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 81,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 105,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 137,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 251,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 279,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 391,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 429,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 567,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 597,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 5.422000000020489,
+      "simulationToWallRatio": 0.9882577154764082
+    },
+    {
+      "level": 6,
+      "ticks": 1003,
+      "player": {
+        "id": "player",
+        "x": 587.2916666666672,
+        "face": 1,
+        "hp": 92,
+        "maxHP": 100,
+        "energy": 24.50000000000024,
+        "gained": 84.3000000000003,
+        "spent": 159.79999999999956,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 10,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 1079,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 8
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 743,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 105,
+        "energy": 71.71666666666371,
+        "gained": 107.71666666666401,
+        "spent": 136,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": null,
+        "cooldown": 1027,
+        "stunUntil": 1040,
+        "invulUntil": 1017,
+        "nextThink": 919,
+        "cycle": 8,
+        "damageTaken": 105
+      },
+      "serial": 10,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 142,
+          "facing": -1,
+          "wind": 0.40280000000000005,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 205,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 338,
+          "facing": -1,
+          "wind": 0.159,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 367,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 516,
+          "facing": -1,
+          "wind": 0.40280000000000005,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 579,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 712,
+          "facing": -1,
+          "wind": 0.159,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 745,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 9,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 894,
+          "facing": -1,
+          "wind": 0.40280000000000005,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 10,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 957,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 190,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 116.45833333333081,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.40833333333333377,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 251,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 126.45833333333081,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 357,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.70833333333081,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.16666666666666666,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 413,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 95.70833333333081,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 564,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 123.95833333333144,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.40833333333333377,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 625,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 133.95833333333144,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 731,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 89.45833333333144,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.16666666666666666,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 791,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 99.45833333333144,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 942,
+          "swing": 9,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 127.7083333333328,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.40833333333333377,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 1003,
+          "swing": 10,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 137.7083333333328,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 1,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 133,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 143,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 205,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 205,
+          "kind": "heavy"
+        },
+        {
+          "tick": 341,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 367,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 367,
+          "kind": "heavy"
+        },
+        {
+          "tick": 481,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 517,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 517,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 579,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 579,
+          "kind": "heavy"
+        },
+        {
+          "tick": 717,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 743,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 745,
+          "kind": "heavy"
+        },
+        {
+          "tick": 861,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 897,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 897,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 957,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 957,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1178,
+      "stats": {
+        "attacks": 5,
+        "hits": 5,
+        "blocks": 5,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 8.358333333333333,
+      "unlocked": 7,
+      "best": {
+        "score": 1178,
+        "time": 8.358333333333333,
+        "hp": 92
+      },
+      "actualLog": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 133,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 143,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 205,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 205,
+          "kind": "heavy"
+        },
+        {
+          "tick": 341,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 367,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 367,
+          "kind": "heavy"
+        },
+        {
+          "tick": 481,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 517,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 517,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 579,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 579,
+          "kind": "heavy"
+        },
+        {
+          "tick": 717,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 743,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 745,
+          "kind": "heavy"
+        },
+        {
+          "tick": 861,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 897,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 897,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 957,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 957,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 133,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 143,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 205,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 341,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 367,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 481,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 517,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            },
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 579,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 717,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 743,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 859,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 897,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            },
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 957,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 8.405999999988126,
+      "simulationToWallRatio": 0.994329447221644
+    },
+    {
+      "level": 7,
+      "ticks": 1003,
+      "player": {
+        "id": "player",
+        "x": 365.12500000000153,
+        "face": 1,
+        "hp": 92,
+        "maxHP": 100,
+        "energy": 34.70000000000039,
+        "gained": 91.90000000000097,
+        "spent": 157.19999999999976,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 10,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 1079,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 8
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 514.6000000000055,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 110,
+        "energy": 92.94999999999926,
+        "gained": 77.94999999999875,
+        "spent": 84.99999999999949,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 752,
+        "action": null,
+        "cooldown": 1023,
+        "stunUntil": 1040,
+        "invulUntil": 1017,
+        "nextThink": 916,
+        "cycle": 8,
+        "damageTaken": 110
+      },
+      "serial": 10,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 157,
+          "facing": -1,
+          "wind": 0.1545,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 187,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 270,
+          "facing": -1,
+          "wind": 0.3914,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 333,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 524,
+          "facing": -1,
+          "wind": 0.3914,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 585,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 776,
+          "facing": -1,
+          "wind": 0.1545,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 809,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 9,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 892,
+          "facing": -1,
+          "wind": 0.3914,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 10,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 957,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 175,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 91.3750000000025,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.15833333333333333,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 233,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 101.3750000000025,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 316,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 119.37500000000256,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.39166666666666705,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 379,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 129.37500000000256,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 570,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 123.97500000000338,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.39166666666666705,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 631,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 133.97500000000338,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 794,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 93.47500000000394,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.15833333333333333,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 855,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 103.47500000000394,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 938,
+          "swing": 9,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 121.47500000000394,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.39166666666666705,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 1003,
+          "swing": 10,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 131.47500000000394,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 6,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 81,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 157,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 187,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 187,
+          "kind": "heavy"
+        },
+        {
+          "tick": 301,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 333,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 333,
+          "kind": "heavy"
+        },
+        {
+          "tick": 525,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 585,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 585,
+          "kind": "heavy"
+        },
+        {
+          "tick": 779,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 809,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 809,
+          "kind": "heavy"
+        },
+        {
+          "tick": 925,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 957,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 957,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1178,
+      "stats": {
+        "attacks": 5,
+        "hits": 5,
+        "blocks": 5,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 8.358333333333333,
+      "unlocked": 8,
+      "best": {
+        "score": 1178,
+        "time": 8.358333333333333,
+        "hp": 92
+      },
+      "actualLog": [
+        {
+          "tick": 0,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 81,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 157,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 187,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 187,
+          "kind": "heavy"
+        },
+        {
+          "tick": 301,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 333,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 333,
+          "kind": "heavy"
+        },
+        {
+          "tick": 525,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 585,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 585,
+          "kind": "heavy"
+        },
+        {
+          "tick": 779,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 809,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 809,
+          "kind": "heavy"
+        },
+        {
+          "tick": 925,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 957,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 957,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 0,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 81,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 157,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 187,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 301,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 333,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 525,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 585,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 777,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 807,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 923,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 957,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 8.437999999994645,
+      "simulationToWallRatio": 0.9905585841832942
+    },
+    {
+      "level": 8,
+      "ticks": 876,
+      "player": {
+        "id": "player",
+        "x": 406.3333333333353,
+        "face": 1,
+        "hp": 92,
+        "maxHP": 100,
+        "energy": 16.9,
+        "gained": 75.10000000000008,
+        "spent": 158.19999999999965,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 0,
+        "action": {
+          "id": 10,
+          "kind": "heavy",
+          "age": 0.3833333333333337,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26,
+          "resolved": true
+        },
+        "cooldown": 952,
+        "stunUntil": 0,
+        "invulUntil": 0,
+        "nextThink": 0,
+        "cycle": 0,
+        "damageTaken": 8
+      },
+      "enemy": {
+        "id": "enemy",
+        "x": 547.199999999999,
+        "face": -1,
+        "hp": 0,
+        "maxHP": 115,
+        "energy": 74.33333333333192,
+        "gained": 73.33333333333175,
+        "spent": 98.99999999999983,
+        "move": 0,
+        "guard": false,
+        "guardUntil": 633,
+        "action": null,
+        "cooldown": 899,
+        "stunUntil": 913,
+        "invulUntil": 890,
+        "nextThink": 791,
+        "cycle": 7,
+        "damageTaken": 115
+      },
+      "serial": 10,
+      "swings": [
+        {
+          "id": 1,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 89,
+          "facing": -1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 2,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 154,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 3,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 281,
+          "facing": -1,
+          "wind": 0.15,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 4,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 314,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 5,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 426,
+          "facing": -1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 6,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 490,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 7,
+          "owner": "enemy",
+          "kind": "light",
+          "start": 655,
+          "facing": -1,
+          "wind": 0.15,
+          "active": 0.09,
+          "recovery": 0.322,
+          "range": 96,
+          "damage": 12
+        },
+        {
+          "id": 8,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 686,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 9,
+          "owner": "enemy",
+          "kind": "heavy",
+          "start": 769,
+          "facing": -1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.48299999999999993,
+          "range": 148,
+          "damage": 26
+        },
+        {
+          "id": 10,
+          "owner": "player",
+          "kind": "heavy",
+          "start": 830,
+          "facing": 1,
+          "wind": 0.38,
+          "active": 0.12,
+          "recovery": 0.42,
+          "range": 148,
+          "damage": 26
+        }
+      ],
+      "events": [
+        {
+          "tick": 134,
+          "swing": 1,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 115.0166666666646,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.3833333333333337,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 200,
+          "swing": 2,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 125.0166666666646,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 298,
+          "swing": 3,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 85.61666666666429,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.15,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 360,
+          "swing": 4,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 99.11666666666429,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 471,
+          "swing": 5,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 117.11666666666429,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.3833333333333337,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 536,
+          "swing": 6,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 127.11666666666429,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 672,
+          "swing": 7,
+          "source": "enemy",
+          "target": "player",
+          "kind": "light",
+          "distance": 84.86666666666372,
+          "range": 96,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.15,
+          "damage": 1,
+          "result": "block",
+          "energyCost": 6
+        },
+        {
+          "tick": 732,
+          "swing": 8,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 94.86666666666372,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 26,
+          "result": "hit",
+          "energyCost": 0
+        },
+        {
+          "tick": 814,
+          "swing": 9,
+          "source": "enemy",
+          "target": "player",
+          "kind": "heavy",
+          "distance": 112.86666666666372,
+          "range": 148,
+          "facing": -1,
+          "targetFacing": 1,
+          "age": 0.3833333333333337,
+          "damage": 2,
+          "result": "block",
+          "energyCost": 12
+        },
+        {
+          "tick": 876,
+          "swing": 10,
+          "source": "player",
+          "target": "enemy",
+          "kind": "heavy",
+          "distance": 122.86666666666372,
+          "range": 148,
+          "facing": 1,
+          "targetFacing": -1,
+          "age": 0.3833333333333337,
+          "damage": 11,
+          "result": "hit",
+          "energyCost": 0
+        }
+      ],
+      "log": [
+        {
+          "tick": 4,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 82,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 94,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 152,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 154,
+          "kind": "heavy"
+        },
+        {
+          "tick": 286,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 314,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 314,
+          "kind": "heavy"
+        },
+        {
+          "tick": 428,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 490,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 490,
+          "kind": "heavy"
+        },
+        {
+          "tick": 606,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 632,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 660,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 686,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 686,
+          "kind": "heavy"
+        },
+        {
+          "tick": 800,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 830,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 830,
+          "kind": "heavy"
+        }
+      ],
+      "reason": "读清来招，也把自己的时机留住了。",
+      "score": 1184,
+      "stats": {
+        "attacks": 5,
+        "hits": 5,
+        "blocks": 5,
+        "evades": 0,
+        "breaks": 0,
+        "settlements": 1
+      },
+      "invariants": {
+        "bounds": true,
+        "separation": true,
+        "health": true,
+        "damageLedger": true,
+        "energyBounds": true,
+        "energyLedger": true,
+        "uniqueSwings": true,
+        "oneContact": true,
+        "declaredRange": true,
+        "activeWindow": true,
+        "guardDirection": true,
+        "settlement": true
+      },
+      "playerPhase": "出招",
+      "enemyPhase": "移动",
+      "state": "won",
+      "time": 7.3,
+      "unlocked": 8,
+      "best": {
+        "score": 1184,
+        "time": 7.3,
+        "hp": 92
+      },
+      "actualLog": [
+        {
+          "tick": 4,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 82,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 94,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 152,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 154,
+          "kind": "heavy"
+        },
+        {
+          "tick": 286,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 314,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 314,
+          "kind": "heavy"
+        },
+        {
+          "tick": 428,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 490,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 490,
+          "kind": "heavy"
+        },
+        {
+          "tick": 606,
+          "kind": "move",
+          "value": 1
+        },
+        {
+          "tick": 632,
+          "kind": "move",
+          "value": 0
+        },
+        {
+          "tick": 660,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 686,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 686,
+          "kind": "heavy"
+        },
+        {
+          "tick": 800,
+          "kind": "guard",
+          "value": true
+        },
+        {
+          "tick": 830,
+          "kind": "guard",
+          "value": false
+        },
+        {
+          "tick": 830,
+          "kind": "heavy"
+        }
+      ],
+      "actions": [
+        {
+          "observedTick": 2,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 80,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 92,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 152,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 286,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 312,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 428,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 488,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 604,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "observedTick": 622,
+          "commands": [
+            {
+              "kind": "move",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "observedTick": 658,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 686,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        },
+        {
+          "observedTick": 800,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": true
+            }
+          ]
+        },
+        {
+          "observedTick": 830,
+          "commands": [
+            {
+              "kind": "guard",
+              "value": false
+            },
+            {
+              "kind": "heavy"
+            }
+          ]
+        }
+      ],
+      "wallSeconds": 7.375,
+      "simulationToWallRatio": 0.9898305084745762
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}

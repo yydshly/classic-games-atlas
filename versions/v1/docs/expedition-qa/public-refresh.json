@@ -1,0 +1,618 @@
+{
+  "testedAt": "2026-10-16T23:03:33.033730+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/expedition/",
+  "passed": true,
+  "method": "Real gather and paid production, direct reload during live carried resource/queue with no manual pause. Pagehide may record later legitimate ticks. Independent Node production restore of persisted legal checkpoint matches all22fields; then normal controls win. No browser state writes.",
+  "beforeRefresh": {
+    "level": 1,
+    "ticks": 61,
+    "stock": 6,
+    "home": {
+      "id": "home",
+      "side": "player",
+      "x": 1,
+      "y": 3,
+      "hp": 130,
+      "maxHP": 130
+    },
+    "core": {
+      "id": "core",
+      "side": "enemy",
+      "x": 10,
+      "y": 3,
+      "hp": 70,
+      "maxHP": 70
+    },
+    "nodes": [
+      {
+        "id": "south",
+        "x": 3,
+        "y": 6,
+        "initial": 48,
+        "remaining": 45
+      },
+      {
+        "id": "north",
+        "x": 3,
+        "y": 1,
+        "initial": 48,
+        "remaining": 48
+      }
+    ],
+    "units": [
+      {
+        "id": "p1",
+        "type": "worker",
+        "side": "player",
+        "x": 3,
+        "y": 5,
+        "hp": 40,
+        "maxHP": 40,
+        "carry": 3,
+        "order": {
+          "kind": "gather",
+          "target": "south",
+          "returning": false
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "p2",
+        "type": "ranger",
+        "side": "player",
+        "x": 2,
+        "y": 4,
+        "hp": 70,
+        "maxHP": 70,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "p3",
+        "type": "guard",
+        "side": "player",
+        "x": 2,
+        "y": 2,
+        "hp": 110,
+        "maxHP": 110,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "e4",
+        "type": "raider",
+        "side": "enemy",
+        "x": 4,
+        "y": 2,
+        "hp": 44,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "blocked": false,
+        "moveClock": 0.2333333333333333,
+        "gatherClock": 0,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      }
+    ],
+    "unitSerial": 4,
+    "shotSerial": 0,
+    "shots": [],
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 61,
+        "type": "harvest",
+        "unit": "p1",
+        "qty": 3,
+        "node": "south"
+      }
+    ],
+    "queue": [
+      {
+        "id": 1,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 1.6666666666666685,
+        "spawned": null
+      }
+    ],
+    "tickets": [
+      {
+        "id": 1,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 1.6666666666666685,
+        "spawned": null
+      }
+    ],
+    "nextToken": 2,
+    "revision": 2,
+    "waves": [
+      {
+        "at": 12,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      },
+      {
+        "at": 26,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      }
+    ],
+    "log": [
+      {
+        "tick": 7,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 11,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 1
+      }
+    ],
+    "capture": 0,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "harvested": 3,
+      "delivered": 0,
+      "lost": 0,
+      "spent": 18,
+      "produced": 0,
+      "orders": 1,
+      "kills": 0,
+      "settlements": 0
+    },
+    "invariants": {
+      "stock": true,
+      "nodeStock": true,
+      "cargo": true,
+      "workerCargo": true,
+      "resourceStats": true,
+      "paidOnce": true,
+      "production": true,
+      "queue": true,
+      "unitIds": true,
+      "occupancy": true,
+      "terrain": true,
+      "health": true,
+      "deadInactive": true,
+      "shotIds": true,
+      "hitRange": true,
+      "settlement": true
+    }
+  },
+  "savedCheckpoint": {
+    "version": 1,
+    "level": 1,
+    "ticks": 68,
+    "commands": [
+      {
+        "tick": 7,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 11,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 1
+      }
+    ]
+  },
+  "restored": {
+    "level": 1,
+    "ticks": 68,
+    "stock": 6,
+    "home": {
+      "id": "home",
+      "side": "player",
+      "x": 1,
+      "y": 3,
+      "hp": 130,
+      "maxHP": 130
+    },
+    "core": {
+      "id": "core",
+      "side": "enemy",
+      "x": 10,
+      "y": 3,
+      "hp": 70,
+      "maxHP": 70
+    },
+    "nodes": [
+      {
+        "id": "south",
+        "x": 3,
+        "y": 6,
+        "initial": 48,
+        "remaining": 45
+      },
+      {
+        "id": "north",
+        "x": 3,
+        "y": 1,
+        "initial": 48,
+        "remaining": 48
+      }
+    ],
+    "units": [
+      {
+        "id": "p1",
+        "type": "worker",
+        "side": "player",
+        "x": 3,
+        "y": 5,
+        "hp": 40,
+        "maxHP": 40,
+        "carry": 3,
+        "order": {
+          "kind": "gather",
+          "target": "south",
+          "returning": false
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0.2333333333333333,
+        "cooldown": 0,
+        "action": null,
+        "ticket": null
+      },
+      {
+        "id": "p2",
+        "type": "ranger",
+        "side": "player",
+        "x": 2,
+        "y": 4,
+        "hp": 70,
+        "maxHP": 70,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 90,
+        "action": {
+          "shot": 1,
+          "age": 0.13333333333333333
+        },
+        "ticket": null
+      },
+      {
+        "id": "p3",
+        "type": "guard",
+        "side": "player",
+        "x": 2,
+        "y": 2,
+        "hp": 110,
+        "maxHP": 110,
+        "carry": 0,
+        "order": {
+          "kind": "stop",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 94,
+        "action": {
+          "shot": 2,
+          "age": 0.13333333333333333
+        },
+        "ticket": null
+      },
+      {
+        "id": "e4",
+        "type": "raider",
+        "side": "enemy",
+        "x": 3,
+        "y": 2,
+        "hp": 44,
+        "maxHP": 44,
+        "carry": 0,
+        "order": {
+          "kind": "advance",
+          "x": 1,
+          "y": 3
+        },
+        "path": [],
+        "blocked": false,
+        "moveClock": 0,
+        "gatherClock": 0,
+        "cooldown": 100,
+        "action": {
+          "shot": 3,
+          "age": 0.13333333333333333
+        },
+        "ticket": null
+      }
+    ],
+    "unitSerial": 4,
+    "shotSerial": 3,
+    "shots": [
+      {
+        "id": 1,
+        "source": "p2",
+        "target": "e4",
+        "start": 64,
+        "wind": 0.24,
+        "range": 3,
+        "damage": 9,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      },
+      {
+        "id": 2,
+        "source": "p3",
+        "target": "e4",
+        "start": 64,
+        "wind": 0.28,
+        "range": 1,
+        "damage": 14,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      },
+      {
+        "id": 3,
+        "source": "e4",
+        "target": "p3",
+        "start": 64,
+        "wind": 0.32,
+        "range": 1,
+        "damage": 8,
+        "resolved": false,
+        "result": null,
+        "actualDamage": 0
+      }
+    ],
+    "ledger": [
+      {
+        "id": 1,
+        "tick": 61,
+        "type": "harvest",
+        "unit": "p1",
+        "qty": 3,
+        "node": "south"
+      }
+    ],
+    "queue": [
+      {
+        "id": 1,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 1.9000000000000026,
+        "spawned": null
+      }
+    ],
+    "tickets": [
+      {
+        "id": 1,
+        "type": "ranger",
+        "cost": 18,
+        "progress": 1.9000000000000026,
+        "spawned": null
+      }
+    ],
+    "nextToken": 2,
+    "revision": 2,
+    "waves": [
+      {
+        "at": 12,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      },
+      {
+        "at": 26,
+        "types": [
+          "raider"
+        ],
+        "spawned": []
+      }
+    ],
+    "log": [
+      {
+        "tick": 7,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 11,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 1
+      }
+    ],
+    "capture": 0,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "harvested": 3,
+      "delivered": 0,
+      "lost": 0,
+      "spent": 18,
+      "produced": 0,
+      "orders": 1,
+      "kills": 0,
+      "settlements": 0
+    },
+    "invariants": {
+      "stock": true,
+      "nodeStock": true,
+      "cargo": true,
+      "workerCargo": true,
+      "resourceStats": true,
+      "paidOnce": true,
+      "production": true,
+      "queue": true,
+      "unitIds": true,
+      "occupancy": true,
+      "terrain": true,
+      "health": true,
+      "deadInactive": true,
+      "shotIds": true,
+      "hitRange": true,
+      "settlement": true
+    }
+  },
+  "exactFields": [
+    "level",
+    "ticks",
+    "stock",
+    "home",
+    "core",
+    "nodes",
+    "units",
+    "unitSerial",
+    "shotSerial",
+    "shots",
+    "ledger",
+    "queue",
+    "tickets",
+    "nextToken",
+    "revision",
+    "waves",
+    "log",
+    "capture",
+    "score",
+    "reason",
+    "stats",
+    "invariants"
+  ],
+  "continuedWin": {
+    "stock": 12,
+    "homeHP": 130,
+    "stats": {
+      "harvested": 24,
+      "delivered": 24,
+      "lost": 0,
+      "spent": 36,
+      "produced": 2,
+      "orders": 2,
+      "kills": 2,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 7,
+        "kind": "order",
+        "ids": [
+          "p1"
+        ],
+        "order": {
+          "kind": "gather",
+          "target": "south"
+        }
+      },
+      {
+        "tick": 11,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 1,
+        "revision": 1
+      },
+      {
+        "tick": 231,
+        "kind": "buy",
+        "type": "ranger",
+        "token": 2,
+        "revision": 2
+      },
+      {
+        "tick": 329,
+        "kind": "order",
+        "ids": [
+          "p2",
+          "p3",
+          "p5",
+          "p6"
+        ],
+        "order": {
+          "kind": "attack",
+          "target": "core"
+        }
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

@@ -1,0 +1,2586 @@
+{
+  "testedAt": "2026-10-17T00:10:21.994889+00:00",
+  "url": "http://127.0.0.1:4174/games/echo/",
+  "method": "Fresh normal first level; real movement/turns/fire until an enemy windup, then direct reload during play. Pagehide releases held controls and saves exact current tick. Saved legal log independently replayed with production engine; no position/HP/ammo/result writes.",
+  "before": {
+    "level": 1,
+    "state": "playing",
+    "ticks": 343,
+    "accumulator": 0.016433333333333296,
+    "player": {
+      "x": 4.717335937,
+      "y": 7.498489343,
+      "yaw": -0.003587524,
+      "hp": 100,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "controls": {
+      "forward": 1,
+      "strafe": 0,
+      "turn": 0,
+      "fire": false
+    },
+    "turnRate": 2.2,
+    "map": [
+      "###########",
+      "#.#...#...#",
+      "#.#.###.#.#",
+      "#.#.....#.#",
+      "#.#.#####.#",
+      "#.#.#.....#",
+      "#.###.###.#",
+      "#.....#...#",
+      "###########"
+    ],
+    "route": [
+      {
+        "x": 1.5,
+        "y": 1.5
+      },
+      {
+        "x": 1.5,
+        "y": 2.5
+      },
+      {
+        "x": 1.5,
+        "y": 3.5
+      },
+      {
+        "x": 1.5,
+        "y": 4.5
+      },
+      {
+        "x": 1.5,
+        "y": 5.5
+      },
+      {
+        "x": 1.5,
+        "y": 6.5
+      },
+      {
+        "x": 1.5,
+        "y": 7.5
+      },
+      {
+        "x": 2.5,
+        "y": 7.5
+      },
+      {
+        "x": 3.5,
+        "y": 7.5
+      },
+      {
+        "x": 4.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 6.5
+      },
+      {
+        "x": 5.5,
+        "y": 5.5
+      },
+      {
+        "x": 6.5,
+        "y": 5.5
+      },
+      {
+        "x": 7.5,
+        "y": 5.5
+      },
+      {
+        "x": 8.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 4.5
+      },
+      {
+        "x": 9.5,
+        "y": 3.5
+      },
+      {
+        "x": 9.5,
+        "y": 2.5
+      },
+      {
+        "x": 9.5,
+        "y": 1.5
+      },
+      {
+        "x": 8.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 2.5
+      },
+      {
+        "x": 7.5,
+        "y": 3.5
+      },
+      {
+        "x": 6.5,
+        "y": 3.5
+      },
+      {
+        "x": 5.5,
+        "y": 3.5
+      },
+      {
+        "x": 4.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 2.5
+      },
+      {
+        "x": 3.5,
+        "y": 1.5
+      },
+      {
+        "x": 4.5,
+        "y": 1.5
+      },
+      {
+        "x": 5.5,
+        "y": 1.5
+      }
+    ],
+    "exit": {
+      "x": 5.5,
+      "y": 1.5
+    },
+    "doors": [
+      {
+        "id": "d0",
+        "key": "k0",
+        "color": "amber",
+        "x": 9,
+        "y": 4,
+        "open": false
+      }
+    ],
+    "pickups": [
+      {
+        "id": "k0",
+        "kind": "key",
+        "key": "k0",
+        "color": "amber",
+        "x": 2.5,
+        "y": 7.5,
+        "taken": true
+      },
+      {
+        "id": "a0",
+        "kind": "ammo",
+        "amount": 4,
+        "x": 5.5,
+        "y": 5.5,
+        "taken": false
+      },
+      {
+        "id": "h0",
+        "kind": "heal",
+        "amount": 25,
+        "x": 7.5,
+        "y": 1.5,
+        "taken": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "kind": "prism",
+        "x": 5.5,
+        "y": 6.5,
+        "hp": 18,
+        "action": {
+          "id": 1,
+          "at": 404,
+          "yaw": 2.355861592
+        },
+        "nextAttack": 0
+      },
+      {
+        "id": "e1",
+        "kind": "sentinel",
+        "x": 3.5,
+        "y": 2.5,
+        "hp": 24,
+        "action": null,
+        "nextAttack": 0
+      }
+    ],
+    "keys": [
+      "k0"
+    ],
+    "serial": 1,
+    "shots": [
+      {
+        "id": 1,
+        "owner": "e0",
+        "tick": 338,
+        "x": 5.5,
+        "y": 6.5,
+        "yaw": 2.355861592,
+        "resolved": false,
+        "target": null,
+        "damage": 0
+      }
+    ],
+    "ledger": [],
+    "events": [
+      {
+        "id": 1,
+        "tick": 252,
+        "kind": "key",
+        "text": "拾起琥珀钥匙",
+        "pickup": "k0",
+        "key": "k0"
+      },
+      {
+        "id": 2,
+        "tick": 338,
+        "kind": "warn",
+        "text": "折光体正在蓄光；侧移或转角可避开。",
+        "enemy": "e0",
+        "shot": 1
+      }
+    ],
+    "log": [
+      {
+        "tick": 0,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 142,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 154,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 164,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 175,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 188,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 199,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 210,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 222,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 233,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 238,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "look",
+        "delta": -0.017811767578125002
+      },
+      {
+        "tick": 271,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 282,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 292,
+        "kind": "look",
+        "delta": 0.0230452880859375
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 308,
+        "kind": "look",
+        "delta": -0.14544012451171875
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 317,
+        "kind": "look",
+        "delta": -0.05078631591796875
+      },
+      {
+        "tick": 318,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 339,
+        "kind": "look",
+        "delta": 0.01660986328125
+      }
+    ],
+    "lastUse": -100,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "fired": 0,
+      "hits": 0,
+      "kills": 0,
+      "damageTaken": 0,
+      "healed": 0,
+      "ammoGained": 0,
+      "ammoDiscarded": 0,
+      "doors": 0,
+      "settlements": 0
+    },
+    "time": 5.716666666666667,
+    "invariants": {
+      "position": true,
+      "finite": true,
+      "health": true,
+      "ammo": true,
+      "shotCost": true,
+      "uniqueShots": true,
+      "enemyHealth": true,
+      "oneDamage": true,
+      "keys": true,
+      "doors": true,
+      "pickups": true,
+      "ledgerIds": true,
+      "enemyActions": true,
+      "tickBound": true,
+      "settlement": true
+    },
+    "unlocked": 1,
+    "best": {},
+    "storageAvailable": true,
+    "prefs": {
+      "turnRate": 2.2,
+      "bob": false,
+      "guide": true,
+      "sound": false
+    }
+  },
+  "savedCheckpoint": {
+    "version": 1,
+    "level": 1,
+    "ticks": 345,
+    "commands": [
+      {
+        "tick": 0,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 142,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 154,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 164,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 175,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 188,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 199,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 210,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 222,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 233,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 238,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "look",
+        "delta": -0.017811767578125002
+      },
+      {
+        "tick": 271,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 282,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 292,
+        "kind": "look",
+        "delta": 0.0230452880859375
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 308,
+        "kind": "look",
+        "delta": -0.14544012451171875
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 317,
+        "kind": "look",
+        "delta": -0.05078631591796875
+      },
+      {
+        "tick": 318,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 339,
+        "kind": "look",
+        "delta": 0.01660986328125
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      }
+    ]
+  },
+  "restored": {
+    "level": 1,
+    "state": "paused",
+    "ticks": 345,
+    "accumulator": 0,
+    "player": {
+      "x": 4.804002045,
+      "y": 7.498178425,
+      "yaw": -0.003587524,
+      "hp": 100,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "controls": {
+      "forward": 0,
+      "strafe": 0,
+      "turn": 0,
+      "fire": false
+    },
+    "turnRate": 2.2,
+    "map": [
+      "###########",
+      "#.#...#...#",
+      "#.#.###.#.#",
+      "#.#.....#.#",
+      "#.#.#####.#",
+      "#.#.#.....#",
+      "#.###.###.#",
+      "#.....#...#",
+      "###########"
+    ],
+    "route": [
+      {
+        "x": 1.5,
+        "y": 1.5
+      },
+      {
+        "x": 1.5,
+        "y": 2.5
+      },
+      {
+        "x": 1.5,
+        "y": 3.5
+      },
+      {
+        "x": 1.5,
+        "y": 4.5
+      },
+      {
+        "x": 1.5,
+        "y": 5.5
+      },
+      {
+        "x": 1.5,
+        "y": 6.5
+      },
+      {
+        "x": 1.5,
+        "y": 7.5
+      },
+      {
+        "x": 2.5,
+        "y": 7.5
+      },
+      {
+        "x": 3.5,
+        "y": 7.5
+      },
+      {
+        "x": 4.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 6.5
+      },
+      {
+        "x": 5.5,
+        "y": 5.5
+      },
+      {
+        "x": 6.5,
+        "y": 5.5
+      },
+      {
+        "x": 7.5,
+        "y": 5.5
+      },
+      {
+        "x": 8.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 4.5
+      },
+      {
+        "x": 9.5,
+        "y": 3.5
+      },
+      {
+        "x": 9.5,
+        "y": 2.5
+      },
+      {
+        "x": 9.5,
+        "y": 1.5
+      },
+      {
+        "x": 8.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 2.5
+      },
+      {
+        "x": 7.5,
+        "y": 3.5
+      },
+      {
+        "x": 6.5,
+        "y": 3.5
+      },
+      {
+        "x": 5.5,
+        "y": 3.5
+      },
+      {
+        "x": 4.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 2.5
+      },
+      {
+        "x": 3.5,
+        "y": 1.5
+      },
+      {
+        "x": 4.5,
+        "y": 1.5
+      },
+      {
+        "x": 5.5,
+        "y": 1.5
+      }
+    ],
+    "exit": {
+      "x": 5.5,
+      "y": 1.5
+    },
+    "doors": [
+      {
+        "id": "d0",
+        "key": "k0",
+        "color": "amber",
+        "x": 9,
+        "y": 4,
+        "open": false
+      }
+    ],
+    "pickups": [
+      {
+        "id": "k0",
+        "kind": "key",
+        "key": "k0",
+        "color": "amber",
+        "x": 2.5,
+        "y": 7.5,
+        "taken": true
+      },
+      {
+        "id": "a0",
+        "kind": "ammo",
+        "amount": 4,
+        "x": 5.5,
+        "y": 5.5,
+        "taken": false
+      },
+      {
+        "id": "h0",
+        "kind": "heal",
+        "amount": 25,
+        "x": 7.5,
+        "y": 1.5,
+        "taken": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "kind": "prism",
+        "x": 5.5,
+        "y": 6.5,
+        "hp": 18,
+        "action": {
+          "id": 1,
+          "at": 404,
+          "yaw": 2.355861592
+        },
+        "nextAttack": 0
+      },
+      {
+        "id": "e1",
+        "kind": "sentinel",
+        "x": 3.5,
+        "y": 2.5,
+        "hp": 24,
+        "action": null,
+        "nextAttack": 0
+      }
+    ],
+    "keys": [
+      "k0"
+    ],
+    "serial": 1,
+    "shots": [
+      {
+        "id": 1,
+        "owner": "e0",
+        "tick": 338,
+        "x": 5.5,
+        "y": 6.5,
+        "yaw": 2.355861592,
+        "resolved": false,
+        "target": null,
+        "damage": 0
+      }
+    ],
+    "ledger": [],
+    "events": [
+      {
+        "id": 1,
+        "tick": 252,
+        "kind": "key",
+        "text": "拾起琥珀钥匙",
+        "pickup": "k0",
+        "key": "k0"
+      },
+      {
+        "id": 2,
+        "tick": 338,
+        "kind": "warn",
+        "text": "折光体正在蓄光；侧移或转角可避开。",
+        "enemy": "e0",
+        "shot": 1
+      }
+    ],
+    "log": [
+      {
+        "tick": 0,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 142,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 154,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 164,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 175,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 188,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 199,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 210,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 222,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 233,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 238,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "look",
+        "delta": -0.017811767578125002
+      },
+      {
+        "tick": 271,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 282,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 292,
+        "kind": "look",
+        "delta": 0.0230452880859375
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 308,
+        "kind": "look",
+        "delta": -0.14544012451171875
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 317,
+        "kind": "look",
+        "delta": -0.05078631591796875
+      },
+      {
+        "tick": 318,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 339,
+        "kind": "look",
+        "delta": 0.01660986328125
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      }
+    ],
+    "lastUse": -100,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "fired": 0,
+      "hits": 0,
+      "kills": 0,
+      "damageTaken": 0,
+      "healed": 0,
+      "ammoGained": 0,
+      "ammoDiscarded": 0,
+      "doors": 0,
+      "settlements": 0
+    },
+    "time": 5.75,
+    "invariants": {
+      "position": true,
+      "finite": true,
+      "health": true,
+      "ammo": true,
+      "shotCost": true,
+      "uniqueShots": true,
+      "enemyHealth": true,
+      "oneDamage": true,
+      "keys": true,
+      "doors": true,
+      "pickups": true,
+      "ledgerIds": true,
+      "enemyActions": true,
+      "tickBound": true,
+      "settlement": true
+    },
+    "unlocked": 1,
+    "best": {},
+    "storageAvailable": true,
+    "prefs": {
+      "turnRate": 2.2,
+      "bob": false,
+      "guide": true,
+      "sound": false
+    }
+  },
+  "independentRestored": {
+    "level": 1,
+    "state": "paused",
+    "ticks": 345,
+    "accumulator": 0,
+    "player": {
+      "x": 4.804002045,
+      "y": 7.498178425,
+      "yaw": -0.003587524,
+      "hp": 100,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "controls": {
+      "forward": 0,
+      "strafe": 0,
+      "turn": 0,
+      "fire": false
+    },
+    "turnRate": 2.2,
+    "map": [
+      "###########",
+      "#.#...#...#",
+      "#.#.###.#.#",
+      "#.#.....#.#",
+      "#.#.#####.#",
+      "#.#.#.....#",
+      "#.###.###.#",
+      "#.....#...#",
+      "###########"
+    ],
+    "route": [
+      {
+        "x": 1.5,
+        "y": 1.5
+      },
+      {
+        "x": 1.5,
+        "y": 2.5
+      },
+      {
+        "x": 1.5,
+        "y": 3.5
+      },
+      {
+        "x": 1.5,
+        "y": 4.5
+      },
+      {
+        "x": 1.5,
+        "y": 5.5
+      },
+      {
+        "x": 1.5,
+        "y": 6.5
+      },
+      {
+        "x": 1.5,
+        "y": 7.5
+      },
+      {
+        "x": 2.5,
+        "y": 7.5
+      },
+      {
+        "x": 3.5,
+        "y": 7.5
+      },
+      {
+        "x": 4.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 7.5
+      },
+      {
+        "x": 5.5,
+        "y": 6.5
+      },
+      {
+        "x": 5.5,
+        "y": 5.5
+      },
+      {
+        "x": 6.5,
+        "y": 5.5
+      },
+      {
+        "x": 7.5,
+        "y": 5.5
+      },
+      {
+        "x": 8.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 5.5
+      },
+      {
+        "x": 9.5,
+        "y": 4.5
+      },
+      {
+        "x": 9.5,
+        "y": 3.5
+      },
+      {
+        "x": 9.5,
+        "y": 2.5
+      },
+      {
+        "x": 9.5,
+        "y": 1.5
+      },
+      {
+        "x": 8.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 1.5
+      },
+      {
+        "x": 7.5,
+        "y": 2.5
+      },
+      {
+        "x": 7.5,
+        "y": 3.5
+      },
+      {
+        "x": 6.5,
+        "y": 3.5
+      },
+      {
+        "x": 5.5,
+        "y": 3.5
+      },
+      {
+        "x": 4.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 3.5
+      },
+      {
+        "x": 3.5,
+        "y": 2.5
+      },
+      {
+        "x": 3.5,
+        "y": 1.5
+      },
+      {
+        "x": 4.5,
+        "y": 1.5
+      },
+      {
+        "x": 5.5,
+        "y": 1.5
+      }
+    ],
+    "exit": {
+      "x": 5.5,
+      "y": 1.5
+    },
+    "doors": [
+      {
+        "id": "d0",
+        "key": "k0",
+        "color": "amber",
+        "x": 9,
+        "y": 4,
+        "open": false
+      }
+    ],
+    "pickups": [
+      {
+        "id": "k0",
+        "kind": "key",
+        "key": "k0",
+        "color": "amber",
+        "x": 2.5,
+        "y": 7.5,
+        "taken": true
+      },
+      {
+        "id": "a0",
+        "kind": "ammo",
+        "amount": 4,
+        "x": 5.5,
+        "y": 5.5,
+        "taken": false
+      },
+      {
+        "id": "h0",
+        "kind": "heal",
+        "amount": 25,
+        "x": 7.5,
+        "y": 1.5,
+        "taken": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "kind": "prism",
+        "x": 5.5,
+        "y": 6.5,
+        "hp": 18,
+        "action": {
+          "id": 1,
+          "at": 404,
+          "yaw": 2.355861592
+        },
+        "nextAttack": 0
+      },
+      {
+        "id": "e1",
+        "kind": "sentinel",
+        "x": 3.5,
+        "y": 2.5,
+        "hp": 24,
+        "action": null,
+        "nextAttack": 0
+      }
+    ],
+    "keys": [
+      "k0"
+    ],
+    "serial": 1,
+    "shots": [
+      {
+        "id": 1,
+        "owner": "e0",
+        "tick": 338,
+        "x": 5.5,
+        "y": 6.5,
+        "yaw": 2.355861592,
+        "resolved": false,
+        "target": null,
+        "damage": 0
+      }
+    ],
+    "ledger": [],
+    "events": [
+      {
+        "id": 1,
+        "tick": 252,
+        "kind": "key",
+        "text": "拾起琥珀钥匙",
+        "pickup": "k0",
+        "key": "k0"
+      },
+      {
+        "id": 2,
+        "tick": 338,
+        "kind": "warn",
+        "text": "折光体正在蓄光；侧移或转角可避开。",
+        "enemy": "e0",
+        "shot": 1
+      }
+    ],
+    "log": [
+      {
+        "tick": 0,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 142,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 154,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 164,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 175,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 188,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 199,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 210,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 222,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 233,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 238,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "look",
+        "delta": -0.017811767578125002
+      },
+      {
+        "tick": 271,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 282,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 292,
+        "kind": "look",
+        "delta": 0.0230452880859375
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 308,
+        "kind": "look",
+        "delta": -0.14544012451171875
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 317,
+        "kind": "look",
+        "delta": -0.05078631591796875
+      },
+      {
+        "tick": 318,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 339,
+        "kind": "look",
+        "delta": 0.01660986328125
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      }
+    ],
+    "lastUse": -100,
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "fired": 0,
+      "hits": 0,
+      "kills": 0,
+      "damageTaken": 0,
+      "healed": 0,
+      "ammoGained": 0,
+      "ammoDiscarded": 0,
+      "doors": 0,
+      "settlements": 0
+    },
+    "time": 5.75,
+    "invariants": {
+      "position": true,
+      "finite": true,
+      "health": true,
+      "ammo": true,
+      "shotCost": true,
+      "uniqueShots": true,
+      "enemyHealth": true,
+      "oneDamage": true,
+      "keys": true,
+      "doors": true,
+      "pickups": true,
+      "ledgerIds": true,
+      "enemyActions": true,
+      "tickBound": true,
+      "settlement": true
+    }
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true,
+  "exactFields": [
+    "level",
+    "ticks",
+    "player",
+    "controls",
+    "turnRate",
+    "map",
+    "route",
+    "exit",
+    "doors",
+    "pickups",
+    "enemies",
+    "keys",
+    "serial",
+    "shots",
+    "ledger",
+    "events",
+    "log",
+    "lastUse",
+    "score",
+    "reason",
+    "stats",
+    "invariants"
+  ],
+  "beforeTick": 343,
+  "savedTick": 345,
+  "continuedWin": {
+    "state": "won",
+    "score": 1498,
+    "ticks": 1814,
+    "player": {
+      "x": 4.786181177,
+      "y": 1.577203435,
+      "yaw": 0.092546334,
+      "hp": 100,
+      "ammo": 8,
+      "cooldown": 0
+    },
+    "keys": [
+      "k0"
+    ],
+    "stats": {
+      "fired": 4,
+      "hits": 4,
+      "kills": 2,
+      "damageTaken": 0,
+      "healed": 0,
+      "ammoGained": 4,
+      "ammoDiscarded": 0,
+      "doors": 1,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "tick": 0,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 142,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 144,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 154,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 164,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 175,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 188,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 199,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 210,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 222,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 233,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 238,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 259,
+        "kind": "look",
+        "delta": -0.017811767578125002
+      },
+      {
+        "tick": 271,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 272,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 282,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 292,
+        "kind": "look",
+        "delta": 0.0230452880859375
+      },
+      {
+        "tick": 293,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 308,
+        "kind": "look",
+        "delta": -0.14544012451171875
+      },
+      {
+        "tick": 309,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 317,
+        "kind": "look",
+        "delta": -0.05078631591796875
+      },
+      {
+        "tick": 318,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 339,
+        "kind": "look",
+        "delta": 0.01660986328125
+      },
+      {
+        "tick": 345,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 352,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 361,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 370,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 379,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 390,
+        "kind": "look",
+        "delta": -0.1583184814453125
+      },
+      {
+        "tick": 393,
+        "kind": "pulse"
+      },
+      {
+        "tick": 393,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 416,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 417,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 426,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 435,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 443,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 453,
+        "kind": "look",
+        "delta": 0.16452392578125
+      },
+      {
+        "tick": 457,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 473,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 474,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 483,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 492,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 502,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 512,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 522,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 531,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 540,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 545,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 556,
+        "kind": "look",
+        "delta": -0.018371337890625
+      },
+      {
+        "tick": 570,
+        "kind": "look",
+        "delta": 0.0338031005859375
+      },
+      {
+        "tick": 583,
+        "kind": "look",
+        "delta": 0.0169273681640625
+      },
+      {
+        "tick": 592,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 593,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 601,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 610,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 621,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 632,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 641,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 650,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 663,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 675,
+        "kind": "look",
+        "delta": 0.051983276367187504
+      },
+      {
+        "tick": 676,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 702,
+        "kind": "look",
+        "delta": -0.0713419189453125
+      },
+      {
+        "tick": 713,
+        "kind": "look",
+        "delta": -0.0353236083984375
+      },
+      {
+        "tick": 723,
+        "kind": "look",
+        "delta": -0.0479527587890625
+      },
+      {
+        "tick": 733,
+        "kind": "look",
+        "delta": 0.0698536376953125
+      },
+      {
+        "tick": 743,
+        "kind": "look",
+        "delta": 0.0507330322265625
+      },
+      {
+        "tick": 753,
+        "kind": "look",
+        "delta": -0.04509613037109375
+      },
+      {
+        "tick": 758,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 758,
+        "kind": "use"
+      },
+      {
+        "tick": 766,
+        "kind": "look",
+        "delta": -0.0218038330078125
+      },
+      {
+        "tick": 767,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 780,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 781,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 790,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 799,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 808,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 818,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 826,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 835,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 843,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 854,
+        "kind": "look",
+        "delta": -0.114876708984375
+      },
+      {
+        "tick": 855,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 883,
+        "kind": "look",
+        "delta": 0.15079248046875
+      },
+      {
+        "tick": 885,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 893,
+        "kind": "look",
+        "delta": 0.0554190673828125
+      },
+      {
+        "tick": 894,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 913,
+        "kind": "look",
+        "delta": -0.04217816162109375
+      },
+      {
+        "tick": 923,
+        "kind": "look",
+        "delta": -0.015471313476562502
+      },
+      {
+        "tick": 955,
+        "kind": "look",
+        "delta": 0.0169874267578125
+      },
+      {
+        "tick": 964,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 965,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 973,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 984,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 993,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1002,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1011,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1021,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1031,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1042,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1051,
+        "kind": "look",
+        "delta": -0.05833319091796875
+      },
+      {
+        "tick": 1052,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1080,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1081,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1090,
+        "kind": "look",
+        "delta": 0.149340087890625
+      },
+      {
+        "tick": 1095,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1114,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1115,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1124,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1135,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1146,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1156,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1167,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1176,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1186,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1196,
+        "kind": "look",
+        "delta": -0.12396350097656252
+      },
+      {
+        "tick": 1200,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1226,
+        "kind": "look",
+        "delta": 0.0739647216796875
+      },
+      {
+        "tick": 1235,
+        "kind": "look",
+        "delta": 0.025806884765625
+      },
+      {
+        "tick": 1245,
+        "kind": "look",
+        "delta": 0.0215460205078125
+      },
+      {
+        "tick": 1254,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1255,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1263,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1272,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1281,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1291,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1299,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1308,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1317,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1326,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1335,
+        "kind": "look",
+        "delta": 0.0251627197265625
+      },
+      {
+        "tick": 1336,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1362,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1363,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1371,
+        "kind": "look",
+        "delta": -0.13002813720703124
+      },
+      {
+        "tick": 1378,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1400,
+        "kind": "look",
+        "delta": 0.0339847412109375
+      },
+      {
+        "tick": 1415,
+        "kind": "look",
+        "delta": 0.015511962890625001
+      },
+      {
+        "tick": 1428,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1429,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1438,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1448,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1457,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1467,
+        "kind": "look",
+        "delta": 0.1773394775390625
+      },
+      {
+        "tick": 1471,
+        "kind": "pulse"
+      },
+      {
+        "tick": 1471,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": true
+      },
+      {
+        "tick": 1494,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1495,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1505,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1514,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1523,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1533,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1538,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1554,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1555,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1565,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1574,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1583,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1593,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1602,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1612,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1621,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1631,
+        "kind": "look",
+        "delta": 0.06637939453125
+      },
+      {
+        "tick": 1632,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1658,
+        "kind": "look",
+        "delta": -0.07469146728515626
+      },
+      {
+        "tick": 1667,
+        "kind": "look",
+        "delta": -0.026291748046875
+      },
+      {
+        "tick": 1676,
+        "kind": "look",
+        "delta": -0.02242236328125
+      },
+      {
+        "tick": 1686,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1687,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1696,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1705,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1714,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1724,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1734,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1744,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1754,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1766,
+        "kind": "look",
+        "delta": 0.19999987792968751
+      },
+      {
+        "tick": 1777,
+        "kind": "look",
+        "delta": 0.102547119140625
+      },
+      {
+        "tick": 1778,
+        "kind": "controls",
+        "forward": 1,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1808,
+        "kind": "look",
+        "delta": -0.20000006103515625
+      },
+      {
+        "tick": 1809,
+        "kind": "controls",
+        "forward": 0,
+        "strafe": 0,
+        "turn": 0,
+        "fire": false
+      },
+      {
+        "tick": 1814,
+        "kind": "use"
+      }
+    ]
+  }
+}

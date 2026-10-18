@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4efe3">
+  <meta name="description" content="雨街修理所：八个营业日的原创机器人修理经营游戏。布置工位、调度技师，让每一位来客重新亮起。单人、本地存档。独立预览，尚未完成真实浏览器与移动端验收。">
+  <title>雨街修理所 · 独立预览 36</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./repair.css?v=20261018-width1">
+  <script type="module" src="./game.mjs?v=20261018-width1"></script>
+</head>
+<body>
+  <header class="page-header">
+    <a href="../../#experiments" class="back-link">← 经典游戏图鉴</a>
+    <span class="edition">PLAY LAB <b>36</b></span>
+    <span class="candidate-label" title="尚未完成真实浏览器与移动端验收；预览存档与正式游戏分开保存。">独立预览 · 尚未验收</span>
+  </header>
+  <main>
+    <section class="masthead" aria-labelledby="page-title">
+      <div><p class="eyebrow">A LITTLE CARE, A LITTLE SPARK</p><h1 id="page-title">雨街修理所<span>RAINY STREET REPAIR</span></h1></div>
+      <p class="masthead-note">替旧日零件，<br>找回明天的光。<i aria-hidden="true">✦</i></p>
+    </section>
+    <div class="game-layout">
+      <section class="workshop-column" aria-label="修理所经营区">
+        <div class="shift-heading">
+          <div><span id="day-number" class="day-number">DAY 01 / 08</span><strong id="day-name">开门第一天</strong></div>
+          <div class="toolbar"><button id="help" type="button" aria-haspopup="dialog">营业手册 <span>?</span></button><button id="pause" type="button" disabled>暂停 <kbd>P</kbd></button></div>
+        </div>
+        <div class="hud" aria-label="营业数据">
+          <div><span>零件币</span><strong id="credits">0</strong><small>用于建造与升级</small></div>
+          <div><span>营业剩余</span><strong id="time">00:00</strong><small id="time-note">准备开门</small></div>
+          <div><span>完成 / 目标</span><strong><span id="completed">0</span><em> / </em><span id="goal">0</span></strong><small>收银后计入</small></div>
+          <div><span>流失 / 上限</span><strong><span id="lost">0</span><em> / </em><span id="loss-limit">0</span></strong><small>留意等候耐心</small></div>
+        </div>
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="workshop" width="1200" height="800" aria-label="雨街修理所示意图。可点击工位，或使用下方工位按钮选择。"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-card">
+              <p id="overlay-kicker" class="eyebrow">DAY 01 · 开门之前</p>
+              <h2 id="overlay-title">给城市一点修复。</h2>
+              <p id="overlay-copy">搭好工位，安排技师，接住雨天里赶来的小小机器人。</p>
+              <div id="overlay-summary" class="overlay-summary"></div>
+              <button id="primary-action" class="primary" type="button">开始营业 ↗</button>
+              <button id="secondary-action" class="text-button" type="button">查看八日计划</button>
+            </div>
+          </div>
+        </div>
+        <div class="canvas-caption"><span><i class="status-dot"></i> <span id="shop-status">门牌已擦亮，等待开门</span></span><span>点工位查看 · 下方按钮也可操作</span></div>
+        <div class="slot-strip" id="slot-list" role="group" aria-label="选择工位"></div>
+        <p id="live-message" class="live-message" role="status" aria-live="polite">先看当天目标，再开始营业。机器人会自动前往下一站。</p>
+        <div class="keyboard-note"><span>Tab 选择按钮 · Enter / 空格确认</span><span>P / Esc 暂停 · H 手册</span></div>
+      </section>
+      <aside class="ledger" aria-label="经营控制与营业记录">
+        <section class="day-brief">
+          <p class="panel-label">TODAY’S NOTE <span>营业便笺</span></p>
+          <h2 id="brief-title">每一次修复，都算数。</h2>
+          <p id="day-tip">建好需要的工位，再让技师到岗。不同工位串起一条完整的修理路线。</p>
+          <div id="route-note" class="route-note">接待 → 修理工位 → 收银</div>
+        </section>
+        <section class="command-panel" aria-labelledby="selected-title">
+          <div class="panel-label">WORKBENCH <span id="selected-code">A</span></div>
+          <h2 id="selected-title">选择一个工位</h2>
+          <p id="selected-description" class="detail-copy"></p>
+          <div id="selected-facts" class="selected-facts"></div>
+          <div id="build-controls" class="build-controls"></div>
+          <div id="upgrade-controls" class="upgrade-controls"></div>
+          <div class="worker-section"><h3>技师调度 <small id="worker-summary"></small></h3><div id="worker-controls" class="worker-controls"></div></div>
+          <p id="command-note" class="command-note">可在暂停时查看；开始或继续营业后操作。</p>
+        </section>
+        <section class="record-panel">
+          <div class="panel-label">PERSONAL LEDGER <span>本机记录</span></div>
+          <p id="best-record">第一份好成绩，等你开张。</p>
+          <div class="ledger-actions"><button id="days" type="button" aria-haspopup="dialog">八日计划 ↗</button><button id="retry" type="button" aria-haspopup="dialog">重开当天</button></div>
+          <p id="save-note" class="save-note">成绩与当前营业进度仅保存在此浏览器。</p>
+          <p id="restore-note" class="restore-note" hidden></p>
+        </section>
+      </aside>
+    </div>
+    <footer class="colophon"><p><b>原创玩法实验 36</b> · 八日修理所经营。机器人、街景与关卡原创；独立预览，尚未验收；不计入已发布游戏。</p><span>PREVIEW / SINGLE PLAYER / 8 DAYS</span></footer>
+  </main>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-content">
+      <p class="eyebrow">THE SHOPKEEPER’S HANDBOOK</p><h2 id="help-title">先把路铺好，<br>再等小灯亮起。</h2>
+      <ol class="manual-list">
+        <li><b>先接待，再按需求修理。</b><p>机器人自动经过接待、所需工位与收银。完成收银才计入目标；查看工位状态，哪里排队就照顾哪里。</p></li>
+        <li><b>空位建工位，工位配技师。</b><p>点画面里的 A–F 工位或下方同名按钮，用右侧按钮建造、派驻与升级。按钮会说明费用及暂时不可用的原因。</p></li>
+        <li><b>时间与耐心，都要留意。</b><p>达到流失上限就会歇业。升级能提高后续维修速度；红灯故障需要花 25 币、用四秒保养。后几天每十五秒发工资，收银前别把钱花光。</p></li>
+        <li><b>八天，一天比一天热闹。</b><p>完成目标并顺利打烊，才解锁下一天。可以重试已解锁的日子，本机最好成绩会保留。重开会放弃当天尚未完成的营业进度。</p></li>
+      </ol>
+      <p class="manual-note">P / Esc 暂停，H 打开手册。所有建造、调度与升级均有键盘可用按钮。切换标签页、窗口失去焦点或打开对话框会暂停；关闭后仍需主动继续。刷新可恢复最近保存的营业进度，并先保持暂停。</p>
+      <button id="help-close" class="primary" type="button">合上手册</button>
+    </div>
+  </dialog>
+  <dialog id="days-dialog" aria-labelledby="days-title">
+    <div class="dialog-content">
+      <p class="eyebrow">EIGHT DAYS ON RAINY STREET</p><h2 id="days-title">把小店，慢慢点亮。</h2>
+      <p class="dialog-intro">逐日解锁。选别的一天会替换当前尚未完成的营业进度。</p>
+      <div id="day-list" class="day-list"></div>
+      <button id="days-close" class="secondary" type="button">回到修理所</button>
+    </div>
+  </dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="dialog-content compact-dialog">
+      <p class="eyebrow">A FRESH START</p><h2 id="confirm-title">重新开始这一天？</h2>
+      <p id="confirm-copy">当前营业进度将被替换，已经取得的最好成绩会保留。</p>
+      <button id="confirm-accept" class="primary" type="button">确认重开</button>
+      <button id="confirm-cancel" class="secondary" type="button">保留当前进度</button>
+    </div>
+  </dialog>
+  <noscript><p class="noscript">需要启用 JavaScript 才能经营修理所。游戏仅在本机运行。</p></noscript>
+</body>
+</html>

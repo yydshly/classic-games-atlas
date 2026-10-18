@@ -1,0 +1,1535 @@
+{
+  "testedAt": "2026-10-16T21:58:32.659702+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/orbit/",
+  "checks": [
+    "Fresh tutorial/ready keeps clock, board and queue fixed until Start",
+    "Unplayed challenges are natively locked and chooser closes with Escape",
+    "Without input the current block actually falls at normal authored gravity and grants no drop points",
+    "Held keyboard direction uses delayed repeat, clamps at wall and stops after real release",
+    "Repeated native rotation keydown rotates once, without browser auto-repeat",
+    "Held hard-drop key locks exactly one old piece; stale repeat cannot drop the new spawn",
+    "Real held soft drop moves/earns one per cell and release restores ordinary gravity without backlog",
+    "Pause freezes physics and cancels held repeat; a previously held direction must be released before it can resume",
+    "Grounded rotated activity restores exact board/position/rotation/lock-clock/queue/score paused, then normal keyboard play wins",
+    "Victory records earned best/unlock once;320px result action is visible and passes real hit testing",
+    "Retry resets normal board/counters and reproduces the same seven-bag start/preview while retaining best",
+    "Actual center hard drops naturally fill the spawn, cause top-out once and retry restores normal setup",
+    "A real fixed-sequence dust challenge simultaneously clears multiple rows and removes original IDs only once",
+    "Help/chooser freeze all fields and restore running state; blur stops gravity immediately",
+    "Original short synthesized-sound preference persists",
+    "8×16 field, preview, large controls and chooser fit six page widths320–1440",
+    "Malformed storage returns to safe ready defaults",
+    "Invalid logs and forged board/line/score snapshots cannot become production state",
+    "Native touchscreen delayed-repeat hold/release and full ordinary first challenge both work without board writes",
+    "Denied storage still permits an entire normal-speed challenge",
+    "No console/page errors, failed requests orHTTP4xx/5xx resources"
+  ],
+  "fixtures": "Only stage/unlock/tutorial/storage metadata; no board, active coordinates, lines, score, clock or result writes.",
+  "naturalGravity": {
+    "y": 1,
+    "time": 0.8083333333333333,
+    "wallSeconds": 0.8589999999967404,
+    "gravity": 0.72
+  },
+  "groundedRestore": {
+    "level": 1,
+    "ticks": 101,
+    "fall": 0,
+    "soft": false,
+    "score": 14,
+    "lines": 0,
+    "clearedIds": [],
+    "locks": [],
+    "combo": 0,
+    "stats": {
+      "locked": 0,
+      "moves": 3,
+      "rotations": 0,
+      "softCells": 14,
+      "hardCells": 0,
+      "maxClear": 0,
+      "maxCombo": 0,
+      "perfects": 0,
+      "settlements": 0
+    },
+    "board": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "active": {
+      "id": 1,
+      "type": "S",
+      "rot": 0,
+      "x": 5,
+      "y": 14,
+      "lockAge": 0.016666666666666666,
+      "resets": 0,
+      "softCells": 14
+    },
+    "nextIndex": 1,
+    "log": [
+      {
+        "tick": 3,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 7,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 11,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 13,
+        "kind": "softOn",
+        "piece": 1
+      },
+      {
+        "tick": 101,
+        "kind": "softOff",
+        "piece": 1
+      }
+    ],
+    "reason": "",
+    "remainingDust": 0,
+    "preview": [
+      "O",
+      "L",
+      "Z"
+    ],
+    "ghost": 14,
+    "gravity": 0.72,
+    "invariants": {
+      "dimensions": true,
+      "uniqueCells": true,
+      "totalCells": true,
+      "originalDust": true,
+      "pieceCells": true,
+      "uniqueLocks": true,
+      "sourceOrder": true,
+      "lines": true,
+      "removed": true,
+      "piecePosition": true,
+      "drawCount": true,
+      "dropLedger": true,
+      "score": true,
+      "settlement": true
+    }
+  },
+  "keyboardRestoreWin": {
+    "state": "won",
+    "score": 396,
+    "lines": 2,
+    "stats": {
+      "locked": 7,
+      "moves": 15,
+      "rotations": 3,
+      "softCells": 14,
+      "hardCells": 76,
+      "maxClear": 1,
+      "maxCombo": 2,
+      "perfects": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 3,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 7,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 11,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 13,
+        "kind": "softOn",
+        "piece": 1
+      },
+      {
+        "tick": 101,
+        "kind": "softOff",
+        "piece": 1
+      },
+      {
+        "tick": 102,
+        "kind": "hard",
+        "piece": 1
+      },
+      {
+        "tick": 108,
+        "kind": "hard",
+        "piece": 2
+      },
+      {
+        "tick": 114,
+        "kind": "left",
+        "piece": 3
+      },
+      {
+        "tick": 116,
+        "kind": "left",
+        "piece": 3
+      },
+      {
+        "tick": 120,
+        "kind": "hard",
+        "piece": 3
+      },
+      {
+        "tick": 124,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 128,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 134,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 138,
+        "kind": "cw",
+        "piece": 4
+      },
+      {
+        "tick": 142,
+        "kind": "hard",
+        "piece": 4
+      },
+      {
+        "tick": 148,
+        "kind": "hard",
+        "piece": 5
+      },
+      {
+        "tick": 154,
+        "kind": "left",
+        "piece": 6
+      },
+      {
+        "tick": 158,
+        "kind": "left",
+        "piece": 6
+      },
+      {
+        "tick": 162,
+        "kind": "ccw",
+        "piece": 6
+      },
+      {
+        "tick": 164,
+        "kind": "hard",
+        "piece": 6
+      },
+      {
+        "tick": 168,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 172,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 176,
+        "kind": "cw",
+        "piece": 7
+      },
+      {
+        "tick": 180,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 184,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 188,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 190,
+        "kind": "hard",
+        "piece": 7
+      }
+    ]
+  },
+  "naturalTopout": {
+    "locked": 8,
+    "lines": 0,
+    "reason": "星块的起点已被占满。先给下一枚留一点空间，再试一次。",
+    "board": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "type": "L",
+          "id": "p8-0"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "L",
+          "id": "p8-1"
+        },
+        {
+          "type": "L",
+          "id": "p8-2"
+        },
+        {
+          "type": "L",
+          "id": "p8-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "I",
+          "id": "p7-0"
+        },
+        {
+          "type": "I",
+          "id": "p7-1"
+        },
+        {
+          "type": "I",
+          "id": "p7-2"
+        },
+        {
+          "type": "I",
+          "id": "p7-3"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "J",
+          "id": "p6-0"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "J",
+          "id": "p6-1"
+        },
+        {
+          "type": "J",
+          "id": "p6-2"
+        },
+        {
+          "type": "J",
+          "id": "p6-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "type": "T",
+          "id": "p5-0"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "T",
+          "id": "p5-1"
+        },
+        {
+          "type": "T",
+          "id": "p5-2"
+        },
+        {
+          "type": "T",
+          "id": "p5-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "Z",
+          "id": "p4-0"
+        },
+        {
+          "type": "Z",
+          "id": "p4-1"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "type": "Z",
+          "id": "p4-2"
+        },
+        {
+          "type": "Z",
+          "id": "p4-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "type": "L",
+          "id": "p3-0"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "L",
+          "id": "p3-1"
+        },
+        {
+          "type": "L",
+          "id": "p3-2"
+        },
+        {
+          "type": "L",
+          "id": "p3-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "type": "O",
+          "id": "p2-0"
+        },
+        {
+          "type": "O",
+          "id": "p2-1"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "type": "O",
+          "id": "p2-2"
+        },
+        {
+          "type": "O",
+          "id": "p2-3"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "type": "S",
+          "id": "p1-0"
+        },
+        {
+          "type": "S",
+          "id": "p1-1"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "S",
+          "id": "p1-2"
+        },
+        {
+          "type": "S",
+          "id": "p1-3"
+        },
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "actualLog": [
+      {
+        "tick": 1,
+        "kind": "hard",
+        "piece": 1
+      },
+      {
+        "tick": 3,
+        "kind": "hard",
+        "piece": 2
+      },
+      {
+        "tick": 3,
+        "kind": "hard",
+        "piece": 3
+      },
+      {
+        "tick": 5,
+        "kind": "hard",
+        "piece": 4
+      },
+      {
+        "tick": 5,
+        "kind": "hard",
+        "piece": 5
+      },
+      {
+        "tick": 7,
+        "kind": "hard",
+        "piece": 6
+      },
+      {
+        "tick": 9,
+        "kind": "hard",
+        "piece": 7
+      },
+      {
+        "tick": 9,
+        "kind": "hard",
+        "piece": 8
+      }
+    ]
+  },
+  "simultaneousClear": {
+    "state": "won",
+    "maxClear": 4,
+    "lines": 8,
+    "locks": [
+      {
+        "id": 1,
+        "type": "O",
+        "rot": 0,
+        "x": 6,
+        "y": 10,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 10,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 2,
+        "type": "T",
+        "rot": 0,
+        "x": 3,
+        "y": 10,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 10,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 3,
+        "type": "Z",
+        "rot": 1,
+        "x": 2,
+        "y": 9,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 9,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 4,
+        "type": "I",
+        "rot": 1,
+        "x": 0,
+        "y": 12,
+        "rows": 4,
+        "removed": [
+          "p4-0",
+          "s10-1-12",
+          "s10-2-12",
+          "s10-3-12",
+          "s10-4-12",
+          "s10-5-12",
+          "s10-6-12",
+          "s10-7-12",
+          "p4-1",
+          "s10-1-13",
+          "s10-2-13",
+          "s10-3-13",
+          "s10-4-13",
+          "s10-5-13",
+          "s10-6-13",
+          "s10-7-13",
+          "p4-2",
+          "s10-1-14",
+          "s10-2-14",
+          "s10-3-14",
+          "s10-4-14",
+          "s10-5-14",
+          "s10-6-14",
+          "s10-7-14",
+          "p4-3",
+          "s10-1-15",
+          "s10-2-15",
+          "s10-3-15",
+          "s10-4-15",
+          "s10-5-15",
+          "s10-6-15",
+          "s10-7-15"
+        ],
+        "hard": true,
+        "hardCells": 12,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 5,
+        "type": "J",
+        "rot": 3,
+        "x": 0,
+        "y": 13,
+        "rows": 1,
+        "removed": [
+          "p5-2",
+          "p5-3",
+          "p3-3",
+          "p2-1",
+          "p2-2",
+          "p2-3",
+          "p1-2",
+          "p1-3"
+        ],
+        "hard": true,
+        "hardCells": 13,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 6,
+        "type": "S",
+        "rot": 1,
+        "x": 4,
+        "y": 13,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 13,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 7,
+        "type": "L",
+        "rot": 1,
+        "x": 6,
+        "y": 12,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 12,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 8,
+        "type": "T",
+        "rot": 2,
+        "x": 1,
+        "y": 13,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 13,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 9,
+        "type": "L",
+        "rot": 3,
+        "x": 6,
+        "y": 11,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 11,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 10,
+        "type": "O",
+        "rot": 0,
+        "x": 2,
+        "y": 11,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 11,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 11,
+        "type": "I",
+        "rot": 1,
+        "x": 0,
+        "y": 12,
+        "rows": 2,
+        "removed": [
+          "p11-2",
+          "p5-0",
+          "p8-3",
+          "p3-0",
+          "p6-1",
+          "p6-2",
+          "p7-2",
+          "p7-3",
+          "p11-3",
+          "p5-1",
+          "p3-1",
+          "p3-2",
+          "p2-0",
+          "p6-3",
+          "p1-0",
+          "p1-1"
+        ],
+        "hard": true,
+        "hardCells": 12,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 12,
+        "type": "Z",
+        "rot": 1,
+        "x": 1,
+        "y": 11,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 11,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 13,
+        "type": "J",
+        "rot": 1,
+        "x": 0,
+        "y": 11,
+        "rows": 0,
+        "removed": [],
+        "hard": true,
+        "hardCells": 11,
+        "softCells": 0,
+        "perfect": false
+      },
+      {
+        "id": 14,
+        "type": "S",
+        "rot": 1,
+        "x": 4,
+        "y": 13,
+        "rows": 1,
+        "removed": [
+          "p11-1",
+          "p8-0",
+          "p8-1",
+          "p8-2",
+          "p6-0",
+          "p14-3",
+          "p7-1",
+          "p9-3"
+        ],
+        "hard": true,
+        "hardCells": 13,
+        "softCells": 0,
+        "perfect": false
+      }
+    ],
+    "actualLog": [
+      {
+        "tick": 3,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 7,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 11,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 15,
+        "kind": "hard",
+        "piece": 1
+      },
+      {
+        "tick": 19,
+        "kind": "right",
+        "piece": 2
+      },
+      {
+        "tick": 23,
+        "kind": "hard",
+        "piece": 2
+      },
+      {
+        "tick": 25,
+        "kind": "cw",
+        "piece": 3
+      },
+      {
+        "tick": 29,
+        "kind": "hard",
+        "piece": 3
+      },
+      {
+        "tick": 33,
+        "kind": "left",
+        "piece": 4
+      },
+      {
+        "tick": 37,
+        "kind": "left",
+        "piece": 4
+      },
+      {
+        "tick": 41,
+        "kind": "cw",
+        "piece": 4
+      },
+      {
+        "tick": 45,
+        "kind": "hard",
+        "piece": 4
+      },
+      {
+        "tick": 49,
+        "kind": "left",
+        "piece": 5
+      },
+      {
+        "tick": 51,
+        "kind": "left",
+        "piece": 5
+      },
+      {
+        "tick": 55,
+        "kind": "ccw",
+        "piece": 5
+      },
+      {
+        "tick": 59,
+        "kind": "hard",
+        "piece": 5
+      },
+      {
+        "tick": 63,
+        "kind": "right",
+        "piece": 6
+      },
+      {
+        "tick": 67,
+        "kind": "right",
+        "piece": 6
+      },
+      {
+        "tick": 71,
+        "kind": "cw",
+        "piece": 6
+      },
+      {
+        "tick": 75,
+        "kind": "hard",
+        "piece": 6
+      },
+      {
+        "tick": 77,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 77,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 77,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 77,
+        "kind": "cw",
+        "piece": 7
+      },
+      {
+        "tick": 77,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 77,
+        "kind": "hard",
+        "piece": 7
+      },
+      {
+        "tick": 89,
+        "kind": "left",
+        "piece": 8
+      },
+      {
+        "tick": 93,
+        "kind": "cw",
+        "piece": 8
+      },
+      {
+        "tick": 97,
+        "kind": "cw",
+        "piece": 8
+      },
+      {
+        "tick": 101,
+        "kind": "hard",
+        "piece": 8
+      },
+      {
+        "tick": 107,
+        "kind": "right",
+        "piece": 9
+      },
+      {
+        "tick": 111,
+        "kind": "right",
+        "piece": 9
+      },
+      {
+        "tick": 115,
+        "kind": "right",
+        "piece": 9
+      },
+      {
+        "tick": 119,
+        "kind": "ccw",
+        "piece": 9
+      },
+      {
+        "tick": 123,
+        "kind": "right",
+        "piece": 9
+      },
+      {
+        "tick": 127,
+        "kind": "hard",
+        "piece": 9
+      },
+      {
+        "tick": 131,
+        "kind": "left",
+        "piece": 10
+      },
+      {
+        "tick": 135,
+        "kind": "hard",
+        "piece": 10
+      },
+      {
+        "tick": 139,
+        "kind": "left",
+        "piece": 11
+      },
+      {
+        "tick": 143,
+        "kind": "left",
+        "piece": 11
+      },
+      {
+        "tick": 147,
+        "kind": "cw",
+        "piece": 11
+      },
+      {
+        "tick": 153,
+        "kind": "hard",
+        "piece": 11
+      },
+      {
+        "tick": 159,
+        "kind": "left",
+        "piece": 12
+      },
+      {
+        "tick": 161,
+        "kind": "cw",
+        "piece": 12
+      },
+      {
+        "tick": 165,
+        "kind": "hard",
+        "piece": 12
+      },
+      {
+        "tick": 169,
+        "kind": "left",
+        "piece": 13
+      },
+      {
+        "tick": 173,
+        "kind": "left",
+        "piece": 13
+      },
+      {
+        "tick": 177,
+        "kind": "cw",
+        "piece": 13
+      },
+      {
+        "tick": 181,
+        "kind": "hard",
+        "piece": 13
+      },
+      {
+        "tick": 183,
+        "kind": "right",
+        "piece": 14
+      },
+      {
+        "tick": 189,
+        "kind": "right",
+        "piece": 14
+      },
+      {
+        "tick": 193,
+        "kind": "cw",
+        "piece": 14
+      },
+      {
+        "tick": 197,
+        "kind": "hard",
+        "piece": 14
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "score": 408,
+    "lines": 2,
+    "stats": {
+      "locked": 7,
+      "moves": 15,
+      "rotations": 3,
+      "softCells": 0,
+      "hardCells": 89,
+      "maxClear": 1,
+      "maxCombo": 2,
+      "perfects": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "tick": 11,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 25,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 37,
+        "kind": "right",
+        "piece": 1
+      },
+      {
+        "tick": 51,
+        "kind": "hard",
+        "piece": 1
+      },
+      {
+        "tick": 63,
+        "kind": "hard",
+        "piece": 2
+      },
+      {
+        "tick": 77,
+        "kind": "left",
+        "piece": 3
+      },
+      {
+        "tick": 89,
+        "kind": "left",
+        "piece": 3
+      },
+      {
+        "tick": 103,
+        "kind": "hard",
+        "piece": 3
+      },
+      {
+        "tick": 115,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 127,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 141,
+        "kind": "right",
+        "piece": 4
+      },
+      {
+        "tick": 153,
+        "kind": "cw",
+        "piece": 4
+      },
+      {
+        "tick": 167,
+        "kind": "hard",
+        "piece": 4
+      },
+      {
+        "tick": 181,
+        "kind": "hard",
+        "piece": 5
+      },
+      {
+        "tick": 195,
+        "kind": "left",
+        "piece": 6
+      },
+      {
+        "tick": 209,
+        "kind": "left",
+        "piece": 6
+      },
+      {
+        "tick": 223,
+        "kind": "ccw",
+        "piece": 6
+      },
+      {
+        "tick": 237,
+        "kind": "hard",
+        "piece": 6
+      },
+      {
+        "tick": 251,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 263,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 277,
+        "kind": "cw",
+        "piece": 7
+      },
+      {
+        "tick": 289,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 303,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 315,
+        "kind": "right",
+        "piece": 7
+      },
+      {
+        "tick": 329,
+        "kind": "hard",
+        "piece": 7
+      }
+    ],
+    "actions": [
+      {
+        "observedTick": 0,
+        "piece": 1,
+        "intendedX": 5,
+        "intendedRotation": 0,
+        "inputs": [
+          "right",
+          "right",
+          "right",
+          "hard"
+        ],
+        "lockedAfter": 1,
+        "linesAfter": 0
+      },
+      {
+        "observedTick": 51,
+        "piece": 2,
+        "intendedX": 3,
+        "intendedRotation": 0,
+        "inputs": [
+          "hard"
+        ],
+        "lockedAfter": 2,
+        "linesAfter": 0
+      },
+      {
+        "observedTick": 63,
+        "piece": 3,
+        "intendedX": 0,
+        "intendedRotation": 0,
+        "inputs": [
+          "left",
+          "left",
+          "hard"
+        ],
+        "lockedAfter": 3,
+        "linesAfter": 0
+      },
+      {
+        "observedTick": 103,
+        "piece": 4,
+        "intendedX": 5,
+        "intendedRotation": 1,
+        "inputs": [
+          "right",
+          "right",
+          "right",
+          "cw",
+          "hard"
+        ],
+        "lockedAfter": 4,
+        "linesAfter": 0
+      },
+      {
+        "observedTick": 167,
+        "piece": 5,
+        "intendedX": 2,
+        "intendedRotation": 0,
+        "inputs": [
+          "hard"
+        ],
+        "lockedAfter": 5,
+        "linesAfter": 0
+      },
+      {
+        "observedTick": 181,
+        "piece": 6,
+        "intendedX": 0,
+        "intendedRotation": 3,
+        "inputs": [
+          "left",
+          "left",
+          "ccw",
+          "hard"
+        ],
+        "lockedAfter": 6,
+        "linesAfter": 1
+      },
+      {
+        "observedTick": 237,
+        "piece": 7,
+        "intendedX": 7,
+        "intendedRotation": 1,
+        "inputs": [
+          "right",
+          "right",
+          "cw",
+          "right",
+          "right",
+          "right",
+          "hard"
+        ],
+        "lockedAfter": 7,
+        "linesAfter": 2
+      }
+    ],
+    "wallSeconds": 2.7660000000032596,
+    "method": "Genuine CDP hold/release test plus native tutorial/start/shift/rotation/hard-drop taps at normal1x; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

@@ -1,0 +1,37 @@
+{
+  "testedAt": "2026-10-16T09:20:02.033552+00:00",
+  "url": "http://127.0.0.1:4174/games/vine/",
+  "method": "normal keys and real CDP swipe/button input; natural wall failure; grown-body checkpoint; only blocked-storage fixture",
+  "checks": {
+    "firstVisitTeachingAndReverseKeyRejected": true,
+    "continuousAutomaticMovementAndNativeSpacePauseFreezesState": true,
+    "naturalNoSteeringWallFailure": {
+      "ticks": 11,
+      "collected": 1,
+      "length": 4
+    },
+    "failureRetryRestoresBodyFoodGoalAndSeed": true,
+    "actualGrownBodyFoodRngDirectionTargetResume": true,
+    "resumeWaitsFullNormalBeat": true,
+    "normalHarvestThenExitWinAndUnlock": true,
+    "actualBestSaveFreshRetryAndSixteenMapLocks": true,
+    "helpEscapeResumeAndRestartDeterministic": true,
+    "realSwipeTurnsAtCornerWithoutPageScroll": true,
+    "directionButtonTapPersistsWithoutScrolling": true,
+    "touchPauseAndCancelClearsGesture": true,
+    "responsiveWidthsAndVisibleOverlayButtons": [
+      320,
+      360,
+      390,
+      768,
+      1280
+    ],
+    "storageUnavailableStillPlayable": true,
+    "atlasAssociationElevenEntriesAndOriginalBoundaries": true,
+    "previousTenEntrancesAndMobile": true,
+    "atlasReturn": true
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

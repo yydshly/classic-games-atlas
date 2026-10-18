@@ -1,0 +1,38 @@
+{
+  "testedAt": "2026-10-16T17:07:04.604156+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/paper/",
+  "checks": [
+    "Native touchscreen tap and native touchCancel both preserve ammunition",
+    "A full native touch drag/release run earns genuine three stars"
+  ],
+  "method": "Native start/tutorial taps, tap cancellation, native touchCancel, five-move touch drag/release. Scroll positioning helper only; no gameplay state or budget fixtures.",
+  "nativeTouch": {
+    "state": "won",
+    "stars": 3,
+    "stats": {
+      "shots": 1,
+      "abilities": 0,
+      "sails": 0,
+      "stampsUsed": 0,
+      "delivered": 1,
+      "stamps": 2,
+      "broken": 0,
+      "contacts": 1,
+      "misses": 0,
+      "settlements": 1,
+      "collisionCaps": 0
+    },
+    "actualLog": [
+      {
+        "tick": 178,
+        "kind": "launch",
+        "angle": 62,
+        "power": 0.46
+      }
+    ]
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

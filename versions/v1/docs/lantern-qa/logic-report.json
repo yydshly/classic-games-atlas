@@ -1,0 +1,14 @@
+{
+  "testedAt": "2026-10-16T07:18:03.982Z",
+  "passed": 8,
+  "tests": [
+    "10 unique offline mazes, all dots reachable, connected enemy area and safe spawn/home",
+    "buffered perpendicular turn at next valid junction and reverse at a centre do not snap or stick",
+    "three target policies differ: trail, three-cell forecast, fixed waypoint patrol",
+    "power expired on the contact tick is lethal; new power on the contact tick protects",
+    "capture pays once until return/dock wait; respawn has an explicit harmless window",
+    "ordinary last dot and lethal contact: death wins, dot remains; powered final pickup may win",
+    "death restores safe spawn and input, protects without losing another life; three hits lose",
+    "pause freezes every clock/move, rejects turns, and copied observations are isolated"
+  ]
+}

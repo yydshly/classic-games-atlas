@@ -1,0 +1,50 @@
+{
+  "testedAt": "2026-10-16T04:28:34.316581+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/maze/",
+  "checks": {
+    "firstVisitTutorial": true,
+    "pauseResumeClock": true,
+    "capacityPickup": true,
+    "realTwoBombChain": {
+      "chains": 1,
+      "hp": 3,
+      "planted": 3
+    },
+    "restartReset": true,
+    "actualSelfDamageFailure": {
+      "hp": 0,
+      "reason": "被爆风击中。放下炸弹后，转过一个拐角再等待。"
+    },
+    "failureRetry": true,
+    "soundPersists": true,
+    "tutorialPersists": true,
+    "helpEscResumes": true,
+    "lockedStages": true,
+    "headlessTabSwitchObservedState": "playing",
+    "autoPauseCoverage": "scripted DOM blur handler; headless tab switch did not deliver focus loss",
+    "touchMoveAndPlant": true,
+    "responsiveWidths": [
+      {
+        "width": 360,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 768,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 1280,
+        "horizontalOverflow": false
+      }
+    ],
+    "atlas72AndHonestReleaseLabels": true,
+    "atlasReturn": true,
+    "storageUnavailableStillPlayable": true
+  },
+  "consoleErrors": [],
+  "badResponses": []
+}

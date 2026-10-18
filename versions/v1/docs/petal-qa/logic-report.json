@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-16T10:00:48.166Z",
+  "passed": 12,
+  "tests": [
+    "adjacent/straight paths have zero turns; one corner has one, wall detour has exactly two",
+    "occupied patterns block routes while one outside ring permits the exact edge bypass",
+    "three-turn sealed passage rejects and obstacles remain impassable",
+    "same tile cancels; different motif switches selection without cost; empty or obstacle rejects",
+    "same-pattern unreachable attempt consumes one allowance and four real invalid attempts fail",
+    "link animation locks duplicate input and last pair wins exactly once with no spare shuffles",
+    "down/left packing preserve order and stop at walls and blank terrain",
+    "no-pair detection consumes one automatic shuffle, preserves motifs, then exhausted recovery loses clearly",
+    "pause freezes route animation; hint is legal and does not spend allowance or shuffle; restart is fresh",
+    "stable checkpoint restores exact board, RNG and resources paused, malformed/corrupt saves reject",
+    "twenty default layouts and each subsequent normal movement state have certified complete solutions",
+    "sixty certified shuffle samples preserve remaining motifs and fixed terrain under production movement"
+  ]
+}

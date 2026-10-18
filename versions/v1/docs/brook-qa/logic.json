@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "groups": 22,
+  "checks": [
+    "ten original layouts, three environments, staged four roles and 160 timed enemies",
+    "ready cannot advance, deploy or collect",
+    "deployment atomically spends once, occupies a tile and sets a type-global deadline",
+    "invalid rows, columns, occupied rocks, locked types, enemy occupancy and insufficient budget reject without spend",
+    "same-type different tile becomes available after cooldown; different types have independent cooldowns",
+    "withdrawal has no refund, preserves cooldown and cannot double-remove",
+    "production emits exact sky and device resource amounts at declared intervals",
+    "resource ID collection is atomic, unique, capped and not double-claimable",
+    "uncollected tokens expire exactly and cannot be reclaimed",
+    "weapons target only the same row and never fire behind themselves",
+    "swept projectile hits first living target and cannot penetrate into the second",
+    "armor applies per hit with minimum one damage; slow refreshes without multiplying",
+    "rightmost blocking device is contacted first, receives real damage and is not tunneled",
+    "a destroyed blocker frees movement; other rows never receive its contact damage",
+    "wave-gap emptiness is not a win; last future spawn must appear",
+    "breach takes priority when the final enemy is killed in the same step",
+    "doing nothing naturally loses without any test HP/position/wave writes",
+    "pause freezes resources, cooldown deadlines, tokens, projectiles, wave time and commands",
+    "frame partitions share exactly the same production state",
+    "log replay preserves budget, spent cooldowns, HP, bullets, tokens/expiry and exact wave progress",
+    "bad/null, unaffordable, duplicate and ended logs are rejected; forged resources are ignored",
+    "snapshots are copies and authored levels stay untouched"
+  ],
+  "fixture": "Explicit edge tests alone alter test-world entities/resources; normal strategy and natural failure suites use original production parameters and normal commands only."
+}

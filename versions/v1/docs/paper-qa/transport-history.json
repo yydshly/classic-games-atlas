@@ -1,0 +1,38 @@
+{
+  "campaignAttempt1": {
+    "completedStages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "interruptedBeforeStage": 6,
+    "error": "Page.goto: net::ERR_CONNECTION_CLOSED"
+  },
+  "campaignAttempt2": {
+    "completedStages": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "interruptedBeforeStage": 11,
+    "error": "Page.goto: Timeout 30000ms exceeded, waiting until load"
+  },
+  "ui": {
+    "completedGroups": 22,
+    "error": "Page.goto: net::ERR_CONNECTION_CLOSED before fresh touch context loaded",
+    "missingNativeGroupsPassedOnBoundedCompletion": 2
+  },
+  "integrity": {
+    "completedPrefix": 62,
+    "errors": [
+      "RemoteDisconnected",
+      "SSLEOFError on one retry"
+    ],
+    "resumeCompleted": 157
+  },
+  "targetedTransportChange": "Continue only stages11–16 using a single initial public navigation and ordinary Next buttons, avoiding the repeated fresh TLS/browser-context navigations that failed. No physics, budget, targets, scores or controller changes."
+}

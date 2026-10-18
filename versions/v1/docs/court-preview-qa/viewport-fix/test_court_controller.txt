@@ -1,0 +1,41 @@
+PASS ready screen, eight matches, lock state and detached diagnostics
+PASS start, keyboard movement and key release run real engine
+PASS J hold/release shoots once and repeated keydown is ignored
+PASS modifier shortcuts do not move a player
+PASS K passes and L switches from the actual controller
+PASS pause freezes state, cancels charge, and resumed first frame has zero dt
+PASS restart clears held movement and resets ready state
+PASS help pauses and resumes only an active match
+PASS repeated help opening preserves resume intent and dialog cancel closes
+PASS blur and hidden-tab transitions do not auto-resume through help
+PASS window blur clears keyboard, pointer and button holds
+PASS simultaneous pointer movement and charge release are independent
+PASS pointercancel cancels a charge without releasing a shot
+PASS lost pointer capture cancels a charge without releasing a shot
+PASS normal pointerup followed by lost capture still releases one shot
+PASS one cancelled pointer does not cancel another held shot control
+PASS Space and Enter activate focused direction and shot buttons as holds
+PASS blurring a keyboard-held shot button cancels rather than shoots
+PASS rerendering the match list restores focused match selection
+PASS all eight saved matches select and restart with original duration
+PASS bad or unavailable storage falls back and exposes the read failure
+PASS sound preference serializes and write failure does not stop play
+  controller match 1: 15-0, 4837 ticks, saved unlock 2
+  controller match 2: 8-0, 4693 ticks, saved unlock 3
+  controller match 3: 12-0, 5089 ticks, saved unlock 4
+  controller match 4: 12-5, 5185 ticks, saved unlock 5
+  controller match 5: 10-0, 5341 ticks, saved unlock 6
+  controller match 6: 12-8, 5569 ticks, saved unlock 7
+  controller match 7: 12-4, 5785 ticks, saved unlock 8
+  controller match 8: 10-4, 5737 ticks, saved unlock 8
+PASS full eight-match controller campaign unlocks, saves, advances and reloads
+PASS idle loss does not save a win and retry starts a clean match
+PASS preview ignores production saves and writes only its own key
+PASS preview reload uses preview progress without migrating production data
+PASS unavailable preview storage does not fall back to a production key
+PASS start reveals the whole arena only after hiding the ready panel
+PASS pause and both resume controls realign the arena after panel changes
+PASS help resume reveals the arena, while ready or background closes do not
+PASS restart followed by start reveals the clean match without stale holds
+
+31 controller model checks passed; 0 failed. Real browser/native input/layout acceptance remains pending.

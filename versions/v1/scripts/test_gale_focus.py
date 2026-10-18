@@ -1,0 +1,15 @@
+"""Browser blur-handler check using an explicitly synthetic DOM blur event."""
+import argparse,asyncio,datetime,json
+from playwright.async_api import async_playwright
+from test_gale_browser import ROOT,snap,begin,wait_state
+async def main(args):
+ out=ROOT/args.out;out.mkdir(parents=True,exist_ok=True);errors=[];bad=[];failed=[]
+ async with async_playwright() as pw:
+  b=await pw.chromium.launch();c=await b.new_context();p=await c.new_page()
+  p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text) if m.type=='error' else None);p.on('response',lambda r:bad.append({'url':r.url,'status':r.status}) if r.status>=400 else None);p.on('requestfailed',lambda r:failed.append({'url':r.url,'failure':r.failure}))
+  await p.goto(args.url);await snap(p);await begin(p);await p.keyboard.down('ArrowRight');await p.keyboard.down('j');await wait_state(p,lambda s:s['stats']['shots']>=2 and s['player']['x']>70)
+  await p.evaluate('window.dispatchEvent(new Event("blur"))');paused=await snap(p);assert paused['state']=='paused' and not paused['input']['keys'] and paused['input']['touches']==0;await p.wait_for_timeout(250);frozen=await snap(p);assert all(frozen[k]==paused[k] for k in ['player','projectiles','enemies','time','camera'])
+  await p.keyboard.up('ArrowRight');await p.keyboard.up('j');await p.locator('#primary-action').click();await p.wait_for_timeout(200);rest=await snap(p);assert abs(rest['player']['x']-paused['player']['x'])<=12 and rest['player']['vx']==0 and rest['stats']['shots']==paused['stats']['shots'] and rest['state']=='playing', {'paused':paused,'rest':rest};await p.wait_for_timeout(200);stable=await snap(p);assert stable['player']['x']==rest['player']['x'] and stable['stats']['shots']==rest['stats']['shots'];await p.keyboard.down('ArrowRight');await p.keyboard.down('j');active=await wait_state(p,lambda s:s['player']['x']>rest['player']['x']+10 and s['stats']['shots']>rest['stats']['shots']);await p.keyboard.up('ArrowRight');await p.keyboard.up('j');await p.wait_for_load_state('networkidle');await b.close()
+ report={'testedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':args.url,'method':'Normal real keyboard controls; synthetic DOM blur event because headless Chromium tab switching keeps document focused. Does not claim physical operating-system focus verification.','checks':{'BlurPausesAndClearsHeldInput':True,'PlayerBulletsEnemiesTimeCameraFreeze':True,'ResumeNeedsFreshInputNoStickyMovementOrFire':True},'paused':paused,'resumed':rest,'freshInput':active,'consoleErrors':errors,'badResponses':bad,'requestFailures':failed};(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8');assert not(errors or bad or failed),(errors,bad,failed);print('PASS blur pause, full combat freeze, cleared input, fresh input resume')
+if __name__=='__main__':
+ a=argparse.ArgumentParser();a.add_argument('--url',default='http://127.0.0.1:4174/games/gale/');a.add_argument('--out',default='docs/gale-qa/local-focus');asyncio.run(main(a.parse_args()))

@@ -1,0 +1,92 @@
+{
+  "earlyPrototypeAccepted": false,
+  "earlyPrototypeWins": 16,
+  "earlyCollisionCaps": [
+    {
+      "level": 1,
+      "caps": 0
+    },
+    {
+      "level": 2,
+      "caps": 0
+    },
+    {
+      "level": 3,
+      "caps": 212
+    },
+    {
+      "level": 4,
+      "caps": 0
+    },
+    {
+      "level": 5,
+      "caps": 0
+    },
+    {
+      "level": 6,
+      "caps": 0
+    },
+    {
+      "level": 7,
+      "caps": 2
+    },
+    {
+      "level": 8,
+      "caps": 7
+    },
+    {
+      "level": 9,
+      "caps": 0
+    },
+    {
+      "level": 10,
+      "caps": 0
+    },
+    {
+      "level": 11,
+      "caps": 0
+    },
+    {
+      "level": 12,
+      "caps": 2
+    },
+    {
+      "level": 13,
+      "caps": 0
+    },
+    {
+      "level": 14,
+      "caps": 0
+    },
+    {
+      "level": 15,
+      "caps": 2
+    },
+    {
+      "level": 16,
+      "caps": 3
+    }
+  ],
+  "issue": "Repeated impulse contacts when a parcel was trapped between moving blocks and floor; passing wins alone was not acceptance.",
+  "change": "Relative body motion synchronized during impact; public one-impact paper rule: continue only through broken panels, otherwise fold/retire and let structures settle. Same mechanics and budget for every stage/input, no target deletion.",
+  "finalCaps": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "inputFix": "Minimum-power high-angle drags were wrongly rejected by an unnecessary horizontal pull threshold; now any leftward legal pull is accepted.",
+  "stars": "Normal policy wins all 16 at two stars; a separate ordinary 62 degree / 46 percent first-stage shot earns genuine three stars. A former test assumption that the normal policy must earn a full-star level was corrected; production star rules unchanged."
+}

@@ -1,0 +1,38 @@
+{
+  "before": {
+    "state": "playing",
+    "turn": 0
+  },
+  "fieldsetIsDisabled": false,
+  "fieldsetDisabledProperty": true,
+  "inputIsDisabled": true,
+  "after": {
+    "turn": 1,
+    "log": [
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "build",
+        "edge": "BC"
+      },
+      {
+        "kind": "buy",
+        "type": "skiff",
+        "route": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "step"
+      }
+    ],
+    "state": "playing"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "inputs": [
+    {
+      "input": "normal End Turn and confirmation without player attacks",
+      "round": 2,
+      "state": "playing"
+    },
+    {
+      "input": "normal End Turn and confirmation without player attacks",
+      "round": 3,
+      "state": "playing"
+    },
+    {
+      "input": "normal End Turn and confirmation without player attacks",
+      "round": 3,
+      "state": "lost"
+    }
+  ],
+  "end": {
+    "level": 1,
+    "state": "lost",
+    "phase": "enemy",
+    "round": 3,
+    "held": 0,
+    "revision": 14,
+    "enemySteps": 1,
+    "enemyBudget": 4,
+    "units": [
+      {
+        "id": "b1",
+        "side": "blue",
+        "type": "warden",
+        "x": 1,
+        "y": 2,
+        "hp": 0,
+        "ap": 0,
+        "repairUsed": false
+      },
+      {
+        "id": "b2",
+        "side": "blue",
+        "type": "ranger",
+        "x": 0,
+        "y": 4,
+        "hp": 0,
+        "ap": 0,
+        "repairUsed": false
+      },
+      {
+        "id": "r1",
+        "side": "red",
+        "type": "warden",
+        "x": 2,
+        "y": 2,
+        "hp": 9,
+        "ap": 1,
+        "repairUsed": false
+      },
+      {
+        "id": "r2",
+        "side": "red",
+        "type": "ranger",
+        "x": 4,
+        "y": 4,
+        "hp": 7,
+        "ap": 2,
+        "repairUsed": false
+      }
+    ],
+    "stats": {
+      "moves": 3,
+      "attacks": 6,
+      "heals": 0,
+      "kills": 0,
+      "blueLosses": 2,
+      "damageTaken": 16,
+      "enemyActions": 9,
+      "endTurns": 3,
+      "settlements": 1
+    },
+    "log": [
+      "敌方弧手造成 3 点伤害",
+      "第 2 回合，小队行动",
+      "敌方回合开始",
+      "敌方礁卫造成 3 点伤害",
+      "敌方礁卫造成 3 点伤害",
+      "敌方弧手造成 3 点伤害",
+      "敌方弧手造成 3 点伤害",
+      "第 3 回合，小队行动",
+      "敌方回合开始",
+      "敌方礁卫造成 3 点伤害"
+    ],
+    "reason": "小队已全部倒下",
+    "lastAction": {
+      "kind": "attack",
+      "unit": "r1",
+      "x": 2,
+      "y": 2,
+      "target": "b1"
+    },
+    "selected": null,
+    "mode": "move",
+    "plan": null,
+    "focus": {
+      "x": 1,
+      "y": 2
+    },
+    "unlocked": 2,
+    "best": {
+      "1": {
+        "score": 989,
+        "rounds": 4,
+        "damage": 12
+      }
+    },
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "discardedResume": false
+  }
+}

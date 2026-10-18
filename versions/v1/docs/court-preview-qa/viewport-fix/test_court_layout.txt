@@ -1,0 +1,23 @@
+PASS arena has a stable scroll target and viewport breathing room
+PASS desktop cap reserves actual UI space without cropping or stretching the court
+PASS short desktops reduce only chrome spacing and retain readable fonts
+PASS coarse-pointer desktop budget includes the original touch-control row
+PASS narrow fine-pointer and touch devices both expose original action controls
+  sizing model 1180x757 fine: court 862.5x575.0, arena 741.0
+  sizing model 1180x757 coarse: court 709.5x473.0, arena 740.0
+  sizing model 1366x768 fine: court 879.0x586.0, arena 752.0
+  sizing model 1366x768 coarse: court 726.0x484.0, arena 751.0
+  sizing model 1440x900 fine: court 1029.0x686.0, arena 884.0
+  sizing model 1440x900 coarse: court 876.0x584.0, arena 883.0
+  sizing model 1920x1080 fine: court 1080.0x720.0, arena 918.0
+  sizing model 1920x1080 coarse: court 1080.0x720.0, arena 1019.0
+  sizing model 1024x600 fine: court 627.0x418.0, arena 584.0
+  sizing model 1024x600 coarse: court 474.0x316.0, arena 583.0
+  sizing model 900x700 fine: court 777.0x518.0, arena 684.0
+  sizing model 900x700 coarse: court 624.0x416.0, arena 683.0
+  sizing model 768x1024 fine: court 726.0x484.0, arena 682.0
+  sizing model 768x1024 coarse: court 726.0x484.0, arena 783.0
+PASS common desktop sizes fit HUD, full court, charge bar and toolbar together
+PASS 400x606 playing model retains full width and fits visible touch controls
+
+7 layout source/sizing checks passed. Post-deployment real-browser geometry and native-touch verification are still required.

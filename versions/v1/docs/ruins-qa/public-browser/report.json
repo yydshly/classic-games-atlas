@@ -1,0 +1,4164 @@
+{
+  "testedAt": "2026-10-16T19:09:45.245764+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/ruins/",
+  "method": "One initial navigation, naturally earned unlocks and actual Next buttons. Real native D-pad, dodge-arm then direction, sweep, wait, heal and interaction controls. Plans evaluate detached models; no live health/key/potion/position/enemy/result writes.",
+  "fixture": "Only initial unlock/tutorial/sound preferences when start>1.",
+  "results": [
+    {
+      "state": "won",
+      "beat": 48,
+      "room": "C",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "down",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 2,
+      "collected": [
+        "k1",
+        "r1"
+      ],
+      "lamps": [
+        "B",
+        "C"
+      ],
+      "opened": [
+        "AC"
+      ],
+      "defeated": [
+        "b1",
+        "c1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "C"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "moss",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "moss",
+              "x": 6,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 45,
+        "cells": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 38,
+        "blockedMoves": 0,
+        "attacks": 4,
+        "hits": 4,
+        "kills": 2,
+        "dodges": 2,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 0,
+        "keysSpent": 1,
+        "transitions": 3,
+        "interactions": 4,
+        "waits": 1,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4214,
+      "stage": 1,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 2,
+      "best": {
+        "score": 4214,
+        "beat": 48,
+        "hp": 6,
+        "potions": 2
+      }
+    },
+    {
+      "state": "won",
+      "beat": 76,
+      "room": "D",
+      "hero": {
+        "x": 6,
+        "y": 5,
+        "face": "right",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 3,
+      "collected": [
+        "r1",
+        "k1",
+        "p1"
+      ],
+      "lamps": [
+        "B",
+        "C"
+      ],
+      "opened": [
+        "AC",
+        "CD"
+      ],
+      "defeated": [
+        "b1",
+        "c1",
+        "d1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "moss",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "moss",
+              "x": 2,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "eye",
+              "x": 6,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 64,
+        "cells": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 58,
+        "blockedMoves": 1,
+        "attacks": 6,
+        "hits": 6,
+        "kills": 3,
+        "dodges": 4,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 1,
+        "keysSpent": 1,
+        "transitions": 4,
+        "interactions": 5,
+        "waits": 5,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4238,
+      "stage": 2,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 3,
+      "best": {
+        "score": 4238,
+        "beat": 76,
+        "hp": 6,
+        "potions": 3
+      }
+    },
+    {
+      "state": "won",
+      "beat": 72,
+      "room": "D",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "right",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 2,
+      "collected": [
+        "k1",
+        "r1"
+      ],
+      "lamps": [
+        "A",
+        "C",
+        "D"
+      ],
+      "opened": [
+        "AB",
+        "CD"
+      ],
+      "defeated": [
+        "a1",
+        "b1",
+        "c1",
+        "d2",
+        "d1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": [
+            {
+              "id": "a1",
+              "type": "moss",
+              "x": 5,
+              "y": 4,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "moss",
+              "x": 3,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "moss",
+              "x": 6,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "eye",
+              "x": 4,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "d2",
+              "type": "moss",
+              "x": 2,
+              "y": 5,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 67,
+        "cells": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 50,
+        "blockedMoves": 1,
+        "attacks": 10,
+        "hits": 10,
+        "kills": 5,
+        "dodges": 5,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 1,
+        "keysSpent": 1,
+        "transitions": 4,
+        "interactions": 6,
+        "waits": 5,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4166,
+      "stage": 3,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 4,
+      "best": {
+        "score": 4166,
+        "beat": 72,
+        "hp": 6,
+        "potions": 2
+      }
+    },
+    {
+      "state": "won",
+      "beat": 81,
+      "room": "D",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "right",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 3,
+      "collected": [
+        "k1",
+        "p1"
+      ],
+      "lamps": [
+        "B",
+        "D"
+      ],
+      "opened": [
+        "AB",
+        "AC",
+        "CD"
+      ],
+      "defeated": [
+        "b1",
+        "d1",
+        "c1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "eye",
+              "x": 6,
+              "y": 1,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "armor",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "moss",
+              "x": 5,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 60,
+        "cells": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 60,
+        "blockedMoves": 2,
+        "attacks": 7,
+        "hits": 7,
+        "kills": 3,
+        "dodges": 5,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 1,
+        "keysSpent": 1,
+        "transitions": 6,
+        "interactions": 6,
+        "waits": 3,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 3978,
+      "stage": 4,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 5,
+      "best": {
+        "score": 3978,
+        "beat": 81,
+        "hp": 6,
+        "potions": 3
+      }
+    },
+    {
+      "state": "won",
+      "beat": 118,
+      "room": "E",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "right",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 3,
+      "collected": [
+        "r1",
+        "k1",
+        "p1"
+      ],
+      "lamps": [
+        "D",
+        "E",
+        "C"
+      ],
+      "opened": [
+        "BD",
+        "DE",
+        "CD"
+      ],
+      "defeated": [
+        "b1",
+        "d1",
+        "d2",
+        "e1",
+        "c1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "D",
+        "E",
+        "C"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "moss",
+              "x": 5,
+              "y": 4,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "eye",
+              "x": 6,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "armor",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "d2",
+              "type": "moss",
+              "x": 4,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "E": {
+          "enemies": [
+            {
+              "id": "e1",
+              "type": "eye",
+              "x": 6,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 101,
+        "cells": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 3
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 86,
+        "blockedMoves": 3,
+        "attacks": 11,
+        "hits": 11,
+        "kills": 5,
+        "dodges": 7,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 2,
+        "keysSpent": 1,
+        "transitions": 9,
+        "interactions": 7,
+        "waits": 6,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4154,
+      "stage": 5,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "left"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 6,
+      "best": {
+        "score": 4154,
+        "beat": 118,
+        "hp": 6,
+        "potions": 3
+      }
+    },
+    {
+      "state": "won",
+      "beat": 85,
+      "room": "E",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "right",
+        "hp": 5,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 1,
+      "potions": 3,
+      "collected": [
+        "k1",
+        "p1"
+      ],
+      "lamps": [
+        "D",
+        "B",
+        "E"
+      ],
+      "opened": [
+        "CD",
+        "DE"
+      ],
+      "defeated": [
+        "c1",
+        "d2",
+        "d1",
+        "b1",
+        "e1"
+      ],
+      "visited": [
+        "A",
+        "C",
+        "D",
+        "B",
+        "E"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "armor",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "eye",
+              "x": 6,
+              "y": 1,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "moss",
+              "x": 6,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "d2",
+              "type": "eye",
+              "x": 2,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "E": {
+          "enemies": [
+            {
+              "id": "e1",
+              "type": "armor",
+              "x": 4,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 74,
+        "cells": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ]
+      },
+      "lastDamage": {
+        "beat": 35,
+        "source": "moss"
+      },
+      "stats": {
+        "moves": 54,
+        "blockedMoves": 5,
+        "attacks": 12,
+        "hits": 12,
+        "kills": 5,
+        "dodges": 7,
+        "heals": 0,
+        "healed": 0,
+        "damage": 1,
+        "hitsTaken": 1,
+        "blockedHits": 2,
+        "keysSpent": 0,
+        "transitions": 5,
+        "interactions": 6,
+        "waits": 6,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 3770,
+      "stage": 6,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 7,
+      "best": {
+        "score": 3770,
+        "beat": 85,
+        "hp": 5,
+        "potions": 3
+      }
+    },
+    {
+      "state": "won",
+      "beat": 104,
+      "room": "D",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "left",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 3,
+      "collected": [
+        "k1",
+        "p1",
+        "r1"
+      ],
+      "lamps": [
+        "A",
+        "C",
+        "D"
+      ],
+      "opened": [
+        "AC",
+        "DE"
+      ],
+      "defeated": [
+        "a1",
+        "a2",
+        "b1",
+        "c1",
+        "d2",
+        "d1",
+        "e1"
+      ],
+      "visited": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": [
+            {
+              "id": "a1",
+              "type": "moss",
+              "x": 5,
+              "y": 1,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "a2",
+              "type": "moss",
+              "x": 5,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "eye",
+              "x": 6,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "armor",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "eye",
+              "x": 6,
+              "y": 4,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "d2",
+              "type": "moss",
+              "x": 2,
+              "y": 5,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "E": {
+          "enemies": [
+            {
+              "id": "e1",
+              "type": "moss",
+              "x": 5,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 80,
+        "cells": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 76,
+        "blockedMoves": 2,
+        "attacks": 15,
+        "hits": 15,
+        "kills": 7,
+        "dodges": 9,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 3,
+        "keysSpent": 1,
+        "transitions": 6,
+        "interactions": 6,
+        "waits": 6,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4182,
+      "stage": 7,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 8,
+      "best": {
+        "score": 4182,
+        "beat": 104,
+        "hp": 6,
+        "potions": 3
+      }
+    },
+    {
+      "state": "won",
+      "beat": 118,
+      "room": "E",
+      "hero": {
+        "x": 6,
+        "y": 3,
+        "face": "right",
+        "hp": 6,
+        "invuln": 0,
+        "attackCd": 0,
+        "dodgeCd": 0
+      },
+      "keys": 0,
+      "potions": 3,
+      "collected": [
+        "r1",
+        "k1",
+        "p1",
+        "k2"
+      ],
+      "lamps": [
+        "C",
+        "B",
+        "E"
+      ],
+      "opened": [
+        "CD",
+        "AB",
+        "BD",
+        "DE"
+      ],
+      "defeated": [
+        "c1",
+        "c2",
+        "d2",
+        "d1",
+        "b2",
+        "b1",
+        "e1",
+        "e2"
+      ],
+      "visited": [
+        "A",
+        "C",
+        "D",
+        "B",
+        "E"
+      ],
+      "rooms": {
+        "A": {
+          "enemies": []
+        },
+        "B": {
+          "enemies": [
+            {
+              "id": "b1",
+              "type": "armor",
+              "x": 4,
+              "y": 4,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "b2",
+              "type": "moss",
+              "x": 2,
+              "y": 5,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "C": {
+          "enemies": [
+            {
+              "id": "c1",
+              "type": "eye",
+              "x": 6,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "c2",
+              "type": "moss",
+              "x": 3,
+              "y": 2,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "D": {
+          "enemies": [
+            {
+              "id": "d1",
+              "type": "armor",
+              "x": 3,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "d2",
+              "type": "eye",
+              "x": 2,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        },
+        "E": {
+          "enemies": [
+            {
+              "id": "e1",
+              "type": "armor",
+              "x": 4,
+              "y": 3,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            },
+            {
+              "id": "e2",
+              "type": "eye",
+              "x": 6,
+              "y": 4,
+              "hp": 0,
+              "phase": "dead",
+              "timer": 0,
+              "intent": []
+            }
+          ]
+        }
+      },
+      "strikes": [],
+      "lastAttack": {
+        "beat": 116,
+        "cells": [
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          }
+        ]
+      },
+      "lastDamage": null,
+      "stats": {
+        "moves": 76,
+        "blockedMoves": 7,
+        "attacks": 18,
+        "hits": 19,
+        "kills": 8,
+        "dodges": 10,
+        "heals": 0,
+        "healed": 0,
+        "damage": 0,
+        "hitsTaken": 0,
+        "blockedHits": 3,
+        "keysSpent": 2,
+        "transitions": 7,
+        "interactions": 8,
+        "waits": 8,
+        "settlements": 1
+      },
+      "invariants": {
+        "health": true,
+        "keys": true,
+        "potions": true,
+        "uniqueItems": true,
+        "uniqueKeys": true,
+        "lamps": true,
+        "kills": true,
+        "enemyBounds": true,
+        "heroPosition": true,
+        "uniqueRooms": true,
+        "beatLedger": true,
+        "singleSettlement": true
+      },
+      "score": 4154,
+      "stage": 8,
+      "actualLog": [
+        {
+          "kind": "start"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "down"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "wait"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "move",
+          "dir": "left"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "down"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "dodge",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "move",
+          "dir": "up"
+        },
+        {
+          "kind": "move",
+          "dir": "right"
+        },
+        {
+          "kind": "attack"
+        },
+        {
+          "kind": "interact"
+        },
+        {
+          "kind": "interact"
+        }
+      ],
+      "unlocked": 8,
+      "best": {
+        "score": 4154,
+        "beat": 118,
+        "hp": 6,
+        "potions": 3
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "passed": true
+}

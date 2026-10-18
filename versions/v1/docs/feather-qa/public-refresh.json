@@ -1,0 +1,1689 @@
+{
+  "testedAt": "2026-10-16T23:42:21.974835+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/feather/",
+  "method": "Fresh first chapter; actual camp/shear/ether/veil controls, then direct live reload without manual pause. No combat writes. Saved legal command log independently replayed by production Node engine.",
+  "passed": true,
+  "exactFields": [
+    "chapter",
+    "choice",
+    "round",
+    "order",
+    "cursor",
+    "revision",
+    "serial",
+    "units",
+    "items",
+    "changes",
+    "history",
+    "log",
+    "score",
+    "reason",
+    "stats",
+    "active",
+    "intents",
+    "invariants"
+  ],
+  "commands": 4,
+  "savedCheckpoint": {
+    "version": 1,
+    "chapter": 1,
+    "commands": [
+      {
+        "kind": "choice",
+        "choice": "camp",
+        "revision": 0
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 1,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 2,
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 3,
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        }
+      }
+    ]
+  },
+  "before": {
+    "chapter": 1,
+    "state": "battle",
+    "pausedFrom": null,
+    "choice": "camp",
+    "round": 2,
+    "order": [
+      "a",
+      "c",
+      "e1",
+      "b",
+      "e0"
+    ],
+    "cursor": 0,
+    "revision": 4,
+    "serial": 6,
+    "units": [
+      {
+        "id": "a",
+        "name": "岚翎",
+        "role": "风羽向导",
+        "element": "wind",
+        "maxHP": 84,
+        "maxEnergy": 8,
+        "speed": 12,
+        "skills": [
+          "gust",
+          "shear",
+          "snare"
+        ],
+        "side": "party",
+        "hp": 65,
+        "energy": 8,
+        "actions": 1,
+        "weak": null,
+        "shield": {
+          "amount": 15,
+          "expiresAfter": 2
+        },
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "b",
+        "name": "苔灯",
+        "role": "苔息医者",
+        "element": "moss",
+        "maxHP": 100,
+        "maxEnergy": 8,
+        "speed": 8,
+        "skills": [
+          "twig",
+          "mend",
+          "veil"
+        ],
+        "side": "party",
+        "hp": 100,
+        "energy": 5,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "c",
+        "name": "澄汐",
+        "role": "泉声旅人",
+        "element": "water",
+        "maxHP": 88,
+        "maxEnergy": 8,
+        "speed": 10,
+        "skills": [
+          "ripple",
+          "surge",
+          "cleanse"
+        ],
+        "side": "party",
+        "hp": 88,
+        "energy": 7,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "e0",
+        "kind": "bud",
+        "name": "晶雾芽",
+        "element": "moss",
+        "speed": 7,
+        "maxHP": 42,
+        "hp": 3,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      },
+      {
+        "id": "e1",
+        "kind": "fin",
+        "name": "露纹鳍",
+        "element": "water",
+        "speed": 9,
+        "maxHP": 48,
+        "hp": 48,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      }
+    ],
+    "items": {
+      "heal": 3,
+      "ether": 0,
+      "revive": 1
+    },
+    "changes": [
+      {
+        "id": 1,
+        "action": 1,
+        "kind": "item",
+        "unit": "heal",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 3,
+        "action": 1,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 4,
+        "action": 1,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 5,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": -2,
+        "cause": "破风羽消耗"
+      },
+      {
+        "id": 6,
+        "action": 2,
+        "kind": "hp",
+        "unit": "e0",
+        "delta": -39,
+        "cause": "岚翎的伤害"
+      },
+      {
+        "id": 7,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 8,
+        "action": 3,
+        "kind": "item",
+        "unit": "ether",
+        "delta": -1,
+        "cause": "回声露使用"
+      },
+      {
+        "id": 9,
+        "action": 3,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 3,
+        "cause": "回声露"
+      },
+      {
+        "id": 10,
+        "action": 3,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 11,
+        "action": 4,
+        "kind": "hp",
+        "unit": "a",
+        "delta": -19,
+        "cause": "露纹鳍的伤害"
+      },
+      {
+        "id": 12,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": -2,
+        "cause": "荫幕消耗"
+      },
+      {
+        "id": 13,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      }
+    ],
+    "history": [
+      {
+        "id": 1,
+        "action": 1,
+        "round": 0,
+        "type": "event",
+        "text": "整备：多1苔露瓶，三人各恢复1能量。"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "round": 1,
+        "type": "round",
+        "text": "第1轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      },
+      {
+        "id": 3,
+        "action": 2,
+        "round": 1,
+        "type": "player",
+        "text": "岚翎使用破风羽 → 晶雾芽",
+        "actor": "a",
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "a",
+          "target": "e0",
+          "name": "破风羽",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": {
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          },
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "更强的风击，适合击破苔属性。"
+        },
+        "effects": [
+          {
+            "target": "e0",
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "action": 3,
+        "round": 1,
+        "type": "player",
+        "text": "澄汐使用回声露 → 岚翎",
+        "actor": "c",
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "c",
+          "target": "a",
+          "name": "回声露",
+          "cost": 0,
+          "energyBefore": 6,
+          "energyAfterCost": 6,
+          "energyAfterOwnTurn": 7,
+          "item": "ether",
+          "itemBefore": 1,
+          "itemAfter": 0,
+          "damage": null,
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 3,
+          "weak": 0,
+          "cleanse": false,
+          "note": "恢复4能量，不能用于倒下者。"
+        },
+        "effects": []
+      },
+      {
+        "id": 5,
+        "action": 4,
+        "round": 1,
+        "type": "enemy",
+        "text": "露纹鳍使用星纹冲击",
+        "actor": "e1",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 19,
+            "absorbed": 0,
+            "actual": 19,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "action": 5,
+        "round": 1,
+        "type": "player",
+        "text": "苔灯使用荫幕 → 岚翎",
+        "actor": "b",
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "b",
+          "target": "a",
+          "name": "荫幕",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": null,
+          "heal": 0,
+          "shield": 24,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "24点护盾，保留至受护者下一次行动结束。"
+        },
+        "effects": []
+      },
+      {
+        "id": 7,
+        "action": 6,
+        "round": 1,
+        "type": "enemy",
+        "text": "晶雾芽使用星纹冲击",
+        "actor": "e0",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 9,
+            "absorbed": 9,
+            "actual": 0,
+            "factor": 0.75
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "action": 6,
+        "round": 2,
+        "type": "round",
+        "text": "第2轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      }
+    ],
+    "log": [
+      {
+        "kind": "choice",
+        "choice": "camp",
+        "revision": 0
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 1,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 2,
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 3,
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        }
+      }
+    ],
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "playerActions": 3,
+      "enemyActions": 2,
+      "damage": 58,
+      "healed": 0,
+      "absorbed": 9,
+      "itemsUsed": 1,
+      "revived": 0,
+      "settlements": 0
+    },
+    "active": "a",
+    "intents": [
+      {
+        "id": "e0",
+        "mode": "strike"
+      },
+      {
+        "id": "e1",
+        "mode": "strike"
+      }
+    ],
+    "invariants": {
+      "unitIds": true,
+      "hp": true,
+      "energy": true,
+      "items": true,
+      "changeIds": true,
+      "historyIds": true,
+      "initiative": true,
+      "revision": true,
+      "choiceOnce": true,
+      "actions": true,
+      "turnCap": true,
+      "deadClear": true,
+      "statuses": true,
+      "settlement": true
+    },
+    "unlocked": 1,
+    "best": {},
+    "storageAvailable": true,
+    "ui": {
+      "move": null,
+      "target": null,
+      "pending": null,
+      "legal": [],
+      "allLog": false
+    }
+  },
+  "restored": {
+    "chapter": 1,
+    "state": "paused",
+    "pausedFrom": "battle",
+    "choice": "camp",
+    "round": 2,
+    "order": [
+      "a",
+      "c",
+      "e1",
+      "b",
+      "e0"
+    ],
+    "cursor": 0,
+    "revision": 4,
+    "serial": 6,
+    "units": [
+      {
+        "id": "a",
+        "name": "岚翎",
+        "role": "风羽向导",
+        "element": "wind",
+        "maxHP": 84,
+        "maxEnergy": 8,
+        "speed": 12,
+        "skills": [
+          "gust",
+          "shear",
+          "snare"
+        ],
+        "side": "party",
+        "hp": 65,
+        "energy": 8,
+        "actions": 1,
+        "weak": null,
+        "shield": {
+          "amount": 15,
+          "expiresAfter": 2
+        },
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "b",
+        "name": "苔灯",
+        "role": "苔息医者",
+        "element": "moss",
+        "maxHP": 100,
+        "maxEnergy": 8,
+        "speed": 8,
+        "skills": [
+          "twig",
+          "mend",
+          "veil"
+        ],
+        "side": "party",
+        "hp": 100,
+        "energy": 5,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "c",
+        "name": "澄汐",
+        "role": "泉声旅人",
+        "element": "water",
+        "maxHP": 88,
+        "maxEnergy": 8,
+        "speed": 10,
+        "skills": [
+          "ripple",
+          "surge",
+          "cleanse"
+        ],
+        "side": "party",
+        "hp": 88,
+        "energy": 7,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "e0",
+        "kind": "bud",
+        "name": "晶雾芽",
+        "element": "moss",
+        "speed": 7,
+        "maxHP": 42,
+        "hp": 3,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      },
+      {
+        "id": "e1",
+        "kind": "fin",
+        "name": "露纹鳍",
+        "element": "water",
+        "speed": 9,
+        "maxHP": 48,
+        "hp": 48,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      }
+    ],
+    "items": {
+      "heal": 3,
+      "ether": 0,
+      "revive": 1
+    },
+    "changes": [
+      {
+        "id": 1,
+        "action": 1,
+        "kind": "item",
+        "unit": "heal",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 3,
+        "action": 1,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 4,
+        "action": 1,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 5,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": -2,
+        "cause": "破风羽消耗"
+      },
+      {
+        "id": 6,
+        "action": 2,
+        "kind": "hp",
+        "unit": "e0",
+        "delta": -39,
+        "cause": "岚翎的伤害"
+      },
+      {
+        "id": 7,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 8,
+        "action": 3,
+        "kind": "item",
+        "unit": "ether",
+        "delta": -1,
+        "cause": "回声露使用"
+      },
+      {
+        "id": 9,
+        "action": 3,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 3,
+        "cause": "回声露"
+      },
+      {
+        "id": 10,
+        "action": 3,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 11,
+        "action": 4,
+        "kind": "hp",
+        "unit": "a",
+        "delta": -19,
+        "cause": "露纹鳍的伤害"
+      },
+      {
+        "id": 12,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": -2,
+        "cause": "荫幕消耗"
+      },
+      {
+        "id": 13,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      }
+    ],
+    "history": [
+      {
+        "id": 1,
+        "action": 1,
+        "round": 0,
+        "type": "event",
+        "text": "整备：多1苔露瓶，三人各恢复1能量。"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "round": 1,
+        "type": "round",
+        "text": "第1轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      },
+      {
+        "id": 3,
+        "action": 2,
+        "round": 1,
+        "type": "player",
+        "text": "岚翎使用破风羽 → 晶雾芽",
+        "actor": "a",
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "a",
+          "target": "e0",
+          "name": "破风羽",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": {
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          },
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "更强的风击，适合击破苔属性。"
+        },
+        "effects": [
+          {
+            "target": "e0",
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "action": 3,
+        "round": 1,
+        "type": "player",
+        "text": "澄汐使用回声露 → 岚翎",
+        "actor": "c",
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "c",
+          "target": "a",
+          "name": "回声露",
+          "cost": 0,
+          "energyBefore": 6,
+          "energyAfterCost": 6,
+          "energyAfterOwnTurn": 7,
+          "item": "ether",
+          "itemBefore": 1,
+          "itemAfter": 0,
+          "damage": null,
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 3,
+          "weak": 0,
+          "cleanse": false,
+          "note": "恢复4能量，不能用于倒下者。"
+        },
+        "effects": []
+      },
+      {
+        "id": 5,
+        "action": 4,
+        "round": 1,
+        "type": "enemy",
+        "text": "露纹鳍使用星纹冲击",
+        "actor": "e1",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 19,
+            "absorbed": 0,
+            "actual": 19,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "action": 5,
+        "round": 1,
+        "type": "player",
+        "text": "苔灯使用荫幕 → 岚翎",
+        "actor": "b",
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "b",
+          "target": "a",
+          "name": "荫幕",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": null,
+          "heal": 0,
+          "shield": 24,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "24点护盾，保留至受护者下一次行动结束。"
+        },
+        "effects": []
+      },
+      {
+        "id": 7,
+        "action": 6,
+        "round": 1,
+        "type": "enemy",
+        "text": "晶雾芽使用星纹冲击",
+        "actor": "e0",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 9,
+            "absorbed": 9,
+            "actual": 0,
+            "factor": 0.75
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "action": 6,
+        "round": 2,
+        "type": "round",
+        "text": "第2轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      }
+    ],
+    "log": [
+      {
+        "kind": "choice",
+        "choice": "camp",
+        "revision": 0
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 1,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 2,
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 3,
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        }
+      }
+    ],
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "playerActions": 3,
+      "enemyActions": 2,
+      "damage": 58,
+      "healed": 0,
+      "absorbed": 9,
+      "itemsUsed": 1,
+      "revived": 0,
+      "settlements": 0
+    },
+    "active": "a",
+    "intents": [
+      {
+        "id": "e0",
+        "mode": "strike"
+      },
+      {
+        "id": "e1",
+        "mode": "strike"
+      }
+    ],
+    "invariants": {
+      "unitIds": true,
+      "hp": true,
+      "energy": true,
+      "items": true,
+      "changeIds": true,
+      "historyIds": true,
+      "initiative": true,
+      "revision": true,
+      "choiceOnce": true,
+      "actions": true,
+      "turnCap": true,
+      "deadClear": true,
+      "statuses": true,
+      "settlement": true
+    },
+    "unlocked": 1,
+    "best": {},
+    "storageAvailable": true,
+    "ui": {
+      "move": null,
+      "target": null,
+      "pending": null,
+      "legal": [],
+      "allLog": false
+    }
+  },
+  "independentRestored": {
+    "chapter": 1,
+    "state": "paused",
+    "pausedFrom": "battle",
+    "choice": "camp",
+    "round": 2,
+    "order": [
+      "a",
+      "c",
+      "e1",
+      "b",
+      "e0"
+    ],
+    "cursor": 0,
+    "revision": 4,
+    "serial": 6,
+    "units": [
+      {
+        "id": "a",
+        "name": "岚翎",
+        "role": "风羽向导",
+        "element": "wind",
+        "maxHP": 84,
+        "maxEnergy": 8,
+        "speed": 12,
+        "skills": [
+          "gust",
+          "shear",
+          "snare"
+        ],
+        "side": "party",
+        "hp": 65,
+        "energy": 8,
+        "actions": 1,
+        "weak": null,
+        "shield": {
+          "amount": 15,
+          "expiresAfter": 2
+        },
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "b",
+        "name": "苔灯",
+        "role": "苔息医者",
+        "element": "moss",
+        "maxHP": 100,
+        "maxEnergy": 8,
+        "speed": 8,
+        "skills": [
+          "twig",
+          "mend",
+          "veil"
+        ],
+        "side": "party",
+        "hp": 100,
+        "energy": 5,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "c",
+        "name": "澄汐",
+        "role": "泉声旅人",
+        "element": "water",
+        "maxHP": 88,
+        "maxEnergy": 8,
+        "speed": 10,
+        "skills": [
+          "ripple",
+          "surge",
+          "cleanse"
+        ],
+        "side": "party",
+        "hp": 88,
+        "energy": 7,
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 0
+      },
+      {
+        "id": "e0",
+        "kind": "bud",
+        "name": "晶雾芽",
+        "element": "moss",
+        "speed": 7,
+        "maxHP": 42,
+        "hp": 3,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      },
+      {
+        "id": "e1",
+        "kind": "fin",
+        "name": "露纹鳍",
+        "element": "water",
+        "speed": 9,
+        "maxHP": 48,
+        "hp": 48,
+        "energy": 0,
+        "maxEnergy": 0,
+        "side": "enemy",
+        "actions": 1,
+        "weak": null,
+        "shield": null,
+        "phase": 1,
+        "plan": 1
+      }
+    ],
+    "items": {
+      "heal": 3,
+      "ether": 0,
+      "revive": 1
+    },
+    "changes": [
+      {
+        "id": 1,
+        "action": 1,
+        "kind": "item",
+        "unit": "heal",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 3,
+        "action": 1,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 4,
+        "action": 1,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "苔茶整备"
+      },
+      {
+        "id": 5,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": -2,
+        "cause": "破风羽消耗"
+      },
+      {
+        "id": 6,
+        "action": 2,
+        "kind": "hp",
+        "unit": "e0",
+        "delta": -39,
+        "cause": "岚翎的伤害"
+      },
+      {
+        "id": 7,
+        "action": 2,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 8,
+        "action": 3,
+        "kind": "item",
+        "unit": "ether",
+        "delta": -1,
+        "cause": "回声露使用"
+      },
+      {
+        "id": 9,
+        "action": 3,
+        "kind": "energy",
+        "unit": "a",
+        "delta": 3,
+        "cause": "回声露"
+      },
+      {
+        "id": 10,
+        "action": 3,
+        "kind": "energy",
+        "unit": "c",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      },
+      {
+        "id": 11,
+        "action": 4,
+        "kind": "hp",
+        "unit": "a",
+        "delta": -19,
+        "cause": "露纹鳍的伤害"
+      },
+      {
+        "id": 12,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": -2,
+        "cause": "荫幕消耗"
+      },
+      {
+        "id": 13,
+        "action": 5,
+        "kind": "energy",
+        "unit": "b",
+        "delta": 1,
+        "cause": "行动结束恢复"
+      }
+    ],
+    "history": [
+      {
+        "id": 1,
+        "action": 1,
+        "round": 0,
+        "type": "event",
+        "text": "整备：多1苔露瓶，三人各恢复1能量。"
+      },
+      {
+        "id": 2,
+        "action": 1,
+        "round": 1,
+        "type": "round",
+        "text": "第1轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      },
+      {
+        "id": 3,
+        "action": 2,
+        "round": 1,
+        "type": "player",
+        "text": "岚翎使用破风羽 → 晶雾芽",
+        "actor": "a",
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "a",
+          "target": "e0",
+          "name": "破风羽",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": {
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          },
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "更强的风击，适合击破苔属性。"
+        },
+        "effects": [
+          {
+            "target": "e0",
+            "raw": 39,
+            "absorbed": 0,
+            "actual": 39,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "action": 3,
+        "round": 1,
+        "type": "player",
+        "text": "澄汐使用回声露 → 岚翎",
+        "actor": "c",
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "c",
+          "target": "a",
+          "name": "回声露",
+          "cost": 0,
+          "energyBefore": 6,
+          "energyAfterCost": 6,
+          "energyAfterOwnTurn": 7,
+          "item": "ether",
+          "itemBefore": 1,
+          "itemAfter": 0,
+          "damage": null,
+          "heal": 0,
+          "shield": 0,
+          "energyGain": 3,
+          "weak": 0,
+          "cleanse": false,
+          "note": "恢复4能量，不能用于倒下者。"
+        },
+        "effects": []
+      },
+      {
+        "id": 5,
+        "action": 4,
+        "round": 1,
+        "type": "enemy",
+        "text": "露纹鳍使用星纹冲击",
+        "actor": "e1",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 19,
+            "absorbed": 0,
+            "actual": 19,
+            "factor": 1.5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "action": 5,
+        "round": 1,
+        "type": "player",
+        "text": "苔灯使用荫幕 → 岚翎",
+        "actor": "b",
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        },
+        "preview": {
+          "valid": true,
+          "actor": "b",
+          "target": "a",
+          "name": "荫幕",
+          "cost": 2,
+          "energyBefore": 6,
+          "energyAfterCost": 4,
+          "energyAfterOwnTurn": 5,
+          "item": null,
+          "itemBefore": null,
+          "itemAfter": null,
+          "damage": null,
+          "heal": 0,
+          "shield": 24,
+          "energyGain": 0,
+          "weak": 0,
+          "cleanse": false,
+          "note": "24点护盾，保留至受护者下一次行动结束。"
+        },
+        "effects": []
+      },
+      {
+        "id": 7,
+        "action": 6,
+        "round": 1,
+        "type": "enemy",
+        "text": "晶雾芽使用星纹冲击",
+        "actor": "e0",
+        "mode": "strike",
+        "effects": [
+          {
+            "target": "a",
+            "raw": 9,
+            "absorbed": 9,
+            "actual": 0,
+            "factor": 0.75
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "action": 6,
+        "round": 2,
+        "type": "round",
+        "text": "第2轮开始",
+        "order": [
+          "a",
+          "c",
+          "e1",
+          "b",
+          "e0"
+        ]
+      }
+    ],
+    "log": [
+      {
+        "kind": "choice",
+        "choice": "camp",
+        "revision": 0
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 1,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 2,
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 3,
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        }
+      }
+    ],
+    "score": 0,
+    "reason": "",
+    "stats": {
+      "playerActions": 3,
+      "enemyActions": 2,
+      "damage": 58,
+      "healed": 0,
+      "absorbed": 9,
+      "itemsUsed": 1,
+      "revived": 0,
+      "settlements": 0
+    },
+    "active": "a",
+    "intents": [
+      {
+        "id": "e0",
+        "mode": "strike"
+      },
+      {
+        "id": "e1",
+        "mode": "strike"
+      }
+    ],
+    "invariants": {
+      "unitIds": true,
+      "hp": true,
+      "energy": true,
+      "items": true,
+      "changeIds": true,
+      "historyIds": true,
+      "initiative": true,
+      "revision": true,
+      "choiceOnce": true,
+      "actions": true,
+      "turnCap": true,
+      "deadClear": true,
+      "statuses": true,
+      "settlement": true
+    }
+  },
+  "continuedWin": {
+    "state": "won",
+    "score": 891,
+    "round": 3,
+    "items": {
+      "heal": 3,
+      "ether": 0,
+      "revive": 1
+    },
+    "stats": {
+      "playerActions": 8,
+      "enemyActions": 3,
+      "damage": 128,
+      "healed": 32,
+      "absorbed": 9,
+      "itemsUsed": 1,
+      "revived": 0,
+      "settlements": 1
+    },
+    "log": [
+      {
+        "kind": "choice",
+        "choice": "camp",
+        "revision": 0
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 1,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 2,
+        "move": {
+          "kind": "item",
+          "item": "ether",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 3,
+        "move": {
+          "kind": "skill",
+          "skill": "veil",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 4,
+        "move": {
+          "kind": "skill",
+          "skill": "gust",
+          "target": "e0"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 5,
+        "move": {
+          "kind": "skill",
+          "skill": "surge",
+          "target": "e1"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "b",
+        "revision": 6,
+        "move": {
+          "kind": "skill",
+          "skill": "mend",
+          "target": "a"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "a",
+        "revision": 7,
+        "move": {
+          "kind": "skill",
+          "skill": "shear",
+          "target": "e1"
+        }
+      },
+      {
+        "kind": "act",
+        "actor": "c",
+        "revision": 8,
+        "move": {
+          "kind": "skill",
+          "skill": "ripple",
+          "target": "e1"
+        }
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

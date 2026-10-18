@@ -1,0 +1,353 @@
+{
+  "testedAt": "2026-10-16T18:07:59.477142+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/harbor/",
+  "checks": [
+    "First tutorial is modal; planning stays stationary without timed income or stock growth",
+    "Initial level lock and native dialog Escape work without starting the game",
+    "Construction preview shows exact cost/remaining cash and cancellation never charges",
+    "Native double-confirm and duplicate build attempt charge only one road",
+    "Undo restores exact planning cash and removes only the last confirmed operation",
+    "Overspending is refused before confirmation; actual undo returns the untouched budget",
+    "Nonexistent and not-yet-built route links show an explanation without buying a ship",
+    "Start rejects unserved cargo and an in-use road cannot be refunded",
+    "Real sell/scrap confirmations and reversal of those actions preserve the full ledger",
+    "Route editing is free and reversible before departure",
+    "Planning refresh restores confirmed plan/undo/ledger and discards unconfirmed spending",
+    "Start does not run a hidden turn; real Space repeat advances only once and freezes editing",
+    "Auto progresses normally, but pause blocks timer and keyboard transport/cost/deadline changes",
+    "In-transit refresh restores every model field and stays paused, then normal steps win",
+    "320px result overlay remains readable and its primary button passes actual hit testing",
+    "A genuine valid-but-underfunded barge plan goes bankrupt; retry resets only this map and keeps best",
+    "Actual UI refuses undersized heavy-cargo coverage; selling/replacing a ship gives legal two-slot loading",
+    "Handbook and explicit blur stop dispatch immediately; closing help resumes the prior mode",
+    "Original local synthesized-sound preference survives refresh",
+    "Planning, cargo, fleet and native level dialogs fit six widths from320 to1440",
+    "Malformed storage resets defaults safely without inventing cash or shipments",
+    "Illegal/null replay and forged cash/stock are ignored while legal unlocks survive",
+    "A complete native touch plan/build/confirm/route/start/transport journey wins with conserved cargo and cash",
+    "Denied storage still permits a complete ordinary logistics win"
+  ],
+  "fixture": "Only menu unlock/last-level/tutorial/sound and malformed/denied-storage fixtures. All cash/cargo/ship operations, failures and wins use actual controls. Blur explicitly simulates a lifecycle interruption.",
+  "restore": {
+    "exactFields": [
+      "turn",
+      "cash",
+      "built",
+      "ships",
+      "nextShip",
+      "units",
+      "ledger",
+      "undo",
+      "revision",
+      "log",
+      "deliveredIds",
+      "lastDepartures",
+      "stats"
+    ],
+    "turn": 2,
+    "cash": 3,
+    "invariants": {
+      "cashMatches": true,
+      "nonnegative": true,
+      "unitCount": 3,
+      "places": {
+        "aboard": 1,
+        "waiting": 2
+      },
+      "allAccounted": true,
+      "uniqueCargo": true,
+      "capacity": true,
+      "edgeCapacity": true,
+      "nodeSlots": true,
+      "uniqueDelivery": true
+    }
+  },
+  "restoreAndWin": {
+    "state": "won",
+    "turn": 11,
+    "cash": 4,
+    "actualLog": [
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "build",
+        "edge": "AD"
+      },
+      {
+        "kind": "build",
+        "edge": "CD"
+      },
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "buy",
+        "type": "skiff",
+        "route": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "kind": "sell",
+        "ship": 1
+      },
+      {
+        "kind": "scrap",
+        "edge": "AB"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "build",
+        "edge": "BC"
+      },
+      {
+        "kind": "buy",
+        "type": "skiff",
+        "route": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "kind": "edit",
+        "ship": 1,
+        "route": [
+          "C",
+          "B",
+          "A"
+        ]
+      },
+      {
+        "kind": "undo"
+      },
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      }
+    ],
+    "best": {
+      "score": 1045,
+      "turn": 11,
+      "cash": 4,
+      "ships": 1,
+      "fares": 10
+    }
+  },
+  "naturalBankruptcy": {
+    "state": "lost",
+    "turn": 2,
+    "cash": 0,
+    "ledger": {
+      "build": 6,
+      "fleet": 9,
+      "fares": 1,
+      "income": 0
+    },
+    "actualLog": [
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "build",
+        "edge": "BC"
+      },
+      {
+        "kind": "buy",
+        "type": "barge",
+        "route": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "turn": 11,
+    "cash": 4,
+    "ledger": {
+      "build": 6,
+      "fleet": 5,
+      "fares": 10,
+      "income": 9
+    },
+    "stats": {
+      "planChanges": 3,
+      "undos": 0,
+      "turns": 11,
+      "departures": 10,
+      "arrivals": 10,
+      "deliveries": 3,
+      "capacityWaits": 0,
+      "moneyWaits": 0,
+      "cargoWaits": 0,
+      "loaded": 3,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "build",
+        "edge": "BC"
+      },
+      {
+        "kind": "buy",
+        "type": "skiff",
+        "route": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "step"
+      }
+    ],
+    "method": "Native tutorial/edge previews/confirmations/route-node chips/purchase/start/step taps with the default skiff; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}

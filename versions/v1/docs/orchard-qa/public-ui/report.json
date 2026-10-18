@@ -1,0 +1,929 @@
+{
+  "testedAt": "2026-10-16T19:46:35.883059+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/games/orchard/",
+  "checks": [
+    "Tutorial is modal and ready state never spawns or advances time",
+    "Initial12-map locks and native Escape work without starting physics",
+    "Native click directly on a flying fruit produces no automatic collection or score",
+    "Hovering quickly through a real fruit does not cut without a press",
+    "Fast240-pixel native drag detects the crossing; a second sweep over the same fruit cannot score again",
+    "Captured pointer leaving the field cancels and cannot ghost-slice when returning with the old press",
+    "Fast native drag ending outside still cuts its actual in-field segment once, then cancels capture",
+    "Native touchCancel cancels a genuine active touch gesture without score or error",
+    "Pause cancels capture, freezes world fields and old held-pointer motion cannot score after resume",
+    "Pausing clears keyboard blade/held directions and suppresses old repeats until release",
+    "Home cancels the keyboard blade before centering instead of slicing across the board",
+    "An entire normal-speed first level wins using only actual keyboard cursor motion and Space-held cutting",
+    "320px result primary button is visible and passes actual hit testing",
+    "Refresh exactly restores paused physics/targets/score/IDs/history without a gesture or backlog, then remaining real drags win",
+    "A real drag through the marked thorn charges one shared error and gives no score",
+    "Real off-screen misses cause a single natural failure and retry preserves earned best with clean resources",
+    "A normal-speed three-fruit level records actual continuous-stroke triple combos and bonus points",
+    "Handbook pauses/resumes and explicit blur cancels controls and pauses immediately",
+    "Original local synthesized-audio preference persists across refresh",
+    "Three goal counters, fruit field, keyboard help and native dialogs fit six widths from320 to1440",
+    "Malformed storage returns to safe ready defaults",
+    "Illegal replay and forged score/error fields cannot become production resources",
+    "Complete native touch-drag first level wins with three real sliced targets and no errors",
+    "Denied storage still permits an entire normal1x drag-based level"
+  ],
+  "fixture": "Only menu/unlock/tutorial/sound and malformed/denied-storage or rejected forged-resume fixtures. Pointer events, cancels, scores, misses, dangers and wins use native normal1x inputs. Blur is explicitly simulated.",
+  "keyboardWin": {
+    "state": "won",
+    "score": 30,
+    "ticks": 608,
+    "time": 5.066666666666666,
+    "stats": {
+      "spawnedFruit": 3,
+      "spawnedThorns": 0,
+      "cuts": 3,
+      "misses": 0,
+      "bombs": 0,
+      "strokes": 3,
+      "combos": 0,
+      "maxCombo": 1,
+      "basePoints": 30,
+      "comboPoints": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      },
+      {
+        "at": 209,
+        "kind": "down",
+        "x": 211.93199999999845,
+        "y": 273.287999999999
+      },
+      {
+        "at": 211,
+        "kind": "move",
+        "x": 223.28799999999896,
+        "y": 273.287999999999
+      },
+      {
+        "at": 213,
+        "kind": "move",
+        "x": 234.57599999999798,
+        "y": 273.287999999999
+      },
+      {
+        "at": 215,
+        "kind": "move",
+        "x": 245.93199999999848,
+        "y": 273.287999999999
+      },
+      {
+        "at": 217,
+        "kind": "move",
+        "x": 257.21999999999997,
+        "y": 273.287999999999
+      },
+      {
+        "at": 219,
+        "kind": "move",
+        "x": 268.6439999999995,
+        "y": 273.287999999999
+      },
+      {
+        "at": 221,
+        "kind": "move",
+        "x": 279.9319999999985,
+        "y": 273.287999999999
+      },
+      {
+        "at": 223,
+        "kind": "move",
+        "x": 291.21999999999997,
+        "y": 273.287999999999
+      },
+      {
+        "at": 225,
+        "kind": "move",
+        "x": 302.575999999998,
+        "y": 273.287999999999
+      },
+      {
+        "at": 227,
+        "kind": "move",
+        "x": 313.9319999999985,
+        "y": 273.287999999999
+      },
+      {
+        "at": 229,
+        "kind": "move",
+        "x": 325.287999999999,
+        "y": 273.287999999999
+      },
+      {
+        "at": 229,
+        "kind": "up"
+      },
+      {
+        "at": 399,
+        "kind": "down",
+        "x": 393.287999999999,
+        "y": 307.287999999999
+      },
+      {
+        "at": 401,
+        "kind": "move",
+        "x": 404.7119999999985,
+        "y": 307.287999999999
+      },
+      {
+        "at": 403,
+        "kind": "move",
+        "x": 416,
+        "y": 307.287999999999
+      },
+      {
+        "at": 405,
+        "kind": "move",
+        "x": 427.287999999999,
+        "y": 307.287999999999
+      },
+      {
+        "at": 407,
+        "kind": "move",
+        "x": 438.6439999999995,
+        "y": 307.287999999999
+      },
+      {
+        "at": 409,
+        "kind": "move",
+        "x": 450,
+        "y": 307.287999999999
+      },
+      {
+        "at": 411,
+        "kind": "move",
+        "x": 461.287999999999,
+        "y": 307.287999999999
+      },
+      {
+        "at": 413,
+        "kind": "move",
+        "x": 472.6439999999995,
+        "y": 307.287999999999
+      },
+      {
+        "at": 415,
+        "kind": "move",
+        "x": 483.9319999999985,
+        "y": 307.287999999999
+      },
+      {
+        "at": 417,
+        "kind": "move",
+        "x": 495.355999999998,
+        "y": 307.287999999999
+      },
+      {
+        "at": 419,
+        "kind": "move",
+        "x": 506.6439999999995,
+        "y": 307.287999999999
+      },
+      {
+        "at": 421,
+        "kind": "move",
+        "x": 518,
+        "y": 307.287999999999
+      },
+      {
+        "at": 421,
+        "kind": "up"
+      },
+      {
+        "at": 603,
+        "kind": "down",
+        "x": 586.0679999999988,
+        "y": 261.863999999997
+      },
+      {
+        "at": 605,
+        "kind": "move",
+        "x": 597.3559999999978,
+        "y": 261.863999999997
+      },
+      {
+        "at": 607,
+        "kind": "move",
+        "x": 608.7799999999999,
+        "y": 261.863999999997
+      }
+    ],
+    "actions": [
+      {
+        "target": "1:1",
+        "apexAim": {
+          "x": 265.0500000000001,
+          "y": 264.98511904761904
+        },
+        "beforeCursor": {
+          "x": 211.93199999999845,
+          "y": 273.287999999999
+        },
+        "afterCursor": {
+          "x": 325.287999999999,
+          "y": 273.287999999999
+        },
+        "cuts": 1,
+        "errors": 0
+      },
+      {
+        "target": "2:1",
+        "apexAim": {
+          "x": 450.0,
+          "y": 303.7946428571429
+        },
+        "beforeCursor": {
+          "x": 393.287999999999,
+          "y": 307.287999999999
+        },
+        "afterCursor": {
+          "x": 518,
+          "y": 307.287999999999
+        },
+        "cuts": 2,
+        "errors": 0
+      },
+      {
+        "target": "3:1",
+        "apexAim": {
+          "x": 634.9499999999994,
+          "y": 264.98511904761904
+        },
+        "beforeCursor": {
+          "x": 586.0679999999988,
+          "y": 261.863999999997
+        },
+        "afterCursor": {
+          "x": 608.7799999999999,
+          "y": 261.863999999997
+        },
+        "cuts": 3,
+        "errors": 0
+      }
+    ],
+    "wallSeconds": 5.217999999993481,
+    "method": "Actual held arrow keys move the virtual cursor; Space-held ArrowRight strokes cut all three targets at1x. No cursor/score writes."
+  },
+  "restore": {
+    "exactFields": [
+      "ticks",
+      "nextWave",
+      "targets",
+      "score",
+      "errors",
+      "cutIds",
+      "missIds",
+      "bombIds",
+      "strokeSerial",
+      "log",
+      "stats"
+    ],
+    "ticks": 221,
+    "score": 10,
+    "cutIds": [
+      "1:1"
+    ]
+  },
+  "restoreAndWin": {
+    "state": "won",
+    "score": 30,
+    "ticks": 599,
+    "stats": {
+      "spawnedFruit": 3,
+      "spawnedThorns": 0,
+      "cuts": 3,
+      "misses": 0,
+      "bombs": 0,
+      "strokes": 3,
+      "combos": 0,
+      "maxCombo": 1,
+      "basePoints": 30,
+      "comboPoints": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      },
+      {
+        "at": 203,
+        "kind": "down",
+        "x": 219.3019968218508,
+        "y": 269.97951218135285
+      },
+      {
+        "at": 203,
+        "kind": "move",
+        "x": 240.80199182561014,
+        "y": 269.97951218135285
+      },
+      {
+        "at": 207,
+        "kind": "move",
+        "x": 262.30198682936947,
+        "y": 269.97951218135285
+      },
+      {
+        "at": 211,
+        "kind": "move",
+        "x": 281.30201491634404,
+        "y": 269.97951218135285
+      },
+      {
+        "at": 215,
+        "kind": "move",
+        "x": 300.302012620774,
+        "y": 269.97951218135285
+      },
+      {
+        "at": 219,
+        "kind": "up"
+      },
+      {
+        "at": 394,
+        "kind": "down",
+        "x": 407.00000999248135,
+        "y": 309.8186753562826
+      },
+      {
+        "at": 394,
+        "kind": "move",
+        "x": 428.49997461369605,
+        "y": 309.8186753562826
+      },
+      {
+        "at": 398,
+        "kind": "move",
+        "x": 450,
+        "y": 309.8186753562826
+      },
+      {
+        "at": 402,
+        "kind": "move",
+        "x": 469.00002808697457,
+        "y": 309.8186753562826
+      },
+      {
+        "at": 406,
+        "kind": "move",
+        "x": 487.99999540885995,
+        "y": 309.8186753562826
+      },
+      {
+        "at": 410,
+        "kind": "up"
+      },
+      {
+        "at": 598,
+        "kind": "down",
+        "x": 594.9080273113419,
+        "y": 270.7719871615942
+      },
+      {
+        "at": 598,
+        "kind": "move",
+        "x": 616.4079919325567,
+        "y": 270.7719871615942
+      }
+    ]
+  },
+  "naturalThorn": {
+    "ticks": 211,
+    "score": 0,
+    "stats": {
+      "spawnedFruit": 2,
+      "spawnedThorns": 1,
+      "cuts": 0,
+      "misses": 0,
+      "bombs": 1,
+      "strokes": 1,
+      "combos": 0,
+      "maxCombo": 0,
+      "basePoints": 0,
+      "comboPoints": 0,
+      "settlements": 0
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      },
+      {
+        "at": 201,
+        "kind": "down",
+        "x": 429.49998568644565,
+        "y": 271.6666699336361
+      },
+      {
+        "at": 201,
+        "kind": "move",
+        "x": 499.4999708327572,
+        "y": 271.6666699336361
+      },
+      {
+        "at": 205,
+        "kind": "move",
+        "x": 569.500016744158,
+        "y": 271.6666699336361
+      },
+      {
+        "at": 209,
+        "kind": "up"
+      }
+    ]
+  },
+  "naturalMissFailure": {
+    "state": "lost",
+    "ticks": 730,
+    "stats": {
+      "spawnedFruit": 3,
+      "spawnedThorns": 0,
+      "cuts": 0,
+      "misses": 3,
+      "bombs": 0,
+      "strokes": 0,
+      "combos": 0,
+      "maxCombo": 0,
+      "basePoints": 0,
+      "comboPoints": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      }
+    ]
+  },
+  "realCombo": {
+    "score": 171,
+    "stats": {
+      "spawnedFruit": 12,
+      "spawnedThorns": 3,
+      "cuts": 12,
+      "misses": 0,
+      "bombs": 0,
+      "strokes": 4,
+      "combos": 4,
+      "maxCombo": 3,
+      "basePoints": 135,
+      "comboPoints": 36,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      },
+      {
+        "at": 207,
+        "kind": "down",
+        "x": 195.89567944011856,
+        "y": 247.18951408664944
+      },
+      {
+        "at": 207,
+        "kind": "move",
+        "x": 217.3957048264225,
+        "y": 247.18951408664944
+      },
+      {
+        "at": 211,
+        "kind": "move",
+        "x": 238.89569983018183,
+        "y": 247.18951408664944
+      },
+      {
+        "at": 215,
+        "kind": "move",
+        "x": 273.16784816505634,
+        "y": 242.30116211329536
+      },
+      {
+        "at": 219,
+        "kind": "move",
+        "x": 307.4400268824755,
+        "y": 237.41284052275694
+      },
+      {
+        "at": 223,
+        "kind": "move",
+        "x": 341.93029150498654,
+        "y": 232.66248729802288
+      },
+      {
+        "at": 227,
+        "kind": "move",
+        "x": 376.4205561274976,
+        "y": 227.91216445610448
+      },
+      {
+        "at": 231,
+        "kind": "move",
+        "x": 395.4205538319275,
+        "y": 227.91216445610448
+      },
+      {
+        "at": 235,
+        "kind": "move",
+        "x": 414.4205819189021,
+        "y": 227.91216445610448
+      },
+      {
+        "at": 239,
+        "kind": "up"
+      },
+      {
+        "at": 411,
+        "kind": "down",
+        "x": 481.0776972137721,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 411,
+        "kind": "move",
+        "x": 502.5776618349869,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 415,
+        "kind": "move",
+        "x": 524.0776872212908,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 419,
+        "kind": "move",
+        "x": 557.585380351649,
+        "y": 282.53451193829034
+      },
+      {
+        "at": 423,
+        "kind": "move",
+        "x": 591.0930127169179,
+        "y": 277.8161518184213
+      },
+      {
+        "at": 427,
+        "kind": "move",
+        "x": 624.8187917523679,
+        "y": 273.235820829988
+      },
+      {
+        "at": 431,
+        "kind": "move",
+        "x": 658.544570787818,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 435,
+        "kind": "move",
+        "x": 677.5445381097034,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 439,
+        "kind": "move",
+        "x": 696.5445661966779,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 443,
+        "kind": "up"
+      },
+      {
+        "at": 629,
+        "kind": "down",
+        "x": 276.29901244577053,
+        "y": 245.8794982248595
+      },
+      {
+        "at": 629,
+        "kind": "move",
+        "x": 297.7990378320745,
+        "y": 245.8794982248595
+      },
+      {
+        "at": 633,
+        "kind": "move",
+        "x": 319.29903283583377,
+        "y": 245.8794982248595
+      },
+      {
+        "at": 637,
+        "kind": "move",
+        "x": 353.4720125451552,
+        "y": 241.13449237567744
+      },
+      {
+        "at": 641,
+        "kind": "move",
+        "x": 387.6450226370212,
+        "y": 236.38948652649538
+      },
+      {
+        "at": 645,
+        "kind": "move",
+        "x": 422.0361490165238,
+        "y": 231.78250980874898
+      },
+      {
+        "at": 649,
+        "kind": "move",
+        "x": 456.42724501348175,
+        "y": 227.17550270818697
+      },
+      {
+        "at": 653,
+        "kind": "move",
+        "x": 475.42721233536713,
+        "y": 227.17550270818697
+      },
+      {
+        "at": 657,
+        "kind": "move",
+        "x": 494.4272404223417,
+        "y": 227.17550270818697
+      },
+      {
+        "at": 661,
+        "kind": "up"
+      },
+      {
+        "at": 831,
+        "kind": "down",
+        "x": 409.41372086516526,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 831,
+        "kind": "move",
+        "x": 430.91368548637996,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 835,
+        "kind": "move",
+        "x": 452.4137108726839,
+        "y": 287.25284167534375
+      },
+      {
+        "at": 839,
+        "kind": "move",
+        "x": 486.0653564993259,
+        "y": 282.53451193829034
+      },
+      {
+        "at": 843,
+        "kind": "move",
+        "x": 519.717002125968,
+        "y": 277.8161518184213
+      },
+      {
+        "at": 847,
+        "kind": "move",
+        "x": 553.5867944227911,
+        "y": 273.235820829988
+      },
+      {
+        "at": 851,
+        "kind": "move",
+        "x": 587.4565867196142,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 855,
+        "kind": "move",
+        "x": 606.4565540414995,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 859,
+        "kind": "move",
+        "x": 625.4565821284741,
+        "y": 268.6554898415546
+      },
+      {
+        "at": 863,
+        "kind": "up"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "nativeTouch": {
+    "state": "won",
+    "score": 30,
+    "ticks": 600,
+    "time": 5,
+    "stats": {
+      "spawnedFruit": 3,
+      "spawnedThorns": 0,
+      "cuts": 3,
+      "misses": 0,
+      "bombs": 0,
+      "strokes": 3,
+      "combos": 0,
+      "maxCombo": 1,
+      "basePoints": 30,
+      "comboPoints": 0,
+      "settlements": 1
+    },
+    "actualLog": [
+      {
+        "at": 0,
+        "kind": "start"
+      },
+      {
+        "at": 203,
+        "kind": "down",
+        "x": 219.30199955286605,
+        "y": 269.9794993429436
+      },
+      {
+        "at": 205,
+        "kind": "move",
+        "x": 240.80200838239006,
+        "y": 269.9794993429436
+      },
+      {
+        "at": 211,
+        "kind": "move",
+        "x": 262.3019979241189,
+        "y": 269.9794993429436
+      },
+      {
+        "at": 217,
+        "kind": "move",
+        "x": 281.30199989576016,
+        "y": 269.9794993429436
+      },
+      {
+        "at": 221,
+        "kind": "move",
+        "x": 300.3019825796063,
+        "y": 269.9794993429436
+      },
+      {
+        "at": 225,
+        "kind": "up"
+      },
+      {
+        "at": 393,
+        "kind": "down",
+        "x": 406.999982340952,
+        "y": 310.6861721985505
+      },
+      {
+        "at": 395,
+        "kind": "move",
+        "x": 428.50001045827116,
+        "y": 310.6861721985505
+      },
+      {
+        "at": 401,
+        "kind": "move",
+        "x": 450,
+        "y": 310.6861721985505
+      },
+      {
+        "at": 407,
+        "kind": "move",
+        "x": 468.9999826838461,
+        "y": 310.6861721985505
+      },
+      {
+        "at": 411,
+        "kind": "move",
+        "x": 488.0000039432826,
+        "y": 310.6861721985505
+      },
+      {
+        "at": 415,
+        "kind": "up"
+      },
+      {
+        "at": 597,
+        "kind": "down",
+        "x": 595.1180147321037,
+        "y": 271.6228291006292
+      },
+      {
+        "at": 599,
+        "kind": "move",
+        "x": 616.6180042738325,
+        "y": 271.6228291006292
+      }
+    ],
+    "actions": [
+      {
+        "observedTick": 197,
+        "wave": 1,
+        "intendedTargets": [
+          "1:1"
+        ],
+        "points": [
+          {
+            "x": 219.30200000000008,
+            "y": 269.9794999999999
+          },
+          {
+            "x": 262.3020000000001,
+            "y": 269.9794999999999
+          },
+          {
+            "x": 300.3020000000001,
+            "y": 269.9794999999999
+          }
+        ],
+        "resultCuts": 1,
+        "resultErrors": 0
+      },
+      {
+        "observedTick": 387,
+        "wave": 2,
+        "intendedTargets": [
+          "2:1"
+        ],
+        "points": [
+          {
+            "x": 407,
+            "y": 310.6861666666666
+          },
+          {
+            "x": 450,
+            "y": 310.6861666666666
+          },
+          {
+            "x": 488,
+            "y": 310.6861666666666
+          }
+        ],
+        "resultCuts": 2,
+        "resultErrors": 0
+      },
+      {
+        "observedTick": 591,
+        "wave": 3,
+        "intendedTargets": [
+          "3:1"
+        ],
+        "points": [
+          {
+            "x": 595.1179999999964,
+            "y": 271.6228333333333
+          },
+          {
+            "x": 638.1179999999964,
+            "y": 271.6228333333333
+          },
+          {
+            "x": 676.1179999999964,
+            "y": 271.6228333333333
+          }
+        ],
+        "resultCuts": 3,
+        "resultErrors": 0
+      }
+    ],
+    "wallSeconds": 5.171999999991385,
+    "method": "Native tutorial/start taps and CDP touchStart/interpolated touchMove/touchEnd drags at1x; scroll positioning helper only."
+  },
+  "passed": true,
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": []
+}
