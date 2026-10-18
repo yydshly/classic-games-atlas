@@ -1,0 +1,18 @@
+// Original closed courses. Coordinates are authored here; no game maps or artwork imported.
+const defs=[
+ ['晨光街区','city',2,95,50,[[180,140],[650,140],[760,250],[760,450],[650,510],[210,510],[110,400],[110,240]],'先沿虚线练习方向盘。松油会减速，急弯前按刹车；两圈完成第一趟投递。'],
+ ['梧桐回环','city',2,100,49,[[180,120],[710,120],[800,240],[680,310],[780,440],[660,530],[180,530],[100,390],[210,310],[110,210]],'方向是相对车头的左转与右转。连续弯先松油，把车头转向下一段再加速。'],
+ ['潮汐长湾','coast',2,105,50,[[180,130],[460,100],[750,150],[810,300],[680,420],[720,530],[430,520],[160,530],[90,360],[210,270]],'长湾有快直道与收紧弯。刹车不会倒车，先减速再转向，比一路满油稳。'],
+ ['旧港折返','coast',2,115,43,[[160,105],[720,105],[800,260],[610,270],[600,405],[780,480],[650,550],[180,530],[100,410],[270,350],[270,235],[100,215]],'港区有内凹折弯。按顺序穿过亮起的闸门，别从内场直接切向终点。'],
+ ['枫丘小径','hill',3,150,48,[[180,100],[650,110],[800,210],[650,320],[810,450],[660,550],[360,500],[170,550],[90,390],[250,280],[100,190]],'从这里开始跑三圈。第一圈读路，后两圈练习一致的刹车点。'],
+ ['海风曲线','coast',3,160,45,[[160,120],[420,170],[700,110],[820,260],[690,350],[790,500],[530,540],[390,410],[220,540],[90,440],[170,300],[90,210]],'宽弯之后接窄弯，留意下一个闸门的方向。路肩会减速，严重偏离会复位加三秒。'],
+ ['夜邮街廓','city',3,160,46,[[160,100],[730,120],[800,260],[590,330],[780,490],[630,550],[220,520],[100,400],[280,330],[110,220]],'连续反向弯要把转向及时放开。不要靠复位抄近路，下一闸门仍须依序通过。'],
+ ['山岚归途','hill',3,175,45,[[150,110],[410,100],[520,210],[740,110],[820,270],[650,340],[810,490],[590,550],[440,440],[300,540],[110,500],[90,330],[250,240]],'最后一趟串联多种弯形。保持路线比追求最高速更重要，三圈后把邮袋带回终点。']
+];
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),mix=(a,b,t)=>({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});
+function build(d,id){const[name,environment,laps,limit,halfWidth,coords,tip]=d,v=coords.map(([x,y])=>({x,y})),raw=[];for(let i=0;i<v.length;i++){const a=v[(i+v.length-1)%v.length],b=v[i],c=v[(i+1)%v.length],r=Math.min(65,dist(a,b)*.24,dist(b,c)*.24),entry=mix(b,a,r/dist(a,b)),exit=mix(b,c,r/dist(b,c));if(raw.length){const prev=raw.at(-1);for(let j=1;j<=12;j++)raw.push(mix(prev,entry,j/12));}else raw.push(entry);for(let j=1;j<=16;j++){const t=j/16;raw.push({x:(1-t)**2*entry.x+2*(1-t)*t*b.x+t*t*exit.x,y:(1-t)**2*entry.y+2*(1-t)*t*b.y+t*t*exit.y});}}const last=raw.at(-1),first=raw[0];for(let j=1;j<12;j++)raw.push(mix(last,first,j/12));const anchor=mix(v[0],v[1],.5);let at=0;raw.forEach((p,i)=>{if(dist(p,anchor)<dist(raw[at],anchor))at=i;});const points=[...raw.slice(at),...raw.slice(0,at)],segments=[];let length=0;for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length],n=dist(a,b);if(n>1e-6){segments.push({a,b,length:n,start:length,tx:(b.x-a.x)/n,ty:(b.y-a.y)/n});length+=n;}}const t={id:id+1,name,environment,laps,limit,halfWidth,gateCount:v.length,tip,points,segments,length};t.gateArcs=[0,...v.slice(1).map((b,i)=>project(t,mix(b,v[(i+2)%v.length],.5)).arc)];return t;}
+export const TRACKS=defs.map(build);
+export function atArc(t,arc){const s=((arc%t.length)+t.length)%t.length,k=t.segments.find(k=>s<=k.start+k.length)||t.segments.at(-1),q=(s-k.start)/k.length;return{x:k.a.x+(k.b.x-k.a.x)*q,y:k.a.y+(k.b.y-k.a.y)*q,tx:k.tx,ty:k.ty,arc:s};}
+export function project(t,p){let best=null;for(const k of t.segments){const q=Math.max(0,Math.min(1,((p.x-k.a.x)*k.tx+(p.y-k.a.y)*k.ty)/k.length)),x=k.a.x+(k.b.x-k.a.x)*q,y=k.a.y+(k.b.y-k.a.y)*q,d=Math.hypot(p.x-x,p.y-y);if(!best||d<best.distance)best={x,y,distance:d,arc:k.start+q*k.length,tx:k.tx,ty:k.ty};}return best;}
+export const gates=t=>Array.from({length:t.gateCount},(_,i)=>({...atArc(t,t.gateArcs[i]),id:i}));
+

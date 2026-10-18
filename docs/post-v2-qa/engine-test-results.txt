@@ -1,0 +1,72 @@
+PASS fixture: exactly three cars; single fixed two-lap map across stages
+PASS fixture: countdown and pause freeze every car and race clock
+PASS fixture: reset does not jump time; player stationary three seconds while opponents advance
+PASS fixture: forward in-band swept gate only; reverse and distant crossings rejected
+PASS fixture: skipped gate cannot advance lap or outrank more legal gates
+PASS fixture: physical overlap separates cars and slows closing impact
+PASS fixture: exact checkpoint round-trip freezes paused all-car state, then deterministic continuation
+PASS fixture: checkpoint retains finished opponents while player continues; reset cannot spam or skip gates
+PASS fixture: malformed checkpoints rejected: missing/extra/duplicate cars, version, IDs, NaN, gates, finish and lock
+PASS fixture: ordered two-lap finish fixture settles once and freezes race
+PASS fixture: timeout is natural failure and only one settlement
+PASS simulation: {"stage":0,"strategy":"pursuit stage-2 controls","rank":3,"time":37.692,"resets":[0,0,0],"gates":[16,16,16]}
+PASS simulation: {"stage":1,"strategy":"pursuit stage-2 controls","rank":3,"time":24.983,"resets":[0,0,0],"gates":[16,16,16]}
+PASS simulation: {"stage":2,"strategy":"pursuit stage-2 controls","rank":3,"time":22.608,"resets":[0,0,0],"gates":[16,16,16]}
+PASS simulation: idle player loses; both AI complete legally [ null, 39.949999999998376, 38.76666666666511 ]
+PASS simulation: faster legal strategy finishes {"stage":0,"time":35.14999999999865,"rank":2}
+PASS simulation: faster legal strategy finishes {"stage":1,"time":23.383333333332647,"rank":2}
+PASS simulation: faster legal strategy finishes {"stage":2,"time":20.399999999999483,"rank":2}
+{
+  "fixtureTests": 11,
+  "simulationTests": 7,
+  "simulations": [
+    {
+      "stage": 0,
+      "strategy": "pursuit stage-2 controls",
+      "rank": 3,
+      "time": 37.692,
+      "resets": [
+        0,
+        0,
+        0
+      ],
+      "gates": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "stage": 1,
+      "strategy": "pursuit stage-2 controls",
+      "rank": 3,
+      "time": 24.983,
+      "resets": [
+        0,
+        0,
+        0
+      ],
+      "gates": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "stage": 2,
+      "strategy": "pursuit stage-2 controls",
+      "rank": 3,
+      "time": 22.608,
+      "resets": [
+        0,
+        0,
+        0
+      ],
+      "gates": [
+        16,
+        16,
+        16
+      ]
+    }
+  ]
+}
