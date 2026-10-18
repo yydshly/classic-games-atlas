@@ -1,0 +1,47 @@
+import {createGame,step,action,snapshot,start,pause,resume,LEVELS} from './engine.mjs';
+import {render} from './renderer.mjs';
+import {createCourtAudio} from './audio.mjs';
+import {STORAGE_KEY,parseProgress,recordWin} from './progress.mjs';
+const $=id=>document.getElementById(id),canvas=$('court'),ctx=canvas.getContext('2d');
+const KEY=STORAGE_KEY;let saved=parseProgress(null);
+try{saved=parseProgress(localStorage.getItem(KEY));}catch{$('storage-note').hidden=false;}
+let current=0,g=createGame(0),keys=new Set(),touch=new Map(),buttonKeys=new Map(),last=0,lastState='',lastScore='0,0',soundContext,modalWasPlaying=false;
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{$('storage-note').hidden=false;}}
+function clearInput(){keys.clear();touch.clear();buttonKeys.clear();}
+function controls(){const dirs=new Set([...touch.values(),...buttonKeys.values()]);return {x:Number(keys.has('arrowright')||keys.has('d')||dirs.has('right'))-Number(keys.has('arrowleft')||keys.has('a')||dirs.has('left')),y:Number(keys.has('arrowdown')||keys.has('s')||dirs.has('down'))-Number(keys.has('arrowup')||keys.has('w')||dirs.has('up')),shoot:keys.has('j')||keys.has(' ')||dirs.has('shoot')};}
+const audio=createCourtAudio();audio.setEnabled(saved.sound);let lastFeedback=0;
+function playSound(type='score'){audio.unlock();audio.play(type);}
+function select(i){clearInput();last=0;current=i;g=createGame(i);lastState='';lastScore='0,0';lastFeedback=0;audio.reset();drawMatches();update();}
+function drawMatches(){const matches=$('matches'),focused=[...matches.children].indexOf(document.activeElement);matches.replaceChildren(...LEVELS.map((l,i)=>{const b=document.createElement('button');b.className='match'+(i===current?' current':'');b.disabled=i>saved.unlocked;b.setAttribute('aria-label',`第${i+1}场 ${l.title||l.name||'晴湾对决'}${b.disabled?'，未解锁':''}`);b.innerHTML=`<b>${String(i+1).padStart(2,'0')}</b><span></span><small></small>`;b.querySelector('span').textContent=l.title||l.name||'晴湾对决';b.querySelector('small').textContent=i>saved.unlocked?'待解锁':saved.best[i]!=null?`最佳 +${saved.best[i]}`:'等待开场';b.onclick=()=>select(i);return b;}));if(focused>=0)matches.children[focused]?.focus({preventScroll:true});$('progress').textContent=`${saved.unlocked+1} / 8 场已解锁`;}
+function resumePlay(){last=0;resume(g);}
+function revealArena(){$('arena').scrollIntoView({block:'start',inline:'nearest',behavior:'auto'});}
+function togglePause(){clearInput();if(g.state==='playing')pause(g);else if(g.state==='paused')resumePlay();update();if(g.state==='playing'||g.state==='paused')revealArena();}
+function passOrSteal(){const owner=g.ball.owner;action(g,owner===g.players[g.controlled]?.id?'pass':'steal');}
+function update(){const l=LEVELS[current];$('home-score').textContent=g.score[0];$('away-score').textContent=g.score[1];const sec=Math.max(0,Math.ceil(g.time));$('clock').textContent=`${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;$('period').textContent=(g.overtime?'加时':'第 '+String(current+1).padStart(2,'0')+' 场')+' · 球权 '+Math.ceil(g.shotClock)+'s';$('rival').textContent=l.opponent||l.rival||l.title||'海堤来客';$('scene').textContent=`${String(current+1).padStart(2,'0')} / ${l.title||l.name||'晴湾篮场'}`;const commentary=g.message||g.events?.at(-1)||'传球，跑出空位。';if($('commentary').textContent!==commentary)$('commentary').textContent=commentary;$('charge').style.width=`${Math.max(0,Math.min(1,g.charge||0))*100}%`;$('pause').textContent=g.state==='paused'?'继续 P':'暂停 P';$('sound').textContent=saved.sound?'声音开':'声音关';$('sound').setAttribute('aria-pressed',String(saved.sound));
+for(const f of g.feedback||[])if(f.id>lastFeedback){audio.play(f.type);lastFeedback=f.id;}audio.update(g);lastScore=g.score.join(',');
+$('touch-pass').firstChild.textContent=g.ball.owner===g.controlled?'传球':'抢断';
+$('possession').textContent=g.ball.mode==='loose'?'争抢篮板':g.possession===0?'你方进攻 · 右侧篮筐':'防守回合 · 保护左侧';
+if(lastState===g.state)return;lastState=g.state;$('panel').hidden=g.state==='playing';
+if(g.state==='ready'){$('panel-kicker').textContent='V2 · 第一轮体验打磨';$('panel-title').innerHTML='和搭档，<br>再打一个好球。';$('panel-copy').textContent=l.brief||'向右侧篮筐进攻。靠近篮筐再出手，或把球传给更空的队友。';$('primary').textContent='开始比赛';}
+if(g.state==='paused'){$('panel-kicker').textContent='TAKE A BREATHER';$('panel-title').textContent='歇一会，球场还在。';$('panel-copy').textContent='比赛时间与动作已暂停。继续后重新按下方向或投篮键。';$('primary').textContent='继续比赛';}
+if(['won','lost'].includes(g.state)){clearInput();const won=g.state==='won';playSound('end');$('panel-kicker').textContent=won?'THAT WAS A GOOD GAME':'THE NEXT SHOT IS YOURS';$('panel-title').textContent=won?'好球，伙伴！':'再来，找到节奏。';$('panel-copy').textContent=`${g.score[0]} : ${g.score[1]}。${won?(current===7?'八场都打完了，这条海岸记住了你们。':'下一块球场，新的对手正在等你。'):'试着先靠近篮筐，再把球传到空位。'}`;$('primary').textContent=won&&current<7?'下一场':'再打一场';if(won){saved=recordWin(saved,current,g.score);persist();drawMatches();}}}
+$('primary').onclick=()=>{audio.unlock();if(g.state==='ready')start(g);else if(g.state==='paused')resumePlay();else if(g.state==='won'&&current<7){select(current+1);start(g);}else{select(current);start(g);}clearInput();canvas.focus({preventScroll:true});update();revealArena();};$('pause').onclick=togglePause;$('restart').onclick=()=>select(current);$('sound').onclick=()=>{saved.sound=!saved.sound;audio.setEnabled(saved.sound);persist();playSound('receive');update();};
+function openHelp(){if($('help-dialog').open)return;modalWasPlaying=g.state==='playing';if(modalWasPlaying)pause(g);clearInput();$('help-dialog').showModal();update();}function closeHelp(){$('help-dialog').close();if(modalWasPlaying&&!document.hidden)resumePlay();modalWasPlaying=false;clearInput();update();if(g.state==='playing')revealArena();} $('help').onclick=openHelp;$('help-close').onclick=closeHelp;$('help-done').onclick=closeHelp;$('help-dialog').addEventListener('cancel',e=>{e.preventDefault();closeHelp();});
+const handled=new Set(['arrowup','arrowdown','arrowleft','arrowright','w','a','s','d','j',' ','k','l','p','escape','r','?']);window.addEventListener('keydown',e=>{if($('help-dialog').open)return;const k=e.key.toLowerCase();if(!handled.has(k)||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target instanceof HTMLButtonElement&&(k===' '||k==='enter'))return;e.preventDefault();if(e.repeat)return;if(k==='p'||k==='escape')togglePause();else if(k==='r')select(current);else if(k==='?')openHelp();else if(k==='k')passOrSteal();else if(k==='l')action(g,'switch');else keys.add(k);});window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
+for(const b of document.querySelectorAll('[data-dir],#touch-shoot')){
+  const value=b.dataset.dir||'shoot';
+  b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);touch.set(e.pointerId,value);});
+  b.addEventListener('pointerup',e=>touch.delete(e.pointerId));
+  for(const type of ['pointercancel','lostpointercapture'])b.addEventListener(type,e=>{const wasShoot=touch.get(e.pointerId)==='shoot';touch.delete(e.pointerId);if(wasShoot&&!controls().shoot)action(g,'cancel-shot');});
+  // Button activation keys hold controls just like a pointer; suppress the native
+  // click so Enter repeats and Space release cannot trigger a second action.
+  b.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if((k!==' '&&k!=='enter')||e.ctrlKey||e.metaKey||e.altKey||$('help-dialog').open)return;e.preventDefault();if(!e.repeat)buttonKeys.set(k,value);});
+  b.addEventListener('keyup',e=>{const k=e.key.toLowerCase();if(k!==' '&&k!=='enter')return;e.preventDefault();if(buttonKeys.get(k)===value)buttonKeys.delete(k);});
+  b.addEventListener('blur',()=>{let wasShoot=false;for(const [key,held] of buttonKeys)if(held===value){wasShoot ||= held==='shoot';buttonKeys.delete(key);}if(wasShoot&&!controls().shoot)action(g,'cancel-shot');});
+}
+$('touch-pass').onclick=passOrSteal;$('touch-switch').onclick=()=>action(g,'switch');
+function autoPause(){modalWasPlaying=false;clearInput();if(g.state==='playing')pause(g);update();}window.addEventListener('blur',autoPause);document.addEventListener('visibilitychange',()=>{if(document.hidden)autoPause();});
+// Diagnostics return detached copies. No write API, fixture controls, or time overrides.
+Object.defineProperty(window,'courtSnapshot',{value:()=>snapshot(g),writable:false});
+function frame(t){const dt=last?Math.min(.1,(t-last)/1000):0;last=t;step(g,dt,controls());render(ctx,g,{width:1200,height:680,time:t,reducedMotion,cssWidth:canvas.clientWidth});update();requestAnimationFrame(frame);}drawMatches();update();requestAnimationFrame(frame);

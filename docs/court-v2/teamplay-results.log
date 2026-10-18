@@ -1,0 +1,30 @@
+PASS the eight level records and full shared shooting formula remain unchanged
+PASS shot feedback consumes no RNG and changes neither release result nor stats
+PASS unique pressure and off-ball denial cover all owners, levels and tie distances
+PASS defensive assignments mirror across teams including the exact-distance tie
+PASS in-flight passes retain one receiver guard and one passer guard
+PASS off-ball support moves into the opposite wing rather than crowding the owner
+PASS successful user pass transfers control and launches a visible time-bounded cut
+PASS both AI teams can return the ball through the ordinary interceptable pass path
+PASS an expiring shot clock keeps the existing emergency shot ahead of a return pass
+PASS intercepted pass emits the defender event and cancels the planned cut
+PASS out-of-range steal gives failure feedback with no free possession or points
+PASS successful steal uses the existing windup and emits the correct actor
+PASS contact feedback preserves the exact pre-existing soft collision displacement
+PASS landing, score and celebration identify the shooter without extra score writes
+PASS both teams can collect real loose rebounds and receive the same clock reset
+PASS miss event precedes collectable physical rebound, without awarding points
+PASS feedback, cut timers and visual state freeze exactly while paused
+PASS feedback event IDs are monotonic, bounded and expire solely on fixed ticks
+PASS presentation state and feedback retention cannot alter gameplay or RNG
+  deterministic match 1: 16-2 won; passes 10/8; rebounds 3/2; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 2: 8-4 won; passes 12/12; rebounds 2/2; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 3: 10-2 won; passes 13/14; rebounds 4/0; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 4: 10-6 won; passes 10/15; rebounds 3/2; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 5: 14-4 won; passes 16/9; rebounds 2/2; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 6: 10-6 won; passes 14/11; rebounds 2/5; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 7: 14-2 won; passes 11/9; rebounds 3/2; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+  deterministic match 8: 12-4 won; passes 16/6; rebounds 4/5; events blocked,celebrate,cut,intercept,land,miss,pass,rebound,receive,score,shot,steal-fail,steal-success
+PASS all eight matches replay identically, end normally and account every point to a make
+
+20 focused engine checks passed. Geometry fixtures and scripted replays are not human-play or browser acceptance.
