@@ -13,15 +13,24 @@
   "v2": [
     {
       "slug": "court",
-      "status": "candidate_unaccepted",
-      "label": "v2 首轮候选，未验收",
+      "status": "paused_unaccepted",
+      "label": "v2 阶段暂停，未完成品质验收",
       "play_url": "./versions/v2/games/court/",
-      "release_commit": "aa5e322705733fd10cdbc5dba476257c06a5d9f2",
       "details_url": "./docs/court-v2/README.md",
-      "validation_boundary": "以上为本轮代码实现说明，尚未通过完整体验验收。连续实玩、胜负与加时、真实触屏、声音听测和手感仍待验证；模型及离屏检查不等于真人体验或美术达标。"
+      "validation_boundary": "本阶段开发暂停，未完成品质验收；保留 v2 入口供回看。以上为本轮代码实现说明，尚未通过完整体验验收。连续实玩、胜负与加时、真实触屏、声音听测和手感仍待验证；模型及离屏检查不等于真人体验或美术达标。",
+      "release_commit": "aa5e322705733fd10cdbc5dba476257c06a5d9f2"
+    },
+    {
+      "slug": "repair",
+      "status": "candidate_unaccepted",
+      "label": "v2 首轮候选，未完成验收",
+      "play_url": "./versions/v2/games/repair/",
+      "details_url": "./docs/repair-v2-qa/README.md",
+      "validation_boundary": "首轮候选，未完成验收。桌面 Chrome 宽屏开局已看到角色图集和诊断/机械动作，画布 D 工位命中、右侧操作坞同屏。首日完整经营、窄屏、后续建造/派驻及暂停恢复仍待复验；模型及离屏检查不等于真实手机或体验验收。人物为预渲染2.5D，全店仍非全3D；后六天经营深度和耐玩性未扩大验证。",
+      "candidate_commit": "aa7e64378dc1652ee92a6051512a7678857d42dc"
     }
   ],
   "other_v2_status": "not_started",
-  "note": "晴湾篮场 v2 首轮候选已提供独立入口，尚未验收；v1 与冻结首页继续保留。其余 v2 尚未开始。",
-  "current_runtime_scope": "默认保留的 v1 入口；court 另有独立 v2 首轮候选。"
+  "note": "晴湾篮场 v2 阶段暂停，未完成品质验收，保留可玩入口；雨街修理所 v2 为首轮候选，未完成验收。全部 v1 与冻结首页继续保留，其余 v2 尚未开始。",
+  "current_runtime_scope": "默认保留全部 v1；court 的 v2 阶段暂停，repair 另有独立 v2 首轮候选。"
 }

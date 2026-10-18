@@ -2885,9 +2885,9 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "candidate_unaccepted",
+        "status": "paused_unaccepted",
         "url": "./versions/v2/games/court/",
-        "label": "v2 首轮候选，未验收",
+        "label": "v2 阶段暂停，未完成品质验收",
         "release_commit": "aa5e322705733fd10cdbc5dba476257c06a5d9f2",
         "changes": [
           "保留海滨场景，改为更近的球场构图；放大原创球员，区分双方配色、控制对象和持球者。",
@@ -2897,7 +2897,7 @@
           "v2 使用独立存档，不读取、迁移或覆盖 v1 进度。"
         ],
         "preserved": "保留 v1 及其入口。沿用 8 场配置、首场75秒、20秒球权、2/3分、加时与解锁规则；投篮概率公式和移动速度未上调。",
-        "validation_boundary": "以上为本轮代码实现说明，尚未通过完整体验验收。连续实玩、胜负与加时、真实触屏、声音听测和手感仍待验证；模型及离屏检查不等于真人体验或美术达标。",
+        "validation_boundary": "本阶段开发暂停，未完成品质验收；保留 v2 入口供回看。以上为本轮代码实现说明，尚未通过完整体验验收。连续实玩、胜负与加时、真实触屏、声音听测和手感仍待验证；模型及离屏检查不等于真人体验或美术达标。",
         "details_url": "./docs/court-v2/README.md"
       },
       "current_screenshot": {
@@ -2972,8 +2972,20 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "not_started",
-        "url": null
+        "status": "candidate_unaccepted",
+        "url": "./versions/v2/games/repair/",
+        "label": "v2 首轮候选，未完成验收",
+        "candidate_commit": "aa7e64378dc1652ee92a6051512a7678857d42dc",
+        "changes": [
+          "新增原创 Blender 离线预渲染角色图集：机器人与技师采用统一材质，区分步行和工作姿态；全店背景仍沿用 v1 平面插画。",
+          "诊断扫线、机械工具、电路火花按实际维修工序触发；排队序号、耐心与付款金额对应真实经营状态。",
+          "新增选中工位操作坞，展示真实工位近景、进度、排队及升级/保养/建造；窄屏操作坞贴近 A–F 按钮，技师调度可折叠。",
+          "调整工位与人物的前后遮挡和脚底定位；近景与全店共用营业时钟，暂停及减弱动态偏好会停止对应动画。",
+          "v2 使用独立存档，不读取、迁移或覆盖 v1 解锁与营业记录。"
+        ],
+        "preserved": "保留 v1 入口、房间和八天规则。engine.mjs / levels.mjs 与 v1 基线逐字节一致，费用、耐心、工资、排队路线和关卡边界未修改；本轮没有新增音效。",
+        "validation_boundary": "首轮候选，未完成验收。桌面 Chrome 宽屏开局已看到角色图集和诊断/机械动作，画布 D 工位命中、右侧操作坞同屏。首日完整经营、窄屏、后续建造/派驻及暂停恢复仍待复验；模型及离屏检查不等于真实手机或体验验收。人物为预渲染2.5D，全店仍非全3D；后六天经营深度和耐玩性未扩大验证。",
+        "details_url": "./docs/repair-v2-qa/README.md"
       },
       "current_screenshot": {
         "image": "./assets/current-preview/repair-desktop.webp",
