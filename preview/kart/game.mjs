@@ -159,14 +159,31 @@ function load(id) {
   game = createGame(id - 1); progress.last = id; settled = false; wasRestored = false; lastState = ''; lastCountdown = -1;
   remember(); refresh(); $('#primary-action').focus({ preventScroll: true });
 }
+function focusDrivingArea() {
+  canvas.focus({ preventScroll: true });
+  // Scroll only on an explicit start/resume, never during HUD updates. Keep the
+  // HUD and touch controls together when they fit; otherwise favor the circuit.
+  const viewportTop = window.visualViewport?.offsetTop || 0;
+  const viewportHeight = window.visualViewport?.height || window.innerHeight;
+  const circuit = canvas.getBoundingClientRect();
+  const heading = $('.race-heading').getBoundingClientRect();
+  const controls = $('.touch-controls').getBoundingClientRect();
+  let top = circuit.top, bottom = circuit.bottom;
+  if (controls.bottom - heading.top <= viewportHeight) { top = heading.top; bottom = controls.bottom; }
+  else if (circuit.bottom - heading.top <= viewportHeight) top = heading.top;
+  if (typeof window.scrollBy === 'function' && bottom - top <= viewportHeight) {
+    const delta = top < viewportTop ? top - viewportTop : Math.max(0, bottom - viewportTop - viewportHeight);
+    if (delta) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
+  } else canvas.scrollIntoView?.({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+}
 function begin() {
   if (game.state !== 'ready' || dialog) return;
   if (!progress.tutorialSeen) { helpStarts = true; openHelp(); return; }
-  clearInputs(); resetClock(); wasRestored = false; start(game); remember(); refresh(); canvas.focus({ preventScroll: true });
+  clearInputs(); resetClock(); wasRestored = false; start(game); remember(); refresh(); focusDrivingArea();
 }
 function continueRace() {
   if (dialog || game.state !== 'paused') return;
-  clearInputs(); resetClock(); wasRestored = false; resume(game); remember(); refresh(); canvas.focus({ preventScroll: true });
+  clearInputs(); resetClock(); wasRestored = false; resume(game); remember(); refresh(); focusDrivingArea();
 }
 function suspend() {
   clearInputs(); resetClock();
