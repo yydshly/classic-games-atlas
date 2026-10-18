@@ -1,0 +1,1310 @@
+{
+  "kind": "Offscreen renderer preview and actual-engine simulation",
+  "browserVerified": false,
+  "caveat": "No browser was launched and no real keyboard, mouse, or touch events were exercised. Controls were supplied directly to the actual engine API.",
+  "renderer": "games/court/renderer.mjs",
+  "engine": "games/court/engine.mjs",
+  "dimensions": [
+    1200,
+    800
+  ],
+  "framesPerSecond": 30,
+  "seconds": 8,
+  "inputSchedule": [
+    {
+      "from": 0,
+      "to": 1.2,
+      "input": {
+        "x": 1,
+        "y": -0.35
+      },
+      "purpose": "Drive into open space"
+    },
+    {
+      "at": 1.2,
+      "action": "pass",
+      "purpose": "Pass to actual AI-controlled teammate"
+    },
+    {
+      "from": 1.2,
+      "to": 2,
+      "input": {
+        "x": 1,
+        "y": 0.25
+      },
+      "purpose": "Move while pass resolves"
+    },
+    {
+      "from": 2,
+      "to": 2.5333333333,
+      "input": {
+        "x": 0,
+        "y": 0,
+        "shoot": true
+      },
+      "purpose": "Hold shot charge for 32 simulation ticks"
+    },
+    {
+      "from": 2.5333333333,
+      "to": 3.5,
+      "input": {
+        "x": 1,
+        "y": -0.4,
+        "shoot": false
+      },
+      "purpose": "Release shot and pursue rebound"
+    },
+    {
+      "at": 4,
+      "action": "switch",
+      "purpose": "Change controlled teammate"
+    },
+    {
+      "from": 3.5,
+      "to": 4,
+      "input": {
+        "x": -1,
+        "y": 0.3
+      },
+      "purpose": "Recover defensive position"
+    },
+    {
+      "from": 4,
+      "to": 4.5333333333,
+      "input": {
+        "x": 0,
+        "y": 0,
+        "shoot": true
+      },
+      "purpose": "Charge a shot after switching to the current ball handler"
+    },
+    {
+      "from": 4.5333333333,
+      "to": 5.3,
+      "input": {
+        "x": 1,
+        "y": -0.2,
+        "shoot": false
+      },
+      "purpose": "Release and follow the shot"
+    },
+    {
+      "at": 5,
+      "action": "steal",
+      "purpose": "Attempt steal if game state permits"
+    },
+    {
+      "from": 5.3,
+      "to": 8,
+      "input": {
+        "x": 0.8,
+        "y": -0.15
+      },
+      "purpose": "Return toward attacking basket"
+    }
+  ],
+  "environments": [
+    {
+      "levelIndex": 0,
+      "levelId": "first-light",
+      "filename": "renderer-daylight.png",
+      "simulatedSeconds": 1.5999999999999992,
+      "players": 4,
+      "tick": 96,
+      "score": [
+        0,
+        0
+      ],
+      "ballMode": "held",
+      "actions": [
+        {
+          "second": 1.2,
+          "action": "pass",
+          "before": {
+            "owner": 0,
+            "controlled": 0,
+            "mode": "held"
+          },
+          "after": {
+            "owner": null,
+            "controlled": 0,
+            "mode": "pass"
+          }
+        }
+      ],
+      "snapshot": {
+        "state": "playing",
+        "level": {
+          "id": "first-light",
+          "title": "晨光开场",
+          "name": "晨光开场",
+          "theme": "sunrise",
+          "opponent": "早起小队",
+          "brief": "寻找空位，多传一次球，拿下你的首场街头篮球赛。",
+          "tip": "靠近右侧篮筐，两分上篮更稳。",
+          "duration": 75,
+          "aiSpeed": 125,
+          "defense": 0.36,
+          "aggression": 0.22,
+          "accuracy": 0.49,
+          "passing": 0.3,
+          "spacing": 130,
+          "range": 155,
+          "seed": 7139,
+          "color": "#ffb767",
+          "index": 0
+        },
+        "levelIndex": 0,
+        "time": 73.40000000000009,
+        "elapsed": 1.5999999999999992,
+        "tick": 96,
+        "score": [
+          0,
+          0
+        ],
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 569.1107625463466,
+            "y": 217.84524162549963,
+            "vx": 179.4763625268864,
+            "vy": 44.8690906317216,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0,
+            "hold": 0,
+            "faceX": 0.9701425001453319,
+            "faceY": 0.24253562503633297,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 576.9106595565872,
+            "y": 377.11173571909296,
+            "vx": -177.98898044316937,
+            "vy": 1.980616268002102,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.07,
+            "hold": 0,
+            "faceX": -0.999938092377356,
+            "faceY": 0.011127057685405067,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 501.49101054682023,
+            "y": 231.09789976611142,
+            "vx": -102.4984404586852,
+            "vy": -52.144699668685085,
+            "hasBall": true,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0.43333333333333207,
+            "think": 0.3870446653912465,
+            "hold": 0.35,
+            "faceX": -0.8912907865972626,
+            "faceY": -0.4534321710320442,
+            "windup": -0.009999999999999964,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 620.3764765692843,
+            "y": 386.37249424344304,
+            "vx": -114.50521327350444,
+            "vy": 10.656272011790259,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.21000000000000002,
+            "hold": 0,
+            "faceX": -0.9956975067261256,
+            "faceY": 0.09266323488513269,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          }
+        ],
+        "ball": {
+          "x": 487.230357961264,
+          "y": 223.8429850295987,
+          "z": 20.4372894770994,
+          "vx": 0,
+          "vy": 0,
+          "owner": 2,
+          "mode": "held",
+          "t": 0,
+          "duration": 0,
+          "lastTeam": 1
+        },
+        "events": [
+          "开球！向右侧篮筐进攻。",
+          "传球！跑向空位。",
+          "对手截断了传球！"
+        ],
+        "message": "对手截断了传球！",
+        "messageT": 1.950000000000001,
+        "charge": 0,
+        "charging": false,
+        "shotQuality": 1,
+        "shotChance": 0.04,
+        "shotClock": 19.633333333333354,
+        "possession": 1,
+        "overtime": 0,
+        "rng": 4088336392,
+        "accumulator": 0,
+        "lastShoot": false,
+        "pendingControl": null,
+        "resetT": 0,
+        "stats": {
+          "shots": [
+            0,
+            0
+          ],
+          "makes": [
+            0,
+            0
+          ],
+          "steals": [
+            0,
+            1
+          ],
+          "rebounds": [
+            0,
+            0
+          ],
+          "passes": [
+            1,
+            0
+          ],
+          "turnovers": [
+            1,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "levelIndex": 3,
+      "levelId": "long-distance",
+      "filename": "golden.png",
+      "simulatedSeconds": 1.5999999999999992,
+      "players": 4,
+      "tick": 96,
+      "score": [
+        0,
+        0
+      ],
+      "ballMode": "held",
+      "actions": [
+        {
+          "second": 1.2,
+          "action": "pass",
+          "before": {
+            "owner": 0,
+            "controlled": 0,
+            "mode": "held"
+          },
+          "after": {
+            "owner": null,
+            "controlled": 0,
+            "mode": "pass"
+          }
+        }
+      ],
+      "snapshot": {
+        "state": "playing",
+        "level": {
+          "id": "long-distance",
+          "title": "远程火力",
+          "name": "远程火力",
+          "theme": "violet",
+          "opponent": "弧顶灯塔",
+          "brief": "对手偏爱三分球，及时上前干扰投篮。",
+          "tip": "在三分线外出手，投中可得三分。",
+          "duration": 80,
+          "aiSpeed": 150,
+          "defense": 0.59,
+          "aggression": 0.39,
+          "accuracy": 0.61,
+          "passing": 0.49,
+          "spacing": 190,
+          "range": 285,
+          "seed": 47933,
+          "color": "#b59bff",
+          "index": 3
+        },
+        "levelIndex": 3,
+        "time": 78.40000000000009,
+        "elapsed": 1.5999999999999992,
+        "tick": 96,
+        "score": [
+          0,
+          0
+        ],
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 561.9758910534218,
+            "y": 219.40008683385508,
+            "vx": 179.4763625268864,
+            "vy": 44.8690906317216,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0,
+            "hold": 0,
+            "faceX": 0.9701425001453319,
+            "faceY": 0.24253562503633297,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 622.8394606721939,
+            "y": 463.36557610417185,
+            "vx": -122.02684602701156,
+            "vy": -129.58953988922107,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.07,
+            "hold": 0,
+            "faceX": -0.6855440788034357,
+            "faceY": -0.7280311229731521,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 541.1054575634219,
+            "y": 259.0674818054741,
+            "vx": -55.06948346010734,
+            "vy": -126.53597113642017,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.14,
+            "hold": 0,
+            "faceX": -0.39905422797179235,
+            "faceY": -0.9169273270755085,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 600.3287336949518,
+            "y": 403.5999596110264,
+            "vx": -131.83086934461403,
+            "vy": 40.79977803669157,
+            "hasBall": true,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.16000000000000003,
+            "hold": 0.05,
+            "faceX": -0.9552961546711162,
+            "faceY": 0.29565056548327223,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          }
+        ],
+        "ball": {
+          "x": 585.0439952202139,
+          "y": 408.33036865875874,
+          "z": 20.4372894770994,
+          "vx": 0,
+          "vy": 0,
+          "owner": 3,
+          "mode": "held",
+          "t": 0,
+          "duration": 0,
+          "lastTeam": 1
+        },
+        "events": [
+          "开球！向右侧篮筐进攻。",
+          "传球！跑向空位。",
+          "对手截断了传球！"
+        ],
+        "message": "对手截断了传球！",
+        "messageT": 2.25,
+        "charge": 0,
+        "charging": false,
+        "shotQuality": 1,
+        "shotChance": 0.04,
+        "shotClock": 19.933333333333337,
+        "possession": 1,
+        "overtime": 0,
+        "rng": 1808566842,
+        "accumulator": 0,
+        "lastShoot": false,
+        "pendingControl": null,
+        "resetT": 0,
+        "stats": {
+          "shots": [
+            0,
+            0
+          ],
+          "makes": [
+            0,
+            0
+          ],
+          "steals": [
+            0,
+            1
+          ],
+          "rebounds": [
+            0,
+            0
+          ],
+          "passes": [
+            1,
+            0
+          ],
+          "turnovers": [
+            1,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "levelIndex": 6,
+      "levelId": "night-shift",
+      "filename": "rain.png",
+      "simulatedSeconds": 1.5999999999999992,
+      "players": 4,
+      "tick": 96,
+      "score": [
+        0,
+        0
+      ],
+      "ballMode": "held",
+      "actions": [
+        {
+          "second": 1.2,
+          "action": "pass",
+          "before": {
+            "owner": 0,
+            "controlled": 0,
+            "mode": "held"
+          },
+          "after": {
+            "owner": null,
+            "controlled": 0,
+            "mode": "pass"
+          }
+        }
+      ],
+      "snapshot": {
+        "state": "playing",
+        "level": {
+          "id": "night-shift",
+          "title": "夜场交锋",
+          "name": "夜场交锋",
+          "theme": "night",
+          "opponent": "夜行球手",
+          "brief": "快速移动、贴身防守与均衡投篮，考验你的全面技术。",
+          "tip": "在蓄力条的最佳区域松开投篮键。",
+          "duration": 90,
+          "aiSpeed": 173,
+          "defense": 0.81,
+          "aggression": 0.66,
+          "accuracy": 0.7,
+          "passing": 0.71,
+          "spacing": 172,
+          "range": 240,
+          "seed": 79193,
+          "color": "#ed8fcc",
+          "index": 6
+        },
+        "levelIndex": 6,
+        "time": 88.40000000000009,
+        "elapsed": 1.5999999999999992,
+        "tick": 96,
+        "score": [
+          0,
+          0
+        ],
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 560.510229142514,
+            "y": 219.99549647756604,
+            "vx": 179.4763625268864,
+            "vy": 44.8690906317216,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0,
+            "hold": 0,
+            "faceX": 0.9701425001453319,
+            "faceY": 0.24253562503633297,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 624.6197691449066,
+            "y": 441.8635726502477,
+            "vx": -135.17740089981532,
+            "vy": -115.80617550878108,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.07,
+            "hold": 0,
+            "faceX": -0.7594236005607602,
+            "faceY": -0.6505964916223657,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 539.379150648191,
+            "y": 251.35037656387334,
+            "vx": -73.57255118907494,
+            "vy": -141.1346354072272,
+            "hasBall": false,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.14,
+            "hold": 0,
+            "faceX": -0.4622552851789076,
+            "faceY": -0.8867468924806936,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 597.117285467381,
+            "y": 390.75205608564494,
+            "vx": -152.05576763996788,
+            "vy": 47.0207308260951,
+            "hasBall": true,
+            "action": "",
+            "actionT": 0,
+            "cooldown": 0,
+            "think": 0.1266666666666667,
+            "hold": 0.08333333333333333,
+            "faceX": -0.9553642098515198,
+            "faceY": 0.2954305781986372,
+            "windup": 0,
+            "intent": "",
+            "shotQuality": 0
+          }
+        ],
+        "ball": {
+          "x": 581.8314581097567,
+          "y": 395.47894533682313,
+          "z": 20.4372894770994,
+          "vx": 0,
+          "vy": 0,
+          "owner": 3,
+          "mode": "held",
+          "t": 0,
+          "duration": 0,
+          "lastTeam": 1
+        },
+        "events": [
+          "开球！向右侧篮筐进攻。",
+          "传球！跑向空位。",
+          "对手截断了传球！"
+        ],
+        "message": "对手截断了传球！",
+        "messageT": 2.216666666666667,
+        "charge": 0,
+        "charging": false,
+        "shotQuality": 1,
+        "shotChance": 0.04,
+        "shotClock": 19.900000000000006,
+        "possession": 1,
+        "overtime": 0,
+        "rng": 592244762,
+        "accumulator": 0,
+        "lastShoot": false,
+        "pendingControl": null,
+        "resetT": 0,
+        "stats": {
+          "shots": [
+            0,
+            0
+          ],
+          "makes": [
+            0,
+            0
+          ],
+          "steals": [
+            0,
+            1
+          ],
+          "rebounds": [
+            0,
+            0
+          ],
+          "passes": [
+            1,
+            0
+          ],
+          "turnovers": [
+            1,
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "video": {
+    "produced": true,
+    "filename": "engine-simulation-8s.mp4",
+    "frames": 240,
+    "seconds": 8,
+    "codec": "H.264 / libx264",
+    "actualEngineTicks": 480,
+    "actualPlayerCount": 4,
+    "ballModesObserved": [
+      "held",
+      "pass",
+      "shot",
+      "loose",
+      "scored"
+    ],
+    "actions": [
+      {
+        "second": 1.2,
+        "action": "pass",
+        "before": {
+          "owner": 0,
+          "controlled": 0,
+          "mode": "held"
+        },
+        "after": {
+          "owner": null,
+          "controlled": 0,
+          "mode": "pass"
+        }
+      },
+      {
+        "second": 4,
+        "action": "switch",
+        "before": {
+          "owner": 1,
+          "controlled": 0,
+          "mode": "held"
+        },
+        "after": {
+          "owner": 1,
+          "controlled": 1,
+          "mode": "held"
+        }
+      },
+      {
+        "second": 5,
+        "action": "steal",
+        "before": {
+          "owner": null,
+          "controlled": 1,
+          "mode": "shot"
+        },
+        "after": {
+          "owner": null,
+          "controlled": 1,
+          "mode": "shot"
+        }
+      }
+    ],
+    "samples": [
+      {
+        "second": 1,
+        "tick": 60,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 479.71552962957065,
+          "y": 213.59956462964993,
+          "z": 20.999892272057735,
+          "mode": "held",
+          "owner": 0
+        },
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 464.61379592771436,
+            "y": 218.88517142529963,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 586.9184689621025,
+            "y": 410.00000000123185,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 518.0660537199133,
+            "y": 233.89316103448826,
+            "action": "steal"
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 637.8546373545997,
+            "y": 389.2667958143576,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 2,
+        "tick": 120,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 440.618965345991,
+          "y": 223.74837347611944,
+          "z": 10.097364402194168,
+          "mode": "held",
+          "owner": 2
+        },
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 640.9013075571021,
+            "y": 235.7928778781885,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 529.8336319352412,
+            "y": 365.7318951523835,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 456.5926658725732,
+            "y": 224.66537483220762,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 574.5426836739496,
+            "y": 390.2741815653059,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 3,
+        "tick": 180,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 337.2207642968695,
+          "y": 185.75833564186942,
+          "z": 20.99903046117995,
+          "mode": "held",
+          "owner": 2
+        },
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 721.0597952035283,
+            "y": 203.72948281961737,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 387.70119401735474,
+            "y": 260.0350026488278,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 350.0551351311134,
+            "y": 195.31233612800665,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 459.77229209058095,
+            "y": 397.4830306696855,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 4,
+        "tick": 240,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 519.7011066274733,
+          "y": 188.89918872844893,
+          "z": 10.194721176158456,
+          "mode": "held",
+          "owner": 1
+        },
+        "controlled": 0,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 718.344957727457,
+            "y": 195.95552467174923,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 504.69296732770744,
+            "y": 194.4449758465072,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 448.53252611038926,
+            "y": 211.37222463536494,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 482.2532631674688,
+            "y": 299.09511973660483,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 5,
+        "tick": 300,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 677.4299571216367,
+          "y": 221.18584348901675,
+          "z": 243.18885677393772,
+          "mode": "shot",
+          "owner": null
+        },
+        "controlled": 1,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 771.8973077800713,
+            "y": 265.42237916850183,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 599.8597200416343,
+            "y": 166.47784910145523,
+            "action": "shoot"
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 562.3971812206448,
+            "y": 219.3324309388532,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 584.2773432601547,
+            "y": 258.06399240254893,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 6,
+        "tick": 360,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 912.0125896287775,
+          "y": 299.39963066018794,
+          "z": 40.71111111111111,
+          "mode": "loose",
+          "owner": null
+        },
+        "controlled": 1,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 913.9611183742529,
+            "y": 288.30357949876617,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 757.8819475424814,
+            "y": 136.16840360128563,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 686.2491303619944,
+            "y": 233.12292705420646,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 708.1373544916129,
+            "y": 274.2982682640071,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 7,
+        "tick": 420,
+        "score": [
+          0,
+          0
+        ],
+        "ball": {
+          "x": 855.0976536724997,
+          "y": 190.27242893063817,
+          "z": 20.994721744388116,
+          "mode": "held",
+          "owner": 0
+        },
+        "controlled": 1,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 860.4965675719525,
+            "y": 205.3340267444923,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 905.8819475424832,
+            "y": 108.41840360128529,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 807.0276477679822,
+            "y": 254.1199753965271,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 833.376424071572,
+            "y": 275.6081579000192,
+            "action": ""
+          }
+        ]
+      },
+      {
+        "second": 8,
+        "tick": 480,
+        "score": [
+          2,
+          0
+        ],
+        "ball": {
+          "x": 930,
+          "y": 280,
+          "z": 4,
+          "mode": "scored",
+          "owner": null
+        },
+        "controlled": 1,
+        "players": [
+          {
+            "id": 0,
+            "team": 0,
+            "x": 901.1275489831453,
+            "y": 242.21219949843297,
+            "action": ""
+          },
+          {
+            "id": 1,
+            "team": 0,
+            "x": 970,
+            "y": 81.13090360128496,
+            "action": ""
+          },
+          {
+            "id": 2,
+            "team": 1,
+            "x": 889.5437419654362,
+            "y": 274.178047132689,
+            "action": ""
+          },
+          {
+            "id": 3,
+            "team": 1,
+            "x": 944.185520562739,
+            "y": 304.51586137057785,
+            "action": ""
+          }
+        ]
+      }
+    ],
+    "finalSnapshot": {
+      "state": "playing",
+      "level": {
+        "id": "first-light",
+        "title": "晨光开场",
+        "name": "晨光开场",
+        "theme": "sunrise",
+        "opponent": "早起小队",
+        "brief": "寻找空位，多传一次球，拿下你的首场街头篮球赛。",
+        "tip": "靠近右侧篮筐，两分上篮更稳。",
+        "duration": 75,
+        "aiSpeed": 125,
+        "defense": 0.36,
+        "aggression": 0.22,
+        "accuracy": 0.49,
+        "passing": 0.3,
+        "spacing": 130,
+        "range": 155,
+        "seed": 7139,
+        "color": "#ffb767",
+        "index": 0
+      },
+      "levelIndex": 0,
+      "time": 67.01666666666712,
+      "elapsed": 7.999999999999977,
+      "tick": 480,
+      "score": [
+        2,
+        0
+      ],
+      "controlled": 1,
+      "players": [
+        {
+          "id": 0,
+          "team": 0,
+          "x": 901.1275489831453,
+          "y": 242.21219949843297,
+          "vx": 0,
+          "vy": 0,
+          "hasBall": false,
+          "action": "",
+          "actionT": 0,
+          "cooldown": 0,
+          "think": 0.3125812988914549,
+          "hold": 1.0666666666666678,
+          "faceX": -0.4540232597000311,
+          "faceY": 0.8909898313961602,
+          "windup": 0,
+          "intent": "",
+          "shotQuality": 0.9968126488935488
+        },
+        {
+          "id": 1,
+          "team": 0,
+          "x": 970,
+          "y": 81.13090360128496,
+          "vx": 148,
+          "vy": -27.75,
+          "hasBall": false,
+          "action": "",
+          "actionT": 0,
+          "cooldown": 0,
+          "think": 0.25821562990235786,
+          "hold": 0,
+          "faceX": 0.8,
+          "faceY": -0.15,
+          "windup": 0,
+          "intent": "",
+          "shotQuality": 0.9993746091307074
+        },
+        {
+          "id": 2,
+          "team": 1,
+          "x": 889.5437419654362,
+          "y": 274.178047132689,
+          "vx": 115.81864628677006,
+          "vy": -47.0217095850421,
+          "hasBall": false,
+          "action": "",
+          "actionT": 0,
+          "cooldown": 0,
+          "think": 0.33341987293213604,
+          "hold": 0,
+          "faceX": 0.9265491702941605,
+          "faceY": -0.3761736766803368,
+          "windup": -0.009999999999999964,
+          "intent": "",
+          "shotQuality": 0
+        },
+        {
+          "id": 3,
+          "team": 1,
+          "x": 944.185520562739,
+          "y": 304.51586137057785,
+          "vx": 104.18487200951576,
+          "vy": 69.0688963598002,
+          "hasBall": false,
+          "action": "",
+          "actionT": 0,
+          "cooldown": 0,
+          "think": 0.21000000000000002,
+          "hold": 0,
+          "faceX": 0.8334789760761261,
+          "faceY": 0.5525511708784017,
+          "windup": 0,
+          "intent": "",
+          "shotQuality": 0
+        }
+      ],
+      "ball": {
+        "x": 930,
+        "y": 280,
+        "z": 4,
+        "owner": null,
+        "mode": "scored",
+        "lastTeam": 0,
+        "shooter": 0,
+        "points": 2,
+        "chance": 0.7690781944874234,
+        "made": true,
+        "sx": 860.4965675719525,
+        "sy": 205.3340267444923,
+        "tx": 930,
+        "ty": 280,
+        "t": 0.6333333333333336,
+        "duration": 0.62,
+        "peak": 105,
+        "vx": 0,
+        "vy": 0
+      },
+      "events": [
+        "开球！向右侧篮筐进攻。",
+        "传球！跑向空位。",
+        "对手截断了传球！",
+        "对手传球",
+        "截断传球！",
+        "你方: 三分出手 · 受到干扰",
+        "投篮弹框！快抢篮板。",
+        "抢到篮板！",
+        "你方: 上篮 · 受到干扰",
+        "你方得分 +2!"
+      ],
+      "message": "你方得分 +2!",
+      "messageT": 2.283333333333333,
+      "charge": 0,
+      "charging": false,
+      "shotQuality": 0.9968126488935488,
+      "shotChance": 0.7690781944874234,
+      "shotClock": 18.933333333333394,
+      "possession": 0,
+      "overtime": 0,
+      "rng": 1996690613,
+      "accumulator": 0,
+      "lastShoot": false,
+      "pendingControl": null,
+      "resetT": 0.7833333333333333,
+      "stats": {
+        "shots": [
+          2,
+          0
+        ],
+        "makes": [
+          1,
+          0
+        ],
+        "steals": [
+          1,
+          1
+        ],
+        "rebounds": [
+          1,
+          0
+        ],
+        "passes": [
+          1,
+          1
+        ],
+        "turnovers": [
+          1,
+          1
+        ]
+      },
+      "resetTeam": 1
+    }
+  }
+}

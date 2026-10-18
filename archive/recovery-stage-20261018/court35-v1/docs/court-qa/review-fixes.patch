@@ -1,0 +1,118 @@
+--- v0/games/court/engine.mjs
++++ v1/games/court/engine.mjs
+@@ -245,7 +245,9 @@
+   }
+   for (const p of s.players) { p.x = clamp(p.x, 30, 970); p.y = clamp(p.y, 30, 530); }
+   updateBall(s, dt);
+-  if (s.ball.mode === 'held' || s.ball.mode === 'pass') {
++  // A fumbled pass is still the same possession: chasing a loose pass must not
++  // freeze its clock. A shot that touched the rim waits for rebound control.
++  if (s.ball.mode === 'held' || s.ball.mode === 'pass' || (s.ball.mode === 'loose' && !s.ball.rebound)) {
+     s.shotClock = Math.max(0, s.shotClock - dt);
+     if (s.shotClock <= 0 && s.time > 0) { s.stats.turnovers[s.possession]++; resetPossession(s, 1 - s.possession); cue(s, '20秒进攻违例，交换球权。'); }
+   }
+--- v0/scripts/test_court.mjs
++++ v1/scripts/test_court.mjs
+@@ -22,38 +22,31 @@
+   s.players[2].x = 180; s.players[2].y = 80; s.players[3].x = 180; s.players[3].y = 480;
+   return s;
+ }
++const directionKey = delta => Math.abs(delta) < 5 ? 0 : Math.sign(delta);
++function assertUIControls(controls) {
++  assert.ok([-1, 0, 1].includes(controls.x)); assert.ok([-1, 0, 1].includes(controls.y));
++  assert.equal(typeof controls.shoot, 'boolean');
++}
+ function pilot(s, tick) {
+-  const p = s.players[s.controlled], b = s.ball; let tx = p.x, ty = p.y;
++  const p = s.players[s.controlled], b = s.ball; let tx = p.x, ty = p.y, shoot = false;
+   if (b.owner === p.id) {
+     const info = shootingInfo(s); tx = 875; ty = p.y < 280 ? 160 : 400;
+-    if ((info.distance < 200 && info.chance > 0.42 && p.hold > 0.3) || s.shotClock < 3) action(s, 'shoot');
++    if (s.charging) shoot = s.charge < 0.65;
++    else if ((info.distance < 200 && info.chance > 0.42 && p.hold > 0.3) || s.shotClock < 3) shoot = true;
+     else if (info.contest > 0.65 && p.hold > 1) action(s, 'pass');
+   } else if (b.mode === 'loose') { tx = b.x; ty = b.y; }
+   else if (b.owner !== null && s.players[b.owner].team === 1) {
+     const owner = s.players[b.owner]; tx = owner.x - 25; ty = owner.y;
+     if (Math.hypot(p.x - owner.x, p.y - owner.y) < 60) action(s, 'steal');
+   } else { tx = 780; ty = 400; }
+-  const d = Math.hypot(tx - p.x, ty - p.y);
+-  return { x: d ? (tx - p.x) / d : 0, y: d ? (ty - p.y) / d : 0 };
++  return { x: directionKey(tx - p.x), y: directionKey(ty - p.y), shoot };
+ }
+-// This stronger pilot uses only ordinary public inputs. It never changes score,
+-// player locations, RNG, clocks, possession, difficulty, or shot outcomes.
+-function winningPilot(s) {
+-  let p = s.players[s.controlled]; const b = s.ball; let tx = p.x, ty = p.y;
+-  if (b.owner !== null && s.players[b.owner].team === 0 && b.owner !== p.id) { action(s, 'switch'); p = s.players[s.controlled]; }
+-  if (b.owner === p.id) {
+-    const info = shootingInfo(s); tx = 900; ty = 280;
+-    if ((info.distance < 200 && info.chance > 0.4 && p.hold > 0.25) || s.shotClock < 3) action(s, 'shoot');
+-    else if (info.contest > 0.6 && p.hold > 0.8) action(s, 'pass');
+-  } else if (b.mode === 'loose') { tx = b.x; ty = b.y; }
+-  else if (b.mode === 'shot') { tx = b.tx; ty = b.ty + (p.id ? 25 : -25); }
+-  else if (b.owner !== null && s.players[b.owner].team === 1) {
+-    const owner = s.players[b.owner]; tx = owner.x - 20; ty = owner.y;
+-    if (Math.hypot(p.x - owner.x, p.y - owner.y) < 60) action(s, 'steal');
+-  } else { tx = 780; ty = 400; }
+-  const d = Math.hypot(tx - p.x, ty - p.y);
+-  return { x: d ? (tx - p.x) / d : 0, y: d ? (ty - p.y) / d : 0 };
+-}
++// The winning-evidence replay uses the same discrete wing strategy as the
++// ordinary-play campaign. It never changes score, player locations, RNG,
++// clocks, possession, difficulty, or shot outcomes. Every user shot holds the
++// UI-mappable shoot input for 32 ticks (~0.533 s) before releasing, including
++// the engine's real charge movement slowdown.
++function winningPilot(s) { return pilot(s, s.tick); }
+ 
+ test('eight authored levels, supported match durations, unique seeds', () => {
+   assert.equal(LEVELS.length, 8); assert.equal(new Set(LEVELS.map(x => x.seed)).size, 8);
+@@ -144,6 +137,15 @@
+ test('shot clock turns possession over without awarding points', () => {
+   const s = start(createGame()); s.shotClock = 0.01; step(s, FIXED_DT); assert.equal(s.possession, 1); assert.deepEqual(s.score, [0, 0]);
+ });
++test('a missed pass remains on the possession clock until turnover', () => {
++  const s = start(createGame());
++  Object.assign(s.players[0], { x: 200, y: 280 }); Object.assign(s.players[1], { x: 650, y: 280 });
++  Object.assign(s.players[2], { x: 100, y: 40 }); Object.assign(s.players[3], { x: 100, y: 520 });
++  s.shotClock = 1; action(s, 'pass'); action(s, 'switch'); advance(s, 48, { y: 1 });
++  assert.equal(s.ball.mode, 'loose'); assert.equal(s.ball.rebound, false); assert.ok(s.shotClock < 0.21);
++  advance(s, 57, { y: 1 }); assert.equal(s.possession, 1); assert.equal(s.stats.turnovers[0], 1);
++  assert.ok(s.shotClock > 18); assert.deepEqual(s.score, [0, 0]); invariant(s);
++});
+ test('ties enter overtime; ahead and behind produce win/loss', () => {
+   const tie = start(createGame()); tie.time = 0.01; step(tie, FIXED_DT); assert.equal(tie.overtime, 1); assert.equal(tie.time, 20); assert.equal(tie.resetT, 0); invariant(tie);
+   for (const [score, outcome] of [[[2, 0], 'won'], [[0, 3], 'lost']]) { const s = start(createGame()); s.score = score; s.time = 0.01; step(s, FIXED_DT); assert.equal(s.state, outcome); const end = snapshot(s); advance(s, 60); assert.deepEqual(s, end); }
+@@ -160,7 +162,7 @@
+ test('ordinary-play simulation completes all eight matches with invariants', () => {
+   for (let level = 0; level < 8; level++) {
+     const s = start(createGame(level)); let ticks = 0;
+-    while (s.state === 'playing' && ticks < 60 * 300) { step(s, FIXED_DT, pilot(s, ticks)); if (ticks % 60 === 0) invariant(s); ticks++; }
++    while (s.state === 'playing' && ticks < 60 * 300) { const controls = pilot(s, ticks); assertUIControls(controls); step(s, FIXED_DT, controls); if (ticks % 60 === 0) invariant(s); ticks++; }
+     assert.ok(['won', 'lost'].includes(s.state), `level ${level + 1} failed to finish`); invariant(s);
+     assert.ok(s.stats.shots[0] > 0); assert.ok(s.stats.passes[0] > 0);
+     console.log(`  match ${level + 1}: ${s.score.join('-')} ${s.state}, shots ${s.stats.shots.join('/')}, ${ticks} ticks`);
+@@ -173,12 +175,19 @@
+     assert.equal(s.state, 'lost'); assert.ok(s.score[1] > 0); invariant(s);
+   }
+ });
+-test('public-input-only strategy can win all eight authored matches', () => {
++test('discrete-key hold/release simulation wins all eight', () => {
+   for (let level = 0; level < 8; level++) {
+-    const s = start(createGame(level)); let ticks = 0;
+-    while (s.state === 'playing' && ticks++ < 60 * 300) { step(s, FIXED_DT, winningPilot(s)); if (ticks % 60 === 0) invariant(s); }
++    const s = start(createGame(level)); let ticks = 0, heldTicks = 0, releasedShots = 0;
++    while (s.state === 'playing' && ticks++ < 60 * 300) {
++      const controls = winningPilot(s); assertUIControls(controls);
++      if (controls.shoot) heldTicks++;
++      const releasing = s.charging && s.lastShoot && !controls.shoot && s.ball.owner === s.controlled;
++      step(s, FIXED_DT, controls); if (releasing && s.ball.mode === 'shot') releasedShots++;
++      if (ticks % 60 === 0) invariant(s);
++    }
+     assert.equal(s.state, 'won', `level ${level + 1} should be winnable using normal inputs`); invariant(s);
+-    console.log(`  winning match ${level + 1}: ${s.score.join('-')}, rebounds ${s.stats.rebounds.join('/')}, shots ${s.stats.shots.join('/')}`);
++    assert.ok(heldTicks > 0 && releasedShots > 0);
++    console.log(`  winning match ${level + 1}: ${s.score.join('-')}, rebounds ${s.stats.rebounds.join('/')}, shots ${s.stats.shots.join('/')}, held ticks ${heldTicks}, release shots ${releasedShots}`);
+   }
+ });
+ console.log(`\n${checks} engine simulation checks passed. Browser visuals and input remain separate QA.`);
