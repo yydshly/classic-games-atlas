@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "baseCommit": "86bb3267f50c1970c97f0dc875b9e0e0e690a36f",
   "checkedAt": "2026-10-18",
-  "scope": "实现范围为 v1 固定基线；v2 状态与本轮变化以各条版本说明为准。",
+  "scope": "原38条实现范围保留v1固定基线；37单独注明v2新重建。v2阶段状态以版本说明为准。",
   "summary": {
-    "items": 38,
+    "items": 39,
     "published": 34,
-    "previews": 4,
+    "previews": 5,
     "officialPopularityFactsItems": 6,
-    "popularityNotEstablishedItems": 32,
+    "popularityNotEstablishedItems": 33,
     "emotionalValueUserValidated": 0
   },
   "items": [
@@ -3077,6 +3077,74 @@
         "sourceUrl": "https://www.ea.com/games/theme/theme-hospital",
         "sourceLabel": "EA 原作资料"
       }
+    },
+    {
+      "number": "37",
+      "slug": "civic",
+      "title": "潮原纪事",
+      "implementationVersion": "v2 新重建",
+      "implementationBoundary": "37的旧版仅部分源码归档，非完整可玩v1；以下是本轮独立v2的实现范围，仍待实测。",
+      "source": {
+        "title": "未明确",
+        "referenceId": null,
+        "binding": "历史原作未绑定；本轮提出设计参照",
+        "version": "本轮建议《文明》系列，以《文明 VI》作比较样本",
+        "versionNote": "建议参考不写回历史绑定，不表示等价完整复刻。"
+      },
+      "iterationSuggestion": {
+        "title": "《文明》系列 / Civilization VI",
+        "focus": "学习有限行动、资源与居民安排，让探索、建设和研究持续改变后续选择。",
+        "boundary": "本轮设计参照，尚非已确认的历史原作绑定；本作不含完整文明竞争系统。",
+        "sourceUrl": "https://newsroom.2k.com/games/sid-meiers-civilization-vi",
+        "sourceLabel": "2K 官方《文明 VI》资料"
+      },
+      "popularityEvidence": {
+        "status": "not_established",
+        "facts": [],
+        "caveat": "本轮只依据公开机制讨论设计价值，没有补充可核销量或流行因果证据；不把收录图鉴当作流行证明。"
+      },
+      "appealHypothesis": {
+        "label": "设计解释，非已证实的流行因果",
+        "text": "探索暴露新机会，建设留下可见成果，科技改变能做的事；有限人口与行动迫使玩家在眼前产出和后续发展之间取舍。这可能带来掌控与期待，但不是受欢迎原因的统计证明。"
+      },
+      "implemented": [
+        "8章新编7×6岛屿地图；每轮3次行动，探索、建设、派工与三项研究。",
+        "有限居民与四类资源；有派工才生产、居民持续耗粮，道路/桥梁连通影响真实贸易，固定天气影响生产与通航。",
+        "章节目标、逐章解锁、胜负重试、本轮撤回和独立本机存档；网页与等距绘制为本轮新建。"
+      ],
+      "intendedEmotionalValue": {
+        "label": "预期情绪价值假设，未经玩家验证",
+        "primary": "用有限资源安排出可运行海岸的掌控感，以及看道路、村庄和灯塔逐步出现的成就感",
+        "action": "每轮安排三次行动，选择探索、建田派工、研究或连接道路桥梁，并承担居民耗粮与建设成本",
+        "feedback": "实际资源结算和天气预览反映安排，连通的道路带来贸易，新增村庄增加人口也增加口粮消耗，达成目标后解锁下一章"
+      },
+      "missingValueMechanisms": [
+        {
+          "mechanism": "外交、战争与多文明互动",
+          "status": "不在当前固定目标小岛章节范围",
+          "affectedValue": "与其他文明谈判竞争、跨时代发展的广度不能由本作八章替代",
+          "interpretationStatus": "设计差异说明，非玩家实测感受"
+        },
+        {
+          "mechanism": "多路线平衡与长期重玩",
+          "status": "已有合法操作模型检查，真实体验与更广路线仍待验",
+          "affectedValue": "是否让不同安排都值得尝试，而不是只找唯一解，尚需玩家体验验证",
+          "interpretationStatus": "体验待验证，不冒称已有策略深度结论"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "versions/v2/games/civic/about.html",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/16f53790171fe580eb4bbf9fb23621fdb9a04da5/versions/v2/games/civic/about.html",
+          "claim": "本轮设计参照、实际机制、差异与旧版部分归档边界"
+        },
+        {
+          "path": "versions/v2/games/civic/levels.mjs",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/16f53790171fe580eb4bbf9fb23621fdb9a04da5/versions/v2/games/civic/levels.mjs",
+          "claim": "八章新编地图与目标"
+        }
+      ],
+      "verificationBoundary": "v2 新重建候选，待真实浏览器验收。已有合法操作、控制器模型与离屏绘制检查不等于真人体验、真实手机或全面品质验收；平衡、可选路线和长期重玩性仍待验证。"
     },
     {
       "number": "38",
