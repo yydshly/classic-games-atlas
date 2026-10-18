@@ -1,0 +1,13 @@
+// Eight small-pitch matches. Conditions apply equally to both teams; the
+// opponent changes tactical choices, never the ball or movement rules.
+export const LEVELS = Object.freeze([
+  { id:'morning-kickoff', name:'晨露开球', opponent:'草芽队', theme:'morning', color:'#a6d791', duration:72, brief:'先带球寻找角度，再蓄力射向右侧球门。', tip:'靠近球门的侧面，横向射门更容易绕开门将。', pace:190, traction:12, drag:0.58, wind:0, pressure:0.35, reaction:0.42, passing:0.25, width:105, shotRange:215, shotCharge:0.54, seed:40127 },
+  { id:'wide-wings', name:'两翼穿行', opponent:'燕尾队', theme:'sky', color:'#84cadd', duration:74, brief:'拉开边路的对手会主动传球，留意无球队员。', tip:'传球后自动切换到接应队友，也能用切换键手动回防。', pace:195, traction:12, drag:0.55, wind:0, pressure:0.42, reaction:0.36, passing:0.8, width:175, shotRange:225, shotCharge:0.57, seed:40241 },
+  { id:'close-press', name:'贴身紧逼', opponent:'苜蓿队', theme:'mint', color:'#78cbb0', duration:76, brief:'对方在前场积极上抢，长时间停球容易丢失球权。', tip:'持球时传球，无球时同一个按钮用于抢断。', pace:200, traction:13, drag:0.58, wind:0, pressure:0.74, reaction:0.24, passing:0.45, width:115, shotRange:225, shotCharge:0.58, seed:40343 },
+  { id:'wet-grass', name:'雨后草地', opponent:'雨燕队', theme:'rain', color:'#83aeca', duration:78, brief:'湿草降低抓地力，球员转向和球的滚动都更滑。', tip:'提早松开方向，别让惯性把你带进防守人群。', pace:202, traction:5.5, drag:0.3, wind:0, pressure:0.57, reaction:0.27, passing:0.65, width:145, shotRange:260, shotCharge:0.61, seed:40459 },
+  { id:'crosswind', name:'横风长传', opponent:'风铃队', theme:'wind', color:'#d4cc89', duration:80, brief:'横风会推动空中足球，双方长传和射门都需要留量。', tip:'射门蓄力越久，球速和起球高度越大。', pace:204, traction:11, drag:0.52, wind:33, pressure:0.62, reaction:0.24, passing:0.84, width:170, shotRange:270, shotCharge:0.63, seed:40577 },
+  { id:'counter-attack', name:'反击时刻', opponent:'赤狐队', theme:'dusk', color:'#e6ac88', duration:82, brief:'对手抢到球后快速纵向推进，失球后马上回防。', tip:'切换到离球更近的队友，从正面接近再抢断。', pace:210, traction:12, drag:0.5, wind:0, pressure:0.75, reaction:0.21, passing:0.38, width:100, shotRange:290, shotCharge:0.66, seed:40693 },
+  { id:'night-passing', name:'灯下配合', opponent:'萤火队', theme:'night', color:'#b4a5db', duration:85, brief:'密集传切配合与贴身防守，需要兼顾球与接应路线。', tip:'足球只按真实轨迹飞行，站到传球路线上可以拦截。', pace:214, traction:10, drag:0.45, wind:-18, pressure:0.8, reaction:0.18, passing:0.92, width:165, shotRange:275, shotCharge:0.65, seed:40813 },
+  { id:'meadow-final', name:'草甸决赛', opponent:'金穗队', theme:'gold', color:'#e8cf81', duration:90, brief:'最快节奏、主动逼抢与远射威胁，赢下最后一场。', tip:'终场必须领先；平局也要重赛。门将能扑救，但不会包办防守。', pace:220, traction:9, drag:0.42, wind:12, pressure:0.86, reaction:0.16, passing:0.78, width:140, shotRange:300, shotCharge:0.69, seed:40927 },
+].map((l,index)=>Object.freeze({...l,index,title:l.name})));
+export default LEVELS;

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c35"><title>草甸联赛 v2 · 经典游戏图鉴</title>
+  <link rel="icon" href="../../../../assets/favicon.svg"><link rel="stylesheet" href="meadow.css">
+  <script type="module" src="game.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#meadow">跳到球场</a>
+<header><a href="../../../../index.html">经典游戏图鉴 <small>THE PLAY ARCHIVE</small></a><span>ORIGINAL PLAY 40 · V2 预览</span></header>
+<main>
+  <section class="intro"><div><p class="eyebrow">A SMALL PITCH. A WHOLE AFTERNOON.</p><h1>草甸联赛 <span>MEADOW LEAGUE</span></h1><p class="lead">传到脚下。跑向下一束光。</p></div><p class="intro-note">先拉开，再出脚。传给接应队友，换一个角度。<br><small>8 场原创对决 · 3 对 3 围场足球</small></p></section>
+  <section class="arena" aria-label="草甸联赛比赛区">
+    <div class="scoreboard" aria-label="实时比分与比赛时间">
+      <div class="team"><i></i><div><small>HOME / ATTACK RIGHT</small><b>草甸伙伴</b></div></div>
+      <div class="score"><strong id="home-score" aria-label="我方进球">0</strong><div><b id="clock" aria-label="剩余比赛时间">1:15</b><small id="period">第 01 场</small></div><strong id="away-score" aria-label="对手进球">0</strong></div>
+      <div class="team away"><div><small>THE VISITORS</small><b id="rival">河畔来客</b></div><i></i></div>
+    </div>
+    <div class="view"><canvas id="meadow" width="1200" height="800" tabindex="0" aria-label="草甸足球场。WASD或方向键移动，按住空格蓄力，松开射门，J传球或抢断，K换人，P暂停。比分、时间与球权在画布外显示。"></canvas><div class="pitch-label"><span id="scene">01 / 草甸初见</span><span>草甸伙伴向右进攻 →</span></div></div>
+    <div class="match-info"><p id="possession">球权：等待开球</p><p id="objective">目标：终场进球数多于对手</p><p id="goal-status" role="status" aria-live="polite">球已就位，等你上场。</p></div>
+    <section id="state-card" class="state-card" aria-labelledby="state-title"><div><p id="state-kicker" class="eyebrow">MEET YOU ON THE MEADOW</p><h2 id="state-title">这一脚，从你开始。</h2><p id="state-copy">两名外场伙伴和自动守门员。传球、跑位，向右边球门进攻。</p></div><button type="button" id="primary-action" class="primary">开始比赛 →</button></section>
+    <div class="live-bar"><p id="live-message" role="status" aria-live="polite">传球、跑位，创造射门的角度。</p><label class="shot" for="charge-meter"><span>射门蓄力 <output id="charge-text">0%</output></span><progress id="charge-meter" max="1.2" value="0" aria-label="射门蓄力">0%</progress></label></div>
+    <div class="touch-controls" aria-label="比赛操作">
+      <div class="dpad" role="group" aria-label="移动方向"><button type="button" id="move-up" data-hold="up" aria-label="向上移动">↑</button><button type="button" id="move-left" data-hold="left" aria-label="向左移动">←</button><button type="button" id="move-down" data-hold="down" aria-label="向下移动">↓</button><button type="button" id="move-right" data-hold="right" aria-label="向右移动">→</button></div>
+      <div class="actions"><button type="button" id="switch">换人<small>K</small></button><button type="button" id="pass">传球 / 抢断<small>J</small></button><button type="button" id="shoot" data-hold="shoot">射门<small>按住 · 松开</small></button></div>
+    </div>
+    <div class="toolbar"><p>移动 WASD / ↑↓←→ · 射门 空格 · 传球 / 抢断 J · 换人 K</p><div><button type="button" id="pause">暂停 P</button><button type="button" id="retry">重赛 R</button><button type="button" id="help">玩法 ?</button><button type="button" id="chapters">赛程 1/8</button></div></div>
+  </section>
+  <section class="journey"><div class="section-heading"><div><p class="eyebrow">EIGHT AFTERNOONS, ONE TEAM.</p><h2>从第一脚，到最后一声哨。</h2></div><p id="progress-summary">1 / 8 场已解锁</p></div><div id="matches" class="matches"></div></section>
+  <section class="tips"><article><span>01 / FIND AN ANGLE</span><h3>先找角度，再蓄力。</h3><p>带球靠近右侧球门。脚下金环标记球权，白环标记你控制的人。浅色短箭头就是出脚方向。朝前或斜前移动调整射门角度；停下会保留朝向，背向或侧向射门会转向对方球门。按住空格或射门按钮蓄力，松开射出。蓄力更久，球速更快。</p></article><article><span>02 / KEEP IT MOVING</span><h3>一脚传球，换一个机会。</h3><p>先带到边路吸引防守，再按 J 传给另一名外场队友；自动切到接应者，等球到脚下再转向右侧射门。J 无球时近身抢断。K 切换两名外场队员；门将会自动站位、扑球和出球。</p></article><article><span>03 / PLAY TO THE WHISTLE</span><h3>围栏之内，踢到终场。</h3><p>球碰围栏会反弹，进球后重新开球。没有越位、犯规、界外球和点球。终场领先才获胜，平局也需重赛；胜利解锁下一场。</p></article></section>
+  <p id="save-note" class="save-note" role="status">本机自动保存 · 刷新后先暂停 · 离线不推进比赛。</p><p id="restore-note" class="restore-note" hidden></p>
+  <footer><p>第 40 款 · 独立 v2 预览。承接未完成项目，保留原创插画球场。受 PES 风格足球的空间判断、传球配合、射门时机与切人启发；具体代际未指定。原创 3 对 3 围场规则，不包含完整十一人制战术与赛事规则。</p><a href="about.html">来源、变化与验证边界 ↗</a></footer>
+</main>
+<dialog id="help-dialog" aria-labelledby="help-title"><button type="button" id="help-close" class="close" aria-label="关闭玩法">×</button><p class="eyebrow">THE MEADOW RULES</p><h2 id="help-title">这块草地，怎么踢。</h2><ol><li>深蓝球衣的草甸伙伴向右进攻。每队两名外场球员和一名自动守门员，亮环标出你控制的球员。</li><li>WASD 或方向键移动、带球；触屏可同时按方向与射门。朝前或斜前移动调整射门角度，停下后保留朝向；背向或侧向射门会转向对方球门。</li><li>按住空格或“射门”蓄力，松开才射出，最长 1.2 秒。只有控球球员能够射门。暂停、换人和传球 / 抢断会取消蓄力，取消触摸也不会误射。</li><li>J 有球时传给队友，无球时在近身距离尝试抢断；K 在两名外场球员之间切换。门将自动扑球、接球并出球。</li><li>围栏会让球反弹，需要踢出的球完全穿过球门才得分，不能只带球走进球门，随后重新开球。没有越位、犯规、界外球或点球。每场时间见记分牌，比赛终场领先获胜；平局算未获胜，可重赛。</li><li>胜利解锁下一场，共 8 场。每场独立计时，最好比分与当前比赛分开保存。刷新只恢复有效的未完赛存档，并保持暂停，离线时间不计入比赛。</li><li>P / Escape 暂停，R 重赛，? 查看玩法。打开窗口、切出网页都会取消旧输入并暂停；返回后请点“继续比赛”。聚焦方向或射门按钮时，按住 Enter / 空格也可操作。</li></ol><button type="button" id="help-done" class="primary">知道了，回到球场</button></dialog>
+<dialog id="chapters-dialog" aria-labelledby="chapters-title"><button type="button" id="chapters-close" class="close" aria-label="关闭赛程">×</button><p class="eyebrow">YOUR NEXT AFTERNOON</p><h2 id="chapters-title">草甸赛程</h2><p>胜利解锁下一场。选择新比赛会替换当前未完赛进度。</p><div id="dialog-matches" class="dialog-matches"></div></dialog>
+<dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">重新开场吗？</h2><p id="confirm-copy">当前这场比赛会重新开始，已解锁场次与最好比分保留。</p><div class="confirm-actions"><button type="button" id="confirm-cancel">留在这场</button><button type="button" id="confirm-accept" class="primary">确定重赛</button></div></dialog>
+</body></html>
