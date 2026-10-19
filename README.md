@@ -63,7 +63,7 @@
 | [四季小田](./games/farm/) | 12 | 农场经营通用播种、照料、收获和订单机制，关联牧场物语介绍 | 已发布 · 原创实现 |
 | [遗迹灯火](./games/ruins/) | 8 | 俯视地牢通用探索、钥匙机关、战斗与有限恢复机制，关联塞尔达传说介绍 | 已发布 · 原创实现 |
 | 节拍果园：[v1十二园](./games/orchard/) · [v2候选](./versions/v2/games/orchard/) | v1 12关；v2 两场60秒 | Fruit Ninja Arcade限时冲分/划切参考 | 有限实玩98/10分自然完成，未品质验收；[QA](docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [山径快递](./games/courier/) | 12 | 自动前进、三道换道、跳跃与滑行通用机制，关联神庙逃亡介绍 | 已发布 · 原创实现 |
+| 山径快递：[v1十二路](./games/courier/) · [v2候选](./versions/v2/games/courier/) | v1 12关；v2 2路 | Temple Run读路/转向/跳滑参考 | 参考路线两路实玩送达，未品质验收；[QA](docs/courier-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [街角商旅](./games/venture/) | 12 | 棋盘路线、资产交易与现金流管理通用机制，关联大富翁系列介绍 | 已发布 · 原创实现 |
 | [云岛工坊](./games/island/) | 12 | 二维布局、道路连通、生产与居民需求通用机制，关联模拟城市介绍 | 已发布 · 原创实现 |
 | 星环落块：[v1十二关](./games/orbit/) · [v2候选](./versions/v2/games/orbit/) | v1 12关；v2 180秒冲分 | 俄罗斯方块通用落块消行机制 | 有限实玩候选，未完成品质验收；[QA](docs/orbit-v2-qa/PUBLIC_BROWSER_QA.md) |
@@ -618,6 +618,8 @@ python scripts/test_orchard_release.py
 果园、果实、荆核、轨迹与声音原创，不复制Fruit Ninja原作资产；保留前二十四款及72条图鉴。
 
 ## 原创玩法实验 26：山径快递
+
+新增独立[v2 · 转角来信](versions/v2/games/courier/)，两条真实转弯邮路、16米预约窗口，原十二路保留。参考路线并多次暂停实玩：晨谷360米8/6信2转、竹桥432米10/7信3转，均3体力0碰撞；30/36为活动时间，非墙钟或连续盲跑。首80米锁左刷新保2信3体力并先暂停；第二重试2米刷新保持、最好10信留。主图为98米左转后，非跨弯/终局或连续动画证明。程序Canvas、顶导航滚出与侧栏滚动，失败/长按精确边界/声音触屏审美未验。[范围与参考来源](versions/v2/games/courier/NOTES.md) · [真实运行图与QA](docs/courier-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=courier)。以下为保留的v1历史说明。
 
 **[立即试玩山径快递](https://yydshly.github.io/classic-games-atlas/games/courier/) · [固定范围](docs/COURIER_SPEC.md) · [测试与部署证据](docs/COURIER_VERIFICATION.md)**
 
