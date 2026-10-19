@@ -1,0 +1,4 @@
+import{restore,checkpoint}from'./engine.mjs';
+export const KEY='classic-atlas.orchard.arcade.v2';
+export function readSave(storage){const p={version:2,last:1,sound:false,best:{},resume:null};let available=true;try{const raw=storage.getItem(KEY);if(raw&&raw.length>1600000)return{progress:p,game:null,available,invalid:true};const v=JSON.parse(raw||'null');if(v?.version===2){if([1,2].includes(v.last))p.last=v.last;p.sound=v.sound===true;for(const id of[1,2]){const n=v.best?.[id];if(Number.isInteger(n)&&n>=0&&n<=100000)p.best[id]=n;}p.resume=v.resume;}}catch(e){available=e?.name==='SyntaxError';}const game=restore(p.resume);p.resume=game?checkpoint(game):null;return{progress:p,game,available};}
+export function writeSave(storage,progress){try{const raw=JSON.stringify(progress);if(raw.length>1600000)return false;storage.setItem(KEY,raw);return true;}catch{return false;}}
