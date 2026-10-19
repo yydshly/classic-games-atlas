@@ -43,7 +43,7 @@
 | [星泡航线](./games/starline/) | 12 | 泡泡龙 | 已发布 · 原创实现 |
 | [光轨砖阵](./games/prism/) | 12 | 打砖块／Arkanoid | 已发布 · 原创实现 |
 | [仓格计划](./games/crate/) | 20 | 推箱子 | 已发布 · 原创实现 |
-| [山口守望](./games/pass/) | 8 | 王国保卫战 | 已发布 · 原创实现 |
+| 山口守望：[v1八图](./games/pass/) · [v2候选](./versions/v2/games/pass/) | v1 8图；v2 1短图4波 | 王国保卫战 | 有限实玩候选，未完成品质验收；[QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [风行小径](./games/trail/) | 8 | 冒险岛 | 已发布 · 原创实现 |
 | [夜航拾光](./games/lantern/) | 10 | 吃豆人 | 已发布 · 原创实现 |
 | [云隙巡航](./games/cloud/) | 8 | 雷电 | 已发布 · 原创实现 |
@@ -173,6 +173,8 @@ python scripts/test_crate_ui.py
 第四款其余九关已另行补齐真实输入清场，见 [光轨砖阵追加证据](docs/PRISM_VERIFICATION.md#第五款开始前的高效补验)。第五款已验收上线，保留图鉴和前四款。
 
 ## 原创玩法实验 06：山口守望
+
+本轮新增独立[山口守望 v2 · 断桥隘口](versions/v2/games/pass/)：一个短图四波、重弩/缚索专精与可部署双盾卫。原八图继续保留。公开桌面有限实玩为缚索四波胜6/12、63击退，217秒包含观察准备；重弩第二波自然败0/12，不声称两分支平衡。刷新回准备态仅保最佳。需滚动、桥头重叠和提示残留，手机/声音/审美未验，仍为候选。[本轮范围与来源](versions/v2/games/pass/NOTES.md) · [真实运行图与QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=pass)。以下八图说明与测试属于保留的v1历史记录。
 
 **[立即试玩山口守望](https://yydshly.github.io/classic-games-atlas/games/pass/) · [固定范围](docs/PASS_SPEC.md) · [测试与部署证据](docs/PASS_VERIFICATION.md)**
 
