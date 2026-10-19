@@ -1,5 +1,5 @@
-import {fresh,act,aiTurn,scenarios,netWorth,rent,saleValue} from './engine.mjs';
-import {loadAssets,render} from './renderer.mjs';
+import {fresh,act,aiTurn,scenarios,netWorth,rent,saleValue} from './engine.mjs?sale-rounding-r1';
+import {loadAssets,render} from './renderer.mjs?sale-rounding-r1';
 const $=id=>document.getElementById(id),KEY='atlas-venture-rivals-v2.1';
 const newSeed=()=>crypto.getRandomValues(new Uint32Array(1))[0]||1;
 let s,art={},motion=null,busy=false,aiTimer=null,motionTimer=null,storageOK=true;

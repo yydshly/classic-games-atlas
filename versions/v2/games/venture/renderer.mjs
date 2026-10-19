@@ -1,4 +1,4 @@
-import {scenarios,netWorth,rent} from './engine.mjs';
+import {scenarios,netWorth,rent} from './engine.mjs?sale-rounding-r1';
 export const WIDTH=1100,HEIGHT=660;
 // Positions trace the promenade clockwise. Buildings sit above their tile baseline.
 export const points=[[230,140],[430,140],[630,140],[830,140],[950,270],[950,435],[830,560],[630,560],[430,560],[230,560],[115,435],[115,270]];

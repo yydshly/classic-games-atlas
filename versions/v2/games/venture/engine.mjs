@@ -75,7 +75,7 @@ export function rent(s, index) {
 }
 export function saleValue(s, index) {
   const b = boardFor(s)[index];
-  return b?.type === 'shop' ? Math.floor((b.price + b.upgradeCost * Math.max(0, s.shops[index].level - 1)) * 0.7) : 0;
+  return b?.type === 'shop' ? Math.floor((b.price + b.upgradeCost * Math.max(0, s.shops[index].level - 1)) * 70 / 100) : 0;
 }
 function sell(s, actor, index, automatic = false) {
   const amount = saleValue(s, index);
