@@ -1,0 +1,8 @@
+export const BUILDINGS={road:{name:'云石路',cost:1,w:1,h:1,note:'四邻连接驿站。建筑不替代道路。'},home:{name:'风栖小屋',cost:7,w:1,h:1,note:'2位居民：每回合1水、1食物、2岗位和2格内连通花园。满足后2币。'},pump:{name:'汲露塔',cost:8,w:1,h:1,note:'须邻水。连通每回合产5水；终章第2回合枯水仅产2水。维护1币。'},farm:{name:'芽穗圃',cost:9,w:1,h:1,note:'须绿土。连通用1水产4食物。维护1币。'},work:{name:'匠作坊',cost:11,w:2,h:1,note:'占两格，可旋转。连通用1水和1食物产1箱，提供4岗位。维护1币。'},park:{name:'风铃花园',cost:6,w:1,h:1,note:'连通后覆盖曼哈顿距离2格内小屋。无维护费。'},bridge:{name:'跨云桥',cost:5,w:1,h:1,note:'第二章开放。只建在 G4 或 G6 桥位，真正让四邻道路跨水连通。'}};
+export const THEMES={breeze:{name:'晨风入户',sky:'#e8eee3',land:'#dfe6cd',accent:'#56836b'},mist:{name:'跨水新邻',sky:'#e2edec',land:'#d0e1d5',accent:'#48868c'},star:{name:'共度枯水',sky:'#e9e8ef',land:'#dbd9e8',accent:'#747391'}};
+const terrain=Array.from({length:7},()=>Array(11).fill('land'));
+for(let y=0;y<7;y++){terrain[y][0]='water';terrain[y][6]='water';}
+terrain[3][0]='dock';for(const[x,y]of[[2,2],[2,4],[8,2],[8,4]])terrain[y][x]='fertile';for(const[x,y]of[[4,0],[7,0],[10,0],[3,5],[1,6],[5,6],[10,6]])terrain[y][x]='rock';
+export const MAP={w:11,h:7,terrain,dock:[0,3],bridges:[[6,3],[6,5]]};
+export const CHAPTERS=[{id:1,name:'第一章 · 晨风入户',theme:'breeze',grant:0,limit:5,goals:{population:4,stable:2,goods:2,east:0},hint:'先让两户人家安居。城市会原样进入下一章，已建道路、建筑编号、资金和库存都保留。'},{id:2,name:'第二章 · 跨水新邻',theme:'mist',grant:60,limit:5,goals:{population:6,stable:2,goods:6,east:1},hint:'一次扩建拨款60币。G4直桥或G6下桥任选，接通东岸至少一户；岗位也要跟上。下一章第2回合有一次枯水，提前留下水或增建水塔。'},{id:3,name:'第三章 · 共度枯水',theme:'star',grant:24,limit:5,goals:{population:8,stable:2,goods:10,east:2},hint:'最后一次拨款24币。东岸两户入住；本章第2回合每塔只产2水，之后恢复5水。至少经历枯水并连续达标两回合，完成这座城。'}];
+export const LEVELS=CHAPTERS.map(c=>({...MAP,...c,budget:58,initial:{water:4,food:4,goods:0}}));
