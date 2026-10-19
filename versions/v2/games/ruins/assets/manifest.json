@@ -1,0 +1,828 @@
+{
+  "license": "Original procedural artwork created for 24ruins; no external assets.",
+  "backgrounds": {
+    "moss": {
+      "src": "background-moss.svg",
+      "width": 960,
+      "height": 576,
+      "walkableBounds": [
+        48,
+        48,
+        912,
+        528
+      ],
+      "wallThickness": 32
+    },
+    "copper": {
+      "src": "background-copper.svg",
+      "width": 960,
+      "height": 576,
+      "walkableBounds": [
+        48,
+        48,
+        912,
+        528
+      ],
+      "wallThickness": 32
+    },
+    "frost": {
+      "src": "background-frost.svg",
+      "width": 960,
+      "height": 576,
+      "walkableBounds": [
+        48,
+        48,
+        912,
+        528
+      ],
+      "wallThickness": 32
+    }
+  },
+  "sprites": {
+    "hero-down-idle": {
+      "src": "hero-down-idle.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "down",
+      "state": "idle",
+      "kind": "hero"
+    },
+    "hero-down-walk": {
+      "src": "hero-down-walk.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "down",
+      "state": "walk",
+      "kind": "hero"
+    },
+    "hero-down-attack": {
+      "src": "hero-down-attack.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "down",
+      "state": "attack",
+      "kind": "hero"
+    },
+    "hero-down-dodge": {
+      "src": "hero-down-dodge.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "down",
+      "state": "dodge",
+      "kind": "hero"
+    },
+    "hero-down-hurt": {
+      "src": "hero-down-hurt.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "down",
+      "state": "hurt",
+      "kind": "hero"
+    },
+    "hero-up-idle": {
+      "src": "hero-up-idle.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "up",
+      "state": "idle",
+      "kind": "hero"
+    },
+    "hero-up-walk": {
+      "src": "hero-up-walk.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "up",
+      "state": "walk",
+      "kind": "hero"
+    },
+    "hero-up-attack": {
+      "src": "hero-up-attack.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "up",
+      "state": "attack",
+      "kind": "hero"
+    },
+    "hero-up-dodge": {
+      "src": "hero-up-dodge.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "up",
+      "state": "dodge",
+      "kind": "hero"
+    },
+    "hero-up-hurt": {
+      "src": "hero-up-hurt.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "up",
+      "state": "hurt",
+      "kind": "hero"
+    },
+    "hero-left-idle": {
+      "src": "hero-left-idle.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "left",
+      "state": "idle",
+      "kind": "hero"
+    },
+    "hero-left-walk": {
+      "src": "hero-left-walk.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "left",
+      "state": "walk",
+      "kind": "hero"
+    },
+    "hero-left-attack": {
+      "src": "hero-left-attack.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "left",
+      "state": "attack",
+      "kind": "hero"
+    },
+    "hero-left-dodge": {
+      "src": "hero-left-dodge.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "left",
+      "state": "dodge",
+      "kind": "hero"
+    },
+    "hero-left-hurt": {
+      "src": "hero-left-hurt.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "left",
+      "state": "hurt",
+      "kind": "hero"
+    },
+    "hero-right-idle": {
+      "src": "hero-right-idle.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "right",
+      "state": "idle",
+      "kind": "hero"
+    },
+    "hero-right-walk": {
+      "src": "hero-right-walk.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "right",
+      "state": "walk",
+      "kind": "hero"
+    },
+    "hero-right-attack": {
+      "src": "hero-right-attack.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "right",
+      "state": "attack",
+      "kind": "hero"
+    },
+    "hero-right-dodge": {
+      "src": "hero-right-dodge.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "right",
+      "state": "dodge",
+      "kind": "hero"
+    },
+    "hero-right-hurt": {
+      "src": "hero-right-hurt.svg",
+      "width": 48,
+      "height": 64,
+      "anchor": [
+        24,
+        56
+      ],
+      "direction": "right",
+      "state": "hurt",
+      "kind": "hero"
+    },
+    "scout-down-idle": {
+      "src": "scout-down-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "idle",
+      "kind": "scout"
+    },
+    "scout-down-windup": {
+      "src": "scout-down-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "windup",
+      "kind": "scout"
+    },
+    "scout-down-attack": {
+      "src": "scout-down-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "attack",
+      "kind": "scout"
+    },
+    "scout-down-recover": {
+      "src": "scout-down-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "recover",
+      "kind": "scout"
+    },
+    "scout-down-hurt": {
+      "src": "scout-down-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "hurt",
+      "kind": "scout"
+    },
+    "scout-up-idle": {
+      "src": "scout-up-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "idle",
+      "kind": "scout"
+    },
+    "scout-up-windup": {
+      "src": "scout-up-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "windup",
+      "kind": "scout"
+    },
+    "scout-up-attack": {
+      "src": "scout-up-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "attack",
+      "kind": "scout"
+    },
+    "scout-up-recover": {
+      "src": "scout-up-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "recover",
+      "kind": "scout"
+    },
+    "scout-up-hurt": {
+      "src": "scout-up-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "hurt",
+      "kind": "scout"
+    },
+    "scout-left-idle": {
+      "src": "scout-left-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "idle",
+      "kind": "scout"
+    },
+    "scout-left-windup": {
+      "src": "scout-left-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "windup",
+      "kind": "scout"
+    },
+    "scout-left-attack": {
+      "src": "scout-left-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "attack",
+      "kind": "scout"
+    },
+    "scout-left-recover": {
+      "src": "scout-left-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "recover",
+      "kind": "scout"
+    },
+    "scout-left-hurt": {
+      "src": "scout-left-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "hurt",
+      "kind": "scout"
+    },
+    "scout-right-idle": {
+      "src": "scout-right-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "idle",
+      "kind": "scout"
+    },
+    "scout-right-windup": {
+      "src": "scout-right-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "windup",
+      "kind": "scout"
+    },
+    "scout-right-attack": {
+      "src": "scout-right-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "attack",
+      "kind": "scout"
+    },
+    "scout-right-recover": {
+      "src": "scout-right-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "recover",
+      "kind": "scout"
+    },
+    "scout-right-hurt": {
+      "src": "scout-right-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "hurt",
+      "kind": "scout"
+    },
+    "brute-down-idle": {
+      "src": "brute-down-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "idle",
+      "kind": "brute"
+    },
+    "brute-down-windup": {
+      "src": "brute-down-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "windup",
+      "kind": "brute"
+    },
+    "brute-down-attack": {
+      "src": "brute-down-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "attack",
+      "kind": "brute"
+    },
+    "brute-down-recover": {
+      "src": "brute-down-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "recover",
+      "kind": "brute"
+    },
+    "brute-down-hurt": {
+      "src": "brute-down-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "down",
+      "state": "hurt",
+      "kind": "brute"
+    },
+    "brute-up-idle": {
+      "src": "brute-up-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "idle",
+      "kind": "brute"
+    },
+    "brute-up-windup": {
+      "src": "brute-up-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "windup",
+      "kind": "brute"
+    },
+    "brute-up-attack": {
+      "src": "brute-up-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "attack",
+      "kind": "brute"
+    },
+    "brute-up-recover": {
+      "src": "brute-up-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "recover",
+      "kind": "brute"
+    },
+    "brute-up-hurt": {
+      "src": "brute-up-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "up",
+      "state": "hurt",
+      "kind": "brute"
+    },
+    "brute-left-idle": {
+      "src": "brute-left-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "idle",
+      "kind": "brute"
+    },
+    "brute-left-windup": {
+      "src": "brute-left-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "windup",
+      "kind": "brute"
+    },
+    "brute-left-attack": {
+      "src": "brute-left-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "attack",
+      "kind": "brute"
+    },
+    "brute-left-recover": {
+      "src": "brute-left-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "recover",
+      "kind": "brute"
+    },
+    "brute-left-hurt": {
+      "src": "brute-left-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "left",
+      "state": "hurt",
+      "kind": "brute"
+    },
+    "brute-right-idle": {
+      "src": "brute-right-idle.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "idle",
+      "kind": "brute"
+    },
+    "brute-right-windup": {
+      "src": "brute-right-windup.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "windup",
+      "kind": "brute"
+    },
+    "brute-right-attack": {
+      "src": "brute-right-attack.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "attack",
+      "kind": "brute"
+    },
+    "brute-right-recover": {
+      "src": "brute-right-recover.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "recover",
+      "kind": "brute"
+    },
+    "brute-right-hurt": {
+      "src": "brute-right-hurt.svg",
+      "width": 64,
+      "height": 72,
+      "anchor": [
+        32,
+        64
+      ],
+      "direction": "right",
+      "state": "hurt",
+      "kind": "brute"
+    }
+  },
+  "objects": {
+    "door": {
+      "src": "object-door.svg",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        72
+      ]
+    },
+    "lamp": {
+      "src": "object-lamp.svg",
+      "width": 32,
+      "height": 48,
+      "anchor": [
+        16,
+        42
+      ]
+    },
+    "key": {
+      "src": "object-key.svg",
+      "width": 32,
+      "height": 32,
+      "anchor": [
+        16,
+        26
+      ]
+    },
+    "echo": {
+      "src": "object-echo.svg",
+      "width": 40,
+      "height": 56,
+      "anchor": [
+        20,
+        48
+      ]
+    },
+    "switch": {
+      "src": "object-switch.svg",
+      "width": 40,
+      "height": 40,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "bars": {
+      "src": "object-bars.svg",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        72
+      ]
+    },
+    "wall": {
+      "src": "object-wall.svg",
+      "width": 64,
+      "height": 180,
+      "anchor": [
+        32,
+        172
+      ]
+    }
+  }
+}
