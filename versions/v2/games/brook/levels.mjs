@@ -1,0 +1,10 @@
+export const W=850,H=390,GRID={x:100,y:115,cols:8,rows:5,cw:80,ch:72};
+export const UNITS=Object.freeze({root:{name:'蓄根伏石',cost:45,cooldown:7,hp:1,mature:8,trapDamage:260,role:'8秒成熟 · 地面单次260伤害',color:'#ae7844',unlock:1},dew:{name:'凝露台',cost:40,cooldown:5,hp:85,role:'每 8 秒结出 25 露',color:'#d0b956',unlock:1},bolt:{name:'晶枝弩',cost:60,cooldown:3.5,hp:95,rate:1.3,damage:22,speed:260,range:700,role:'同一行远程攻击',color:'#467f69',unlock:1},wall:{name:'苔垒',cost:35,cooldown:6,hp:280,role:'承受接触，保护后排',color:'#928e70',unlock:2},mist:{name:'雾环灯',cost:95,cooldown:7,hp:100,rate:2,damage:18,speed:230,range:640,slow:.55,role:'伤害并减速 2.5 秒',color:'#669eaf',unlock:3}});
+export const ENEMIES=Object.freeze({leap:{name:'跃行者',hp:360,speed:35,damage:20,interval:.8,armor:0,color:'#8d657d'},drift:{name:'苔尘',hp:90,speed:16,damage:18,interval:1,armor:0,color:'#b77d5c'},shell:{name:'砾壳',hp:220,speed:14,damage:25,interval:1.2,armor:8,color:'#797c88'},dash:{name:'掠叶',hp:64,speed:30,damage:13,interval:.7,armor:0,color:'#b29849'}});
+const wave=(at,list)=>({at,entries:list.map(([row,type='drift',delay=0])=>({row,type,delay}))});
+const defs=[
+ ['一跃之后','creek',3,260,[],[wave(8,[[1,'leap']]),wave(16,[[0,'drift'],[2,'drift',4]]),wave(32,[[1,'leap'],[0,'dash',6],[2,'dash',10]]),wave(55,[[1,'leap'],[0,'drift',4],[2,'drift',8]])],'跃行者只越过首次阻挡。右侧苔垒诱跳，左邻苔垒接住；别把唯一火力当作诱饵。蓄根须提前 8 秒成熟。'],
+ ['两岸伏根','stone',3,230,[[1,5]],[wave(8,[[0,'leap'],[2,'dash',3],[1,'shell',7]]),wave(30,[[2,'dash'],[0,'leap',4],[1,'shell',8]]),wave(52,[[0,'leap'],[2,'dash',3],[1,'shell',6],[2,'dash',10]])],'上路跃行、中路重甲、下路快敌。成熟蓄根一击 260 且不受护甲减免，但只抓地面；放在起跳处会落空。临时补根来不及成熟。']
+];
+export const LEVELS=defs.map(([name,theme,rows,budget,blocked,waves,tip],i)=>({id:i+1,name,theme,rows,budget,blocked,waves,tip,allowed:Object.keys(UNITS),spawns:waves.flatMap((w,k)=>w.entries.map((e,j)=>({at:w.at+e.delay,row:e.row,type:e.type,wave:k+1,order:j}))).sort((a,b)=>a.at-b.at||a.wave-b.wave||a.order-b.order)}));
+export const cellPoint=(row,col)=>({x:GRID.x+(col+.5)*GRID.cw,y:GRID.y+(row+.5)*GRID.ch});
