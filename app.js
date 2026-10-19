@@ -5,7 +5,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'reference-review-r42-paper-q2-20261019';
+const DATA_REVISION = 'reference-review-r43-play-lobby-20261019';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
@@ -50,6 +50,36 @@ function valueBriefMarkup(item) {
   return `<section class="value-brief" aria-label="原作、实现与玩法价值"><p class="eyebrow">REFERENCE / PLAY / FEELING</p><h3>参考原作与版本</h3><p><strong>${escapeHtml(source.title || '未明确')}</strong> · ${escapeHtml(source.binding || '绑定待确认')}<br>${escapeHtml(source.version || '版本未明确')}</p><p class="value-boundary">${escapeHtml(source.versionNote || '')}</p>${suggestion ? `<aside class="value-suggestion"><h4>本轮建议参考 · 待确认</h4><p><strong>${escapeHtml(suggestion.title)}</strong><br>${escapeHtml(suggestion.focus)}</p><p>${escapeHtml(suggestion.boundary)}</p><a href="${escapeHtml(safeUrl(suggestion.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHtml(suggestion.sourceLabel)} ${arrow}<span class="sr-only">（新窗口）</span></a></aside>` : source.suggestedReference ? `<p class="value-boundary">可讨论的同类参考：${escapeHtml(source.suggestedReference.title)}。仅为待确认建议，不替代上述历史绑定。</p>` : ''}<h3>为什么受欢迎：事实与解释</h3>${facts.length ? `<div class="popularity-facts"><p class="value-label">可核流行事实 · 原作 / 系列口径</p>${facts.map(fact => `<article><p>${escapeHtml(fact.text)}</p><p class="value-fact-scope"><strong>统计范围：</strong>${escapeHtml(fact.scope)}<br><strong>时间：</strong>${escapeHtml(fact.date)}</p><p class="value-boundary">${escapeHtml(fact.limit)}</p><a href="${escapeHtml(safeUrl(fact.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(fact.sourceLabel)} ${arrow}<span class="sr-only">（新窗口）</span></a></article>`).join('')}</div>` : '<p class="value-evidence-pending">流行数据证据待补；这不代表原作不流行。下面只说明可能有吸引力的机制。</p>'}<details class="value-evidence-boundary"><summary>流行证据的边界</summary><p>${escapeHtml(popularity.caveat || '尚未建立可引用的流行证据。')}</p></details><p class="value-label">${escapeHtml(hypothesis.label)}</p><p>${escapeHtml(hypothesis.text)}</p>${hypothesis.sourceReferences?.length ? `<p class="value-mechanism-sources">设计说明依据：${hypothesis.sourceReferences.map(source => `<a href="${escapeHtml(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)} ${arrow}<span class="sr-only">（新窗口）</span></a>`).join('；')}</p>` : ''}<h3>我们实现了什么 · ${escapeHtml(value.implementationVersion || 'v1 基线')}</h3>${list(value.implemented)}<p class="value-boundary">${escapeHtml(value.implementationBoundary || '这里对应已归档的 v1 范围；如有 v2，本轮变化与验收状态另列在下方。')}</p><h3>玩法希望带来什么感受</h3><p class="value-label">${escapeHtml(feeling.label)}</p><dl class="value-flow"><div><dt>玩家做什么</dt><dd>${escapeHtml(feeling.action)}</dd></div><div><dt>游戏怎么回应</dt><dd>${escapeHtml(feeling.feedback)}</dd></div><div><dt>预期感受</dt><dd>${escapeHtml(feeling.primary)}</dd></div></dl><h4>承载这些感受，还缺什么？</h4><p class="value-boundary">功能范围与体验待验证项分别注明；对感受的影响属于设计推断。</p><ul class="value-gaps">${(value.missingValueMechanisms || []).map(gap => `<li><strong>${escapeHtml(gap.mechanism)}</strong><span class="value-gap-state">${escapeHtml(gap.status)}</span><p>${escapeHtml(gap.affectedValue)}</p></li>`).join('')}</ul></section>`;
 }
 function comparisonButton(item) { return `<a class="comparison-link" href="#compare=${escapeHtml(item.slug)}">原作、玩法与差异 ${arrow}</a>`; }
+let playLimit = 12;
+function playableItems() {
+  const legacy = data.experiments.map(e => ({number:e.number,slug:e.id,title:e.title,english:e.english,play_url:e.url,reference_id:e.sourceGame,original_title:gameFor(e.sourceGame)?.title,version:'v1',...comparisonFor(e.id)}));
+  return [...legacy,...candidateDefaults.map(e=>({...e,...comparisonFor(e.slug)}))];
+}
+function currentPlay(item) {
+  const v2 = hasCandidate(item);
+  return {url:localUrl(v2 ? item.next_version.url : item.play_url),version:v2?'v2':(item.version||'v1'),label:v2?versionLabel(item):(Number(item.number)>34?'v1 独立预览，未完成验收':'v1 原创玩法原型，非成品认定'),paused:item.next_version?.status==='paused_unaccepted'};
+}
+function playableFilter() {
+  const query=normalize($('#play-search').value),version=$('#play-version').value;
+  return playableItems().filter(item=>{
+    const current=currentPlay(item),original=gameFor(item.reference_id),alias=item.slug==='paper'?'纸翼工坊':'';
+    const matches=!query||normalize([item.number,String(Number(item.number)).padStart(3,'0'),item.slug,item.title,item.english,alias,item.original_title,item.original_english,item.reference_suggestion_label,item.candidate_reference?.title,original?.english,...(original?.aliases||[])].filter(Boolean).join(' ')).includes(query);
+    return matches&&(version==='all'||version==='paused'&&current.paused||version===current.version);
+  });
+}
+function playCard(item) {
+  const current=currentPlay(item),old=data.experiments.find(e=>e.id===item.slug),shot=current.version==='v2'?(item.next_version?.browser_comparison?.after||item.next_version?.browser_screenshot):null;
+  const imageUrl=shot?.url||old?.cover,source=item.original_title&&item.original_title!=='未明确'?item.original_title:'待确定';
+  return `<article class="play-card" data-play="${escapeHtml(item.slug)}"><div class="play-card-heading">${imageUrl?`<a class="play-thumbnail" href="${escapeHtml(safeUrl(current.url))}" aria-label="打开${escapeHtml(item.title)} ${current.version}"><img src="${escapeHtml(safeUrl(imageUrl))}" width="100" height="64" loading="lazy" decoding="async" alt="${escapeHtml(item.title)}${shot?'真实桌面实机图':'本项目原创封面，非当前实机截图'}"><span>${shot?'真实桌面图':'原创封面'}</span></a>`:''}<div><span class="play-number">${escapeHtml(item.number)} · ${current.version.toUpperCase()}</span><h3><a href="${escapeHtml(safeUrl(current.url))}">${escapeHtml(item.title)}</a></h3></div></div><p class="play-state${current.paused?' is-paused':''}">${escapeHtml(current.label)}</p><p class="play-source">参考原作：${escapeHtml(source)}</p><a class="play-launch" href="${escapeHtml(safeUrl(current.url))}">${current.paused?'打开 v2 阶段版':current.version==='v2'?'试玩 v2 候选':'开始玩 v1'} ${arrow}</a><div class="play-card-links">${current.version==='v2'&&item.legacy_playable!==false?`<a href="${escapeHtml(safeUrl(localUrl(item.play_url)))}">保留的 v1</a>`:''}<a href="#compare=${escapeHtml(item.slug)}">原作、差异与记录</a></div>${item.legacy_playable===false?'<p class="play-legacy-note">旧项目未完成，无完整可玩 v1</p>':''}</article>`;
+}
+function renderPlayLibrary() {
+  const items=playableFilter(),shown=items.slice(0,playLimit);
+  $('#play-grid').innerHTML=shown.map(playCard).join('');
+  $('#play-result-count').textContent=`找到 ${items.length} / ${playableItems().length} 款 · 已显示 ${shown.length} 款`;
+  $('#play-more').hidden=shown.length>=items.length;
+  $('#play-more').textContent=`查看全部 ${items.length} 款 · 还有 ${items.length-shown.length} 款`;
+  $('#play-empty').hidden=items.length>0;
+}
 function renderExperiments(experiments) {
   $('#experiments-grid').innerHTML = experiments.map(e => {
     const item = comparisonFor(e.id) || {slug:e.id,title:e.title,play_url:e.url};
@@ -153,5 +183,9 @@ try{
  document.addEventListener('click',event=>{const button=event.target.closest('[data-open]');if(button){const hash=`#game=${button.dataset.open}`;if(location.hash===hash)openGame(button.dataset.open);else location.hash=hash;}const sameRoute=event.target.closest('a[href^="#compare="],a[href^="#game="]');if(sameRoute&&sameRoute.getAttribute('href')===location.hash){event.preventDefault();handleRoute();}});
  document.addEventListener('keydown',event=>{const editing=event.target instanceof HTMLElement&&(event.target.matches('input,textarea,select')||event.target.isContentEditable);if(event.key==='/'&&!editing&&!event.isComposing&&!event.ctrlKey&&!event.metaKey&&!event.altKey&&!dialog.open){event.preventDefault();$('#search').focus();}});
  document.addEventListener('error',event=>{const img=event.target;if(img instanceof HTMLImageElement&&img.closest('.original-media')){const figure=img.closest('.original-media');const note=document.createElement('p');note.className='image-load-error';note.textContent='原作参考图暂时无法载入，请通过下方来源链接查看。';img.replaceWith(note);}},true);
- window.addEventListener('hashchange',handleRoute);renderExperiments(data.experiments);renderShowcase();render();handleRoute();
-}catch(error){$('#load-error').hidden=false;$('#catalogue').setAttribute('aria-busy','false');$('#result-count').textContent='图鉴读取失败';$('#search').disabled=true;$('#genre').disabled=true;console.error(error);}
+ const playRefilter=()=>{playLimit=12;renderPlayLibrary();};
+ $('#play-search').addEventListener('input',playRefilter);$('#play-version').addEventListener('change',playRefilter);
+ $('#play-more').addEventListener('click',()=>{playLimit=playableItems().length;renderPlayLibrary();});
+ $('#play-reset').addEventListener('click',()=>{$('#play-search').value='';$('#play-version').value='all';playRefilter();$('#play-search').focus();});
+ window.addEventListener('hashchange',handleRoute);renderPlayLibrary();renderExperiments(data.experiments);renderShowcase();render();handleRoute();
+}catch(error){$('#play-load-error').hidden=false;$('#play-result-count').textContent='游戏列表暂时未载入';$('#load-error').hidden=false;$('#catalogue').setAttribute('aria-busy','false');$('#result-count').textContent='图鉴读取失败';$('#search').disabled=true;$('#genre').disabled=true;console.error(error);}
