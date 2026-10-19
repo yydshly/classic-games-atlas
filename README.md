@@ -45,7 +45,7 @@
 | [仓格计划](./games/crate/) | 20 | 推箱子 | 已发布 · 原创实现 |
 | 山口守望：[v1八图](./games/pass/) · [v2候选](./versions/v2/games/pass/) | v1 8图；v2 1短图4波 | 王国保卫战 | 有限实玩候选，未完成品质验收；[QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [风行小径](./games/trail/) | 8 | 冒险岛 | 已发布 · 原创实现 |
-| [夜航拾光](./games/lantern/) | 10 | 吃豆人 | 已发布 · 原创实现 |
+| 夜航拾光：[v1十港](./games/lantern/) · [v2候选](./versions/v2/games/lantern/) | v1 10关；v2 2图 | PAC-MAN收集/追逐/隧道参考 | 首45.8秒胜、次约37秒败，未品质验收；[QA](docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 云隙巡航：[v1八段](./games/cloud/) · [v2候选](./versions/v2/games/cloud/) | v1 8段；v2 2短段 | 雷电系列，双火力机制参考 | 有限实玩候选，未完成品质验收；[QA](docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 晶簇花园：[v1二十关](./games/garden/) · [v2候选](./versions/v2/games/garden/) | v1 20关；v2 2短题 | Bejeweled造特殊/选择释放参考 | 公开解法两题2步成功，未品质验收；[QA](docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
@@ -217,6 +217,8 @@ python scripts/test_trail_ui.py
 风行小径八关已完成本地与线上真实键盘验证，持续扩展路线保留。
 
 ## 原创玩法实验 08：夜航拾光
+
+新增独立[v2 · 双港短航](versions/v2/games/lantern/)，两座小迷宫含左右隧道与原创4.5秒巡航/12秒追逐轮换；原十港保留。普通探索首图45.8活动秒41/41胜，余1命反制2；第二约37秒38/46三命败，有限一胜一败不证明完整平衡。主图为左入右出后的运行，非跨边瞬间/终局；未逐帧验证无横扫或敌人隧穿。刷新回第二准备0/46巡航4.5，首最好45.8保留，不恢复未完局。纯Canvas、主体偏小、暂停顶滚出/辉光提示残留，声音/触屏/审美未验。[范围与参考来源](versions/v2/games/lantern/NOTES.md) · [真实运行图与QA](docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=lantern)。以下为保留的v1历史说明。
 
 **[立即试玩夜航拾光](https://yydshly.github.io/classic-games-atlas/games/lantern/) · [固定范围](docs/LANTERN_SPEC.md) · [测试与部署证据](docs/LANTERN_VERIFICATION.md)**
 
