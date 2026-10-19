@@ -39,7 +39,7 @@
 | 原创实验 | 已发布关数 | 机制参考条目 | 状态 |
 |---|---:|---|---|
 | [堡垒防线](./games/fortress/) | 10 | 坦克大战 | 已发布 · 原创实现 |
-| [爆破迷宫](./games/maze/) | 10 | 炸弹人 | 已发布 · 原创实现 |
+| 爆破迷宫：[v1十关](./games/maze/) · [v2候选](./versions/v2/games/maze/) | v1 10关；v2 2短图 | 炸弹人通用机制与对抗参考 | 有限实玩候选，未完成品质验收；[QA](docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [星泡航线](./games/starline/) | 12 | 泡泡龙 | 已发布 · 原创实现 |
 | [光轨砖阵](./games/prism/) | 12 | 打砖块／Arkanoid | 已发布 · 原创实现 |
 | [仓格计划](./games/crate/) | 20 | 推箱子 | 已发布 · 原创实现 |
@@ -97,6 +97,8 @@ python scripts/test_fortress_browser.py --url http://127.0.0.1:4174/games/fortre
 Node 报告属于逻辑模拟；浏览器报告、实际首关录像和触屏事件属于真实输入证据，不宣称所有十关均由人工通关。部署后可将命令 URL 换为公开游戏地址复查。
 
 ## 原创玩法实验 02：爆破迷宫
+
+新增独立[v2 · 铜箱对决](versions/v2/games/maze/)两短图AI爆破对抗，原十关保留。有限实玩两图各2.9/2.7秒自爆负，仅补首图一次：成功绕角逃自弹后14.2秒被后续AI火线击败，破箱5/连锁0。未胜/平/连锁或充分玩家反制；暂停/重试、刷新重开且负3保留。关键操作需滚动，失焦、声音、手机/审美未验，仍为候选。[范围与官方参考](versions/v2/games/maze/NOTES.md) · [真实运行图与QA](docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=maze)。以下为保留的v1历史说明。
 
 **[立即试玩爆破迷宫](https://yydshly.github.io/classic-games-atlas/games/maze/) · [固定范围](docs/MAZE_SPEC.md) · [测试与部署证据](docs/MAZE_VERIFICATION.md)**
 
