@@ -5,7 +5,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'reference-review-r41-escort-qa-20261019';
+const DATA_REVISION = 'reference-review-r42-paper-q2-20261019';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
@@ -113,7 +113,14 @@ function openGame(id) {
   const related=comparisonForGame(id);
   showDialog(`<p class="detail-eyebrow">${group.number} / ${escapeHtml(group.title)} <span class="scope-label">${escapeHtml(game.scope)}</span></p><div class="detail-header"><div><h2 id="detail-title">${escapeHtml(game.title)}</h2><p class="english-name" lang="en">${escapeHtml(game.english)}</p></div></div>${mediaMarkup(game,{detail:true})}${tags(game)}<p class="detail-aliases">玩法类型：${game.genres.map(escapeHtml).join(' / ')}<br>常见别名：${game.aliases.map(escapeHtml).join('、')}</p><div class="detail-body"><h3>原作怎么玩</h3><p>${escapeHtml(game.play)}</p><h3>为什么值得记住</h3><p>${escapeHtml(game.classic)}</p><h3>版本与边界</h3><p class="edition-note">${escapeHtml(game.edition)}</p>${related.length?`<h3>本项目原型与它的差异</h3>${related.map(item=>`<section class="comparison-callout"><h4>${escapeHtml(item.title)} · ${escapeHtml(item.version || 'v1')}</h4><p>${escapeHtml(item.validation_boundary || item.relation)}</p>${comparisonButton(item)}${versionLinks(item)}</section>`).join('')}`:''}<h3>参考资料</h3>${sources}<p class="detail-footnote">原作图像仅作介绍与比较，具体版本、来源及权利人见图注。网络可见不表示已获转载授权。原创原型另行标识；本站不提供 ROM、原作资源包或等价复刻。</p></div>`);
 }
+function browserComparisonMarkup(item) {
+  const c = item.next_version?.browser_comparison;
+  if (!c?.before || !c?.after) return '';
+  const shot = (s) => `<section><h3>${escapeHtml(s.label)}</h3><figure class="current-preview-media"><a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开原尺寸前后对照截图（新窗口）"><img src="${escapeHtml(safeUrl(s.url))}" width="${Number(s.width)}" height="${Number(s.height)}" loading="lazy" decoding="async" alt="${escapeHtml(s.label)}"></a><figcaption>真实桌面网页截图，完整保留，未裁切。版本 ${escapeHtml(s.commit.slice(0,8))}。<br><a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">打开原尺寸 ${arrow}</a></figcaption></figure></section>`;
+  return `<section class="comparison-callout" aria-label="纸翼v2本轮前后真实网页对照"><p class="eyebrow">本项目 v2 · 真实网页前后对照</p><h3>${escapeHtml(c.title)}</h3><p>${escapeHtml(c.note)}</p><div class="comparison-pair has-current-preview">${shot(c.before)}${shot(c.after)}</div><p>${escapeHtml(c.summary)}</p><p><a href="${escapeHtml(safeUrl(c.official_reference.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.official_reference.label)} ${arrow}</a><br>${escapeHtml(c.official_reference.note)}</p><p><a href="${escapeHtml(safeUrl(c.result_url))}" target="_blank" rel="noopener noreferrer">查看本轮第二关结算实图 ${arrow}</a> · <a href="${escapeHtml(safeUrl(c.qa_url))}">查看本轮有限实玩记录 ${arrow}</a></p><p><a href="${escapeHtml(safeUrl(item.next_version.browser_screenshot.url))}" target="_blank" rel="noopener noreferrer">保留的旧版首关倒塌证据 ${arrow}</a></p></section>`;
+}
 function browserScreenshotMarkup(item) {
+  if (item.next_version?.browser_comparison) return browserComparisonMarkup(item);
   const shot = item.next_version?.browser_screenshot;
   if (!shot) return '';
   return `<section class="comparison-callout" aria-label="本项目 v2 真实网页截图"><p class="eyebrow">本项目 v2 · 真实网页截图</p><h3>${escapeHtml(item.title)} · v2 有限候选</h3><figure class="current-preview-media"><a href="${escapeHtml(safeUrl(shot.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开完整 v2 网页截图（新窗口）"><img src="${escapeHtml(safeUrl(shot.url))}" width="${Number(shot.width)}" height="${Number(shot.height)}" loading="lazy" decoding="async" alt="${escapeHtml(item.title)} v2 真实公开网页截图：${escapeHtml(shot.label)}"></a><figcaption>${escapeHtml(shot.label)}<br>保留原始截图比例与画面，未裁切；不是原作参考图或离屏渲染。<br><a href="${escapeHtml(safeUrl(shot.url))}" target="_blank" rel="noopener noreferrer">打开原尺寸网页截图 ${arrow}<span class="sr-only">（新窗口）</span></a></figcaption></figure><p class="validation-boundary">${escapeHtml(shot.validation_summary)}</p></section>`;
