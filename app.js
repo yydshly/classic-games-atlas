@@ -5,7 +5,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'reference-review-r43-play-lobby-20261019';
+const DATA_REVISION = 'reference-review-r44-play-number-20261019';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
@@ -63,7 +63,7 @@ function playableFilter() {
   const query=normalize($('#play-search').value),version=$('#play-version').value;
   return playableItems().filter(item=>{
     const current=currentPlay(item),original=gameFor(item.reference_id),alias=item.slug==='paper'?'纸翼工坊':'';
-    const matches=!query||normalize([item.number,String(Number(item.number)).padStart(3,'0'),item.slug,item.title,item.english,alias,item.original_title,item.original_english,item.reference_suggestion_label,item.candidate_reference?.title,original?.english,...(original?.aliases||[])].filter(Boolean).join(' ')).includes(query);
+    const matches=!query||(/^\d+$/.test(query)?Number(item.number)===Number(query):normalize([item.slug,item.title,item.english,alias,item.original_title,item.original_english,item.reference_suggestion_label,item.candidate_reference?.title,original?.english,...(original?.aliases||[])].filter(Boolean).join(' ')).includes(query));
     return matches&&(version==='all'||version==='paused'&&current.paused||version===current.version);
   });
 }
