@@ -51,7 +51,7 @@
 | [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
 | [星砂勘探](./games/sand/) | 20 | 扫雷 | 已发布 · 原创实现 |
-| [落星弹庭](./games/pinfall/) | 12 | 幻幻球 / Peggle | 已发布 · 原创实现 |
+| 落星弹庭：[v1十二庭](./games/pinfall/) · [v2候选](./versions/v2/games/pinfall/) | v1 12关；v2 2庭 | Peggle首反规划/有限能力参考 | 参考角两庭实玩胜1555/1485，未品质验收；[QA](docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [钢岚突进](./games/gale/) | 8 | 魂斗罗所代表的横版移动射击机制 | 已发布 · 原创实现 |
 | [弯道邮差](./games/post/) | 8 | 极品飞车所代表的街机竞速类型 | 已发布 · 原创实现 |
 | [灯塔小队](./games/beacon/) | 10 | 经典战棋通用回合战术机制，关联英雄无敌Ⅲ介绍 | 已发布 · 原创实现 |
@@ -343,6 +343,8 @@ python scripts/test_sand_ui.py
 验收明确区分隔离规则夹具、默认固定地图推理、浏览器实际输入及菜单解锁夹具。本款交付后回到主对话接续安排，保留图鉴与前十二款。
 
 ## 原创玩法实验 14：落星弹庭
+
+新增独立[v2 · 星庭双式](versions/v2/games/pinfall/)，两庭各5发，选折光或回响、各2次手动机会，旧十二庭保留。按参考角实玩1555/1485分胜，出手5/3且均余2发，时间含瞄准观察；不是盲解或纯飞行计时。已有命中第二球555分刷新回350/3待亮/4发/回响1并先暂停，先前消费保留。主图回响触发后飞行非底接/终局；侧底需滚动、提示残留，失败/声音/触屏/审美未验。[范围与参考来源](versions/v2/games/pinfall/NOTES.md) · [真实运行图与QA](docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=pinfall)。以下为保留的v1历史说明。
 
 **[立即试玩落星弹庭](https://yydshly.github.io/classic-games-atlas/games/pinfall/) · [固定范围](docs/PINFALL_SPEC.md) · [测试与部署证据](docs/PINFALL_VERIFICATION.md)**
 
