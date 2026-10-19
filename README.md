@@ -56,7 +56,7 @@
 | [弯道邮差](./games/post/) | 8 | 极品飞车所代表的街机竞速类型 | 已发布 · 原创实现 |
 | [灯塔小队](./games/beacon/) | 10 | 经典战棋通用回合战术机制，关联英雄无敌Ⅲ介绍 | 已发布 · 原创实现 |
 | [风铃绳旅](./games/chime/) | 16 | 割绳子所代表的重力剪绳解谜通用机制 | 已发布 · 原创实现 |
-| [溪谷守芽](./games/brook/) | 10 | 经典分行防守的资源/冷却/互补装置机制，关联植物大战僵尸介绍 | 已发布 · 原创实现 |
+| 溪谷守芽：[v1十关](./games/brook/) · [v2候选](./versions/v2/games/brook/) | v1 10关；v2 2场 | 植物大战僵尸分路防守与反制参考 | 两场有限实玩均失败，未完成品质验收；[QA](docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [潮汐珠径](./games/tide/) | 12 | Zuma所代表的沿路径珠链三连消除通用机制 | 已发布 · 原创实现 |
 | [纸翼投递](./games/paper/) | 16 | 经典弹弓抛射解谜通用机制，关联愤怒的小鸟介绍 | 已发布 · 原创实现 |
 | [云港调度](./games/harbor/) | 12 | 运输经营通用资源与路线规划机制，关联运输大亨介绍 | 已发布 · 原创实现 |
@@ -451,6 +451,8 @@ python scripts/test_chime_ui.py
 代码分离为 `games/chime/levels.mjs`、`engine.mjs`、`renderer.mjs`、`game.mjs`；诊断只返回副本。地图、铃、景观和合成音均原创，不使用《割绳子》角色或原作素材。保留前十七款和 72 条图鉴，部署验证后交回主对话。
 
 ## 原创玩法实验 19：溪谷守芽
+
+新增独立[v2 · 两岸互克](versions/v2/games/brook/)两场跃敌/成熟伏根布防，原十关保留。公开两场各一次31.8秒清1/9败、60.9秒清5/10败；后墙阻挡和成熟陷阱作用有前后证据，未抓完整跳跃/触发瞬间或精确伤害。31秒暂停刷新恢复、重试230空场通过，提示有残留。Canvas离线绘制位图实际显示，手机/声音/审美未验，仍候选。[范围与原作参考](versions/v2/games/brook/NOTES.md) · [真实运行图与QA](docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=brook)。以下为保留的v1历史说明。
 
 **[立即试玩溪谷守芽](https://yydshly.github.io/classic-games-atlas/games/brook/) · [固定范围](docs/BROOK_SPEC.md) · [测试与部署证据](docs/BROOK_VERIFICATION.md)**
 
