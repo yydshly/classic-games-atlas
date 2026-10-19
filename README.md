@@ -62,7 +62,7 @@
 | [云港调度](./games/harbor/) | 12 | 运输经营通用资源与路线规划机制，关联运输大亨介绍 | 已发布 · 原创实现 |
 | [四季小田](./games/farm/) | 12 | 农场经营通用播种、照料、收获和订单机制，关联牧场物语介绍 | 已发布 · 原创实现 |
 | [遗迹灯火](./games/ruins/) | 8 | 俯视地牢通用探索、钥匙机关、战斗与有限恢复机制，关联塞尔达传说介绍 | 已发布 · 原创实现 |
-| [节拍果园](./games/orchard/) | 12 | 抛物线目标、轨迹切割、连击与避险通用机制，关联水果忍者介绍 | 已发布 · 原创实现 |
+| 节拍果园：[v1十二园](./games/orchard/) · [v2候选](./versions/v2/games/orchard/) | v1 12关；v2 两场60秒 | Fruit Ninja Arcade限时冲分/划切参考 | 有限实玩98/10分自然完成，未品质验收；[QA](docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [山径快递](./games/courier/) | 12 | 自动前进、三道换道、跳跃与滑行通用机制，关联神庙逃亡介绍 | 已发布 · 原创实现 |
 | [街角商旅](./games/venture/) | 12 | 棋盘路线、资产交易与现金流管理通用机制，关联大富翁系列介绍 | 已发布 · 原创实现 |
 | [云岛工坊](./games/island/) | 12 | 二维布局、道路连通、生产与居民需求通用机制，关联模拟城市介绍 | 已发布 · 原创实现 |
@@ -587,6 +587,8 @@ python scripts/test_ruins_release.py
 灯行者、敌人、石室、机关、图形与声音原创，不复制The Legend of Zelda原作角色或地图；保留前二十三款和72条图鉴。
 
 ## 原创玩法实验 25：节拍果园
+
+新增独立[v2 · 六十秒的弧光](versions/v2/games/orchard/)，两场各60活动秒冲分，旧十二园保留。实玩聚果98分/7果/最高3连/霜2，分枝10分/1果/霜0，均自然完成而非胜利。混合输入有连切与霜反馈，鼠标单独命中未确证；45.1秒零分暂停刷新与两场最好98/10保留。主图分枝28.9秒非命中/霜/终局，纯程序绘制，页面需滚动，手机/声音/审美未验。[范围与参考来源](versions/v2/games/orchard/NOTES.md) · [真实运行图与QA](docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=orchard)。以下为保留的v1历史说明。
 
 **[立即试玩节拍果园](https://yydshly.github.io/classic-games-atlas/games/orchard/) · [固定范围](docs/ORCHARD_SPEC.md) · [测试与部署证据](docs/ORCHARD_VERIFICATION.md)**
 
