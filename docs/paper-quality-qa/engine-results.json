@@ -1,0 +1,208 @@
+{
+  "idle": [
+    {
+      "level": 0,
+      "seconds": 10,
+      "bodies": 9,
+      "events": 0
+    },
+    {
+      "level": 1,
+      "seconds": 10,
+      "bodies": 10,
+      "events": 0
+    }
+  ],
+  "routes": [
+    {
+      "level": 0,
+      "route": [
+        18,
+        45
+      ],
+      "afterIdle": true,
+      "state": "won",
+      "shots": 1,
+      "seconds": 3.791666666666656,
+      "quiet": 0.8583333333333327,
+      "broken": 2,
+      "down": 1,
+      "allDownAt": {
+        "state": "flight",
+        "tick": 1379,
+        "quiet": 0
+      },
+      "maximumBodies": 10
+    },
+    {
+      "level": 0,
+      "route": [
+        18,
+        45
+      ],
+      "finalShot": true,
+      "state": "won",
+      "shots": 3,
+      "seconds": 3.791666666666656,
+      "quiet": 0.8583333333333327,
+      "broken": 2,
+      "down": 1,
+      "allDownAt": {
+        "state": "flight",
+        "tick": 1484,
+        "quiet": 0
+      },
+      "maximumBodies": 12
+    },
+    {
+      "level": 1,
+      "route": [
+        40,
+        24
+      ],
+      "afterIdle": true,
+      "state": "won",
+      "shots": 1,
+      "seconds": 15.658333333333085,
+      "quiet": 0.8583333333333327,
+      "broken": 2,
+      "down": 2,
+      "allDownAt": {
+        "state": "flight",
+        "tick": 1591,
+        "quiet": 0
+      },
+      "maximumBodies": 11
+    },
+    {
+      "level": 1,
+      "route": [
+        40,
+        24
+      ],
+      "finalShot": true,
+      "state": "won",
+      "shots": 3,
+      "seconds": 15.658333333333085,
+      "quiet": 0.8583333333333327,
+      "broken": 2,
+      "down": 2,
+      "allDownAt": {
+        "state": "flight",
+        "tick": 1696,
+        "quiet": 0
+      },
+      "maximumBodies": 13
+    },
+    {
+      "level": 1,
+      "route": [
+        40,
+        24
+      ],
+      "firstStructureHit": {
+        "id": 4,
+        "kind": "block",
+        "material": "paper",
+        "y": 3.85
+      },
+      "state": "won",
+      "shots": 1,
+      "seconds": 15.658333333333085,
+      "quiet": 0.8583333333333327,
+      "broken": 2,
+      "down": 2,
+      "allDownAt": {
+        "state": "flight",
+        "tick": 391,
+        "quiet": 0
+      },
+      "maximumBodies": 11
+    },
+    {
+      "level": 1,
+      "route": [
+        18,
+        45
+      ],
+      "wallImpact": {
+        "type": "impact",
+        "id": 9,
+        "kind": "obstacle",
+        "material": "wood",
+        "x": 12.440808614542329,
+        "y": 3.7516282430287,
+        "impulse": 17.892258208845316,
+        "pulse": 1,
+        "crack": 0,
+        "tick": 63,
+        "serial": 1
+      },
+      "state": "aim",
+      "shots": 1,
+      "seconds": 3.333333333333324,
+      "quiet": 0.8583333333333327,
+      "broken": 0,
+      "down": 0,
+      "allDownAt": null,
+      "maximumBodies": 11
+    },
+    {
+      "level": 1,
+      "route": [
+        18,
+        100
+      ],
+      "wallImpact": {
+        "type": "impact",
+        "id": 9,
+        "kind": "obstacle",
+        "material": "wood",
+        "x": 12.439968038504322,
+        "y": 4.640433493340195,
+        "impulse": 30.753239007642247,
+        "pulse": 1,
+        "crack": 0,
+        "tick": 37,
+        "serial": 1
+      },
+      "state": "aim",
+      "shots": 1,
+      "seconds": 4.458333333333345,
+      "quiet": 0.8583333333333327,
+      "broken": 0,
+      "down": 0,
+      "allDownAt": null,
+      "maximumBodies": 11
+    }
+  ],
+  "sweep": {
+    "0": {
+      "states": {
+        "aim": 44,
+        "won": 20
+      },
+      "longestSeconds": 20.033333333332838
+    },
+    "1": {
+      "states": {
+        "aim": 55,
+        "won": 9
+      },
+      "longestSeconds": 15.658333333333085
+    }
+  },
+  "contact": {
+    "deterministic": true,
+    "maxEvents": 128,
+    "genuineArcImpacts": 20,
+    "debrisMaterials": [
+      "paper",
+      "wood"
+    ]
+  },
+  "damping": {
+    "wallDampingChecked": true,
+    "groundDampingChecked": true
+  }
+}
