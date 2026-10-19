@@ -1,0 +1,7 @@
+export const TYPES={skiff:{name:'掠翼',role:'轻型直落',hp:3,r:16,score:120,color:'#dca775'},dart:{name:'折翼',role:'交错装甲',hp:26,r:19,score:300,color:'#92c8c9'},fan:{name:'弧翼',role:'缓行重型',hp:32,r:23,score:380,color:'#b8a8d7'},elite:{name:'巡航精英',role:'末段精英',hp:230,r:32,score:1500,color:'#e3c68d'}};
+export const WEAPONS={spread:{name:'广域散射',mark:'⋁',detail:'五路张开 · 横扫轻编队'},focus:{name:'集中双轨',mark:'Ⅱ',detail:'窄幅双轨 · 对准重目标'}};
+const choice=(at,group)=>[{at,x:220,type:'spread',group},{at,x:380,type:'focus',group}];
+export const LEVELS=[
+ {id:1,name:'晨光横阵',tip:'横向轻编队铺开：拾取 ⋁ 广域胶囊，五路弹道扫过两翼。精英缓摆，扇弹之间留有空隙。',palette:0,eliteAt:42,eliteHP:175,bulletSpeed:158,enemyScale:1,fanCount:5,elitePatterns:['fan','straight','fan'],eliteName:'织云者 · 扇阵',waves:Array.from({length:10},(_,w)=>({at:3+w*3.7,label:`横阵 ${w+1}`,craft:(w===4||w===8?[{type:'fan',x:300,delay:0,phase:w}]:[100,200,300,400,500].map((x,j)=>({type:'skiff',x,delay:Math.abs(j-2)*.13,phase:w*.4})))})),drops:[...choice(.8,1),...choice(17,2),{at:27,x:300,type:'repair'},...choice(36,3)]},
+ {id:2,name:'暮色装甲线',tip:'装甲重机左右交错：拾取 Ⅱ 集中胶囊，跟住目标的航线。精英急移后锁点，预告结束前横移避开。',palette:2,eliteAt:42,eliteHP:265,bulletSpeed:170,enemyScale:1,fanCount:3,elitePatterns:['aim','aim','straight'],eliteName:'折风者 · 锁点',waves:Array.from({length:10},(_,w)=>({at:3+w*3.7,label:`装甲 ${w+1}`,craft:[{type:w%3===2?'fan':'dart',x:w%2?420:180,delay:0,phase:w*.5},...(w%3===1?[{type:'skiff',x:w%2?120:480,delay:.8,phase:w}]:[])]})),drops:[...choice(.8,1),...choice(17,2),{at:27,x:300,type:'repair'},...choice(36,3)]}
+];
