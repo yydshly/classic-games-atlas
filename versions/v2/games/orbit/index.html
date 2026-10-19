@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111f2b"><title>星环落块 · 180秒冲分 | v2</title><link rel="stylesheet" href="./orbit.css"></head>
+<body>
+<header><a href="../../../../index.html">← 游戏图鉴</a><span>29 / ORBIT · V2</span><a href="../../../../games/orbit/index.html">旧版十二关 ↗</a></header>
+<main>
+<div class="title"><div><small>LEAVE ROOM FOR THE NEXT STAR</small><h1>星环落块 <span>180秒冲分</span></h1></div><button id="help">玩法与按键 ?</button></div>
+<section class="arena" aria-label="星环落块游戏">
+<aside class="dashboard">
+<div class="clock"><span>剩余时间 / ACTIVE TIME</span><strong id="time">3:00</strong><div class="time-track"><i id="time-bar"></i></div></div>
+<div class="score"><span>本轮分数</span><strong id="score">0</strong><small id="record-gap">从一行开始，留下新纪录。</small></div>
+<div class="metrics"><div><span>累计消行</span><b id="lines">0</b></div><div><span>最大连消</span><b id="combo">0</b></div></div>
+<div class="speed"><span id="speed-label">速度 1 / 7</span><b id="gravity">0.72秒 / 格</b><div class="speed-track" id="speed-track" aria-hidden="true"></div><small id="next-speed">再消8行提速</small></div>
+<div class="best"><span>个人最好 · 本设备</span><strong id="best-score">—</strong><small id="best-detail">完成一轮即可留下成绩</small></div>
+</aside>
+<div class="board-wrap">
+<canvas id="field" width="360" height="688" tabindex="0" aria-label="8乘16落块棋盘。左右移动，上或X顺转，Z逆转，下软降，空格硬降，P暂停。"></canvas>
+<div class="board-overlay" id="panel"><small id="panel-kicker">THREE MINUTES. MAKE SPACE.</small><h2 id="panel-title">留住井口<br>点亮整行</h2><p id="panel-copy">空板开局，填满横行得分。<br>每消8行略微提速，最高7档。</p><p id="summary"></p><button id="primary" class="accent">开始 180 秒 →</button><small id="restore-note" hidden>已恢复棋盘、队列、分数和剩时。点击继续后计时。</small></div>
+</div>
+<aside class="right-panel">
+<div class="queue-head"><span>接下来三枚</span><small>七形袋</small></div>
+<canvas id="preview" width="220" height="300" aria-label="接下来三枚方块预览"></canvas>
+<p id="preview-text" class="sr-only"></p>
+<div class="feedback" id="feedback" role="status" aria-live="polite">给下一枚留一点空间。</div>
+<div class="actions"><button id="pause" disabled>暂停 P</button><button id="retry">重新开始 R</button></div>
+<div class="controls" aria-label="落块操作">
+<button id="ccw" aria-label="逆时针旋转 Z">↶ <small>Z</small></button><button id="cw" aria-label="顺时针旋转 X或上">↷ <small>X / ↑</small></button>
+<button id="left" aria-label="向左移动，可按住">←</button><button id="right" aria-label="向右移动，可按住">→</button>
+<button id="soft" aria-label="软降，可按住">软降 ↓</button><button id="hard" class="accent" aria-label="硬降，空格">硬降 ␣</button>
+</div>
+<div class="preferences"><button id="sound" aria-pressed="false">声音：关</button><button id="motion" aria-pressed="false">减弱动态：关</button></div>
+</aside>
+</section>
+<footer><span>虚线是落点 · 硬降立即锁定 · 接地可短暂调整</span><span id="storage-note" hidden>浏览器未允许保存，本轮仍可正常玩。</span><span id="save-note" hidden>无效续局已忽略，可开始新一轮。</span></footer>
+</main>
+<dialog id="help-dialog"><h2>三分钟，给下一颗星留空间</h2><p>七种四格块轮流落下。每行填满8格会同时消除；预览三枚，避免把洞封住。每累计8行提高一档重力，最高第7档（0.24秒/格）。起点被堵住提前结束，180秒到点结算。</p><p>← → / A D 移动，↑ / X 顺转，Z 逆转，↓ / S 软降，空格硬降。P / Esc 暂停，R 立即重新开局。按钮也支持鼠标与触屏；长按方向或软降，旋转和硬降点一次。</p><p>单/双/三/四行：100 / 260 / 460 / 720分。连续有消行的落块从第二次起额外加30分、60分……；中断清零。全空加150，软降每格1分、硬降每格2分。“最大连消”指连续有消行的落块次数。</p><p>固定七袋序列方便重试比较。暂停、切到后台或失焦会停表；刷新恢复时先暂停。成绩只存在本设备。新纪录按分数优先，同分取消行更多，再取最大连消更多。</p><p>本作是自定义8×16限时落块：包围框归一化旋转与简化踢墙，无储存块、T旋奖励、对战或标准规则认证。参考 <a href="https://play.tetris.com/about" target="_blank" rel="noopener">Tetris 官方玩法介绍</a> 的填行、腾空间与纪录挑战；未使用商业素材。<a href="../../../../games/orbit/index.html">原十二关模式仍可玩</a>。</p><button id="help-close" class="accent">回到棋盘</button></dialog>
+<script type="module" src="./game.mjs"></script>
+</body></html>
