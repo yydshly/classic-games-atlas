@@ -46,7 +46,7 @@
 | 山口守望：[v1八图](./games/pass/) · [v2候选](./versions/v2/games/pass/) | v1 8图；v2 1短图4波 | 王国保卫战 | 有限实玩候选，未完成品质验收；[QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [风行小径](./games/trail/) | 8 | 冒险岛 | 已发布 · 原创实现 |
 | [夜航拾光](./games/lantern/) | 10 | 吃豆人 | 已发布 · 原创实现 |
-| [云隙巡航](./games/cloud/) | 8 | 雷电 | 已发布 · 原创实现 |
+| 云隙巡航：[v1八段](./games/cloud/) · [v2候选](./versions/v2/games/cloud/) | v1 8段；v2 2短段 | 雷电系列，双火力机制参考 | 有限实玩候选，未完成品质验收；[QA](docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [晶簇花园](./games/garden/) | 20 | 宝石迷阵 | 已发布 · 原创实现 |
 | [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
@@ -237,6 +237,8 @@ python scripts/test_lantern_ui.py
 本款交付后回到主对话安排第九款，保留图鉴与前七款。
 
 ## 原创玩法实验 09：云隙巡航
+
+新增独立[v2 · 广域与集中](versions/v2/games/cloud/)两段双火力选择，旧八段保留。公开实玩首段78.8秒5900分胜，第二约43秒1580分败；不同轨迹/拾取反馈与风幕、暂停重试、刷新整备保首5900已观察。第二完整精英、120秒未完成终局、严格配对互斥、声音听感、手机/审美未验；比分不能作武器平衡结论。机体原创图集实际显示，页面需滚动，仍为候选。[范围与官方参考](versions/v2/games/cloud/NOTES.md) · [真实运行图与QA](docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=cloud)。以下为保留的v1历史说明。
 
 **[立即试玩云隙巡航](https://yydshly.github.io/classic-games-atlas/games/cloud/) · [固定范围](docs/CLOUD_SPEC.md) · [测试与部署证据](docs/CLOUD_VERIFICATION.md)**
 
