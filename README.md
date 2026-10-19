@@ -55,7 +55,7 @@
 | [钢岚突进](./games/gale/) | 8 | 魂斗罗所代表的横版移动射击机制 | 已发布 · 原创实现 |
 | [弯道邮差](./games/post/) | 8 | 极品飞车所代表的街机竞速类型 | 已发布 · 原创实现 |
 | [灯塔小队](./games/beacon/) | 10 | 经典战棋通用回合战术机制，关联英雄无敌Ⅲ介绍 | 已发布 · 原创实现 |
-| [风铃绳旅](./games/chime/) | 16 | 割绳子所代表的重力剪绳解谜通用机制 | 已发布 · 原创实现 |
+| 风铃绳旅：[v1十六庭院](./games/chime/) · [v2候选](./versions/v2/games/chime/) | v1 16关；v2 3短题 | 割绳子重力/时序与泡泡参考 | 有限实玩1胜2败，未完成品质验收；[QA](docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 溪谷守芽：[v1十关](./games/brook/) · [v2候选](./versions/v2/games/brook/) | v1 10关；v2 2场 | 植物大战僵尸分路防守与反制参考 | 两场有限实玩均失败，未完成品质验收；[QA](docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [潮汐珠径](./games/tide/) | 12 | Zuma所代表的沿路径珠链三连消除通用机制 | 已发布 · 原创实现 |
 | [纸翼投递](./games/paper/) | 16 | 经典弹弓抛射解谜通用机制，关联愤怒的小鸟介绍 | 已发布 · 原创实现 |
@@ -431,6 +431,8 @@ python scripts/test_beacon_ui.py
 角色、地图、故事、图形和合成声音原创，不复制英雄无敌Ⅲ等作品的角色、地图、剧情或经济系统。保留图鉴与前十六款运行代码，完成验证和部署后交回主对话安排后续。
 
 ## 原创玩法实验 18：风铃绳旅
+
+新增独立[v2 · 三口轻风](versions/v2/games/chime/)三道泡泡谜题，旧十六庭院保留。首题17.0秒2星成功，第二11.4秒早剪停梁败、第三14.6秒晚破出界败；并非三题真人通关。泡中7.1秒与破后12.1秒刷新先暂停一致，重试保首最好。主图第三8.8秒仍包泡非终局，纯Canvas场景，提示有残留，页面需滚动，手机/声音/审美未验。[范围与参考来源](versions/v2/games/chime/NOTES.md) · [真实运行图与QA](docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=chime)。以下为保留的v1历史说明。
 
 **[立即试玩风铃绳旅](https://yydshly.github.io/classic-games-atlas/games/chime/) · [固定范围](docs/CHIME_SPEC.md) · [测试与部署证据](docs/CHIME_VERIFICATION.md)**
 
