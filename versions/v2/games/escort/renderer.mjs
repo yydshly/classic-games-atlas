@@ -6,6 +6,15 @@ const load=name=>new Promise((resolve,reject)=>{const i=new Image();i.onload=()=
 function rounded(c,x,y,w,h,r=5){c.beginPath();c.roundRect(x,y,w,h,r);}
 function surface(){const s=document.createElement('canvas');s.width=320;s.height=240;return s;}
 
+// Readability overlay only: exact world-foot projections, never simulation inputs.
+export function drawFootMarkers(c,items,player){
+ c.save();c.globalAlpha=1;c.globalCompositeOperation='source-over';
+ for(const {a,x,y,z} of items){const hero=a.id==='player';if(!hero&&(a.hp<=0||Math.hypot(a.x-player.x,a.y-player.y)>320))continue;
+  const radius=(hero?7:9)*z;c.beginPath();if(hero)c.arc(x,y,radius,0,Math.PI*2);else{c.moveTo(x,y-radius);c.lineTo(x+radius,y);c.lineTo(x,y+radius);c.lineTo(x-radius,y);c.closePath();}
+  c.lineWidth=5;c.strokeStyle='#07131c';c.stroke();c.lineWidth=2;c.strokeStyle=hero?'#b2f6db':'#ffd08c';c.stroke();c.beginPath();c.arc(x,y,1.5*z,0,Math.PI*2);c.fillStyle=hero?'#b2f6db':'#ffd08c';c.fill();
+ }c.restore();
+}
+
 export function createRenderer(canvas,map){
  const c=canvas.getContext('2d'),m=map.getContext('2d'),images={},cache=new Map(),blend=surface(),bc=blend.getContext('2d');
  map.width=440;map.height=180;let previous=new Map(),previousTick=-1,previousLevel=0;
@@ -76,6 +85,7 @@ export function createRenderer(canvas,map){
   labels(items,g,W,H,portrait?1.65:compact?1.25:1);
   if(l.theme==='rain'){c.strokeStyle='#bed5e91d';c.lineWidth=1;for(let i=0;i<48;i++){const x=(i*137+g.ticks*2.1)%W,y=(i*73+g.ticks*7)%H;c.beginPath();c.moveTo(x,y);c.lineTo(x-5,y+15);c.stroke();}}else for(let i=0;i<16;i++){const x=(i*89+Math.sin(g.ticks*.007+i)*18)%W,y=40+(i*61+g.ticks*.15)%(H-70);c.fillStyle=l.theme==='night'?'#f8d37844':'#ffe2a82a';c.beginPath();c.arc(x,y,i%3===0?1.2:.7,0,Math.PI*2);c.fill();}
   const vignette=c.createRadialGradient(W*.5,H*.6,Math.min(W,H)*.25,W*.5,H*.6,Math.max(W,H)*.72);vignette.addColorStop(0,'#04111b00');vignette.addColorStop(1,'#04111b66');c.fillStyle=vignette;c.fillRect(0,0,W,H);
+  drawFootMarkers(c,items,g.player);
   c.fillStyle='#10222bdf';rounded(c,18,18,205,46,5);c.fill();c.fillStyle='#d8b677';c.font='10px system-ui';c.textAlign='left';c.fillText('ALLEYLIGHT / '+String(g.level).padStart(2,'0'),30,36);c.fillStyle='#e6dcc5';c.font='12px serif';c.fillText('第'+(g.stage+1)+'街段 · '+g.enemies.filter(a=>a.hp>0).length+'名来敌',30,54);
   const cx=sx(g.cart.x);if(cx<35||cx>W-35){c.fillStyle='#132632ed';rounded(c,cx<35?15:W-165,H-50,150,30,4);c.fill();c.fillStyle='#e5c68d';c.font='12px system-ui';c.textAlign='center';c.fillText(cx<35?'← 回到灯车身边':'灯车在前方 →',cx<35?90:W-90,H-30);}
   m.fillStyle='#10242d';m.fillRect(0,0,440,180);const scale=400/l.length,dy=y=>35+(y-60)*.5;m.strokeStyle='#8a754d';m.lineWidth=1;m.setLineDash([3,7]);m.beginPath();l.path.forEach((p,i)=>i?m.lineTo(20+p.x*scale,dy(p.y)):m.moveTo(20+p.x*scale,dy(p.y)));m.stroke();m.setLineDash([]);for(let i=0;i<3;i++){m.strokeStyle=g.cleared[i]?'#86b29d':'#c8a46a';m.beginPath();m.moveTo(20+l.gates[i]*scale,23);m.lineTo(20+l.gates[i]*scale,133);m.stroke();}for(const a of[g.cart,...g.enemies.filter(e=>e.hp>0),g.player]){m.fillStyle=a.id==='cart'?'#efc268':a.id==='player'?'#9acdb4':'#d98f6d';m.beginPath();m.arc(20+a.x*scale,dy(a.y),a.id==='player'?5:4,0,Math.PI*2);m.fill();}m.font='11px system-ui';m.fillStyle='#c8ba9b';m.textAlign='center';m.fillText('守灯人 · 灯车 · 三段街口',220,160);
@@ -83,4 +93,5 @@ export function createRenderer(canvas,map){
  }
  return{ready,draw};
 }
+
 
