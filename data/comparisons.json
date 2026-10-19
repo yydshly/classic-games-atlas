@@ -2095,8 +2095,9 @@
         "公开循环天气、主动日结生长、有限种子费与独立关卡预算"
       ],
       "gaps": [
-        "牧场物语目录包含种植、动物和居民交往；本作明确不模拟社交或畜牧",
-        "玩法收缩为固定地块、回合行动和订单解谜，不能等同原目录中的种植、畜牧与居民交往组合；具体原作一代也未定"
+        "原v1各关独立，v2新增同农场三章资源延续和两次建设，但仍只有固定地块、公开天气、有限订单与截止日，完成三章即结局，不是多年自由生活。",
+        "两位邻居仅条件台词与静态人物，没有畜牧、城镇探索、好感/婚恋、节庆或自由行走；长凳无经济加成，不能把有限回应等同牧场物语的居民生活系统。",
+        "参考仍为日本牧场物语/Story of Seasons谱系；本轮查阅Friends of Mineral Town官方系统作为机制参考，不代表已锁定或还原这一版本。真实连续性、操作节奏、手机触控、陪伴感与审美待公开实玩。"
       ],
       "relation": "本项目原创小型回合农场经营解谜，只参考经典播种、照料、收获与订单通用机制；不使用Harvest Moon / Story of Seasons原作角色、地图、美术或音频，不作完整牧场模拟。",
       "levels": 12,
@@ -2135,6 +2136,36 @@
           "line_end": null,
           "url": "https://github.com/yydshly/classic-games-atlas/blob/86bb3267f50c1970c97f0dc875b9e0e0e690a36f/docs/FARM_VERIFICATION.md",
           "claim": "仓库既有验证报告；本次未重跑，不等于人工难度或原作一致性验收"
+        },
+        {
+          "path": "docs/farm-v2/VERIFICATION.md",
+          "url": "./docs/farm-v2/VERIFICATION.md",
+          "claim": "三章连续性、规则/模型证据与浏览器尚未实玩边界"
+        },
+        {
+          "path": "versions/v2/games/farm/engine.mjs",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/25c7e91d8b419e5c7a7d07a5bef40e0b70df4b60/versions/v2/games/farm/engine.mjs",
+          "claim": "跨章资源、真实章入口重试、有限期限与合法操作重放"
+        },
+        {
+          "path": "versions/v2/games/farm/levels.mjs",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/25c7e91d8b419e5c7a7d07a5bef40e0b70df4b60/versions/v2/games/farm/levels.mjs",
+          "claim": "三章预算/订单/两次建设、四种作物与天气规则"
+        },
+        {
+          "path": "versions/v2/games/farm/ASSETS.md",
+          "url": "https://github.com/yydshly/classic-games-atlas/blob/25c7e91d8b419e5c7a7d07a5bef40e0b70df4b60/versions/v2/games/farm/ASSETS.md",
+          "claim": "原创生成位图来源和权利边界，未使用原作素材"
+        },
+        {
+          "label": "STORY OF SEASONS: Friends of Mineral Town · Life on the Farm",
+          "url": "https://www.storyofseasons.com/fomt/lifeonthefarm/",
+          "claim": "官方介绍种植、畜牧与居民交往；本轮只用作机制参考，不将该具体版本倒填为历史既定复刻目标"
+        },
+        {
+          "label": "STORY OF SEASONS: Friends of Mineral Town · Return to Nature",
+          "url": "https://www.storyofseasons.com/fomt/returntonature/",
+          "claim": "官方介绍农场/住宅/工具升级和居民关系；本作只做有限建设与条件台词，不等价复刻"
         }
       ],
       "validation_boundary": "本次为固定提交的目录、范围与既有验收文档核对，未重跑游戏；已有自动化通关不等于人工手感、原作一致性或用户审美验收。",
@@ -2153,8 +2184,21 @@
       "version": "v1",
       "next_version": {
         "version": "v2",
-        "status": "not_started",
-        "url": null
+        "status": "candidate_unaccepted",
+        "label": "v2 有限候选，未完成品质验收",
+        "url": "./versions/v2/games/farm/",
+        "details_url": "./docs/farm-v2/VERIFICATION.md",
+        "candidate_commit": "25c7e91d8b419e5c7a7d07a5bef40e0b70df4b60",
+        "changes": [
+          "原v1已有12关、4种作物、天气浇水、2–4次生长、跨日库存、行动预算和订单回款；本轮另做同一座农场的3个连续章节，不把旧有种植机制当新功能，也未重做十二关。",
+          "初始8币、4块田、每日4行动，四种作物从首日开放；播种/浇水/收获/交付/建设各耗1行动。有水才有效生长，雨天补水，寒潮仅霜麦可长；主动日结，没有实时等待、离线生长、每日赠币或自动卖出。",
+          "第一章6日交绯萝2份回款7币并花3币修围栏，永久4→6块田；第二章7日交青豆3/金瓜2回款18币并花6币建长凳；第三章8日交霜麦2/绯萝2回款20币。长凳只有场景与台词回应，没有经济、行动或生长加成。",
+          "过章需订单和建设均完成，再主动确认下一章。现金、在田作物年龄/水分、仓库、建筑原样保留；不赠币、不恢复当日行动，进入当天算新章第一天。最后日期限结束仍未完成才失败，成熟后仍需分别收获与交单。",
+          "林穗与陶禾两位原创邻居按章节、订单和建设回应；不是自由社交系统。背景、干湿土、围栏、长凳、两人物及四作物三阶段共19份AI辅助原创位图接入同一场景，配浇水、入仓和650ms日结反馈；可跳过动画且不重复结算。人物是静态关键姿态，装饰与部分提示仍程序绘制。",
+          "独立key classic-atlas.farm.continuity.v2，不覆盖或迁移v1。合法操作重放恢复，游玩中刷新先暂停，章末/胜利/失败按原阶段保留。失败重试回本章实际入口，包括当时余行动、未熟作物、库存、资金与前章建设，不倒退前章，也不额外补满行动。"
+        ],
+        "preserved": "原v1十二关、原有播种/浇水/天气/生长/跨日库存/订单与存档、冻结入口均保留。v2独立三章连续经营，不覆盖十二关，也未把原作系列绑定改成某代已完成复刻。",
+        "validation_boundary": "独立三章连续农场候选，尚待公开浏览器实玩，未完成品质验收。15组规则模型通过，含30轮每轮最多100步的固定种子合法操作探索，本次实际2938步；两条正式act路线均总第11天、30币、六块田完成三章。其中连续性路线在总第3天进入第二章时保留绯萝2份、青豆生长2/3且水1、5币和0行动；第三章可交之前保留的绯萝。8组DOM控制器模型覆盖预览确认/取消、过章、失败回本章入口、刷新、暂停/失焦、动画锁与跳过不重算，均不是浏览器操作证据。实际renderer的首章/第三章成熟/结局三张离屏图已检查，19份原创位图实际载入，但不是公开网页截图。三章普通操作、自然失败/重试、实际存档连续性、1181×757和400CSS布局、原生触屏、无障碍、长期保存、手感、陪伴感与审美仍未验；响应式代码预算不算手机实测。两位邻居是静态人物与条件台词，没有自由行走、好感数值、婚恋或完整角色动画；三章有限经营不等于完整牧场物语。"
       }
     },
     {
@@ -3806,6 +3850,11 @@
       "number": "22",
       "commit": "152b5db3afbc739c76d5adea208e689120e804ea",
       "scope": "原十二关保留；独立三关有限逐回合成功、第二关升级/绕行、首关自然逾期与重试、暂停空船扩建改线刷新已实玩。两方案等待均0，不证明降低排队；自动计时、在途刷新、触屏、乐趣与品质未验。"
+    },
+    {
+      "number": "23",
+      "commit": "25c7e91d8b419e5c7a7d07a5bef40e0b70df4b60",
+      "scope": "原十二关保留；独立三章同农场延续资金、在田作物、库存与两次建设，两位邻居仅条件回应。规则/DOM/离屏检查完成，公开浏览器与品质待验。"
     }
   ]
 }
