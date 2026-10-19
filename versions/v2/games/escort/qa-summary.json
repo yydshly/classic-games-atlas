@@ -1,0 +1,520 @@
+{
+  "generatedAt": "2026-10-19T09:22:57.515Z",
+  "method": "Local deterministic input()/advanceTicks() controller, not a browser test. Normal routes do not assign state/HP/positions. Boundary fixtures are explicitly labeled and separate.",
+  "sourceSHA256": {
+    "engine": "b4c648cdfdd6369bd71fbcb73ade6cfb6f130a3e18eec770947042352f478471",
+    "levels": "8188bbde64616c4fce07ba2008cc80aad67c5791ef2ecf7f3905b83825568279"
+  },
+  "passed": 20,
+  "failed": 0,
+  "routeSummaries": [
+    {
+      "level": 1,
+      "name": "晨街 · 让开冲线",
+      "strategy": "tactical",
+      "state": "won",
+      "seconds": 15.217,
+      "hp": 120,
+      "cartHP": 88,
+      "damageTaken": 0,
+      "cartDamage": 12,
+      "healsUsed": 0,
+      "healsLeft": 2,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "dodges": 0,
+      "evades": 0,
+      "kills": 6,
+      "score": 2568,
+      "warden": {
+        "guardHits": 0,
+        "exposedHits": 0,
+        "damageDealt": 0,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "moves": []
+      },
+      "allInvariants": true
+    },
+    {
+      "level": 2,
+      "name": "雨巷 · 先守灯车",
+      "strategy": "tactical",
+      "state": "won",
+      "seconds": 17.75,
+      "hp": 120,
+      "cartHP": 87,
+      "damageTaken": 0,
+      "cartDamage": 33,
+      "healsUsed": 1,
+      "healsLeft": 1,
+      "healedPlayer": 0,
+      "healedCart": 20,
+      "dodges": 1,
+      "evades": 0,
+      "kills": 6,
+      "score": 2463,
+      "warden": {
+        "guardHits": 0,
+        "exposedHits": 0,
+        "damageDealt": 0,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "moves": []
+      },
+      "allInvariants": true
+    },
+    {
+      "level": 3,
+      "name": "夜岸 · 等一息破绽",
+      "strategy": "tactical",
+      "state": "won",
+      "seconds": 20.633,
+      "hp": 120,
+      "cartHP": 100,
+      "damageTaken": 0,
+      "cartDamage": 0,
+      "healsUsed": 0,
+      "healsLeft": 2,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "dodges": 1,
+      "evades": 0,
+      "kills": 5,
+      "score": 2656,
+      "warden": {
+        "guardHits": 0,
+        "exposedHits": 4,
+        "damageDealt": 112,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "moves": [
+          "charge",
+          "sweep"
+        ]
+      },
+      "allInvariants": true
+    },
+    {
+      "level": 1,
+      "name": "晨街 · 让开冲线",
+      "strategy": "standing",
+      "state": "won",
+      "seconds": 15.217,
+      "hp": 120,
+      "cartHP": 88,
+      "damageTaken": 0,
+      "cartDamage": 12,
+      "healsUsed": 0,
+      "healsLeft": 2,
+      "healedPlayer": 0,
+      "healedCart": 0,
+      "dodges": 0,
+      "evades": 0,
+      "kills": 6,
+      "score": 2568,
+      "warden": {
+        "guardHits": 0,
+        "exposedHits": 0,
+        "damageDealt": 0,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "moves": []
+      },
+      "allInvariants": true
+    },
+    {
+      "level": 2,
+      "name": "雨巷 · 先守灯车",
+      "strategy": "standing",
+      "state": "won",
+      "seconds": 17.9,
+      "hp": 120,
+      "cartHP": 87,
+      "damageTaken": 17,
+      "cartDamage": 33,
+      "healsUsed": 1,
+      "healsLeft": 1,
+      "healedPlayer": 17,
+      "healedCart": 20,
+      "dodges": 0,
+      "evades": 0,
+      "kills": 6,
+      "score": 2462,
+      "warden": {
+        "guardHits": 0,
+        "exposedHits": 0,
+        "damageDealt": 0,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "moves": []
+      },
+      "allInvariants": true
+    },
+    {
+      "level": 3,
+      "name": "夜岸 · 等一息破绽",
+      "strategy": "standing",
+      "state": "won",
+      "seconds": 19.7,
+      "hp": 107,
+      "cartHP": 100,
+      "damageTaken": 48,
+      "cartDamage": 0,
+      "healsUsed": 1,
+      "healsLeft": 1,
+      "healedPlayer": 35,
+      "healedCart": 0,
+      "dodges": 0,
+      "evades": 0,
+      "kills": 5,
+      "score": 2477,
+      "warden": {
+        "guardHits": 4,
+        "exposedHits": 3,
+        "damageDealt": 112,
+        "damageTaken": 48,
+        "cartDamage": 0,
+        "moves": [
+          "charge",
+          "sweep"
+        ]
+      },
+      "allInvariants": true
+    }
+  ],
+  "tests": [
+    {
+      "name": "normal-input route tactical level 1",
+      "passed": true,
+      "detail": {
+        "level": 1,
+        "name": "晨街 · 让开冲线",
+        "strategy": "tactical",
+        "state": "won",
+        "seconds": 15.217,
+        "hp": 120,
+        "cartHP": 88,
+        "damageTaken": 0,
+        "cartDamage": 12,
+        "healsUsed": 0,
+        "healsLeft": 2,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "dodges": 0,
+        "evades": 0,
+        "kills": 6,
+        "score": 2568,
+        "warden": {
+          "guardHits": 0,
+          "exposedHits": 0,
+          "damageDealt": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": []
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "normal-input route tactical level 2",
+      "passed": true,
+      "detail": {
+        "level": 2,
+        "name": "雨巷 · 先守灯车",
+        "strategy": "tactical",
+        "state": "won",
+        "seconds": 17.75,
+        "hp": 120,
+        "cartHP": 87,
+        "damageTaken": 0,
+        "cartDamage": 33,
+        "healsUsed": 1,
+        "healsLeft": 1,
+        "healedPlayer": 0,
+        "healedCart": 20,
+        "dodges": 1,
+        "evades": 0,
+        "kills": 6,
+        "score": 2463,
+        "warden": {
+          "guardHits": 0,
+          "exposedHits": 0,
+          "damageDealt": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": []
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "normal-input route tactical level 3",
+      "passed": true,
+      "detail": {
+        "level": 3,
+        "name": "夜岸 · 等一息破绽",
+        "strategy": "tactical",
+        "state": "won",
+        "seconds": 20.633,
+        "hp": 120,
+        "cartHP": 100,
+        "damageTaken": 0,
+        "cartDamage": 0,
+        "healsUsed": 0,
+        "healsLeft": 2,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "dodges": 1,
+        "evades": 0,
+        "kills": 5,
+        "score": 2656,
+        "warden": {
+          "guardHits": 0,
+          "exposedHits": 4,
+          "damageDealt": 112,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": [
+            "charge",
+            "sweep"
+          ]
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "normal-input route standing level 1",
+      "passed": true,
+      "detail": {
+        "level": 1,
+        "name": "晨街 · 让开冲线",
+        "strategy": "standing",
+        "state": "won",
+        "seconds": 15.217,
+        "hp": 120,
+        "cartHP": 88,
+        "damageTaken": 0,
+        "cartDamage": 12,
+        "healsUsed": 0,
+        "healsLeft": 2,
+        "healedPlayer": 0,
+        "healedCart": 0,
+        "dodges": 0,
+        "evades": 0,
+        "kills": 6,
+        "score": 2568,
+        "warden": {
+          "guardHits": 0,
+          "exposedHits": 0,
+          "damageDealt": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": []
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "normal-input route standing level 2",
+      "passed": true,
+      "detail": {
+        "level": 2,
+        "name": "雨巷 · 先守灯车",
+        "strategy": "standing",
+        "state": "won",
+        "seconds": 17.9,
+        "hp": 120,
+        "cartHP": 87,
+        "damageTaken": 17,
+        "cartDamage": 33,
+        "healsUsed": 1,
+        "healsLeft": 1,
+        "healedPlayer": 17,
+        "healedCart": 20,
+        "dodges": 0,
+        "evades": 0,
+        "kills": 6,
+        "score": 2462,
+        "warden": {
+          "guardHits": 0,
+          "exposedHits": 0,
+          "damageDealt": 0,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": []
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "normal-input route standing level 3",
+      "passed": true,
+      "detail": {
+        "level": 3,
+        "name": "夜岸 · 等一息破绽",
+        "strategy": "standing",
+        "state": "won",
+        "seconds": 19.7,
+        "hp": 107,
+        "cartHP": 100,
+        "damageTaken": 48,
+        "cartDamage": 0,
+        "healsUsed": 1,
+        "healsLeft": 1,
+        "healedPlayer": 35,
+        "healedCart": 0,
+        "dodges": 0,
+        "evades": 0,
+        "kills": 5,
+        "score": 2477,
+        "warden": {
+          "guardHits": 4,
+          "exposedHits": 3,
+          "damageDealt": 112,
+          "damageTaken": 48,
+          "cartDamage": 0,
+          "moves": [
+            "charge",
+            "sweep"
+          ]
+        },
+        "allInvariants": true
+      }
+    },
+    {
+      "name": "exactly three authored levels",
+      "passed": true
+    },
+    {
+      "name": "tactical monitor-warden comparison uses legal full routes",
+      "passed": true,
+      "detail": {
+        "tactical": {
+          "guardHits": 0,
+          "exposedHits": 4,
+          "damageDealt": 112,
+          "damageTaken": 0,
+          "cartDamage": 0,
+          "moves": [
+            "charge",
+            "sweep"
+          ]
+        },
+        "standing": {
+          "guardHits": 4,
+          "exposedHits": 3,
+          "damageDealt": 112,
+          "damageTaken": 48,
+          "cartDamage": 0,
+          "moves": [
+            "charge",
+            "sweep"
+          ]
+        }
+      }
+    },
+    {
+      "name": "fixture: charge line, face and depth lock before active frames",
+      "passed": true,
+      "detail": {
+        "lockedRegion": {
+          "x0": 102,
+          "x1": 308,
+          "y0": 130,
+          "y1": 170
+        },
+        "endX": 110,
+        "playerHP": 120
+      }
+    },
+    {
+      "name": "fixture: player walk, dodge and enemy charge obey walls and depth bounds",
+      "passed": true
+    },
+    {
+      "name": "fixture: each attack contacts each target only once across active frames",
+      "passed": true,
+      "detail": {
+        "attack": 1,
+        "hitIds": [
+          "e1",
+          "e2"
+        ],
+        "eachDamage": 16
+      }
+    },
+    {
+      "name": "fixture: warden alternates charge and sweep; sweep closes to real reach",
+      "passed": true,
+      "detail": [
+        {
+          "move": "charge",
+          "range": 205,
+          "depth": 24,
+          "wind": 60,
+          "active": 24,
+          "recovery": 90
+        },
+        {
+          "move": "sweep",
+          "range": 105,
+          "depth": 62,
+          "wind": 66,
+          "active": 12,
+          "recovery": 90
+        },
+        {
+          "move": "charge",
+          "range": 205,
+          "depth": 24,
+          "wind": 60,
+          "active": 24,
+          "recovery": 90
+        }
+      ]
+    },
+    {
+      "name": "fixture: warden guard reduces damage without interrupt; recovery amplifies damage",
+      "passed": true,
+      "detail": {
+        "guardDamage": 4,
+        "recoveryDamage": 24,
+        "wardenAttackStillActive": true
+      }
+    },
+    {
+      "name": "fixture: heavy prioritizes cart even when player is closer",
+      "passed": true
+    },
+    {
+      "name": "fixture: park/resume, threat stop and distance stop control cart movement",
+      "passed": true
+    },
+    {
+      "name": "fixture: shared healing repairs cart, cooldown and caps preserve supplies",
+      "passed": true,
+      "detail": {
+        "playerRestored": 40,
+        "cartRestored": 30,
+        "supplies": 0
+      }
+    },
+    {
+      "name": "pause clears held keys, freezes ticks and rejects active inputs",
+      "passed": true
+    },
+    {
+      "name": "checkpoint replay restores live play paused with neutral controls",
+      "passed": true
+    },
+    {
+      "name": "won and lost are immutable single-settlement states and restore as terminal",
+      "passed": true
+    },
+    {
+      "name": "frame accumulator equals fixed ticks at legal frame sizes",
+      "passed": true
+    }
+  ]
+}

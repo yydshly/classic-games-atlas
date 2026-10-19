@@ -1,0 +1,242 @@
+{
+  "image": "actions-v2.webp",
+  "width": 2048,
+  "height": 1024,
+  "format": "WebP RGBA",
+  "facing": "right",
+  "anchor": "world foot point, same location in all 512px cells",
+  "frames": [
+    {
+      "id": "player_combo_2",
+      "index": 0,
+      "kind": "player",
+      "pose": "combo-2",
+      "x": 0,
+      "y": 0,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.4,
+      "displayWidth": 204.8,
+      "displayHeight": 204.8,
+      "sourceCrop": {
+        "source": "guardian",
+        "rect": [
+          13,
+          201,
+          645,
+          721
+        ],
+        "anchor": [
+          379,
+          918
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "player_combo_3",
+      "index": 1,
+      "kind": "player",
+      "pose": "combo-3",
+      "x": 512,
+      "y": 0,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.4,
+      "displayWidth": 204.8,
+      "displayHeight": 204.8,
+      "sourceCrop": {
+        "source": "guardian",
+        "rect": [
+          737,
+          202,
+          793,
+          710
+        ],
+        "anchor": [
+          1141,
+          908
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "flank_wind",
+      "index": 2,
+      "kind": "flank",
+      "pose": "wind",
+      "x": 1024,
+      "y": 0,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.4,
+      "displayWidth": 204.8,
+      "displayHeight": 204.8,
+      "sourceCrop": {
+        "source": "flank",
+        "rect": [
+          10,
+          125,
+          589,
+          557
+        ],
+        "anchor": [
+          313,
+          678
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "flank_dash",
+      "index": 3,
+      "kind": "flank",
+      "pose": "active",
+      "x": 1536,
+      "y": 0,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.4,
+      "displayWidth": 204.8,
+      "displayHeight": 204.8,
+      "sourceCrop": {
+        "source": "flank",
+        "rect": [
+          645,
+          111,
+          916,
+          573
+        ],
+        "anchor": [
+          1049,
+          680
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "flank_recover",
+      "index": 4,
+      "kind": "flank",
+      "pose": "recovery",
+      "x": 0,
+      "y": 512,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.4,
+      "displayWidth": 204.8,
+      "displayHeight": 204.8,
+      "sourceCrop": {
+        "source": "flank",
+        "rect": [
+          1551,
+          93,
+          607,
+          594
+        ],
+        "anchor": [
+          1855,
+          683
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "warden_wind",
+      "index": 5,
+      "kind": "warden",
+      "pose": "wind",
+      "x": 512,
+      "y": 512,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.43,
+      "displayWidth": 220.16,
+      "displayHeight": 220.16,
+      "sourceCrop": {
+        "source": "warden",
+        "rect": [
+          25,
+          41,
+          704,
+          652
+        ],
+        "anchor": [
+          394,
+          689
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "warden_sweep",
+      "index": 6,
+      "kind": "warden",
+      "pose": "active",
+      "x": 1024,
+      "y": 512,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.43,
+      "displayWidth": 220.16,
+      "displayHeight": 220.16,
+      "sourceCrop": {
+        "source": "warden",
+        "rect": [
+          713,
+          59,
+          834,
+          635
+        ],
+        "anchor": [
+          1126,
+          690
+        ],
+        "scale": 0.5
+      }
+    },
+    {
+      "id": "warden_recover",
+      "index": 7,
+      "kind": "warden",
+      "pose": "recovery",
+      "x": 1536,
+      "y": 512,
+      "w": 512,
+      "h": 512,
+      "anchorX": 256,
+      "anchorY": 480,
+      "displayScale": 0.43,
+      "displayWidth": 220.16,
+      "displayHeight": 220.16,
+      "sourceCrop": {
+        "source": "warden",
+        "rect": [
+          1493,
+          118,
+          634,
+          575
+        ],
+        "anchor": [
+          1833,
+          689
+        ],
+        "scale": 0.5
+      }
+    }
+  ]
+}
