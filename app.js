@@ -5,7 +5,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'reference-review-r40-escort-20261019';
+const DATA_REVISION = 'reference-review-r41-escort-qa-20261019';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
