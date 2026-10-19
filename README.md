@@ -47,7 +47,7 @@
 | [风行小径](./games/trail/) | 8 | 冒险岛 | 已发布 · 原创实现 |
 | [夜航拾光](./games/lantern/) | 10 | 吃豆人 | 已发布 · 原创实现 |
 | 云隙巡航：[v1八段](./games/cloud/) · [v2候选](./versions/v2/games/cloud/) | v1 8段；v2 2短段 | 雷电系列，双火力机制参考 | 有限实玩候选，未完成品质验收；[QA](docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [晶簇花园](./games/garden/) | 20 | 宝石迷阵 | 已发布 · 原创实现 |
+| 晶簇花园：[v1二十关](./games/garden/) · [v2候选](./versions/v2/games/garden/) | v1 20关；v2 2短题 | Bejeweled造特殊/选择释放参考 | 公开解法两题2步成功，未品质验收；[QA](docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
 | [星砂勘探](./games/sand/) | 20 | 扫雷 | 已发布 · 原创实现 |
@@ -259,6 +259,8 @@ python scripts/test_cloud_ui.py
 本阶段完成后回到主对话报告并安排下一款；继续维护图鉴与前八款。
 
 ## 原创玩法实验 10：晶簇花园
+
+新增独立[v2 · 棱光小谜题](versions/v2/games/garden/)，直五造棱后选择邻色释放，两道公开固定题，旧二十关保留。实玩按页面公开解法各2步成功：460分与380分，非盲解；页面收色目标14/10与模型原始20/12分开。首题非法交换不扣步、5步100分棱盘刷新先暂停，第二重试8步0分保最好380。主图棱选中未释放非终局；需滚动，失败/声音/触屏/审美未验。[范围与资料线索](versions/v2/games/garden/NOTES.md) · [真实运行图与QA](docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=garden)。以下为保留的v1历史说明。
 
 **[立即试玩晶簇花园](https://yydshly.github.io/classic-games-atlas/games/garden/) · [固定范围](docs/GARDEN_SPEC.md) · [测试与部署证据](docs/GARDEN_VERIFICATION.md)**
 
