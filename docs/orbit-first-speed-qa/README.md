@@ -11,7 +11,7 @@
 ## 公开页面实际结果
 
 - 正常落定20枚，8行、1446分、最大连消2；门槛观测455 tick（约3.79活动秒），剩余时间显示2:57。速度1/7→2/7，重力0.72→0.64秒/格，真实反馈“消除2行 · 连消2次 · 提速至2档”。这是首次提速目标完成，不是本轮180秒结束或新个人最好。
-- 暂停后的实际存档为481 tick。正常刷新先暂停，board/active/ticks/score/lines/clearedIds/locks/log/combo/lastClear/stats/speed/gravity/preview/remaining共16组字段相同，原JSON逐字节相同；held与blocked均为空，全部守恒检查通过。
+- 暂停后的实际存档为481 tick。正常刷新先暂停，board/active/ticks/score/lines/clearedIds/locks/log/combo/lastClear/stats/speed/gravity/preview/remaining共15组字段相同，原JSON逐字节相同；held与blocked均为空，全部守恒检查通过。
 - 正常点继续并约0.25秒后暂停，计时实际到514 tick；仍8行/1446分/2档，落定数仍20，没有额外硬降或旧键输入。
 - 原设计只在完成/顶出时记录最好；本次尚在活动局，个人最好仍为空，不把1446当前分冒称已结算纪录。v2是连续有限180秒冲分，不是进入第2关。
 
