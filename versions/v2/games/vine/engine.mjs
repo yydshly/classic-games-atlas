@@ -1,0 +1,22 @@
+import {LEVELS,W,H,DIRS} from './levels.mjs';
+export const opposite=d=>(d+2)%4;
+export function transition(l,c,d){const v=DIRS[d];if(!v)return null;const x=c%W+v.x,y=Math.floor(c/W)+v.y;return x>=0&&x<W&&y>=0&&y<H&&l.floors.includes(y*W+x)?y*W+x:null;}
+export const period=g=>LEVELS[g.level-1].period;
+function random(g){let x=g.rng>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;g.rng=x>>>0;return g.rng/4294967296;}
+// Reachability is a present-position filter, never a guarantee of a safe future route.
+export function reachable(g){const l=LEVELS[g.level-1],blocked=new Set(g.body.slice(1)),q=[{cell:g.body[0],dir:g.dir,distance:0}],seen=new Set([g.body[0]+':'+g.dir]),out=new Map();for(let i=0;i<q.length;i++){const a=q[i];for(let d=0;d<4;d++){if(d===opposite(a.dir))continue;const c=transition(l,a.cell,d),k=c+':'+d;if(c===null||blocked.has(c)||seen.has(k))continue;seen.add(k);const next={cell:c,dir:d,distance:a.distance+1};q.push(next);out.set(c,next);}}return out;}
+export function spawnFood(g){const l=LEVELS[g.level-1];if(g.collected>=l.target){g.food=null;g.waitingFood=false;return null;}const pool=[...reachable(g).keys()].filter(c=>!g.body.includes(c)&&c!==l.exit).sort((a,b)=>a-b);g.food=pool.length?pool[Math.floor(random(g)*pool.length)]:null;g.waitingFood=!pool.length;return g.food;}
+export function createGame(index=0,seed=LEVELS[index]?.seed){const l=LEVELS[index];if(!l)throw Error('Unknown garden');const g={version:2,level:l.id,state:'ready',body:l.body.slice(),dir:l.dir,queue:[],seed:seed>>>0||1,rng:seed>>>0||1,collected:0,food:null,waitingFood:false,ticks:0,time:0,accumulator:0,lossReason:null};spawnFood(g);return g;}
+export function start(g){if(g.state!=='ready')return false;g.state='playing';g.accumulator=0;return true;}
+export function enqueue(g,d){if(g.state!=='playing'||!Number.isInteger(d)||d<0||d>3)return false;const planned=g.queue.at(-1)??g.dir;if(d===planned||d===opposite(planned)||g.queue.length>=2)return false;g.queue.push(d);return true;}
+export function pause(g){if(!['paused','playing'].includes(g.state))return false;g.state=g.state==='paused'?'playing':'paused';g.queue=[];g.accumulator=0;return true;}
+export function bodyBlocks(g,c,growing=false){return g.body.slice(0,growing?undefined:-1).includes(c);}
+export function step(g){if(g.state!=='playing')return false;const l=LEVELS[g.level-1];if(g.queue.length)g.dir=g.queue.shift();const c=transition(l,g.body[0],g.dir),growing=c!==null&&c===g.food;if(c===null||bodyBlocks(g,c,growing)){g.state='lost';g.lossReason=c===null?'wall':'body';g.queue=[];return false;}g.body.unshift(c);if(!growing)g.body.pop();g.ticks++;if(growing){g.collected++;g.food=null;}if(g.collected>=l.target&&c===l.exit){g.state='won';g.queue=[];g.food=null;g.waitingFood=false;return true;}if(g.food===null)spawnFood(g);return true;}
+export function update(g,dt){if(g.state!=='playing'||!Number.isFinite(dt)||dt<=0)return;const t=Math.min(.1,dt);g.time+=t;g.accumulator+=t;while(g.accumulator>=period(g)&&g.state==='playing'){g.accumulator-=period(g);step(g);}}
+export const checkpoint=g=>['ready','playing','paused'].includes(g.state)?JSON.parse(JSON.stringify(g)):null;
+export function restore(v){try{const l=LEVELS[v?.level-1];if(!l||!Number.isInteger(v.level)||v.version!==2||!['ready','playing','paused'].includes(v.state)||!Number.isInteger(v.dir)||v.dir<0||v.dir>3||!['seed','rng'].every(k=>Number.isInteger(v[k])&&v[k]>0&&v[k]<=4294967295)||!Number.isInteger(v.collected)||v.collected<0||v.collected>l.target||!Array.isArray(v.body)||v.body.length!==3+v.collected||new Set(v.body).size!==v.body.length||!v.body.every(c=>Number.isInteger(c)&&l.floors.includes(c))||!Number.isInteger(v.ticks)||v.ticks<0||!Number.isFinite(v.time)||v.time<0||!Number.isFinite(v.accumulator)||v.accumulator<0||v.accumulator>=l.period||typeof v.waitingFood!=='boolean')return null;
+for(let i=1;i<v.body.length;i++)if(!DIRS.some((_,d)=>transition(l,v.body[i],d)===v.body[i-1]))return null;
+if(transition(l,v.body[1],v.dir)!==v.body[0])return null;
+if(v.food!==null&&(!Number.isInteger(v.food)||!l.floors.includes(v.food)||v.body.includes(v.food)||v.food===l.exit))return null;
+if(v.collected>=l.target?(v.food!==null||v.waitingFood):(v.food===null&&!v.waitingFood||v.food!==null&&v.waitingFood))return null;
+const g={version:2,level:v.level,state:v.state==='ready'?'ready':'paused',body:v.body.slice(),dir:v.dir,queue:[],seed:v.seed,rng:v.rng,collected:v.collected,food:v.food,waitingFood:v.waitingFood,ticks:v.ticks,time:v.time,accumulator:0,lossReason:null};return g;}catch{return null;}}
