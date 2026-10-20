@@ -1,0 +1,5 @@
+import {readFileSync} from 'node:fs';import assert from 'node:assert/strict';import {createGame,start,command,update} from '../../versions/v2/games/brook/engine.mjs';
+const report=JSON.parse(readFileSync(process.argv[2]||new URL('./public-report.json',import.meta.url),'utf8')),expected=report.outcome,g=createGame(expected.level-1);start(g);let i=0;
+while(g.ticks<=expected.ticks){while(i<expected.log.length&&expected.log[i].tick===g.ticks){assert(command(g,expected.log[i]),'recorded normal command rejected');i++;}if(g.ticks===expected.ticks)break;assert.equal(g.state,'playing');update(g,1/60);}
+assert.equal(i,expected.log.length);for(const k of ['state','level','ticks','time','resource','cooldown','plants','enemies','bullets','tokens','nextSpawn','nextSky','ids','revision','log','stats'])assert.deepEqual(g[k],expected[k],k);
+console.log(JSON.stringify({kind:'OFFLINE REPLAY OF THE ACTUAL UI RECORD; not a second browser playthrough',acceptedCommands:i,state:g.state,time:g.time,kills:g.stats.kills,resource:g.resource,statsEqual:true},null,2));
