@@ -1,0 +1,15 @@
+{
+  "command": "node scripts/test-trail-controller.mjs",
+  "passed": true,
+  "tests": 28,
+  "includes": [
+    "normal successful pause save",
+    "quota failure keeps prior raw and remains playable",
+    "write SecurityError separate from read/bad-save blocked state",
+    "periodic success clears paused warning without state transition",
+    "bad raw never overwritten or attempted",
+    "existing input/pause/retry checks"
+  ],
+  "controllerGitBlob": "177db82ceae210442a96b479a4361936ab07eb6c",
+  "kind": "VM controller tests, not browser play"
+}
