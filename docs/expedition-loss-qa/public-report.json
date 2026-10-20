@@ -1,0 +1,966 @@
+{
+  "kind": "public normal buttons/selects; native .25s simulation steps, natural raid loss; read-only checkpoint replay is separate and restore labels active copies paused",
+  "progress": [
+    {
+      "time": 0.25,
+      "hp": 160,
+      "stock": {
+        "food": 24,
+        "wood": 14
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    },
+    {
+      "time": 21,
+      "hp": 160,
+      "stock": {
+        "food": 60,
+        "wood": 26
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    },
+    {
+      "time": 41,
+      "hp": 125,
+      "stock": {
+        "food": 96,
+        "wood": 44
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    },
+    {
+      "time": 61,
+      "hp": 125,
+      "stock": {
+        "food": 144,
+        "wood": 56
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    },
+    {
+      "time": 81,
+      "hp": 80,
+      "stock": {
+        "food": 180,
+        "wood": 74
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    },
+    {
+      "time": 101,
+      "hp": 25,
+      "stock": {
+        "food": 216,
+        "wood": 86
+      },
+      "aliveWorkers": 4,
+      "uiPauseLayerHidden": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "naturalLoss": {
+    "raw": "{\"version\":2,\"levelIndex\":0,\"tick\":480,\"log\":[{\"tick\":0,\"command\":{\"type\":\"start\"}},{\"tick\":0,\"command\":{\"type\":\"build\",\"building\":\"barracks\"}},{\"tick\":0,\"command\":{\"type\":\"assign\",\"workerId\":2,\"resource\":\"food\"}},{\"tick\":0,\"command\":{\"type\":\"assign\",\"workerId\":3,\"resource\":\"wood\"}},{\"tick\":0,\"command\":{\"type\":\"assign\",\"workerId\":4,\"resource\":\"food\"}},{\"tick\":460,\"command\":{\"type\":\"build\",\"building\":\"watchtower\"}},{\"tick\":472,\"command\":{\"type\":\"recruit\",\"unit\":\"guard\"}}]}",
+    "offlineReplay": {
+      "version": 2,
+      "levelIndex": 0,
+      "status": "lost",
+      "tick": 480,
+      "time": 120,
+      "duration": 120,
+      "base": {
+        "hp": 0,
+        "maxHp": 160
+      },
+      "stock": {
+        "food": 234,
+        "wood": 72
+      },
+      "delivered": {
+        "food": 230,
+        "wood": 90
+      },
+      "spent": {
+        "food": 28,
+        "wood": 54
+      },
+      "lost": {
+        "food": 0,
+        "wood": 0
+      },
+      "workers": [
+        {
+          "id": 1,
+          "task": "idle",
+          "phase": "build",
+          "remaining": 5,
+          "routeResource": null,
+          "travelDuration": 0,
+          "carry": {
+            "food": 0,
+            "wood": 0
+          },
+          "alive": true
+        },
+        {
+          "id": 2,
+          "task": "food",
+          "phase": "idle",
+          "remaining": 0,
+          "routeResource": null,
+          "travelDuration": 0,
+          "carry": {
+            "food": 0,
+            "wood": 0
+          },
+          "alive": true
+        },
+        {
+          "id": 3,
+          "task": "wood",
+          "phase": "outbound",
+          "remaining": 3,
+          "routeResource": "wood",
+          "travelDuration": 3,
+          "carry": {
+            "food": 0,
+            "wood": 0
+          },
+          "alive": true
+        },
+        {
+          "id": 4,
+          "task": "food",
+          "phase": "idle",
+          "remaining": 0,
+          "routeResource": null,
+          "travelDuration": 0,
+          "carry": {
+            "food": 0,
+            "wood": 0
+          },
+          "alive": true
+        }
+      ],
+      "guards": [
+        {
+          "id": 1,
+          "hp": 32,
+          "front": "reserve",
+          "target": "reserve",
+          "from": "reserve",
+          "travelDuration": 0,
+          "remaining": 0
+        },
+        {
+          "id": 2,
+          "hp": 32,
+          "front": "reserve",
+          "target": "reserve",
+          "from": "reserve",
+          "travelDuration": 0,
+          "remaining": 0
+        }
+      ],
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 0,
+        "watchtower": 0
+      },
+      "construction": [
+        {
+          "building": "watchtower",
+          "workerId": 1,
+          "remaining": 5,
+          "travel": 0,
+          "previousTask": "idle"
+        }
+      ],
+      "queue": [
+        {
+          "unit": "guard",
+          "remaining": 3
+        }
+      ],
+      "nodes": {
+        "food": {
+          "remaining": 0,
+          "total": 230
+        },
+        "wood": {
+          "remaining": 140,
+          "total": 230
+        }
+      },
+      "raids": [
+        {
+          "at": 32,
+          "front": "north",
+          "power": 35,
+          "resolved": true,
+          "phase": "resolved",
+          "remaining": 0
+        },
+        {
+          "at": 62,
+          "front": "south",
+          "power": 45,
+          "resolved": true,
+          "phase": "resolved",
+          "remaining": 0
+        },
+        {
+          "at": 90,
+          "front": "north",
+          "power": 55,
+          "resolved": true,
+          "phase": "resolved",
+          "remaining": 0
+        },
+        {
+          "at": 115,
+          "front": "south",
+          "power": 60,
+          "resolved": true,
+          "phase": "resolved",
+          "remaining": 0
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "text": "开始建造：barracks"
+        },
+        {
+          "time": 10,
+          "text": "建筑完成：barracks"
+        },
+        {
+          "time": 37,
+          "text": "北隘袭击：营地损失 35 生命"
+        },
+        {
+          "time": 67,
+          "text": "南隘袭击：营地损失 45 生命"
+        },
+        {
+          "time": 95,
+          "text": "北隘袭击：营地损失 55 生命"
+        },
+        {
+          "time": 115,
+          "text": "开始建造：watchtower"
+        },
+        {
+          "time": 120,
+          "text": "南隘袭击：营地损失 60 生命"
+        }
+      ],
+      "result": "营地失守",
+      "nextWorker": 5,
+      "nextGuard": 3,
+      "log": [
+        {
+          "tick": 0,
+          "command": {
+            "type": "start"
+          }
+        },
+        {
+          "tick": 0,
+          "command": {
+            "type": "build",
+            "building": "barracks"
+          }
+        },
+        {
+          "tick": 0,
+          "command": {
+            "type": "assign",
+            "workerId": 2,
+            "resource": "food"
+          }
+        },
+        {
+          "tick": 0,
+          "command": {
+            "type": "assign",
+            "workerId": 3,
+            "resource": "wood"
+          }
+        },
+        {
+          "tick": 0,
+          "command": {
+            "type": "assign",
+            "workerId": 4,
+            "resource": "food"
+          }
+        },
+        {
+          "tick": 460,
+          "command": {
+            "type": "build",
+            "building": "watchtower"
+          }
+        },
+        {
+          "tick": 472,
+          "command": {
+            "type": "recruit",
+            "unit": "guard"
+          }
+        }
+      ]
+    },
+    "visibleResult": "谷地需要新的计划\n\n营地失守\n\n重试本段"
+  },
+  "terminalRefreshKept": true,
+  "directRetry": {
+    "version": 2,
+    "levelIndex": 0,
+    "status": "ready",
+    "tick": 0,
+    "time": 0,
+    "duration": 120,
+    "base": {
+      "hp": 160,
+      "maxHp": 160
+    },
+    "stock": {
+      "food": 32,
+      "wood": 36
+    },
+    "delivered": {
+      "food": 0,
+      "wood": 0
+    },
+    "spent": {
+      "food": 0,
+      "wood": 0
+    },
+    "lost": {
+      "food": 0,
+      "wood": 0
+    },
+    "workers": [
+      {
+        "id": 1,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 2,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 3,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 4,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      }
+    ],
+    "guards": [
+      {
+        "id": 1,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      },
+      {
+        "id": 2,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      }
+    ],
+    "buildings": {
+      "barracks": 0,
+      "sawmill": 0,
+      "watchtower": 0
+    },
+    "construction": [],
+    "queue": [],
+    "nodes": {
+      "food": {
+        "remaining": 230,
+        "total": 230
+      },
+      "wood": {
+        "remaining": 230,
+        "total": 230
+      }
+    },
+    "raids": [
+      {
+        "at": 32,
+        "front": "north",
+        "power": 35,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 62,
+        "front": "south",
+        "power": 45,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 90,
+        "front": "north",
+        "power": 55,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 115,
+        "front": "south",
+        "power": 60,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      }
+    ],
+    "events": [],
+    "result": null,
+    "nextWorker": 5,
+    "nextGuard": 3,
+    "log": []
+  },
+  "directRetryRefresh": {
+    "version": 2,
+    "levelIndex": 0,
+    "status": "ready",
+    "tick": 0,
+    "time": 0,
+    "duration": 120,
+    "base": {
+      "hp": 160,
+      "maxHp": 160
+    },
+    "stock": {
+      "food": 32,
+      "wood": 36
+    },
+    "delivered": {
+      "food": 0,
+      "wood": 0
+    },
+    "spent": {
+      "food": 0,
+      "wood": 0
+    },
+    "lost": {
+      "food": 0,
+      "wood": 0
+    },
+    "workers": [
+      {
+        "id": 1,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 2,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 3,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 4,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      }
+    ],
+    "guards": [
+      {
+        "id": 1,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      },
+      {
+        "id": 2,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      }
+    ],
+    "buildings": {
+      "barracks": 0,
+      "sawmill": 0,
+      "watchtower": 0
+    },
+    "construction": [],
+    "queue": [],
+    "nodes": {
+      "food": {
+        "remaining": 230,
+        "total": 230
+      },
+      "wood": {
+        "remaining": 230,
+        "total": 230
+      }
+    },
+    "raids": [
+      {
+        "at": 32,
+        "front": "north",
+        "power": 35,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 62,
+        "front": "south",
+        "power": 45,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 90,
+        "front": "north",
+        "power": 55,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 115,
+        "front": "south",
+        "power": 60,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      }
+    ],
+    "events": [],
+    "result": null,
+    "nextWorker": 5,
+    "nextGuard": 3,
+    "log": []
+  },
+  "cancelRestartKept": true,
+  "confirmedRestart": {
+    "version": 2,
+    "levelIndex": 0,
+    "status": "ready",
+    "tick": 0,
+    "time": 0,
+    "duration": 120,
+    "base": {
+      "hp": 160,
+      "maxHp": 160
+    },
+    "stock": {
+      "food": 32,
+      "wood": 36
+    },
+    "delivered": {
+      "food": 0,
+      "wood": 0
+    },
+    "spent": {
+      "food": 0,
+      "wood": 0
+    },
+    "lost": {
+      "food": 0,
+      "wood": 0
+    },
+    "workers": [
+      {
+        "id": 1,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 2,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 3,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 4,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      }
+    ],
+    "guards": [
+      {
+        "id": 1,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      },
+      {
+        "id": 2,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      }
+    ],
+    "buildings": {
+      "barracks": 0,
+      "sawmill": 0,
+      "watchtower": 0
+    },
+    "construction": [],
+    "queue": [],
+    "nodes": {
+      "food": {
+        "remaining": 230,
+        "total": 230
+      },
+      "wood": {
+        "remaining": 230,
+        "total": 230
+      }
+    },
+    "raids": [
+      {
+        "at": 32,
+        "front": "north",
+        "power": 35,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 62,
+        "front": "south",
+        "power": 45,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 90,
+        "front": "north",
+        "power": 55,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      },
+      {
+        "at": 115,
+        "front": "south",
+        "power": 60,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 0
+      }
+    ],
+    "events": [],
+    "result": null,
+    "nextWorker": 5,
+    "nextGuard": 3,
+    "log": []
+  },
+  "normalActionAfterRestart": {
+    "version": 2,
+    "levelIndex": 0,
+    "status": "paused",
+    "tick": 22,
+    "time": 5.5,
+    "duration": 120,
+    "base": {
+      "hp": 160,
+      "maxHp": 160
+    },
+    "stock": {
+      "food": 32,
+      "wood": 36
+    },
+    "delivered": {
+      "food": 0,
+      "wood": 0
+    },
+    "spent": {
+      "food": 0,
+      "wood": 0
+    },
+    "lost": {
+      "food": 0,
+      "wood": 0
+    },
+    "workers": [
+      {
+        "id": 1,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 2,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 3,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      },
+      {
+        "id": 4,
+        "task": "idle",
+        "phase": "idle",
+        "remaining": 0,
+        "routeResource": null,
+        "travelDuration": 0,
+        "carry": {
+          "food": 0,
+          "wood": 0
+        },
+        "alive": true
+      }
+    ],
+    "guards": [
+      {
+        "id": 1,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      },
+      {
+        "id": 2,
+        "hp": 32,
+        "front": "reserve",
+        "target": "reserve",
+        "from": "reserve",
+        "travelDuration": 0,
+        "remaining": 0
+      }
+    ],
+    "buildings": {
+      "barracks": 0,
+      "sawmill": 0,
+      "watchtower": 0
+    },
+    "construction": [],
+    "queue": [],
+    "nodes": {
+      "food": {
+        "remaining": 230,
+        "total": 230
+      },
+      "wood": {
+        "remaining": 230,
+        "total": 230
+      }
+    },
+    "raids": [
+      {
+        "at": 32,
+        "front": "north",
+        "power": 35,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 26.5
+      },
+      {
+        "at": 62,
+        "front": "south",
+        "power": 45,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 56.5
+      },
+      {
+        "at": 90,
+        "front": "north",
+        "power": 55,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 84.5
+      },
+      {
+        "at": 115,
+        "front": "south",
+        "power": 60,
+        "resolved": false,
+        "phase": "scheduled",
+        "remaining": 109.5
+      }
+    ],
+    "events": [],
+    "result": null,
+    "nextWorker": 5,
+    "nextGuard": 3,
+    "log": [
+      {
+        "tick": 0,
+        "command": {
+          "type": "start"
+        }
+      }
+    ]
+  },
+  "status": "passed"
+}
