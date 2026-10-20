@@ -1,11 +1,13 @@
 import {fresh,act,aiTurn,scenarios,netWorth,rent,saleValue} from './engine.mjs?sale-rounding-r1';
 import {loadAssets,render} from './renderer.mjs?sale-rounding-r1';
-const $=id=>document.getElementById(id),KEY='atlas-venture-rivals-v2.1';
+import {readSave,writeSave,saveMessage} from './storage.mjs?save-protection-r2';
+const $=id=>document.getElementById(id);
 const newSeed=()=>crypto.getRandomValues(new Uint32Array(1))[0]||1;
-let s,art={},motion=null,busy=false,aiTimer=null,motionTimer=null,storageOK=true;
-try{const raw=JSON.parse(localStorage.getItem(KEY)||'null');if(raw?.version===2&&scenarios.some(x=>x.id===raw.scenario)&&raw.players?.length===2&&raw.shops?.length===12)s=raw;}catch{}
-if(!s)s=fresh(0,newSeed());
-function save(){try{localStorage.setItem(KEY,JSON.stringify(s));}catch{storageOK=false;}$('saveStatus').textContent=storageOK?'进度已自动保存':'无法保存：请勿刷新或关闭本页';}
+let storage;
+try{storage=window.localStorage;}catch{}
+const loaded=readSave(storage);
+let s=loaded.state||fresh(0,newSeed()),art={},motion=null,busy=false,aiTimer=null,motionTimer=null;
+function save(){const saved=writeSave(storage,s,loaded.protection),status=$('saveStatus'),message=saveMessage(loaded.protection,saved);status.dataset.state=loaded.protection?'protected':saved?'saved':'failed';if(status.textContent!==message)status.textContent=message;}
 function scene(){return scenarios.find(x=>x.id===s.scenario);}
 function who(id){return id===0?'青旗':id===1?'朱旗':'街市';}
 function eventText(e){
@@ -34,4 +36,4 @@ function restart(level){clearTimeout(aiTimer);clearTimeout(motionTimer);motionTi
 $('roll').addEventListener('click',()=>perform('roll'));$('voucher').addEventListener('click',()=>perform('move',Number($('steps').value)));for(const key of ['buy','upgrade','end'])$(key).addEventListener('click',()=>perform(key));
 $('restart').addEventListener('click',()=>{if(confirm('放弃当前对局并重新开局？'))restart(scenarios.indexOf(scene()));});$('level').addEventListener('change',()=>{const n=Number($('level').value);if(confirm('切换对局会放弃当前未完成进度，继续？'))restart(n);else update();});$('next').addEventListener('click',()=>restart(Math.min(2,scenarios.indexOf(scene())+1)));
 const ctx=$('game').getContext('2d');function frame(t){render(ctx,s,art,motion,t);requestAnimationFrame(frame);}
-update();save();try{art=await loadAssets();$('loading').hidden=true;}catch{ $('loading').textContent='画面素材加载失败，请检查网络后刷新。进度已保留。';}requestAnimationFrame(frame);scheduleAI();
+update();save();try{art=await loadAssets();$('loading').hidden=true;}catch{ $('loading').textContent='画面素材加载失败，请先查看保存提示再决定是否刷新。';}requestAnimationFrame(frame);scheduleAI();

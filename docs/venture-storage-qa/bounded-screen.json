@@ -1,0 +1,44 @@
+{
+  "baseline": "3332cc43f325ddffa9f22f8a49579788f28c2047",
+  "limit": 5,
+  "selected": "venture",
+  "kind": "bounded source/page/QA screen; others not fault-reproduced",
+  "candidates": [
+    {
+      "id": "venture",
+      "controllerGitBlob": "bf2048f65297002fbd0e8659906bcd08c6a8dc39",
+      "controllerSHA256": "871942cd3169faceeadefc0382ab309762de670d78ff290acc1a67df029b99c7",
+      "qa": "docs/venture-v2/PUBLIC_BROWSER_QA.md",
+      "finding": "Selected: malformed/unsupported record ignored, startup save overwrites original and labels saved; storageOK never resets after later success."
+    },
+    {
+      "id": "island",
+      "controllerGitBlob": "ee4e4299b9028809d5fce6dfcd0f54a2d1183fa5",
+      "controllerSHA256": "cb60d0eff2693ac58a072a2f7fc3dca47c0e2912d32eb2b25de9176c63525fa8",
+      "qa": "docs/island-v2/PUBLIC_BROWSER_QA.md",
+      "finding": "Source risk only: SyntaxError leaves writes allowed; later persist may overwrite original. Chapter/retry QA exists."
+    },
+    {
+      "id": "farm",
+      "controllerGitBlob": "80d41448f166af6d0b459ed94512a98bf4fe5beb",
+      "controllerSHA256": "a05fe159fefe8151d931736403f3b81314f29f9c2a9a3ac9aac74a4c6f992d8b",
+      "qa": "docs/farm-v2/PUBLIC_BROWSER_QA.md",
+      "finding": "Source risk only: SyntaxError falls back with writes allowed. Existing QA covers chapter2 retry and final refresh."
+    },
+    {
+      "id": "harbor",
+      "controllerGitBlob": "1ea705a21bf644b4cfc571007318b791e3555a34",
+      "controllerSHA256": "43cab8e64ccd92af96cdb3aa85f47906058ef61e7e46b1a9beff190fcb1a6a9a",
+      "qa": "docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md",
+      "finding": "Terminal clear with retained best/unlocks is explicitly documented design, not classified as bug. Source risk only: JSON errors ignored."
+    },
+    {
+      "id": "escort",
+      "controllerGitBlob": "297f6b8d0ad6122ef33667b34cc0e8a2d856b64a",
+      "controllerSHA256": "17a1e1b0dd149989a8dbff9226779c7f5bc7b9bcd1432c606b7ef5c31a9c8f80",
+      "qa": "docs/escort-v2/PUBLIC_BROWSER_QA.md",
+      "finding": "QA covers natural loss/retry and terminal refresh. Source risk only: SyntaxError does not protect original from later persist."
+    }
+  ],
+  "hashConvention": "Canonical git blob bytes (LF), not the Windows checkout CRLF bytes."
+}

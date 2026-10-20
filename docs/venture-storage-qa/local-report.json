@@ -1,0 +1,71 @@
+{
+  "url": "http://127.0.0.1:4196/versions/v2/games/venture/",
+  "normalUI": {
+    "steps": "fresh -> voucher1 -> buy180 -> upgrade110 -> refresh -> end -> AI normal turn -> roll -> refresh",
+    "cashAfterUpgrade": 560,
+    "propertyAfterUpgrade": {
+      "owner": 0,
+      "level": 2
+    },
+    "rolledRound": 2,
+    "roll": 2,
+    "position": 3,
+    "rng": 1549409270,
+    "cashAfterRoll": 600,
+    "rollRawPreservedOnRefresh": true,
+    "ledgerEntries": 8
+  },
+  "faultFixtures": [
+    {
+      "case": "genuine old-format UI save",
+      "rawExactlyPreserved": true,
+      "sha256": "cf1a06120a0f8fb57bd8c8edd109bf180a46a86af69035ea4a48d5d85d7203fa",
+      "cash": 670
+    },
+    {
+      "case": "malformed JSON",
+      "rawExactlyPreserved": true,
+      "writes": 0,
+      "temporaryBuyAndRestartAndSwitchWorked": true,
+      "status": "原存档无法识别，已停止覆盖。本次仅临时游玩，刷新或关闭会丢失本次进度。"
+    },
+    {
+      "case": "unsupported version",
+      "rawExactlyPreserved": true,
+      "writes": 0,
+      "temporaryBuyAndRestartAndSwitchWorked": true,
+      "status": "原存档无法识别，已停止覆盖。本次仅临时游玩，刷新或关闭会丢失本次进度。"
+    },
+    {
+      "case": "invalid nested structure",
+      "rawExactlyPreserved": true,
+      "writes": 0,
+      "temporaryBuyAndRestartAndSwitchWorked": true,
+      "status": "原存档无法识别，已停止覆盖。本次仅临时游玩，刷新或关闭会丢失本次进度。"
+    },
+    {
+      "case": "QuotaExceededError",
+      "failedAttempts": 4,
+      "priorValidRawRetained": true,
+      "temporaryPlayAndRetryWorked": true,
+      "laterWriteSucceeded": true,
+      "successRefreshRawPreserved": true
+    },
+    {
+      "case": "SecurityError",
+      "failedAttempts": 4,
+      "priorValidRawRetained": true,
+      "temporaryPlayAndRetryWorked": true,
+      "laterWriteSucceeded": true,
+      "successRefreshRawPreserved": true
+    },
+    {
+      "case": "localStorage getter denied",
+      "temporaryBuyWorked": true,
+      "status": "无法读取存档，已停止写入。本次仅临时游玩，刷新或关闭会丢失本次进度。"
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": []
+}
