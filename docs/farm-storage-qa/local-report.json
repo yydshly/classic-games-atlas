@@ -1,0 +1,67 @@
+{
+  "url": "http://127.0.0.1:4196/versions/v2/games/farm/",
+  "normalUI": {
+    "cash": 6,
+    "day": 2,
+    "cropGrowth": "1/2",
+    "commands": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "plant",
+        "plot": 0,
+        "crop": "radish"
+      },
+      {
+        "kind": "end"
+      }
+    ],
+    "explicitPauseBeforeReload": true,
+    "refreshExactRaw": true
+  },
+  "fixtures": [
+    {
+      "case": "genuine old UI checkpoint",
+      "rawPreserved": true,
+      "restoredPaused": true
+    },
+    {
+      "case": "bad JSON",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlantsAndPauseResume": true
+    },
+    {
+      "case": "unknown version",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlantsAndPauseResume": true
+    },
+    {
+      "case": "invalid replay",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlantsAndPauseResume": true
+    },
+    {
+      "case": "QuotaExceededError",
+      "oldValidBytesKept": true,
+      "laterPauseSaveRecovered": true,
+      "refreshCash": 6
+    },
+    {
+      "case": "SecurityError",
+      "oldValidBytesKept": true,
+      "laterPauseSaveRecovered": true,
+      "refreshCash": 6
+    },
+    {
+      "case": "read getter denied",
+      "temporaryPlantWorks": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": []
+}
