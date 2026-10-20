@@ -1,0 +1,18 @@
+{
+  "baseline": "c48e128695c811bbfdbc84afa8b5c82d97e0a73d",
+  "unchangedTrees": {
+    "games/echo": "040000 tree bdc398e45961c4f37da437590b9e08f420aca5f5\tgames/echo",
+    "versions/v1/games/echo": "040000 tree bdc398e45961c4f37da437590b9e08f420aca5f5\tversions/v1/games/echo",
+    "versions/v2/games/echo/engine.mjs": "100644 blob f8d933327dbf9876e9a6294b23eb0a7c6feebc5f\tversions/v2/games/echo/engine.mjs",
+    "versions/v2/games/echo/levels.mjs": "100644 blob 3039b99da52b9a3ca0b130636cdf68d7823ee69c\tversions/v2/games/echo/levels.mjs",
+    "versions/v2/games/echo/renderer.mjs": "100644 blob d0bd367b7639f5a1575cd469f94c8a6e77655b8b\tversions/v2/games/echo/renderer.mjs",
+    "versions/v2/games/echo/assets": "040000 tree 78d6a7eae52b0774c41c7df264c334fcd00ed8f8\tversions/v2/games/echo/assets",
+    "data/experiments.json": "100644 blob 2b5bf0f2eea380b6cddb0bf1e9ae0e93ee02b9ce\tdata/experiments.json",
+    "data/games.json": "100644 blob c667a0092c80f8a15e8051dca1003b76d6ae0767\tdata/games.json"
+  },
+  "oldKey": "echo-v2-session-r1",
+  "newKey": "echo-v2-progress-r2",
+  "oldKeyPolicy": "Read only. No removeItem, migration or new progress writes alter it. Valid new record takes precedence; malformed new record protects both keys rather than falling back and overwriting.",
+  "scope": "Controller continuity and new UI record module only. Active checkpoint/restore, engine, content, physics, difficulty, art, v1 and other games unchanged.",
+  "iteration": "First pre-fix driver read title before the next render frame while screenshot/message already showed a normal win. Kept partial images locally; corrected observation timing and completed old-page refresh reproduction."
+}

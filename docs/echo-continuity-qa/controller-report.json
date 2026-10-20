@@ -1,0 +1,66 @@
+{
+  "kind": "persistence unit and real controller DOM stub; terminal cases explicitly use fixtures, not browser victories",
+  "results": [
+    {
+      "name": "ready roundtrip preserves each of three freely selected stages",
+      "ok": true
+    },
+    {
+      "name": "active record uses unchanged checkpoint and restores paused with cleared controls",
+      "ok": true
+    },
+    {
+      "name": "terminal fixture decodes to separate result view, never engine terminal replay",
+      "ok": true
+    },
+    {
+      "name": "malformed envelopes and out-of-range results are rejected",
+      "ok": true
+    },
+    {
+      "name": "legacy migration creates only new key and retains exact original raw",
+      "ok": true
+    },
+    {
+      "name": "new valid stage record takes precedence without deleting invalid old raw",
+      "ok": true
+    },
+    {
+      "name": "invalid new or old record remains protected through attempted save",
+      "ok": true
+    },
+    {
+      "name": "read error protects records; ordinary write failure retries and clears on success",
+      "ok": true
+    },
+    {
+      "name": "real controller: corrupt new raw retained across play/pause/retry/stage select",
+      "ok": true
+    },
+    {
+      "name": "real controller: pause freezes and resume never revives held keys",
+      "ok": true
+    },
+    {
+      "name": "real controller: legacy stage3 restores paused; retry and reload remain stage3 ready",
+      "ok": true
+    },
+    {
+      "name": "real controller: first-result fixture retains summary and advances only to stage2",
+      "ok": true
+    },
+    {
+      "name": "real controller: second loss fixture remains second and retries only that stage",
+      "ok": true
+    },
+    {
+      "name": "real controller: final result fixture has no fourth-stage entry",
+      "ok": true
+    },
+    {
+      "name": "real controller: write failure warns once, keeps raw, retry works, periodic success recovers",
+      "ok": true
+    }
+  ],
+  "passed": true
+}

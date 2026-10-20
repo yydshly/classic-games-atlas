@@ -1,0 +1,308 @@
+{
+  "at": "2026-10-20T17:48:41.315217+00:00",
+  "url": "http://127.0.0.1:4194/versions/v2/games/echo/",
+  "normalUI": [
+    {
+      "case": "first normal-key victory and exact result refresh",
+      "before": {
+        "level": "0",
+        "title": "撤离成功",
+        "message": "光息 100 · 消耗 5 匣 · 1 个守卫平息。继续前往下一仓段。",
+        "hud": "光息 100\n光匣 9\n111 秒\n◆ 已取钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留本段结算",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "result",
+          "level": 1,
+          "result": {
+            "state": "won",
+            "ticks": 548,
+            "hp": 100,
+            "ammo": 9,
+            "weapon": "pulse",
+            "keyCount": 1,
+            "spent": 5,
+            "kills": 1,
+            "reason": "钥匙与回声归位，出口为你亮起。"
+          }
+        }
+      },
+      "after": {
+        "level": "0",
+        "title": "撤离成功",
+        "message": "光息 100 · 消耗 5 匣 · 1 个守卫平息。继续前往下一仓段。",
+        "hud": "光息 100\n光匣 9\n111 秒\n◆ 已取钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留本段结算",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "result",
+          "level": 1,
+          "result": {
+            "state": "won",
+            "ticks": 548,
+            "hp": 100,
+            "ammo": 9,
+            "weapon": "pulse",
+            "keyCount": 1,
+            "spent": 5,
+            "kills": 1,
+            "reason": "钥匙与回声归位，出口为你亮起。"
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "second ready refresh and active paused refresh/old-key clearing",
+      "ready": {
+        "level": "1",
+        "title": "分流仓库",
+        "message": "拿取琥珀钥匙，E开门撤离。可走补给支路，也可节省弹药避战。",
+        "hud": "光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留当前仓段",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "ready",
+          "level": 2
+        }
+      },
+      "beforeActiveRefresh": {
+        "version": 1,
+        "kind": "active",
+        "level": 2,
+        "session": {
+          "version": 2,
+          "level": 2,
+          "ticks": 16,
+          "commands": [
+            {
+              "tick": 0,
+              "kind": "controls",
+              "forward": 1,
+              "strafe": 0,
+              "turn": 0,
+              "fire": false
+            },
+            {
+              "tick": 16,
+              "kind": "controls",
+              "forward": 0,
+              "strafe": 0,
+              "turn": 0,
+              "fire": false
+            }
+          ]
+        }
+      },
+      "afterResumeWithoutKeys": {
+        "version": 1,
+        "kind": "active",
+        "level": 2,
+        "session": {
+          "version": 2,
+          "level": 2,
+          "ticks": 42,
+          "commands": [
+            {
+              "tick": 0,
+              "kind": "controls",
+              "forward": 1,
+              "strafe": 0,
+              "turn": 0,
+              "fire": false
+            },
+            {
+              "tick": 16,
+              "kind": "controls",
+              "forward": 0,
+              "strafe": 0,
+              "turn": 0,
+              "fire": false
+            }
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "second natural combat loss, exact loss refresh, current-stage retry",
+      "loss": {
+        "level": "1",
+        "title": "行动失败",
+        "message": "光息已尽。重整补给，再找一条安全的转角。",
+        "hud": "光息 0\n光匣 8\n107 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留本段结算",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "result",
+          "level": 2,
+          "result": {
+            "state": "lost",
+            "ticks": 823,
+            "hp": 0,
+            "ammo": 8,
+            "weapon": "pulse",
+            "keyCount": 0,
+            "spent": 0,
+            "kills": 0,
+            "reason": "光息已尽。重整补给，再找一条安全的转角。"
+          }
+        }
+      },
+      "afterReload": {
+        "level": "1",
+        "title": "行动失败",
+        "message": "光息已尽。重整补给，再找一条安全的转角。",
+        "hud": "光息 0\n光匣 8\n107 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留本段结算",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "result",
+          "level": 2,
+          "result": {
+            "state": "lost",
+            "ticks": 823,
+            "hp": 0,
+            "ammo": 8,
+            "weapon": "pulse",
+            "keyCount": 0,
+            "spent": 0,
+            "kills": 0,
+            "reason": "光息已尽。重整补给，再找一条安全的转角。"
+          }
+        }
+      },
+      "retry": {
+        "version": 1,
+        "kind": "ready",
+        "level": 2
+      },
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "case": "explicit quota write failure and later successful periodic retry",
+      "oldRawKept": true,
+      "warningStable": true,
+      "failure": {
+        "level": "1",
+        "title": "行动暂停",
+        "message": "时间已冻结，旧按键已清除。点击继续后再开始移动。",
+        "hud": "光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "保存失败 · 本页仍可玩，刷新或关闭可能丢失当前进度",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "ready",
+          "level": 2
+        }
+      },
+      "recovery": {
+        "level": "1",
+        "title": "分流仓库",
+        "message": "拿取琥珀钥匙，E开门撤离。可走补给支路，也可节省弹药避战。",
+        "hud": "光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留当前仓段",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "ready",
+          "level": 2
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "legacy active checkpoint migration fixture, old exact raw preserved",
+      "capture": {
+        "level": "1",
+        "title": "行动暂停",
+        "message": "时间已冻结，旧按键已清除。点击继续后再开始移动。",
+        "hud": "光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲",
+        "status": "自动保存正常 · 活动局刷新后暂停恢复",
+        "continueHidden": false,
+        "startDisabled": false,
+        "record": {
+          "version": 1,
+          "kind": "active",
+          "level": 2,
+          "session": {
+            "version": 2,
+            "level": 2,
+            "ticks": 16,
+            "commands": [
+              {
+                "tick": 0,
+                "kind": "controls",
+                "forward": 1,
+                "strafe": 0,
+                "turn": 0,
+                "fire": false
+              },
+              {
+                "tick": 16,
+                "kind": "controls",
+                "forward": 0,
+                "strafe": 0,
+                "turn": 0,
+                "fire": false
+              }
+            ]
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "malformed new record with valid legacy fixture; neither overwritten",
+      "passed": true
+    },
+    {
+      "case": "explicit third-win fixture, no fourth-stage action and retry stays third",
+      "capture": {
+        "level": "2",
+        "title": "撤离成功",
+        "message": "光息 100 · 消耗 0 匣 · 0 个守卫平息。三段行动结束。可选关重试不同路线。",
+        "hud": "光息 100\n光匣 8\n111 秒\n◆ 已取钥匙\n精准脉冲",
+        "status": "自动保存正常 · 保留本段结算",
+        "continueHidden": true,
+        "startDisabled": true,
+        "record": {
+          "version": 1,
+          "kind": "result",
+          "level": 3,
+          "result": {
+            "state": "won",
+            "ticks": 540,
+            "hp": 100,
+            "ammo": 8,
+            "weapon": "pulse",
+            "keyCount": 1,
+            "spent": 0,
+            "kills": 0,
+            "reason": "Explicit final-result fixture, not natural play"
+          }
+        }
+      },
+      "passed": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "browser": "147.0.7727.15",
+  "passed": true
+}
