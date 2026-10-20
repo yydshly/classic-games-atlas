@@ -40,7 +40,7 @@
 |---|---:|---|---|
 | [堡垒防线](./games/fortress/) | 10 | 坦克大战 | 已发布 · 原创实现 |
 | 爆破迷宫：[v1十关](./games/maze/) · [v2候选](./versions/v2/games/maze/) | v1 10关；v2 2短图 | 炸弹人通用机制与对抗参考 | 有限实玩候选，未完成品质验收；[QA](docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [星泡航线](./games/starline/) | 12 | 泡泡龙 | 已发布 · 原创实现 |
+| 星泡航线：[v1十二图](./games/starline/) · [v2候选](./versions/v2/games/starline/) | v1 12图；v2 2图 | 泡泡反弹清场与下压选择 | 参考路线两胜，未品质验收；[QA](docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [光轨砖阵](./games/prism/) | 12 | 打砖块／Arkanoid | 已发布 · 原创实现 |
 | [仓格计划](./games/crate/) | 20 | 推箱子 | 已发布 · 原创实现 |
 | 山口守望：[v1八图](./games/pass/) · [v2候选](./versions/v2/games/pass/) | v1 8图；v2 1短图4波 | 王国保卫战 | 有限实玩候选，未完成品质验收；[QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) |
@@ -119,6 +119,8 @@ python scripts/test_maze_browser.py --stage 10 --out docs/maze-qa/final-check
 真实输入报告保留成功与失败尝试，明确选关夹具与未覆盖项。后续继续按[逐款交付规则](docs/DELIVERY_POLICY.md)推进，不承诺一次复刻全部图鉴作品。持续扩展并保留现有作品，按单款验证、提交、上线。
 
 ## 原创玩法实验 03：星泡航线
+
+新增独立[v2 · 两张下压星图](versions/v2/games/starline/)，每4发完整结算后顶板与全星群下压一排，瞄准不限时；三连、反弹、断连掉落及换弹已有，原十二图保留。2026-10-20有限实玩依参考路线，首关调整后19发4压1260分（03:47），第二6发1压1460分（00:52），时间含瞄准观察；刻意正上方不换弹8发2压触底败，非自然策略误判。飞行刷新回整球出手前并保留出手前换弹，4发结算刷新不双压，重试保最好1460。主图第二00:43/210/20颗/4发1压为结算后待瞄准，非飞行终局。页头滚出，精确预览/连续墙反/声音触屏审美未验。[范围与官方参考](versions/v2/games/starline/NOTES.md) · [真实运行图与QA](docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=starline)。以下为保留的v1历史说明。
 
 **[立即试玩星泡航线](https://yydshly.github.io/classic-games-atlas/games/starline/) · [固定范围](docs/STARLINE_SPEC.md) · [测试与部署证据](docs/STARLINE_VERIFICATION.md)**
 
