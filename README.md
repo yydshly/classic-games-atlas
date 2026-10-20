@@ -50,7 +50,7 @@
 | 晶簇花园：[v1二十关](./games/garden/) · [v2候选](./versions/v2/games/garden/) | v1 20关；v2 2短题 | Bejeweled造特殊/选择释放参考 | 公开解法两题2步成功，未品质验收；[QA](docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
-| [星砂勘探](./games/sand/) | 20 | 扫雷 | 已发布 · 原创实现 |
+| 星砂勘探：[v1二十关](./games/sand/) · [v2候选](./versions/v2/games/sand/) | v1 20关；v2 2档新盘 | 数字排雷与可解释推理参考 | 两档有提示实玩完成，未品质验收；[QA](docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 落星弹庭：[v1十二庭](./games/pinfall/) · [v2候选](./versions/v2/games/pinfall/) | v1 12关；v2 2庭 | Peggle首反规划/有限能力参考 | 参考角两庭实玩胜1555/1485，未品质验收；[QA](docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [钢岚突进](./games/gale/) | 8 | 魂斗罗所代表的横版移动射击机制 | 已发布 · 原创实现 |
 | [弯道邮差](./games/post/) | 8 | 极品飞车所代表的街机竞速类型 | 已发布 · 原创实现 |
@@ -324,6 +324,8 @@ python scripts/test_petal_ui.py
 本款验收后回到主对话报告，保留图鉴与前十一款，由主对话继续安排后续作品。
 
 ## 原创玩法实验 13：星砂勘探
+
+新增独立[v2 · 新局星图](versions/v2/games/sand/)，7×7/8雷与9×9/14雷两档seed盘、任意首格邻域安全、有界可见规则筛选，旧二十关保留。2026-10-19/20 UTC跨日有限实玩依公开提示完成两档：10提示01:20、20提示02:21，非盲解。22/41四旗12秒刷新先暂停；同盘初14格形状保留，主动普通点击已知雷00:05失败（非自然误判）；新seed1307954740未展开，不能称逐雷图差异已验。主图23/41四旗00:19公开依据与结论、非隐藏雷/终局。顶导航滚出，错误旗/生成上限/声音触屏审美未验。[范围与参考来源](versions/v2/games/sand/NOTES.md) · [真实运行图与QA](docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=sand)。以下为保留的v1历史说明。
 
 **[立即试玩星砂勘探](https://yydshly.github.io/classic-games-atlas/games/sand/) · [固定范围](docs/SAND_SPEC.md) · [测试与部署证据](docs/SAND_VERIFICATION.md)**
 
