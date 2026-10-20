@@ -21,7 +21,7 @@ async def run(a):
   return await page.evaluate('window.'+('featherV2Snapshot' if legacy else 'featherJourneySnapshot')+'()')
  async def ready(page,legacy=False):
   await page.wait_for_function('typeof window.'+('featherV2Snapshot' if legacy else 'featherJourneySnapshot')+'==="function"')
-  if not legacy:await page.wait_for_function('window.featherJourneySnapshot().assetsReady')
+  if not legacy:await page.wait_for_function('window.featherJourneySnapshot().assetsReady',timeout=60000)
  async def action(page,kind,arg=None,legacy=False,keyboard=False):
   before=await snapshot(page,legacy);await page.wait_for_timeout(175)
   sel='button[data-action="'+kind+'"]'+('[data-arg="'+arg+'"]' if arg else ':not([data-arg])')
@@ -119,7 +119,9 @@ async def run(a):
     assert 'v3' in (await card.inner_text()).lower()
     assert '/versions/v3/games/feather/' in await card.locator('.play-launch').get_attribute('href')
     await page.screenshot(path=str(out/'homepage-32.png'),full_page=True)
-    await card.locator('.play-launch').click();await ready(page);assert '/versions/v3/games/feather/' in page.url
+    await card.locator('.play-launch').click(no_wait_after=True)
+    await page.wait_for_url('**/versions/v3/games/feather/',wait_until='domcontentloaded',timeout=60000)
+    await ready(page);assert '/versions/v3/games/feather/' in page.url
     await page.goto(root+'#compare=feather',wait_until='networkidle');await page.wait_for_selector('#game-dialog[open]')
     dialog=page.locator('#game-dialog');assert '浅滩冒险' in await dialog.inner_text()
     links=await dialog.locator('a').evaluate_all('(a)=>a.map(x=>x.getAttribute("href"))')

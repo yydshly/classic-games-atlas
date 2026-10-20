@@ -1,0 +1,6339 @@
+{
+  "at": "2026-10-20T15:54:57.433336+00:00",
+  "root": "https://yydshly.github.io/classic-games-atlas/",
+  "method": "Actual rendered Chromium, normal buttons/keyboard and responsive-width checks. Read-only snapshot/storage observations. No state writes, save injection, model input() calls, time acceleration, touch-device or human-play claim.",
+  "scenarios": [
+    {
+      "name": "fresh normal UI to ending, with failure and free retry",
+      "preparation": [
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 1,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 2,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 7,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 8,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 9,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 10,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 11,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 12,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 13,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 14,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 15,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 16,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 17,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 18,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 19,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 20,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 21,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 22,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 23,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 24,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 25,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 26,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 27,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 28,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 29,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 30,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 31,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 32,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 33,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 34,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 35,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "bud",
+          "revision": 36,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 37,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 38,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 39,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 40,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 41,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 42,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 43,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 44,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 45,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 46,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 47,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 48,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "bud",
+          "revision": 49,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 50,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 51,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 52,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 53,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 54,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "a",
+          "revision": 55,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 56,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 57,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "team",
+          "arg": "fin",
+          "revision": 58,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 59,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 60,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 61,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 62,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 63,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 64,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 65,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 66,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "fin",
+          "revision": 67,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 68,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 69,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 70,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 71,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 72,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 73,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 74,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 75,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 76,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 77,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 78,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 79,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "fin",
+          "revision": 80,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 81,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 82,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 83,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 84,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 85,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 86,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "c",
+          "revision": 87,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "fin",
+          "revision": 88,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "a",
+          "revision": 89,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 90,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 91,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 92,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 93,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 94,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 95,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 96,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 97,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 98,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 99,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 100,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 101,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 102,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 103,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 104,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 105,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 106,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 107,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 108,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 109,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 110,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 111,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 112,
+          "phase": "camp",
+          "keyboard": false
+        }
+      ],
+      "failure": [
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 117,
+          "phase": "trial",
+          "keyboard": false
+        },
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 118,
+          "phase": "trial",
+          "keyboard": false
+        },
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 119,
+          "phase": "trial",
+          "keyboard": false
+        },
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 120,
+          "phase": "trial",
+          "keyboard": false
+        },
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 121,
+          "phase": "trial",
+          "keyboard": false
+        },
+        {
+          "kind": "trialAttack",
+          "arg": null,
+          "revision": 122,
+          "phase": "camp",
+          "keyboard": false
+        }
+      ],
+      "failureRetainsRosterAndGrowth": true,
+      "noRecaptureRequired": true,
+      "victory": {
+        "team": [
+          "a",
+          "bud"
+        ],
+        "trace": [
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 125,
+            "phase": "trial",
+            "keyboard": true,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 190,
+              "maxHP": 190,
+              "turn": 0,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a"
+              ],
+              "actions": {}
+            },
+            "afterTrial": {
+              "hp": 163,
+              "maxHP": 190,
+              "turn": 1,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a"
+              ],
+              "actions": {
+                "trialAttack": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎轻击，消去27点余势。 回响的试探造成15伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 126,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 163,
+              "maxHP": 190,
+              "turn": 1,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a"
+              ],
+              "actions": {
+                "trialAttack": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 136,
+              "maxHP": 190,
+              "turn": 2,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a"
+              ],
+              "actions": {
+                "trialAttack": 2
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎轻击，消去27点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialSwitch",
+            "arg": "bud",
+            "revision": 127,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 136,
+              "maxHP": 190,
+              "turn": 2,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a"
+              ],
+              "actions": {
+                "trialAttack": 2
+              }
+            },
+            "afterTrial": {
+              "hp": 136,
+              "maxHP": 190,
+              "turn": 3,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 2,
+                "trialSwitch": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 30,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "晶雾芽换到前方；换位也占一拍。 回响的回涌造成48伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 128,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "bud",
+            "beforeTrial": {
+              "hp": 136,
+              "maxHP": 190,
+              "turn": 3,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 2,
+                "trialSwitch": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 115,
+              "maxHP": 190,
+              "turn": 4,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 15,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "晶雾芽轻击，消去21点余势。 回响的试探造成15伤害。"
+          },
+          {
+            "kind": "trialSkill",
+            "arg": null,
+            "revision": 129,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "bud",
+            "beforeTrial": {
+              "hp": 115,
+              "maxHP": 190,
+              "turn": 4,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 115,
+              "maxHP": 190,
+              "turn": 5,
+              "calm": 22,
+              "weak": 1,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 15,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "晶雾让合奏安心+22，下一次来招减半。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 130,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "bud",
+            "beforeTrial": {
+              "hp": 115,
+              "maxHP": 190,
+              "turn": 5,
+              "calm": 22,
+              "weak": 1,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 105,
+              "maxHP": 190,
+              "turn": 6,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 4,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 77,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "晶雾芽轻击，消去10点余势。 回响的回涌造成15伤害。 岚翎接替前方。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 131,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 105,
+              "maxHP": 190,
+              "turn": 6,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 4,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 78,
+              "maxHP": 190,
+              "turn": 7,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 62,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎轻击，消去27点余势。 回响的试探造成15伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 132,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 78,
+              "maxHP": 190,
+              "turn": 7,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 51,
+              "maxHP": 190,
+              "turn": 8,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 62,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎轻击，消去27点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialSkill",
+            "arg": null,
+            "revision": 133,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 51,
+              "maxHP": 190,
+              "turn": 8,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 44,
+              "maxHP": 190,
+              "turn": 9,
+              "calm": 22,
+              "weak": 1,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 2
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 14,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "缠风消去7点余势，接下来两次来招减半。 回响的回涌造成48伤害。"
+          },
+          {
+            "kind": "trialGuard",
+            "arg": null,
+            "revision": 134,
+            "phase": "trial",
+            "keyboard": true,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 44,
+              "maxHP": 190,
+              "turn": 9,
+              "calm": 22,
+              "weak": 1,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 2
+              }
+            },
+            "afterTrial": {
+              "hp": 44,
+              "maxHP": 190,
+              "turn": 10,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialGuard": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 14,
+                "energy": 2,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎守息：能量+1、本次16护盾。 回响的试探造成0伤害，护盾吸收15。"
+          },
+          {
+            "kind": "trialSkill",
+            "arg": null,
+            "revision": 135,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 44,
+              "maxHP": 190,
+              "turn": 10,
+              "calm": 22,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialGuard": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 34,
+              "maxHP": 190,
+              "turn": 11,
+              "calm": 22,
+              "weak": 2,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 14,
+                "energy": 0,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "缠风消去10点余势，接下来两次来招减半。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialHeal",
+            "arg": null,
+            "revision": 136,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 34,
+              "maxHP": 190,
+              "turn": 11,
+              "calm": 22,
+              "weak": 2,
+              "berries": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 34,
+              "maxHP": 190,
+              "turn": 12,
+              "calm": 22,
+              "weak": 1,
+              "berries": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1,
+                "trialHeal": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 8,
+                "energy": 0,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "分享露莓恢复26体力。 回响的回涌造成32伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 137,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 34,
+              "maxHP": 190,
+              "turn": 12,
+              "calm": 22,
+              "weak": 1,
+              "berries": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1,
+                "trialHeal": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 7,
+              "maxHP": 190,
+              "turn": 13,
+              "calm": 22,
+              "weak": 0,
+              "berries": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1,
+                "trialHeal": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 1,
+                "energy": 0,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 7
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "岚翎轻击，消去27点余势。 回响的试探造成7伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 138,
+            "phase": "ending",
+            "keyboard": false,
+            "actor": "a",
+            "beforeTrial": {
+              "hp": 7,
+              "maxHP": 190,
+              "turn": 13,
+              "calm": 22,
+              "weak": 0,
+              "berries": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "participants": [
+                "a",
+                "bud"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 3,
+                "trialGuard": 1,
+                "trialHeal": 1
+              }
+            },
+            "afterTrial": null,
+            "team": [
+              {
+                "id": "a",
+                "hp": 1,
+                "energy": 0,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 8
+              },
+              {
+                "id": "b",
+                "hp": 108,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 4
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "回响散成细小星光。你们一起完成了这段浅滩冒险，新的同行已经成为归途。"
+          }
+        ],
+        "ending": {
+          "attempt": 2,
+          "outcome": "completed",
+          "turns": 14,
+          "team": [
+            "a",
+            "bud"
+          ],
+          "participants": [
+            "a",
+            "bud"
+          ],
+          "actions": {
+            "trialAttack": 8,
+            "trialSwitch": 1,
+            "trialSkill": 3,
+            "trialGuard": 1,
+            "trialHeal": 1
+          },
+          "calm": 22,
+          "remainingHP": 0,
+          "grown": [
+            "a",
+            "b",
+            "c",
+            "bud",
+            "fin"
+          ],
+          "berriesLeft": 1,
+          "outings": 8,
+          "companions": [
+            "a",
+            "b",
+            "c",
+            "bud",
+            "fin"
+          ]
+        },
+        "endingRefreshExact": true,
+        "checkpoint": {
+          "version": 3,
+          "origin": {
+            "version": 2,
+            "seed": 85949129,
+            "commands": []
+          },
+          "commands": [
+            {
+              "kind": "depart",
+              "revision": 0
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 1
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 2
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 3
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 4
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 5
+            },
+            {
+              "kind": "attack",
+              "revision": 6
+            },
+            {
+              "kind": "soothe",
+              "revision": 7
+            },
+            {
+              "kind": "soothe",
+              "revision": 8
+            },
+            {
+              "kind": "capture",
+              "revision": 9
+            },
+            {
+              "kind": "home",
+              "revision": 10
+            },
+            {
+              "kind": "depart",
+              "revision": 11
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 12
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 13
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 14
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 15
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 16
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 17
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 18
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 19
+            },
+            {
+              "kind": "attack",
+              "revision": 20
+            },
+            {
+              "kind": "soothe",
+              "revision": 21
+            },
+            {
+              "kind": "soothe",
+              "revision": 22
+            },
+            {
+              "kind": "capture",
+              "revision": 23
+            },
+            {
+              "kind": "home",
+              "revision": 24
+            },
+            {
+              "kind": "team",
+              "arg": "b",
+              "revision": 25
+            },
+            {
+              "kind": "team",
+              "arg": "bud",
+              "revision": 26
+            },
+            {
+              "kind": "lead",
+              "arg": "a",
+              "revision": 27
+            },
+            {
+              "kind": "lead",
+              "arg": "a",
+              "revision": 28
+            },
+            {
+              "kind": "depart",
+              "revision": 29
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 30
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 31
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 32
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 33
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 34
+            },
+            {
+              "kind": "switch",
+              "arg": "bud",
+              "revision": 35
+            },
+            {
+              "kind": "attack",
+              "revision": 36
+            },
+            {
+              "kind": "attack",
+              "revision": 37
+            },
+            {
+              "kind": "attack",
+              "revision": 38
+            },
+            {
+              "kind": "attack",
+              "revision": 39
+            },
+            {
+              "kind": "home",
+              "revision": 40
+            },
+            {
+              "kind": "lead",
+              "arg": "a",
+              "revision": 41
+            },
+            {
+              "kind": "depart",
+              "revision": 42
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 43
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 44
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 45
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 46
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 47
+            },
+            {
+              "kind": "switch",
+              "arg": "bud",
+              "revision": 48
+            },
+            {
+              "kind": "attack",
+              "revision": 49
+            },
+            {
+              "kind": "attack",
+              "revision": 50
+            },
+            {
+              "kind": "attack",
+              "revision": 51
+            },
+            {
+              "kind": "attack",
+              "revision": 52
+            },
+            {
+              "kind": "home",
+              "revision": 53
+            },
+            {
+              "kind": "team",
+              "arg": "a",
+              "revision": 54
+            },
+            {
+              "kind": "team",
+              "arg": "b",
+              "revision": 55
+            },
+            {
+              "kind": "team",
+              "arg": "bud",
+              "revision": 56
+            },
+            {
+              "kind": "team",
+              "arg": "fin",
+              "revision": 57
+            },
+            {
+              "kind": "lead",
+              "arg": "b",
+              "revision": 58
+            },
+            {
+              "kind": "lead",
+              "arg": "b",
+              "revision": 59
+            },
+            {
+              "kind": "depart",
+              "revision": 60
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 61
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 62
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 63
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 64
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 65
+            },
+            {
+              "kind": "switch",
+              "arg": "fin",
+              "revision": 66
+            },
+            {
+              "kind": "attack",
+              "revision": 67
+            },
+            {
+              "kind": "attack",
+              "revision": 68
+            },
+            {
+              "kind": "attack",
+              "revision": 69
+            },
+            {
+              "kind": "attack",
+              "revision": 70
+            },
+            {
+              "kind": "home",
+              "revision": 71
+            },
+            {
+              "kind": "lead",
+              "arg": "b",
+              "revision": 72
+            },
+            {
+              "kind": "depart",
+              "revision": 73
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 74
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 75
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 76
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 77
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 78
+            },
+            {
+              "kind": "switch",
+              "arg": "fin",
+              "revision": 79
+            },
+            {
+              "kind": "attack",
+              "revision": 80
+            },
+            {
+              "kind": "attack",
+              "revision": 81
+            },
+            {
+              "kind": "attack",
+              "revision": 82
+            },
+            {
+              "kind": "attack",
+              "revision": 83
+            },
+            {
+              "kind": "home",
+              "revision": 84
+            },
+            {
+              "kind": "team",
+              "arg": "b",
+              "revision": 85
+            },
+            {
+              "kind": "team",
+              "arg": "c",
+              "revision": 86
+            },
+            {
+              "kind": "team",
+              "arg": "fin",
+              "revision": 87
+            },
+            {
+              "kind": "team",
+              "arg": "a",
+              "revision": 88
+            },
+            {
+              "kind": "lead",
+              "arg": "c",
+              "revision": 89
+            },
+            {
+              "kind": "lead",
+              "arg": "c",
+              "revision": 90
+            },
+            {
+              "kind": "depart",
+              "revision": 91
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 92
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 93
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 94
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 95
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 96
+            },
+            {
+              "kind": "switch",
+              "arg": "a",
+              "revision": 97
+            },
+            {
+              "kind": "attack",
+              "revision": 98
+            },
+            {
+              "kind": "attack",
+              "revision": 99
+            },
+            {
+              "kind": "home",
+              "revision": 100
+            },
+            {
+              "kind": "lead",
+              "arg": "c",
+              "revision": 101
+            },
+            {
+              "kind": "depart",
+              "revision": 102
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 103
+            },
+            {
+              "kind": "move",
+              "arg": "up",
+              "revision": 104
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 105
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 106
+            },
+            {
+              "kind": "move",
+              "arg": "right",
+              "revision": 107
+            },
+            {
+              "kind": "switch",
+              "arg": "a",
+              "revision": 108
+            },
+            {
+              "kind": "attack",
+              "revision": 109
+            },
+            {
+              "kind": "attack",
+              "revision": 110
+            },
+            {
+              "kind": "home",
+              "revision": 111
+            },
+            {
+              "kind": "team",
+              "arg": "c",
+              "revision": 112
+            },
+            {
+              "kind": "team",
+              "arg": "bud",
+              "revision": 113
+            },
+            {
+              "kind": "lead",
+              "arg": "a",
+              "revision": 114
+            },
+            {
+              "kind": "trialStart",
+              "revision": 115
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 116
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 117
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 118
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 119
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 120
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 121
+            },
+            {
+              "kind": "lead",
+              "arg": "a",
+              "revision": 122
+            },
+            {
+              "kind": "trialStart",
+              "revision": 123
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 124
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 125
+            },
+            {
+              "kind": "trialSwitch",
+              "arg": "bud",
+              "revision": 126
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 127
+            },
+            {
+              "kind": "trialSkill",
+              "revision": 128
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 129
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 130
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 131
+            },
+            {
+              "kind": "trialSkill",
+              "revision": 132
+            },
+            {
+              "kind": "trialGuard",
+              "revision": 133
+            },
+            {
+              "kind": "trialSkill",
+              "revision": 134
+            },
+            {
+              "kind": "trialHeal",
+              "revision": 135
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 136
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 137
+            }
+          ]
+        }
+      },
+      "responsive": [
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "canvas": {
+            "x": 11,
+            "y": 293.984375,
+            "width": 368,
+            "height": 207,
+            "top": 293.984375,
+            "right": 379,
+            "bottom": 500.984375,
+            "left": 11
+          }
+        },
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "canvas": {
+            "x": 11,
+            "y": 293.984375,
+            "width": 298,
+            "height": 167.625,
+            "top": 293.984375,
+            "right": 309,
+            "bottom": 461.609375,
+            "left": 11
+          }
+        }
+      ],
+      "freeExplorationAfterEnding": true
+    },
+    {
+      "name": "existing v2 save built by normal UI, explicit import, second team to ending",
+      "preparation": [
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 1,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 2,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 7,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 8,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 9,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 10,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 11,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 12,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 13,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 14,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 15,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 16,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 17,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 18,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 19,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 20,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 21,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 22,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 23,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 24,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 25,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 26,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 27,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 28,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 29,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 30,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 31,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 32,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 33,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 34,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 35,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "bud",
+          "revision": 36,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 37,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 38,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 39,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 40,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 41,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "a",
+          "revision": 42,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 43,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 44,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 45,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 46,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 47,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 48,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "bud",
+          "revision": 49,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 50,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 51,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 52,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 53,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 54,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "a",
+          "revision": 55,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 56,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 57,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "team",
+          "arg": "fin",
+          "revision": 58,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 59,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 60,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 61,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 62,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 63,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 64,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 65,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 66,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "fin",
+          "revision": 67,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 68,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 69,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 70,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 71,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 72,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "b",
+          "revision": 73,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 74,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 75,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 76,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 77,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 78,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 79,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "fin",
+          "revision": 80,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 81,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 82,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 83,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 84,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 85,
+          "phase": "camp",
+          "keyboard": true
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 86,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "c",
+          "revision": 87,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "fin",
+          "revision": 88,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "team",
+          "arg": "a",
+          "revision": 89,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 90,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 91,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 92,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 93,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 94,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 95,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 96,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 97,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 98,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 99,
+          "phase": "encounter",
+          "keyboard": true
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 100,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 101,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "lead",
+          "arg": "c",
+          "revision": 102,
+          "phase": "camp",
+          "keyboard": false
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 103,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 104,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 105,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 106,
+          "phase": "explore",
+          "keyboard": true
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 107,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 108,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "switch",
+          "arg": "a",
+          "revision": 109,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 110,
+          "phase": "encounter",
+          "keyboard": false
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 111,
+          "phase": "explore",
+          "keyboard": false
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 112,
+          "phase": "camp",
+          "keyboard": false
+        }
+      ],
+      "importExact": true,
+      "origin": {
+        "version": 2,
+        "seed": 85949129,
+        "commands": [
+          {
+            "kind": "depart",
+            "revision": 0
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 1
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 2
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 3
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 4
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 5
+          },
+          {
+            "kind": "attack",
+            "revision": 6
+          },
+          {
+            "kind": "soothe",
+            "revision": 7
+          },
+          {
+            "kind": "soothe",
+            "revision": 8
+          },
+          {
+            "kind": "capture",
+            "revision": 9
+          },
+          {
+            "kind": "home",
+            "revision": 10
+          },
+          {
+            "kind": "depart",
+            "revision": 11
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 12
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 13
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 14
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 15
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 16
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 17
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 18
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 19
+          },
+          {
+            "kind": "attack",
+            "revision": 20
+          },
+          {
+            "kind": "soothe",
+            "revision": 21
+          },
+          {
+            "kind": "soothe",
+            "revision": 22
+          },
+          {
+            "kind": "capture",
+            "revision": 23
+          },
+          {
+            "kind": "home",
+            "revision": 24
+          },
+          {
+            "kind": "team",
+            "arg": "b",
+            "revision": 25
+          },
+          {
+            "kind": "team",
+            "arg": "bud",
+            "revision": 26
+          },
+          {
+            "kind": "lead",
+            "arg": "a",
+            "revision": 27
+          },
+          {
+            "kind": "lead",
+            "arg": "a",
+            "revision": 28
+          },
+          {
+            "kind": "depart",
+            "revision": 29
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 30
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 31
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 32
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 33
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 34
+          },
+          {
+            "kind": "switch",
+            "arg": "bud",
+            "revision": 35
+          },
+          {
+            "kind": "attack",
+            "revision": 36
+          },
+          {
+            "kind": "attack",
+            "revision": 37
+          },
+          {
+            "kind": "attack",
+            "revision": 38
+          },
+          {
+            "kind": "attack",
+            "revision": 39
+          },
+          {
+            "kind": "home",
+            "revision": 40
+          },
+          {
+            "kind": "lead",
+            "arg": "a",
+            "revision": 41
+          },
+          {
+            "kind": "depart",
+            "revision": 42
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 43
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 44
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 45
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 46
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 47
+          },
+          {
+            "kind": "switch",
+            "arg": "bud",
+            "revision": 48
+          },
+          {
+            "kind": "attack",
+            "revision": 49
+          },
+          {
+            "kind": "attack",
+            "revision": 50
+          },
+          {
+            "kind": "attack",
+            "revision": 51
+          },
+          {
+            "kind": "attack",
+            "revision": 52
+          },
+          {
+            "kind": "home",
+            "revision": 53
+          },
+          {
+            "kind": "team",
+            "arg": "a",
+            "revision": 54
+          },
+          {
+            "kind": "team",
+            "arg": "b",
+            "revision": 55
+          },
+          {
+            "kind": "team",
+            "arg": "bud",
+            "revision": 56
+          },
+          {
+            "kind": "team",
+            "arg": "fin",
+            "revision": 57
+          },
+          {
+            "kind": "lead",
+            "arg": "b",
+            "revision": 58
+          },
+          {
+            "kind": "lead",
+            "arg": "b",
+            "revision": 59
+          },
+          {
+            "kind": "depart",
+            "revision": 60
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 61
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 62
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 63
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 64
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 65
+          },
+          {
+            "kind": "switch",
+            "arg": "fin",
+            "revision": 66
+          },
+          {
+            "kind": "attack",
+            "revision": 67
+          },
+          {
+            "kind": "attack",
+            "revision": 68
+          },
+          {
+            "kind": "attack",
+            "revision": 69
+          },
+          {
+            "kind": "attack",
+            "revision": 70
+          },
+          {
+            "kind": "home",
+            "revision": 71
+          },
+          {
+            "kind": "lead",
+            "arg": "b",
+            "revision": 72
+          },
+          {
+            "kind": "depart",
+            "revision": 73
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 74
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 75
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 76
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 77
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 78
+          },
+          {
+            "kind": "switch",
+            "arg": "fin",
+            "revision": 79
+          },
+          {
+            "kind": "attack",
+            "revision": 80
+          },
+          {
+            "kind": "attack",
+            "revision": 81
+          },
+          {
+            "kind": "attack",
+            "revision": 82
+          },
+          {
+            "kind": "attack",
+            "revision": 83
+          },
+          {
+            "kind": "home",
+            "revision": 84
+          },
+          {
+            "kind": "team",
+            "arg": "b",
+            "revision": 85
+          },
+          {
+            "kind": "team",
+            "arg": "c",
+            "revision": 86
+          },
+          {
+            "kind": "team",
+            "arg": "fin",
+            "revision": 87
+          },
+          {
+            "kind": "team",
+            "arg": "a",
+            "revision": 88
+          },
+          {
+            "kind": "lead",
+            "arg": "c",
+            "revision": 89
+          },
+          {
+            "kind": "lead",
+            "arg": "c",
+            "revision": 90
+          },
+          {
+            "kind": "depart",
+            "revision": 91
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 92
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 93
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 94
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 95
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 96
+          },
+          {
+            "kind": "switch",
+            "arg": "a",
+            "revision": 97
+          },
+          {
+            "kind": "attack",
+            "revision": 98
+          },
+          {
+            "kind": "attack",
+            "revision": 99
+          },
+          {
+            "kind": "home",
+            "revision": 100
+          },
+          {
+            "kind": "lead",
+            "arg": "c",
+            "revision": 101
+          },
+          {
+            "kind": "depart",
+            "revision": 102
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 103
+          },
+          {
+            "kind": "move",
+            "arg": "up",
+            "revision": 104
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 105
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 106
+          },
+          {
+            "kind": "move",
+            "arg": "right",
+            "revision": 107
+          },
+          {
+            "kind": "switch",
+            "arg": "a",
+            "revision": 108
+          },
+          {
+            "kind": "attack",
+            "revision": 109
+          },
+          {
+            "kind": "attack",
+            "revision": 110
+          },
+          {
+            "kind": "home",
+            "revision": 111
+          }
+        ]
+      },
+      "victory": {
+        "team": [
+          "b",
+          "fin"
+        ],
+        "trace": [
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 7,
+            "phase": "trial",
+            "keyboard": true,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 190,
+              "maxHP": 190,
+              "turn": 0,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {}
+            },
+            "afterTrial": {
+              "hp": 174,
+              "maxHP": 190,
+              "turn": 1,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 88,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔灯轻击，消去16点余势。 回响的试探造成20伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 8,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 174,
+              "maxHP": 190,
+              "turn": 1,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 158,
+              "maxHP": 190,
+              "turn": 2,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 2
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 88,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔灯轻击，消去16点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 9,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 158,
+              "maxHP": 190,
+              "turn": 2,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 2
+              }
+            },
+            "afterTrial": {
+              "hp": 134,
+              "maxHP": 190,
+              "turn": 3,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 3
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 84,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔灯轻击，消去24点余势。 回响的回涌造成48伤害。"
+          },
+          {
+            "kind": "trialSwitch",
+            "arg": "fin",
+            "revision": 10,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 134,
+              "maxHP": 190,
+              "turn": 3,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b"
+              ],
+              "actions": {
+                "trialAttack": 3
+              }
+            },
+            "afterTrial": {
+              "hp": 134,
+              "maxHP": 190,
+              "turn": 4,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 64,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "露纹鳍换到前方；换位也占一拍。 回响的试探造成20伤害。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 11,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "fin",
+            "beforeTrial": {
+              "hp": 134,
+              "maxHP": 190,
+              "turn": 4,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 3,
+                "trialSwitch": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 104,
+              "maxHP": 190,
+              "turn": 5,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 4,
+                "trialSwitch": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 64,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "露纹鳍轻击，消去30点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 12,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "fin",
+            "beforeTrial": {
+              "hp": 104,
+              "maxHP": 190,
+              "turn": 5,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 4,
+                "trialSwitch": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 74,
+              "maxHP": 190,
+              "turn": 6,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 16,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "露纹鳍轻击，消去30点余势。 回响的回涌造成48伤害。"
+          },
+          {
+            "kind": "trialSkill",
+            "arg": null,
+            "revision": 13,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "fin",
+            "beforeTrial": {
+              "hp": 74,
+              "maxHP": 190,
+              "turn": 6,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 67,
+              "maxHP": 190,
+              "turn": 7,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 4,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "潮护消去7点余势，并获得18护盾。 回响的试探造成12伤害，护盾吸收18。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 14,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "fin",
+            "beforeTrial": {
+              "hp": 67,
+              "maxHP": 190,
+              "turn": 7,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 5,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 52,
+              "maxHP": 190,
+              "turn": 8,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 4,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "露纹鳍轻击，消去15点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 15,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "fin",
+            "beforeTrial": {
+              "hp": 52,
+              "maxHP": 190,
+              "turn": 8,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 6,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 9,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 40,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "露纹鳍轻击，消去20点余势。 回响的回涌造成4伤害。 苔灯接替前方。"
+          },
+          {
+            "kind": "trialSkill",
+            "arg": null,
+            "revision": 16,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 9,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 10,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 53,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔息恢复28体力。 回响的试探造成15伤害。"
+          },
+          {
+            "kind": "trialHeal",
+            "arg": null,
+            "revision": 17,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 10,
+              "calm": 0,
+              "weak": 0,
+              "berries": 2,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2
+              }
+            },
+            "afterTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 11,
+              "calm": 0,
+              "weak": 0,
+              "berries": 1,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 79,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "分享露莓恢复26体力。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialHeal",
+            "arg": null,
+            "revision": 18,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 11,
+              "calm": 0,
+              "weak": 0,
+              "berries": 1,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 12,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 9,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "分享露莓恢复26体力。 回响的回涌造成96伤害。"
+          },
+          {
+            "kind": "trialGuard",
+            "arg": null,
+            "revision": 19,
+            "phase": "trial",
+            "keyboard": true,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 12,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2
+              }
+            },
+            "afterTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 13,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2,
+                "trialGuard": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 5,
+                "energy": 2,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔灯守息：能量+1、本次16护盾。 回响的试探造成4伤害，护盾吸收16。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 20,
+            "phase": "trial",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 32,
+              "maxHP": 190,
+              "turn": 13,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 7,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2,
+                "trialGuard": 1
+              }
+            },
+            "afterTrial": {
+              "hp": 16,
+              "maxHP": 190,
+              "turn": 14,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 8,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2,
+                "trialGuard": 1
+              }
+            },
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 5,
+                "energy": 2,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              }
+            ],
+            "notice": "苔灯轻击，消去16点余势。 回响正在蓄势，没有来招。"
+          },
+          {
+            "kind": "trialAttack",
+            "arg": null,
+            "revision": 21,
+            "phase": "ending",
+            "keyboard": false,
+            "actor": "b",
+            "beforeTrial": {
+              "hp": 16,
+              "maxHP": 190,
+              "turn": 14,
+              "calm": 0,
+              "weak": 0,
+              "berries": 0,
+              "team": [
+                "b",
+                "fin"
+              ],
+              "participants": [
+                "b",
+                "fin"
+              ],
+              "actions": {
+                "trialAttack": 8,
+                "trialSwitch": 1,
+                "trialSkill": 2,
+                "trialHeal": 2,
+                "trialGuard": 1
+              }
+            },
+            "afterTrial": null,
+            "team": [
+              {
+                "id": "a",
+                "hp": 92,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 6
+              },
+              {
+                "id": "b",
+                "hp": 5,
+                "energy": 2,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              },
+              {
+                "id": "c",
+                "hp": 96,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "bud",
+                "hp": 78,
+                "energy": 3,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 2
+              },
+              {
+                "id": "fin",
+                "hp": 0,
+                "energy": 1,
+                "shield": 0,
+                "xp": 2,
+                "rank": 1,
+                "encounters": 3
+              }
+            ],
+            "notice": "回响散成细小星光。你们一起完成了这段浅滩冒险，新的同行已经成为归途。"
+          }
+        ],
+        "ending": {
+          "attempt": 1,
+          "outcome": "completed",
+          "turns": 15,
+          "team": [
+            "b",
+            "fin"
+          ],
+          "participants": [
+            "b",
+            "fin"
+          ],
+          "actions": {
+            "trialAttack": 9,
+            "trialSwitch": 1,
+            "trialSkill": 2,
+            "trialHeal": 2,
+            "trialGuard": 1
+          },
+          "calm": 0,
+          "remainingHP": 0,
+          "grown": [
+            "a",
+            "b",
+            "c",
+            "bud",
+            "fin"
+          ],
+          "berriesLeft": 0,
+          "outings": 8,
+          "companions": [
+            "a",
+            "b",
+            "c",
+            "bud",
+            "fin"
+          ]
+        },
+        "endingRefreshExact": true,
+        "checkpoint": {
+          "version": 3,
+          "origin": {
+            "version": 2,
+            "seed": 85949129,
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "attack",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "depart",
+                "revision": 11
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 12
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 18
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "soothe",
+                "revision": 21
+              },
+              {
+                "kind": "soothe",
+                "revision": 22
+              },
+              {
+                "kind": "capture",
+                "revision": 23
+              },
+              {
+                "kind": "home",
+                "revision": 24
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 25
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 26
+              },
+              {
+                "kind": "lead",
+                "arg": "a",
+                "revision": 27
+              },
+              {
+                "kind": "lead",
+                "arg": "a",
+                "revision": 28
+              },
+              {
+                "kind": "depart",
+                "revision": 29
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 30
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 31
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 32
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 33
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 34
+              },
+              {
+                "kind": "switch",
+                "arg": "bud",
+                "revision": 35
+              },
+              {
+                "kind": "attack",
+                "revision": 36
+              },
+              {
+                "kind": "attack",
+                "revision": 37
+              },
+              {
+                "kind": "attack",
+                "revision": 38
+              },
+              {
+                "kind": "attack",
+                "revision": 39
+              },
+              {
+                "kind": "home",
+                "revision": 40
+              },
+              {
+                "kind": "lead",
+                "arg": "a",
+                "revision": 41
+              },
+              {
+                "kind": "depart",
+                "revision": 42
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 43
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 44
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 45
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 46
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 47
+              },
+              {
+                "kind": "switch",
+                "arg": "bud",
+                "revision": 48
+              },
+              {
+                "kind": "attack",
+                "revision": 49
+              },
+              {
+                "kind": "attack",
+                "revision": 50
+              },
+              {
+                "kind": "attack",
+                "revision": 51
+              },
+              {
+                "kind": "attack",
+                "revision": 52
+              },
+              {
+                "kind": "home",
+                "revision": 53
+              },
+              {
+                "kind": "team",
+                "arg": "a",
+                "revision": 54
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 55
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 56
+              },
+              {
+                "kind": "team",
+                "arg": "fin",
+                "revision": 57
+              },
+              {
+                "kind": "lead",
+                "arg": "b",
+                "revision": 58
+              },
+              {
+                "kind": "lead",
+                "arg": "b",
+                "revision": 59
+              },
+              {
+                "kind": "depart",
+                "revision": 60
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 61
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 62
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 63
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 64
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 65
+              },
+              {
+                "kind": "switch",
+                "arg": "fin",
+                "revision": 66
+              },
+              {
+                "kind": "attack",
+                "revision": 67
+              },
+              {
+                "kind": "attack",
+                "revision": 68
+              },
+              {
+                "kind": "attack",
+                "revision": 69
+              },
+              {
+                "kind": "attack",
+                "revision": 70
+              },
+              {
+                "kind": "home",
+                "revision": 71
+              },
+              {
+                "kind": "lead",
+                "arg": "b",
+                "revision": 72
+              },
+              {
+                "kind": "depart",
+                "revision": 73
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 74
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 75
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 76
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 77
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 78
+              },
+              {
+                "kind": "switch",
+                "arg": "fin",
+                "revision": 79
+              },
+              {
+                "kind": "attack",
+                "revision": 80
+              },
+              {
+                "kind": "attack",
+                "revision": 81
+              },
+              {
+                "kind": "attack",
+                "revision": 82
+              },
+              {
+                "kind": "attack",
+                "revision": 83
+              },
+              {
+                "kind": "home",
+                "revision": 84
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 85
+              },
+              {
+                "kind": "team",
+                "arg": "c",
+                "revision": 86
+              },
+              {
+                "kind": "team",
+                "arg": "fin",
+                "revision": 87
+              },
+              {
+                "kind": "team",
+                "arg": "a",
+                "revision": 88
+              },
+              {
+                "kind": "lead",
+                "arg": "c",
+                "revision": 89
+              },
+              {
+                "kind": "lead",
+                "arg": "c",
+                "revision": 90
+              },
+              {
+                "kind": "depart",
+                "revision": 91
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 92
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 93
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 94
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 95
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 96
+              },
+              {
+                "kind": "switch",
+                "arg": "a",
+                "revision": 97
+              },
+              {
+                "kind": "attack",
+                "revision": 98
+              },
+              {
+                "kind": "attack",
+                "revision": 99
+              },
+              {
+                "kind": "home",
+                "revision": 100
+              },
+              {
+                "kind": "lead",
+                "arg": "c",
+                "revision": 101
+              },
+              {
+                "kind": "depart",
+                "revision": 102
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 103
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 104
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 105
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 106
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 107
+              },
+              {
+                "kind": "switch",
+                "arg": "a",
+                "revision": 108
+              },
+              {
+                "kind": "attack",
+                "revision": 109
+              },
+              {
+                "kind": "attack",
+                "revision": 110
+              },
+              {
+                "kind": "home",
+                "revision": 111
+              }
+            ]
+          },
+          "commands": [
+            {
+              "kind": "team",
+              "arg": "c",
+              "revision": 0
+            },
+            {
+              "kind": "team",
+              "arg": "b",
+              "revision": 1
+            },
+            {
+              "kind": "team",
+              "arg": "a",
+              "revision": 2
+            },
+            {
+              "kind": "team",
+              "arg": "fin",
+              "revision": 3
+            },
+            {
+              "kind": "lead",
+              "arg": "b",
+              "revision": 4
+            },
+            {
+              "kind": "trialStart",
+              "revision": 5
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 6
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 7
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 8
+            },
+            {
+              "kind": "trialSwitch",
+              "arg": "fin",
+              "revision": 9
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 10
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 11
+            },
+            {
+              "kind": "trialSkill",
+              "revision": 12
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 13
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 14
+            },
+            {
+              "kind": "trialSkill",
+              "revision": 15
+            },
+            {
+              "kind": "trialHeal",
+              "revision": 16
+            },
+            {
+              "kind": "trialHeal",
+              "revision": 17
+            },
+            {
+              "kind": "trialGuard",
+              "revision": 18
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 19
+            },
+            {
+              "kind": "trialAttack",
+              "revision": 20
+            }
+          ]
+        }
+      },
+      "oldV2RawSaveUnchanged": true
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "browser": "147.0.7727.15",
+  "passed": true,
+  "site": {
+    "href": "./versions/v3/games/feather/",
+    "renderedURL": "https://yydshly.github.io/classic-games-atlas/versions/v3/games/feather/",
+    "versionFilter": "v3",
+    "libraryCount": 40
+  },
+  "comparison": {
+    "v1V2V3LinksPresent": true
+  },
+  "verificationPhases": [
+    {
+      "scope": "Two full public adventures, failure/retry, legacy import and two ending refreshes",
+      "source": "first-browser-report.json",
+      "passed": true
+    },
+    {
+      "scope": "Homepage actual navigation/version filter and v1/v2/v3 comparison links",
+      "source": "site-followup/report.json",
+      "passed": true
+    }
+  ],
+  "resolvedHarnessIssue": {
+    "source": "first-browser-report.json",
+    "issue": "TimeoutError: Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-play=\\\"feather\\\"]\").locator(\".play-launch\")\n    - locator resolved to <a class=\"play-launch\" href=\"./versions/v3/games/feather/\">…</a>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n    - click action done\n    - waiting for scheduled navigations to finish\n",
+    "resolution": "The link had been clicked; the default scheduled-navigation completion wait timed out. A focused follow-up waits for DOM and actual assets, then verifies rendered v3 and comparison links. No game code changed, and full adventures were not rerun."
+  }
+}
