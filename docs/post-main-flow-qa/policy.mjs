@@ -1,0 +1,5 @@
+// Decisions from copied telemetry only. Browser applies returned digital controls through keys.
+import{aiInput,createGame,start,update,snapshot}from'../../versions/v2/games/post/engine.mjs';
+export function decide(g,threshold=.3){const a=aiInput({...g,stage:2},g.cars[0]);return{steer:Math.abs(a.steer)>threshold?Math.sign(a.steer):0,gas:a.gas,brake:a.brake>.05?1:0};}
+if(process.argv.includes('--stdio')){const{createInterface}=await import('node:readline');for await(const line of createInterface({input:process.stdin})){try{console.log(JSON.stringify(decide(JSON.parse(line))));}catch(e){console.log(JSON.stringify({error:String(e)}));}}}
+else{const rows=[];for(const threshold of [.2,.12,.3]){const g=createGame();start(g);let d={},n=0;while(g.state!=='finished'&&n<13000){if(n%12===0)d=decide(snapshot(g),threshold);update(g,1/120,d);n++;}rows.push({kind:'OFFLINE sampled digital key reference, not public UI',threshold,rank:g.result?.rank,time:g.time,finished:g.cars[0].finishedAt,resets:g.cars[0].stats.resets,gates:g.cars[0].stats.gates});}console.log(JSON.stringify(rows,null,2));}
