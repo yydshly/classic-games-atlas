@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "scope": "One ordinary public UI loss/restart loop; separate offline replay audit",
+  "rawReport": "raw-browser-report.json",
+  "sourceAtRun": "4e78b7ed2247598008179d7fa1ac8ab01f08791f",
+  "acceptedGameCommands": 15,
+  "milestones": 7,
+  "exactPausedRefreshChecks": [
+    {
+      "name": "costly-retreat",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    },
+    {
+      "name": "critical-loss",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    },
+    {
+      "name": "confirmed-fresh-start",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    }
+  ],
+  "confirmedRestartAndNormalActions": true,
+  "consoleErrors": [],
+  "httpErrors": [],
+  "cancelledPortraitRequests": [
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "unexpectedRequestFailures": [],
+  "resourceAssessment": "Raw run retained its final resource-guard assertion. Six ERR_ABORTED events are kept separately, not reported as zero failed requests. All ten runtime files matched HTTP200/baseline hashes, and all current images were complete with nonzero naturalWidth at all seven captures. No missing image or game hard failure was observed. Cancellation during portrait DOM rebuild/reload is consistent with these observations, rather than proven for each individual event.",
+  "offlineAudit": "replay-audit.json",
+  "runtimeCodeModified": false,
+  "limits": [
+    "One desktop Chromium route, not all loss causes or victory replay",
+    "No touch, physical device, audio, aesthetic, Safari or long-term storage validation",
+    "Other game and v1 save isolation inspected from the single-key source, not claimed as a personal-save UI test"
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "at": "2026-10-20T16:18:35.995945+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/",
+  "baseline": "4e78b7ed2247598008179d7fa1ac8ab01f08791f",
+  "method": "One actual public Chromium UI route. Only normal map, action, confirmation and reload controls. localStorage is read only in this verifier; live hidden game state is never read or changed, and no model commands/save fixtures are injected. Saved event logs are audited separately offline.",
+  "actions": [
+    {
+      "label": "前往落潮船湾",
+      "event": {
+        "kind": "travel",
+        "to": "wreck",
+        "revision": 0
+      }
+    },
+    {
+      "label": "收集资源",
+      "event": {
+        "kind": "collect",
+        "revision": 1
+      }
+    },
+    {
+      "label": "前往旧航标遗迹",
+      "event": {
+        "kind": "travel",
+        "to": "ruins",
+        "revision": 2
+      }
+    },
+    {
+      "label": "选择迎战",
+      "event": {
+        "kind": "fight",
+        "revision": 3
+      }
+    },
+    {
+      "label": "撤退归港 / confirm",
+      "event": {
+        "kind": "retreat",
+        "revision": 4
+      }
+    },
+    {
+      "label": "招募弩手",
+      "event": {
+        "kind": "recruit",
+        "unit": "bow",
+        "revision": 5
+      }
+    },
+    {
+      "label": "招募弩手",
+      "event": {
+        "kind": "recruit",
+        "unit": "bow",
+        "revision": 6
+      }
+    },
+    {
+      "label": "前往落潮船湾",
+      "event": {
+        "kind": "travel",
+        "to": "wreck",
+        "revision": 7
+      }
+    },
+    {
+      "label": "前往旧航标遗迹",
+      "event": {
+        "kind": "travel",
+        "to": "ruins",
+        "revision": 8
+      }
+    },
+    {
+      "label": "选择迎战",
+      "event": {
+        "kind": "fight",
+        "revision": 9
+      }
+    },
+    {
+      "label": "齐射 / confirm",
+      "event": {
+        "kind": "stance",
+        "stance": "volley",
+        "revision": 10
+      }
+    },
+    {
+      "label": "齐射 / confirm",
+      "event": {
+        "kind": "stance",
+        "stance": "volley",
+        "revision": 11
+      }
+    },
+    {
+      "label": "紧急归港 / confirm",
+      "event": {
+        "kind": "retreat",
+        "revision": 12
+      }
+    },
+    {
+      "label": "前往落潮船湾",
+      "event": {
+        "kind": "travel",
+        "to": "wreck",
+        "revision": 0
+      }
+    },
+    {
+      "label": "收集资源",
+      "event": {
+        "kind": "collect",
+        "revision": 1
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "rawSave": null,
+      "hud": "第 1 / 32 天 · 沿岸航行\n补给 6/6\n港库 100 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 30 · 10/名\n弩手 2 名\n总耐久 12 · 6/名\n随身行囊\n0金 · 0木 · 0透镜",
+      "latest": "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。",
+      "location": "YOU ARE HERE / 当前驻地\n栖灯港\n\n港库支撑下一趟远征。招募补充兵力；补给仓延长航程，但会占用修灯的木材。",
+      "name": "01-fresh-port",
+      "screenshot": "01-fresh-port.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":0},{\"kind\":\"collect\",\"revision\":1}]}",
+      "hud": "第 2 / 32 天 · 沿岸航行\n补给 5/6\n港库 100 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 30 · 10/名\n弩手 2 名\n总耐久 12 · 6/名\n随身行囊\n65金 · 2木 · 0透镜",
+      "latest": "发现65金、2木。尚在行囊中，归港后才能使用。",
+      "location": "YOU ARE HERE / 当前驻地\n落潮船湾\n\n退潮留下的木材与旧钱箱。领取一次：65金、2木。",
+      "name": "02-ordinary-cargo",
+      "screenshot": "02-ordinary-cargo.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":0},{\"kind\":\"collect\",\"revision\":1},{\"kind\":\"travel\",\"to\":\"ruins\",\"revision\":2},{\"kind\":\"fight\",\"revision\":3},{\"kind\":\"retreat\",\"revision\":4}]}",
+      "hud": "第 5 / 32 天 · 沿岸航行\n补给 6/6\n港库 100 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 26 · 10/名\n弩手 2 名\n总耐久 12 · 6/名\n随身行囊\n0金 · 0木 · 0透镜",
+      "latest": "紧急归港：行囊全部遗失，消耗2天，部队再受4伤害；已入库资源保留。",
+      "location": "YOU ARE HERE / 当前驻地\n栖灯港\n\n港库支撑下一趟远征。招募补充兵力；补给仓延长航程，但会占用修灯的木材。",
+      "name": "03-costly-retreat",
+      "screenshot": "03-costly-retreat.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":0},{\"kind\":\"collect\",\"revision\":1},{\"kind\":\"travel\",\"to\":\"ruins\",\"revision\":2},{\"kind\":\"fight\",\"revision\":3},{\"kind\":\"retreat\",\"revision\":4},{\"kind\":\"recruit\",\"unit\":\"bow\",\"revision\":5},{\"kind\":\"recruit\",\"unit\":\"bow\",\"revision\":6},{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":7},{\"kind\":\"travel\",\"to\":\"ruins\",\"revision\":8},{\"kind\":\"fight\",\"revision\":9},{\"kind\":\"stance\",\"stance\":\"volley\",\"revision\":10},{\"kind\":\"stance\",\"stance\":\"volley\",\"revision\":11}]}",
+      "hud": "第 7 / 32 天 · 沿岸航行\n补给 4/6\n港库 20 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 26 · 10/名\n弩手 4 名\n总耐久 20 · 6/名\n随身行囊\n70金 · 2木 · 1透镜",
+      "latest": "胜利！70金、2木、1透镜收入行囊。盾卫损失0、弩手损失0。",
+      "location": "YOU ARE HERE / 当前驻地\n旧航标遗迹\n\n轻装掠夺者守着第一片透镜。齐射可以抢先削减他们的攻击。",
+      "name": "04-lens-in-cargo",
+      "screenshot": "04-lens-in-cargo.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":0},{\"kind\":\"collect\",\"revision\":1},{\"kind\":\"travel\",\"to\":\"ruins\",\"revision\":2},{\"kind\":\"fight\",\"revision\":3},{\"kind\":\"retreat\",\"revision\":4},{\"kind\":\"recruit\",\"unit\":\"bow\",\"revision\":5},{\"kind\":\"recruit\",\"unit\":\"bow\",\"revision\":6},{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":7},{\"kind\":\"travel\",\"to\":\"ruins\",\"revision\":8},{\"kind\":\"fight\",\"revision\":9},{\"kind\":\"stance\",\"stance\":\"volley\",\"revision\":10},{\"kind\":\"stance\",\"stance\":\"volley\",\"revision\":11},{\"kind\":\"retreat\",\"revision\":12}]}",
+      "hud": "第 9 / 32 天 · 航程结束\n补给 6/6\n港库 20 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 22 · 10/名\n弩手 4 名\n总耐久 20 · 6/名\n随身行囊\n0金 · 0木 · 0透镜",
+      "latest": "关键修复物资在撤退中遗失，余下资源不足以完成修复。这次航程结束，可重新出发。",
+      "location": "END OF EXPEDITION\n风暴中的教训\n\n关键修复物资在撤退中遗失，余下资源不足以完成修复。这次航程结束，可重新出发。\n\n抵达 3/7 地点 · 战胜 1/3 守军\n幸存盾卫 3 · 弩手 4\n\n这是一轮有限候选体验；下方可以重新出发，试试另一种招募与路线。",
+      "name": "05-critical-lens-loss",
+      "screenshot": "05-critical-lens-loss.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[]}",
+      "hud": "第 1 / 32 天 · 沿岸航行\n补给 6/6\n港库 100 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 30 · 10/名\n弩手 2 名\n总耐久 12 · 6/名\n随身行囊\n0金 · 0木 · 0透镜",
+      "latest": "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。",
+      "location": "YOU ARE HERE / 当前驻地\n栖灯港\n\n港库支撑下一趟远征。招募补充兵力；补给仓延长航程，但会占用修灯的木材。",
+      "name": "06-confirmed-fresh-start",
+      "screenshot": "06-confirmed-fresh-start.png"
+    },
+    {
+      "rawSave": "{\"version\":2,\"events\":[{\"kind\":\"travel\",\"to\":\"wreck\",\"revision\":0},{\"kind\":\"collect\",\"revision\":1}]}",
+      "hud": "第 2 / 32 天 · 沿岸航行\n补给 5/6\n港库 100 金 · 0 木\n透镜 0/2",
+      "army": "盾卫 3 名\n总耐久 30 · 10/名\n弩手 2 名\n总耐久 12 · 6/名\n随身行囊\n65金 · 2木 · 0透镜",
+      "latest": "发现65金、2木。尚在行囊中，归港后才能使用。",
+      "location": "YOU ARE HERE / 当前驻地\n落潮船湾\n\n退潮留下的木材与旧钱箱。领取一次：65金、2木。",
+      "name": "07-normal-action-after-restart",
+      "screenshot": "07-normal-action-after-restart.png"
+    }
+  ],
+  "refreshChecks": [
+    {
+      "name": "costly-retreat",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    },
+    {
+      "name": "critical-loss",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    },
+    {
+      "name": "confirmed-fresh-start",
+      "rawSaveAndVisibleStateExact": true,
+      "restoredPaused": true
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/guard.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/beacon/assets/bow.webp",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "files": [
+    {
+      "path": "versions/v2/games/beacon/assets/battle.webp",
+      "status": 200,
+      "sha256": "e2ee64b112efbfc2f9ff804df0246e664b626039efe01cab7d7efeaca750a507",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/assets/bow.webp",
+      "status": 200,
+      "sha256": "c0f68d2d52eb1b414773905c52c99eb36f7123318903be19bcacbe0208c01360",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/assets/captain.webp",
+      "status": 200,
+      "sha256": "dd204cba0243644320f1cf4d0ae42d10e3e61e2d39d0b6f1fcf6b5e5c6ceae07",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/assets/enemy.webp",
+      "status": 200,
+      "sha256": "214d48c38fb5ee382134ffbb85729f6b80866462a01ddcfd5a7e113174fa7201",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/assets/guard.webp",
+      "status": 200,
+      "sha256": "a64e1fe143eb519baef91dd6dd0669a506a6dc499faeae5fd995da7001470715",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/assets/map.webp",
+      "status": 200,
+      "sha256": "8e24da0fd6ce51dbe3645d0be8cb10943d327c5d75316a1a095b3323740b4921",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/beacon.css",
+      "status": 200,
+      "sha256": "4f79271b55b47dc75a31ebf0abad8460af04666013b96b00327f0ce3ba95eb10",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/game.mjs",
+      "status": 200,
+      "sha256": "f55da2a58a18827f412361d79448b9c17d659a9650a76361024b1385dcb84971",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/index.html",
+      "status": 200,
+      "sha256": "bae6f50a1720ae111e2154dd7dc92513b76b4d5e2af603aee5204463fdefb026",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/beacon/model.mjs",
+      "status": 200,
+      "sha256": "2f19de79e42701651fd270fcdf37ae384b91ecdda2d5b7090229779df2ae7bbd",
+      "matchesBaseline": true
+    }
+  ],
+  "browser": "147.0.7727.15",
+  "restartCancelPreservedLostRun": true,
+  "confirmedRestartAndNormalActions": true,
+  "error": "AssertionError: "
+}

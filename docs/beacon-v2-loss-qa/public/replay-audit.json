@@ -1,0 +1,469 @@
+{
+  "kind": "offline replay of captured normal browser UI event logs, not a separate UI playthrough",
+  "passed": true,
+  "firstRetreat": {
+    "day": 5,
+    "bankGold": 100,
+    "lostCargo": {
+      "gold": 65,
+      "wood": 2
+    },
+    "guardHP": "30 -> 26",
+    "continues": true
+  },
+  "lensAcquisition": {
+    "rounds": 2,
+    "cargoLens": 1,
+    "bankGold": 20,
+    "guardHP": 26,
+    "bowHP": 20
+  },
+  "criticalLoss": {
+    "day": 9,
+    "phase": "lost",
+    "guardHP": 22,
+    "bowHP": 20,
+    "bankGold": 20,
+    "remainingObtainableLens": 1,
+    "requiredLens": 2
+  },
+  "confirmedRestartExactFresh": true,
+  "normalPostRestartTravelAndCollect": true,
+  "checkedMilestones": 7,
+  "states": {
+    "01-fresh-port": {
+      "v": 2,
+      "revision": 0,
+      "day": 1,
+      "phase": "map",
+      "at": "port",
+      "supply": 6,
+      "capacity": 6,
+      "gold": 100,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 30,
+      "bowHP": 12,
+      "cargo": {
+        "gold": 0,
+        "wood": 0,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port"
+      ],
+      "cleared": [],
+      "collected": [],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。"
+      ],
+      "events": []
+    },
+    "02-ordinary-cargo": {
+      "v": 2,
+      "revision": 2,
+      "day": 2,
+      "phase": "map",
+      "at": "wreck",
+      "supply": 5,
+      "capacity": 6,
+      "gold": 100,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 30,
+      "bowHP": 12,
+      "cargo": {
+        "gold": 65,
+        "wood": 2,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port",
+        "wreck"
+      ],
+      "cleared": [],
+      "collected": [
+        "wreck"
+      ],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。",
+        "抵达落潮船湾 · 消耗1补给、1天。",
+        "发现65金、2木。尚在行囊中，归港后才能使用。"
+      ],
+      "events": [
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 0
+        },
+        {
+          "kind": "collect",
+          "revision": 1
+        }
+      ]
+    },
+    "03-costly-retreat": {
+      "v": 2,
+      "revision": 5,
+      "day": 5,
+      "phase": "map",
+      "at": "port",
+      "supply": 6,
+      "capacity": 6,
+      "gold": 100,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 26,
+      "bowHP": 12,
+      "cargo": {
+        "gold": 0,
+        "wood": 0,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port",
+        "wreck",
+        "ruins"
+      ],
+      "cleared": [],
+      "collected": [
+        "wreck"
+      ],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。",
+        "抵达落潮船湾 · 消耗1补给、1天。",
+        "发现65金、2木。尚在行囊中，归港后才能使用。",
+        "抵达旧航标遗迹 · 消耗1补给、1天。",
+        "遭遇湾岸掠夺者。选择阵型；伤害与敌方意图均公开。",
+        "紧急归港：行囊全部遗失，消耗2天，部队再受4伤害；已入库资源保留。"
+      ],
+      "events": [
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 0
+        },
+        {
+          "kind": "collect",
+          "revision": 1
+        },
+        {
+          "kind": "travel",
+          "to": "ruins",
+          "revision": 2
+        },
+        {
+          "kind": "fight",
+          "revision": 3
+        },
+        {
+          "kind": "retreat",
+          "revision": 4
+        }
+      ]
+    },
+    "04-lens-in-cargo": {
+      "v": 2,
+      "revision": 12,
+      "day": 7,
+      "phase": "map",
+      "at": "ruins",
+      "supply": 4,
+      "capacity": 6,
+      "gold": 20,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 26,
+      "bowHP": 20,
+      "cargo": {
+        "gold": 70,
+        "wood": 2,
+        "lens": 1,
+        "core": 0
+      },
+      "visited": [
+        "port",
+        "wreck",
+        "ruins"
+      ],
+      "cleared": [
+        "ruins"
+      ],
+      "collected": [
+        "wreck"
+      ],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "遭遇湾岸掠夺者。选择阵型；伤害与敌方意图均公开。",
+        "紧急归港：行囊全部遗失，消耗2天，部队再受4伤害；已入库资源保留。",
+        "招募1名弩手，花费40金。",
+        "招募1名弩手，花费40金。",
+        "抵达落潮船湾 · 消耗1补给、1天。",
+        "抵达旧航标遗迹 · 消耗1补给、1天。",
+        "遭遇湾岸掠夺者。选择阵型；伤害与敌方意图均公开。",
+        "齐射：造成19伤害，承受4伤害。",
+        "齐射：造成19伤害，承受0伤害。",
+        "胜利！70金、2木、1透镜收入行囊。盾卫损失0、弩手损失0。"
+      ],
+      "events": [
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 0
+        },
+        {
+          "kind": "collect",
+          "revision": 1
+        },
+        {
+          "kind": "travel",
+          "to": "ruins",
+          "revision": 2
+        },
+        {
+          "kind": "fight",
+          "revision": 3
+        },
+        {
+          "kind": "retreat",
+          "revision": 4
+        },
+        {
+          "kind": "recruit",
+          "unit": "bow",
+          "revision": 5
+        },
+        {
+          "kind": "recruit",
+          "unit": "bow",
+          "revision": 6
+        },
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 7
+        },
+        {
+          "kind": "travel",
+          "to": "ruins",
+          "revision": 8
+        },
+        {
+          "kind": "fight",
+          "revision": 9
+        },
+        {
+          "kind": "stance",
+          "stance": "volley",
+          "revision": 10
+        },
+        {
+          "kind": "stance",
+          "stance": "volley",
+          "revision": 11
+        }
+      ]
+    },
+    "05-critical-lens-loss": {
+      "v": 2,
+      "revision": 13,
+      "day": 9,
+      "phase": "lost",
+      "at": "port",
+      "supply": 6,
+      "capacity": 6,
+      "gold": 20,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 22,
+      "bowHP": 20,
+      "cargo": {
+        "gold": 0,
+        "wood": 0,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port",
+        "wreck",
+        "ruins"
+      ],
+      "cleared": [
+        "ruins"
+      ],
+      "collected": [
+        "wreck"
+      ],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "招募1名弩手，花费40金。",
+        "招募1名弩手，花费40金。",
+        "抵达落潮船湾 · 消耗1补给、1天。",
+        "抵达旧航标遗迹 · 消耗1补给、1天。",
+        "遭遇湾岸掠夺者。选择阵型；伤害与敌方意图均公开。",
+        "齐射：造成19伤害，承受4伤害。",
+        "齐射：造成19伤害，承受0伤害。",
+        "胜利！70金、2木、1透镜收入行囊。盾卫损失0、弩手损失0。",
+        "紧急归港：行囊全部遗失，消耗2天，部队再受4伤害；已入库资源保留。",
+        "关键修复物资在撤退中遗失，余下资源不足以完成修复。这次航程结束，可重新出发。"
+      ],
+      "events": [
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 0
+        },
+        {
+          "kind": "collect",
+          "revision": 1
+        },
+        {
+          "kind": "travel",
+          "to": "ruins",
+          "revision": 2
+        },
+        {
+          "kind": "fight",
+          "revision": 3
+        },
+        {
+          "kind": "retreat",
+          "revision": 4
+        },
+        {
+          "kind": "recruit",
+          "unit": "bow",
+          "revision": 5
+        },
+        {
+          "kind": "recruit",
+          "unit": "bow",
+          "revision": 6
+        },
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 7
+        },
+        {
+          "kind": "travel",
+          "to": "ruins",
+          "revision": 8
+        },
+        {
+          "kind": "fight",
+          "revision": 9
+        },
+        {
+          "kind": "stance",
+          "stance": "volley",
+          "revision": 10
+        },
+        {
+          "kind": "stance",
+          "stance": "volley",
+          "revision": 11
+        },
+        {
+          "kind": "retreat",
+          "revision": 12
+        }
+      ]
+    },
+    "06-confirmed-fresh-start": {
+      "v": 2,
+      "revision": 0,
+      "day": 1,
+      "phase": "map",
+      "at": "port",
+      "supply": 6,
+      "capacity": 6,
+      "gold": 100,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 30,
+      "bowHP": 12,
+      "cargo": {
+        "gold": 0,
+        "wood": 0,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port"
+      ],
+      "cleared": [],
+      "collected": [],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。"
+      ],
+      "events": []
+    },
+    "07-normal-action-after-restart": {
+      "v": 2,
+      "revision": 2,
+      "day": 2,
+      "phase": "map",
+      "at": "wreck",
+      "supply": 5,
+      "capacity": 6,
+      "gold": 100,
+      "wood": 0,
+      "lens": 0,
+      "guardHP": 30,
+      "bowHP": 12,
+      "cargo": {
+        "gold": 65,
+        "wood": 2,
+        "lens": 0,
+        "core": 0
+      },
+      "visited": [
+        "port",
+        "wreck"
+      ],
+      "cleared": [],
+      "collected": [
+        "wreck"
+      ],
+      "kit": false,
+      "depot": false,
+      "battle": null,
+      "log": [
+        "船长，先选一条海岸路线。战利品只有带回栖灯港才能用于招募和建设。",
+        "抵达落潮船湾 · 消耗1补给、1天。",
+        "发现65金、2木。尚在行囊中，归港后才能使用。"
+      ],
+      "events": [
+        {
+          "kind": "travel",
+          "to": "wreck",
+          "revision": 0
+        },
+        {
+          "kind": "collect",
+          "revision": 1
+        }
+      ]
+    }
+  }
+}
