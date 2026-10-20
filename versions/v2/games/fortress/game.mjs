@@ -17,6 +17,7 @@ function stop(){clear();pause(game);lastState='';sync();}
 function sync(){
  const state=game.state;$('#overlay').hidden=state==='playing';$('#pause').textContent=state==='paused'?'继续 P':'暂停 P';
  if(state!==lastState){
+  document.body.dataset.state=state;
   if(state==='won'){const key=`${game.index}-${game.mode}`;progress.best[key]=Math.max(progress.best[key]||0,game.score);save();}
   const title={ready:game.level.name,paused:'火线已暂停',won:'信标守住了',lost:'防线失守'};
   $('#result-title').textContent=title[state]||'';$('#state-label').textContent=({ready:'READY / 待命',paused:'PAUSED / 暂停',won:'SECURED / 行动完成',lost:'SIGNAL LOST / 行动失败'})[state]||'';
