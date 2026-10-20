@@ -1,0 +1,144 @@
+diff --git a/versions/v2/games/ruins/index.html b/versions/v2/games/ruins/index.html
+index 3d1c011..4fac249 100644
+--- a/versions/v2/games/ruins/index.html
++++ b/versions/v2/games/ruins/index.html
+@@ -1 +1 @@
+-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>归火石室 · 实时动作 v2</title><link rel="stylesheet" href="style.css"></head><body><main><header><div><small>24 / 原创有限动作冒险</small><h1>归火石室 <span>v2</span></h1></div><nav><a href="../../../../games/ruins/">保留版 v1</a><a href="../../../../">游戏集</a></nav></header><section class="top"><strong id="objective">载入石室…</strong><div id="stats"></div></section><canvas id="game" width="960" height="576" aria-label="归火石室游戏画面"></canvas><div class="toolbar"><button id="pause">继续</button><button id="retry">重试本房</button><button id="next" hidden>下一关</button><button id="help">操作说明</button><select id="level" aria-label="选择关卡"><option value="0">1 苔灯庭</option><option value="1">2 回声廊</option><option value="2">3 归火殿</option></select><button id="restart">重开本关</button></div><p id="notice" role="status"></p><section id="helpbox" hidden><p>WASD / 方向键持续移动 · J 横扫 · K 闪避 · L 回声灯 · E 交互。门、物件需靠近按 E。</p><p>金色区域是敌人即将打中的范围，红色是攻击。先横向离开预警，再抓恢复空隙反击。第三关守卫恢复时用回声灯破防，再靠近横扫。</p><p>回声可穿铜栅栏，不能穿石墙。失焦与刷新后暂停。自动保存完整进度；重试回到当前房间入口检查点并恢复生命。三关可独立选择。</p></section><section class="touch" aria-label="触屏操作"><div class="dpad"><button data-hold="up">↑</button><button data-hold="left">←</button><button data-hold="down">↓</button><button data-hold="right">→</button></div><div class="actions"><button data-action="attack">J 横扫</button><button data-action="dodge">K 闪避</button><button data-action="echo">L 回声</button><button data-action="interact">E 交互</button></div></section><footer>三段旅程 · 九间石室 · 原创四向关键姿态美术。动作采用有限关键姿态切换，并非完整逐帧动画。<a href="SOURCES.md">设计与来源</a></footer></main><script type="module" src="game.mjs"></script></body></html>
++<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>归火石室 · 实时动作 v2</title><link rel="stylesheet" href="style.css"></head><body><main><div class="play-shell"><header><div><small>24 / 原创有限动作冒险</small><h1>归火石室 <span>v2</span></h1></div><div class="quick-actions"><button id="pause">继续</button><button id="retry">重试本房</button></div><nav><a href="../../../../games/ruins/">保留版 v1</a><a href="../../../../">游戏集</a></nav></header><section class="top"><strong id="objective">载入石室…</strong><div id="stats"></div></section><div class="field-slot"><canvas id="game" tabindex="0" width="960" height="576" aria-label="归火石室游戏画面"></canvas></div><p id="notice" role="status"></p><section class="touch" aria-label="触屏操作"><div class="dpad"><button data-hold="up">↑</button><button data-hold="left">←</button><button data-hold="down">↓</button><button data-hold="right">→</button></div><div class="actions"><button data-action="attack">J 横扫</button><button data-action="dodge">K 闪避</button><button data-action="echo">L 回声</button><button data-action="interact">E 交互</button></div></section></div><section class="notes"><div class="toolbar"><button id="next" hidden>下一关</button><button id="help">操作说明</button><select id="level" aria-label="选择关卡"><option value="0">1 苔灯庭</option><option value="1">2 回声廊</option><option value="2">3 归火殿</option></select><button id="restart">重开本关</button></div><section id="helpbox" hidden><p>WASD / 方向键持续移动 · J 横扫 · K 闪避 · L 回声灯 · E 交互。门、物件需靠近按 E。</p><p>金色区域是敌人即将打中的范围，红色是攻击。先横向离开预警，再抓恢复空隙反击。第三关守卫恢复时用回声灯破防，再靠近横扫。</p><p>回声可穿铜栅栏，不能穿石墙。失焦与刷新后暂停。自动保存完整进度；重试回到当前房间入口检查点并恢复生命。三关可独立选择。</p></section><footer>三段旅程 · 九间石室 · 原创四向关键姿态美术。动作采用有限关键姿态切换，并非完整逐帧动画。<a href="SOURCES.md">设计与来源</a></footer></section></main><script type="module" src="game.mjs"></script></body></html>
+diff --git a/versions/v2/games/ruins/style.css b/versions/v2/games/ruins/style.css
+index ded701f..28fdb6e 100644
+--- a/versions/v2/games/ruins/style.css
++++ b/versions/v2/games/ruins/style.css
+@@ -1 +1,29 @@
+ *{box-sizing:border-box}body{margin:0;background:#102725;color:#e7e5cf;font:15px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:20px}header{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:28px;margin:6px 0 16px}h1 span,small{color:#a3b9a5}nav{display:flex;gap:18px}a{color:#cfddac}canvas{display:block;width:100%;height:auto;border:1px solid #8d9870;border-radius:12px;background:#263e37}.top{display:flex;justify-content:space-between;gap:14px;padding:10px 0;min-height:50px}#stats{white-space:nowrap;color:#edb78d}button,select{font:inherit;background:#29483f;border:1px solid #9bab80;border-radius:8px;color:#f4edcb;min-height:42px;padding:8px 15px;cursor:pointer}button:hover{background:#426453}button:focus-visible,a:focus-visible{outline:3px solid #f0c678}button[hidden],[hidden]{display:none!important}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}#notice{min-height:24px;color:#c9d3bc;margin:12px 0}.touch{display:flex;justify-content:space-between;gap:16px;touch-action:none;user-select:none}.dpad,.actions{display:flex;gap:8px;flex-wrap:wrap}.touch button{min-width:48px;min-height:48px}footer{font-size:12px;line-height:1.8;color:#a9b6a3;margin-top:18px}#helpbox{border:1px solid #647c65;padding:12px;border-radius:10px;margin-bottom:12px;line-height:1.6}@media(max-width:600px){main{padding:10px}header{align-items:start}h1{font-size:23px}nav{font-size:12px;gap:10px}.top{display:block;font-size:13px}.top div{margin-top:7px}.touch{flex-direction:column}.dpad,.actions{justify-content:center}.toolbar button,.toolbar select{padding:8px 10px;font-size:13px}#notice{font-size:13px}.touch button{flex:1;max-width:110px}footer{font-size:11px}}
++/* Keep live combat, its HUD and all primary actions in one viewport.
++   Secondary setup/help remains below this bounded play shell. */
++main{padding:12px}
++.play-shell{height:calc(100vh - 24px);height:calc(100svh - 24px);display:grid;grid-template-areas:"head" "hud" "field" "notice" "controls";grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:8px}
++header{grid-area:head;min-height:44px}header small{font-size:11px;line-height:1.2}h1{font-size:22px;line-height:1.2;margin:2px 0 0}nav{font-size:12px;gap:14px}
++.quick-actions{display:flex;gap:6px}.quick-actions button{min-height:44px;min-width:70px;padding:7px 12px;font-size:14px}
++.top{grid-area:hud;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;min-height:40px;padding:4px 0;font-size:14px}
++#stats{font-size:14px}
++.field-slot{grid-area:field;container-type:size;min-width:0;min-height:0;display:grid;place-items:center}
++canvas{box-sizing:content-box;width:min(calc(100cqw - 2px),calc((100cqh - 2px)*5/3));height:auto;aspect-ratio:5/3;max-width:none;border-radius:10px;outline-offset:-4px}
++canvas:focus-visible{outline:3px solid #f0c678}
++#notice{grid-area:notice;font-size:13px;line-height:1.5;min-height:22px;margin:0}
++.touch{grid-area:controls;align-items:center;min-height:48px}.dpad,.actions{flex-wrap:nowrap}.touch button{font-size:14px;min-height:48px}.dpad button{width:48px;padding:8px}.actions button{min-width:96px}
++.notes{padding-top:16px}.notes footer{margin-top:12px}
++@media(min-width:900px) and (max-height:650px){
++ .play-shell{grid-template-columns:minmax(0,1fr) 220px;grid-template-areas:"head head" "hud hud" "field controls" "notice notice";grid-template-rows:44px 44px minmax(0,1fr) 24px}
++ .touch{flex-direction:column;justify-content:center;gap:12px}
++ .dpad{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,48px);gap:8px}
++ [data-hold=up]{grid-area:1/2}[data-hold=left]{grid-area:2/1}[data-hold=down]{grid-area:2/2}[data-hold=right]{grid-area:2/3}
++ .actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions button{min-width:0;padding:8px}
++}
++@media(max-width:700px){
++ main{padding:10px}.play-shell{height:calc(100vh - 20px);height:calc(100svh - 20px)}
++ header{display:grid;grid-template-columns:1fr auto;grid-template-areas:"title nav" "quick quick";gap:6px}header>div:first-child{grid-area:title}.quick-actions{grid-area:quick;justify-content:center}nav{grid-area:nav;font-size:11px;gap:10px}h1{font-size:20px}
++ .top{display:block;font-size:13px;min-height:44px}.top #stats{font-size:13px;margin-top:4px}
++ .touch{flex-direction:column;gap:8px}.dpad,.actions{display:flex;width:100%;justify-content:space-between;gap:6px}.touch button{flex:1;min-width:0;max-width:none;padding:8px 6px;font-size:13px}
++ #notice{font-size:12px}
++}
+diff --git a/versions/v2/scripts/test_ruins_layout.py b/versions/v2/scripts/test_ruins_layout.py
+new file mode 100644
+--- /dev/null
++++ b/versions/v2/scripts/test_ruins_layout.py
+@@ -0,0 +1,53 @@
++"""Bounded real-browser layout regression; not a full-game or human-play test."""
++import argparse,asyncio,datetime,json
++from pathlib import Path
++from playwright.async_api import async_playwright
++ROOT=Path(__file__).resolve().parents[3]
++CASES=[('review-size',1173,751),('desktop',1440,900),('laptop',1366,768),('short',1280,600),('short-narrow',1024,600)]
++MEASURE='''()=>{const r=s=>{const e=document.querySelector(s),q=e.getBoundingClientRect();return {x:q.x,y:q.y,width:q.width,height:q.height,bottom:q.bottom,right:q.right,fontSize:parseFloat(getComputedStyle(e).fontSize),visible:q.x>=-.5&&q.y>=-.5&&q.right<=innerWidth+.5&&q.bottom<=innerHeight+.5}};return {viewport:[innerWidth,innerHeight],scrollY,scrollWidth:document.documentElement.scrollWidth,field:r('#game'),objective:r('#objective'),stats:r('#stats'),pause:r('#pause'),retry:r('#retry'),up:r('[data-hold="up"]'),down:r('[data-hold="down"]'),left:r('[data-hold="left"]'),right:r('[data-hold="right"]'),attack:r('[data-action="attack"]'),dodge:r('[data-action="dodge"]'),echo:r('[data-action="echo"]'),interact:r('[data-action="interact"]')}}'''
++async def state(p):return await p.evaluate('JSON.parse(localStorage.getItem("atlas-ruins-v2-snapshot-1"))')
++async def click_visible(p,sel):
++ r=await p.locator(sel).bounding_box();w,h=await p.evaluate('[innerWidth,innerHeight]');assert r and r['x']>=-.5 and r['y']>=-.5 and r['x']+r['width']<=w+.5 and r['y']+r['height']<=h+.5,(sel,r,[w,h]);x,y=r['x']+r['width']/2,r['y']+r['height']/2
++ assert await p.evaluate('([s,x,y])=>{const e=document.querySelector(s),h=document.elementFromPoint(x,y);return e===h||e.contains(h)}',[sel,x,y]),'covered '+sel
++ scroll=await p.evaluate('scrollY');await p.mouse.click(x,y);assert abs(await p.evaluate('scrollY')-scroll)<.5,'click scrolled page '+sel
++async def hold_key(p,key,ms):
++ await p.keyboard.down(key);await p.wait_for_timeout(ms);await p.keyboard.up(key)
++async def held_button(p,sel,ms):
++ r=await p.locator(sel).bounding_box();await p.mouse.move(r['x']+r['width']/2,r['y']+r['height']/2);scroll=await p.evaluate('scrollY');await p.mouse.down();await p.wait_for_timeout(ms);await p.mouse.up();assert abs(await p.evaluate('scrollY')-scroll)<.5
++def fit(m):
++ assert all(m[k]['visible'] for k in ['field','objective','stats','pause','retry','up','down','left','right','attack','dodge','echo','interact']),m
++ assert m['scrollWidth']==m['viewport'][0];assert abs((m['field']['width']-2)/(m['field']['height']-2)-5/3)<.01
++ assert (m['field']['width']-2)/960>=.7,'room shrunk below bounded desktop scale'
++ for k in ['pause','retry','up','down','left','right','attack','dodge','echo','interact']:assert m[k]['width']>=44 and m[k]['height']>=44,(k,m[k])
++ for k in ['objective','stats','pause','attack','dodge','echo','interact']:assert m[k]['fontSize']>=13,(k,m[k])
++async def main(a):
++ out=ROOT/a.out;out.mkdir(parents=True,exist_ok=True);url=a.root.rstrip('/')+'/versions/v2/games/ruins/';report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':url,'method':'One normal Chromium encounter through page keyboard/mouse events: Start, walk/E into guard room, short movement/attacks, pause/resume, one checkpoint Retry. Resize while paused. Existing localStorage is read only by the test; writes are performed solely by the original app. No engine calls, injected snapshots, clock/HP/AI edits, level clears or human-play claim.','cases':[],'checks':[]};errors=[];bad=[];failed=[]
++ def save():
++  report.update(consoleErrors=errors,badResponses=bad,requestFailures=failed);(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
++ async with async_playwright() as pw:
++  b=await pw.chromium.launch();p=await b.new_page(viewport={'width':1173,'height':751});report['browser']=b.version;p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text) if m.type=='error' else None);p.on('response',lambda r:bad.append({'url':r.url,'status':r.status}) if r.status>=400 else None);p.on('requestfailed',lambda r:failed.append({'url':r.url,'failure':r.failure}))
++  try:
++   await p.goto(url,wait_until='networkidle');await click_visible(p,'#pause');await hold_key(p,'d',4000);await p.keyboard.press('e');await p.wait_for_timeout(80);await hold_key(p,'w',520);await hold_key(p,'d',1650);await click_visible(p,'#pause');encounter=await state(p);assert encounter['room']==1 and encounter['status']=='playing';report['encounter']={'room':1,'hp':encounter['p']['hp'],'time':encounter['time'],'enemyCount':len(encounter['rooms'][1]['enemies'])};save()
++   for index,(name,w,h) in enumerate(CASES):
++    frozen=await state(p);await p.set_viewport_size({'width':w,'height':h});await p.wait_for_timeout(60);assert await state(p)==frozen;measure=await p.evaluate(MEASURE);fit(measure);assert measure['scrollY']==0;assert await p.locator('#game').get_attribute('width')=='960' and await p.locator('#game').get_attribute('height')=='576'
++    await click_visible(p,'#pause');await p.wait_for_timeout(450);await held_button(p,'[data-hold="right"]',80);await click_visible(p,'[data-action="attack"]');await p.wait_for_timeout(30);await click_visible(p,'#pause');attacked=await state(p);assert attacked['status']=='playing' and attacked['time']>frozen['time'] and attacked['p']['attackCd']>0,('attack not observed promptly',attacked['status'],attacked['p']);await click_visible(p,'#pause');await p.screenshot(path=str(out/(name+'-combat.png')));fit(await p.evaluate(MEASURE));await click_visible(p,'#pause');raw=await p.evaluate('localStorage.getItem("atlas-ruins-v2-snapshot-1")');hud=await p.locator('#stats').inner_text();await p.wait_for_timeout(200);assert await p.evaluate('localStorage.getItem("atlas-ruins-v2-snapshot-1")')==raw and await p.locator('#stats').inner_text()==hud;await p.screenshot(path=str(out/(name+'-paused.png')))
++    await click_visible(p,'#pause')
++    for action in ['dodge','echo','interact']:
++     await click_visible(p,'[data-action="'+action+'"]');fit(await p.evaluate(MEASURE));assert await p.evaluate('scrollY')==0
++    await p.wait_for_timeout(40);await click_visible(p,'#pause');ending=await state(p);assert ending['status']=='playing' and ending['p']['hp']>0 and ending['time']>attacked['time'];row={'name':name,'viewport':[w,h],'measure':measure,'displayScale':(measure['field']['width']-2)/960,'startTime':frozen['time'],'endTime':ending['time'],'hp':ending['p']['hp'],'attackCooldownObserved':attacked['p']['attackCd'],'fourActionButtonsClickedWithoutScrolling':True,'pauseSnapshotAndHUDFrozen':True,'nativeCanvasUnchanged':True};report['cases'].append(row)
++    if index==0:
++     await click_visible(p,'#retry');retried=await state(p);assert retried['room']==ending['room']==1 and retried['p']['hp']==retried['p']['maxHp'] and retried['p']['x']==retried['checkpoint']['p']['x'] and retried['p']['y']==retried['checkpoint']['p']['y'];fit(await p.evaluate(MEASURE));await p.screenshot(path=str(out/'review-size-retried.png'));await click_visible(p,'#pause');await held_button(p,'[data-hold="right"]',100);await click_visible(p,'[data-action="attack"]');await p.wait_for_timeout(80);await click_visible(p,'#pause');post=await state(p);assert post['time']>retried['time'] and post['p']['attackCd']>0;fit(await p.evaluate(MEASURE));report['checks'].append('one Retry restores current-room checkpoint and full HP; Resume/move/attack stays on screen')
++    save()
++   report['checks']+=['five desktop/short windows keep full room, objective/HP, pause, movement and four actions visible','pointer action clicks never auto-scroll the room','pause freezes saved snapshot and displayed clock/HP','echo button reachable; ability was not unlocked or fabricated during this short test'];await p.locator('nav a').filter(has_text='v1').click();await p.wait_for_selector('#battle');await p.wait_for_load_state('networkidle');assert '/games/ruins/' in p.url and '/versions/v2/' not in p.url;await p.screenshot(path=str(out/'legacy-v1-entry.png'));report['checks'].append('existing v1 link opens; no legacy playthrough');assert not errors and not bad and not failed,(errors,bad,failed);report['passed']=True;save();print(json.dumps({'passed':True,'viewports':len(report['cases']),'checkpointRetries':1,'checks':report['checks']},ensure_ascii=False))
++  except Exception as e:report['error']=type(e).__name__+': '+str(e);report['lastSavedSnapshot']=await state(p);save();raise
++  finally:await b.close()
++async def legacy(a):
++ out=ROOT/a.out;out.mkdir(parents=True,exist_ok=True);report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Only remaining v1 link check after five v2 window cases passed; no legacy playthrough.'};errors=[];bad=[]
++ async with async_playwright() as pw:
++  b=await pw.chromium.launch();p=await b.new_page(viewport={'width':1173,'height':751});p.on('pageerror',lambda e:errors.append(str(e)));p.on('response',lambda r:bad.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
++  try:
++   await p.goto(a.root.rstrip('/')+'/versions/v2/games/ruins/',wait_until='networkidle');await p.locator('nav a').filter(has_text='v1').click();await p.wait_for_selector('#battle');await p.wait_for_load_state('networkidle');assert '/games/ruins/' in p.url and '/versions/v2/' not in p.url;assert '遗迹灯火' in await p.title();await p.screenshot(path=str(out/'legacy-v1-entry.png'));assert not errors and not bad;report.update(passed=True,url=p.url,canvasId='battle',pageErrors=errors,badResponses=bad);print(json.dumps(report,ensure_ascii=False))
++  except Exception as e:report['error']=type(e).__name__+': '+str(e);raise
++  finally:(out/'legacy-followup.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8');await b.close()
++if __name__=='__main__':
++ p=argparse.ArgumentParser();p.add_argument('--root',default='http://127.0.0.1:4177');p.add_argument('--out',default='.local/ruins-layout-qa/after');p.add_argument('--legacy-only',action='store_true');a=p.parse_args();asyncio.run(legacy(a) if a.legacy_only else main(a))
+diff --git a/docs/ruins-v2-qa/LAYOUT_LOCAL.md b/docs/ruins-v2-qa/LAYOUT_LOCAL.md
+new file mode 100644
+--- /dev/null
++++ b/docs/ruins-v2-qa/LAYOUT_LOCAL.md
+@@ -0,0 +1,40 @@
++# 归火石室 v2：实时战斗同屏，本地未发布
++
++基线 `99af2f7fa3768968f19d19a2ae9c66d848857e5f`；原样式blob为 `ded701f19be35f6d6343559dada9d1c7b5721fe8`。本轮仅本地布局修复，不提交、推送、部署、创建PR或修改迷宫待发布材料。
++
++原始实际浏览器1173×751窗口中，画布下缘约783px、动作控件下缘约933px；滚到操作区后完整石室无法保留在视口内。原图在 `.local/ruins-layout-qa/before/`。
++
++## 修改范围
++
++仅 `index.html` 与 `style.css` 两个运行文件：
++
++- 原960×576画布在独立容器中按可用宽高等比适配，保持5:3，不裁房间、不修改画布原始分辨率，也不使用浏览器缩放。
++- 暂停与重试移到可见页头；目标、生命信息留在石室上方。
++- 常用窗口把方向和四动作放在下方一行；≤650px高的桌面窗口改为右侧操作区，给房间保留更多高度。
++- 操作说明、选关、重开和来源说明仍在下方正常文档流，未删除。增加画布tabindex用于键盘可达性，没有修改输入处理或存档代码。
++
++`game.mjs`、引擎、Renderer、全部SVG素材、三关九房与存档机制内容均保留，v1未改。本轮不是整体品质或美术升级。
++
++## 本地验证
++
++实际 Chromium 自动化覆盖1173×751、1440×900、1366×768、1280×600、1024×600。没有调用引擎推进、注入状态、编辑生命或伪造存档。正常按钮开始，键盘移动/E进入守卫室，短移动攻击；在暂停时切换窗口，再点击页面控件验证：
++
++- 完整石室、目标/生命、暂停、重试、四方向和四动作全部同屏，鼠标点击目标未被遮挡，也未引起页面自动滚动。
++- 原始画布仍为960×576。显示比例约0.76–1.12，关键DOM文字至少13px，主按钮至少44×44px。
++- 暂停时原应用保存的快照及显示计时/生命冻结；继续后正常推进。测试只读取localStorage，保存仍由原应用执行。
++- 验证一次当前房间检查点重试：房间保留，生命恢复到上限，位置按原入口检查点恢复；继续移动/攻击后再次核验同屏。
++- 原v1链接实际打开，其画布ID为 `battle`，只做入口检查，未进行旧版通关。
++
++回声能力在这次短流程中未解锁，因此L按钮只验证可达与不滚屏，不宣称已测试回声发射。E的正常房间交互用于进入守卫室。没有重复全三关通关或追胜。
++
++报告在 `.local/ruins-layout-qa/after/report.json`。验证分阶段完成：首轮测试器在截图后才读取短攻击冷却，可能错过0.42秒观察窗口；改为先暂停读取，再拍真实运行帧，未改游戏。第二轮完成五窗口主流程后，旧版检查因误用v2画布ID等待超时；改用真实v1 `#battle`，只单独复验入口。原始失败记录与分阶段说明保留，不冒充一次无失败执行。
++
++## 边界与交付
++
++这只是桌面/短窗口 Chromium 自动化与短战斗可用性检查，不是真人、实体手机、完整通关、三关存档全面回归或整体审美验收；未验证Safari及手机体验。最终主流程与v1复验均无控制台或资源错误。
++
++本地交付位于隔离检出上一级 `artifacts/`：`runtime.patch`仅两运行文件，`source.patch`另含浏览器脚本和本说明；包括未经裁切的原尺寸前后图、原始/最终报告、素材保留核对和迷宫材料哈希。临时预览完成后关闭。
++
++```powershell
++python versions/v2/scripts/test_ruins_layout.py --root http://127.0.0.1:4177
++```

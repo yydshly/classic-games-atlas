@@ -1,0 +1,174 @@
+{
+  "at": "2026-10-20T12:15:11.034323+00:00",
+  "url": "http://127.0.0.1:4177/versions/v2/games/ruins/",
+  "method": "One normal Chromium encounter through page keyboard/mouse events: Start, walk/E into guard room, short movement/attacks, pause/resume, one checkpoint Retry. Resize while paused. Existing localStorage is read only by the test; writes are performed solely by the original app. No engine calls, injected snapshots, clock/HP/AI edits, level clears or human-play claim.",
+  "cases": [
+    {
+      "name": "review-size",
+      "viewport": [
+        1173,
+        751
+      ],
+      "measure": {
+        "viewport": [
+          1173,
+          751
+        ],
+        "scrollY": 0,
+        "scrollWidth": 1173,
+        "field": {
+          "x": 139.15625,
+          "y": 115.390625,
+          "width": 894.671875,
+          "height": 537.59375,
+          "bottom": 652.984375,
+          "right": 1033.828125,
+          "fontSize": 15,
+          "visible": true
+        },
+        "objective": {
+          "x": 48.5,
+          "y": 78.390625,
+          "width": 905.921875,
+          "height": 18,
+          "bottom": 96.390625,
+          "right": 954.421875,
+          "fontSize": 14,
+          "visible": true
+        },
+        "stats": {
+          "x": 968.421875,
+          "y": 78.390625,
+          "width": 156.078125,
+          "height": 18,
+          "bottom": 96.390625,
+          "right": 1124.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "pause": {
+          "x": 516.46875,
+          "y": 13.6875,
+          "width": 70,
+          "height": 44,
+          "bottom": 57.6875,
+          "right": 586.46875,
+          "fontSize": 14,
+          "visible": true
+        },
+        "retry": {
+          "x": 592.46875,
+          "y": 13.6875,
+          "width": 82,
+          "height": 44,
+          "bottom": 57.6875,
+          "right": 674.46875,
+          "fontSize": 14,
+          "visible": true
+        },
+        "up": {
+          "x": 48.5,
+          "y": 691,
+          "width": 48,
+          "height": 48,
+          "bottom": 739,
+          "right": 96.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "down": {
+          "x": 160.5,
+          "y": 691,
+          "width": 48,
+          "height": 48,
+          "bottom": 739,
+          "right": 208.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "left": {
+          "x": 104.5,
+          "y": 691,
+          "width": 48,
+          "height": 48,
+          "bottom": 739,
+          "right": 152.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "right": {
+          "x": 216.5,
+          "y": 691,
+          "width": 48,
+          "height": 48,
+          "bottom": 739,
+          "right": 264.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "attack": {
+          "x": 716.5,
+          "y": 691,
+          "width": 96,
+          "height": 48,
+          "bottom": 739,
+          "right": 812.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "dodge": {
+          "x": 820.5,
+          "y": 691,
+          "width": 96,
+          "height": 48,
+          "bottom": 739,
+          "right": 916.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "echo": {
+          "x": 924.5,
+          "y": 691,
+          "width": 96,
+          "height": 48,
+          "bottom": 739,
+          "right": 1020.5,
+          "fontSize": 14,
+          "visible": true
+        },
+        "interact": {
+          "x": 1028.5,
+          "y": 691,
+          "width": 96,
+          "height": 48,
+          "bottom": 739,
+          "right": 1124.5,
+          "fontSize": 14,
+          "visible": true
+        }
+      },
+      "displayScale": 0.9298665364583333,
+      "startTime": 6.5333333333333155,
+      "endTime": 8.500000000000002,
+      "hp": 7,
+      "attackCooldownObserved": 0.12000000000000005,
+      "fourActionButtonsClickedWithoutScrolling": true,
+      "pauseSnapshotAndHUDFrozen": true,
+      "nativeCanvasUnchanged": true
+    }
+  ],
+  "checks": [
+    "one Retry restores current-room checkpoint and full HP; Resume/move/attack stays on screen"
+  ],
+  "browser": "147.0.7727.15",
+  "encounter": {
+    "room": 1,
+    "hp": 8,
+    "time": 6.5333333333333155,
+    "enemyCount": 2
+  },
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "error": "AssertionError: "
+}
