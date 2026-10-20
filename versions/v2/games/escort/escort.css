@@ -54,3 +54,7 @@ body,body[data-theme=dawn],body[data-theme=rain],body[data-theme=night]{backgrou
 }
 
 
+
+/* Save failures must remain readable in the compact battle view. */
+.view #storage-note:not([hidden]){display:block;position:absolute;z-index:20;top:8px;left:8px;right:8px;margin:0;padding:8px 10px;border:1px solid #d7ab65;background:#142630f5;color:#ffe1ad;font-size:12px;line-height:1.5;pointer-events:none;white-space:normal}
+#storage-note[hidden]{display:none!important}

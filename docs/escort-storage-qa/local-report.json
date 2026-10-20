@@ -1,0 +1,85 @@
+{
+  "url": "http://127.0.0.1:4196/versions/v2/games/escort/",
+  "normalUI": {
+    "ticks": 45,
+    "attacks": 1,
+    "dodges": 1,
+    "player": {
+      "id": "player",
+      "x": 345,
+      "y": 150,
+      "hp": 120,
+      "maxHP": 120,
+      "face": 1,
+      "energy": 83.4,
+      "gained": 3.4,
+      "spent": 20,
+      "action": {
+        "kind": "dodge",
+        "start": 28,
+        "dx": 1,
+        "dy": 0
+      },
+      "stunUntil": 28,
+      "invulUntil": 0
+    },
+    "cart": {
+      "id": "cart",
+      "x": 177.110516041,
+      "y": 159.324165895,
+      "hp": 100,
+      "maxHP": 100,
+      "pathIndex": 1,
+      "following": true,
+      "invulUntil": 0,
+      "distance": 57.866666677
+    },
+    "rawAndObservedReplayEqual": true,
+    "heldControlsReleased": true,
+    "kind": "normal keyboard/buttons; diagnostic snapshot read only"
+  },
+  "fixtures": [
+    {
+      "case": "genuine old UI movement checkpoint",
+      "rawPreserved": true,
+      "restoredPaused": true
+    },
+    {
+      "case": "bad JSON",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlayResetAndSelect": true
+    },
+    {
+      "case": "unknown version",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlayResetAndSelect": true
+    },
+    {
+      "case": "invalid replay",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryPlayResetAndSelect": true
+    },
+    {
+      "case": "QuotaExceededError",
+      "oldBytesKept": true,
+      "laterResumeSaveRecovered": true,
+      "restoredSamePausedActionState": true
+    },
+    {
+      "case": "SecurityError",
+      "oldBytesKept": true,
+      "laterResumeSaveRecovered": true,
+      "restoredSamePausedActionState": true
+    },
+    {
+      "case": "read getter denied",
+      "temporaryPlayWorks": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": []
+}
