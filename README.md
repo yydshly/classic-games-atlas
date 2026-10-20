@@ -48,7 +48,7 @@
 | 夜航拾光：[v1十港](./games/lantern/) · [v2候选](./versions/v2/games/lantern/) | v1 10关；v2 2图 | PAC-MAN收集/追逐/隧道参考 | 首45.8秒胜、次约37秒败，未品质验收；[QA](docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 云隙巡航：[v1八段](./games/cloud/) · [v2候选](./versions/v2/games/cloud/) | v1 8段；v2 2短段 | 雷电系列，双火力机制参考 | 有限实玩候选，未完成品质验收；[QA](docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 晶簇花园：[v1二十关](./games/garden/) · [v2候选](./versions/v2/games/garden/) | v1 20关；v2 2短题 | Bejeweled造特殊/选择释放参考 | 公开解法两题2步成功，未品质验收；[QA](docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [青藤回廊](./games/vine/) | 16 | 贪吃蛇 | 已发布 · 原创实现 |
+| 青藤回廊：[v1十六关](./games/vine/) · [v2候选](./versions/v2/games/vine/) | v1 16关；v2 2图 | 开放花园生长与归门选路 | 多暂停两图实玩胜，品质未验；[QA](docs/vine-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
 | 星砂勘探：[v1二十关](./games/sand/) · [v2候选](./versions/v2/games/sand/) | v1 20关；v2 2档新盘 | 数字排雷与可解释推理参考 | 两档有提示实玩完成，未品质验收；[QA](docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 落星弹庭：[v1十二庭](./games/pinfall/) · [v2候选](./versions/v2/games/pinfall/) | v1 12关；v2 2庭 | Peggle首反规划/有限能力参考 | 参考角两庭实玩胜1555/1485，未品质验收；[QA](docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) |
@@ -285,6 +285,8 @@ python scripts/test_garden_ui.py
 本阶段完成后回到主对话报告并安排下一款；继续维护图鉴及前九款。
 
 ## 原创玩法实验 11：青藤回廊
+
+新增独立[v2 · 两座开放花园](versions/v2/games/vine/)，12×10开放地与双石岛分别收8/10青芽，再实际归门。原十六关及增长、碰撞、出口和方向缓冲保留。2026-10-20有限实玩两图74/100步各胜一局，多次暂停看可见棋盘，未读作者模型路线，非连续不暂停盲跑。首1/8长4/5步刷新准确先暂停；重游直接运行后刷新恢复第二图0/10长3/1步。主图首8/8长11/67步出口亮未归门，非终局。无自然失败；手机、连续操作与审美品质未验。程序Canvas原创画面。[范围与手册参考](versions/v2/games/vine/NOTES.md) · [真实运行图与QA](docs/vine-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=vine)。以下为保留的v1历史说明。
 
 **[立即试玩青藤回廊](https://yydshly.github.io/classic-games-atlas/games/vine/) · [固定范围](docs/VINE_SPEC.md) · [测试与部署证据](docs/VINE_VERIFICATION.md)**
 
