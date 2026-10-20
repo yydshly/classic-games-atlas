@@ -36,4 +36,6 @@ python versions/v2/scripts/test_fortress_layout.py --root http://127.0.0.1:4175
 python versions/v2/scripts/test_fortress_layout.py --terminal-only --root http://127.0.0.1:4175
 ```
 
-公开站回归、准确发布SHA、Pages构建及实际文件哈希在发布后补入本目录；仅本地验证时不宣称已上线。
+功能提交为 `d123add51ef34d25ae019ae91caa3fbfd1cc9efe`，[对应 Pages 构建成功](https://github.com/yydshly/classic-games-atlas/actions/runs/39412486584)。[公开站七视口回归](layout/public/report.json)再次通过完整战场/HUD/可点击暂停、暂停继续、重试、刷新回整备及旧版入口，控制台与资源错误为空；这仍是自动化，不是新增真人或合作验收。自然失败终局重试仅在本地执行一次，未冒充线上复测。
+
+[60个实际HTTP文件哈希](layout/public-files.json)全部匹配功能提交，包括目标v2、原版/冻结v1与本轮原图证据；无网络重试。后续仅补交线上验证证据，不改变已验证的运行文件，交回前另核最终远端SHA、该SHA的Pages结果与更新证据。[发布记录](layout/publication.json)
