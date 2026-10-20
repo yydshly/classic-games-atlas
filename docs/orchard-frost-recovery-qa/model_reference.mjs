@@ -1,0 +1,3 @@
+// Offline route precheck, not public UI evidence.
+import assert from 'node:assert/strict';import {createGame,input,step,snapshot,conservation} from '../../versions/v2/games/orchard/engine.mjs';
+const g=createGame();input(g,{kind:'start'});while(g.ticks<684)step(g);input(g,{kind:'down',x:350,y:330});input(g,{kind:'move',x:485,y:330});input(g,{kind:'up'});assert(g.score>0&&g.stats.frostCuts===1&&g.frostUntil>g.ticks);console.log(JSON.stringify({kind:'OFFLINE route reference only, not UI result',ticks:g.ticks,score:g.score,stats:g.stats,frostUntil:g.frostUntil,cutIds:g.cutIds,conservation:conservation(g)},null,2));

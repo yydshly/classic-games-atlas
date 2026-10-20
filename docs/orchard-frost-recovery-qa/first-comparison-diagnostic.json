@@ -1,0 +1,83 @@
+{
+  "kind": "failed helper comparison, not a product recovery failure",
+  "stage": "before refresh",
+  "observedUi": {
+    "score": "39",
+    "time": "54.1",
+    "combo": "3",
+    "frost": "霜降 2.3s · 时钟照走",
+    "status": "已切 3果 · 漏果 6 · 误核 0 · 累计扣分 0",
+    "best": "聚果场最好：暂无",
+    "curtain-title": "弧光暂歇",
+    "curtain-copy": "已暂停。继续后请重新按下划切。"
+  },
+  "observedCheckpoint": {
+    "version": 2,
+    "last": 1,
+    "sound": false,
+    "best": {},
+    "resume": {
+      "version": 2,
+      "level": 1,
+      "state": "running",
+      "ticks": 709,
+      "commands": [
+        {
+          "at": 0,
+          "kind": "start"
+        },
+        {
+          "at": 679,
+          "kind": "down",
+          "x": 349.999994164899,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 679,
+          "kind": "move",
+          "x": 383.7500256744443,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 681,
+          "kind": "move",
+          "x": 417.5000046680808,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 683,
+          "kind": "move",
+          "x": 451.24998366171724,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 685,
+          "kind": "move",
+          "x": 485.00001517126253,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 687,
+          "kind": "up"
+        },
+        {
+          "at": 709,
+          "kind": "down",
+          "x": 485.00001517126253,
+          "y": 330.0000050822925
+        },
+        {
+          "at": 709,
+          "kind": "cancel"
+        }
+      ]
+    }
+  },
+  "cause": "Detached renderer initially used default butt/miter. Production history retained round/round after the first multi-point trail. Revised read-only comparison copies current style only into detached canvas; live canvas/state is untouched. Both sides then match their own offline geometry, while native before/after image bytes remain different.",
+  "failedAssertion": "sameAsOfflinePausedReplay with a fresh unseeded drawing context",
+  "errors": {
+    "console": [],
+    "http": [],
+    "request": []
+  }
+}
