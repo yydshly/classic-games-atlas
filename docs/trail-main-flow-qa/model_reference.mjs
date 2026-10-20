@@ -1,0 +1,3 @@
+// Offline fixed-timing route precheck, not a browser result.
+import assert from 'node:assert/strict';import{createGame,start,update,snapshot}from'../../versions/v2/games/trail/engine.mjs';
+const g=createGame();start(g);const jumps=[2.43,6.27,10.49,14.15];let j=0,last=-1;while(g.state==='playing'&&g.time<40){let jump=false;if(g.time>=jumps[j]){jump=true;j++;}const a=Math.floor(g.time/.35);update(g,1/120,{axis:1,jumpHeld:j>0&&g.time<jumps[j-1]+.82,jumpPressed:jump,attackPressed:a!==last});last=a;}assert.equal(g.state,'won');console.log(JSON.stringify({kind:'OFFLINE reference; fixed ordinary input schedule; no game fields assigned',jumps,final:snapshot(g),hits:g.events.filter(x=>x.type==='hit').length},null,2));

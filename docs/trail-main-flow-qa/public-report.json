@@ -1,0 +1,656 @@
+{
+  "kind": "normal keys on public page; fixed time schedule informed by existing terrain; no live engine/state/time/save mutation",
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "events": [
+    {
+      "wall": 2.452999999979511,
+      "key": "w",
+      "down": true
+    },
+    {
+      "wall": 6.280999999959022,
+      "key": "w",
+      "down": true
+    },
+    {
+      "wall": 10.515999999945052,
+      "key": "w",
+      "down": true
+    },
+    {
+      "wall": 14.172000000020489,
+      "key": "w",
+      "down": true
+    }
+  ],
+  "observations": [
+    {
+      "wall": 2.015999999945052,
+      "time": 1.3332999999999975,
+      "state": "playing",
+      "x": 287.0133473333334,
+      "lives": 3,
+      "food": 0,
+      "enemyAlive": 3,
+      "checkpoint": false
+    },
+    {
+      "wall": 4.015999999945052,
+      "time": 3.34989999999999,
+      "state": "playing",
+      "x": 650.0013473333333,
+      "lives": 3,
+      "food": 1,
+      "enemyAlive": 3,
+      "checkpoint": false
+    },
+    {
+      "wall": 6.030999999959022,
+      "time": 5.366500000000051,
+      "state": "playing",
+      "x": 1012.9893473333333,
+      "lives": 3,
+      "food": 2,
+      "enemyAlive": 2,
+      "checkpoint": false
+    },
+    {
+      "wall": 8.047000000020489,
+      "time": 7.38310000000014,
+      "state": "playing",
+      "x": 1375.9773473333332,
+      "lives": 3,
+      "food": 2,
+      "enemyAlive": 2,
+      "checkpoint": false
+    },
+    {
+      "wall": 10.047000000020489,
+      "time": 9.399700000000143,
+      "state": "playing",
+      "x": 1738.9653473333333,
+      "lives": 3,
+      "food": 2,
+      "enemyAlive": 1,
+      "checkpoint": true
+    },
+    {
+      "wall": 12.047000000020489,
+      "time": 11.4329000000001,
+      "state": "playing",
+      "x": 2104.9413473333357,
+      "lives": 3,
+      "food": 3,
+      "enemyAlive": 1,
+      "checkpoint": true
+    },
+    {
+      "wall": 14.047000000020489,
+      "time": 13.466100000000049,
+      "state": "playing",
+      "x": 2470.917347333352,
+      "lives": 3,
+      "food": 4,
+      "enemyAlive": 0,
+      "checkpoint": true
+    },
+    {
+      "wall": 16.04700000002049,
+      "time": 15.499400000000007,
+      "state": "playing",
+      "x": 2836.91134733336,
+      "lives": 3,
+      "food": 4,
+      "enemyAlive": 0,
+      "checkpoint": true
+    },
+    {
+      "wall": 18.04700000002049,
+      "time": 17.532599999999906,
+      "state": "playing",
+      "x": 3202.887347333371,
+      "lives": 3,
+      "food": 5,
+      "enemyAlive": 0,
+      "checkpoint": true
+    },
+    {
+      "wall": 20.04700000002049,
+      "time": 18.07433333333321,
+      "state": "won",
+      "x": 3300.399347333375,
+      "lives": 3,
+      "food": 5,
+      "enemyAlive": 0,
+      "checkpoint": true
+    }
+  ],
+  "outcome": {
+    "state": "won",
+    "level": 1,
+    "width": 3400,
+    "height": 420,
+    "time": 18.07433333333321,
+    "camera": 2799.9990607317436,
+    "solids": [
+      {
+        "x": 0,
+        "y": 340,
+        "w": 520,
+        "h": 100,
+        "id": "g0",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 605,
+        "y": 340,
+        "w": 605,
+        "h": 100,
+        "id": "g1",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 1300,
+        "y": 340,
+        "w": 670,
+        "h": 100,
+        "id": "g2",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 2065,
+        "y": 340,
+        "w": 565,
+        "h": 100,
+        "id": "g3",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 2725,
+        "y": 340,
+        "w": 675,
+        "h": 100,
+        "id": "g4",
+        "kind": "ground",
+        "oneWay": false
+      }
+    ],
+    "movers": [],
+    "enemies": [
+      {
+        "id": 0,
+        "min": 900,
+        "max": 1060,
+        "x": 1043.2000000000028,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      },
+      {
+        "id": 1,
+        "min": 1600,
+        "max": 1750,
+        "x": 1607.5036000000225,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      },
+      {
+        "id": 2,
+        "min": 2330,
+        "max": 2460,
+        "x": 2398.5023999999644,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      }
+    ],
+    "coins": [
+      {
+        "id": 0,
+        "x": 360,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 1,
+        "x": 1000,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 2,
+        "x": 1780,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 3,
+        "x": 2450,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 4,
+        "x": 3150,
+        "y": 310,
+        "collected": true
+      }
+    ],
+    "player": {
+      "x": 3300.399347333375,
+      "y": 310,
+      "w": 22,
+      "h": 30,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "support": "g4",
+      "coyote": 0.1,
+      "buffer": 0,
+      "invulnerable": 0,
+      "lock": 0,
+      "facing": 1
+    },
+    "lives": 3,
+    "energy": 94.91649999999944,
+    "projectiles": [
+      {
+        "x": 3445.9770140000223,
+        "y": 410.23332995555506,
+        "w": 13,
+        "h": 13,
+        "vx": 350,
+        "vy": 333.31466666666637,
+        "ttl": 0.40836666666666865
+      },
+      {
+        "x": 3386.477014000031,
+        "y": 327.0590001777777,
+        "w": 13,
+        "h": 13,
+        "vx": 350,
+        "vy": 137.31466666666634,
+        "ttl": 0.7583666666666682
+      },
+      {
+        "x": 3324.1550140000395,
+        "y": 313.497424711111,
+        "w": 13,
+        "h": 13,
+        "vx": 350,
+        "vy": -67.98133333333288,
+        "ttl": 1.1249666666666662
+      }
+    ],
+    "attackCooldown": 0.2449666666666658,
+    "attackFlash": 0.124966666666666,
+    "deaths": 0,
+    "checkpoint": true,
+    "checkpointPos": {
+      "x": 1710,
+      "y": 310
+    },
+    "goal": 3300,
+    "stats": {
+      "jumps": 4,
+      "collected": 5,
+      "moverLandings": 0
+    },
+    "reason": ""
+  },
+  "resultRefresh": {
+    "state": "won",
+    "level": 1,
+    "width": 3400,
+    "height": 420,
+    "time": 18.07433333333321,
+    "camera": 2800,
+    "solids": [
+      {
+        "x": 0,
+        "y": 340,
+        "w": 520,
+        "h": 100,
+        "id": "g0",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 605,
+        "y": 340,
+        "w": 605,
+        "h": 100,
+        "id": "g1",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 1300,
+        "y": 340,
+        "w": 670,
+        "h": 100,
+        "id": "g2",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 2065,
+        "y": 340,
+        "w": 565,
+        "h": 100,
+        "id": "g3",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 2725,
+        "y": 340,
+        "w": 675,
+        "h": 100,
+        "id": "g4",
+        "kind": "ground",
+        "oneWay": false
+      }
+    ],
+    "movers": [],
+    "enemies": [
+      {
+        "id": 0,
+        "min": 900,
+        "max": 1060,
+        "x": 1043.2000000000028,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      },
+      {
+        "id": 1,
+        "min": 1600,
+        "max": 1750,
+        "x": 1607.5036000000225,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      },
+      {
+        "id": 2,
+        "min": 2330,
+        "max": 2460,
+        "x": 2398.5023999999644,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": -36,
+        "alive": false
+      }
+    ],
+    "coins": [
+      {
+        "id": 0,
+        "x": 360,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 1,
+        "x": 1000,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 2,
+        "x": 1780,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 3,
+        "x": 2450,
+        "y": 310,
+        "collected": true
+      },
+      {
+        "id": 4,
+        "x": 3150,
+        "y": 310,
+        "collected": true
+      }
+    ],
+    "player": {
+      "x": 3300.399347333375,
+      "y": 310,
+      "w": 22,
+      "h": 30,
+      "vx": 0,
+      "vy": 0,
+      "grounded": false,
+      "support": null,
+      "coyote": 0,
+      "buffer": 0,
+      "invulnerable": 0.9,
+      "lock": 0,
+      "facing": 1
+    },
+    "lives": 3,
+    "energy": 94.91649999999944,
+    "projectiles": [],
+    "attackCooldown": 0,
+    "attackFlash": 0,
+    "deaths": 0,
+    "checkpoint": true,
+    "checkpointPos": {
+      "x": 1710,
+      "y": 310
+    },
+    "goal": 3300,
+    "stats": {
+      "jumps": 0,
+      "collected": 5,
+      "moverLandings": 0
+    },
+    "reason": ""
+  },
+  "nextStage": {
+    "state": "paused",
+    "level": 2,
+    "width": 3400,
+    "height": 420,
+    "time": 0.03339999999999997,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 340,
+        "w": 510,
+        "h": 100,
+        "id": "g0",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 605,
+        "y": 340,
+        "w": 545,
+        "h": 100,
+        "id": "g1",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 1250,
+        "y": 340,
+        "w": 600,
+        "h": 100,
+        "id": "g2",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 1955,
+        "y": 340,
+        "w": 605,
+        "h": 100,
+        "id": "g3",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "x": 2660,
+        "y": 340,
+        "w": 740,
+        "h": 100,
+        "id": "g4",
+        "kind": "ground",
+        "oneWay": false
+      },
+      {
+        "id": "p0",
+        "kind": "ledge",
+        "oneWay": true,
+        "x": 950,
+        "y": 260,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "id": "p1",
+        "kind": "ledge",
+        "oneWay": true,
+        "x": 2390,
+        "y": 260,
+        "w": 115,
+        "h": 16
+      }
+    ],
+    "movers": [],
+    "enemies": [
+      {
+        "id": 0,
+        "min": 800,
+        "max": 950,
+        "x": 801.2023999999999,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": 36,
+        "alive": true
+      },
+      {
+        "id": 1,
+        "min": 1480,
+        "max": 1640,
+        "x": 1480.9023999999997,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": 36,
+        "alive": true
+      },
+      {
+        "id": 2,
+        "min": 2250,
+        "max": 2400,
+        "x": 2251.202400000001,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": 36,
+        "alive": true
+      },
+      {
+        "id": 3,
+        "min": 2900,
+        "max": 3060,
+        "x": 2900.902400000001,
+        "y": 312,
+        "w": 32,
+        "h": 28,
+        "vx": 36,
+        "alive": true
+      }
+    ],
+    "coins": [
+      {
+        "id": 0,
+        "x": 360,
+        "y": 310,
+        "collected": false
+      },
+      {
+        "id": 1,
+        "x": 1000,
+        "y": 230,
+        "collected": false
+      },
+      {
+        "id": 2,
+        "x": 1780,
+        "y": 310,
+        "collected": false
+      },
+      {
+        "id": 3,
+        "x": 2450,
+        "y": 230,
+        "collected": false
+      },
+      {
+        "id": 4,
+        "x": 3150,
+        "y": 310,
+        "collected": false
+      }
+    ],
+    "player": {
+      "x": 54,
+      "y": 310,
+      "w": 22,
+      "h": 30,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "support": "g0",
+      "coyote": 0.1,
+      "buffer": 0,
+      "invulnerable": 0.8666000000000003,
+      "lock": 0,
+      "facing": 1
+    },
+    "lives": 3,
+    "energy": 71.83299999999997,
+    "projectiles": [],
+    "attackCooldown": 0,
+    "attackFlash": 0,
+    "deaths": 0,
+    "checkpoint": false,
+    "checkpointPos": {
+      "x": 54,
+      "y": 310
+    },
+    "goal": 3300,
+    "stats": {
+      "jumps": 0,
+      "collected": 0,
+      "moverLandings": 0
+    },
+    "reason": ""
+  },
+  "status": "passed"
+}
