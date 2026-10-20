@@ -42,7 +42,7 @@
 | 爆破迷宫：[v1十关](./games/maze/) · [v2候选](./versions/v2/games/maze/) | v1 10关；v2 2短图 | 炸弹人通用机制与对抗参考 | 有限实玩候选，未完成品质验收；[QA](docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 星泡航线：[v1十二图](./games/starline/) · [v2候选](./versions/v2/games/starline/) | v1 12图；v2 2图 | 泡泡反弹清场与下压选择 | 参考路线两胜，未品质验收；[QA](docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [光轨砖阵](./games/prism/) | 12 | 打砖块／Arkanoid | 已发布 · 原创实现 |
-| [仓格计划](./games/crate/) | 20 | 推箱子 | 已发布 · 原创实现 |
+| 仓格计划：[v1二十题](./games/crate/) · [v2候选](./versions/v2/games/crate/) | v1 20题；v2 3题 | 站位、深浅与暂借泊位 | 实际15/19/15步完成，品质未验；[QA](docs/crate-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 山口守望：[v1八图](./games/pass/) · [v2候选](./versions/v2/games/pass/) | v1 8图；v2 1短图4波 | 王国保卫战 | 有限实玩候选，未完成品质验收；[QA](docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [风行小径](./games/trail/) | 8 | 冒险岛 | 已发布 · 原创实现 |
 | 夜航拾光：[v1十港](./games/lantern/) · [v2候选](./versions/v2/games/lantern/) | v1 10关；v2 2图 | PAC-MAN收集/追逐/隧道参考 | 首45.8秒胜、次约37秒败，未品质验收；[QA](docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) |
@@ -157,6 +157,8 @@ python scripts/test_prism_ui.py
 星泡航线剩余九关也已补齐正常浏览器输入通关，见 [追加证据](docs/STARLINE_VERIFICATION.md#第四款开始前的高效补验)。
 
 ## 原创玩法实验 05：仓格计划
+
+新增独立[v2 · 三个小仓](versions/v2/games/crate/)，三个原创双箱题分别围绕站位、深浅停放与先挪后还。基础推箱、无限撤销/胜后撤销和日志恢复已有，原二十题保留。2026-10-20实玩实际15/19/15步、4/6/3推全部归位；已知策略主题，看手册题名，未展开游戏提示或读逐步作者解，不是毫无线索盲解。首中途刷新后撤销与胜后撤销实际可用；第三重玩零步刷新回准备态，最好15/3留。主图第三6步1推0/2借位中，非动画或终局。无自然卡死，少数字形方框、正常滚动、声音触屏审美未验。[范围与来源](versions/v2/games/crate/NOTES.md) · [真实运行图与QA](docs/crate-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=crate)。以下为保留的v1历史说明。
 
 **[立即试玩仓格计划](https://yydshly.github.io/classic-games-atlas/games/crate/) · [固定范围](docs/CRATE_SPEC.md) · [测试与部署证据](docs/CRATE_VERIFICATION.md)**
 
