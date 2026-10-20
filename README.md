@@ -57,7 +57,7 @@
 | [灯塔小队](./games/beacon/) | 10 | 经典战棋通用回合战术机制，关联英雄无敌Ⅲ介绍 | 已发布 · 原创实现 |
 | 风铃绳旅：[v1十六庭院](./games/chime/) · [v2候选](./versions/v2/games/chime/) | v1 16关；v2 3短题 | 割绳子重力/时序与泡泡参考 | 有限实玩1胜2败，未完成品质验收；[QA](docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 溪谷守芽：[v1十关](./games/brook/) · [v2候选](./versions/v2/games/brook/) | v1 10关；v2 2场 | 植物大战僵尸分路防守与反制参考 | 两场有限实玩均失败，未完成品质验收；[QA](docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [潮汐珠径](./games/tide/) | 12 | Zuma所代表的沿路径珠链三连消除通用机制 | 已发布 · 原创实现 |
+| 潮汐珠径：[v1十二关](./games/tide/) · [v2候选](./versions/v2/games/tide/) | v1 12关；v2 2局 | 供珠达标后停供清残局 | 两图封口后超时未清场；[QA](docs/tide-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [纸翼投递](./games/paper/) | 16 | 经典弹弓抛射解谜通用机制，关联愤怒的小鸟介绍 | 已发布 · 原创实现 |
 | [云港调度](./games/harbor/) | 12 | 运输经营通用资源与路线规划机制，关联运输大亨介绍 | 已发布 · 原创实现 |
 | [四季小田](./games/farm/) | 12 | 农场经营通用播种、照料、收获和订单机制，关联牧场物语介绍 | 已发布 · 原创实现 |
@@ -487,6 +487,8 @@ python scripts/test_brook_ui.py
 名称、几何画面、装置、来敌、波次和合成音均原创，不复制 PvZ 角色、美术、音效或关卡。与已有路径塔防分别实现，保留前十八款和72条图鉴。
 
 ## 原创玩法实验 20：潮汐珠径
+
+新增独立[v2 · 供珠篇](versions/v2/games/tide/)，两条2/3色路径持续供入，消补给珠填36/42后停供，再清全部余珠才胜，150活动秒上限。三连、回接、连锁与换珠已有；原十二关/能力/存档保留。2026-10-20两图实际都封口但超时未清场：首41/36、1675分余11，次42/42、1221分余11。清场难度需评估，不能算玩法验收；模型80/107秒胜不是实玩成绩。首可见状态与飞行刷新延续、第二准备重试通过；准备态通用恢复提示未细分。主图首36/36、1511分、33.4秒余17为封口后飞行，非仍供珠或终局。顶导航/底手记需滚动，声音触屏审美未验。[范围与来源](versions/v2/games/tide/NOTES.md) · [真实运行图与QA](docs/tide-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=tide)。以下为保留的v1历史说明。
 
 **[立即试玩潮汐珠径](https://yydshly.github.io/classic-games-atlas/games/tide/) · [固定范围](docs/TIDE_SPEC.md) · [测试与部署证据](docs/TIDE_VERIFICATION.md)**
 
