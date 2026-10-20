@@ -52,7 +52,7 @@
 | [花笺连线](./games/petal/) | 20 | 连连看 | 已发布 · 原创实现 |
 | 星砂勘探：[v1二十关](./games/sand/) · [v2候选](./versions/v2/games/sand/) | v1 20关；v2 2档新盘 | 数字排雷与可解释推理参考 | 两档有提示实玩完成，未品质验收；[QA](docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 落星弹庭：[v1十二庭](./games/pinfall/) · [v2候选](./versions/v2/games/pinfall/) | v1 12关；v2 2庭 | Peggle首反规划/有限能力参考 | 参考角两庭实玩胜1555/1485，未品质验收；[QA](docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) |
-| [钢岚突进](./games/gale/) | 8 | 魂斗罗所代表的横版移动射击机制 | 已发布 · 原创实现 |
+| 钢岚突进：[v1八关](./games/gale/) · [v2候选](./versions/v2/games/gale/) | v1 8关；v2 2场 | 伏低低枪口与高低线应对 | 两场200分有限完成，品质未验；[QA](docs/gale-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [弯道邮差](./games/post/) | 8 | 极品飞车所代表的街机竞速类型 | 已发布 · 原创实现 |
 | [灯塔小队](./games/beacon/) | 10 | 经典战棋通用回合战术机制，关联英雄无敌Ⅲ介绍 | 已发布 · 原创实现 |
 | 风铃绳旅：[v1十六庭院](./games/chime/) · [v2候选](./versions/v2/games/chime/) | v1 16关；v2 3短题 | 割绳子重力/时序与泡泡参考 | 有限实玩1胜2败，未完成品质验收；[QA](docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) |
@@ -377,6 +377,8 @@ python scripts/test_pinfall_ui.py
 正常策略只预测盘面副本，真实局仍按生产物理、原定球数瞄准发射，不加球、不删目标、不写胜利。验收后交回主对话，保留图鉴与前十三款。
 
 ## 原创玩法实验 15：钢岚突进
+
+新增独立[v2 · 伏低反击](versions/v2/games/gale/)，两张原创短场新增真实伏低身体/低枪口与胸高线、贴地波应对。跑跳射击、护甲检查点和脉冲旧版已有，原八关保留。2026-10-20普通键盘、多暂停实玩两场200分、页面00:16/00:30均完成；次场有意持续伏低掉到3甲、检查点修回5，不是无伤。首检查点资源刷新先暂停保留；终局重访立即运行，开旧标签期间继续约9秒受击，刷新回起点暂停3甲/3出击/2敌/2脉冲，不能说切标签自动暂停通过。主图第二00:05跳跃与地波同屏，非伏低、命中或终局；矢量关键姿态、战场简化、侧栏滚动/提示残留/少数字形方框，手机声音审美未验。[范围与来源](versions/v2/games/gale/NOTES.md) · [实玩QA与原图](docs/gale-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=gale)。以下为保留的v1历史说明。
 
 **[立即试玩钢岚突进](https://yydshly.github.io/classic-games-atlas/games/gale/) · [固定范围](docs/GALE_SPEC.md) · [测试与部署证据](docs/GALE_VERIFICATION.md)**
 
