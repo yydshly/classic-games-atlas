@@ -1,0 +1,12 @@
+import argparse,json,os
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[2]
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--url');ap.add_argument('--out',required=True);a=ap.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=True);tmp=ROOT/'.local/coverage-round/tmp';tmp.mkdir(parents=True,exist_ok=True);os.environ['TEMP']=os.environ['TMP']=str(tmp);r={'kind':'coverage index only; desktop keyboard and 390CSS window, not game/device acceptance','consoleErrors':[],'httpErrors':[],'requestFailures':[]}
+ with sync_playwright() as pw:
+  b=pw.chromium.launch();p=b.new_page(viewport={'width':1440,'height':1050});p.on('pageerror',lambda e:r['consoleErrors'].append(str(e)));p.on('console',lambda m:r['consoleErrors'].append(m.text) if m.type=='error' else None);p.on('response',lambda x:r['httpErrors'].append({'url':x.url,'status':x.status}) if x.status>=400 else None);p.on('requestfailed',lambda x:r['requestFailures'].append({'url':x.url,'error':x.failure}))
+  p.goto(a.url or (ROOT/'docs/flow-coverage/index.html').as_uri(),wait_until='networkidle',timeout=20000);assert p.locator('tbody tr').count()==40
+  f=p.locator('#filter');f.focus();p.keyboard.type('post');assert p.locator('tbody tr:visible').count()==1 and p.locator('tbody tr:visible').get_attribute('id')=='post';p.keyboard.press('Control+A');p.keyboard.type('v3');assert p.locator('tbody tr:visible').count()==1 and p.locator('tbody tr:visible').get_attribute('id')=='feather';p.keyboard.press('Control+A');p.keyboard.type('no-such-game-xyz');assert p.locator('tbody tr:visible').count()==0 and p.locator('#empty').is_visible();f.fill('');assert p.locator('tbody tr:visible').count()==40;p.screenshot(path=str(out/'index-desktop.png'));p.set_viewport_size({'width':390,'height':844});assert p.evaluate('document.documentElement.scrollWidth<=innerWidth');p.locator('.table-wrap').focus();p.keyboard.press('ArrowRight');p.wait_for_timeout(150);assert p.locator('.table-wrap').evaluate('(e)=>e.scrollLeft')>0;p.screenshot(path=str(out/'index-390css.png'));r.update(status='passed',rows=40,keyboardSearch=True,v3OnlyFeather=True,emptyResults=True,narrowPageNoHorizontalOverflow=True,keyboardTableScroll=True);assert not r['consoleErrors'] and not r['httpErrors'] and not r['requestFailures'];b.close()
+ (out/'report.json').write_text(json.dumps(r,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(r,ensure_ascii=False))
+if __name__=='__main__':main()

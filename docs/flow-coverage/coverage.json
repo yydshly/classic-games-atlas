@@ -1,0 +1,1187 @@
+{
+  "schemaVersion": 1,
+  "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
+  "status": "reviewed_with_three_new_ui_flows",
+  "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
+  "selectedThisRound": [
+    "trail",
+    "post",
+    "meadow"
+  ],
+  "items": [
+    {
+      "number": "01",
+      "slug": "fortress",
+      "title": "堡垒防线",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/fortress/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "双车清6敌/2110分；首图基地败",
+      "observedRetry": "失败整备复位；刷新仅留选择和最好",
+      "endingBoundary": "两短图均操作，非双人体验",
+      "evidence": [
+        "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "02",
+      "slug": "maze",
+      "title": "爆破迷宫",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/maze/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "partial",
+        "failureRetry": "verified",
+        "endingNext": "partial"
+      },
+      "observedCore": "放弹绕角已见，三败；未主动反制获胜",
+      "observedRetry": "重试复位/累计败数保留",
+      "endingBoundary": "胜利、平局和90秒终局缺证据",
+      "evidence": [
+        "docs/maze-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/maze-v2-qa/LAYOUT_PUBLIC.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "03",
+      "slug": "starline",
+      "title": "星泡航线",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/starline/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "两图清场1260/1460分",
+      "observedRetry": "主动低效触底后重试，最好保留",
+      "endingBoundary": "两图开放，恢复飞行回出手前",
+      "evidence": [
+        "docs/starline-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "04",
+      "slug": "prism",
+      "title": "光轨砖阵",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/prism/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首关普通鼠标辅助跟球56.15秒清20砖",
+      "observedRetry": "自然失球失败与重试；首胜解锁第二关",
+      "endingBoundary": "第二关干净入口及刷新，非12关全通",
+      "evidence": [
+        "docs/prism-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/prism-first-win-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "05",
+      "slug": "crate",
+      "title": "仓格计划",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/crate/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_applicable",
+        "endingNext": "verified"
+      },
+      "observedCore": "三题正常解到2/2，15/19/15步",
+      "observedRetry": "无失败弹窗；胜后撤销重做/重玩已验",
+      "endingBoundary": "继续下一仓和跨刷新撤销已验",
+      "evidence": [
+        "docs/crate-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "06",
+      "slug": "pass",
+      "title": "山口守望",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/pass/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "缚索四波胜；重弩第二波败",
+      "observedRetry": "重新布防230金/12城门/空场",
+      "endingBoundary": "只有一短图，刷新保留最好不续战",
+      "evidence": [
+        "docs/pass-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "07",
+      "slug": "trail",
+      "title": "风行小径",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/trail/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "本轮首段18.074秒/5果/3命/4跳/风旗与终点；3敌击退",
+      "observedRetry": "另一个新局43.223秒自然体力总失败→重试与暂停刷新",
+      "endingBoundary": "首段结算刷新/第二段干净入口；后两段未通",
+      "evidence": [
+        "docs/trail-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/trail-save-qa/",
+        "docs/trail-main-flow-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "本轮完整主流程",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "08",
+      "slug": "lantern",
+      "title": "夜航拾光",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/lantern/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首图41/41胜，次图38/46败",
+      "observedRetry": "次图失败重试3命，刷新回该图准备",
+      "endingBoundary": "首胜下一港可用，仅最好分保留",
+      "evidence": [
+        "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "09",
+      "slug": "cloud",
+      "title": "云隙巡航",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/cloud/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首图78.8秒胜/5900；次图43秒败",
+      "observedRetry": "失败重试3命2风幕/0分",
+      "endingBoundary": "前往下一段与所选图刷新准备已验",
+      "evidence": [
+        "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "10",
+      "slug": "garden",
+      "title": "晶簇花园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/garden/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "两题公开解各2步成功",
+      "observedRetry": "自然6步耗尽180分败；重试原盘且460纪录留",
+      "endingBoundary": "两题开放，无解锁链；动画刷新未验",
+      "evidence": [
+        "docs/garden-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/garden-loss-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "11",
+      "slug": "vine",
+      "title": "青藤回廊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/vine/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "两图8/8与10/10后归门胜",
+      "observedRetry": "胜后重游初态/刷新已验；碰撞失败未验",
+      "endingBoundary": "两图开放，非16关全通",
+      "evidence": [
+        "docs/vine-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "12",
+      "slug": "petal",
+      "title": "花笺连线",
+      "recommendedVersion": "v1",
+      "playUrl": "games/petal/",
+      "acceptance": "v1_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "v1顺序完成1–9；提示辅助，未洗牌",
+      "observedRetry": "9重写初盘且最好留；耗错失败未验",
+      "endingBoundary": "9解锁与稳定落盘刷新；10–20未验",
+      "evidence": [
+        "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "13",
+      "slug": "sand",
+      "title": "星砂勘探",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/sand/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "浅/深两盘有提示解完安全格",
+      "observedRetry": "主动点已推知雷格失败，同盘重试/另开新盘",
+      "endingBoundary": "两档独立进度，非全部种子证明",
+      "evidence": [
+        "docs/sand-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "14",
+      "slug": "pinfall",
+      "title": "落星弹庭",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/pinfall/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "两庭参考角度自然胜1555/1485",
+      "observedRetry": "胜后重访初态；球尽失败未验",
+      "endingBoundary": "能力整球回退及最好保留，两庭开放",
+      "evidence": [
+        "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "15",
+      "slug": "gale",
+      "title": "钢岚突进",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/gale/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "partial",
+        "endingNext": "verified"
+      },
+      "observedCore": "两场清装置走出口200分",
+      "observedRetry": "受击/检查点及胜后重访已验，耗命败未验",
+      "endingBoundary": "修后只复验生命周期，通关属修前同引擎",
+      "evidence": [
+        "docs/gale-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "16",
+      "slug": "post",
+      "title": "弯道邮差",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/post/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "partial",
+        "endingNext": "verified"
+      },
+      "observedCore": "本轮37.6167秒合法两圈/16闸/0复位，第三名完赛，未获胜",
+      "observedRetry": "原95秒超时失败；本轮完赛刷新及开始后重起资源复位；超时败后直接重赛按钮未单独复验",
+      "endingBoundary": "第二场解锁/第三仍锁/纪录保留；第一名和后两场仍未验",
+      "evidence": [
+        "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/post-main-flow-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "本轮完整主流程",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "17",
+      "slug": "beacon",
+      "title": "灯塔小队",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/beacon/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "21天归港7地点/3遭遇胜",
+      "observedRetry": "付代价撤退与透镜遗失败→确认重开已验",
+      "endingBoundary": "航程总结及刷新/再次行动已验",
+      "evidence": [
+        "docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/beacon-v2-loss-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "18",
+      "slug": "chime",
+      "title": "风铃绳旅",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/chime/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "三题1胜2败；首题剪绳捕泡戳破落台",
+      "observedRetry": "自然失败及重试初态已见",
+      "endingBoundary": "两后题未成功，非16庭全通",
+      "evidence": [
+        "docs/chime-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "19",
+      "slug": "brook",
+      "title": "溪谷守芽",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/brook/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首场1×66.9秒1070分9/9胜",
+      "observedRetry": "此前两场自然败；失败重试空场230露",
+      "endingBoundary": "第二场干净入口与暂停刷新，未获第二胜",
+      "evidence": [
+        "docs/brook-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/brook-first-win-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "20",
+      "slug": "tide",
+      "title": "潮汐珠径",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/tide/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "partial",
+        "failureRetry": "verified",
+        "endingNext": "partial"
+      },
+      "observedCore": "两图均封口但余11珠，150秒超时败",
+      "observedRetry": "失败重试初盘及暂停飞珠刷新已验",
+      "endingBoundary": "清场胜利未验；远程瞄准延迟混杂，不调难度",
+      "evidence": [
+        "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "21",
+      "slug": "paper",
+      "title": "纸翼投递",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/paper/",
+      "acceptance": "frozen_scope",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "q2首关一发及第二关多次低效后重试成功",
+      "observedRetry": "保留既有失败与重试证据，不重启路线",
+      "endingBoundary": "当前阶段保留，不追加细节验收",
+      "evidence": [
+        "docs/paper-quality-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "22",
+      "slug": "harbor",
+      "title": "云港调度",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/harbor/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "三关逐回合胜，二关两方案",
+      "observedRetry": "首关23回合货物逾期败→重试",
+      "endingBoundary": "三关后无第四；终局清会话为设计",
+      "evidence": [
+        "docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/harbor-storage-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "23",
+      "slug": "farm",
+      "title": "四季小田",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/farm/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "连续三章携带至11天30币结局",
+      "observedRetry": "第二章超期败→章首重试不丢前章",
+      "endingBoundary": "终局刷新与查看农场；动画多用正常跳过",
+      "evidence": [
+        "docs/farm-v2/PUBLIC_BROWSER_QA.md",
+        "docs/farm-storage-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "24",
+      "slug": "ruins",
+      "title": "遗迹灯火",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/ruins/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "三房取钥/机关/破甲并实际归门",
+      "observedRetry": "首房自然0血败→房间重试/刷新",
+      "endingBoundary": "第三房清怪后仍须归途E才结算",
+      "evidence": [
+        "docs/ruins-v2/PUBLIC_BROWSER_QA.md",
+        "docs/ruins-v2-qa/LAYOUT_PUBLIC.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "25",
+      "slug": "orchard",
+      "title": "节拍果园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/orchard/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_applicable",
+        "endingNext": "verified"
+      },
+      "observedCore": "两场各60活动秒自然完成，无分数胜门槛",
+      "observedRetry": "设计无失败；再来一场重置，最好分独立",
+      "endingBoundary": "39分霜中恢复和自然结束已验，误核未验",
+      "evidence": [
+        "docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/orchard-frost-recovery-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "26",
+      "slug": "courier",
+      "title": "山径快递",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/courier/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "两路360/432米成功并正确转弯",
+      "observedRetry": "成功重跑重置；错转/缺信/三碰失败未验",
+      "endingBoundary": "转向锁定跨刷新，两路开放",
+      "evidence": [
+        "docs/courier-v2-qa/PUBLIC_BROWSER_QA.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "27",
+      "slug": "venture",
+      "title": "街角商旅",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/venture/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "三场两胜一负，交易/租金实际生效",
+      "observedRetry": "负局终态刷新与确认/取消重开已验",
+      "endingBoundary": "浮点回收修后专项与保存保护另列",
+      "evidence": [
+        "docs/venture-v2/PUBLIC_BROWSER_QA.md",
+        "docs/venture-storage-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "28",
+      "slug": "island",
+      "title": "云岛工坊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/island/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "同地图两桥路线各完成三章",
+      "observedRetry": "第三章需求失衡败→章首恢复城市",
+      "endingBoundary": "跨章库存/拨款不重复，终局已验",
+      "evidence": [
+        "docs/island-v2/PUBLIC_BROWSER_QA.md",
+        "docs/island-storage-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "29",
+      "slug": "orbit",
+      "title": "星环落块",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/orbit/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "自然180秒6106分/38行/80枚一次结算",
+      "observedRetry": "原井满失败重开；新局空盘/0分/0结算",
+      "endingBoundary": "终局刷新回ready，最好保留；非终局面板持久",
+      "evidence": [
+        "docs/orbit-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/orbit-natural-end-qa/",
+        "docs/orbit-first-speed-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "30",
+      "slug": "duel",
+      "title": "风庭对决",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/duel/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首庭正常UI命中至胜6.49秒1188分",
+      "observedRetry": "自然失败与重赛资源重置",
+      "endingBoundary": "第二庭解锁/第三仍锁，刷新纪录留",
+      "evidence": [
+        "docs/duel-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/duel-first-win-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "31",
+      "slug": "expedition",
+      "title": "苔原远征",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/expedition/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "三段正常UI120/140/160秒连续胜",
+      "observedRetry": "自然失败及失败重试仍缺证据",
+      "endingBoundary": "下一段重置资源/终段无第四，终态刷新留",
+      "evidence": [
+        "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/expedition-v2-end-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "32",
+      "slug": "feather",
+      "title": "星羽同伴",
+      "recommendedVersion": "v3",
+      "playUrl": "versions/v3/games/feather/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "v3新旅途至固定终挑战结局，两种策略",
+      "observedRetry": "失败回营可再准备，成长保留",
+      "endingBoundary": "结局总结/自由出行/刷新及v2承接已验",
+      "evidence": [
+        "docs/feather-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/feather-journey-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "33",
+      "slug": "echo",
+      "title": "回声走廊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/echo/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首段真实撤离胜，第二段自然失败",
+      "observedRetry": "第二段败刷新/当前段重试不回首段",
+      "endingBoundary": "首胜摘要/下一段已验，第三段终态仅fixture",
+      "evidence": [
+        "docs/echo-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/echo-continuity-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "34",
+      "slug": "escort",
+      "title": "街巷护送",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/escort/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "首/次/末街段护送胜1643/2040/1445",
+      "observedRetry": "第二段修前自然车0败→重试；标记修后胜",
+      "endingBoundary": "第三段需护车到100%，结局刷新/从晨街重玩",
+      "evidence": [
+        "docs/escort-v2/PUBLIC_BROWSER_QA.md",
+        "docs/escort-storage-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "35",
+      "slug": "court",
+      "title": "晴湾篮场",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/court/",
+      "acceptance": "paused",
+      "coverage": {
+        "startup": "partial",
+        "coreGoal": "partial",
+        "failureRetry": "not_evidenced",
+        "endingNext": "not_evidenced"
+      },
+      "observedCore": "v2仅有限开局；v1首场8:6不能冒充v2",
+      "observedRetry": "v2完整失败/重试未验",
+      "endingBoundary": "暂停开发，不补完整比赛",
+      "evidence": [
+        "docs/court-v2/README.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "36",
+      "slug": "repair",
+      "title": "雨街修理所",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/repair/",
+      "acceptance": "paused",
+      "coverage": {
+        "startup": "partial",
+        "coreGoal": "partial",
+        "failureRetry": "not_evidenced",
+        "endingNext": "not_evidenced"
+      },
+      "observedCore": "v2仅有限诊断/动作开局；v1两天不能移植",
+      "observedRetry": "v2完整经营日/失败待验",
+      "endingBoundary": "停止追加优化，不重启",
+      "evidence": [
+        "docs/repair-v2-qa/README.md"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "37",
+      "slug": "civic",
+      "title": "潮原纪事",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/civic/",
+      "acceptance": "paused",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "v2首章两种建田方案自然胜",
+      "observedRetry": "首章缺粮败/重试/刷新与第2章解锁",
+      "endingBoundary": "已停止路线；2–8章未验，不继续执行",
+      "evidence": [
+        "versions/v2/games/civic/about.html"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "38",
+      "slug": "coaster",
+      "title": "云岬游乐园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/coaster/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "partial",
+        "endingNext": "verified"
+      },
+      "observedCore": "v2首园32m方案2班18人/288收入/168口碑胜",
+      "observedRetry": "改高报告失效/重测；失败终局未验",
+      "endingBoundary": "第2园解锁/中途暂停恢复，v1两园另列",
+      "evidence": [
+        "versions/v2/games/coaster/comparison.html"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "39",
+      "slug": "kart",
+      "title": "林野杯赛",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/kart/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "not_evidenced",
+        "endingNext": "verified"
+      },
+      "observedCore": "v2主动开启可选辅助后首站双圈第1/40.8秒",
+      "observedRetry": "v2完整败后重试未验；v1第四名不混记",
+      "endingBoundary": "第二站解锁/辅助成绩分列，手动胜未验",
+      "evidence": [
+        "versions/v2/games/kart/about.html"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    },
+    {
+      "number": "40",
+      "slug": "meadow",
+      "title": "草甸联赛",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/meadow/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "本轮普通UI72秒4:0胜，10射门/12传球，脚本辅助快照策略",
+      "observedRetry": "次场不输入74秒自然1:1平局失利→当前场重赛，首场纪录保留",
+      "endingBoundary": "第二场开球暂停刷新/取消重开保持；第三仍锁，未踢后七场",
+      "evidence": [
+        "versions/v2/games/meadow/about.html",
+        "docs/meadow-main-flow-qa/"
+      ],
+      "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
+      "nextToolWork": "本轮完整主流程",
+      "humanRequired": [
+        "持续操作与难度感受",
+        "真实移动触控及设备表现",
+        "有音频实现时的听感/同步",
+        "审美与情绪价值"
+      ]
+    }
+  ],
+  "evidenceThrough": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6",
+  "roundCommits": {
+    "trail": "3b17002fb1e75cac4c361e001397626c584ca63e",
+    "post": "8d90579699a49d2c9bdf75b737401d599a9eda6d",
+    "meadow": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6"
+  },
+  "roundDeployments": {
+    "trail": {
+      "id": 39494183069,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494183069"
+    },
+    "post": {
+      "id": 39494893068,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494893068"
+    },
+    "meadow": {
+      "id": 39495686151,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39495686151"
+    }
+  },
+  "roundScope": {
+    "runtimeChanged": false,
+    "faultInjection": false,
+    "confirmedBlockingDefectsInSelectedFlows": 0,
+    "normalUiEvidenceSeparateFromModels": true
+  }
+}
