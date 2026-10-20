@@ -38,7 +38,7 @@
 
 | 原创实验 | 已发布关数 | 机制参考条目 | 状态 |
 |---|---:|---|---|
-| [堡垒防线](./games/fortress/) | 10 | 坦克大战 | 已发布 · 原创实现 |
+| 堡垒防线：[v1十图](./games/fortress/) · [v2候选](./versions/v2/games/fortress/) | v1 10图；v2 2图 | 同键双车共守基地 | 首单车败、次双车2110胜；[QA](docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 爆破迷宫：[v1十关](./games/maze/) · [v2候选](./versions/v2/games/maze/) | v1 10关；v2 2短图 | 炸弹人通用机制与对抗参考 | 有限实玩候选，未完成品质验收；[QA](docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) |
 | 星泡航线：[v1十二图](./games/starline/) · [v2候选](./versions/v2/games/starline/) | v1 12图；v2 2图 | 泡泡反弹清场与下压选择 | 参考路线两胜，未品质验收；[QA](docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) |
 | [光轨砖阵](./games/prism/) | 12 | 打砖块／Arkanoid | 已发布 · 原创实现 |
@@ -74,6 +74,8 @@
 | [街巷护送](./games/escort/) | 8 | 横向纵深移动、近战连击、闪避、分段遇敌和护送通用机制，关联双截龙介绍 | 已发布 · 原创实现 |
 
 ## 原创玩法实验 01：堡垒防线
+
+新增独立[v2 · 双车共守](versions/v2/games/fortress/)，两原创六敌短图，单车/同键双车共基地，各自出击、移动、射击与状态。基础护基地/破墙/补给旧版已有，原十图保留。2026-10-20首图单车正常基地败00:48清2/6、300分；次图双车清6胜2110，结果69秒/HUD01:08，基地两车均3。同一执行者多暂停，不是两位玩家合作或模式难度受控对比。暂停可见冻结，活动刷新回第二双车准备，最好2110留，不保存战斗快照。主图第二00:15/200/清1/6活动帧非终局；完整地图需滚、顶部暂停按钮滚出，手机声音审美未验。[范围与来源](versions/v2/games/fortress/NOTES.md) · [实玩QA与原图](docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md) · [首页对比](./#compare=fortress)。以下为保留的v1历史说明。
 
 **[立即试玩堡垒防线](https://yydshly.github.io/classic-games-atlas/games/fortress/) · [需求与验收范围](docs/FORTRESS_SPEC.md) · [测试与部署证据](docs/FORTRESS_VERIFICATION.md)**
 
@@ -309,6 +311,8 @@ python scripts/test_vine_ui.py
 本阶段完成后回到主对话继续安排下一款，保留图鉴及前十款。
 
 ## 原创玩法实验 12：花笺连线
+
+2026-10-20对现有v1做有限实玩：按正常入口推进01→09，并使用公开提示；02与09的绕线、石印/下落稳定和刷新有记录。没有完成全部二十关，也不因此新增v2；原有提示残留、滚动和未验边界见[公开QA说明](docs/petal-v1-qa/PUBLIC_BROWSER_QA.md)。以下为保留的历史范围说明。
 
 **[立即试玩花笺连线](https://yydshly.github.io/classic-games-atlas/games/petal/) · [固定范围](docs/PETAL_SPEC.md) · [测试与部署证据](docs/PETAL_VERIFICATION.md)**
 
