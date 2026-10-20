@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {createGame,act,checkpoint} from '../versions/v2/games/island/engine.mjs';
+import {KEY,emptyProgress,readProgress,writeProgress,storageMessage} from '../versions/v2/games/island/storage.mjs';
+let groups=0;const test=(name,fn)=>{fn();groups++;console.log('PASS '+name);};
+const store=(raw=null)=>({raw,writes:0,fail:false,getItem(){return this.raw;},setItem(k,v){assert.equal(k,KEY);this.writes++;if(this.fail)throw new DOMException('fixture','QuotaExceededError');this.raw=v;}});
+test('missing record accepts normal progress',()=>{const s=store();assert.equal(readProgress(s).protection,null);assert(writeProgress(s,emptyProgress(),null));assert.deepEqual(readProgress(s).progress,emptyProgress());});
+test('bad/incompatible/invalid replay originals receive zero writes',()=>{for(const raw of ['KEEP','', 'null', JSON.stringify({...emptyProgress(),version:9}),JSON.stringify({...emptyProgress(),resume:{version:2,commands:[{kind:'unknown'}]}}),JSON.stringify({...emptyProgress(),best:{score:'bad'}})]){const s=store(raw),r=readProgress(s);assert.equal(r.protection,'invalid');assert.equal(writeProgress(s,emptyProgress(),r.protection),false);assert.equal(s.raw,raw);assert.equal(s.writes,0);}});
+test('read denial is separate and protected',()=>{assert.equal(readProgress(undefined).protection,'unavailable');assert.match(storageMessage('unavailable'),/无法读取/);});
+test('failed writes keep bytes, later success is retried',()=>{const s=store(JSON.stringify(emptyProgress())),old=s.raw,p=emptyProgress();p.tutorialSeen=true;s.fail=true;assert.equal(writeProgress(s,p,null),false);assert.equal(s.raw,old);s.fail=false;assert.equal(writeProgress(s,p,null),true);assert.deepEqual(readProgress(s).progress,p);});
+test('real confirmed building checkpoint round trips without rewriting commands',()=>{const g=createGame();assert(act(g,{kind:'start'}));assert(act(g,{kind:'place',type:'road',x:1,y:3,rot:0}));const p={...emptyProgress(),tutorialSeen:true,resume:checkpoint(g)},s=store(JSON.stringify(p));assert.equal(g.cash,57);assert.deepEqual(readProgress(s).progress,p);assert.equal(s.writes,0);});
+console.log(groups+' storage groups passed; normal and fault browser controller paths tested separately.');

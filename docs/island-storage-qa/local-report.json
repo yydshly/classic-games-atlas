@@ -1,0 +1,67 @@
+{
+  "url": "http://127.0.0.1:4196/versions/v2/games/island/",
+  "normalUI": {
+    "cash": 57,
+    "commands": [
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "place",
+        "type": "road",
+        "x": 1,
+        "y": 3,
+        "rot": 0
+      },
+      {
+        "kind": "end"
+      }
+    ],
+    "confirmedRoadAndRound": true,
+    "refreshExactRaw": true,
+    "restoredPaused": true
+  },
+  "fixtures": [
+    {
+      "case": "genuine old UI format",
+      "rawPreserved": true
+    },
+    {
+      "case": "bad JSON",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetryAndNewCity": true
+    },
+    {
+      "case": "unknown version",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetryAndNewCity": true
+    },
+    {
+      "case": "invalid replay",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetryAndNewCity": true
+    },
+    {
+      "case": "QuotaExceededError",
+      "oldBytesKeptDuringFailure": true,
+      "laterPauseSaveRecovered": true,
+      "refreshCash": 57
+    },
+    {
+      "case": "SecurityError",
+      "oldBytesKeptDuringFailure": true,
+      "laterPauseSaveRecovered": true,
+      "refreshCash": 57
+    },
+    {
+      "case": "read getter denied",
+      "temporaryBuildWorks": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": []
+}
