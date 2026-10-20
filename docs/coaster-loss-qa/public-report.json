@@ -1,0 +1,2924 @@
+{
+  "kind": "public normal UI; diagnostic copies only; no state/save/time injection",
+  "codeBaseline": "62a4484b3ad6bd6adc210b33de4b70dde84c2ef2",
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "progress": [
+    {
+      "state": "testing"
+    },
+    {
+      "state": "operating"
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "versions/v2/games/coaster/game.mjs",
+      "sha256": "8775d7e4b583070a9b61fd18c63462adf1e02e93e3eef4206bf36a93a39d9e78"
+    },
+    {
+      "path": "versions/v2/games/coaster/engine.mjs",
+      "sha256": "dbb4f449612cca37f31ffa07f24c661d50ae4798aaad361d72cd920b1c49f6c2"
+    }
+  ],
+  "initial": {
+    "state": "design",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 0,
+    "modules": [
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 0,
+    "lastGuestFeedback": null,
+    "cost": 0,
+    "cash": 380,
+    "train": {
+      "segment": 0,
+      "t": 0,
+      "speed": 8,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 0
+    },
+    "report": null,
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 0,
+    "elapsed": 0,
+    "tick": 0,
+    "accumulator": 0,
+    "message": "先选轨段、安装模块，再用空车测试整圈。",
+    "events": [],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 0,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "normalDesign": {
+    "state": "design",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 1,
+    "modules": [
+      "lift",
+      "trim",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "brake"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 295,
+    "lastGuestFeedback": null,
+    "cost": 295,
+    "cash": 85,
+    "train": {
+      "segment": 0,
+      "t": 0,
+      "speed": 8,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 0
+    },
+    "report": null,
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 0,
+    "elapsed": 0,
+    "tick": 0,
+    "accumulator": 0,
+    "message": "2 号段已装调速制动；预算余额 85，请重新试车。",
+    "events": [
+      "1 号段已装链条提升；预算余额 220，请重新试车。",
+      "12 号段已装站前制动；预算余额 160，请重新试车。",
+      "2 号段已装调速制动；预算余额 85，请重新试车。"
+    ],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 1,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "nativeSafetyReport": {
+    "state": "design",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 1,
+    "modules": [
+      "lift",
+      "trim",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "brake"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 295,
+    "lastGuestFeedback": null,
+    "cost": 295,
+    "cash": 85,
+    "train": {
+      "segment": 11,
+      "t": 1,
+      "speed": 10,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 0
+    },
+    "report": {
+      "safe": true,
+      "approved": false,
+      "testedSegments": 12,
+      "thrill": 27.44842472705743,
+      "comfort": 99.66204150636885,
+      "maxSpeed": 18,
+      "minSpeed": 8,
+      "duration": 22.632719933274025,
+      "diagnosis": [
+        {
+          "code": "dull",
+          "segment": null,
+          "severity": "warning",
+          "message": "刺激 27.4 / 31：减掉不必要的刹车，或在平直轨段增加驱动。"
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "module": "lift",
+          "entrySpeed": 8,
+          "exitSpeed": 8,
+          "maxSpeed": 8,
+          "minSpeed": 8,
+          "measuredExitSpeed": 8,
+          "exitReached": true,
+          "freeEnergy": -349.9692967570653,
+          "energyDelta": 0,
+          "acceleration": 0,
+          "measured": true,
+          "lateral": 0.04664723032069971,
+          "deceleration": 0,
+          "thrill": 10.433236151603499,
+          "comfort": 100,
+          "duration": 3.923088706618804,
+          "stopT": 1,
+          "status": "safe",
+          "message": "1 号段通过：8.0 米/秒，横向 0.05g。"
+        },
+        {
+          "segment": 1,
+          "module": "trim",
+          "entrySpeed": 8,
+          "exitSpeed": 18,
+          "maxSpeed": 18,
+          "minSpeed": 8,
+          "measuredExitSpeed": 18,
+          "exitReached": true,
+          "freeEnergy": 431.74118716837114,
+          "energyDelta": 260,
+          "acceleration": 3.7512140693609477,
+          "measured": true,
+          "lateral": 0.2066326530612245,
+          "deceleration": 0,
+          "thrill": 32.93316326530612,
+          "comfort": 100,
+          "duration": 2.665803607871301,
+          "stopT": 1,
+          "status": "safe",
+          "message": "2 号段通过：18.0 米/秒，横向 0.21g。"
+        },
+        {
+          "segment": 2,
+          "module": "rail",
+          "entrySpeed": 18,
+          "exitSpeed": 16.287052741710287,
+          "maxSpeed": 18,
+          "minSpeed": 16.287052741710287,
+          "measuredExitSpeed": 16.287052741710287,
+          "exitReached": true,
+          "freeEnergy": 265.2680870112526,
+          "energyDelta": -58.73191298874741,
+          "acceleration": -1.0524401556521505,
+          "measured": true,
+          "lateral": 0.42386185243328095,
+          "deceleration": 0,
+          "thrill": 34.69200936679117,
+          "comfort": 100,
+          "duration": 1.6275958771530104,
+          "stopT": 1,
+          "status": "safe",
+          "message": "3 号段通过：16.3 米/秒，横向 0.42g。"
+        },
+        {
+          "segment": 3,
+          "module": "rail",
+          "entrySpeed": 16.287052741710287,
+          "exitSpeed": 10.40194135477801,
+          "maxSpeed": 16.287052741710287,
+          "minSpeed": 10.40194135477801,
+          "measuredExitSpeed": 10.40194135477801,
+          "exitReached": true,
+          "freeEnergy": 108.20038394824098,
+          "energyDelta": -157.0677030630116,
+          "acceleration": -2.766988005493225,
+          "measured": true,
+          "lateral": 0.15922454202356096,
+          "deceleration": 0,
+          "thrill": 26.150667101781686,
+          "comfort": 100,
+          "duration": 2.1269016617523198,
+          "stopT": 1,
+          "status": "safe",
+          "message": "4 号段通过：10.4 米/秒，横向 0.16g。"
+        },
+        {
+          "segment": 4,
+          "module": "rail",
+          "entrySpeed": 10.40194135477801,
+          "exitSpeed": 17.35477192362212,
+          "maxSpeed": 17.35477192362212,
+          "minSpeed": 10.40194135477801,
+          "measuredExitSpeed": 17.35477192362212,
+          "exitReached": true,
+          "freeEnergy": 301.18810852094265,
+          "energyDelta": 192.98772457270167,
+          "acceleration": 2.987125458365063,
+          "measured": true,
+          "lateral": 0.20488986974213785,
+          "deceleration": 0,
+          "thrill": 31.353326963190813,
+          "comfort": 100,
+          "duration": 2.3275991135134944,
+          "stopT": 1,
+          "status": "safe",
+          "message": "5 号段通过：17.4 米/秒，横向 0.20g。"
+        },
+        {
+          "segment": 5,
+          "module": "rail",
+          "entrySpeed": 17.35477192362212,
+          "exitSpeed": 16.84847366657729,
+          "maxSpeed": 17.35477192362212,
+          "minSpeed": 16.84847366657729,
+          "measuredExitSpeed": 16.84847366657729,
+          "exitReached": true,
+          "freeEnergy": 283.8710648933485,
+          "energyDelta": -17.317043627594217,
+          "acceleration": -0.35000000000000087,
+          "measured": true,
+          "lateral": 0.4268538952961205,
+          "deceleration": 0,
+          "thrill": 34.62735278717005,
+          "comfort": 100,
+          "duration": 1.4465664486995093,
+          "stopT": 1,
+          "status": "safe",
+          "message": "6 号段通过：16.8 米/秒，横向 0.43g。"
+        },
+        {
+          "segment": 6,
+          "module": "rail",
+          "entrySpeed": 16.84847366657729,
+          "exitSpeed": 10.41118317981062,
+          "maxSpeed": 16.84847366657729,
+          "minSpeed": 10.41118317981062,
+          "measuredExitSpeed": 10.41118317981062,
+          "exitReached": true,
+          "freeEnergy": 108.39273520357156,
+          "energyDelta": -175.47832968977687,
+          "acceleration": -3.2881642208637767,
+          "measured": true,
+          "lateral": 0.18104021995749262,
+          "deceleration": 0,
+          "thrill": 26.801875103855977,
+          "comfort": 100,
+          "duration": 1.957715629262471,
+          "stopT": 1,
+          "status": "safe",
+          "message": "7 号段通过：10.4 米/秒，横向 0.18g。"
+        },
+        {
+          "segment": 7,
+          "module": "rail",
+          "entrySpeed": 10.41118317981062,
+          "exitSpeed": 15.691449036897673,
+          "maxSpeed": 15.691449036897673,
+          "minSpeed": 10.41118317981062,
+          "measuredExitSpeed": 15.691449036897673,
+          "exitReached": true,
+          "freeEnergy": 246.2215728775569,
+          "energyDelta": 137.82883767398533,
+          "acceleration": 2.5428116821152464,
+          "measured": true,
+          "lateral": 0.17946178781163039,
+          "deceleration": 0,
+          "thrill": 28.57480954493103,
+          "comfort": 100,
+          "duration": 2.0765461690401885,
+          "stopT": 1,
+          "status": "safe",
+          "message": "8 号段通过：15.7 米/秒，横向 0.18g。"
+        },
+        {
+          "segment": 8,
+          "module": "rail",
+          "entrySpeed": 15.691449036897673,
+          "exitSpeed": 13.808011392956937,
+          "maxSpeed": 15.691449036897673,
+          "minSpeed": 13.808011392956937,
+          "measuredExitSpeed": 13.808011392956937,
+          "exitReached": true,
+          "freeEnergy": 190.66117862802855,
+          "energyDelta": -55.560394249528315,
+          "acceleration": -1.1886105976874932,
+          "measured": true,
+          "lateral": 0.13223500154541185,
+          "deceleration": 0,
+          "thrill": 28.685662416088935,
+          "comfort": 100,
+          "duration": 1.5845707985483775,
+          "stopT": 1,
+          "status": "safe",
+          "message": "9 号段通过：13.8 米/秒，横向 0.13g。"
+        },
+        {
+          "segment": 9,
+          "module": "rail",
+          "entrySpeed": 13.808011392956937,
+          "exitSpeed": 13.312198080310388,
+          "maxSpeed": 13.808011392956937,
+          "minSpeed": 13.312198080310388,
+          "measuredExitSpeed": 13.312198080310388,
+          "exitReached": true,
+          "freeEnergy": 177.2146177294196,
+          "energyDelta": -13.446560898608993,
+          "acceleration": -0.3500000000000003,
+          "measured": true,
+          "lateral": 0.24942592703823727,
+          "deceleration": 0,
+          "thrill": 27.01132863479514,
+          "comfort": 100,
+          "duration": 1.4166094647044247,
+          "stopT": 1,
+          "status": "safe",
+          "message": "10 号段通过：13.3 米/秒，横向 0.25g。"
+        },
+        {
+          "segment": 10,
+          "module": "rail",
+          "entrySpeed": 13.312198080310388,
+          "exitSpeed": 13.089879269438761,
+          "maxSpeed": 13.312198080310388,
+          "minSpeed": 13.089879269438761,
+          "measuredExitSpeed": 13.089879269438761,
+          "exitReached": true,
+          "freeEnergy": 171.34493928848264,
+          "energyDelta": -5.869678440936951,
+          "acceleration": -0.3500000000000002,
+          "measured": true,
+          "lateral": 0.09517433820054756,
+          "deceleration": 0,
+          "thrill": 25.55784517326443,
+          "comfort": 100,
+          "duration": 0.6351966024903628,
+          "stopT": 1,
+          "status": "safe",
+          "message": "11 号段通过：13.1 米/秒，横向 0.10g。"
+        },
+        {
+          "segment": 11,
+          "module": "brake",
+          "entrySpeed": 13.089879269438761,
+          "exitSpeed": 10,
+          "maxSpeed": 13.089879269438761,
+          "minSpeed": 10,
+          "measuredExitSpeed": 10,
+          "exitReached": true,
+          "freeEnergy": 164.51993928848265,
+          "energyDelta": -71.34493928848264,
+          "acceleration": -3.6587148353068017,
+          "measured": true,
+          "lateral": 0.12488698198868997,
+          "deceleration": 3.6587148353068017,
+          "thrill": 22.55982021591027,
+          "comfort": 95.9444980764262,
+          "duration": 0.8445258536197613,
+          "stopT": 1,
+          "status": "safe",
+          "message": "12 号段通过：10.0 米/秒，横向 0.12g。"
+        }
+      ],
+      "firstFailure": null,
+      "riders": 7,
+      "rideRevenue": 112,
+      "rideReputation": 20,
+      "guestGroups": [
+        {
+          "id": "gentle",
+          "name": "舒缓派",
+          "waiting": 5,
+          "satisfaction": 100,
+          "reason": "起伏与转弯舒服，愿意带朋友再来。",
+          "boarding": 5
+        },
+        {
+          "id": "adventure",
+          "name": "挑战派",
+          "waiting": 5,
+          "satisfaction": 31,
+          "reason": "还想要更强的下坠感，部分游客留在站台。",
+          "boarding": 2
+        }
+      ]
+    },
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 1,
+    "elapsed": 22.716666666666665,
+    "tick": 1363,
+    "accumulator": 0,
+    "message": "安全试车完成，但体验未达标；建议调整后重测。",
+    "events": [
+      "1 号段已装链条提升；预算余额 220，请重新试车。",
+      "12 号段已装站前制动；预算余额 160，请重新试车。",
+      "2 号段已装调速制动；预算余额 85，请重新试车。",
+      "空车出发：逐段测量速度、横向力和乘坐体验。",
+      "安全试车完成，但体验未达标；建议调整后重测。"
+    ],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 1,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "naturalLoss": {
+    "state": "lost",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 1,
+    "modules": [
+      "lift",
+      "trim",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "brake"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 295,
+    "lastGuestFeedback": [
+      {
+        "id": "gentle",
+        "name": "舒缓派",
+        "waiting": 5,
+        "satisfaction": 100,
+        "reason": "起伏与转弯舒服，愿意带朋友再来。",
+        "boarding": 5
+      },
+      {
+        "id": "adventure",
+        "name": "挑战派",
+        "waiting": 5,
+        "satisfaction": 31,
+        "reason": "还想要更强的下坠感，部分游客留在站台。",
+        "boarding": 2
+      }
+    ],
+    "cost": 295,
+    "cash": 85,
+    "train": {
+      "segment": 11,
+      "t": 1,
+      "speed": 10,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 2
+    },
+    "report": {
+      "safe": true,
+      "approved": false,
+      "testedSegments": 12,
+      "thrill": 27.44842472705743,
+      "comfort": 99.66204150636885,
+      "maxSpeed": 18,
+      "minSpeed": 8,
+      "duration": 22.632719933274025,
+      "diagnosis": [
+        {
+          "code": "dull",
+          "segment": null,
+          "severity": "warning",
+          "message": "刺激 27.4 / 31：减掉不必要的刹车，或在平直轨段增加驱动。"
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "module": "lift",
+          "entrySpeed": 8,
+          "exitSpeed": 8,
+          "maxSpeed": 8,
+          "minSpeed": 8,
+          "measuredExitSpeed": 8,
+          "exitReached": true,
+          "freeEnergy": -349.9692967570653,
+          "energyDelta": 0,
+          "acceleration": 0,
+          "measured": true,
+          "lateral": 0.04664723032069971,
+          "deceleration": 0,
+          "thrill": 10.433236151603499,
+          "comfort": 100,
+          "duration": 3.923088706618804,
+          "stopT": 1,
+          "status": "safe",
+          "message": "1 号段通过：8.0 米/秒，横向 0.05g。"
+        },
+        {
+          "segment": 1,
+          "module": "trim",
+          "entrySpeed": 8,
+          "exitSpeed": 18,
+          "maxSpeed": 18,
+          "minSpeed": 8,
+          "measuredExitSpeed": 18,
+          "exitReached": true,
+          "freeEnergy": 431.74118716837114,
+          "energyDelta": 260,
+          "acceleration": 3.7512140693609477,
+          "measured": true,
+          "lateral": 0.2066326530612245,
+          "deceleration": 0,
+          "thrill": 32.93316326530612,
+          "comfort": 100,
+          "duration": 2.665803607871301,
+          "stopT": 1,
+          "status": "safe",
+          "message": "2 号段通过：18.0 米/秒，横向 0.21g。"
+        },
+        {
+          "segment": 2,
+          "module": "rail",
+          "entrySpeed": 18,
+          "exitSpeed": 16.287052741710287,
+          "maxSpeed": 18,
+          "minSpeed": 16.287052741710287,
+          "measuredExitSpeed": 16.287052741710287,
+          "exitReached": true,
+          "freeEnergy": 265.2680870112526,
+          "energyDelta": -58.73191298874741,
+          "acceleration": -1.0524401556521505,
+          "measured": true,
+          "lateral": 0.42386185243328095,
+          "deceleration": 0,
+          "thrill": 34.69200936679117,
+          "comfort": 100,
+          "duration": 1.6275958771530104,
+          "stopT": 1,
+          "status": "safe",
+          "message": "3 号段通过：16.3 米/秒，横向 0.42g。"
+        },
+        {
+          "segment": 3,
+          "module": "rail",
+          "entrySpeed": 16.287052741710287,
+          "exitSpeed": 10.40194135477801,
+          "maxSpeed": 16.287052741710287,
+          "minSpeed": 10.40194135477801,
+          "measuredExitSpeed": 10.40194135477801,
+          "exitReached": true,
+          "freeEnergy": 108.20038394824098,
+          "energyDelta": -157.0677030630116,
+          "acceleration": -2.766988005493225,
+          "measured": true,
+          "lateral": 0.15922454202356096,
+          "deceleration": 0,
+          "thrill": 26.150667101781686,
+          "comfort": 100,
+          "duration": 2.1269016617523198,
+          "stopT": 1,
+          "status": "safe",
+          "message": "4 号段通过：10.4 米/秒，横向 0.16g。"
+        },
+        {
+          "segment": 4,
+          "module": "rail",
+          "entrySpeed": 10.40194135477801,
+          "exitSpeed": 17.35477192362212,
+          "maxSpeed": 17.35477192362212,
+          "minSpeed": 10.40194135477801,
+          "measuredExitSpeed": 17.35477192362212,
+          "exitReached": true,
+          "freeEnergy": 301.18810852094265,
+          "energyDelta": 192.98772457270167,
+          "acceleration": 2.987125458365063,
+          "measured": true,
+          "lateral": 0.20488986974213785,
+          "deceleration": 0,
+          "thrill": 31.353326963190813,
+          "comfort": 100,
+          "duration": 2.3275991135134944,
+          "stopT": 1,
+          "status": "safe",
+          "message": "5 号段通过：17.4 米/秒，横向 0.20g。"
+        },
+        {
+          "segment": 5,
+          "module": "rail",
+          "entrySpeed": 17.35477192362212,
+          "exitSpeed": 16.84847366657729,
+          "maxSpeed": 17.35477192362212,
+          "minSpeed": 16.84847366657729,
+          "measuredExitSpeed": 16.84847366657729,
+          "exitReached": true,
+          "freeEnergy": 283.8710648933485,
+          "energyDelta": -17.317043627594217,
+          "acceleration": -0.35000000000000087,
+          "measured": true,
+          "lateral": 0.4268538952961205,
+          "deceleration": 0,
+          "thrill": 34.62735278717005,
+          "comfort": 100,
+          "duration": 1.4465664486995093,
+          "stopT": 1,
+          "status": "safe",
+          "message": "6 号段通过：16.8 米/秒，横向 0.43g。"
+        },
+        {
+          "segment": 6,
+          "module": "rail",
+          "entrySpeed": 16.84847366657729,
+          "exitSpeed": 10.41118317981062,
+          "maxSpeed": 16.84847366657729,
+          "minSpeed": 10.41118317981062,
+          "measuredExitSpeed": 10.41118317981062,
+          "exitReached": true,
+          "freeEnergy": 108.39273520357156,
+          "energyDelta": -175.47832968977687,
+          "acceleration": -3.2881642208637767,
+          "measured": true,
+          "lateral": 0.18104021995749262,
+          "deceleration": 0,
+          "thrill": 26.801875103855977,
+          "comfort": 100,
+          "duration": 1.957715629262471,
+          "stopT": 1,
+          "status": "safe",
+          "message": "7 号段通过：10.4 米/秒，横向 0.18g。"
+        },
+        {
+          "segment": 7,
+          "module": "rail",
+          "entrySpeed": 10.41118317981062,
+          "exitSpeed": 15.691449036897673,
+          "maxSpeed": 15.691449036897673,
+          "minSpeed": 10.41118317981062,
+          "measuredExitSpeed": 15.691449036897673,
+          "exitReached": true,
+          "freeEnergy": 246.2215728775569,
+          "energyDelta": 137.82883767398533,
+          "acceleration": 2.5428116821152464,
+          "measured": true,
+          "lateral": 0.17946178781163039,
+          "deceleration": 0,
+          "thrill": 28.57480954493103,
+          "comfort": 100,
+          "duration": 2.0765461690401885,
+          "stopT": 1,
+          "status": "safe",
+          "message": "8 号段通过：15.7 米/秒，横向 0.18g。"
+        },
+        {
+          "segment": 8,
+          "module": "rail",
+          "entrySpeed": 15.691449036897673,
+          "exitSpeed": 13.808011392956937,
+          "maxSpeed": 15.691449036897673,
+          "minSpeed": 13.808011392956937,
+          "measuredExitSpeed": 13.808011392956937,
+          "exitReached": true,
+          "freeEnergy": 190.66117862802855,
+          "energyDelta": -55.560394249528315,
+          "acceleration": -1.1886105976874932,
+          "measured": true,
+          "lateral": 0.13223500154541185,
+          "deceleration": 0,
+          "thrill": 28.685662416088935,
+          "comfort": 100,
+          "duration": 1.5845707985483775,
+          "stopT": 1,
+          "status": "safe",
+          "message": "9 号段通过：13.8 米/秒，横向 0.13g。"
+        },
+        {
+          "segment": 9,
+          "module": "rail",
+          "entrySpeed": 13.808011392956937,
+          "exitSpeed": 13.312198080310388,
+          "maxSpeed": 13.808011392956937,
+          "minSpeed": 13.312198080310388,
+          "measuredExitSpeed": 13.312198080310388,
+          "exitReached": true,
+          "freeEnergy": 177.2146177294196,
+          "energyDelta": -13.446560898608993,
+          "acceleration": -0.3500000000000003,
+          "measured": true,
+          "lateral": 0.24942592703823727,
+          "deceleration": 0,
+          "thrill": 27.01132863479514,
+          "comfort": 100,
+          "duration": 1.4166094647044247,
+          "stopT": 1,
+          "status": "safe",
+          "message": "10 号段通过：13.3 米/秒，横向 0.25g。"
+        },
+        {
+          "segment": 10,
+          "module": "rail",
+          "entrySpeed": 13.312198080310388,
+          "exitSpeed": 13.089879269438761,
+          "maxSpeed": 13.312198080310388,
+          "minSpeed": 13.089879269438761,
+          "measuredExitSpeed": 13.089879269438761,
+          "exitReached": true,
+          "freeEnergy": 171.34493928848264,
+          "energyDelta": -5.869678440936951,
+          "acceleration": -0.3500000000000002,
+          "measured": true,
+          "lateral": 0.09517433820054756,
+          "deceleration": 0,
+          "thrill": 25.55784517326443,
+          "comfort": 100,
+          "duration": 0.6351966024903628,
+          "stopT": 1,
+          "status": "safe",
+          "message": "11 号段通过：13.1 米/秒，横向 0.10g。"
+        },
+        {
+          "segment": 11,
+          "module": "brake",
+          "entrySpeed": 13.089879269438761,
+          "exitSpeed": 10,
+          "maxSpeed": 13.089879269438761,
+          "minSpeed": 10,
+          "measuredExitSpeed": 10,
+          "exitReached": true,
+          "freeEnergy": 164.51993928848265,
+          "energyDelta": -71.34493928848264,
+          "acceleration": -3.6587148353068017,
+          "measured": true,
+          "lateral": 0.12488698198868997,
+          "deceleration": 3.6587148353068017,
+          "thrill": 22.55982021591027,
+          "comfort": 95.9444980764262,
+          "duration": 0.8445258536197613,
+          "stopT": 1,
+          "status": "safe",
+          "message": "12 号段通过：10.0 米/秒，横向 0.12g。"
+        }
+      ],
+      "firstFailure": null,
+      "riders": 7,
+      "rideRevenue": 112,
+      "rideReputation": 20,
+      "guestGroups": [
+        {
+          "id": "gentle",
+          "name": "舒缓派",
+          "waiting": 5,
+          "satisfaction": 100,
+          "reason": "起伏与转弯舒服，愿意带朋友再来。",
+          "boarding": 5
+        },
+        {
+          "id": "adventure",
+          "name": "挑战派",
+          "waiting": 5,
+          "satisfaction": 31,
+          "reason": "还想要更强的下坠感，部分游客留在站台。",
+          "boarding": 2
+        }
+      ]
+    },
+    "runs": 3,
+    "revenue": 336,
+    "reputation": 60,
+    "visitors": 21,
+    "aboard": 0,
+    "runProgress": 1,
+    "elapsed": 90.86666666666666,
+    "tick": 5452,
+    "accumulator": 0,
+    "message": "营业班次用尽：收入 336/260，口碑 60/150。重新设计再试一次。",
+    "events": [
+      "1 号段已装链条提升；预算余额 220，请重新试车。",
+      "12 号段已装站前制动；预算余额 160，请重新试车。",
+      "2 号段已装调速制动；预算余额 85，请重新试车。",
+      "空车出发：逐段测量速度、横向力和乘坐体验。",
+      "安全试车完成，但体验未达标；建议调整后重测。",
+      "开园接客：本班 7 位游客，安全回站后结算。",
+      "第 1 班安全回站：收入 +112，口碑 +20；下一班出发。",
+      "第 2 班安全回站：收入 +112，口碑 +20；下一班出发。",
+      "营业班次用尽：收入 336/260，口碑 60/150。重新设计再试一次。"
+    ],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 1,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "visibleLoss": "PARK 01 / BACK TO THE BLUEPRINT\n\n今天收园，明天再来。\n\n可用营业班次已经用尽，目标仍未同时完成。参考体验报告，重试会重置本园方案和营业，已解锁公园保留。\n\n建造 295 / 380 · 营收 336 / 260 · 口碑 60 / 150\n\n重新设计本园",
+  "retryDesign": {
+    "state": "design",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 0,
+    "modules": [
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 0,
+    "lastGuestFeedback": null,
+    "cost": 0,
+    "cash": 380,
+    "train": {
+      "segment": 0,
+      "t": 0,
+      "speed": 8,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 0
+    },
+    "report": null,
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 0,
+    "elapsed": 0,
+    "tick": 0,
+    "accumulator": 0,
+    "message": "先选轨段、安装模块，再用空车测试整圈。",
+    "events": [],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 0,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "retryRefresh": {
+    "state": "design",
+    "priorState": null,
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 0,
+    "modules": [
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 0,
+    "lastGuestFeedback": null,
+    "cost": 0,
+    "cash": 380,
+    "train": {
+      "segment": 0,
+      "t": 0,
+      "speed": 8,
+      "x": 220,
+      "y": 440,
+      "z": 8,
+      "lap": 0
+    },
+    "report": null,
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 0,
+    "elapsed": 0,
+    "tick": 0,
+    "accumulator": 0,
+    "message": "先选轨段、安装模块，再用空车测试整圈。",
+    "events": [],
+    "active": null,
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 0,
+    "storageAvailable": true,
+    "wasRestored": true,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "normalNewTestAfterRetry": {
+    "state": "paused",
+    "priorState": "testing",
+    "levelIndex": 0,
+    "level": {
+      "name": "第一朵笑声",
+      "subtitle": "链条、重力与安全回站",
+      "tip": "先给 1 号上坡装提升，再给 12 号进场装制动。试车报告会告诉你还缺什么。",
+      "budget": 380,
+      "minThrill": 31,
+      "minComfort": 83,
+      "targetRevenue": 260,
+      "targetReputation": 150,
+      "maxRuns": 3,
+      "ticketPrice": 16,
+      "seats": 10,
+      "speedLimit": 32,
+      "points": [
+        {
+          "x": 220,
+          "y": 440,
+          "z": 8
+        },
+        {
+          "x": 140,
+          "y": 300,
+          "z": 28
+        },
+        {
+          "x": 240,
+          "y": 140,
+          "z": 8
+        },
+        {
+          "x": 420,
+          "y": 95,
+          "z": 10
+        },
+        {
+          "x": 600,
+          "y": 130,
+          "z": 17
+        },
+        {
+          "x": 770,
+          "y": 240,
+          "z": 6
+        },
+        {
+          "x": 810,
+          "y": 400,
+          "z": 6
+        },
+        {
+          "x": 690,
+          "y": 520,
+          "z": 14
+        },
+        {
+          "x": 520,
+          "y": 550,
+          "z": 6
+        },
+        {
+          "x": 370,
+          "y": 510,
+          "z": 8
+        },
+        {
+          "x": 290,
+          "y": 410,
+          "z": 8
+        },
+        {
+          "x": 280,
+          "y": 465,
+          "z": 8
+        }
+      ],
+      "id": 1,
+      "segments": [
+        {
+          "id": 0,
+          "name": "出站爬升",
+          "from": 0,
+          "to": 1,
+          "length": 31.38470965295043,
+          "turnRadius": 140,
+          "kind": "climb"
+        },
+        {
+          "id": 1,
+          "name": "首落云坡",
+          "from": 1,
+          "to": 2,
+          "length": 34.655446902326915,
+          "turnRadius": 160,
+          "kind": "drop"
+        },
+        {
+          "id": 2,
+          "name": "远端弧弯",
+          "from": 2,
+          "to": 3,
+          "length": 27.90273284106774,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 3,
+          "name": "二次上坡",
+          "from": 3,
+          "to": 4,
+          "length": 28.38243294715941,
+          "turnRadius": 170,
+          "kind": "climb"
+        },
+        {
+          "id": 4,
+          "name": "花谷下坠",
+          "from": 4,
+          "to": 5,
+          "length": 32.30325061042619,
+          "turnRadius": 150,
+          "kind": "drop"
+        },
+        {
+          "id": 5,
+          "name": "镜湖回弯",
+          "from": 5,
+          "to": 6,
+          "length": 24.73863375370596,
+          "turnRadius": 72,
+          "kind": "turn"
+        },
+        {
+          "id": 6,
+          "name": "缓升连桥",
+          "from": 6,
+          "to": 7,
+          "length": 26.68332812825267,
+          "turnRadius": 160,
+          "kind": "climb"
+        },
+        {
+          "id": 7,
+          "name": "云边落坡",
+          "from": 7,
+          "to": 8,
+          "length": 27.101660465735307,
+          "turnRadius": 140,
+          "kind": "drop"
+        },
+        {
+          "id": 8,
+          "name": "长廊滑行",
+          "from": 8,
+          "to": 9,
+          "length": 23.37199178504049,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 9,
+          "name": "回家弧弯",
+          "from": 9,
+          "to": 10,
+          "length": 19.209372712298546,
+          "turnRadius": 78,
+          "kind": "turn"
+        },
+        {
+          "id": 10,
+          "name": "站外平直",
+          "from": 10,
+          "to": 11,
+          "length": 8.38525491562421,
+          "turnRadius": 190,
+          "kind": "run"
+        },
+        {
+          "id": 11,
+          "name": "站前进场",
+          "from": 11,
+          "to": 0,
+          "length": 9.75,
+          "turnRadius": 140,
+          "kind": "station"
+        }
+      ],
+      "initialModules": [
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail",
+        "rail"
+      ],
+      "briefing": "在 380 建造预算内完成试车；3 班以内达到收入 260、口碑 150。",
+      "rules": {
+        "stationSpeed": 12,
+        "lateralLimit": 1.35,
+        "minSpeed": 4
+      },
+      "palette": 0
+    },
+    "selected": 0,
+    "modules": [
+      "lift",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail",
+      "rail"
+    ],
+    "heightOffsets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "structureCost": 0,
+    "moduleCost": 160,
+    "lastGuestFeedback": null,
+    "cost": 160,
+    "cash": 220,
+    "train": {
+      "segment": 0,
+      "t": 0.11895389107040434,
+      "speed": 8,
+      "x": 210.48368871436764,
+      "y": 423.3464552501434,
+      "z": 10.379077821408087,
+      "lap": 0
+    },
+    "report": null,
+    "runs": 0,
+    "revenue": 0,
+    "reputation": 0,
+    "visitors": 0,
+    "aboard": 0,
+    "runProgress": 0.009912824255867028,
+    "elapsed": 0.4666666666666667,
+    "tick": 28,
+    "accumulator": 0,
+    "message": "空车出发：逐段测量速度、横向力和乘坐体验。",
+    "events": [
+      "1 号段已装链条提升；预算余额 220，请重新试车。",
+      "空车出发：逐段测量速度、横向力和乘坐体验。"
+    ],
+    "active": {
+      "report": {
+        "safe": false,
+        "approved": false,
+        "testedSegments": 12,
+        "thrill": 33.750982807571724,
+        "comfort": 99.14474393697286,
+        "maxSpeed": 20.778382688947932,
+        "minSpeed": 8,
+        "duration": 19.15069671395941,
+        "diagnosis": [
+          {
+            "code": "station",
+            "segment": 11,
+            "severity": "danger",
+            "message": "回站速度 16.5 超过 12 米/秒；12 号段安装站前制动。"
+          }
+        ],
+        "segments": [
+          {
+            "segment": 0,
+            "module": "lift",
+            "entrySpeed": 8,
+            "exitSpeed": 8,
+            "maxSpeed": 8,
+            "minSpeed": 8,
+            "measuredExitSpeed": 8,
+            "exitReached": true,
+            "freeEnergy": -349.9692967570653,
+            "energyDelta": 0,
+            "acceleration": 0,
+            "measured": true,
+            "lateral": 0.04664723032069971,
+            "deceleration": 0,
+            "thrill": 10.433236151603499,
+            "comfort": 100,
+            "duration": 3.923088706618804,
+            "stopT": 1,
+            "status": "safe",
+            "message": "1 号段通过：8.0 米/秒，横向 0.05g。"
+          },
+          {
+            "segment": 1,
+            "module": "rail",
+            "entrySpeed": 8,
+            "exitSpeed": 20.778382688947932,
+            "maxSpeed": 20.778382688947932,
+            "minSpeed": 8,
+            "measuredExitSpeed": 20.778382688947932,
+            "exitReached": true,
+            "freeEnergy": 431.74118716837114,
+            "energyDelta": 367.7411871683711,
+            "acceleration": 5.305676596882659,
+            "measured": true,
+            "lateral": 0.27534514487778766,
+            "deceleration": 0,
+            "thrill": 35.91618927888947,
+            "comfort": 100,
+            "duration": 2.408436031788264,
+            "stopT": 1,
+            "status": "safe",
+            "message": "2 号段通过：20.8 米/秒，横向 0.28g。"
+          },
+          {
+            "segment": 2,
+            "module": "rail",
+            "entrySpeed": 20.778382688947932,
+            "exitSpeed": 19.313448013744818,
+            "maxSpeed": 20.778382688947932,
+            "minSpeed": 19.313448013744818,
+            "measuredExitSpeed": 19.313448013744818,
+            "exitReached": true,
+            "freeEnergy": 373.0092741796237,
+            "energyDelta": -58.73191298874741,
+            "acceleration": -1.0524401556521505,
+            "measured": true,
+            "lateral": 0.5648105535954618,
+            "deceleration": 0,
+            "thrill": 40.91129193553542,
+            "comfort": 95.1779567489906,
+            "duration": 1.3919410688918061,
+            "stopT": 1,
+            "status": "safe",
+            "message": "3 号段通过：19.3 米/秒，横向 0.56g。"
+          },
+          {
+            "segment": 3,
+            "module": "rail",
+            "entrySpeed": 19.313448013744818,
+            "exitSpeed": 14.69495053127475,
+            "maxSpeed": 19.313448013744818,
+            "minSpeed": 14.69495053127475,
+            "measuredExitSpeed": 14.69495053127475,
+            "exitReached": true,
+            "freeEnergy": 215.94157111661207,
+            "energyDelta": -157.0677030630116,
+            "acceleration": -2.766988005493225,
+            "measured": true,
+            "lateral": 0.2238951225567969,
+            "deceleration": 0,
+            "thrill": 33.42745423055258,
+            "comfort": 100,
+            "duration": 1.6691425742724915,
+            "stopT": 1,
+            "status": "safe",
+            "message": "4 号段通过：14.7 米/秒，横向 0.22g。"
+          },
+          {
+            "segment": 4,
+            "module": "rail",
+            "entrySpeed": 14.69495053127475,
+            "exitSpeed": 20.222000289024667,
+            "maxSpeed": 20.222000289024667,
+            "minSpeed": 14.69495053127475,
+            "measuredExitSpeed": 20.222000289024667,
+            "exitReached": true,
+            "freeEnergy": 408.92929568931373,
+            "energyDelta": 192.98772457270167,
+            "acceleration": 2.987125458365063,
+            "measured": true,
+            "lateral": 0.27818319434647193,
+            "deceleration": 0,
+            "thrill": 38.52201925101681,
+            "comfort": 100,
+            "duration": 1.850290466465719,
+            "stopT": 1,
+            "status": "safe",
+            "message": "5 号段通过：20.2 米/秒，横向 0.28g。"
+          },
+          {
+            "segment": 5,
+            "module": "rail",
+            "entrySpeed": 20.222000289024667,
+            "exitSpeed": 19.789195336387976,
+            "maxSpeed": 20.222000289024667,
+            "minSpeed": 19.789195336387976,
+            "measuredExitSpeed": 19.789195336387976,
+            "exitReached": true,
+            "freeEnergy": 391.6122520617196,
+            "energyDelta": -17.317043627594103,
+            "acceleration": -0.3499999999999986,
+            "measured": true,
+            "lateral": 0.5795483215551498,
+            "deceleration": 0,
+            "thrill": 40.90837745191776,
+            "comfort": 94.5589704946837,
+            "duration": 1.2365855789619797,
+            "stopT": 1,
+            "status": "safe",
+            "message": "6 号段通过：19.8 米/秒，横向 0.58g。"
+          },
+          {
+            "segment": 6,
+            "module": "rail",
+            "entrySpeed": 19.789195336387976,
+            "exitSpeed": 14.701493882321714,
+            "maxSpeed": 19.789195336387976,
+            "minSpeed": 14.701493882321714,
+            "measuredExitSpeed": 14.701493882321714,
+            "exitReached": true,
+            "freeEnergy": 216.13392237194276,
+            "energyDelta": -175.47832968977687,
+            "acceleration": -3.2881642208637767,
+            "measured": true,
+            "lateral": 0.2497527117740559,
+            "deceleration": 0,
+            "thrill": 34.01491831664448,
+            "comfort": 100,
+            "duration": 1.5472771772724176,
+            "stopT": 1,
+            "status": "safe",
+            "message": "7 号段通过：14.7 米/秒，横向 0.25g。"
+          },
+          {
+            "segment": 7,
+            "module": "rail",
+            "entrySpeed": 14.701493882321714,
+            "exitSpeed": 18.81389805558455,
+            "maxSpeed": 18.81389805558455,
+            "minSpeed": 14.701493882321714,
+            "measuredExitSpeed": 18.81389805558455,
+            "exitReached": true,
+            "freeEnergy": 353.96276004592806,
+            "energyDelta": 137.8288376739853,
+            "acceleration": 2.542811682115246,
+            "measured": true,
+            "lateral": 0.2579903498877027,
+            "deceleration": 0,
+            "thrill": 36.00957409044946,
+            "comfort": 100,
+            "duration": 1.6172665094262584,
+            "stopT": 1,
+            "status": "safe",
+            "message": "8 号段通过：18.8 米/秒，横向 0.26g。"
+          },
+          {
+            "segment": 8,
+            "module": "rail",
+            "entrySpeed": 18.81389805558455,
+            "exitSpeed": 17.274326782725854,
+            "maxSpeed": 18.81389805558455,
+            "minSpeed": 17.274326782725854,
+            "measuredExitSpeed": 17.274326782725854,
+            "exitReached": true,
+            "freeEnergy": 298.40236579639975,
+            "energyDelta": -55.560394249528315,
+            "acceleration": -1.1886105976874932,
+            "measured": true,
+            "lateral": 0.19009815254883353,
+            "deceleration": 0,
+            "thrill": 35.234304359139045,
+            "comfort": 100,
+            "duration": 1.2952696836575535,
+            "stopT": 1,
+            "status": "safe",
+            "message": "9 号段通过：17.3 米/秒，横向 0.19g。"
+          },
+          {
+            "segment": 9,
+            "module": "rail",
+            "entrySpeed": 17.274326782725854,
+            "exitSpeed": 16.880634019425656,
+            "maxSpeed": 17.274326782725854,
+            "minSpeed": 16.880634019425656,
+            "measuredExitSpeed": 16.880634019425656,
+            "exitReached": true,
+            "freeEnergy": 284.95580489779076,
+            "energyDelta": -13.446560898608936,
+            "acceleration": -0.3499999999999988,
+            "measured": true,
+            "lateral": 0.39037462820041824,
+            "deceleration": 0,
+            "thrill": 34.39908590304602,
+            "comfort": 100,
+            "duration": 1.124836466571995,
+            "stopT": 1,
+            "status": "safe",
+            "message": "10 号段通过：16.9 米/秒，横向 0.39g。"
+          },
+          {
+            "segment": 10,
+            "module": "rail",
+            "entrySpeed": 16.880634019425656,
+            "exitSpeed": 16.705871017604974,
+            "maxSpeed": 16.880634019425656,
+            "minSpeed": 16.705871017604974,
+            "measuredExitSpeed": 16.705871017604974,
+            "exitReached": true,
+            "freeEnergy": 279.0861264568539,
+            "energyDelta": -5.86967844093698,
+            "acceleration": -0.3500000000000019,
+            "measured": true,
+            "lateral": 0.15303748920396926,
+            "deceleration": 0,
+            "thrill": 32.67236723119895,
+            "comfort": 100,
+            "duration": 0.4993228623448072,
+            "stopT": 1,
+            "status": "safe",
+            "message": "11 号段通过：16.7 米/秒，横向 0.15g。"
+          },
+          {
+            "segment": 11,
+            "module": "rail",
+            "entrySpeed": 16.705871017604974,
+            "exitSpeed": 16.500337161914416,
+            "maxSpeed": 16.705871017604974,
+            "minSpeed": 16.500337161914416,
+            "measuredExitSpeed": 16.500337161914416,
+            "exitReached": true,
+            "freeEnergy": 272.26112645685384,
+            "energyDelta": -6.824999999999932,
+            "acceleration": -0.3499999999999965,
+            "measured": true,
+            "lateral": 0.20341554406476228,
+            "deceleration": 0,
+            "thrill": 32.56297549086723,
+            "comfort": 100,
+            "duration": 0.5872395876873115,
+            "stopT": 1,
+            "status": "danger",
+            "message": "回站速度 16.5 超过 12 米/秒；12 号段安装站前制动。"
+          }
+        ],
+        "firstFailure": 11,
+        "riders": 0,
+        "rideRevenue": 0,
+        "rideReputation": 0,
+        "guestGroups": [
+          {
+            "id": "gentle",
+            "name": "舒缓派",
+            "waiting": 5,
+            "satisfaction": 100,
+            "reason": "尚未通过安全试车，游客不会上车。",
+            "boarding": 0
+          },
+          {
+            "id": "adventure",
+            "name": "挑战派",
+            "waiting": 5,
+            "satisfaction": 69,
+            "reason": "尚未通过安全试车，游客不会上车。",
+            "boarding": 0
+          }
+        ]
+      },
+      "segmentElapsed": 0.4666666666666666
+    },
+    "unlocked": 0,
+    "best": {},
+    "selectedSegment": 0,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "pressActive": false,
+    "discardedResume": false,
+    "checkpointUnavailable": false
+  },
+  "status": "passed"
+}
