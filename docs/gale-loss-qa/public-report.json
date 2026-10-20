@@ -1,0 +1,811 @@
+{
+  "kind": "public normal UI; diagnostic copies only; no state/save/time injection",
+  "codeBaseline": "e274e52e57727bb5ceb3cba4e2affbb7abe728bc",
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "progress": [
+    {
+      "state": "playing",
+      "time": 0.008333333333333333,
+      "lives": 3,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 0,
+        "deaths": 0,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 5.041666666666707,
+      "lives": 3,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 1,
+        "deaths": 0,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 10.125000000000066,
+      "lives": 3,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 3,
+        "deaths": 0,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 15.158333333333113,
+      "lives": 2,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 5,
+        "deaths": 1,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 20.24166666666616,
+      "lives": 2,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 6,
+        "deaths": 1,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 25.25833333333254,
+      "lives": 2,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 8,
+        "deaths": 1,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 30.35833333333225,
+      "lives": 1,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 10,
+        "deaths": 2,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 35.4416666666653,
+      "lives": 1,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 11,
+        "deaths": 2,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "time": 40.54166666666501,
+      "lives": 1,
+      "stats": {
+        "score": 0,
+        "kills": 0,
+        "shots": 0,
+        "jumps": 0,
+        "hitsTaken": 13,
+        "deaths": 2,
+        "specialsUsed": 0,
+        "pickups": 0,
+        "checkpoints": 0,
+        "bossPhases": 1,
+        "settlements": 0
+      }
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "versions/v2/games/gale/game.mjs",
+      "sha256": "1f8fd4279351c1c9704eb6fa10488c063479305b0d8380f9ef16c5aa10180220"
+    },
+    {
+      "path": "versions/v2/games/gale/engine.mjs",
+      "sha256": "4ea6fab2d9ba5cf845976ea6c33d861b8bd788bc51231fe2e3f3cde1fa199aec"
+    }
+  ],
+  "initial": {
+    "state": "ready",
+    "level": 1,
+    "width": 1250,
+    "height": 440,
+    "time": 0,
+    "accumulator": 0,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 350,
+        "w": 1250,
+        "h": 90
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "relay",
+        "x": 470,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.15,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      },
+      {
+        "id": 2,
+        "kind": "relay",
+        "x": 1000,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.15,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      }
+    ],
+    "pickups": [],
+    "player": {
+      "x": 50,
+      "y": 314,
+      "w": 24,
+      "h": 36,
+      "crouched": false,
+      "vx": 0,
+      "vy": 0,
+      "hp": 5,
+      "facing": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "buffer": 0,
+      "invulnerable": 1,
+      "lock": 0,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "base",
+      "ammo": 0
+    },
+    "projectiles": [],
+    "effects": [],
+    "nextBullet": 1,
+    "lives": 3,
+    "specials": 2,
+    "checkpointIndex": 0,
+    "checkpointPos": {
+      "x": 50,
+      "y": 314
+    },
+    "goal": 1170,
+    "reason": null,
+    "stats": {
+      "score": 0,
+      "kills": 0,
+      "shots": 0,
+      "jumps": 0,
+      "hitsTaken": 0,
+      "deaths": 0,
+      "specialsUsed": 0,
+      "pickups": 0,
+      "checkpoints": 0,
+      "bossPhases": 1,
+      "settlements": 0
+    },
+    "unlocked": 2,
+    "best": {},
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 620,
+      "camera": 0
+    }
+  },
+  "naturalLoss": {
+    "state": "lost",
+    "level": 1,
+    "width": 1250,
+    "height": 440,
+    "time": 45.02499999999809,
+    "accumulator": 0.0014999999523151175,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 350,
+        "w": 1250,
+        "h": 90
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "relay",
+        "x": 470,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 0.20833333333333723,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 15,
+        "engaged": true,
+        "burstRemaining": 0,
+        "burstTimer": 0.2
+      },
+      {
+        "id": 2,
+        "kind": "relay",
+        "x": 1000,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true,
+        "burstRemaining": 0
+      }
+    ],
+    "pickups": [],
+    "player": {
+      "x": 50,
+      "y": 314,
+      "w": 24,
+      "h": 36,
+      "crouched": false,
+      "vx": 0,
+      "vy": 0,
+      "hp": 0,
+      "facing": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "buffer": 0,
+      "invulnerable": 1.2,
+      "lock": 0,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "base",
+      "ammo": 0
+    },
+    "projectiles": [
+      {
+        "id": 43,
+        "owner": "enemy",
+        "x": 77,
+        "y": 322,
+        "vx": -240,
+        "vy": 0,
+        "source": 1,
+        "r": 3,
+        "ttl": 1.6000000000000059,
+        "dead": true
+      },
+      {
+        "id": 44,
+        "owner": "enemy",
+        "x": 128,
+        "y": 322,
+        "vx": -240,
+        "vy": 0,
+        "source": 1,
+        "r": 3,
+        "ttl": 1.8166666666666718
+      },
+      {
+        "id": 45,
+        "owner": "enemy",
+        "x": 178,
+        "y": 322,
+        "vx": -240,
+        "vy": 0,
+        "source": 1,
+        "r": 3,
+        "ttl": 2.0250000000000044
+      }
+    ],
+    "effects": [],
+    "nextBullet": 46,
+    "lives": 0,
+    "specials": 2,
+    "checkpointIndex": 0,
+    "checkpointPos": {
+      "x": 50,
+      "y": 314
+    },
+    "goal": 1170,
+    "reason": "敌方命中",
+    "stats": {
+      "score": 0,
+      "kills": 0,
+      "shots": 0,
+      "jumps": 0,
+      "hitsTaken": 15,
+      "deaths": 3,
+      "specialsUsed": 0,
+      "pickups": 0,
+      "checkpoints": 0,
+      "bossPhases": 1,
+      "settlements": 1
+    },
+    "unlocked": 2,
+    "best": {},
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 620,
+      "camera": 0
+    }
+  },
+  "visibleLoss": "MISSION 01 / 02\n整备之后，再出发。\n\n出击次数用尽。先读预警，利用跳跃和脉冲。\n\n已清 0 · 0 分\n重试这一段 ↗\n选择航段",
+  "retryPaused": {
+    "state": "paused",
+    "level": 1,
+    "width": 1250,
+    "height": 440,
+    "time": 0.041666666666666664,
+    "accumulator": 0.0014333332618092151,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 350,
+        "w": 1250,
+        "h": 90
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "relay",
+        "x": 470,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.1083333333333334,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      },
+      {
+        "id": 2,
+        "kind": "relay",
+        "x": 1000,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.15,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      }
+    ],
+    "pickups": [],
+    "player": {
+      "x": 50,
+      "y": 314,
+      "w": 24,
+      "h": 36,
+      "crouched": false,
+      "vx": 0,
+      "vy": 0,
+      "hp": 5,
+      "facing": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "buffer": 0,
+      "invulnerable": 0.9583333333333335,
+      "lock": 0,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "base",
+      "ammo": 0
+    },
+    "projectiles": [],
+    "effects": [],
+    "nextBullet": 1,
+    "lives": 3,
+    "specials": 2,
+    "checkpointIndex": 0,
+    "checkpointPos": {
+      "x": 50,
+      "y": 314
+    },
+    "goal": 1170,
+    "reason": null,
+    "stats": {
+      "score": 0,
+      "kills": 0,
+      "shots": 0,
+      "jumps": 0,
+      "hitsTaken": 0,
+      "deaths": 0,
+      "specialsUsed": 0,
+      "pickups": 0,
+      "checkpoints": 0,
+      "bossPhases": 1,
+      "settlements": 0
+    },
+    "unlocked": 2,
+    "best": {},
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": false,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 620,
+      "camera": 0
+    }
+  },
+  "retryRefresh": {
+    "state": "paused",
+    "level": 1,
+    "width": 1250,
+    "height": 440,
+    "time": 0.041666666666666664,
+    "accumulator": 0,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 350,
+        "w": 1250,
+        "h": 90
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "relay",
+        "x": 470,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      },
+      {
+        "id": 2,
+        "kind": "relay",
+        "x": 1000,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      }
+    ],
+    "pickups": [],
+    "player": {
+      "x": 50,
+      "y": 314,
+      "w": 24,
+      "h": 36,
+      "crouched": false,
+      "vx": 0,
+      "vy": 0,
+      "hp": 5,
+      "facing": 1,
+      "grounded": false,
+      "coyote": 0.12,
+      "buffer": 0,
+      "invulnerable": 1.5,
+      "lock": 0.25,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "base",
+      "ammo": 0
+    },
+    "projectiles": [],
+    "effects": [],
+    "nextBullet": 1,
+    "lives": 3,
+    "specials": 2,
+    "checkpointIndex": 0,
+    "checkpointPos": {
+      "x": 50,
+      "y": 314
+    },
+    "goal": 1170,
+    "reason": null,
+    "stats": {
+      "score": 0,
+      "kills": 0,
+      "shots": 0,
+      "jumps": 0,
+      "hitsTaken": 0,
+      "deaths": 0,
+      "specialsUsed": 0,
+      "pickups": 0,
+      "checkpoints": 0,
+      "bossPhases": 1,
+      "settlements": 0
+    },
+    "unlocked": 2,
+    "best": {},
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": true,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 620,
+      "camera": 0
+    }
+  },
+  "normalResumeAfterRetry": {
+    "state": "paused",
+    "level": 1,
+    "width": 1250,
+    "height": 440,
+    "time": 0.33333333333333354,
+    "accumulator": 0.0020333333333333835,
+    "camera": 0,
+    "solids": [
+      {
+        "x": 0,
+        "y": 350,
+        "w": 1250,
+        "h": 90
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "kind": "relay",
+        "x": 470,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.2083333333333344,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      },
+      {
+        "id": 2,
+        "kind": "relay",
+        "x": 1000,
+        "y": 338,
+        "w": 34,
+        "h": 12,
+        "hp": 12,
+        "initialHp": 12,
+        "baseY": 338,
+        "vx": 0,
+        "cooldown": 1.5,
+        "windup": 0,
+        "attack": null,
+        "phase": 1,
+        "shield": 0,
+        "attackCount": 0,
+        "engaged": true
+      }
+    ],
+    "pickups": [],
+    "player": {
+      "x": 50,
+      "y": 314,
+      "w": 24,
+      "h": 36,
+      "crouched": false,
+      "vx": 0,
+      "vy": 0,
+      "hp": 5,
+      "facing": 1,
+      "grounded": true,
+      "coyote": 0.12,
+      "buffer": 0,
+      "invulnerable": 1.2083333333333344,
+      "lock": 0,
+      "fireTimer": 0,
+      "aimUp": false,
+      "weapon": "base",
+      "ammo": 0
+    },
+    "projectiles": [],
+    "effects": [],
+    "nextBullet": 1,
+    "lives": 3,
+    "specials": 2,
+    "checkpointIndex": 0,
+    "checkpointPos": {
+      "x": 50,
+      "y": 314
+    },
+    "goal": 1170,
+    "reason": null,
+    "stats": {
+      "score": 0,
+      "kills": 0,
+      "shots": 0,
+      "jumps": 0,
+      "hitsTaken": 0,
+      "deaths": 0,
+      "specialsUsed": 0,
+      "pickups": 0,
+      "checkpoints": 0,
+      "bossPhases": 1,
+      "settlements": 0
+    },
+    "unlocked": 2,
+    "best": {},
+    "sound": false,
+    "storageAvailable": true,
+    "wasRestored": true,
+    "discardedResume": false,
+    "input": {
+      "keys": [],
+      "touches": 0,
+      "mobileAim": false
+    },
+    "viewport": {
+      "width": 620,
+      "camera": 0
+    }
+  },
+  "status": "passed"
+}
