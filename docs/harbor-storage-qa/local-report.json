@@ -1,0 +1,82 @@
+{
+  "url": "http://127.0.0.1:4196/versions/v2/games/harbor/",
+  "normalUI": {
+    "cash": 3,
+    "turn": "1/28",
+    "cargo": "1/1",
+    "explicitPause": true,
+    "refreshExactRaw": true,
+    "fleetText": "1号 轻舟 · 舱 1/1\n\nA — B\n\nA → B · 余1回合\n\n填写此船路线",
+    "commands": [
+      {
+        "kind": "build",
+        "edge": "AB"
+      },
+      {
+        "kind": "buy",
+        "type": "skiff",
+        "route": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "kind": "start"
+      },
+      {
+        "kind": "step"
+      },
+      {
+        "kind": "pause"
+      }
+    ]
+  },
+  "fixtures": [
+    {
+      "case": "genuine old UI channel checkpoint",
+      "rawPreserved": true,
+      "cash": 9
+    },
+    {
+      "case": "bad JSON",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetry": true
+    },
+    {
+      "case": "unknown version",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetry": true
+    },
+    {
+      "case": "unsafe replay",
+      "writes": 0,
+      "rawPreserved": true,
+      "temporaryBuildAndRetry": true
+    },
+    {
+      "case": "QuotaExceededError",
+      "oldBytesKeptDuringFailure": true,
+      "laterBuildSavedBothChannels": true,
+      "refreshCash": 5
+    },
+    {
+      "case": "SecurityError",
+      "oldBytesKeptDuringFailure": true,
+      "laterBuildSavedBothChannels": true,
+      "refreshCash": 5
+    },
+    {
+      "case": "startup write denied then handbook close save",
+      "immediateWarningAndRecovery": true
+    },
+    {
+      "case": "read getter denied",
+      "temporaryBuildWorks": true
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": []
+}
