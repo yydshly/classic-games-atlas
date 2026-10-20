@@ -1,12 +1,17 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_three_bounded_flows",
+  "status": "resolved_eight_failure_chains",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "maze",
-    "tide",
-    "expedition"
+    "pinfall",
+    "vine",
+    "petal",
+    "gale",
+    "post",
+    "courier",
+    "coaster",
+    "kart"
   ],
   "items": [
     {
@@ -50,7 +55,7 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "本轮16.85秒自然胜，玩家11弹/8箱/2连锁；另90秒自然平局",
+      "observedCore": "此前16.85秒自然胜，玩家11弹/8箱/2连锁；另90秒自然平局",
       "observedRetry": "胜场刷新保持，干净新局通过；既有三败/重试保留",
       "endingBoundary": "首图胜与期限平局已验；二图胜/同归/直接击破归因仍未验",
       "evidence": [
@@ -59,7 +64,7 @@
         "docs/maze-first-win-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮已补首胜；剩余边界不自动追加",
+      "nextToolWork": "此前已补首胜；剩余边界不自动追加",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -305,17 +310,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "两图8/8与10/10后归门胜",
-      "observedRetry": "胜后重游初态/刷新已验；碰撞失败未验",
+      "observedRetry": "首图自然撞壁后同种子重试0步，身体/青芽/rng复位，暂停刷新和新方向通过",
       "endingBoundary": "两图开放，非16关全通",
       "evidence": [
-        "docs/vine-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/vine-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/vine-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性撞壁失败恢复链已补；身体自撞与第二图失败仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -333,17 +339,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "v1顺序完成1–9；提示辅助，未洗牌",
-      "observedRetry": "9重写初盘且最好留；耗错失败未验",
+      "observedRetry": "v1第2页正常4次无通路同图案配对耗错失败；重写资源/棋盘复位，原生首纪录与2页解锁跨刷新保留",
       "endingBoundary": "9解锁与稳定落盘刷新；10–20未验",
       "evidence": [
-        "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md"
+        "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md",
+        "docs/petal-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性耗错恢复链已补；无解洗牌分支与其余页仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -389,17 +396,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "两庭参考角度自然胜1555/1485",
-      "observedRetry": "胜后重访初态；球尽失败未验",
+      "observedRetry": "首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留",
       "endingBoundary": "能力整球回退及最好保留，两庭开放",
       "evidence": [
-        "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/pinfall-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "球尽失败恢复链已补；末发返球优先仍为另列边界，不自动扩围",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -417,17 +425,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "partial",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "两场清装置走出口200分",
-      "observedRetry": "受击/检查点及胜后重访已验，耗命败未验",
+      "observedRetry": "首图原地承受15命中/3死亡自然败；重试3命5甲2脉冲、满敌/空弹体，暂停刷新再继续通过",
       "endingBoundary": "修后只复验生命周期，通关属修前同引擎",
       "evidence": [
-        "docs/gale-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/gale-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/gale-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性耗命恢复链已补；后图与检查点后最终死亡仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -445,18 +454,19 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "partial",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "本轮37.6167秒合法两圈/16闸/0复位，第三名完赛，未获胜",
-      "observedRetry": "原95秒超时失败；本轮完赛刷新及开始后重起资源复位；超时败后直接重赛按钮未单独复验",
+      "observedCore": "此前37.6167秒合法两圈/16闸/0复位，第三名完赛，未获胜",
+      "observedRetry": "自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁",
       "endingBoundary": "第二场解锁/第三仍锁/纪录保留；第一名和后两场仍未验",
       "evidence": [
         "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/post-main-flow-qa/"
+        "docs/post-main-flow-qa/",
+        "docs/post-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮完整主流程",
+      "nextToolWork": "原列超时直接重赛缺口已补；第一名与后场仍为另列边界",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -563,7 +573,7 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "本轮原生滑杆强辅助71.45秒1659分/36潮量/余珠0胜，53发",
+      "observedCore": "此前原生滑杆强辅助71.45秒1659分/36潮量/余珠0胜，53发",
       "observedRetry": "失败重试初盘及暂停飞珠刷新已验",
       "endingBoundary": "一次封口与结算/刷新最好保留；第二图胜与鼠标原路径仍未验",
       "evidence": [
@@ -571,7 +581,7 @@
         "docs/tide-first-win-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮已补首胜；不扩第二潮或凭远程延迟调难度",
+      "nextToolWork": "此前已补首胜；不扩第二潮或凭远程延迟调难度",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -733,17 +743,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "两路360/432米成功并正确转弯",
-      "observedRetry": "成功重跑重置；错转/缺信/三碰失败未验",
+      "observedRetry": "首路金色窗口正常按错right，96米自然败；重跑清来信/伤害/转向锁，暂停刷新再继续通过",
       "endingBoundary": "转向锁定跨刷新，两路开放",
       "evidence": [
-        "docs/courier-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/courier-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/courier-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性错转恢复链已补；漏转/缺信/三碰等原因仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -882,7 +893,7 @@
         "endingNext": "verified"
       },
       "observedCore": "三段正常UI120/140/160秒连续胜",
-      "observedRetry": "本轮120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过",
+      "observedRetry": "此前120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过",
       "endingBoundary": "已有三段胜与终态保存；新补首段失守/取消重开，后两段失败未验",
       "evidence": [
         "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
@@ -890,7 +901,7 @@
         "docs/expedition-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮已补首段失守恢复，不扩后两段失败",
+      "nextToolWork": "此前已补首段失守恢复，不扩后两段失败",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1079,17 +1090,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "partial",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "v2首园32m方案2班18人/288收入/168口碑胜",
-      "observedRetry": "改高报告失效/重测；失败终局未验",
+      "observedRetry": "首园原UI安全但低刺激方案，3班21人/收入336/口碑60自然败；重试与刷新恢复设计台，新试车无旧收益",
       "endingBoundary": "第2园解锁/中途暂停恢复，v1两园另列",
       "evidence": [
-        "versions/v2/games/coaster/comparison.html"
+        "versions/v2/games/coaster/comparison.html",
+        "docs/coaster-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性班次耗尽恢复链已补；其它园区和方案仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1107,17 +1119,18 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "v2主动开启可选辅助后首站双圈第1/40.8秒",
-      "observedRetry": "v2完整败后重试未验；v1第四名不混记",
+      "observedRetry": "v2首站辅助关/按住刹车，92秒自然超时；面板重试清旧结果/刹车，暂停刷新后新倒计时与加速通过",
       "endingBoundary": "第二站解锁/辅助成绩分列，手动胜未验",
       "evidence": [
-        "versions/v2/games/kart/about.html"
+        "versions/v2/games/kart/about.html",
+        "docs/kart-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "代表性超时恢复链已补；手动完赛失利、胜利和后站仍另列",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1155,37 +1168,76 @@
       ]
     }
   ],
-  "evidenceThrough": "1f808d3f4a747dfc1614d56ec97102418e71cd0f",
+  "evidenceThrough": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431",
   "roundCommits": {
-    "maze": "4e71b3d51fe670e979a2b212a554a601c12fe628",
-    "tide": "6bfeae702c1bbe5f0d4862a4867b0b29b5bbe6fa",
-    "expedition": "1f808d3f4a747dfc1614d56ec97102418e71cd0f"
+    "pinfall": "e274e52e57727bb5ceb3cba4e2affbb7abe728bc",
+    "vine": "510f829e2c4ec1fc077e7e1e126529066261d21a",
+    "petal": "62a4484b3ad6bd6adc210b33de4b70dde84c2ef2",
+    "gale": "9e003bfe9852967fb1523cc885d6b2a87baaf151",
+    "post": "72ac140390fd1ad40182677891cc75f304acdc09",
+    "courier": "9e0fc4c173201e8b7693ab007892e69e6c6bffb6",
+    "coaster": "766be09815e1805b93935f41c36ee0ea11874050",
+    "kart": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431"
   },
   "roundDeployments": {
-    "maze": {
-      "id": 39498456751,
+    "pinfall": {
+      "id": 39502097276,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498456751"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502097276"
     },
-    "tide": {
-      "id": 39498956983,
+    "vine": {
+      "id": 39502713493,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498956983"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502713493"
     },
-    "expedition": {
-      "id": 39500135406,
+    "petal": {
+      "id": 39503172462,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39500135406"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503172462"
+    },
+    "gale": {
+      "id": 39503532367,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503532367"
+    },
+    "post": {
+      "id": 39503887057,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503887057"
+    },
+    "courier": {
+      "id": 39504173721,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504173721"
+    },
+    "coaster": {
+      "id": 39504461839,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504461839"
+    },
+    "kart": {
+      "id": 39504739141,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504739141"
     }
   },
   "roundScope": {
     "runtimeChanged": false,
     "faultInjection": false,
     "confirmedBlockingDefectsInSelectedFlows": 0,
-    "normalUiEvidenceSeparateFromModels": true
+    "normalUiEvidenceSeparateFromModels": true,
+    "finiteItems": 8,
+    "verified": 8,
+    "blocked": 0,
+    "indexRowsUpdatedAfterEachOnlineProof": true
   },
   "roundHistory": [
     {
@@ -1220,8 +1272,41 @@
         }
       },
       "evidenceThrough": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6"
+    },
+    {
+      "selected": [
+        "maze",
+        "tide",
+        "expedition"
+      ],
+      "commits": {
+        "maze": "4e71b3d51fe670e979a2b212a554a601c12fe628",
+        "tide": "6bfeae702c1bbe5f0d4862a4867b0b29b5bbe6fa",
+        "expedition": "1f808d3f4a747dfc1614d56ec97102418e71cd0f"
+      },
+      "deployments": {
+        "maze": {
+          "id": 39498456751,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498456751"
+        },
+        "tide": {
+          "id": 39498956983,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498956983"
+        },
+        "expedition": {
+          "id": 39500135406,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39500135406"
+        }
+      },
+      "evidenceThrough": "1f808d3f4a747dfc1614d56ec97102418e71cd0f"
     }
   ],
-  "reviewBaseline": "a3a23c3ac486560930554ad557de5ab61e35ac4b",
-  "roundSummary": "Maze：保留90秒自然平局，最后一次16.85秒正常UI获胜并保存战绩。Tide：原生滑杆/按钮、精确只读快照前瞻及正常暂停辅助，71.45活动秒清场；不作为人工手感。Expedition：补营地失守、终态刷新、直接重试与确认重开的有界恢复链。各自真实UI、离线参考与限制分列，运行规则未改。"
+  "reviewBaseline": "5985aa0b3dd8041de867f7b008fb3ceedb393199",
+  "roundSummary": "原列8项代表性失败/重试链逐项通过：落星球尽、青藤撞壁、花笺耗错、钢岚耗命、邮差超时、山径错转、游园班次耗尽、林野杯超时。均为公开页面正常输入与原时钟终局；首纪录/解锁前置、只读策略及其它分支限制见各报告。各款独立提交与Pages核验完成，未改游戏规则。"
 }
