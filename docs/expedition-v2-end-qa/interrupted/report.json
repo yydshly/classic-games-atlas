@@ -1,0 +1,2224 @@
+{
+  "at": "2026-10-20T16:45:48.407174+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/expedition/",
+  "baseline": "d67ee536b1a5c8f02d1090eb02c2bf660568b805",
+  "method": "One normal-resource public Chromium UI journey. Buttons and worker select controls only; policy observes DOM and read-only saved checkpoint logs. No injected saves, calls to live engine command/step, direct hidden-state access, modified rates or time acceleration. Each stage attempted once. Model feasibility/replay are separate.",
+  "stages": [
+    {
+      "level": 1,
+      "attempts": 1,
+      "captures": [
+        {
+          "label": "stage-1-ready",
+          "checkpointBefore": null,
+          "ui": {
+            "food": 32,
+            "wood": 36,
+            "base": "160 / 160",
+            "remaining": 120,
+            "counts": {
+              "营地": 2,
+              "北口": 0,
+              "南口": 0
+            },
+            "moving": 0,
+            "queued": 0,
+            "labels": [
+              "兵营8粮 · 22木解锁盾卫",
+              "锯场6粮 · 18木提高木材产能",
+              "哨塔8粮 · 24木固定防守两路",
+              "工人14粮 · 4木增加采集人手",
+              "盾卫12粮 · 8木需兵营，营地集结"
+            ],
+            "goal": "累计交付 0/48粮、0/48木；建成 兵营；守到 120 秒。"
+          },
+          "running": false,
+          "entities": [
+            {
+              "className": "entity building ",
+              "label": "营地",
+              "x": 382.046875,
+              "y": 436.33123779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 446.03125,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 464.3125,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 482.59375,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 446.03125,
+              "y": 555.62890625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 500.875,
+              "y": 579.97265625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 519.15625,
+              "y": 579.97265625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            }
+          ],
+          "checkpointAfter": null
+        },
+        {
+          "label": "stage-1-running-40",
+          "checkpointBefore": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 161,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          },
+          "ui": {
+            "food": 22,
+            "wood": 18,
+            "base": "160 / 160",
+            "remaining": 80,
+            "counts": {
+              "营地": 0,
+              "北口": 2,
+              "南口": 3
+            },
+            "moving": 1,
+            "queued": 0,
+            "labels": [
+              "✓ 兵营已建成解锁盾卫",
+              "锯场6粮 · 18木提高木材产能",
+              "✓ 哨塔已建成固定防守两路",
+              "工人14粮 · 4木增加采集人手",
+              "盾卫12粮 · 8木需兵营，营地集结"
+            ],
+            "goal": "累计交付 54/48粮、60/48木；建成 兵营✓；守到 120 秒。"
+          },
+          "running": true,
+          "entities": [
+            {
+              "className": "entity building ",
+              "label": "营地",
+              "x": 382.046875,
+              "y": 436.33123779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person working",
+              "label": "",
+              "x": 272.375,
+              "y": 621.5296630859375,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 448.3125,
+              "y": 522.16015625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "6载",
+              "x": 346.625,
+              "y": 611.92578125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 429.265625,
+              "y": 538.89453125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 711.09375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "兵营",
+              "x": 519.140625,
+              "y": 460.67498779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "哨塔",
+              "x": 573.984375,
+              "y": 369.37811279296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 765.921875,
+              "y": 622.58203125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 747.65625,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "行军",
+              "x": 537.421875,
+              "y": 592.14453125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            }
+          ],
+          "checkpointAfter": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 161,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "label": "stage-1-running-87",
+          "checkpointBefore": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 348,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          },
+          "ui": {
+            "food": 118,
+            "wood": 78,
+            "base": "160 / 160",
+            "remaining": 33,
+            "counts": {
+              "营地": 0,
+              "北口": 3,
+              "南口": 3
+            },
+            "moving": 0,
+            "queued": 0,
+            "labels": [
+              "✓ 兵营已建成解锁盾卫",
+              "锯场6粮 · 18木提高木材产能",
+              "✓ 哨塔已建成固定防守两路",
+              "工人14粮 · 4木增加采集人手",
+              "盾卫12粮 · 8木需兵营，营地集结"
+            ],
+            "goal": "累计交付 150/48粮、120/48木；建成 兵营✓；守到 120 秒。"
+          },
+          "running": true,
+          "entities": [
+            {
+              "className": "entity building ",
+              "label": "营地",
+              "x": 382.046875,
+              "y": 436.33123779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 315.78125,
+              "y": 601.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "6载",
+              "x": 432.3125,
+              "y": 506.94140625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person working",
+              "label": "",
+              "x": 327.203125,
+              "y": 620.6403198242188,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "6载",
+              "x": 412.515625,
+              "y": 522.16015625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 711.09375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "兵营",
+              "x": 519.140625,
+              "y": 460.67498779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "哨塔",
+              "x": 573.984375,
+              "y": 369.37811279296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 765.921875,
+              "y": 622.58203125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 747.65625,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 747.65625,
+              "y": 403.45703125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person raider ",
+              "label": "55兵力",
+              "x": 875.609375,
+              "y": 354.76953125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            }
+          ],
+          "checkpointAfter": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 348,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "label": "stage-1-result",
+          "checkpointBefore": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 480,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          },
+          "ui": {
+            "food": 184,
+            "wood": 138,
+            "base": "160 / 160",
+            "remaining": 0,
+            "counts": {
+              "营地": 0,
+              "北口": 3,
+              "南口": 3
+            },
+            "moving": 0,
+            "queued": 0,
+            "labels": [
+              "✓ 兵营已建成解锁盾卫",
+              "锯场6粮 · 18木提高木材产能",
+              "✓ 哨塔已建成固定防守两路",
+              "工人14粮 · 4木增加采集人手",
+              "盾卫12粮 · 8木需兵营，营地集结"
+            ],
+            "goal": "累计交付 216/48粮、180/48木；建成 兵营✓；守到 120 秒。"
+          },
+          "running": false,
+          "entities": [
+            {
+              "className": "entity building ",
+              "label": "营地",
+              "x": 382.046875,
+              "y": 436.33123779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "6载",
+              "x": 272.375,
+              "y": 622.58203125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 464.3125,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 482.59375,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 446.03125,
+              "y": 555.62890625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 711.09375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 391.28515625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "兵营",
+              "x": 519.140625,
+              "y": 460.67498779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity building ",
+              "label": "哨塔",
+              "x": 573.984375,
+              "y": 369.37811279296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 765.921875,
+              "y": 622.58203125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 729.375,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 747.65625,
+              "y": 634.75390625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 747.65625,
+              "y": 403.45703125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            }
+          ],
+          "checkpointAfter": {
+            "version": 2,
+            "levelIndex": 0,
+            "tick": 480,
+            "log": [
+              {
+                "tick": 0,
+                "command": {
+                  "type": "start"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "build",
+                  "building": "barracks"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 2,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 3,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "assign",
+                  "workerId": 4,
+                  "resource": "wood"
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 0,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "assign",
+                  "workerId": 1,
+                  "resource": "food"
+                }
+              },
+              {
+                "tick": 40,
+                "command": {
+                  "type": "build",
+                  "building": "watchtower"
+                }
+              },
+              {
+                "tick": 67,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 93,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 99,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 106,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 119,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 133,
+                "command": {
+                  "type": "recruit",
+                  "unit": "guard"
+                }
+              },
+              {
+                "tick": 140,
+                "command": {
+                  "type": "deploy",
+                  "front": "south",
+                  "count": 1
+                }
+              },
+              {
+                "tick": 161,
+                "command": {
+                  "type": "deploy",
+                  "front": "north",
+                  "count": 1
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "elapsed": 0,
+          "food": 24,
+          "wood": 14,
+          "base": "160 / 160",
+          "remaining": 120,
+          "counts": {
+            "营地": 0,
+            "北口": 0,
+            "南口": 0
+          },
+          "moving": 2,
+          "queued": 0,
+          "labels": [
+            "兵营建造中 10秒解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "哨塔8粮 · 24木固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 0/48粮、0/48木；建成 兵营；守到 120 秒。"
+        },
+        {
+          "elapsed": 20,
+          "food": 22,
+          "wood": 6,
+          "base": "160 / 160",
+          "remaining": 100,
+          "counts": {
+            "营地": 0,
+            "北口": 2,
+            "南口": 0
+          },
+          "moving": 0,
+          "queued": 1,
+          "labels": [
+            "✓ 兵营已建成解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "✓ 哨塔已建成固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 18/48粮、24/48木；建成 兵营✓；守到 120 秒。"
+        },
+        {
+          "elapsed": 40,
+          "food": 22,
+          "wood": 18,
+          "base": "160 / 160",
+          "remaining": 80,
+          "counts": {
+            "营地": 0,
+            "北口": 2,
+            "南口": 3
+          },
+          "moving": 1,
+          "queued": 0,
+          "labels": [
+            "✓ 兵营已建成解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "✓ 哨塔已建成固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 54/48粮、60/48木；建成 兵营✓；守到 120 秒。"
+        },
+        {
+          "elapsed": 60,
+          "food": 64,
+          "wood": 42,
+          "base": "160 / 160",
+          "remaining": 60,
+          "counts": {
+            "营地": 0,
+            "北口": 3,
+            "南口": 3
+          },
+          "moving": 0,
+          "queued": 0,
+          "labels": [
+            "✓ 兵营已建成解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "✓ 哨塔已建成固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 96/48粮、84/48木；建成 兵营✓；守到 120 秒。"
+        },
+        {
+          "elapsed": 81,
+          "food": 106,
+          "wood": 78,
+          "base": "160 / 160",
+          "remaining": 39,
+          "counts": {
+            "营地": 0,
+            "北口": 3,
+            "南口": 3
+          },
+          "moving": 0,
+          "queued": 0,
+          "labels": [
+            "✓ 兵营已建成解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "✓ 哨塔已建成固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 138/48粮、120/48木；建成 兵营✓；守到 120 秒。"
+        },
+        {
+          "elapsed": 102,
+          "food": 148,
+          "wood": 102,
+          "base": "160 / 160",
+          "remaining": 18,
+          "counts": {
+            "营地": 0,
+            "北口": 3,
+            "南口": 3
+          },
+          "moving": 0,
+          "queued": 0,
+          "labels": [
+            "✓ 兵营已建成解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "✓ 哨塔已建成固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 180/48粮、144/48木；建成 兵营✓；守到 120 秒。"
+        }
+      ],
+      "freshStageResources": {
+        "food": 32,
+        "wood": 36,
+        "base": "160 / 160",
+        "remaining": 120,
+        "counts": {
+          "营地": 2,
+          "北口": 0,
+          "南口": 0
+        },
+        "moving": 0,
+        "queued": 0,
+        "labels": [
+          "兵营8粮 · 22木解锁盾卫",
+          "锯场6粮 · 18木提高木材产能",
+          "哨塔8粮 · 24木固定防守两路",
+          "工人14粮 · 4木增加采集人手",
+          "盾卫12粮 · 8木需兵营，营地集结"
+        ],
+        "goal": "累计交付 0/48粮、0/48木；建成 兵营；守到 120 秒。"
+      },
+      "elapsedWallSeconds": 119.98499999998603,
+      "result": "营火留到了天明\n\n守住营地，补给目标完成\n\n进入下一段挑战重试本段",
+      "finalCheckpoint": {
+        "version": 2,
+        "levelIndex": 0,
+        "tick": 480,
+        "log": [
+          {
+            "tick": 0,
+            "command": {
+              "type": "start"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "build",
+              "building": "barracks"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 2,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 3,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 4,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "assign",
+              "workerId": 1,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "build",
+              "building": "watchtower"
+            }
+          },
+          {
+            "tick": 67,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 93,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 99,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 106,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 119,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 133,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 140,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 161,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          }
+        ]
+      },
+      "finalUI": {
+        "food": 184,
+        "wood": 138,
+        "base": "160 / 160",
+        "remaining": 0,
+        "counts": {
+          "营地": 0,
+          "北口": 3,
+          "南口": 3
+        },
+        "moving": 0,
+        "queued": 0,
+        "labels": [
+          "✓ 兵营已建成解锁盾卫",
+          "锯场6粮 · 18木提高木材产能",
+          "✓ 哨塔已建成固定防守两路",
+          "工人14粮 · 4木增加采集人手",
+          "盾卫12粮 · 8木需兵营，营地集结"
+        ],
+        "goal": "累计交付 216/48粮、180/48木；建成 兵营✓；守到 120 秒。"
+      },
+      "passed": true
+    },
+    {
+      "level": 2,
+      "attempts": 1,
+      "captures": [
+        {
+          "label": "stage-2-ready",
+          "checkpointBefore": {
+            "version": 2,
+            "levelIndex": 1,
+            "tick": 0,
+            "log": []
+          },
+          "ui": {
+            "food": 32,
+            "wood": 36,
+            "base": "160 / 160",
+            "remaining": 140,
+            "counts": {
+              "营地": 2,
+              "北口": 0,
+              "南口": 0
+            },
+            "moving": 0,
+            "queued": 0,
+            "labels": [
+              "兵营8粮 · 22木解锁盾卫",
+              "锯场6粮 · 18木提高木材产能",
+              "哨塔8粮 · 24木固定防守两路",
+              "工人14粮 · 4木增加采集人手",
+              "盾卫12粮 · 8木需兵营，营地集结"
+            ],
+            "goal": "累计交付 0/60粮、0/72木；建成 兵营、锯场；守到 140 秒。"
+          },
+          "running": false,
+          "entities": [
+            {
+              "className": "entity building ",
+              "label": "营地",
+              "x": 382.046875,
+              "y": 436.33123779296875,
+              "width": 155.375,
+              "height": 158.25,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 446.03125,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 464.3125,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 482.59375,
+              "y": 537.36328125,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 446.03125,
+              "y": 555.62890625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 500.875,
+              "y": 579.97265625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            },
+            {
+              "className": "entity person ",
+              "label": "",
+              "x": 519.15625,
+              "y": 579.97265625,
+              "width": 45.6875,
+              "height": 60.859375,
+              "visible": true,
+              "loaded": true
+            }
+          ],
+          "checkpointAfter": {
+            "version": 2,
+            "levelIndex": 1,
+            "tick": 0,
+            "log": []
+          }
+        }
+      ],
+      "progress": [
+        {
+          "elapsed": 0,
+          "food": 24,
+          "wood": 14,
+          "base": "160 / 160",
+          "remaining": 140,
+          "counts": {
+            "营地": 0,
+            "北口": 0,
+            "南口": 0
+          },
+          "moving": 2,
+          "queued": 0,
+          "labels": [
+            "兵营建造中 10秒解锁盾卫",
+            "锯场6粮 · 18木提高木材产能",
+            "哨塔8粮 · 24木固定防守两路",
+            "工人14粮 · 4木增加采集人手",
+            "盾卫12粮 · 8木需兵营，营地集结"
+          ],
+          "goal": "累计交付 0/60粮、0/72木；建成 兵营、锯场；守到 140 秒。"
+        }
+      ],
+      "freshStageResources": {
+        "food": 32,
+        "wood": 36,
+        "base": "160 / 160",
+        "remaining": 140,
+        "counts": {
+          "营地": 2,
+          "北口": 0,
+          "南口": 0
+        },
+        "moving": 0,
+        "queued": 0,
+        "labels": [
+          "兵营8粮 · 22木解锁盾卫",
+          "锯场6粮 · 18木提高木材产能",
+          "哨塔8粮 · 24木固定防守两路",
+          "工人14粮 · 4木增加采集人手",
+          "盾卫12粮 · 8木需兵营，营地集结"
+        ],
+        "goal": "累计交付 0/60粮、0/72木；建成 兵营、锯场；守到 140 秒。"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "label": "start stage",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "start"
+      }
+    },
+    {
+      "label": "build barracks",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "build",
+        "building": "barracks"
+      }
+    },
+    {
+      "label": "assign worker 2",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 2,
+        "resource": "wood"
+      }
+    },
+    {
+      "label": "assign worker 3",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 3,
+        "resource": "food"
+      }
+    },
+    {
+      "label": "assign worker 4",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 4,
+        "resource": "wood"
+      }
+    },
+    {
+      "label": "initial deploy 北口",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "deploy",
+        "front": "north",
+        "count": 1
+      }
+    },
+    {
+      "label": "initial deploy 北口",
+      "level": 1,
+      "tick": 0,
+      "command": {
+        "type": "deploy",
+        "front": "north",
+        "count": 1
+      }
+    },
+    {
+      "label": "restore idle worker assignment",
+      "level": 1,
+      "tick": 40,
+      "command": {
+        "type": "assign",
+        "workerId": 1,
+        "resource": "food"
+      }
+    },
+    {
+      "label": "build watchtower",
+      "level": 1,
+      "tick": 40,
+      "command": {
+        "type": "build",
+        "building": "watchtower"
+      }
+    },
+    {
+      "label": "recruit guard",
+      "level": 1,
+      "tick": 67,
+      "command": {
+        "type": "recruit",
+        "unit": "guard"
+      }
+    },
+    {
+      "label": "fill front 南口",
+      "level": 1,
+      "tick": 93,
+      "command": {
+        "type": "deploy",
+        "front": "south",
+        "count": 1
+      }
+    },
+    {
+      "label": "recruit guard",
+      "level": 1,
+      "tick": 99,
+      "command": {
+        "type": "recruit",
+        "unit": "guard"
+      }
+    },
+    {
+      "label": "recruit guard",
+      "level": 1,
+      "tick": 106,
+      "command": {
+        "type": "recruit",
+        "unit": "guard"
+      }
+    },
+    {
+      "label": "fill front 南口",
+      "level": 1,
+      "tick": 119,
+      "command": {
+        "type": "deploy",
+        "front": "south",
+        "count": 1
+      }
+    },
+    {
+      "label": "recruit guard",
+      "level": 1,
+      "tick": 133,
+      "command": {
+        "type": "recruit",
+        "unit": "guard"
+      }
+    },
+    {
+      "label": "fill front 南口",
+      "level": 1,
+      "tick": 140,
+      "command": {
+        "type": "deploy",
+        "front": "south",
+        "count": 1
+      }
+    },
+    {
+      "label": "fill front 北口",
+      "level": 1,
+      "tick": 161,
+      "command": {
+        "type": "deploy",
+        "front": "north",
+        "count": 1
+      }
+    },
+    {
+      "label": "start stage",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "start"
+      }
+    },
+    {
+      "label": "build barracks",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "build",
+        "building": "barracks"
+      }
+    },
+    {
+      "label": "assign worker 2",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 2,
+        "resource": "wood"
+      }
+    },
+    {
+      "label": "assign worker 3",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 3,
+        "resource": "food"
+      }
+    },
+    {
+      "label": "assign worker 4",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "assign",
+        "workerId": 4,
+        "resource": "wood"
+      }
+    },
+    {
+      "label": "initial deploy 南口",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "deploy",
+        "front": "south",
+        "count": 1
+      }
+    },
+    {
+      "label": "initial deploy 南口",
+      "level": 2,
+      "tick": 0,
+      "command": {
+        "type": "deploy",
+        "front": "south",
+        "count": 1
+      }
+    },
+    {
+      "label": "restore idle worker assignment",
+      "level": 2,
+      "tick": 41,
+      "command": {
+        "type": "assign",
+        "workerId": 1,
+        "resource": "food"
+      }
+    },
+    {
+      "label": "build watchtower",
+      "level": 2,
+      "tick": 41,
+      "command": {
+        "type": "build",
+        "building": "watchtower"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "versions/v2/games/expedition/ENGINE_API.md",
+      "status": 200,
+      "sha256": "e273181ee809b7c15d9b7d2d3e8e4dbb043d4862b652f0c7bc047c1ea1275ff1",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/README.md",
+      "status": 200,
+      "sha256": "3a3fdba4f9b35e70728eca86e8ccb1f7a40854599276885e74b4d7048dd24bf5",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/about.html",
+      "status": 200,
+      "sha256": "3f4429cb7ec9cc0cb0e29742bc3bc7e70528c2c06b7bae417c8b14e553d66bd0",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/barracks.webp",
+      "status": 200,
+      "sha256": "ea5f429e491bae6662ac2f32a4989e681333de23b684c51545baf4fc1945907e",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/camp.webp",
+      "status": 200,
+      "sha256": "5ffe40ede6d118c529a7f3f009974e716a80c331d387538e3cf3cbfff6a01d49",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/enemy.webp",
+      "status": 200,
+      "sha256": "e043c75a4ed61a4523bf9540df6ded5bc09ff53654d0f991889f9af4ee6a74d6",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/guard.webp",
+      "status": 200,
+      "sha256": "e1d79842a678994dbfdcaf4823ba30504c5caa01eb3bd5b80e597144de2a1b8f",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/sawmill.webp",
+      "status": 200,
+      "sha256": "410f2975b1887c487534fe57f423df7f89043b2e47c2368eaf2bf6b5e69e72bf",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/valley.webp",
+      "status": 200,
+      "sha256": "7fe2d35258061bc4a4b68a09f4712e01eb92dfef35a34dafcaf491da3ef221fe",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/watchtower.webp",
+      "status": 200,
+      "sha256": "e40d08658cd28c5d6bcb6267e1955bedf94425e24b65268154cd2f153e86450d",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/assets/worker.webp",
+      "status": 200,
+      "sha256": "6aa2c24192b0332434fa3965f40b5f40583bfb63f53c5678cec88e3b99992f56",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/engine.mjs",
+      "status": 200,
+      "sha256": "6497cd653799355ee0aff83baafbc59e72e9e8acd362c296a1b9897a6d6fb8b0",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/game.mjs",
+      "status": 200,
+      "sha256": "221b8075ffa412a08c60ff21ef31a0b7126d2bb44c32b526f4cd85aa339b394d",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/index.html",
+      "status": 200,
+      "sha256": "73fdf88884483cbc605fba3fa89066f4f714f4cee1b82f954a07a901452c18b5",
+      "matchesBaseline": true
+    },
+    {
+      "path": "versions/v2/games/expedition/style.css",
+      "status": 200,
+      "sha256": "4baebd82a6f99f9d876b2c52edcb02b609cdc4b1f90d126f42ee486dc9c3c5f1",
+      "matchesBaseline": true
+    }
+  ],
+  "consoleErrors": [],
+  "badResponses": [],
+  "requestFailures": [],
+  "browser": "147.0.7727.15"
+}

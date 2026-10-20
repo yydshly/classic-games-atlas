@@ -1,0 +1,198 @@
+{
+  "baseline": "d67ee536b1a5c8f02d1090eb02c2bf660568b805",
+  "kind": "public normal UI, then separate offline replay audit",
+  "passed": true,
+  "completedRecoveryJourney": {
+    "stages": 3,
+    "attemptsPerStage": 1,
+    "noRetriesWithinJourney": true,
+    "finalCompletionRefreshExact": true,
+    "dualRaidSeen": true
+  },
+  "interruptedEarlierJourney": "First stage won, second stage only started; process/session disappeared. Preserved separately, not counted as a completed journey or a game failure.",
+  "stages": [
+    {
+      "level": 1,
+      "status": "won",
+      "tick": 480,
+      "baseHP": 160,
+      "stock": {
+        "food": 184,
+        "wood": 138
+      },
+      "delivered": {
+        "food": 216,
+        "wood": 180
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 0,
+        "watchtower": 1
+      },
+      "survivingWorkers": 4,
+      "guards": [
+        {
+          "front": "north",
+          "hp": 20.55
+        },
+        {
+          "front": "north",
+          "hp": 20.55
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "north",
+          "hp": 25.22
+        }
+      ],
+      "allRaidsResolved": true,
+      "acceptedCommands": 17,
+      "runningCaptures": [
+        "stage-1-running-40",
+        "stage-1-running-87"
+      ]
+    },
+    {
+      "level": 2,
+      "status": "won",
+      "tick": 560,
+      "baseHP": 160,
+      "stock": {
+        "food": 208,
+        "wood": 168
+      },
+      "delivered": {
+        "food": 246,
+        "wood": 228
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 1,
+        "watchtower": 1
+      },
+      "survivingWorkers": 4,
+      "guards": [
+        {
+          "front": "south",
+          "hp": 5.51
+        },
+        {
+          "front": "south",
+          "hp": 5.51
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "south",
+          "hp": 12.93
+        }
+      ],
+      "allRaidsResolved": true,
+      "acceptedCommands": 18,
+      "runningCaptures": [
+        "stage-2-running-40",
+        "stage-2-running-87"
+      ]
+    },
+    {
+      "level": 3,
+      "status": "won",
+      "tick": 640,
+      "baseHP": 160,
+      "stock": {
+        "food": 166,
+        "wood": 182
+      },
+      "delivered": {
+        "food": 222,
+        "wood": 240
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 0,
+        "watchtower": 1
+      },
+      "survivingWorkers": 4,
+      "guards": [
+        {
+          "front": "north",
+          "hp": 8.22
+        },
+        {
+          "front": "north",
+          "hp": 8.22
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "north",
+          "hp": 15.64
+        },
+        {
+          "front": "north",
+          "hp": 15.64
+        }
+      ],
+      "allRaidsResolved": true,
+      "acceptedCommands": 21,
+      "runningCaptures": [
+        "stage-3-running-40",
+        "stage-3-dual-77",
+        "stage-3-running-87"
+      ]
+    }
+  ],
+  "runtimeFilesHTTP200AndHashMatched": 15,
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "visualReview": {
+    "reviewedNativeFrames": [
+      "stage-1-running-40.png",
+      "stage-2-running-87.png",
+      "stage-3-dual-77.png",
+      "final-result-refreshed.png"
+    ],
+    "finding": "Buildings, working/carried units and stationed guards visible in native running frames; raiders visible in stage 2 and both stage 3 fronts. Final refreshed frame visibly completed. This is not aesthetic acceptance."
+  },
+  "remaining": [
+    "No natural failure/retry branch in this bounded check",
+    "No native phone/touch, audio, alternate browsers, performance or aesthetic acceptance",
+    "Guided known-policy UI automation, not blind human strategy discovery"
+  ]
+}

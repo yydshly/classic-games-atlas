@@ -1,0 +1,575 @@
+{
+  "kind": "single-policy model feasibility only; not browser/human play",
+  "rows": [
+    {
+      "level": 1,
+      "status": "won",
+      "baseHP": 160,
+      "delivered": {
+        "food": 216,
+        "wood": 180
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 0,
+        "watchtower": 1
+      },
+      "guards": [
+        {
+          "front": "north",
+          "hp": 20.55
+        },
+        {
+          "front": "north",
+          "hp": 20.55
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "south",
+          "hp": 19.35
+        },
+        {
+          "front": "north",
+          "hp": 25.22
+        }
+      ],
+      "checkpoint": {
+        "version": 2,
+        "levelIndex": 0,
+        "tick": 480,
+        "log": [
+          {
+            "tick": 0,
+            "command": {
+              "type": "start"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "build",
+              "building": "barracks"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 2,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 3,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 4,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "assign",
+              "workerId": 1,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "build",
+              "building": "watchtower"
+            }
+          },
+          {
+            "tick": 64,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 88,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 96,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 104,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 120,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 128,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 136,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 160,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "level": 2,
+      "status": "won",
+      "baseHP": 160,
+      "delivered": {
+        "food": 246,
+        "wood": 228
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 1,
+        "watchtower": 1
+      },
+      "guards": [
+        {
+          "front": "south",
+          "hp": 5.51
+        },
+        {
+          "front": "south",
+          "hp": 5.51
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "north",
+          "hp": 14.77
+        },
+        {
+          "front": "south",
+          "hp": 12.93
+        }
+      ],
+      "checkpoint": {
+        "version": 2,
+        "levelIndex": 1,
+        "tick": 560,
+        "log": [
+          {
+            "tick": 0,
+            "command": {
+              "type": "start"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "build",
+              "building": "barracks"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 2,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 3,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 4,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "assign",
+              "workerId": 1,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "build",
+              "building": "watchtower"
+            }
+          },
+          {
+            "tick": 120,
+            "command": {
+              "type": "build",
+              "building": "sawmill"
+            }
+          },
+          {
+            "tick": 120,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 144,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 160,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 184,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 200,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 208,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 224,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 240,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "level": 3,
+      "status": "won",
+      "baseHP": 160,
+      "delivered": {
+        "food": 222,
+        "wood": 240
+      },
+      "buildings": {
+        "barracks": 1,
+        "sawmill": 0,
+        "watchtower": 1
+      },
+      "guards": [
+        {
+          "front": "north",
+          "hp": 8.22
+        },
+        {
+          "front": "north",
+          "hp": 8.22
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "south",
+          "hp": 4.79
+        },
+        {
+          "front": "north",
+          "hp": 15.64
+        },
+        {
+          "front": "north",
+          "hp": 15.64
+        }
+      ],
+      "checkpoint": {
+        "version": 2,
+        "levelIndex": 2,
+        "tick": 640,
+        "log": [
+          {
+            "tick": 0,
+            "command": {
+              "type": "start"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "build",
+              "building": "barracks"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 2,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 3,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "assign",
+              "workerId": 4,
+              "resource": "wood"
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 0,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "assign",
+              "workerId": 1,
+              "resource": "food"
+            }
+          },
+          {
+            "tick": 40,
+            "command": {
+              "type": "build",
+              "building": "watchtower"
+            }
+          },
+          {
+            "tick": 64,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 88,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 96,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 112,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 120,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 136,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 144,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 168,
+            "command": {
+              "type": "deploy",
+              "front": "south",
+              "count": 1
+            }
+          },
+          {
+            "tick": 176,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 200,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          },
+          {
+            "tick": 208,
+            "command": {
+              "type": "recruit",
+              "unit": "guard"
+            }
+          },
+          {
+            "tick": 232,
+            "command": {
+              "type": "deploy",
+              "front": "north",
+              "count": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
