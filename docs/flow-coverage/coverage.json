@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_with_three_new_ui_flows",
+  "status": "reviewed_three_bounded_flows",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "trail",
-    "post",
-    "meadow"
+    "maze",
+    "tide",
+    "expedition"
   ],
   "items": [
     {
@@ -46,19 +46,20 @@
       "acceptance": "candidate_unaccepted",
       "coverage": {
         "startup": "verified",
-        "coreGoal": "partial",
+        "coreGoal": "verified",
         "failureRetry": "verified",
-        "endingNext": "partial"
+        "endingNext": "verified"
       },
-      "observedCore": "放弹绕角已见，三败；未主动反制获胜",
-      "observedRetry": "重试复位/累计败数保留",
-      "endingBoundary": "胜利、平局和90秒终局缺证据",
+      "observedCore": "本轮16.85秒自然胜，玩家11弹/8箱/2连锁；另90秒自然平局",
+      "observedRetry": "胜场刷新保持，干净新局通过；既有三败/重试保留",
+      "endingBoundary": "首图胜与期限平局已验；二图胜/同归/直接击破归因仍未验",
       "evidence": [
         "docs/maze-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/maze-v2-qa/LAYOUT_PUBLIC.md"
+        "docs/maze-v2-qa/LAYOUT_PUBLIC.md",
+        "docs/maze-first-win-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "本轮已补首胜；剩余边界不自动追加",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -558,18 +559,19 @@
       "acceptance": "candidate_unaccepted",
       "coverage": {
         "startup": "verified",
-        "coreGoal": "partial",
+        "coreGoal": "verified",
         "failureRetry": "verified",
-        "endingNext": "partial"
+        "endingNext": "verified"
       },
-      "observedCore": "两图均封口但余11珠，150秒超时败",
+      "observedCore": "本轮原生滑杆强辅助71.45秒1659分/36潮量/余珠0胜，53发",
       "observedRetry": "失败重试初盘及暂停飞珠刷新已验",
-      "endingBoundary": "清场胜利未验；远程瞄准延迟混杂，不调难度",
+      "endingBoundary": "一次封口与结算/刷新最好保留；第二图胜与鼠标原路径仍未验",
       "evidence": [
-        "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/tide-first-win-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "本轮已补首胜；不扩第二潮或凭远程延迟调难度",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -876,18 +878,19 @@
       "coverage": {
         "startup": "verified",
         "coreGoal": "verified",
-        "failureRetry": "not_evidenced",
+        "failureRetry": "verified",
         "endingNext": "verified"
       },
       "observedCore": "三段正常UI120/140/160秒连续胜",
-      "observedRetry": "自然失败及失败重试仍缺证据",
-      "endingBoundary": "下一段重置资源/终段无第四，终态刷新留",
+      "observedRetry": "本轮120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过",
+      "endingBoundary": "已有三段胜与终态保存；新补首段失守/取消重开，后两段失败未验",
       "evidence": [
         "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/expedition-v2-end-qa/"
+        "docs/expedition-v2-end-qa/",
+        "docs/expedition-loss-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "本轮已补首段失守恢复，不扩后两段失败",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1152,30 +1155,30 @@
       ]
     }
   ],
-  "evidenceThrough": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6",
+  "evidenceThrough": "1f808d3f4a747dfc1614d56ec97102418e71cd0f",
   "roundCommits": {
-    "trail": "3b17002fb1e75cac4c361e001397626c584ca63e",
-    "post": "8d90579699a49d2c9bdf75b737401d599a9eda6d",
-    "meadow": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6"
+    "maze": "4e71b3d51fe670e979a2b212a554a601c12fe628",
+    "tide": "6bfeae702c1bbe5f0d4862a4867b0b29b5bbe6fa",
+    "expedition": "1f808d3f4a747dfc1614d56ec97102418e71cd0f"
   },
   "roundDeployments": {
-    "trail": {
-      "id": 39494183069,
+    "maze": {
+      "id": 39498456751,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494183069"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498456751"
     },
-    "post": {
-      "id": 39494893068,
+    "tide": {
+      "id": 39498956983,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494893068"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39498956983"
     },
-    "meadow": {
-      "id": 39495686151,
+    "expedition": {
+      "id": 39500135406,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39495686151"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39500135406"
     }
   },
   "roundScope": {
@@ -1183,5 +1186,42 @@
     "faultInjection": false,
     "confirmedBlockingDefectsInSelectedFlows": 0,
     "normalUiEvidenceSeparateFromModels": true
-  }
+  },
+  "roundHistory": [
+    {
+      "selected": [
+        "trail",
+        "post",
+        "meadow"
+      ],
+      "commits": {
+        "trail": "3b17002fb1e75cac4c361e001397626c584ca63e",
+        "post": "8d90579699a49d2c9bdf75b737401d599a9eda6d",
+        "meadow": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6"
+      },
+      "deployments": {
+        "trail": {
+          "id": 39494183069,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494183069"
+        },
+        "post": {
+          "id": 39494893068,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39494893068"
+        },
+        "meadow": {
+          "id": 39495686151,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39495686151"
+        }
+      },
+      "evidenceThrough": "e84e536f0a77c5c770b4b036f1fb8aaba5f26bb6"
+    }
+  ],
+  "reviewBaseline": "a3a23c3ac486560930554ad557de5ab61e35ac4b",
+  "roundSummary": "Maze：保留90秒自然平局，最后一次16.85秒正常UI获胜并保存战绩。Tide：原生滑杆/按钮、精确只读快照前瞻及正常暂停辅助，71.45活动秒清场；不作为人工手感。Expedition：补营地失守、终态刷新、直接重试与确认重开的有界恢复链。各自真实UI、离线参考与限制分列，运行规则未改。"
 }

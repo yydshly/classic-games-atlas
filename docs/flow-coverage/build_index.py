@@ -45,10 +45,8 @@ li{margin:8px 0}[hidden]{display:none!important}:focus-visible{outline:3px solid
 <a href="coverage.json">结构化40行数据</a> · <a href="README.md">文字索引</a> ·
 <a href="source-manifest.json">来源对象清单</a></p><h1>关键流程覆盖与剩余交付清单</h1>'''
 doc += '<p>' + escape(intro) + '</p><p class="note">' + escape(boundary) + '</p>'
-doc += '''<h2>本轮三条主流程</h2><p>风行小径：首段营地、总失败重试与下一段；
-弯道邮差：合法两圈完赛（第三名，未获胜）与进阶；
-草甸联赛：首场自然终哨及下一场恢复/失利重赛。普通UI、模型和辅助限制在独立证据中分列。</p>
-<div class="toolbar"><label for="filter">筛选编号、名称、版本或待验词
+doc += '<h2>本轮有限流程</h2><p>' + escape(D.get('roundSummary', '普通UI、模型及辅助限制在各自证据中分列。')) + '</p>'
+doc += '''<div class="toolbar"><label for="filter">筛选编号、名称、版本或待验词
 <input id="filter" type="search" placeholder="例如：失败、maze、40"></label>
 <span id="count" aria-live="polite">40 / 40 项</span></div>
 <div class="table-wrap" tabindex="0" aria-label="横向滚动关键流程覆盖表"><table><caption>当前候选版本与有限关键流程证据</caption>
@@ -81,8 +79,8 @@ for e in E:
            + '|' + LABEL[c['endingNext']] + '：' + e['endingBoundary'] + ' ' + ev + '|\n')
 doc += '</tbody></table></div><p id="empty" hidden>没有匹配项。清除筛选可查看40项。</p>'
 remaining = [
-    ('工具可完成的主流程缺口', '爆破迷宫尚无正常对抗胜利；潮汐珠径尚无封口后清场胜利。此前三败/超时或远程瞄准延迟不证明不可通关，不据此调难度。这是有限下一轮候选，不自动无限追加。'),
-    ('分支及后续内容', '上表逐款列出失败重试、后续关段或特定玩法边界。Post第一名、Kart手动胜利仍缺UI证据；已有首条成功不等于全部关卡通过。先选择明确交付范围，再逐条关闭清单。'),
+    ('首条核心目标证据', ('、'.join(core_gaps) + '仍缺首条完整目标证据。失败或工具延迟不证明不可通关，不据此调难度。') if core_gaps else '活动范围36项均已有至少一条核心目标证据。它只统计有限首条，包含明确标注的强辅助操作，不代表全部关卡、无辅助水平或成品验收。'),
+    ('分支及后续内容', f'尚有{len(fail_gaps)}项失败/重试链仅局部或未验：' + '、'.join(fail_gaps) + '。上表保留具体范围。Post第一名、Kart手动胜利及未测后段仍缺UI证据；先固定有界交付范围，再逐条关闭，不自动跑全部组合。'),
     ('必须真人确认', '连续操作手感、读图与策略是否自然、难度与耐玩性、审美/情绪价值。有音频实现的作品需真实听感与音画同步；无音频作品不因此判缺陷。真实手机触控、多指和设备差异须真机验证，桌面400CSS或脚本事件不能替代。'),
     ('已知非阻断表现', '原报告中的残留提示、字号/滚动、未验动画等保留。果园前后端点/转角样式不同、Trail失败0命但体力显示72、Post终局下一闸提示仍在均如实记录，不借此重开零碎美术/存档专项。'),
     ('暂停边界', '35/36/37不继续执行；纸翼不重启。保留在40项中，不能为提高通过数移除，也不计入本轮活动测试债。'),
