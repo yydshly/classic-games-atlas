@@ -1,0 +1,270 @@
+diff --git a/versions/v2/games/maze/NOTES.md b/versions/v2/games/maze/NOTES.md
+index 1fdb311..205c506 100644
+--- a/versions/v2/games/maze/NOTES.md
++++ b/versions/v2/games/maze/NOTES.md
+@@ -38,7 +38,9 @@ v1 的十关行动不是缺陷版本：其敌人是巡游/追踪/冲刺机，并
+ 
+ ## 待独立发布 QA
+ 
+-尚未在真实浏览器操作此候选。发布后需普通 UI 走两图自然终局；检查实际按键/触屏、声音、失焦暂停、重试/切图、结果只计一次、刷新记录、存储不可用提示、手机布局、浏览器控制台与网络，以及首页自己的试玩入口、返回图鉴和 v1 链接。候选本身未改首页，未远端提交或部署。
++初版交付时尚未在真实浏览器操作此候选。发布QA仍需普通 UI 走两图自然终局，并检查声音、失焦暂停、结果只计一次、记录保存/存储不可用、首页入口等完整体验；不能用引擎模拟替代。
++
++2026-10-20完成[限定布局的本地浏览器自动化回归](../../../../docs/maze-v2-qa/LAYOUT_LOCAL.md)：7种视口的完整棋盘/HUD/暂停/方向与放弹同屏，正常页面移动→放弹→绕角撤离，重试、切图、刷新回开场与v1链接通过。仅布局与必要焦点修复，规则、两图、AI、引信和Renderer不变；本轮未提交、推送或部署，不是新增真人/实体手机/完整通关验收。
+ 
+ ## 局限
+ 
+diff --git a/versions/v2/games/maze/game.mjs b/versions/v2/games/maze/game.mjs
+index 511744d..efebb17 100644
+--- a/versions/v2/games/maze/game.mjs
++++ b/versions/v2/games/maze/game.mjs
+@@ -10,11 +10,11 @@ function clear(){keys.clear();touch.clear();bombQueued=false;queuedDirection=nul
+ function persist(){try{localStorage.setItem(KEY,JSON.stringify({...record,sound:soundOn}));}catch{storageOK=false;}$('#save-note').textContent=storageOK?'仅保存结果。刷新将重新开场；失焦自动暂停。':'本机存储不可用，仍可游玩；刷新将清除本次记录。';$('#record').textContent=`胜 ${record.won} · 负 ${record.lost} · 平 ${record.draw}`;}
+ function unlock(){if(!soundOn)return;try{audio??=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume().catch(()=>{});}catch{}}
+ function tone(f,d=.1,type='triangle'){if(!soundOn||audio?.state!=='running')return;const o=audio.createOscillator(),v=audio.createGain(),t=audio.currentTime;o.type=type;o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(Math.max(35,f*.45),t+d);v.gain.setValueAtTime(.035,t);v.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(v);v.connect(audio.destination);o.start();o.stop(t+d);o.onended=()=>{o.disconnect();v.disconnect();};}
+-function load(index){clear();game=createGame(index);lastState='';feedbackUntil=0;accumulator=0;last=performance.now();hud();sync();renderer.draw(game,game.time);}
++function load(index){clear();game=createGame(index);lastState='';feedbackUntil=0;accumulator=0;last=performance.now();hud();sync();renderer.draw(game,game.time);window.scrollTo(0,0);$('#primary').focus({preventScroll:true});}
+ function begin(){unlock();clear();if(game.state==='ready')start(game);else if(game.state==='paused')pause(game);else{load(game.level-1);start(game);}sync();$('#battlefield').focus({preventScroll:true});}
+-function togglePause(){if(!['paused','playing'].includes(game.state))return;clear();pause(game);sync();}
++function togglePause(){if(!['paused','playing'].includes(game.state))return;clear();pause(game);sync();if(game.state==='playing')$('#battlefield').focus({preventScroll:true});}
+ function sync(){
+- if(lastState===game.state)return;lastState=game.state;$('#pause').disabled=!['playing','paused'].includes(game.state);$('#pause').textContent=game.state==='paused'?'继续 P':'暂停 P';$('#overlay').hidden=game.state==='playing';
++ if(lastState===game.state)return;lastState=game.state;document.body.dataset.state=game.state;$('#pause').disabled=!['playing','paused'].includes(game.state);$('#pause').textContent=game.state==='paused'?'继续 P':'暂停 P';$('#overlay').hidden=game.state==='playing';
+  if(game.state==='playing'){$('#status').textContent='引信 2.4 秒 · 爆风三格 · 自己的炸弹也致命。';return;}
+  clear();const l=LEVELS[game.level-1];$('#overlay-tag').textContent=l.tag;$('#other-map').textContent=`换到${LEVELS[game.level===1?1:0].name}`;
+  const result=['won','lost','draw'].includes(game.state);
+diff --git a/versions/v2/games/maze/index.html b/versions/v2/games/maze/index.html
+index 66a1d4e..b559724 100644
+--- a/versions/v2/games/maze/index.html
++++ b/versions/v2/games/maze/index.html
+@@ -1,14 +1,12 @@
+-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#182135"><title>爆破迷宫 v2 · 铜箱对决</title><meta name="description" content="两张原创短图，一场定时爆破对决。破箱、封路、转弯撤离，和会放炸弹的对手机交锋。"><link rel="stylesheet" href="./maze.css"><script type="module" src="./game.mjs"></script></head><body>
+-<header><a href="../../../../#experiments">← 返回图鉴</a><span>PLAY LAB / 02</span><a href="../../../v1/games/maze/">v1 十关行动 ↗</a></header>
++<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#182135"><title>爆破迷宫 v2 · 铜箱对决</title><meta name="description" content="两张原创短图，一场定时爆破对决。破箱、封路、转弯撤离，和会放炸弹的对手机交锋。"><link rel="stylesheet" href="./maze.css"><script type="module" src="./game.mjs"></script></head><body><div class="viewport">
++<header><a href="../../../../#experiments">← 返回图鉴</a><span>PLAY LAB / 02 · 爆破迷宫 v2</span><a href="../../../v1/games/maze/">v1 十关行动 ↗</a></header>
+ <main><div class="heading"><div><p class="eyebrow">EMBER MAZE / V2</p><h1>爆破迷宫<span>铜箱对决</span></h1></div><p class="intro">一根引线，两条退路。<br>破开铜箱，争夺下一处拐角。</p></div>
+-<div class="layout"><section class="play"><div class="topline"><span id="map-name">铜箱交锋</span><div><button id="sound" aria-pressed="true">声音 开</button><button id="pause" disabled>暂停 P</button></div></div>
+-<div class="matchbar"><span class="you">● 你 <b id="player-state">就位</b></span><strong id="clock">01:30</strong><span class="opponent">● 对手机 <b id="rival-state">就位</b></span></div>
+-<div class="arena"><canvas id="battlefield" width="440" height="360" tabindex="0" aria-label="爆破对决战场。方向键或WASD移动，空格或J放弹，P暂停。所有爆风都致命。"></canvas><div id="overlay" class="overlay"><div class="card"><span id="overlay-tag" class="eyebrow">OPEN THE LINE</span><h2 id="overlay-title">铜箱交锋</h2><p id="overlay-copy">双方爆风都致命。放弹后绕到拐角外。</p><div id="result-detail" class="detail">90 秒 · 每方 2 枚 · 爆风 3 格</div><button id="primary" class="primary">开始对决 ↗</button><button id="other-map" class="secondary">换一张地图</button></div></div></div>
++<div class="layout"><section class="play"><div class="topline"><span id="map-name">铜箱交锋</span><div><button id="sound" aria-pressed="true">声音 开</button><button id="restart" aria-label="重新开场">重开 R</button><button id="pause" disabled>暂停 P</button></div></div>
++<div class="matchbar"><span class="you">● 你 <b id="player-state">就位</b><small>炸弹 <strong id="player-bombs">0 / 2</strong></small></span><strong id="clock">01:30</strong><span class="opponent">● 对手机 <b id="rival-state">就位</b><small>炸弹 <strong id="rival-bombs">0 / 2</strong></small></span></div>
++<div class="field-slot"><div class="arena"><canvas id="battlefield" width="440" height="360" tabindex="0" aria-label="爆破对决战场。方向键或WASD移动，空格或J放弹，P暂停。所有爆风都致命。"></canvas><div id="overlay" class="overlay"><div class="card"><span id="overlay-tag" class="eyebrow">OPEN THE LINE</span><h2 id="overlay-title">铜箱交锋</h2><p id="overlay-copy">双方爆风都致命。放弹后绕到拐角外。</p><div id="result-detail" class="detail">90 秒 · 每方 2 枚 · 爆风 3 格</div><button id="primary" class="primary">开始对决 ↗</button><button id="other-map" class="secondary">换一张地图</button></div></div></div></div>
+ <div class="controls"><div class="dpad"><button data-dir="0" class="up" aria-label="向上">↑</button><button data-dir="3" class="left" aria-label="向左">←</button><button data-dir="1" class="right" aria-label="向右">→</button><button data-dir="2" class="down" aria-label="向下">↓</button></div><p>按住方向移动<br>点按放置一枚</p><button id="bomb" aria-label="放置炸弹" class="bomb-button">✦<span>放弹</span></button></div>
+ <p class="keyboard">WASD / 方向键 移动 · 空格 / J 放弹 · P 暂停 · R 重开</p><p id="status" role="status" aria-live="polite">引信 2.4 秒。火线呈十字，转过拐角再等待。</p></section>
+-<aside><div class="panel-label">DUEL FIELD NOTES <i></i></div><h2>先留退路，<br>再点引线。</h2><p id="map-tip">炸开中央铜箱打通交战线。</p><div class="capacity"><div><span>你的炸弹</span><strong id="player-bombs" class="you">0 / 2</strong></div><div><span>对手炸弹</span><strong id="rival-bombs" class="opponent">0 / 2</strong></div></div>
+-<div class="map-select" aria-label="直接选择地图"><button data-map="0" aria-pressed="true"><span>01</span><div><b>铜箱交锋</b><small>破箱 · 打通交战线</small></div></button><button data-map="1" aria-pressed="false"><span>02</span><div><b>双环封口</b><small>绕路 · 封口与连锁</small></div></button></div>
+-<button id="restart" class="wide">重新开场 <span>R</span></button>
++<aside><div class="panel-label">DUEL FIELD NOTES <i></i></div><h2>先留退路，<br>再点引线。</h2><p id="map-tip">炸开中央铜箱打通交战线。</p><div class="map-select" aria-label="直接选择地图"><button data-map="0" aria-pressed="true"><span>01</span><div><b>铜箱交锋</b><small>破箱 · 打通交战线</small></div></button><button data-map="1" aria-pressed="false"><span>02</span><div><b>双环封口</b><small>绕路 · 封口与连锁</small></div></button></div>
+ <details><summary>对决规则与操作</summary><ul><li>青色是你，橙色是对手机。双方各有两枚炸弹，2.4 秒引信，十字爆风伸出三格。</li><li>钢墙挡住火线；铜箱被摧毁，也会挡住本次连锁。火焰触及炸弹会提前引爆。</li><li>炸弹放下后能走出去，离开就不能穿回来。接触对手机没有伤害。</li><li>所有爆风都致命，包括自己的。双双击破为同归于尽；90 秒仍存活则平局。</li><li>对手机会看当前棋盘、找退路和放弹，但不是成熟竞技 AI。</li></ul></details>
+-<div class="record"><span>本机对局记录</span><p id="record">胜 0 · 负 0 · 平 0</p><small id="save-note">仅保存结果。刷新将重新开场；失焦自动暂停。</small></div></aside></div>
+-<footer>原创玩法实验 · 两张地图、机械角色与合成音效为原创。保留独立 v1 十关版本。<a href="../../../../#game=bomberman">机制参考与原作介绍 ↗</a></footer></main></body></html>
++<div class="record"><span>本机对局记录</span><p id="record">胜 0 · 负 0 · 平 0</p><small id="save-note">仅保存结果。刷新将重新开场；失焦自动暂停。</small></div><footer>原创玩法实验 · 两张地图、机械角色与合成音效为原创。保留独立 v1 十关版本。<a href="../../../../#game=bomberman">机制参考与原作介绍 ↗</a></footer></aside></div>
++</main></div></body></html>
+diff --git a/versions/v2/games/maze/maze.css b/versions/v2/games/maze/maze.css
+index 4a00853..db8a969 100644
+--- a/versions/v2/games/maze/maze.css
++++ b/versions/v2/games/maze/maze.css
+@@ -1,4 +1,54 @@
+ :root{color-scheme:dark;--bg:#182135;--ink:#eee8d7;--muted:#a6b3c8;--line:#465672;--gold:#e7c384;--green:#96e6d5;--red:#ffa17f}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 40% 0,#303b53,transparent 65%),var(--bg);color:var(--ink);font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;line-height:1.6}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 12px;background:#29374f}button:hover{background:#3c4a61;border-color:#b5a077}button:focus-visible,a:focus-visible,canvas:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:default}a{color:var(--muted);text-decoration:none}a:hover{color:var(--gold)}header{max-width:1160px;margin:auto;padding:23px 28px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px}header>span{font-size:10px;letter-spacing:2px;color:var(--gold)}main{max-width:1120px;margin:auto;padding:32px 24px}.heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.eyebrow{font-size:10px;letter-spacing:2.5px;color:var(--gold);margin:0 0 8px}h1{margin:0;font-size:37px;letter-spacing:2px;line-height:1.3}h1 span{font-weight:400;color:var(--muted);font-size:15px;margin-left:18px;letter-spacing:4px}.intro{color:var(--muted);font-size:13px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:28px}.topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.topline>span{font-size:13px;letter-spacing:2px}.topline button{font-size:11px;padding:5px 10px}.matchbar{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#202d43;padding:8px 13px}.matchbar>span{font-size:12px}.matchbar b{font-size:10px;font-weight:400;margin-left:5px;color:var(--muted)}#clock{font-family:monospace;font-size:22px;color:var(--gold);letter-spacing:3px}.you{color:var(--green)}.opponent{color:var(--red)}.arena{position:relative;aspect-ratio:11/9;background:#263249;border:1px solid #75849d;box-shadow:0 15px 60px #080d2355;margin-top:10px;overflow:hidden}.arena canvas{width:100%;height:100%;display:block}.overlay{position:absolute;inset:0;background:#111b2eac;display:grid;place-items:center;padding:16px}.overlay[hidden]{display:none}.card{width:min(100%,355px);padding:26px;background:#202d43f5;border:1px solid #8d8c84;box-shadow:0 10px 35px #0005;text-align:center}.card h2{font-size:29px;letter-spacing:2px;margin:7px 0 12px}.card p{color:#c6cfdd;font-size:13px;margin:0 0 15px}.detail{font-size:11px;color:var(--muted);border-block:1px solid var(--line);padding:10px 0;margin:12px 0 18px}.primary{width:100%;background:var(--gold);border-color:var(--gold);color:#293142;font-weight:bold;padding:11px}.primary:hover{background:#ffe1a6}.secondary{border:0;background:none;padding:9px 12px 0;font-size:12px}.controls{display:flex;align-items:center;justify-content:space-between;max-width:390px;margin:20px auto 0;gap:20px}.dpad{display:grid;grid-template-columns:repeat(3,42px);grid-template-rows:repeat(3,35px);gap:3px}.dpad button{padding:0;font-size:21px;background:#26354e;touch-action:none;user-select:none}.up{grid-area:1/2}.left{grid-area:2/1}.right{grid-area:2/3}.down{grid-area:3/2}.controls p{font-size:10px;line-height:1.8;color:var(--muted)}.bomb-button{width:77px;height:77px;border-radius:50%;background:radial-gradient(circle at 30% 20%,#74634f,#4b4250);border:1px solid var(--gold);color:#ffe2a9;font-size:25px;touch-action:none;user-select:none}.bomb-button span{font-size:11px;display:block;line-height:1}.pressed{background:#705c43!important}.keyboard{font-size:10px;color:var(--muted);text-align:center;margin:17px 0 5px}#status{font-size:12px;color:#d1c8b2;text-align:center;min-height:20px;margin:6px 0}aside{background:linear-gradient(145deg,#303d57,#202b41);border:1px solid var(--line);padding:22px;align-self:start}.panel-label{font-size:9px;letter-spacing:1.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between}.panel-label i{background:var(--green);width:5px;height:5px;border-radius:50%}aside h2{font-size:26px;line-height:1.5;letter-spacing:2px;font-weight:500;margin:22px 0 12px}#map-tip{color:#b5c2d6;font-size:12px;min-height:60px}.capacity{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line);padding:13px 0;margin:18px 0}.capacity span{display:block;font-size:10px;color:var(--muted)}.capacity strong{font-size:25px;font-family:monospace;font-weight:400}.map-select{display:grid;gap:8px}.map-select button{display:flex;gap:14px;text-align:left;align-items:center;padding:11px}.map-select button[aria-pressed=true]{border-color:var(--gold);background:#3b4250}.map-select button>span{font:21px monospace;color:var(--gold)}.map-select b{font-weight:500;font-size:13px}.map-select small{display:block;color:var(--muted);font-size:10px}.wide{width:100%;text-align:left;margin:12px 0 18px}.wide span{float:right;color:var(--muted)}details{font-size:11px;border-top:1px solid var(--line);padding-top:15px}summary{cursor:pointer;color:#d5cbb5}ul{padding-left:17px;color:var(--muted)}li{margin-bottom:8px}.record{margin-top:20px;font-size:10px;color:var(--muted)}.record p{font-size:13px;color:var(--ink);margin:5px 0}.record small{font-size:10px}footer{border-top:1px solid var(--line);margin-top:30px;padding-top:19px;color:var(--muted);font-size:10px;display:flex;justify-content:space-between;gap:15px}footer a{white-space:nowrap}@media(max-width:760px){header{padding:17px 15px;font-size:10px}header>span{font-size:8px}main{padding:22px 14px}.heading{margin-bottom:20px}.intro{display:none}h1{font-size:29px}h1 span{font-size:12px;margin-left:12px}.layout{grid-template-columns:1fr;gap:20px}.play{max-width:610px;width:100%;margin:auto}.card{padding:20px;max-width:320px}.card h2{font-size:25px}.card p{font-size:12px}.detail{margin:8px 0 12px;padding:7px 0}.controls{margin-top:15px}.keyboard{font-size:9px}aside{padding:19px}aside h2{font-size:20px;margin:12px 0 8px}aside h2 br{display:none}#map-tip{min-height:0}.map-select{grid-template-columns:1fr 1fr}.capacity{margin:12px 0}.record{margin-top:14px}footer{display:block}footer a{display:block;margin-top:8px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+-/* Narrow screens: result/start controls stay in normal document flow below
+-   the board, never clipped inside the short 11:9 canvas rectangle. */
+-@media(max-width:600px){.arena{aspect-ratio:auto}.arena canvas{height:auto;aspect-ratio:11/9}.overlay{position:static;inset:auto;padding:14px}.card{width:100%;max-width:100%;min-width:0}.card h2,.card p,.detail{overflow-wrap:anywhere}}
++/* The play surface owns a viewport budget; notes remain scrollable separately.
++   Container units fit the original 11:9 board without cropping or stretching. */
++.viewport{height:100vh;height:100svh;display:grid;grid-template-rows:auto minmax(0,1fr)}
++header{width:100%;padding:10px 24px}
++main{width:100%;height:100%;min-height:0;padding:16px 24px;display:grid;grid-template-rows:auto minmax(0,1fr)}
++.heading{grid-row:1;margin-bottom:16px}.layout{grid-row:2;min-height:0;align-items:stretch}
++.play{height:100%;min-height:0;width:100%;margin:0 auto;display:grid;grid-template-areas:"top" "hud" "field" "controls" "keyboard" "status";grid-template-rows:auto auto minmax(0,1fr) auto auto auto;gap:8px}
++.topline{grid-area:top;margin:0;min-width:0;background:var(--bg);position:sticky;top:0;z-index:3}
++.topline>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++.topline>div{display:flex;gap:5px;flex-shrink:0}.topline button{min-height:44px;padding:7px 9px}
++.matchbar{grid-area:hud;min-width:0}.matchbar>span{line-height:1.4}.matchbar small{display:block;font-size:10px;margin-top:3px;color:var(--muted)}
++.matchbar small strong{font:12px monospace;color:var(--ink)}
++.field-slot{grid-area:field;container-type:size;min-width:0;min-height:0;display:grid;place-items:center}
++.arena{box-sizing:content-box;width:min(calc(100cqw - 2px),calc((100cqh - 2px)*11/9));aspect-ratio:11/9;height:auto;margin:0}
++.arena canvas{width:100%;height:100%;aspect-ratio:11/9;display:block}
++.overlay{position:absolute;inset:0;padding:10px;overflow:auto}.card{max-height:100%;overflow:auto}
++.controls{grid-area:controls;width:min(100%,390px);margin:0 auto;gap:12px}
++.dpad{grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:4px}
++.up{grid-area:1/2}.left{grid-area:2/1}.down{grid-area:2/2}.right{grid-area:2/3}
++.bomb-button{flex-shrink:0;min-width:64px;min-height:64px;width:72px;height:72px}
++.keyboard{grid-area:keyboard;margin:0}#status{grid-area:status;margin:0;font-size:11px}
++.layout>aside{min-height:0;max-height:100%;overflow:auto;align-self:stretch}
++footer{display:block;margin-top:20px;padding-top:12px;overflow-wrap:anywhere}footer a{display:block;margin-top:6px;white-space:normal}
++body[data-state]:not([data-state=ready]) .heading{display:none}
++@container(max-height:400px){
++ .overlay{padding:8px}.card{padding:10px}.card .eyebrow{font-size:8px;line-height:1.2;margin:0}
++ .card h2{font-size:19px;line-height:1.3;margin:5px 0}.card p{font-size:11px;line-height:1.4;margin:0 0 6px}
++ .detail{font-size:9px;line-height:1.4;padding:4px 0;margin:5px 0 7px}.primary{min-height:40px;padding:7px;font-size:12px}.secondary{padding:5px 8px;font-size:11px}
++}
++@media(max-width:760px),(max-height:500px){
++ header{padding:8px 10px;font-size:10px}header>span{font-size:8px;letter-spacing:.7px}
++ main{padding:10px}.layout{grid-template-columns:1fr;grid-template-rows:100% auto;gap:20px}
++ .layout>aside{max-height:none;overflow:visible;margin-bottom:16px}
++ .heading{margin-bottom:10px}.heading h1{font-size:26px}.heading .eyebrow{font-size:8px;margin-bottom:5px}
++ .play{max-width:none;gap:6px}.topline>span{font-size:11px;letter-spacing:.5px}.topline button{font-size:10px;padding:6px 8px}
++ .matchbar{padding:6px 10px}.matchbar>span{font-size:11px}.matchbar b{font-size:9px;margin-left:3px}
++ #clock{font-size:22px;letter-spacing:1px}.controls{max-width:360px}.controls p{font-size:9px}.keyboard{display:none}
++}
++@media(max-height:700px){.heading{display:none}}
++@media(min-width:700px) and (max-height:500px){
++ .play{grid-template-columns:minmax(0,1fr) 220px;grid-template-areas:"field top" "field hud" "field controls" "status status";grid-template-rows:64px 56px minmax(0,1fr) 22px;gap:5px}
++ .topline{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 44px;gap:3px;align-content:start;justify-content:stretch}.topline>div{justify-content:space-between}.topline button{flex:1;white-space:nowrap}
++ .matchbar{padding:5px 7px}.matchbar>span{font-size:10px}.matchbar b{font-size:8px}.matchbar small{font-size:9px}#clock{font-size:18px;letter-spacing:0}
++ .controls{display:grid;grid-template-columns:1fr;justify-items:center;align-content:center;gap:8px}.controls p{display:none}.bomb-button{width:64px;height:64px}
++ body[data-state]:not([data-state=ready]) header{display:none}
++}
++@media(max-width:360px) and (max-height:700px){
++ .controls{display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:8px}.controls p{display:none}
++ .dpad{grid-template-columns:repeat(4,minmax(44px,1fr));grid-template-rows:44px;gap:4px}
++ .left{grid-area:1/1}.up{grid-area:1/2}.down{grid-area:1/3}.right{grid-area:1/4}
++ .bomb-button{width:64px;height:64px}#status{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
++ body[data-state]:not([data-state=ready]) header{display:none}
++}
+diff --git a/versions/v2/games/maze/test.layout.mjs b/versions/v2/games/maze/test.layout.mjs
+index f9a3392..2f1edf3 100644
+--- a/versions/v2/games/maze/test.layout.mjs
++++ b/versions/v2/games/maze/test.layout.mjs
+@@ -1,19 +1,19 @@
+-// Static responsive-contract checks, NOT a browser/computed-layout test.
+-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+-const css=fs.readFileSync(new URL('./maze.css',import.meta.url),'utf8');
+-const narrow=css.slice(css.lastIndexOf('@media(max-width:600px)'));
+-test('at <=600px overlay controls use document flow rather than a clipped board-height layer',()=>{
+- assert.match(narrow,/\.arena\{aspect-ratio:auto\}/);
+- assert.match(narrow,/\.arena canvas\{height:auto;aspect-ratio:11\/9\}/);
+- assert.match(narrow,/\.overlay\{position:static;inset:auto;padding:14px\}/);
+- assert.match(narrow,/\.card\{width:100%;max-width:100%;min-width:0\}/);
+- assert.match(css,/\.overlay\[hidden\]\{display:none\}/);
+- for(const viewport of [320,360,390,600]){
+-  // The authored main padding is 14px each side; border consumes 2px.
+-  const inner=viewport-28-2,canvasHeight=inner*9/11,estimatedCardHeight=303;
+-  const flowHeight=canvasHeight+estimatedCardHeight+28;
+-  assert.ok(flowHeight>=canvasHeight+estimatedCardHeight);
+-  // Even when the card exceeds the board, its normal flow expands arena height.
+-  assert.ok(inner-28>0);
+- }
++// Semantic markup checks only. Computed geometry belongs to the browser test.
++// The old <=600px flow-card CSS contract is superseded by viewport fitting.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++const html=fs.readFileSync(new URL('./index.html',import.meta.url),'utf8');
++const play=html.slice(html.indexOf('<section class="play">'),html.indexOf('</section>'));
++test('live HUD and gameplay controls have unique IDs inside the play region',()=>{
++ const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
++ assert.equal(new Set(ids).size,ids.length);
++ for(const id of ['clock','player-state','rival-state','player-bombs','rival-bombs','pause','bomb','restart'])assert.ok(play.includes(`id="${id}"`),id);
++});
++test('original board resolution and labelled movement/bomb controls remain present',()=>{
++ assert.match(play,/<canvas[^>]+width="440" height="360"/);
++ for(const d of [0,1,2,3])assert.equal([...play.matchAll(new RegExp(`data-dir="${d}"`,'g'))].length,1);
++ assert.match(play,/id="bomb" aria-label="放置炸弹"/);
++ for(const id of ['primary','other-map'])assert.ok(play.includes(`id="${id}"`));
++ assert.match(html,/href="\.\.\/\.\.\/\.\.\/v1\/games\/maze\/"/);
+ });
+diff --git a/versions/v2/games/maze/test.browser.py b/versions/v2/games/maze/test.browser.py
+new file mode 100644
+--- /dev/null
++++ b/versions/v2/games/maze/test.browser.py
+@@ -0,0 +1,58 @@
++"""Local browser automation, not human play or engine simulation."""
++import argparse,asyncio,datetime,json,time
++from pathlib import Path
++from playwright.async_api import async_playwright
++ROOT=Path(__file__).resolve().parents[4]
++CASES=[('desktop',1440,900,False),('review-size',1165,747,False),('short',1280,600,False),('phone',390,844,True),('phone-short',390,640,True),('tiny',320,568,True),('landscape',844,390,True)]
++MEASURE='''()=>{const rect=s=>{const r=document.querySelector(s).getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,right:r.right,visible:r.y>=-.5&&r.x>=-.5&&r.bottom<=innerHeight+.5&&r.right<=innerWidth+.5}};return {viewport:[innerWidth,innerHeight],scrollY,scrollWidth:document.documentElement.scrollWidth,board:rect('#battlefield'),pause:rect('#pause'),clock:rect('#clock'),bomb:rect('#bomb'),up:rect('[data-dir="0"]'),down:rect('[data-dir="2"]'),left:rect('[data-dir="3"]'),right:rect('[data-dir="1"]'),playerBombs:rect('#player-bombs'),rivalBombs:rect('#rival-bombs')}}'''
++async def snap(p):return await p.evaluate('async()=>{const m=await import(new URL("game.mjs",location.href));return m.diagnostics()}')
++async def click_visible(p,sel,touch=False):
++ r=await p.locator(sel).bounding_box();w,h=await p.evaluate('[innerWidth,innerHeight]');assert r and r['x']>=-.5 and r['y']>=-.5 and r['x']+r['width']<=w+.5 and r['y']+r['height']<=h+.5,(sel,r,[w,h]);x,y=r['x']+r['width']/2,r['y']+r['height']/2
++ assert await p.evaluate('([s,x,y])=>{const e=document.querySelector(s),h=document.elementFromPoint(x,y);return e===h||e.contains(h)}',[sel,x,y]),'covered '+sel
++ if touch:await p.touchscreen.tap(x,y)
++ else:await p.mouse.click(x,y)
++async def move_to(p,d,x,y,touch=False):
++ before=await snap(p);started=time.monotonic();key=['KeyW','KeyD','KeyS','KeyA'][d];cdp=None
++ if touch:
++  r=await p.locator('[data-dir="'+str(d)+'"]').bounding_box();cdp=await p.context.new_cdp_session(p);await cdp.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':r['x']+r['width']/2,'y':r['y']+r['height']/2,'id':1}]})
++ else:await p.keyboard.down(key)
++ try:
++  while time.monotonic()-started<1.5:
++   s=await snap(p)
++   if (s['player']['x'],s['player']['y'])==(x,y):return {'direction':d,'from':[before['player']['x'],before['player']['y']],'to':[x,y],'observedGameTime':s['time']}
++   assert s['state']=='playing';await p.wait_for_timeout(8)
++  raise AssertionError('Movement did not reach '+str([x,y]))
++ finally:
++  if touch:await cdp.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});await cdp.detach()
++  else:await p.keyboard.up(key)
++async def main(a):
++ out=ROOT/a.out;out.mkdir(parents=True,exist_ok=True);url=a.root.rstrip('/')+'/versions/v2/games/maze/';report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':url,'method':'Real rendered Chromium page with normal UI events: keyboard or CDP touchscreen movement/bomb placement. Read-only diagnostics observe coordinates/fuses. No engine update calls, state/grid/AI/clock writes, seeded results or human-play claim.','cases':[],'checks':[]};errors=[];bad=[];failed=[]
++ def save():
++  report.update(consoleErrors=errors,badResponses=bad,requestFailures=failed);(out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
++ def watch(p):
++  p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text) if m.type=='error' else None);p.on('response',lambda r:bad.append({'url':r.url,'status':r.status}) if r.status>=400 else None);p.on('requestfailed',lambda r:failed.append({'url':r.url,'failure':r.failure}))
++ async with async_playwright() as pw:
++  b=await pw.chromium.launch();report['browser']=b.version
++  try:
++   for name,w,h,touch in CASES:
++    ctx=await b.new_context(viewport={'width':w,'height':h},is_mobile=touch,has_touch=touch);p=await ctx.new_page();watch(p);await p.goto(url,wait_until='domcontentloaded');await snap(p);await click_visible(p,'#primary',touch);assert (await snap(p))['state']=='playing';measure=await p.evaluate(MEASURE);assert all(measure[k]['visible'] for k in ['board','pause','clock','bomb','up','down','left','right','playerBombs','rivalBombs']),measure;assert measure['scrollWidth']==w and abs(measure['board']['width']/measure['board']['height']-11/9)<.01;assert measure['board']['width']/11>=24,'board cells too small'
++    for key in ['pause','bomb','up','down','left','right']:assert measure[key]['width']>=44 and measure[key]['height']>=44,(name,key,measure[key])
++    await click_visible(p,'#pause',touch);frozen=await snap(p);assert frozen['state']=='paused';await p.wait_for_timeout(180);assert await snap(p)==frozen;await click_visible(p,'#pause',touch);assert await p.evaluate('document.activeElement.id')=='battlefield'
++    route=[await move_to(p,1,3,3,touch)]
++    if touch:await click_visible(p,'#bomb',True)
++    else:await p.keyboard.press('KeyJ')
++    await p.wait_for_timeout(20);planted=await snap(p);bomb=next(v for v in planted['bombs'] if v['owner']=='player');assert (bomb['x'],bomb['y'])==(3,3);await p.screenshot(path=str(out/(name+'-planted.png')));route.append(await move_to(p,3,1,3,touch));route.append(await move_to(p,0,1,2,touch));await p.screenshot(path=str(out/(name+'-corner.png')))
++    deadline=time.monotonic()+4
++    while time.monotonic()<deadline:
++     s=await snap(p)
++     if not any(v['id']==bomb['id'] for v in s['bombs']):break
++     await p.wait_for_timeout(25)
++    assert not any(v['id']==bomb['id'] for v in s['bombs']) and s['player']['alive'] and s['state']=='playing';assert s['stats']['crates']>=1;await p.screenshot(path=str(out/(name+'-after-blast.png')));await click_visible(p,'#pause',touch);fused=await snap(p);await p.wait_for_timeout(120);assert await snap(p)==fused;await p.screenshot(path=str(out/(name+'-paused.png')));await click_visible(p,'#restart',touch);ready=await snap(p);assert ready['state']=='ready' and ready['time']==0 and not ready['bombs'] and ready['level']==1;await click_visible(p,'#other-map',touch);assert (await snap(p))['level']==2;await click_visible(p,'#primary',touch);assert (await snap(p))['state']=='playing';await click_visible(p,'#pause',touch);await click_visible(p,'#other-map',touch);assert (await snap(p))['level']==1 and (await snap(p))['state']=='ready'
++    report['cases'].append({'name':name,'viewport':[w,h],'touchAutomation':touch,'measure':measure,'cellCSSPixels':measure['board']['width']/11,'route':route,'plantedAt':[bomb['x'],bomb['y']],'cornerSafeAt':[s['player']['x'],s['player']['y']],'playerSurvivedOwnBlast':True,'observedGameTime':s['time'],'stats':s['stats'],'pauseExactSnapshot':True,'resumeFocus':'battlefield','retryAndBothMapSwitches':True});save();await ctx.close()
++   # Side-note map selector is still reachable and returns focus/scroll to play.
++   ctx=await b.new_context(viewport={'width':390,'height':640},is_mobile=True,has_touch=True);p=await ctx.new_page();watch(p);await p.goto(url,wait_until='domcontentloaded');await snap(p);await p.locator('[data-map="1"]').click();assert (await snap(p))['level']==2;assert await p.evaluate('scrollY')==0 and await p.evaluate('document.activeElement.id')=='primary';await click_visible(p,'#primary',True);await p.wait_for_timeout(200);await p.reload(wait_until='domcontentloaded');s=await snap(p);assert s['state']=='ready' and s['level']==1 and s['time']==0 and not s['bombs'];report['checks']+=['sidebar map selector returns to top with Start focus','refresh starts default map READY, not a mid-match restore']
++   await p.locator('header a').filter(has_text='v1').click();await p.wait_for_selector('#primary-action');await p.screenshot(path=str(out/'legacy-v1-ready.png'));assert '/versions/v1/games/maze/' in p.url;report['checks'].append('preserved actual v1 ten-level link opens');await ctx.close();assert not errors and not bad and not failed,(errors,bad,failed);report['passed']=True;save();print(json.dumps({'passed':True,'viewports':len(report['cases']),'normalMoveBombCornerFlows':len(report['cases']),'checks':report['checks']},ensure_ascii=False))
++  except Exception as e:report['error']=type(e).__name__+': '+str(e);save();raise
++  finally:await b.close()
++if __name__=='__main__':
++ p=argparse.ArgumentParser();p.add_argument('--root',default='http://127.0.0.1:4176');p.add_argument('--out',default='.local/maze-layout-qa/after');asyncio.run(main(p.parse_args()))
+diff --git a/docs/maze-v2-qa/LAYOUT_LOCAL.md b/docs/maze-v2-qa/LAYOUT_LOCAL.md
+new file mode 100644
+--- /dev/null
++++ b/docs/maze-v2-qa/LAYOUT_LOCAL.md
+@@ -0,0 +1,37 @@
++# 爆破迷宫 v2：本地布局修复，未发布
++
++基线：`99af2f7fa3768968f19d19a2ae9c66d848857e5f`。本轮只修改迷宫 v2 的布局与必要焦点，不提交、推送、部署或创建PR，也不开始第三款。原工作区与堡垒隔离检出保持不变。
++
++原始实际浏览器基线中，1165×747 顶部视口的棋盘下缘约921px、放弹按钮下缘约1036px；滚向控件后暂停按钮离屏。390×640 的放弹按钮下缘约663px。原尺寸截图与基线报告保存在 `.local/maze-layout-qa/before/`。
++
++## 修改
++
++- 原11:9棋盘在独立区域内按可用宽高等比缩放，完整显示所有行列；关键操作使用视口高度预算。
++- 双方炸弹容量移到计时HUD；短屏压缩方向盘，横屏将HUD与操作放右侧，320px窄屏使用单行方向键以保留棋盘尺寸。
++- 次要规则、选图和记录仍可在下方/侧边阅读。侧栏切图后回到顶部并聚焦开始按钮；暂停继续后焦点回棋盘，J放弹正常工作。
++- 开始/暂停/结果卡在棋盘区域内限制高度并可滚动，短屏使用紧凑卡片。原≤600px“卡片进入文档流”静态CSS契约已被新的视口适配取代；`test.layout.mjs`改为HUD唯一ID、控件标签和原始棋盘分辨率的语义检查，实际几何由浏览器验证，不用静态算式冒充布局验收。
++
++引擎、AI、2.4秒引信、难度、两张地图、Renderer、美术及旧十关内容不变。
++
++## 本地验证
++
++`node --test test.engine.mjs test.layout.mjs`：14项原规则检查及2项语义结构检查通过。没有重跑或把48场引擎模拟当作本轮实玩。
++
++`test.browser.py`：实际 Chromium 页面自动化，1440×900、1165×747、1280×600、390×844、390×640、320×568、844×390共7种视口。检查完整棋盘、计时/炸弹容量、暂停、四方向与放弹同屏、未横向溢出；主要控件至少44px，棋盘格宽约27–62 CSS px，保留11:9比例。最终报告及原尺寸截图在 `.local/maze-layout-qa/after/`。
++
++每种视口都通过正常键盘或CDP触控执行：开始→暂停→按钮继续→右移到(3,3)→J或放弹按钮→退回(1,3)→上转到(1,2)→等待自己的炸弹爆炸并存活。只读diagnostics观察位置和引信；不调用引擎update，不写地图、AI、时钟、生命或结果。
++
++另验证暂停完整快照冻结、重试清空战局、两图切换、侧栏选图回到顶部与开始焦点、刷新回默认图READY，以及页面实际v1十关链接。刷新不是战斗续档。最终控制台、HTTP错误和请求失败为空。
++
++首轮完整检查的7个迷宫视口已通过，但旧版入口因稀疏检出缺少其原有 `versions/v1/games/fortress/fortress.css` 导入而出现404。从同一基线补齐未改动的原CSS，并调整横屏按钮换行后，保留失败报告，完整复验一次通过。
++
++## 边界与交付
++
++这是浏览器自动化和短操作流程，不是真人/实体手机/双人合作/完整通关或审美验收。没有声音听感、Safari、动态地址栏/安全区或全部对战策略结论。图片均为未经裁切的实际页面截图。
++
++本地交付目录在隔离检出的上一级 `artifacts/`，包含 `runtime.patch`（3个运行文件）、`source.patch`（含测试和说明）、静态对照页、原图、报告和保留核对。均未发布到GitHub。
++
++```powershell
++python versions/v2/games/maze/test.browser.py --root http://127.0.0.1:4176
++node --test versions/v2/games/maze/test.engine.mjs versions/v2/games/maze/test.layout.mjs
++```

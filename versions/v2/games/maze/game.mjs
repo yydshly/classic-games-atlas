@@ -10,11 +10,11 @@ function clear(){keys.clear();touch.clear();bombQueued=false;queuedDirection=nul
 function persist(){try{localStorage.setItem(KEY,JSON.stringify({...record,sound:soundOn}));}catch{storageOK=false;}$('#save-note').textContent=storageOK?'仅保存结果。刷新将重新开场；失焦自动暂停。':'本机存储不可用，仍可游玩；刷新将清除本次记录。';$('#record').textContent=`胜 ${record.won} · 负 ${record.lost} · 平 ${record.draw}`;}
 function unlock(){if(!soundOn)return;try{audio??=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume().catch(()=>{});}catch{}}
 function tone(f,d=.1,type='triangle'){if(!soundOn||audio?.state!=='running')return;const o=audio.createOscillator(),v=audio.createGain(),t=audio.currentTime;o.type=type;o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(Math.max(35,f*.45),t+d);v.gain.setValueAtTime(.035,t);v.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(v);v.connect(audio.destination);o.start();o.stop(t+d);o.onended=()=>{o.disconnect();v.disconnect();};}
-function load(index){clear();game=createGame(index);lastState='';feedbackUntil=0;accumulator=0;last=performance.now();hud();sync();renderer.draw(game,game.time);}
+function load(index){clear();game=createGame(index);lastState='';feedbackUntil=0;accumulator=0;last=performance.now();hud();sync();renderer.draw(game,game.time);window.scrollTo(0,0);$('#primary').focus({preventScroll:true});}
 function begin(){unlock();clear();if(game.state==='ready')start(game);else if(game.state==='paused')pause(game);else{load(game.level-1);start(game);}sync();$('#battlefield').focus({preventScroll:true});}
-function togglePause(){if(!['paused','playing'].includes(game.state))return;clear();pause(game);sync();}
+function togglePause(){if(!['paused','playing'].includes(game.state))return;clear();pause(game);sync();if(game.state==='playing')$('#battlefield').focus({preventScroll:true});}
 function sync(){
- if(lastState===game.state)return;lastState=game.state;$('#pause').disabled=!['playing','paused'].includes(game.state);$('#pause').textContent=game.state==='paused'?'继续 P':'暂停 P';$('#overlay').hidden=game.state==='playing';
+ if(lastState===game.state)return;lastState=game.state;document.body.dataset.state=game.state;$('#pause').disabled=!['playing','paused'].includes(game.state);$('#pause').textContent=game.state==='paused'?'继续 P':'暂停 P';$('#overlay').hidden=game.state==='playing';
  if(game.state==='playing'){$('#status').textContent='引信 2.4 秒 · 爆风三格 · 自己的炸弹也致命。';return;}
  clear();const l=LEVELS[game.level-1];$('#overlay-tag').textContent=l.tag;$('#other-map').textContent=`换到${LEVELS[game.level===1?1:0].name}`;
  const result=['won','lost','draw'].includes(game.state);

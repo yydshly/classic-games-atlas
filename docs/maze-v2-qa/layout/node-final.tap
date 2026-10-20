@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: two unique directly available authored maps, safe spawns and full-grid reachability after crates removed
+ok 1 - two unique directly available authored maps, safe spawns and full-grid reachability after crates removed
+  ---
+  duration_ms: 2.7669
+  type: 'test'
+  ...
+# Subtest: capacity counts each owner independently and rejects duplicates
+ok 2 - capacity counts each owner independently and rejects duplicates
+  ---
+  duration_ms: 0.2506
+  type: 'test'
+  ...
+# Subtest: owner may leave its bomb but neither actor may return after departure
+ok 3 - owner may leave its bomb but neither actor may return after departure
+  ---
+  duration_ms: 0.8855
+  type: 'test'
+  ...
+# Subtest: self blast kills player; stationary AI has no self immunity
+ok 4 - self blast kills player; stationary AI has no self immunity
+  ---
+  duration_ms: 1.07
+  type: 'test'
+  ...
+# Subtest: touching rival does not damage either participant
+ok 5 - touching rival does not damage either participant
+  ---
+  duration_ms: 0.1135
+  type: 'test'
+  ...
+# Subtest: same batch crate remains blast blocker for all chained explosions
+ok 6 - same batch crate remains blast blocker for all chained explosions
+  ---
+  duration_ms: 0.1475
+  type: 'test'
+  ...
+# Subtest: wall stops ray and crate stops every ray after its own cell
+ok 7 - wall stops ray and crate stops every ray after its own cell
+  ---
+  duration_ms: 0.1527
+  type: 'test'
+  ...
+# Subtest: one explosion batch produces simultaneous death draw, never first-kill win
+ok 8 - one explosion batch produces simultaneous death draw, never first-kill win
+  ---
+  duration_ms: 0.1324
+  type: 'test'
+  ...
+# Subtest: timeout is a draw; due explosion resolves at the same deadline before timeout
+ok 9 - timeout is a draw; due explosion resolves at the same deadline before timeout
+  ---
+  duration_ms: 0.2226
+  type: 'test'
+  ...
+# Subtest: paused and terminal states freeze time, fuse and input; retry has clean state
+ok 10 - paused and terminal states freeze time, fuse and input; retry has clean state
+  ---
+  duration_ms: 1.1132
+  type: 'test'
+  ...
+# Subtest: lingering fire kills on entry; no movement rescue from an already burning cell
+ok 11 - lingering fire kills on entry; no movement rescue from an already burning cell
+  ---
+  duration_ms: 0.1881
+  type: 'test'
+  ...
+# Subtest: visible chain prediction uses earliest fuse and safe escape ignores flames
+ok 12 - visible chain prediction uses earliest fuse and safe escape ignores flames
+  ---
+  duration_ms: 0.12
+  type: 'test'
+  ...
+# Subtest: AI plants, escapes its own blast and eventually threatens a stationary player on both arenas
+ok 13 - AI plants, escapes its own blast and eventually threatens a stationary player on both arenas
+  ---
+  duration_ms: 30.8982
+  type: 'test'
+  ...
+# Subtest: deadline clips every system: fuse before or exactly at cutoff kills, later fuse cannot override draw
+ok 14 - deadline clips every system: fuse before or exactly at cutoff kills, later fuse cannot override draw
+  ---
+  duration_ms: 0.1857
+  type: 'test'
+  ...
+# Subtest: live HUD and gameplay controls have unique IDs inside the play region
+ok 15 - live HUD and gameplay controls have unique IDs inside the play region
+  ---
+  duration_ms: 0.8461
+  type: 'test'
+  ...
+# Subtest: original board resolution and labelled movement/bomb controls remain present
+ok 16 - original board resolution and labelled movement/bomb controls remain present
+  ---
+  duration_ms: 0.2026
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 117.6014
