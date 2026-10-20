@@ -1,0 +1,369 @@
+{
+  "kind": "public normal UI; diagnostic copies only; no state/save/time injection",
+  "codeBaseline": "62a4484b3ad6bd6adc210b33de4b70dde84c2ef2",
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "progress": [
+    {
+      "state": "playing",
+      "ticks": 0,
+      "hp": 3,
+      "distance": 0,
+      "stats": {
+        "hits": 0,
+        "jumps": 0,
+        "slides": 0,
+        "laneChanges": 0,
+        "turns": 0,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "ticks": 605,
+      "hp": 2,
+      "distance": 60.5,
+      "stats": {
+        "hits": 1,
+        "jumps": 0,
+        "slides": 0,
+        "laneChanges": 0,
+        "turns": 0,
+        "settlements": 0
+      }
+    },
+    {
+      "state": "playing",
+      "ticks": 829,
+      "hp": 2,
+      "distance": 82.9,
+      "stats": {
+        "hits": 1,
+        "jumps": 0,
+        "slides": 0,
+        "laneChanges": 0,
+        "turns": 0,
+        "settlements": 0
+      }
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "versions/v2/games/courier/game.mjs",
+      "sha256": "6720feb9fa006fb8b09193843dd17307c0702f0eda553e73de8fd7ae3ab4d3fe"
+    },
+    {
+      "path": "versions/v2/games/courier/engine.mjs",
+      "sha256": "4541a18d060ee766b89fe3ccf92c8e326ffd01c59cdc12234a2060581dc12576"
+    }
+  ],
+  "initial": {
+    "level": 1,
+    "state": "ready",
+    "ticks": 0,
+    "accumulator": 0,
+    "distance": 0,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": null,
+    "action": null,
+    "actionTick": 0,
+    "hp": 3,
+    "cargo": 0,
+    "score": 0,
+    "hitRows": [],
+    "resolved": [],
+    "collected": [],
+    "log": [],
+    "reason": "",
+    "stats": {
+      "hits": 0,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 0
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 0
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 96,
+      "active": false
+    },
+    "world": {
+      "x": 0,
+      "y": 0,
+      "heading": 0
+    },
+    "storageAvailable": true
+  },
+  "normalWrongTurnLocked": {
+    "level": 1,
+    "state": "playing",
+    "ticks": 809,
+    "accumulator": 0.008033333333335701,
+    "distance": 80.89999999999999,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": "right",
+    "action": null,
+    "actionTick": 0,
+    "hp": 2,
+    "cargo": 1,
+    "score": 10,
+    "hitRows": [
+      "a2"
+    ],
+    "resolved": [
+      "a1",
+      "a2"
+    ],
+    "collected": [
+      "a1p"
+    ],
+    "log": [
+      {
+        "tick": 809,
+        "kind": "right"
+      }
+    ],
+    "reason": "",
+    "stats": {
+      "hits": 1,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 0
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 6.741666666666666
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 15.100000000000009,
+      "active": true
+    },
+    "world": {
+      "x": 0,
+      "y": -80.89999999999999,
+      "heading": 0
+    },
+    "storageAvailable": true
+  },
+  "naturalLoss": {
+    "level": 1,
+    "state": "lost",
+    "ticks": 960,
+    "accumulator": 0,
+    "distance": 96,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": "right",
+    "action": null,
+    "actionTick": 0,
+    "hp": 2,
+    "cargo": 1,
+    "score": 10,
+    "hitRows": [
+      "a2"
+    ],
+    "resolved": [
+      "a1",
+      "a2"
+    ],
+    "collected": [
+      "a1p"
+    ],
+    "log": [
+      {
+        "tick": 809,
+        "kind": "right"
+      }
+    ],
+    "reason": "转错方向，跑出了山路。看清侧向道路，在金色窗口内按一次方向。",
+    "stats": {
+      "hits": 1,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 1
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 8
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 0,
+      "active": true
+    },
+    "world": {
+      "x": 0,
+      "y": -96,
+      "heading": -1.5707963267948966
+    },
+    "storageAvailable": true
+  },
+  "visibleLoss": "TAKE A BREATH, TRY AGAIN\n歇一口气，再上路\n\n转错方向，跑出了山路。看清侧向道路，在金色窗口内按一次方向。 1 封来信 · 0 次转弯 · 1 次碰撞\n\n再跑本路 →",
+  "retryPaused": {
+    "level": 1,
+    "state": "paused",
+    "ticks": 3,
+    "accumulator": 0,
+    "distance": 0.30000000000000004,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": null,
+    "action": null,
+    "actionTick": 0,
+    "hp": 3,
+    "cargo": 0,
+    "score": 0,
+    "hitRows": [],
+    "resolved": [],
+    "collected": [],
+    "log": [],
+    "reason": "",
+    "stats": {
+      "hits": 0,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 0
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 0.025
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 95.7,
+      "active": false
+    },
+    "world": {
+      "x": 0,
+      "y": -0.30000000000000004,
+      "heading": 0
+    },
+    "storageAvailable": true
+  },
+  "retryRefresh": {
+    "level": 1,
+    "state": "paused",
+    "ticks": 3,
+    "accumulator": 0,
+    "distance": 0.30000000000000004,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": null,
+    "action": null,
+    "actionTick": 0,
+    "hp": 3,
+    "cargo": 0,
+    "score": 0,
+    "hitRows": [],
+    "resolved": [],
+    "collected": [],
+    "log": [],
+    "reason": "",
+    "stats": {
+      "hits": 0,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 0
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 0.025
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 95.7,
+      "active": false
+    },
+    "world": {
+      "x": 0,
+      "y": -0.30000000000000004,
+      "heading": 0
+    },
+    "storageAvailable": true
+  },
+  "normalResumeAfterRetry": {
+    "level": 1,
+    "state": "paused",
+    "ticks": 49,
+    "accumulator": 0,
+    "distance": 4.9,
+    "lane": 1,
+    "x": 1,
+    "heading": 0,
+    "turnIndex": 0,
+    "pendingTurn": null,
+    "action": null,
+    "actionTick": 0,
+    "hp": 3,
+    "cargo": 0,
+    "score": 0,
+    "hitRows": [],
+    "resolved": [],
+    "collected": [],
+    "log": [],
+    "reason": "",
+    "stats": {
+      "hits": 0,
+      "jumps": 0,
+      "slides": 0,
+      "laneChanges": 0,
+      "turns": 0,
+      "settlements": 0
+    },
+    "pose": {
+      "kind": "run",
+      "height": 0,
+      "age": 0.4083333333333333
+    },
+    "turn": {
+      "d": 96,
+      "dir": "left",
+      "remaining": 91.1,
+      "active": false
+    },
+    "world": {
+      "x": 0,
+      "y": -4.9,
+      "heading": 0
+    },
+    "storageAvailable": true
+  },
+  "status": "passed"
+}
