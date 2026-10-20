@@ -1,0 +1,131 @@
+{
+  "kind": "public normal UI; diagnostic copies only; no state/save/time injection",
+  "codeBaseline": "e274e52e57727bb5ceb3cba4e2affbb7abe728bc",
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "progress": [
+    {
+      "state": "playing",
+      "time": 0.011899999976158142,
+      "ticks": 0
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "versions/v2/games/vine/game.mjs",
+      "sha256": "11f2b4fb935e7f91d241cb49a90791ae3df353b4cf2af466a637215c14d255de"
+    },
+    {
+      "path": "versions/v2/games/vine/engine.mjs",
+      "sha256": "0e662ae71a3a4fb704b9616efa24609d96b4c5914bd3894e807ead4a15168788"
+    }
+  ],
+  "initial": {
+    "version": 2,
+    "level": 1,
+    "state": "ready",
+    "body": [
+      64,
+      63,
+      62
+    ],
+    "dir": 0,
+    "queue": [],
+    "seed": 84167,
+    "rng": 170800427,
+    "collected": 0,
+    "food": 4,
+    "waitingFood": false,
+    "ticks": 0,
+    "time": 0,
+    "accumulator": 0,
+    "lossReason": null
+  },
+  "naturalLoss": {
+    "version": 2,
+    "level": 1,
+    "state": "lost",
+    "body": [
+      71,
+      70,
+      69
+    ],
+    "dir": 0,
+    "queue": [],
+    "seed": 84167,
+    "rng": 170800427,
+    "collected": 0,
+    "food": 4,
+    "waitingFood": false,
+    "ticks": 7,
+    "time": 2.328399999976157,
+    "accumulator": 0.008399999976158645,
+    "lossReason": "wall"
+  },
+  "visibleLoss": "碰到石壁了\n\n已收集 0 / 8 枚。重试保留同一种子。\n\n再试一次",
+  "retryPaused": {
+    "version": 2,
+    "level": 1,
+    "state": "paused",
+    "body": [
+      64,
+      63,
+      62
+    ],
+    "dir": 0,
+    "queue": [],
+    "seed": 84167,
+    "rng": 170800427,
+    "collected": 0,
+    "food": 4,
+    "waitingFood": false,
+    "ticks": 0,
+    "time": 0.02939999995231665,
+    "accumulator": 0,
+    "lossReason": null
+  },
+  "retryRefresh": {
+    "version": 2,
+    "level": 1,
+    "state": "paused",
+    "body": [
+      64,
+      63,
+      62
+    ],
+    "dir": 0,
+    "queue": [],
+    "seed": 84167,
+    "rng": 170800427,
+    "collected": 0,
+    "food": 4,
+    "waitingFood": false,
+    "ticks": 0,
+    "time": 0.02939999995231665,
+    "accumulator": 0,
+    "lossReason": null
+  },
+  "normalActionAfterRetry": {
+    "version": 2,
+    "level": 1,
+    "state": "paused",
+    "body": [
+      76,
+      64,
+      63
+    ],
+    "dir": 1,
+    "queue": [],
+    "seed": 84167,
+    "rng": 170800427,
+    "collected": 0,
+    "food": 4,
+    "waitingFood": false,
+    "ticks": 1,
+    "time": 0.47549999995231657,
+    "accumulator": 0,
+    "lossReason": null
+  },
+  "status": "passed"
+}
