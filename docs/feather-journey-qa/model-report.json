@@ -1,0 +1,1941 @@
+{
+  "kind": "model-only legal commands and replay, not browser/human play",
+  "passed": true,
+  "tests": [
+    "Frozen v2 model bytes retain their baseline hash",
+    "New journey has a visible preparation boundary",
+    "Old command replay imports camp, exploration and encounter states exactly",
+    "Prepared roster and growth come from legal old commands",
+    "Distinct team succeeds with meaningful skills: a+bud",
+    "Distinct team succeeds with meaningful skills: b+fin",
+    "Attack-only fails for all 20 ordered two-partner teams at maximum finite growth",
+    "Failure preserves roster/growth, restores by replay and allows free preparation",
+    "Malformed or stale new records are rejected without modifying old snapshots"
+  ],
+  "attackOnlyTeams": 20,
+  "attackOnly": [
+    {
+      "team": [
+        "a",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "a",
+        "b"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 75,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "a"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 7,
+      "participants": [
+        "a",
+        "c"
+      ],
+      "actions": {
+        "trialAttack": 7
+      },
+      "calm": 0,
+      "remainingHP": 38,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "a",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "a",
+        "bud"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 82,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "a",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 7,
+      "participants": [
+        "a",
+        "fin"
+      ],
+      "actions": {
+        "trialAttack": 7
+      },
+      "calm": 0,
+      "remainingHP": 28,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "a",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "b",
+        "a"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 19,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 10,
+      "participants": [
+        "b",
+        "c"
+      ],
+      "actions": {
+        "trialAttack": 10
+      },
+      "calm": 0,
+      "remainingHP": 24,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "b",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 10,
+      "participants": [
+        "b",
+        "bud"
+      ],
+      "actions": {
+        "trialAttack": 10
+      },
+      "calm": 0,
+      "remainingHP": 16,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "b",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "b",
+        "fin"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 36,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "a"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "c",
+        "a"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 25,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 7,
+      "participants": [
+        "c",
+        "b"
+      ],
+      "actions": {
+        "trialAttack": 7
+      },
+      "calm": 0,
+      "remainingHP": 88,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "c",
+        "bud"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 108,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "c",
+        "fin"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 18,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "a",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "bud",
+        "a"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 17,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "bud",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 7,
+      "participants": [
+        "bud",
+        "b"
+      ],
+      "actions": {
+        "trialAttack": 7
+      },
+      "calm": 0,
+      "remainingHP": 80,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "bud",
+        "c"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 22,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "bud",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 9,
+      "participants": [
+        "bud",
+        "fin"
+      ],
+      "actions": {
+        "trialAttack": 9
+      },
+      "calm": 0,
+      "remainingHP": 10,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "a",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "fin",
+        "a"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 91,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "fin",
+        "b"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "fin",
+        "b"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 92,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "c",
+        "fin"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 7,
+      "participants": [
+        "fin",
+        "c"
+      ],
+      "actions": {
+        "trialAttack": 7
+      },
+      "calm": 0,
+      "remainingHP": 55,
+      "grown": [],
+      "berriesLeft": 2
+    },
+    {
+      "team": [
+        "fin",
+        "bud"
+      ],
+      "attempt": 1,
+      "outcome": "defeated",
+      "turns": 6,
+      "participants": [
+        "fin",
+        "bud"
+      ],
+      "actions": {
+        "trialAttack": 6
+      },
+      "calm": 0,
+      "remainingHP": 99,
+      "grown": [],
+      "berriesLeft": 2
+    }
+  ],
+  "strategies": [
+    {
+      "team": [
+        "a",
+        "bud"
+      ],
+      "ending": {
+        "attempt": 1,
+        "outcome": "completed",
+        "turns": 14,
+        "team": [
+          "a",
+          "bud"
+        ],
+        "participants": [
+          "a",
+          "bud"
+        ],
+        "actions": {
+          "trialAttack": 8,
+          "trialSwitch": 1,
+          "trialSkill": 3,
+          "trialGuard": 1,
+          "trialHeal": 1
+        },
+        "calm": 22,
+        "remainingHP": 0,
+        "grown": [
+          "a",
+          "b",
+          "c",
+          "bud",
+          "fin"
+        ],
+        "berriesLeft": 1,
+        "outings": 8,
+        "companions": [
+          "a",
+          "b",
+          "c",
+          "bud",
+          "fin"
+        ]
+      },
+      "trace": [
+        {
+          "beat": 1,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 92,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 78,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 78,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎轻击，消去27点余势。 回响的试探造成15伤害。"
+        },
+        {
+          "beat": 2,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 78,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 78,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎轻击，消去27点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 3,
+          "actor": "a",
+          "kind": "trialSwitch",
+          "arg": "bud",
+          "element": "water",
+          "intent": "回涌",
+          "predictedIncoming": 96,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 78,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 30,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "晶雾芽换到前方；换位也占一拍。 回响的回涌造成48伤害。"
+        },
+        {
+          "beat": 4,
+          "actor": "bud",
+          "kind": "trialAttack",
+          "element": "water",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 30,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 15,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "晶雾芽轻击，消去21点余势。 回响的试探造成15伤害。"
+        },
+        {
+          "beat": 5,
+          "actor": "bud",
+          "kind": "trialSkill",
+          "element": "wind",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 15,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 15,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "晶雾让合奏安心+22，下一次来招减半。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 6,
+          "actor": "bud",
+          "kind": "trialAttack",
+          "element": "wind",
+          "intent": "回涌",
+          "predictedIncoming": 48,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 15,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "晶雾芽轻击，消去10点余势。 回响的回涌造成15伤害。 岚翎接替前方。"
+        },
+        {
+          "beat": 7,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 77,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 62,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎轻击，消去27点余势。 回响的试探造成15伤害。"
+        },
+        {
+          "beat": 8,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 62,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 62,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎轻击，消去27点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 9,
+          "actor": "a",
+          "kind": "trialSkill",
+          "element": "water",
+          "intent": "回涌",
+          "predictedIncoming": 96,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 62,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "缠风消去7点余势，接下来两次来招减半。 回响的回涌造成48伤害。"
+        },
+        {
+          "beat": 10,
+          "actor": "a",
+          "kind": "trialGuard",
+          "element": "water",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎守息：能量+1、本次16护盾。 回响的试探造成0伤害，护盾吸收15。"
+        },
+        {
+          "beat": 11,
+          "actor": "a",
+          "kind": "trialSkill",
+          "element": "wind",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "缠风消去10点余势，接下来两次来招减半。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 12,
+          "actor": "a",
+          "kind": "trialHeal",
+          "element": "wind",
+          "intent": "回涌",
+          "predictedIncoming": 32,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 14,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 8,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "分享露莓恢复26体力。 回响的回涌造成32伤害。"
+        },
+        {
+          "beat": 13,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 7,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 8,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 1,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "岚翎轻击，消去27点余势。 回响的试探造成7伤害。"
+        },
+        {
+          "beat": 14,
+          "actor": "a",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "a",
+              "hp": 1,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 6
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "a",
+              "hp": 1,
+              "energy": 0,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 7
+            },
+            {
+              "id": "bud",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 3
+            }
+          ],
+          "notice": "回响散成细小星光。你们一起完成了这段浅滩冒险，新的同行已经成为归途。"
+        }
+      ]
+    },
+    {
+      "team": [
+        "b",
+        "fin"
+      ],
+      "ending": {
+        "attempt": 1,
+        "outcome": "completed",
+        "turns": 15,
+        "team": [
+          "b",
+          "fin"
+        ],
+        "participants": [
+          "b",
+          "fin"
+        ],
+        "actions": {
+          "trialAttack": 9,
+          "trialSwitch": 1,
+          "trialSkill": 2,
+          "trialHeal": 2,
+          "trialGuard": 1
+        },
+        "calm": 0,
+        "remainingHP": 0,
+        "grown": [
+          "a",
+          "b",
+          "c",
+          "bud",
+          "fin"
+        ],
+        "berriesLeft": 0,
+        "outings": 8,
+        "companions": [
+          "a",
+          "b",
+          "c",
+          "bud",
+          "fin"
+        ]
+      },
+      "trace": [
+        {
+          "beat": 1,
+          "actor": "b",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 20,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 108,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 88,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔灯轻击，消去16点余势。 回响的试探造成20伤害。"
+        },
+        {
+          "beat": 2,
+          "actor": "b",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 88,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 88,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔灯轻击，消去16点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 3,
+          "actor": "b",
+          "kind": "trialAttack",
+          "element": "water",
+          "intent": "回涌",
+          "predictedIncoming": 48,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 88,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔灯轻击，消去24点余势。 回响的回涌造成48伤害。"
+        },
+        {
+          "beat": 4,
+          "actor": "b",
+          "kind": "trialSwitch",
+          "arg": "fin",
+          "element": "water",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 84,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 64,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "露纹鳍换到前方；换位也占一拍。 回响的试探造成20伤害。"
+        },
+        {
+          "beat": 5,
+          "actor": "fin",
+          "kind": "trialAttack",
+          "element": "wind",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 64,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 64,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "露纹鳍轻击，消去30点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 6,
+          "actor": "fin",
+          "kind": "trialAttack",
+          "element": "wind",
+          "intent": "回涌",
+          "predictedIncoming": 48,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 64,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 16,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "露纹鳍轻击，消去30点余势。 回响的回涌造成48伤害。"
+        },
+        {
+          "beat": 7,
+          "actor": "fin",
+          "kind": "trialSkill",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 30,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 16,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 4,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "潮护消去7点余势，并获得18护盾。 回响的试探造成12伤害，护盾吸收18。"
+        },
+        {
+          "beat": 8,
+          "actor": "fin",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 4,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 4,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "露纹鳍轻击，消去15点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 9,
+          "actor": "fin",
+          "kind": "trialAttack",
+          "element": "water",
+          "intent": "回涌",
+          "predictedIncoming": 64,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 4,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "露纹鳍轻击，消去20点余势。 回响的回涌造成4伤害。 苔灯接替前方。"
+        },
+        {
+          "beat": 10,
+          "actor": "b",
+          "kind": "trialSkill",
+          "element": "water",
+          "intent": "试探",
+          "predictedIncoming": 15,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 40,
+              "energy": 3,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 53,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔息恢复28体力。 回响的试探造成15伤害。"
+        },
+        {
+          "beat": 11,
+          "actor": "b",
+          "kind": "trialHeal",
+          "element": "wind",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 53,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 79,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "分享露莓恢复26体力。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 12,
+          "actor": "b",
+          "kind": "trialHeal",
+          "element": "wind",
+          "intent": "回涌",
+          "predictedIncoming": 96,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 79,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 9,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "分享露莓恢复26体力。 回响的回涌造成96伤害。"
+        },
+        {
+          "beat": 13,
+          "actor": "b",
+          "kind": "trialGuard",
+          "element": "moss",
+          "intent": "试探",
+          "predictedIncoming": 20,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 9,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 5,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔灯守息：能量+1、本次16护盾。 回响的试探造成4伤害，护盾吸收16。"
+        },
+        {
+          "beat": 14,
+          "actor": "b",
+          "kind": "trialAttack",
+          "element": "moss",
+          "intent": "蓄势",
+          "predictedIncoming": 0,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 5,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 5,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "notice": "苔灯轻击，消去16点余势。 回响正在蓄势，没有来招。"
+        },
+        {
+          "beat": 15,
+          "actor": "b",
+          "kind": "trialAttack",
+          "element": "water",
+          "intent": "回涌",
+          "predictedIncoming": 48,
+          "beforeTeam": [
+            {
+              "id": "b",
+              "hp": 5,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 2
+            }
+          ],
+          "afterTeam": [
+            {
+              "id": "b",
+              "hp": 5,
+              "energy": 2,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 3
+            },
+            {
+              "id": "fin",
+              "hp": 0,
+              "energy": 1,
+              "shield": 0,
+              "xp": 2,
+              "rank": 1,
+              "encounters": 3
+            }
+          ],
+          "notice": "回响散成细小星光。你们一起完成了这段浅滩冒险，新的同行已经成为归途。"
+        }
+      ]
+    }
+  ],
+  "developmentNotes": [
+    "First 132-HP draft allowed attack-only victories and was rejected.",
+    "210-HP bounded search found no qualifying policy; this is not proof of impossibility.",
+    "Final 190-HP/24-beat challenge: two distinct policy wins; attack-only fails for all 20 ordered teams.",
+    "Preparation helper was corrected to reset the lead between trips and to replace one team member at a time. No game rules changed for those harness fixes."
+  ]
+}

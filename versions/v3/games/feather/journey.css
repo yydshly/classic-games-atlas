@@ -1,0 +1,14 @@
+@import url("../../../v2/games/feather/feather.css");
+.journey-progress{margin:0 0 14px;padding:12px 16px;border:1px solid #68856480;border-radius:12px;background:#1a3c30}
+.journey-progress ol{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;gap:10px;padding:0;margin:0}
+.journey-progress li{color:var(--muted);font-size:12px;border-top:2px solid #4c6952;padding-top:7px}
+.journey-progress li[data-done="true"]{color:var(--gold);border-color:var(--gold)}
+.journey-progress p{font-size:12px;line-height:1.6;margin:8px 0 0;color:#dce3cc}
+.trial-card{border:1px solid #d6bf82;border-radius:10px;padding:11px;margin:12px 0;background:#3d5136}
+.trial-card p{font-size:12px;margin:7px 0}.trial-card button{width:100%}
+.trial-readout{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+.trial-readout span{padding:8px;border:1px solid #58745b;border-radius:8px;font-size:12px}.trial-readout strong{color:var(--gold)}
+.summary-list{padding-left:18px;font-size:13px;line-height:1.9}.ending-story{font-size:14px;line-height:1.9;color:#f0e9ce}
+.save-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.save-actions p{flex:1 1 270px;font-size:11px;color:var(--muted);margin:0}.save-actions button{font-size:11px}
+.trial-team{font-size:12px;line-height:1.8;border-top:1px solid #57705a;padding-top:7px}
+@media(max-width:640px){.topbar{flex-wrap:wrap}.topbar nav{flex-wrap:wrap}.journey-progress{padding:10px}.journey-progress ol{grid-template-columns:1fr 1fr;gap:8px}.journey-progress li{font-size:11px}.journey-progress p{font-size:11px}}
