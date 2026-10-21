@@ -1,0 +1,142 @@
+{
+  "game": "fortress",
+  "base": "https://yydshly.github.io/classic-games-atlas",
+  "mode": "original public probe",
+  "method": "Native UI only; copied diagnostics/DOM observations. No injected state/save/time/result.390CSS is emulation. Petal terminal uses four official-hint pairs as real unlock prerequisite, then four ordinary invalid pairs; not an independent win or20-page run.",
+  "views": [
+    {
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命按钮真实可用性",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "暂停 P"
+          },
+          "screenshot": "desktop-1.png",
+          "health": "observed"
+        },
+        {
+          "step": 2,
+          "description": "普通点按暂停和P未启动新局",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "暂停 P"
+          },
+          "screenshot": "desktop-2.png",
+          "health": "observed"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后暂停冻结，文案为继续",
+          "state": {
+            "state": "paused",
+            "time": 0.35,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P"
+          },
+          "screenshot": "desktop-3.png",
+          "health": "observed"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "state": {
+            "state": "paused",
+            "time": 0.6500000000000004,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P"
+          },
+          "screenshot": "desktop-4.png",
+          "health": "observed"
+        }
+      ]
+    },
+    {
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命按钮真实可用性",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "暂停 P"
+          },
+          "screenshot": "narrow-1.png",
+          "health": "observed"
+        },
+        {
+          "step": 2,
+          "description": "普通点按暂停和P未启动新局",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "暂停 P"
+          },
+          "screenshot": "narrow-2.png",
+          "health": "observed"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后暂停冻结，文案为继续",
+          "state": {
+            "state": "paused",
+            "time": 0.36666666666666664,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P"
+          },
+          "screenshot": "narrow-3.png",
+          "health": "observed"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "state": {
+            "state": "paused",
+            "time": 0.7166666666666672,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P"
+          },
+          "screenshot": "narrow-4.png",
+          "health": "observed"
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "status": "passed"
+}

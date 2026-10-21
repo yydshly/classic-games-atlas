@@ -27,7 +27,8 @@
       "endingBoundary": "首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感",
       "evidence": [
         "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/fortress-independent-qa/"
+        "docs/fortress-independent-qa/",
+        "docs/fortress-pause-followup-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "首图单车独立胜利已补证；两人协作、全模式/地形及真人触控/声音审美未验",
@@ -36,7 +37,13 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "pauseFollowupReview": {
+        "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+        "status": "fixed",
+        "evidence": "docs/fortress-pause-followup-qa/",
+        "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
+      }
     },
     {
       "number": "02",
@@ -1627,16 +1634,27 @@
       }
     }
   ],
-  "evidenceThrough": "b42d551513a629c1c21c7e271ab05e08a741b9c2",
-  "roundCommits": {},
-  "roundDeployments": {},
+  "evidenceThrough": "d9951902a1c0e05092dc6703fe4354d74126b21d",
+  "roundCommits": {
+    "cloud": "d9951902a1c0e05092dc6703fe4354d74126b21d"
+  },
+  "roundDeployments": {
+    "cloud": {
+      "id": 39609564307,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39609564307"
+    }
+  },
   "roundScope": {
     "kind": "three_remaining_pause_clues",
     "selected": 3,
-    "reviewed": 1,
-    "confirmedDefects": 2,
+    "reviewed": 2,
+    "confirmedDefects": 3,
+    "affectedGames": 2,
     "runtimeFixes": [
-      "cloud"
+      "cloud",
+      "fortress"
     ],
     "noConfirmedDefect": [],
     "noAutomaticNewQueue": true,
@@ -2606,7 +2624,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证。终态夹具与实际UI分列，未新增泛化待测队列。",
+  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证。终态夹具与实际UI分列，未新增泛化待测队列。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "pause-followup-notes.md",
   "globalLaterStageSummary": {
@@ -3038,6 +3056,12 @@
       "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
       "status": "fixed",
       "evidence": "docs/cloud-pause-followup-qa/",
+      "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
+    },
+    "fortress": {
+      "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+      "status": "fixed",
+      "evidence": "docs/fortress-pause-followup-qa/",
       "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
     }
   }

@@ -1,0 +1,111 @@
+{
+  "game": "fortress",
+  "status": "passed",
+  "method": "Actual controller presentation statements; fortress actual handler with real engine start/pause. Terminal and nonzero metrics are explicit Node fixtures, not browser play. Original-source negative control checks enabled inactive button.",
+  "cases": [
+    {
+      "state": "ready",
+      "after": "ready",
+      "pauseDisabled": true,
+      "calls": 0,
+      "fixtureMetricsPreserved": true,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "playing",
+      "after": "paused",
+      "pauseDisabled": false,
+      "calls": 1,
+      "fixtureMetricsPreserved": true,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "paused",
+      "after": "playing",
+      "pauseDisabled": false,
+      "calls": 1,
+      "fixtureMetricsPreserved": true,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "won",
+      "after": "won",
+      "pauseDisabled": true,
+      "calls": 0,
+      "fixtureMetricsPreserved": true,
+      "terminalModelFixture": true
+    },
+    {
+      "state": "lost",
+      "after": "lost",
+      "pauseDisabled": true,
+      "calls": 0,
+      "fixtureMetricsPreserved": true,
+      "terminalModelFixture": true
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "playing",
+      "tag": "button",
+      "code": "KeyP",
+      "repeat": false,
+      "after": "paused",
+      "prevented": true
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "paused",
+      "tag": "button",
+      "code": "KeyP",
+      "repeat": false,
+      "after": "playing",
+      "prevented": true
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "playing",
+      "tag": "button",
+      "code": "Escape",
+      "repeat": false,
+      "after": "paused",
+      "prevented": true
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "paused",
+      "tag": "button",
+      "code": "Escape",
+      "repeat": false,
+      "after": "playing",
+      "prevented": true
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "playing",
+      "tag": "select",
+      "code": "KeyP",
+      "repeat": false,
+      "after": "playing",
+      "prevented": false
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "ready",
+      "tag": "button",
+      "code": "Enter",
+      "repeat": false,
+      "after": "ready",
+      "prevented": false
+    },
+    {
+      "kind": "keyboard-focus",
+      "state": "paused",
+      "tag": "button",
+      "code": "KeyP",
+      "repeat": true,
+      "after": "paused",
+      "prevented": true
+    }
+  ],
+  "baselineNegativeControl": true
+}
