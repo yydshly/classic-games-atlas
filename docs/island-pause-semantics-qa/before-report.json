@@ -1,0 +1,116 @@
+{
+  "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+  "method": "Normal public UI only. Native click/tap/keyboard/scroll and read-only DOM/copied diagnostics; no game/save/time injection. Not full mission or new win replay.",
+  "views": [
+    {
+      "game": "island",
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "手册关闭后ready开始可用、暂停禁用",
+          "state": {
+            "state": "ready",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "startDisabled": false,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 2,
+          "description": "明确开始进入playing",
+          "state": {
+            "state": "playing",
+            "pauseText": "暂停 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 3,
+          "description": "暂停后主按钮由渲染器正确改为继续",
+          "state": {
+            "state": "paused",
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 4,
+          "description": "主继续恢复建设，不重开城市",
+          "state": {
+            "state": "playing",
+            "pauseText": "暂停 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        }
+      ]
+    },
+    {
+      "game": "island",
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "手册关闭后ready开始可用、暂停禁用",
+          "state": {
+            "state": "ready",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "startDisabled": false,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 2,
+          "description": "明确开始进入playing",
+          "state": {
+            "state": "playing",
+            "pauseText": "暂停 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 3,
+          "description": "暂停后主按钮由渲染器正确改为继续",
+          "state": {
+            "state": "paused",
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        },
+        {
+          "step": 4,
+          "description": "主继续恢复建设，不重开城市",
+          "state": {
+            "state": "playing",
+            "pauseText": "暂停 P",
+            "pauseDisabled": false,
+            "startDisabled": true,
+            "turn": "1/5",
+            "cash": "58"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "observed"
+}

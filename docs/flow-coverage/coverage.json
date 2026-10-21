@@ -1061,7 +1061,8 @@
       "endingBoundary": "跨章库存/拨款不重复，终局已验",
       "evidence": [
         "docs/island-v2/PUBLIC_BROWSER_QA.md",
-        "docs/island-storage-qa/"
+        "docs/island-storage-qa/",
+        "docs/island-pause-semantics-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1070,7 +1071,13 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "pauseSemanticsReview": {
+        "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+        "status": "no_confirmed_defect",
+        "evidence": "docs/island-pause-semantics-qa/",
+        "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
+      }
     },
     {
       "number": "29",
@@ -1613,9 +1620,10 @@
       }
     }
   ],
-  "evidenceThrough": "fb63691ec8e947be23e72799fe813c483748fed5",
+  "evidenceThrough": "b42d551513a629c1c21c7e271ab05e08a741b9c2",
   "roundCommits": {
-    "expedition": "fb63691ec8e947be23e72799fe813c483748fed5"
+    "expedition": "fb63691ec8e947be23e72799fe813c483748fed5",
+    "lantern": "b42d551513a629c1c21c7e271ab05e08a741b9c2"
   },
   "roundDeployments": {
     "expedition": {
@@ -1623,18 +1631,26 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39602579999"
+    },
+    "lantern": {
+      "id": 39603562514,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39603562514"
     }
   },
   "roundScope": {
     "kind": "bounded_pause_semantics",
     "selected": 3,
-    "reviewed": 2,
+    "reviewed": 3,
     "confirmedDefects": 2,
     "runtimeFixes": [
       "expedition",
       "lantern"
     ],
-    "noConfirmedDefect": [],
+    "noConfirmedDefect": [
+      "island"
+    ],
     "notWholeProductAcceptance": true
   },
   "roundHistory": [
@@ -2560,7 +2576,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据。夹具与自然UI结局分开，不扩大为全关卡验收。",
+  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据；island正常，保留实现。夹具与自然UI结局分开，不扩大为全关卡验收。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "pause-semantics-notes.md",
   "globalLaterStageSummary": {
@@ -2978,6 +2994,12 @@
       "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
       "status": "fixed",
       "evidence": "docs/lantern-pause-semantics-qa/",
+      "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
+    },
+    "island": {
+      "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+      "status": "no_confirmed_defect",
+      "evidence": "docs/island-pause-semantics-qa/",
       "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
     }
   }
