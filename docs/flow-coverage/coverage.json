@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewing_independent_success_targets",
+  "status": "reviewed_independent_success_targets",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
     "venture",
@@ -1579,11 +1579,12 @@
       }
     }
   ],
-  "evidenceThrough": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
+  "evidenceThrough": "9baaf7d8522729e4d0b79d1a97eb34410e121862",
   "roundCommits": {
     "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
     "fortress": "90473990ada45aea87d7c46097e57570a892d41c",
-    "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47"
+    "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
+    "kart": "9baaf7d8522729e4d0b79d1a97eb34410e121862"
   },
   "roundDeployments": {
     "venture": {
@@ -1603,6 +1604,12 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983"
+    },
+    "kart": {
+      "id": 39544242320,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39544242320"
     }
   },
   "roundScope": {
@@ -2714,7 +2721,7 @@
     }
   ],
   "independentBranchNote": "13个指定独立胜利目标：已完成13，未完成0（其中具体工具阻塞0、尚未执行0）。本轮列出的四组13目标均已补证。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
-  "nextDeliveryNote": "本轮23个既定后续单元全部补证，没有另加主题或继续重刷。下一阶段由产品取舍与真人体验验收决定；如继续工具验证，先明确上述独立胜利分支的有限范围，不把它们当已失败或必须降难度。",
+  "nextDeliveryNote": "四组13目标的完成/未完成与强辅助限制见独立清单；本轮到此收尾，不追加测试主题。余下真实手机、多指与性能、连续人手操作、平衡/耐玩性、音频听感/同步和审美须真人验收。",
   "independentSuccessRound": {
     "baseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
     "scope": {
@@ -2787,7 +2794,40 @@
         "methodBoundary": "八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助"
       }
     },
-    "runtimeChanged": false
+    "runtimeChanged": false,
+    "commits": {
+      "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
+      "fortress": "90473990ada45aea87d7c46097e57570a892d41c",
+      "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
+      "kart": "9baaf7d8522729e4d0b79d1a97eb34410e121862"
+    },
+    "deployments": {
+      "venture": {
+        "id": 39541614069,
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39541614069"
+      },
+      "fortress": {
+        "id": 39542489909,
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909"
+      },
+      "post": {
+        "id": 39543126983,
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983"
+      },
+      "kart": {
+        "id": 39544242320,
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39544242320"
+      }
+    },
+    "targetLedger": "independent-targets.json"
   },
   "independentSuccessSummary": {
     "targets": 13,
@@ -2797,5 +2837,6 @@
     "notYetTried": 0,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
-  }
+  },
+  "laterChainClosureNote": "40项保留，36项活动。此前四款23个后续主链单元已补证，当前后续主链缺口0款、0个单元。本轮另核四组13个独立胜利目标，完成13、未完成0；两套计数不重复。游戏内辅助关仍可有外部脚本策略，均以各证据方法为准，非全模式或真人品质验收。"
 }

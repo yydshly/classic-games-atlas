@@ -12,3 +12,14 @@
 |林野关闭辅助达标|[1, 2, 3, 4, 5, 6, 7, 8]|[]|[普通UI记录](../../docs/kart-independent-qa/)；assist OFF from ready through result; original course target met, manual score separate|
 
 [覆盖索引](index.html) · [全局后续主链（已补齐）](later-stage-inventory.html) · [此前23单元记录](final-four-notes.md)
+
+## 已完成的独立发布
+
+[13行具体结果](independent-targets.json)
+
+- venture: `437f0daad1f777b822c8c735ff22913c5487271c` · [Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/39541614069)
+- fortress: `90473990ada45aea87d7c46097e57570a892d41c` · [Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909)
+- post: `c4d1d137a2c36a327d31655ee9fdee2e00395d47` · [Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983)
+- kart: `9baaf7d8522729e4d0b79d1a97eb34410e121862` · [Pages](https://github.com/yydshly/classic-games-atlas/actions/runs/39544242320)
+
+没有确认的游戏阻断缺陷，本轮全部只补正常UI证据和当前说明；固定策略模型失败、旧版自然败局、已有辅助成绩均保留。不新增关卡/规则或第41项，不重启停项。
