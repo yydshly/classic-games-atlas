@@ -17,6 +17,8 @@ summary = {'catalog': 40, 'activeScope': len(active), 'paused': 3, 'frozen': 1,
            'coreGaps': core_gaps, 'failureRetryGaps': fail_gaps}
 if D.get('laterStageTargets'):
     summary['laterStageTargets'] = D['laterStageTargets']
+if D.get('globalLaterStageSummary'):
+    summary['globalLaterStageSummary'] = D['globalLaterStageSummary']
 (P / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
 intro = (f"40项总目录；本轮活动范围{len(active)}项，35/36/37暂停、纸翼保留既有阶段。"
          f"活动项中{summary['activeWithFirstCoreEvidence']}项有至少一条核心目标证据；"
@@ -47,6 +49,8 @@ li{margin:8px 0}[hidden]{display:none!important}:focus-visible{outline:3px solid
 <a href="coverage.json">结构化40行数据</a> · <a href="README.md">文字索引</a> ·
 <a href="source-manifest.json">来源对象清单</a></p><h1>关键流程覆盖与剩余交付清单</h1>'''
 doc += '<p>' + escape(intro) + '</p><p class="note">' + escape(boundary) + '</p>'
+if D.get('globalLaterStageSummary'):
+    doc += '<p class="note">全局仍缺后续成功/合法完赛证据：' + str(D['globalLaterStageSummary']['laterUnitsMissingWorks']) + '款、' + str(D['globalLaterStageSummary']['laterUnitsMissingCount']) + '个关段/赛场。<a href="later-stage-inventory.html">逐款全局清单与独立分支</a></p>'
 doc += '<h2>本轮有限流程</h2><p>' + escape(D.get('roundSummary', '普通UI、模型及辅助限制在各自证据中分列。')) + '</p>'
 if D.get('roundEvidenceNotes'):
     doc += '<p><a href="' + escape(D['roundEvidenceNotes'], quote=True) + '">本轮截图时序与执行恢复说明</a></p>'
@@ -61,6 +65,8 @@ md = '# 40项关键流程覆盖与剩余交付清单\n\n' + intro + '\n\n' + bou
 md += '[可筛选网页](index.html) · [结构化数据](coverage.json) · [来源Git对象清单](source-manifest.json)\n\n'
 if D.get('roundEvidenceNotes'):
     md += '[本轮截图时序与执行恢复说明](' + D['roundEvidenceNotes'] + ')\n\n'
+if D.get('globalLaterStageSummary'):
+    md += '[全局后续关段清单](later-stage-inventory.html) · [清单数据](later-stage-inventory.json)；仍缺9款29个后续关段/赛场的成功或合法完赛证据，独立分支另列。\n\n'
 md += '|编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|\n|---|---|---|---|---|\n'
 for e in E:
     c = e['coverage']
@@ -87,7 +93,7 @@ doc += '</tbody></table></div><p id="empty" hidden>没有匹配项。清除筛�
 remaining = [
     ('首条核心目标证据', ('、'.join(core_gaps) + '仍缺首条完整目标证据。失败或工具延迟不证明不可通关，不据此调难度。') if core_gaps else '活动范围36项均已有至少一条核心目标证据。它只统计有限首条，包含明确标注的强辅助操作，不代表全部关卡、无辅助水平或成品验收。'),
     ('分支及后续内容', (f'尚有{len(fail_gaps)}项失败/重试链仅局部或未验：' + '、'.join(fail_gaps) + '。上表保留具体范围。') if fail_gaps else '此前原列8项代表性失败/重试链均已逐项补证。每款仅验证记录所列路径，不代表全部失败原因或后段。') ,
-    ('保留的覆盖边界', 'Post第一名、Kart手动胜利、各报告列明的其它失败原因和未测后段仍缺UI证据。这些是准确边界，不因本轮结束自动扩成新队列；也不能将缺证据判成bug。'),
+    ('保留的覆盖边界', '全局后续成功/合法完赛证据仍缺9款29个单元，详见全局清单。另有堡垒首图单车成功、Post首场第一名、商旅灯会获胜与Kart手动首胜等独立操作/胜利分支；不重复计数、不把缺证据判成bug。'),
     ('必须真人确认', '连续操作手感、读图与策略是否自然、难度与耐玩性、审美/情绪价值。有音频实现的作品需真实听感与音画同步；无音频作品不因此判缺陷。真实手机触控、多指和设备差异须真机验证，桌面400CSS或脚本事件不能替代。'),
     ('已知非阻断表现', '原报告中的残留提示、字号/滚动、未验动画等保留。果园前后端点/转角样式不同、Trail失败0命但体力显示72、Post终局下一闸提示仍在均如实记录，不借此重开零碎美术/存档专项。'),
     ('暂停边界', '35/36/37不继续执行；纸翼不重启。保留在40项中，不能为提高通过数移除，也不计入本轮活动测试债。'),

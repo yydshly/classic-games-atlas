@@ -1,0 +1,778 @@
+{
+  "schemaVersion": 1,
+  "reviewBaseline": "988562d8505c23e320779e6173b8d746c7086189",
+  "evidenceThrough": "056ab7fdd76fedcfb0ede097cbbad4cebe693cf9",
+  "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected Trail/Echo/Coaster reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
+  "summary": {
+    "catalog": 40,
+    "active": 36,
+    "laterUnitsMissingWorks": 9,
+    "laterUnitsMissingCount": 29,
+    "remainingLaterWorkSlugs": [
+      "maze",
+      "lantern",
+      "cloud",
+      "post",
+      "chime",
+      "tide",
+      "duel",
+      "kart",
+      "meadow"
+    ],
+    "noListedLaterGapIsNotAllVariantsWon": true,
+    "separateSuccessBranches": [
+      "fortress:first-map single-player success",
+      "post:first-race first-place",
+      "venture:festival victory"
+    ],
+    "humanBoundaries": [
+      "无辅助持续操作手感与读图",
+      "真实手机/多指/设备性能",
+      "已实现音频的听感与同步",
+      "审美、情绪价值和耐玩性"
+    ]
+  },
+  "items": [
+    {
+      "number": "01",
+      "slug": "fortress",
+      "title": "堡垒防线",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/fortress/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "第二短图双车胜；第一短图单车自然基地败",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "首图单车成功未见证据；不是后续解锁链"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "02",
+      "slug": "maze",
+      "title": "爆破迷宫",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/maze/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "第一图自然胜利",
+      "pendingLaterUnits": [
+        2
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/maze-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/maze-v2-qa/LAYOUT_PUBLIC.md",
+        "docs/maze-first-win-qa/"
+      ]
+    },
+    {
+      "number": "03",
+      "slug": "starline",
+      "title": "星泡航线",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/starline/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两图清场",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/starline-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "04",
+      "slug": "prism",
+      "title": "光轨砖阵",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/prism/",
+      "authoredFiniteUnits": 12,
+      "scopeDescription": "正常连续1–12胜利及末关终局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/prism-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/prism-first-win-qa/",
+        "docs/prism-later-qa/"
+      ]
+    },
+    {
+      "number": "05",
+      "slug": "crate",
+      "title": "仓格计划",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/crate/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三题正常完成与推进",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/crate-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "06",
+      "slug": "pass",
+      "title": "山口守望",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/pass/",
+      "authoredFiniteUnits": 1,
+      "scopeDescription": "一短图缚索四波胜；重弩失败保留",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "其它塔组合未穷尽，非后续关段"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/pass-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "07",
+      "slug": "trail",
+      "title": "风行小径",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/trail/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三程正常连续胜利及第三程结局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/trail-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/trail-save-qa/",
+        "docs/trail-main-flow-qa/",
+        "docs/trail-later-qa/"
+      ]
+    },
+    {
+      "number": "08",
+      "slug": "lantern",
+      "title": "夜航拾光",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/lantern/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "首图41/41胜；第二图38/46失败",
+      "pendingLaterUnits": [
+        2
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "09",
+      "slug": "cloud",
+      "title": "云隙巡航",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/cloud/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "首图胜；第二图自然败",
+      "pendingLaterUnits": [
+        2
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "10",
+      "slug": "garden",
+      "title": "晶簇花园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/garden/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两题正常完成",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/garden-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/garden-loss-qa/"
+      ]
+    },
+    {
+      "number": "11",
+      "slug": "vine",
+      "title": "青藤回廊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/vine/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两图收齐后归门胜",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/vine-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/vine-loss-qa/"
+      ]
+    },
+    {
+      "number": "12",
+      "slug": "petal",
+      "title": "花笺连线",
+      "recommendedVersion": "v1",
+      "playUrl": "games/petal/",
+      "authoredFiniteUnits": 20,
+      "scopeDescription": "原生提示辅助连续1–20完成",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md",
+        "docs/petal-loss-qa/",
+        "docs/petal-later-qa/"
+      ]
+    },
+    {
+      "number": "13",
+      "slug": "sand",
+      "title": "星砂勘探",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/sand/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "浅深两档提示辅助解完安全格",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "不证明全部种子"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/sand-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "14",
+      "slug": "pinfall",
+      "title": "落星弹庭",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/pinfall/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两庭普通参考角度胜",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/pinfall-loss-qa/"
+      ]
+    },
+    {
+      "number": "15",
+      "slug": "gale",
+      "title": "钢岚突进",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/gale/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两段清装置并实际归出口；同引擎历史通关",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "后续控制器修补只复核生命周期，不冒称新跑两段"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/gale-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/gale-loss-qa/"
+      ]
+    },
+    {
+      "number": "16",
+      "slug": "post",
+      "title": "弯道邮差",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/post/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "单赛道三场；仅第一场合法第三名完赛并解锁第二场",
+      "pendingLaterUnits": [
+        2,
+        3
+      ],
+      "otherEvidenceBoundaries": [
+        "第一场第一名未见证据；完赛即可推进，不把第三名当胜利"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/post-main-flow-qa/",
+        "docs/post-loss-qa/"
+      ]
+    },
+    {
+      "number": "17",
+      "slug": "beacon",
+      "title": "灯塔小队",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/beacon/",
+      "authoredFiniteUnits": 1,
+      "scopeDescription": "21天全航程归港结局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/beacon-v2-loss-qa/"
+      ]
+    },
+    {
+      "number": "18",
+      "slug": "chime",
+      "title": "风铃绳旅",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/chime/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "第一题成功；第二第三题已有失败尝试",
+      "pendingLaterUnits": [
+        2,
+        3
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/chime-v2-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "19",
+      "slug": "brook",
+      "title": "溪谷守芽",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/brook/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两场各有自然胜利；非同一新档连续双场",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/brook-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/brook-first-win-qa/",
+        "docs/brook-later-qa/"
+      ]
+    },
+    {
+      "number": "20",
+      "slug": "tide",
+      "title": "潮汐珠径",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/tide/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "首图原生滑杆与暂停规划强辅助胜",
+      "pendingLaterUnits": [
+        2
+      ],
+      "otherEvidenceBoundaries": [
+        "原鼠标瞄准路径受工具延迟混杂，未以此改难度"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/tide-first-win-qa/"
+      ]
+    },
+    {
+      "number": "21",
+      "slug": "paper",
+      "title": "纸翼投递",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/paper/",
+      "authoredFiniteUnits": null,
+      "scopeDescription": "阶段保留，不重启路线",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": true,
+      "status": "paused_or_frozen",
+      "evidence": [
+        "docs/paper-quality-qa/PUBLIC_BROWSER_QA.md"
+      ]
+    },
+    {
+      "number": "22",
+      "slug": "harbor",
+      "title": "云港调度",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/harbor/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三关实际回合目标完成，第三关最终反馈",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/harbor-storage-qa/"
+      ]
+    },
+    {
+      "number": "23",
+      "slug": "farm",
+      "title": "四季小田",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/farm/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三章携带资源推进至11天结局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/farm-v2/PUBLIC_BROWSER_QA.md",
+        "docs/farm-storage-qa/"
+      ]
+    },
+    {
+      "number": "24",
+      "slug": "ruins",
+      "title": "遗迹灯火",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/ruins/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三室机关/钥匙/敌人与最终归门E",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/ruins-v2/PUBLIC_BROWSER_QA.md",
+        "docs/ruins-v2-qa/LAYOUT_PUBLIC.md"
+      ]
+    },
+    {
+      "number": "25",
+      "slug": "orchard",
+      "title": "节拍果园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/orchard/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两场各60活动秒自然结束；无分数胜门槛",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "误核短分支不影响已覆盖主流程"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/orchard-frost-recovery-qa/"
+      ]
+    },
+    {
+      "number": "26",
+      "slug": "courier",
+      "title": "山径快递",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/courier/",
+      "authoredFiniteUnits": 2,
+      "scopeDescription": "两段跑完并正确转弯",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/courier-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/courier-loss-qa/"
+      ]
+    },
+    {
+      "number": "27",
+      "slug": "venture",
+      "title": "街角商旅",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/venture/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "8/10/12轮三场均自然终局，两胜一负；修后只定向回归交易",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "灯会获胜未见证据；已有自然失败结局不记为通关；修前整局与修后专项分列"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/venture-v2/PUBLIC_BROWSER_QA.md",
+        "docs/venture-storage-qa/"
+      ]
+    },
+    {
+      "number": "28",
+      "slug": "island",
+      "title": "云岛工坊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/island/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "双路线均跨三章完成；非新增第二地区",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/island-v2/PUBLIC_BROWSER_QA.md",
+        "docs/island-storage-qa/"
+      ]
+    },
+    {
+      "number": "29",
+      "slug": "orbit",
+      "title": "星环落块",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/orbit/",
+      "authoredFiniteUnits": 1,
+      "scopeDescription": "180秒自然终局与重新开始；不是分关卡作品",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/orbit-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/orbit-natural-end-qa/",
+        "docs/orbit-first-speed-qa/"
+      ]
+    },
+    {
+      "number": "30",
+      "slug": "duel",
+      "title": "风庭对决",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/duel/",
+      "authoredFiniteUnits": 8,
+      "scopeDescription": "首庭正常命中与胜利，第二庭解锁",
+      "pendingLaterUnits": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "docs/duel-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/duel-first-win-qa/"
+      ]
+    },
+    {
+      "number": "31",
+      "slug": "expedition",
+      "title": "苔原远征",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/expedition/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三段分别正常胜利120/140/160秒",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/expedition-v2-end-qa/",
+        "docs/expedition-loss-qa/"
+      ]
+    },
+    {
+      "number": "32",
+      "slug": "feather",
+      "title": "星羽同伴",
+      "recommendedVersion": "v3",
+      "playUrl": "versions/v3/games/feather/",
+      "authoredFiniteUnits": 1,
+      "scopeDescription": "v3浅滩短冒险终挑战结局及自由出行",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "v2承接与新旅途另列，不要求扩第二地区"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/feather-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/feather-journey-qa/"
+      ]
+    },
+    {
+      "number": "33",
+      "slug": "echo",
+      "title": "回声走廊",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/echo/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "首段既有成功；本轮自由选第二段后正常推进第三段均撤离",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "强暂停与只读原生记录重放辅助，非同一新档连续三段"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/echo-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/echo-continuity-qa/",
+        "docs/echo-later-qa/"
+      ]
+    },
+    {
+      "number": "34",
+      "slug": "escort",
+      "title": "街巷护送",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/escort/",
+      "authoredFiniteUnits": 3,
+      "scopeDescription": "三街实际护送成功及最后街区终局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "docs/escort-v2/PUBLIC_BROWSER_QA.md",
+        "docs/escort-storage-qa/"
+      ]
+    },
+    {
+      "number": "35",
+      "slug": "court",
+      "title": "晴湾篮场",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/court/",
+      "authoredFiniteUnits": null,
+      "scopeDescription": "用户暂停路线",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": true,
+      "status": "paused_or_frozen",
+      "evidence": [
+        "docs/court-v2/README.md"
+      ]
+    },
+    {
+      "number": "36",
+      "slug": "repair",
+      "title": "雨街修理所",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/repair/",
+      "authoredFiniteUnits": null,
+      "scopeDescription": "用户暂停路线",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": true,
+      "status": "paused_or_frozen",
+      "evidence": [
+        "docs/repair-v2-qa/README.md"
+      ]
+    },
+    {
+      "number": "37",
+      "slug": "civic",
+      "title": "潮原纪事",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/civic/",
+      "authoredFiniteUnits": null,
+      "scopeDescription": "用户暂停路线",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": true,
+      "status": "paused_or_frozen",
+      "evidence": [
+        "versions/v2/games/civic/about.html"
+      ]
+    },
+    {
+      "number": "38",
+      "slug": "coaster",
+      "title": "云岬游乐园",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/coaster/",
+      "authoredFiniteUnits": 8,
+      "scopeDescription": "正常按钮连续八园试车/有限载客达标与最终反馈",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "离线合法方案搜索仅策略参考；真实班次另有浏览器记录"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "no_listed_later_gap",
+      "evidence": [
+        "versions/v2/games/coaster/comparison.html",
+        "docs/coaster-loss-qa/",
+        "docs/coaster-later-qa/"
+      ]
+    },
+    {
+      "number": "39",
+      "slug": "kart",
+      "title": "林野杯赛",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/kart/",
+      "authoredFiniteUnits": 8,
+      "scopeDescription": "首赛道使用页面内可选转向辅助正常获胜",
+      "pendingLaterUnits": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "otherEvidenceBoundaries": [
+        "无辅助手动首胜未验，不能借此降低难度"
+      ],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "versions/v2/games/kart/about.html",
+        "docs/kart-loss-qa/"
+      ]
+    },
+    {
+      "number": "40",
+      "slug": "meadow",
+      "title": "草甸联赛",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/games/meadow/",
+      "authoredFiniteUnits": 8,
+      "scopeDescription": "首场脚本辅助普通UI完整4:0胜",
+      "pendingLaterUnits": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "otherEvidenceBoundaries": [],
+      "excludedFromActiveDebt": false,
+      "status": "later_units_pending",
+      "evidence": [
+        "versions/v2/games/meadow/about.html",
+        "docs/meadow-main-flow-qa/"
+      ]
+    }
+  ]
+}

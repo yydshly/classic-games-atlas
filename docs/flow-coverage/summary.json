@@ -8,23 +8,43 @@
   "failureRetryGaps": [],
   "laterStageTargets": [
     {
-      "slug": "brook",
+      "slug": "trail",
       "requestedStages": [
-        2
+        2,
+        3
       ],
-      "totalStages": 2,
+      "totalStages": 3,
       "normalUiWinsThisRound": [
-        2
+        1,
+        2,
+        3
+      ],
+      "prerequisiteStages": [
+        1
+      ],
+      "status": "verified",
+      "terminal": "third-stage end, no fourth; per-stage won refresh, clean next and retry current third stage"
+    },
+    {
+      "slug": "echo",
+      "requestedStages": [
+        2,
+        3
+      ],
+      "totalStages": 3,
+      "normalUiWinsThisRound": [
+        2,
+        3
       ],
       "priorCompletedStages": [
         1
       ],
       "prerequisiteStages": [],
       "status": "verified",
-      "terminal": "second-stage final feedback, no third; retry/refresh and native best kept"
+      "terminal": "native free level select to second, next to third, both escape; final hidden next, result reload, ready retry and new action"
     },
     {
-      "slug": "prism",
+      "slug": "coaster",
       "requestedStages": [
         2,
         3,
@@ -32,13 +52,9 @@
         5,
         6,
         7,
-        8,
-        9,
-        10,
-        11,
-        12
+        8
       ],
-      "totalStages": 12,
+      "totalStages": 8,
       "normalUiWinsThisRound": [
         1,
         2,
@@ -47,69 +63,42 @@
         5,
         6,
         7,
-        8,
-        9,
-        10,
-        11,
-        12
+        8
       ],
       "prerequisiteStages": [
         1
       ],
       "status": "verified",
-      "terminal": "twelfth-stage ending, no thirteenth; clean retry/refresh and twelve native bests"
-    },
-    {
-      "slug": "petal",
-      "requestedStages": [
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "totalStages": 20,
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prerequisiteStages": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
-      ],
-      "status": "verified",
-      "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
+      "terminal": "eight parks real test and passenger runs, next clean, final no ninth, native eight bests retained and revisit"
     }
-  ]
+  ],
+  "globalLaterStageSummary": {
+    "catalog": 40,
+    "active": 36,
+    "laterUnitsMissingWorks": 9,
+    "laterUnitsMissingCount": 29,
+    "remainingLaterWorkSlugs": [
+      "maze",
+      "lantern",
+      "cloud",
+      "post",
+      "chime",
+      "tide",
+      "duel",
+      "kart",
+      "meadow"
+    ],
+    "noListedLaterGapIsNotAllVariantsWon": true,
+    "separateSuccessBranches": [
+      "fortress:first-map single-player success",
+      "post:first-race first-place",
+      "venture:festival victory"
+    ],
+    "humanBoundaries": [
+      "无辅助持续操作手感与读图",
+      "真实手机/多指/设备性能",
+      "已实现音频的听感与同步",
+      "审美、情绪价值和耐玩性"
+    ]
+  }
 }
