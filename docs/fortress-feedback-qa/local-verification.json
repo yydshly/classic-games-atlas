@@ -1,0 +1,1015 @@
+{
+  "cases": [
+    {
+      "width": 1440,
+      "baseUrl": "http://127.0.0.1:58141/",
+      "passed": true,
+      "normalUi": true,
+      "terminal": {
+        "state": "lost",
+        "level": 1,
+        "time": 25.34999999999984,
+        "score": 0,
+        "shots": 0,
+        "kills": 0,
+        "spawned": 2,
+        "total": 6,
+        "mode": 1,
+        "players": [
+          {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 0,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 1,
+            "dead": false
+          }
+        ],
+        "lives": 1,
+        "player": {
+          "id": "player-1",
+          "x": 204,
+          "y": 516,
+          "dir": 0,
+          "speed": 104,
+          "invulnerable": 0,
+          "cooldown": 0,
+          "rapid": 0,
+          "shield": 0,
+          "number": 1,
+          "lives": 1,
+          "dead": false
+        },
+        "base": {
+          "x": 300,
+          "y": 564,
+          "hp": 0,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        "enemies": [
+          {
+            "id": "enemy-1",
+            "type": "scout",
+            "x": 280.0666666666666,
+            "y": 564,
+            "dir": 1,
+            "hp": 1,
+            "maxHp": 1,
+            "speed": 61,
+            "cooldown": 2.15,
+            "think": 0,
+            "stuck": 6.06666666666665,
+            "waypoint": {
+              "x": 300,
+              "y": 564
+            },
+            "flash": 0,
+            "spawnShield": 0,
+            "aimCharge": 0
+          },
+          {
+            "id": "enemy-2",
+            "type": "scout",
+            "x": 420,
+            "y": 564,
+            "dir": 3,
+            "hp": 1,
+            "maxHp": 1,
+            "speed": 61,
+            "cooldown": 0,
+            "think": 0.26666666666666633,
+            "stuck": 0,
+            "waypoint": null,
+            "flash": 0,
+            "spawnShield": 0,
+            "aimCharge": 0
+          }
+        ],
+        "bullets": [],
+        "items": [
+          {
+            "x": 204,
+            "y": 468,
+            "type": "shield",
+            "ttl": 14.666666666667965
+          },
+          {
+            "x": 396,
+            "y": 468,
+            "type": "rapid",
+            "ttl": 14.666666666667965
+          }
+        ],
+        "tiles": [
+          "SSSSSSSSSSSSSSSSSSSSSSSSS",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S....BB....SSS....BB....S",
+          "S....BB....SSS....BB....S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S..B.BBBB.......BBBB.B..S",
+          "S.......................S",
+          "S.......................S",
+          "S....BB....SSS....BB....S",
+          "S....BB....SSS....BB....S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S..........BBB..........S",
+          "S............B..........S",
+          "SSSSSSSSSSSSSSSSSSSSSSSSS"
+        ]
+      },
+      "checks": [
+        "unchanged ready snapshot",
+        "actual first base hit2/3",
+        "visible text and card",
+        "no per-frame live announcements",
+        "field/status/pause in viewport",
+        "pause frozen",
+        "resume",
+        "natural loss clears notice",
+        "retry clears notice",
+        "normal fire",
+        "reload clears notice"
+      ],
+      "hit": true,
+      "states": [
+        {
+          "label": "01-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "time": 0,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 0,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 2.6,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 3,
+                "dead": false
+              }
+            ],
+            "lives": 3,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 3,
+              "shield": 0,
+              "flash": 0
+            },
+            "enemies": [],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 40
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 40
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..BBBBBB.......BBBBBB..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S..........B.B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "双翼哨口",
+          "base": "共享信标\n◆ ◆ ◆\n基地毁坏，全队失败"
+        },
+        {
+          "label": "02-enemy",
+          "game": {
+            "state": "playing",
+            "level": 1,
+            "time": 2.2999999999999967,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 1,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 0.30000000000000426,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 3,
+                "dead": false
+              }
+            ],
+            "lives": 3,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 0.30000000000000426,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 3,
+              "shield": 0,
+              "flash": 0
+            },
+            "enemies": [
+              {
+                "id": "enemy-1",
+                "type": "scout",
+                "x": 108,
+                "y": 89.08333333333333,
+                "dir": 2,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 1.3407127801949796,
+                "think": 0.5833333333333331,
+                "stuck": 0,
+                "waypoint": {
+                  "x": 108,
+                  "y": 108
+                },
+                "flash": 0,
+                "spawnShield": 0.16666666666666635,
+                "aimCharge": 0
+              }
+            ],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 37.70000000000013
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 37.70000000000013
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..BBBBBB.......BBBBBB..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S..........B.B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "双翼哨口 · 保护信标，清除六台来敌。",
+          "base": "共享信标\n◆ ◆ ◆\n基地毁坏，全队失败"
+        },
+        {
+          "label": "03-base-hit",
+          "game": {
+            "state": "playing",
+            "level": 1,
+            "time": 21.23333333333341,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 2,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 0,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 1,
+                "dead": false
+              }
+            ],
+            "lives": 1,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 0,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 1,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 2,
+              "shield": 1.283333333333334,
+              "flash": 0.2833333333333334
+            },
+            "enemies": [
+              {
+                "id": "enemy-1",
+                "type": "scout",
+                "x": 280.0666666666666,
+                "y": 564,
+                "dir": 1,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 1.933333333333334,
+                "think": 0,
+                "stuck": 1.949999999999998,
+                "waypoint": {
+                  "x": 300,
+                  "y": 564
+                },
+                "flash": 0,
+                "spawnShield": 0,
+                "aimCharge": 0
+              },
+              {
+                "id": "enemy-2",
+                "type": "scout",
+                "x": 492,
+                "y": 389.2833333333331,
+                "dir": 2,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 0,
+                "think": 0.38333333333333297,
+                "stuck": 0,
+                "waypoint": {
+                  "x": 492,
+                  "y": 396
+                },
+                "flash": 0,
+                "spawnShield": 0,
+                "aimCharge": 0
+              }
+            ],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 18.766666666667874
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 18.766666666667874
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..B.BBBB.......BBBB.B..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S............B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "基地受击 · 耐久 2/3，请回防信标。",
+          "base": "基地受击\n◆ ◆ ◇\n基地毁坏，全队失败"
+        }
+      ],
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "width": 390,
+      "baseUrl": "http://127.0.0.1:58141/",
+      "passed": true,
+      "normalUi": true,
+      "terminal": {
+        "state": "lost",
+        "level": 1,
+        "time": 25.34999999999984,
+        "score": 0,
+        "shots": 0,
+        "kills": 0,
+        "spawned": 2,
+        "total": 6,
+        "mode": 1,
+        "players": [
+          {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 0,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 1,
+            "dead": false
+          }
+        ],
+        "lives": 1,
+        "player": {
+          "id": "player-1",
+          "x": 204,
+          "y": 516,
+          "dir": 0,
+          "speed": 104,
+          "invulnerable": 0,
+          "cooldown": 0,
+          "rapid": 0,
+          "shield": 0,
+          "number": 1,
+          "lives": 1,
+          "dead": false
+        },
+        "base": {
+          "x": 300,
+          "y": 564,
+          "hp": 0,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        "enemies": [
+          {
+            "id": "enemy-1",
+            "type": "scout",
+            "x": 280.0666666666666,
+            "y": 564,
+            "dir": 1,
+            "hp": 1,
+            "maxHp": 1,
+            "speed": 61,
+            "cooldown": 2.15,
+            "think": 0,
+            "stuck": 6.06666666666665,
+            "waypoint": {
+              "x": 300,
+              "y": 564
+            },
+            "flash": 0,
+            "spawnShield": 0,
+            "aimCharge": 0
+          },
+          {
+            "id": "enemy-2",
+            "type": "scout",
+            "x": 420,
+            "y": 564,
+            "dir": 3,
+            "hp": 1,
+            "maxHp": 1,
+            "speed": 61,
+            "cooldown": 0,
+            "think": 0.26666666666666633,
+            "stuck": 0,
+            "waypoint": null,
+            "flash": 0,
+            "spawnShield": 0,
+            "aimCharge": 0
+          }
+        ],
+        "bullets": [],
+        "items": [
+          {
+            "x": 204,
+            "y": 468,
+            "type": "shield",
+            "ttl": 14.666666666667965
+          },
+          {
+            "x": 396,
+            "y": 468,
+            "type": "rapid",
+            "ttl": 14.666666666667965
+          }
+        ],
+        "tiles": [
+          "SSSSSSSSSSSSSSSSSSSSSSSSS",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S....BB....SSS....BB....S",
+          "S....BB....SSS....BB....S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S..B.BBBB.......BBBB.B..S",
+          "S.......................S",
+          "S.......................S",
+          "S....BB....SSS....BB....S",
+          "S....BB....SSS....BB....S",
+          "S..........SSS..........S",
+          "S..........SSS..........S",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S.......................S",
+          "S..........BBB..........S",
+          "S............B..........S",
+          "SSSSSSSSSSSSSSSSSSSSSSSSS"
+        ]
+      },
+      "checks": [
+        "unchanged ready snapshot",
+        "actual first base hit2/3",
+        "visible text and card",
+        "no per-frame live announcements",
+        "field/status/pause in viewport",
+        "pause frozen",
+        "resume",
+        "natural loss clears notice",
+        "retry clears notice",
+        "normal fire",
+        "reload clears notice"
+      ],
+      "hit": true,
+      "states": [
+        {
+          "label": "01-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "time": 0,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 0,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 2.6,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 3,
+                "dead": false
+              }
+            ],
+            "lives": 3,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 3,
+              "shield": 0,
+              "flash": 0
+            },
+            "enemies": [],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 40
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 40
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..BBBBBB.......BBBBBB..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S..........B.B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "双翼哨口",
+          "base": "共享信标\n◆ ◆ ◆"
+        },
+        {
+          "label": "02-enemy",
+          "game": {
+            "state": "playing",
+            "level": 1,
+            "time": 2.2166666666666637,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 1,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 0.3833333333333376,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 3,
+                "dead": false
+              }
+            ],
+            "lives": 3,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 0.3833333333333376,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 3,
+              "shield": 0,
+              "flash": 0
+            },
+            "enemies": [
+              {
+                "id": "enemy-1",
+                "type": "scout",
+                "x": 108,
+                "y": 84,
+                "dir": 2,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 1.4240461135283127,
+                "think": 0.26666666666666633,
+                "stuck": 0,
+                "waypoint": null,
+                "flash": 0,
+                "spawnShield": 0.24999999999999967,
+                "aimCharge": 0
+              }
+            ],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 37.78333333333346
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 37.78333333333346
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..BBBBBB.......BBBBBB..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S..........B.B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "双翼哨口 · 保护信标，清除六台来敌。",
+          "base": "共享信标\n◆ ◆ ◆"
+        },
+        {
+          "label": "03-base-hit",
+          "game": {
+            "state": "playing",
+            "level": 1,
+            "time": 21.15000000000008,
+            "score": 0,
+            "shots": 0,
+            "kills": 0,
+            "spawned": 2,
+            "total": 6,
+            "mode": 1,
+            "players": [
+              {
+                "id": "player-1",
+                "x": 204,
+                "y": 516,
+                "dir": 0,
+                "speed": 104,
+                "invulnerable": 0,
+                "cooldown": 0,
+                "rapid": 0,
+                "shield": 0,
+                "number": 1,
+                "lives": 1,
+                "dead": false
+              }
+            ],
+            "lives": 1,
+            "player": {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 0,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 1,
+              "dead": false
+            },
+            "base": {
+              "x": 300,
+              "y": 564,
+              "hp": 2,
+              "shield": 1.3666666666666671,
+              "flash": 0.3666666666666667
+            },
+            "enemies": [
+              {
+                "id": "enemy-1",
+                "type": "scout",
+                "x": 280.0666666666666,
+                "y": 564,
+                "dir": 1,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 2.016666666666667,
+                "think": 0,
+                "stuck": 1.866666666666665,
+                "waypoint": {
+                  "x": 300,
+                  "y": 564
+                },
+                "flash": 0,
+                "spawnShield": 0,
+                "aimCharge": 0
+              },
+              {
+                "id": "enemy-2",
+                "type": "scout",
+                "x": 492,
+                "y": 384.1999999999998,
+                "dir": 2,
+                "hp": 1,
+                "maxHp": 1,
+                "speed": 61,
+                "cooldown": 0,
+                "think": 0.4666666666666663,
+                "stuck": 0,
+                "waypoint": {
+                  "x": 492,
+                  "y": 396
+                },
+                "flash": 0,
+                "spawnShield": 0,
+                "aimCharge": 0
+              }
+            ],
+            "bullets": [],
+            "items": [
+              {
+                "x": 204,
+                "y": 468,
+                "type": "shield",
+                "ttl": 18.850000000001202
+              },
+              {
+                "x": 396,
+                "y": 468,
+                "type": "rapid",
+                "ttl": 18.850000000001202
+              }
+            ],
+            "tiles": [
+              "SSSSSSSSSSSSSSSSSSSSSSSSS",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S..B.BBBB.......BBBB.B..S",
+              "S.......................S",
+              "S.......................S",
+              "S....BB....SSS....BB....S",
+              "S....BB....SSS....BB....S",
+              "S..........SSS..........S",
+              "S..........SSS..........S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S.......................S",
+              "S..........BBB..........S",
+              "S............B..........S",
+              "SSSSSSSSSSSSSSSSSSSSSSSSS"
+            ]
+          },
+          "status": "基地受击 · 耐久 2/3，请回防信标。",
+          "base": "基地受击\n◆ ◆ ◇"
+        }
+      ],
+      "pageErrors": [],
+      "httpErrors": []
+    }
+  ]
+}

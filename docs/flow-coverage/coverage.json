@@ -61,7 +61,8 @@
         "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/fortress-independent-qa/",
         "docs/fortress-pause-followup-qa/",
-        "docs/new-player-journey-qa/"
+        "docs/new-player-journey-qa/",
+        "docs/fortress-feedback-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "首图单车独立胜利已补证；两人协作、全模式/地形及真人触控/声音审美未验",
@@ -3234,5 +3235,16 @@
     "runtimeChanges": false,
     "terminalCoverage": "one normal-UI loss each; not all win states",
     "realDevice": false
+  },
+  "fortressFeedbackReview": {
+    "baseline": "9c8b107f1ae42b4235d1af9bd57e1476fd0ce792",
+    "evidence": "../fortress-feedback-qa/",
+    "scope": "one visible base-damage feedback improvement",
+    "localNormalUiWidths": [
+      1440,
+      390
+    ],
+    "unitGroups": 7,
+    "gameplayRulesChanged": false
   }
 }
