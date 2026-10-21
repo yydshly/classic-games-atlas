@@ -8,156 +8,13 @@
   "failureRetryGaps": [],
   "independentSuccessSummary": {
     "targets": 13,
-    "completed": 1,
-    "uncompleted": 12,
+    "completed": 2,
+    "uncompleted": 11,
     "toolBlockedSubset": 0,
-    "notYetTried": 12,
+    "notYetTried": 11,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   },
-  "laterStageTargets": [
-    {
-      "slug": "post",
-      "requestedStages": [
-        2,
-        3
-      ],
-      "totalStages": 3,
-      "normalUiCompletedThisRound": [
-        1,
-        2,
-        3
-      ],
-      "normalUiWinsThisRound": [],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "completionKind": "legal two-lap finish, NOT victory",
-      "progression": "sequential native unlock and next; first unit is required prerequisite",
-      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
-    },
-    {
-      "slug": "duel",
-      "requestedStages": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "totalStages": 8,
-      "normalUiCompletedThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "completionKind": "natural victory",
-      "progression": "sequential native unlock and next; first unit is required prerequisite",
-      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
-    },
-    {
-      "slug": "kart",
-      "requestedStages": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "totalStages": 8,
-      "normalUiCompletedThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "completionKind": "native optional assist target met, manual not tested",
-      "progression": "sequential native unlock and next; first unit is required prerequisite",
-      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
-    },
-    {
-      "slug": "meadow",
-      "requestedStages": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "totalStages": 8,
-      "normalUiCompletedThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "completionKind": "natural victory",
-      "progression": "sequential native unlock and next; first unit is required prerequisite",
-      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
-    }
-  ],
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -166,9 +23,8 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "fortress:single-player success;remaining=1",
-      "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
-      "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
+      "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
+      "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
       {
@@ -176,8 +32,15 @@
         "units": [
           1
         ],
-        "condition": "single-player success",
-        "status": "not_evidenced"
+        "condition": "first operation SOLO players1, protect base and clear six",
+        "status": "verified",
+        "previousCondition": "single-player success",
+        "verifiedUnits": [
+          1
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/fortress-independent-qa/"
       },
       {
         "slug": "post",
@@ -186,22 +49,24 @@
           2,
           3
         ],
-        "condition": "first place; this round rank2/3/3 legal finishes are not wins",
-        "status": "not_evidenced"
+        "condition": "player legal two laps16 gates, finish rank1 in each of three races",
+        "status": "not_evidenced",
+        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
       },
       {
         "slug": "venture",
         "units": [
           "festival"
         ],
-        "condition": "victory; natural failure ending already covered",
+        "condition": "lantern twelve-round limit, winner0 by net worth",
         "status": "verified",
         "verifiedUnits": [
           "festival"
         ],
         "blockedUnits": [],
         "pendingUnits": [],
-        "evidence": "docs/venture-independent-qa/"
+        "evidence": "docs/venture-independent-qa/",
+        "previousCondition": "victory; natural failure ending already covered"
       },
       {
         "slug": "kart",
@@ -215,16 +80,17 @@
           7,
           8
         ],
-        "condition": "curve assist OFF; this round all eight records assisted only",
-        "status": "not_evidenced"
+        "condition": "assist OFF from ready through result; original course target met, manual score separate",
+        "status": "not_evidenced",
+        "previousCondition": "curve assist OFF; this round all eight records assisted only"
       }
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 1,
-      "uncompleted": 12,
+      "completed": 2,
+      "uncompleted": 11,
       "toolBlockedSubset": 0,
-      "notYetTried": 12,
+      "notYetTried": 11,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },

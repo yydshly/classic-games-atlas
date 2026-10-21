@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "scopeBaseline": "988562d8505c23e320779e6173b8d746c7086189",
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "evidenceThrough": "1a0fd5d9857588587969e2dd39ace8870c4a6c9b",
+  "evidenceThrough": "437f0daad1f777b822c8c735ff22913c5487271c",
   "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected per-game reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
   "summary": {
     "catalog": 40,
@@ -12,9 +12,8 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "fortress:single-player success;remaining=1",
-      "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
-      "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
+      "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
+      "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
       {
@@ -22,8 +21,15 @@
         "units": [
           1
         ],
-        "condition": "single-player success",
-        "status": "not_evidenced"
+        "condition": "first operation SOLO players1, protect base and clear six",
+        "status": "verified",
+        "previousCondition": "single-player success",
+        "verifiedUnits": [
+          1
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/fortress-independent-qa/"
       },
       {
         "slug": "post",
@@ -32,22 +38,24 @@
           2,
           3
         ],
-        "condition": "first place; this round rank2/3/3 legal finishes are not wins",
-        "status": "not_evidenced"
+        "condition": "player legal two laps16 gates, finish rank1 in each of three races",
+        "status": "not_evidenced",
+        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
       },
       {
         "slug": "venture",
         "units": [
           "festival"
         ],
-        "condition": "victory; natural failure ending already covered",
+        "condition": "lantern twelve-round limit, winner0 by net worth",
         "status": "verified",
         "verifiedUnits": [
           "festival"
         ],
         "blockedUnits": [],
         "pendingUnits": [],
-        "evidence": "docs/venture-independent-qa/"
+        "evidence": "docs/venture-independent-qa/",
+        "previousCondition": "victory; natural failure ending already covered"
       },
       {
         "slug": "kart",
@@ -61,16 +69,17 @@
           7,
           8
         ],
-        "condition": "curve assist OFF; this round all eight records assisted only",
-        "status": "not_evidenced"
+        "condition": "assist OFF from ready through result; original course target met, manual score separate",
+        "status": "not_evidenced",
+        "previousCondition": "curve assist OFF; this round all eight records assisted only"
       }
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 1,
-      "uncompleted": 12,
+      "completed": 2,
+      "uncompleted": 11,
       "toolBlockedSubset": 0,
-      "notYetTried": 12,
+      "notYetTried": 11,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
@@ -89,15 +98,16 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/fortress/",
       "authoredFiniteUnits": 2,
-      "scopeDescription": "第二短图双车胜；第一短图单车自然基地败",
+      "scopeDescription": "旧首图基地败/次图双车胜保留；当前首图单车普通UI66.6833秒清六敌1860分，基地3/出击3",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "首图单车成功未见证据；不是后续解锁链"
+        "首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感"
       ],
       "excludedFromActiveDebt": false,
       "status": "no_listed_later_gap",
       "evidence": [
-        "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/fortress-independent-qa/"
       ]
     },
     {
