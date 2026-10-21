@@ -6,7 +6,7 @@
 
 [可筛选网页](index.html) · [结构化数据](coverage.json) · [来源Git对象清单](source-manifest.json)
 
-[本轮截图时序与执行恢复说明](independent-success-notes.md)
+[本轮截图时序与执行恢复说明](player-ux-notes.md)
 
 [全局后续关段清单](later-stage-inventory.html) · [清单数据](later-stage-inventory.json)；仍缺0款0个后续关段/赛场的成功或合法完赛证据，独立分支另列。
 
@@ -46,7 +46,7 @@
 |30 风庭对决 [v2 候选](../../versions/v2/games/duel/)|已验有限流程|已验有限流程：纠正输入驱动后正常连续八庭胜利，2–8各一次；旧首庭两次辅助驱动败局保留|已验有限流程：自然失败与重赛资源重置|已验有限流程：八庭自然胜利/逐庭干净衔接/终庭无第9/8份原生纪录与终庭重赛刷新通过；强反应策略非真人手感 [1](../../docs/duel-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/duel-first-win-qa/) / [3](../../docs/duel-later-qa/)|
 |31 苔原远征 [v2 候选](../../versions/v2/games/expedition/)|已验有限流程|已验有限流程：三段正常UI120/140/160秒连续胜|已验有限流程：此前120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过|已验有限流程：已有三段胜与终态保存；新补首段失守/取消重开，后两段失败未验 [1](../../docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/expedition-v2-end-qa/) / [3](../../docs/expedition-loss-qa/)|
 |32 星羽同伴 [v3 候选](../../versions/v3/games/feather/)|已验有限流程|已验有限流程：v3新旅途至固定终挑战结局，两种策略|已验有限流程：失败回营可再准备，成长保留|已验有限流程：结局总结/自由出行/刷新及v2承接已验 [1](../../docs/feather-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/feather-journey-qa/)|
-|33 回声走廊 [v2 候选](../../versions/v2/games/echo/)|已验有限流程|已验有限流程：既有首段成功；此前自由选第2段后正常下一段到第3段，均持钥撤离100光息/余2匣|已验有限流程：第二段败刷新/当前段重试不回首段|已验有限流程：后两段真实撤离、结算刷新、第三段无第四段、重试第三段/刷新/新行动通过；强暂停只读重放辅助，非连续无暂停三段 [1](../../docs/echo-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/echo-continuity-qa/) / [3](../../docs/echo-later-qa/)|
+|33 回声走廊 [v2 候选](../../versions/v2/games/echo/)|已验有限流程|已验有限流程：既有首段成功；此前自由选第2段后正常下一段到第3段，均持钥撤离100光息/余2匣|已验有限流程：第二段败刷新/当前段重试不回首段|已验有限流程：后两段真实撤离、结算刷新、第三段无第四段、重试第三段/刷新/新行动通过；强暂停只读重放辅助，非连续无暂停三段 [1](../../docs/echo-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/echo-continuity-qa/) / [3](../../docs/echo-later-qa/) / [4](../../docs/echo-player-ux-qa/)|
 |34 街巷护送 [v2 候选](../../versions/v2/games/escort/)|已验有限流程|已验有限流程：首/次/末街段护送胜1643/2040/1445|已验有限流程：第二段修前自然车0败→重试；标记修后胜|已验有限流程：第三段需护车到100%，结局刷新/从晨街重玩 [1](../../docs/escort-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/escort-storage-qa/)|
 |35 晴湾篮场 [v2 暂停回看](../../versions/v2/games/court/)|仅局部|仅局部：v2仅有限开局；v1首场8:6不能冒充v2|缺普通UI证据：v2完整失败/重试未验|缺普通UI证据：暂停开发，不补完整比赛 [1](../../docs/court-v2/README.md)|
 |36 雨街修理所 [v2 暂停回看](../../versions/v2/games/repair/)|仅局部|仅局部：v2仅有限诊断/动作开局；v1两天不能移植|缺普通UI证据：v2完整经营日/失败待验|缺普通UI证据：停止追加优化，不重启 [1](../../docs/repair-v2-qa/README.md)|

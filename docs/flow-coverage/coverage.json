@@ -1237,7 +1237,8 @@
       "evidence": [
         "docs/echo-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/echo-continuity-qa/",
-        "docs/echo-later-qa/"
+        "docs/echo-later-qa/",
+        "docs/echo-player-ux-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "有限三段主要目标已有正常UI证据；无暂停手感与其它路线留真人验收",
@@ -1264,6 +1265,12 @@
         "prerequisiteStages": [],
         "status": "verified",
         "terminal": "native free level select to second, next to third, both escape; final hidden next, result reload, ready retry and new action"
+      },
+      "playerUxReview": {
+        "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+        "status": "fixed",
+        "evidence": "docs/echo-player-ux-qa/",
+        "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
       }
     },
     {
@@ -2452,9 +2459,9 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "13个指定独立胜利目标：已完成13，未完成0（其中具体工具阻塞0、尚未执行0）。本轮列出的四组13目标均已补证。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局。仅有限流程，历史通关及辅助边界仍归原报告。",
   "laterStageTargets": [],
-  "roundEvidenceNotes": "independent-success-notes.md",
+  "roundEvidenceNotes": "player-ux-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -2838,5 +2845,13 @@
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   },
-  "laterChainClosureNote": "40项保留，36项活动。此前四款23个后续主链单元已补证，当前后续主链缺口0款、0个单元。本轮另核四组13个独立胜利目标，完成13、未完成0；两套计数不重复。游戏内辅助关仍可有外部脚本策略，均以各证据方法为准，非全模式或真人品质验收。"
+  "laterChainClosureNote": "40项保留，36项活动。此前四款23个后续主链单元已补证，当前后续主链缺口0款、0个单元。本轮另核四组13个独立胜利目标，完成13、未完成0；两套计数不重复。游戏内辅助关仍可有外部脚本策略，均以各证据方法为准，非全模式或真人品质验收。",
+  "playerUxReviews": {
+    "echo": {
+      "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+      "status": "fixed",
+      "evidence": "docs/echo-player-ux-qa/",
+      "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
+    }
+  }
 }

@@ -1,0 +1,1024 @@
+{
+  "2": {
+    "id": 2,
+    "game": "echo",
+    "view": "narrow",
+    "op": "capture",
+    "before": {
+      "text": "33 / ECHO CORRIDOR · 独立 v2 候选\n回声走廊 余烬协议\n保留的 v1\n01 余烬入口\n02 分流仓库\n03 静默撤离\n开始行动\n暂停 / 继续\n重试本关\n操作说明\n自动保存正常 · 保留当前仓段\n光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲\n余烬入口\n\n拿取琥珀钥匙，E开门撤离。可走补给支路，也可节省弹药避战。\n\n开始行动\n1 精准脉冲\n1 匣 · 12 伤 · 远程\n2 破阵散射\n3 匣 · 40 伤 · 近程\n\n拿钥匙开门撤离；可以绕过守卫，不必全灭。\n\n↶ 转左\n↑ 前进\n转右 ↷\n← 侧移\n↓ 后退\n侧移 →\n射击\nE 开门 / 撤离\nW/S 前后 · A/D 侧移 · ←/→ 转向 · 空格射击 · 1/2 换武器 · E 交互 · P 暂停 · 拖动画面转向。范围与限制",
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      },
+      "controls": [
+        {
+          "id": "",
+          "tag": "A",
+          "text": "保留的 v1",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 331.515625,
+            "y": 35.5,
+            "w": 48.484375,
+            "h": 14
+          }
+        },
+        {
+          "id": "level",
+          "tag": "SELECT",
+          "text": "01 余烬入口\n02 分流仓库\n03 静默撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 75,
+            "w": 123,
+            "h": 40
+          }
+        },
+        {
+          "id": "start",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 140,
+            "y": 76,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pause",
+          "tag": "BUTTON",
+          "text": "暂停 / 继续",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 229,
+            "y": 76,
+            "w": 96.28125,
+            "h": 38
+          }
+        },
+        {
+          "id": "retry",
+          "tag": "BUTTON",
+          "text": "重试本关",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "help",
+          "tag": "BUTTON",
+          "text": "操作说明",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 99,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "continue",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 154,
+            "y": 386.25,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pulse",
+          "tag": "BUTTON",
+          "text": "1 精准脉冲\n1 匣 · 12 伤 · 远程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 149,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "burst",
+          "tag": "BUTTON",
+          "text": "2 破阵散射\n3 匣 · 40 伤 · 近程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 262.5,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↶ 转左",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↑ 前进",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "转右 ↷",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "← 侧移",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↓ 后退",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "侧移 →",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "射击",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "use",
+          "tag": "BUTTON",
+          "text": "E 开门 / 撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "A",
+          "text": "范围与限制",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 87,
+            "y": 755.8125,
+            "w": 55,
+            "h": 14
+          }
+        }
+      ],
+      "scrollables": []
+    },
+    "note": "Inspect ready pause/start controls before interaction",
+    "after": {
+      "text": "33 / ECHO CORRIDOR · 独立 v2 候选\n回声走廊 余烬协议\n保留的 v1\n01 余烬入口\n02 分流仓库\n03 静默撤离\n开始行动\n暂停 / 继续\n重试本关\n操作说明\n自动保存正常 · 保留当前仓段\n光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲\n余烬入口\n\n拿取琥珀钥匙，E开门撤离。可走补给支路，也可节省弹药避战。\n\n开始行动\n1 精准脉冲\n1 匣 · 12 伤 · 远程\n2 破阵散射\n3 匣 · 40 伤 · 近程\n\n拿钥匙开门撤离；可以绕过守卫，不必全灭。\n\n↶ 转左\n↑ 前进\n转右 ↷\n← 侧移\n↓ 后退\n侧移 →\n射击\nE 开门 / 撤离\nW/S 前后 · A/D 侧移 · ←/→ 转向 · 空格射击 · 1/2 换武器 · E 交互 · P 暂停 · 拖动画面转向。范围与限制",
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      },
+      "controls": [
+        {
+          "id": "",
+          "tag": "A",
+          "text": "保留的 v1",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 331.515625,
+            "y": 35.5,
+            "w": 48.484375,
+            "h": 14
+          }
+        },
+        {
+          "id": "level",
+          "tag": "SELECT",
+          "text": "01 余烬入口\n02 分流仓库\n03 静默撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 75,
+            "w": 123,
+            "h": 40
+          }
+        },
+        {
+          "id": "start",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 140,
+            "y": 76,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pause",
+          "tag": "BUTTON",
+          "text": "暂停 / 继续",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 229,
+            "y": 76,
+            "w": 96.28125,
+            "h": 38
+          }
+        },
+        {
+          "id": "retry",
+          "tag": "BUTTON",
+          "text": "重试本关",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "help",
+          "tag": "BUTTON",
+          "text": "操作说明",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 99,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "continue",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 154,
+            "y": 386.25,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pulse",
+          "tag": "BUTTON",
+          "text": "1 精准脉冲\n1 匣 · 12 伤 · 远程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 149,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "burst",
+          "tag": "BUTTON",
+          "text": "2 破阵散射\n3 匣 · 40 伤 · 近程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 262.5,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↶ 转左",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↑ 前进",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "转右 ↷",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "← 侧移",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↓ 后退",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "侧移 →",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "射击",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "use",
+          "tag": "BUTTON",
+          "text": "E 开门 / 撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "A",
+          "text": "范围与限制",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 87,
+            "y": 755.8125,
+            "w": 55,
+            "h": 14
+          }
+        }
+      ],
+      "scrollables": []
+    },
+    "screenshot": "02-echo-narrow-capture.png",
+    "errors": [],
+    "status": "observed"
+  },
+  "3": {
+    "id": 3,
+    "game": "echo",
+    "view": "narrow",
+    "op": "tap",
+    "before": {
+      "text": "33 / ECHO CORRIDOR · 独立 v2 候选\n回声走廊 余烬协议\n保留的 v1\n01 余烬入口\n02 分流仓库\n03 静默撤离\n开始行动\n暂停 / 继续\n重试本关\n操作说明\n自动保存正常 · 保留当前仓段\n光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲\n余烬入口\n\n拿取琥珀钥匙，E开门撤离。可走补给支路，也可节省弹药避战。\n\n开始行动\n1 精准脉冲\n1 匣 · 12 伤 · 远程\n2 破阵散射\n3 匣 · 40 伤 · 近程\n\n拿钥匙开门撤离；可以绕过守卫，不必全灭。\n\n↶ 转左\n↑ 前进\n转右 ↷\n← 侧移\n↓ 后退\n侧移 →\n射击\nE 开门 / 撤离\nW/S 前后 · A/D 侧移 · ←/→ 转向 · 空格射击 · 1/2 换武器 · E 交互 · P 暂停 · 拖动画面转向。范围与限制",
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      },
+      "controls": [
+        {
+          "id": "",
+          "tag": "A",
+          "text": "保留的 v1",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 331.515625,
+            "y": 35.5,
+            "w": 48.484375,
+            "h": 14
+          }
+        },
+        {
+          "id": "level",
+          "tag": "SELECT",
+          "text": "01 余烬入口\n02 分流仓库\n03 静默撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 75,
+            "w": 123,
+            "h": 40
+          }
+        },
+        {
+          "id": "start",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 140,
+            "y": 76,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pause",
+          "tag": "BUTTON",
+          "text": "暂停 / 继续",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 229,
+            "y": 76,
+            "w": 96.28125,
+            "h": 38
+          }
+        },
+        {
+          "id": "retry",
+          "tag": "BUTTON",
+          "text": "重试本关",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "help",
+          "tag": "BUTTON",
+          "text": "操作说明",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 99,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "continue",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 154,
+            "y": 386.25,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pulse",
+          "tag": "BUTTON",
+          "text": "1 精准脉冲\n1 匣 · 12 伤 · 远程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 149,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "burst",
+          "tag": "BUTTON",
+          "text": "2 破阵散射\n3 匣 · 40 伤 · 近程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 262.5,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↶ 转左",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↑ 前进",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "转右 ↷",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "← 侧移",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↓ 后退",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "侧移 →",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "射击",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "use",
+          "tag": "BUTTON",
+          "text": "E 开门 / 撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "A",
+          "text": "范围与限制",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 87,
+            "y": 755.8125,
+            "w": 55,
+            "h": 14
+          }
+        }
+      ],
+      "scrollables": []
+    },
+    "note": "Ready screen Pause/Continue must not start a new timed action",
+    "target": {
+      "selector": "#pause",
+      "text": "暂停 / 继续",
+      "box": {
+        "x": 229,
+        "y": 76,
+        "width": 96.28125,
+        "height": 38
+      }
+    },
+    "after": {
+      "text": "33 / ECHO CORRIDOR · 独立 v2 候选\n回声走廊 余烬协议\n保留的 v1\n01 余烬入口\n02 分流仓库\n03 静默撤离\n开始行动\n暂停 / 继续\n重试本关\n操作说明\n自动保存正常 · 活动局刷新后暂停恢复\n光息 100\n光匣 8\n120 秒\n◇ 寻找钥匙\n精准脉冲\n1 精准脉冲\n1 匣 · 12 伤 · 远程\n2 破阵散射\n3 匣 · 40 伤 · 近程\n\n拿钥匙开门撤离；可以绕过守卫，不必全灭。\n\n↶ 转左\n↑ 前进\n转右 ↷\n← 侧移\n↓ 后退\n侧移 →\n射击\nE 开门 / 撤离\nW/S 前后 · A/D 侧移 · ←/→ 转向 · 空格射击 · 1/2 换武器 · E 交互 · P 暂停 · 拖动画面转向。范围与限制",
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "x": 0,
+        "y": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      },
+      "controls": [
+        {
+          "id": "",
+          "tag": "A",
+          "text": "保留的 v1",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 331.515625,
+            "y": 35.5,
+            "w": 48.484375,
+            "h": 14
+          }
+        },
+        {
+          "id": "level",
+          "tag": "SELECT",
+          "text": "01 余烬入口\n02 分流仓库\n03 静默撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 75,
+            "w": 123,
+            "h": 40
+          }
+        },
+        {
+          "id": "start",
+          "tag": "BUTTON",
+          "text": "开始行动",
+          "disabled": true,
+          "visible": true,
+          "box": {
+            "x": 140,
+            "y": 76,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "pause",
+          "tag": "BUTTON",
+          "text": "暂停 / 继续",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 229,
+            "y": 76,
+            "w": 96.28125,
+            "h": 38
+          }
+        },
+        {
+          "id": "retry",
+          "tag": "BUTTON",
+          "text": "重试本关",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "help",
+          "tag": "BUTTON",
+          "text": "操作说明",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 99,
+            "y": 122,
+            "w": 82,
+            "h": 38
+          }
+        },
+        {
+          "id": "continue",
+          "tag": "BUTTON",
+          "text": "继续行动",
+          "disabled": false,
+          "visible": false,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "id": "pulse",
+          "tag": "BUTTON",
+          "text": "1 精准脉冲\n1 匣 · 12 伤 · 远程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 149,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "burst",
+          "tag": "BUTTON",
+          "text": "2 破阵散射\n3 匣 · 40 伤 · 近程",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 262.5,
+            "y": 486.625,
+            "w": 106.5,
+            "h": 67
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↶ 转左",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↑ 前进",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "转右 ↷",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "← 侧移",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 621.125,
+            "w": 88,
+            "h": 40
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "↓ 后退",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 10,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "侧移 →",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 104,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "射击",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 198,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "use",
+          "tag": "BUTTON",
+          "text": "E 开门 / 撤离",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 292,
+            "y": 667.125,
+            "w": 88,
+            "h": 58
+          }
+        },
+        {
+          "id": "",
+          "tag": "A",
+          "text": "范围与限制",
+          "disabled": false,
+          "visible": true,
+          "box": {
+            "x": 87,
+            "y": 755.8125,
+            "w": 55,
+            "h": 14
+          }
+        }
+      ],
+      "scrollables": []
+    },
+    "screenshot": "03-echo-narrow-tap.png",
+    "errors": [],
+    "status": "observed"
+  }
+}

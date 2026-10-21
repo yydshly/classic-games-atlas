@@ -1,0 +1,154 @@
+{
+  "url": "local preview /versions/v2/games/echo/",
+  "testedAt": "2026-10-21T11:59:09.515902+00:00",
+  "method": "Fresh native UI only, desktop keyboard and390CSS touch emulation. No state/save/time/terminal injection. Short start, fire/move, pause/resume, retry and ready refresh; not full stage replay.",
+  "views": [
+    {
+      "viewport": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "新档待命暂停禁用",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "余烬入口"
+          }
+        },
+        {
+          "step": 2,
+          "description": "暂停触点/P/Escape不启动新局",
+          "health": "passed"
+        },
+        {
+          "step": 3,
+          "description": "显式开始、射击移动、暂停冻结",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 7",
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "overlayVisible": true,
+            "title": "行动暂停"
+          }
+        },
+        {
+          "step": 4,
+          "description": "继续再暂停",
+          "health": "passed"
+        },
+        {
+          "step": 5,
+          "description": "重试与第二段待命刷新仍可显式开始",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "分流仓库"
+          }
+        },
+        {
+          "step": 6,
+          "description": "自然失利后暂停禁用且P/Escape不重开，重试仍是当前关段",
+          "health": "passed",
+          "visible": {
+            "time": "106 秒",
+            "hp": "光息 0",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "行动失败"
+          }
+        }
+      ]
+    },
+    {
+      "viewport": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "新档待命暂停禁用",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "余烬入口"
+          }
+        },
+        {
+          "step": 2,
+          "description": "暂停触点/P/Escape不启动新局",
+          "health": "passed"
+        },
+        {
+          "step": 3,
+          "description": "显式开始、射击移动、暂停冻结",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 7",
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "overlayVisible": true,
+            "title": "行动暂停"
+          }
+        },
+        {
+          "step": 4,
+          "description": "继续再暂停",
+          "health": "passed"
+        },
+        {
+          "step": 5,
+          "description": "重试与第二段待命刷新仍可显式开始",
+          "health": "passed",
+          "visible": {
+            "time": "120 秒",
+            "hp": "光息 100",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "分流仓库"
+          }
+        },
+        {
+          "step": 6,
+          "description": "自然失利后暂停禁用且P/Escape不重开，重试仍是当前关段",
+          "health": "passed",
+          "visible": {
+            "time": "106 秒",
+            "hp": "光息 0",
+            "ammo": "光匣 8",
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "overlayVisible": true,
+            "title": "行动失败"
+          }
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "status": "passed",
+  "evidenceKind": "Local native UI after uncommitted patch; deployment verified separately"
+}
