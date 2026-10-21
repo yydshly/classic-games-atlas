@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "scopeBaseline": "988562d8505c23e320779e6173b8d746c7086189",
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "evidenceThrough": "90473990ada45aea87d7c46097e57570a892d41c",
+  "evidenceThrough": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
   "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected per-game reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
   "summary": {
     "catalog": 40,
@@ -11,9 +11,7 @@
     "laterUnitsMissingCount": 0,
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
-    "separateSuccessBranches": [
-      "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
-    ],
+    "separateSuccessBranches": [],
     "separateSuccessTargets": [
       {
         "slug": "fortress",
@@ -77,16 +75,29 @@
           8
         ],
         "condition": "assist OFF from ready through result; original course target met, manual score separate",
-        "status": "not_evidenced",
-        "previousCondition": "curve assist OFF; this round all eight records assisted only"
+        "status": "verified",
+        "previousCondition": "curve assist OFF; this round all eight records assisted only",
+        "verifiedUnits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/kart-independent-qa/"
       }
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 5,
-      "uncompleted": 8,
+      "completed": 13,
+      "uncompleted": 0,
       "toolBlockedSubset": 0,
-      "notYetTried": 8,
+      "notYetTried": 0,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
@@ -792,17 +803,18 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/kart/",
       "authoredFiniteUnits": 8,
-      "scopeDescription": "八赛道均使用既有弯道辅助正常双圈达到名次目标；第5第二其余第一，八份辅助纪录",
+      "scopeDescription": "既有原生赛程逐站选关，关闭游戏内弯道辅助后八站普通键盘脚本各一次第1；外部只读策略仍辅助",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "第1–8赛道关闭弯道辅助胜利仍未验；辅助成绩不覆盖手动纪录；脚本追线非真人连续操控"
+        "八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助"
       ],
       "excludedFromActiveDebt": false,
       "status": "no_listed_later_gap",
       "evidence": [
         "versions/v2/games/kart/about.html",
         "docs/kart-loss-qa/",
-        "docs/kart-later-qa/"
+        "docs/kart-later-qa/",
+        "docs/kart-independent-qa/"
       ]
     },
     {

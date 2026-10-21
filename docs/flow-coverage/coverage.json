@@ -1450,16 +1450,17 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "开启页面既有弯道辅助，正常逐站完成八条赛道；第5第二符合前二，其余第一；辅助成绩与手动纪录分离",
+      "observedCore": "既有原生赛程逐站选关，关闭游戏内弯道辅助后八站普通键盘脚本各一次第1；外部只读策略仍辅助",
       "observedRetry": "v2首站辅助关/按住刹车，92秒自然超时；面板重试清旧结果/刹车，暂停刷新后新倒计时与加速通过",
-      "endingBoundary": "八站辅助达标、干净衔接、末站无第9、八份辅助纪录刷新与重赛通过；第1–8手动胜利未验",
+      "endingBoundary": "八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助",
       "evidence": [
         "versions/v2/games/kart/about.html",
         "docs/kart-loss-qa/",
-        "docs/kart-later-qa/"
+        "docs/kart-later-qa/",
+        "docs/kart-independent-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "有限后续主链已补齐；关闭弯道辅助的八赛道胜利与真人操控体验仍独立未验",
+      "nextToolWork": "本轮13独立目标到此补齐；不扩测试主题，仅保留真人操控/真机/声音/平衡审美边界",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1578,10 +1579,11 @@
       }
     }
   ],
-  "evidenceThrough": "90473990ada45aea87d7c46097e57570a892d41c",
+  "evidenceThrough": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
   "roundCommits": {
     "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
-    "fortress": "90473990ada45aea87d7c46097e57570a892d41c"
+    "fortress": "90473990ada45aea87d7c46097e57570a892d41c",
+    "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47"
   },
   "roundDeployments": {
     "venture": {
@@ -1595,13 +1597,19 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909"
+    },
+    "post": {
+      "id": 39543126983,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983"
     }
   },
   "roundScope": {
     "kind": "four_independent_success_groups",
     "targets": 13,
-    "completed": 5,
-    "uncompleted": 8,
+    "completed": 13,
+    "uncompleted": 0,
     "toolBlockedSubset": 0,
     "runtimeChanged": false,
     "confirmedBlockingDefects": 0
@@ -2437,7 +2445,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "13个指定独立胜利目标：已完成5，未完成8（其中具体工具阻塞0、尚未执行8）。剩余：林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "roundSummary": "13个指定独立胜利目标：已完成13，未完成0（其中具体工具阻塞0、尚未执行0）。本轮列出的四组13目标均已补证。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "independent-success-notes.md",
   "globalLaterStageSummary": {
@@ -2447,9 +2455,7 @@
     "laterUnitsMissingCount": 0,
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
-    "separateSuccessBranches": [
-      "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
-    ],
+    "separateSuccessBranches": [],
     "separateSuccessTargets": [
       {
         "slug": "fortress",
@@ -2513,16 +2519,29 @@
           8
         ],
         "condition": "assist OFF from ready through result; original course target met, manual score separate",
-        "status": "not_evidenced",
-        "previousCondition": "curve assist OFF; this round all eight records assisted only"
+        "status": "verified",
+        "previousCondition": "curve assist OFF; this round all eight records assisted only",
+        "verifiedUnits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/kart-independent-qa/"
       }
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 5,
-      "uncompleted": 8,
+      "completed": 13,
+      "uncompleted": 0,
       "toolBlockedSubset": 0,
-      "notYetTried": 8,
+      "notYetTried": 0,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
@@ -2585,10 +2604,10 @@
       ]
     },
     "kart": {
-      "scopeDescription": "八赛道均使用既有弯道辅助正常双圈达到名次目标；第5第二其余第一，八份辅助纪录",
+      "scopeDescription": "既有原生赛程逐站选关，关闭游戏内弯道辅助后八站普通键盘脚本各一次第1；外部只读策略仍辅助",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "第1–8赛道关闭弯道辅助胜利仍未验；辅助成绩不覆盖手动纪录；脚本追线非真人连续操控"
+        "八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助"
       ]
     },
     "meadow": {
@@ -2613,9 +2632,7 @@
       ]
     }
   },
-  "separateSuccessBranches": [
-    "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
-  ],
+  "separateSuccessBranches": [],
   "separateSuccessTargets": [
     {
       "slug": "fortress",
@@ -2679,11 +2696,24 @@
         8
       ],
       "condition": "assist OFF from ready through result; original course target met, manual score separate",
-      "status": "not_evidenced",
-      "previousCondition": "curve assist OFF; this round all eight records assisted only"
+      "status": "verified",
+      "previousCondition": "curve assist OFF; this round all eight records assisted only",
+      "verifiedUnits": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "blockedUnits": [],
+      "pendingUnits": [],
+      "evidence": "docs/kart-independent-qa/"
     }
   ],
-  "independentBranchNote": "13个指定独立胜利目标：已完成5，未完成8（其中具体工具阻塞0、尚未执行8）。剩余：林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "independentBranchNote": "13个指定独立胜利目标：已完成13，未完成0（其中具体工具阻塞0、尚未执行0）。本轮列出的四组13目标均已补证。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
   "nextDeliveryNote": "本轮23个既定后续单元全部补证，没有另加主题或继续重刷。下一阶段由产品取舍与真人体验验收决定；如继续工具验证，先明确上述独立胜利分支的有限范围，不把它们当已失败或必须降难度。",
   "independentSuccessRound": {
     "baseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
@@ -2739,16 +2769,32 @@
         "blockedUnits": [],
         "uncompletedUnits": [],
         "methodBoundary": "三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶"
+      },
+      "kart": {
+        "report": "docs/kart-independent-qa/public-report.json",
+        "verifiedUnits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "blockedUnits": [],
+        "uncompletedUnits": [],
+        "methodBoundary": "八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助"
       }
     },
     "runtimeChanged": false
   },
   "independentSuccessSummary": {
     "targets": 13,
-    "completed": 5,
-    "uncompleted": 8,
+    "completed": 13,
+    "uncompleted": 0,
     "toolBlockedSubset": 0,
-    "notYetTried": 8,
+    "notYetTried": 0,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   }

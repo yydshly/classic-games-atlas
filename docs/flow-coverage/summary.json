@@ -8,10 +8,10 @@
   "failureRetryGaps": [],
   "independentSuccessSummary": {
     "targets": 13,
-    "completed": 5,
-    "uncompleted": 8,
+    "completed": 13,
+    "uncompleted": 0,
     "toolBlockedSubset": 0,
-    "notYetTried": 8,
+    "notYetTried": 0,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   },
@@ -22,9 +22,7 @@
     "laterUnitsMissingCount": 0,
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
-    "separateSuccessBranches": [
-      "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
-    ],
+    "separateSuccessBranches": [],
     "separateSuccessTargets": [
       {
         "slug": "fortress",
@@ -88,16 +86,29 @@
           8
         ],
         "condition": "assist OFF from ready through result; original course target met, manual score separate",
-        "status": "not_evidenced",
-        "previousCondition": "curve assist OFF; this round all eight records assisted only"
+        "status": "verified",
+        "previousCondition": "curve assist OFF; this round all eight records assisted only",
+        "verifiedUnits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/kart-independent-qa/"
       }
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 5,
-      "uncompleted": 8,
+      "completed": 13,
+      "uncompleted": 0,
       "toolBlockedSubset": 0,
-      "notYetTried": 8,
+      "notYetTried": 0,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
