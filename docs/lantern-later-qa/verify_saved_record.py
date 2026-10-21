@@ -1,0 +1,13 @@
+import json,os,shutil
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+R=Path.cwd()/'.local/finite-gap-round';out=R/'lantern-public';r=json.loads((out/'public-report.json').read_text(encoding='utf-8'));
+if not (out/'original-harness-report.json').exists():shutil.copyfile(out/'public-report.json',out/'original-harness-report.json')
+assert r['outcome']['state']=='won';r['harnessLimit']={'originalError':r.get('error',r.get('harnessLimit',{}).get('originalError')),'cause':'After normal start, spawn dot is consumed on first native frame; expecting collected0 after start-and-pause was too strict. Same native profile reopened, no progress import or repeat win.'};os.environ['TEMP']=os.environ['TMP']=str(R/'tmp')
+with sync_playwright()as pw:
+ c=pw.chromium.launch_persistent_context(str(out/'native-profile'),viewport={'width':1440,'height':1050});p=c.new_page();p.on('pageerror',lambda e:r['consoleErrors'].append(str(e)));p.on('console',lambda m:r['consoleErrors'].append(m.text)if m.type=='error'else None);p.on('response',lambda x:r['httpErrors'].append({'url':x.url,'status':x.status})if x.status>=400 else None);p.on('requestfailed',lambda x:r['requestFailures'].append({'url':x.url,'error':x.failure}))
+ def s():return p.evaluate("async()=>{const m=await import(document.querySelector('script[type=module]').src);return m.diagnostics()}")
+ try:
+  p.goto(r['url'],wait_until='domcontentloaded',timeout=20000);p.locator('#primary-action').wait_for();n=s();assert n['state']=='ready'and n['level']==2 and n['time']==0 and n['stats']['collected']==0 and n['remaining']==46 and n['best']==r['outcome']['best'];r['retryReadyBeforeStart']=n;p.screenshot(path=str(out/'second-map-clean-ready.png'),full_page=True);p.locator('#primary-action').click();p.locator('#pause').click();n=s();assert n['state']=='paused'and n['time']<.25 and n['lives']==3 and n['stats']['collected']<=1 and n['remaining']==46-n['stats']['collected']and n['stats']['deaths']==0 and n['stats']['captures']==0 and n['heldKeys']==0 and n['best']==r['outcome']['best'];r['retryClean']=n;p.screenshot(path=str(out/'same-map-clean-paused.png'),full_page=True);p.locator('#levels').click();assert p.locator('[data-level]').count()==2;r['onlyTwoMaps']=True;p.screenshot(path=str(out/'second-map-earned-record.png'),full_page=True);r['status']='passed';r.pop('error',None);assert not any(r[k]for k in['consoleErrors','httpErrors','requestFailures'])
+ finally:(out/'public-report.json').write_text(json.dumps(r,ensure_ascii=False,indent=2),encoding='utf-8');c.close()
+print(json.dumps({'status':r['status'],'time':r['outcome']['time'],'lives':r['outcome']['lives'],'stats':r['outcome']['stats']},ensure_ascii=False))
