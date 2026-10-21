@@ -1,0 +1,44 @@
+{
+  "game": "cloud",
+  "status": "passed",
+  "method": "Actual controller presentation statements; fortress actual handler with real engine start/pause. Terminal and nonzero metrics are explicit Node fixtures, not browser play. Original-source negative control checks enabled inactive button.",
+  "cases": [
+    {
+      "state": "ready",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "playing",
+      "mainDisabled": false,
+      "touchDisabled": false,
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "paused",
+      "mainDisabled": false,
+      "touchDisabled": false,
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "won",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "terminalPresentationFixture": true
+    },
+    {
+      "state": "lost",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "terminalPresentationFixture": true
+    },
+    {
+      "state": "expired",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "terminalPresentationFixture": true
+    }
+  ],
+  "baselineNegativeControl": true
+}

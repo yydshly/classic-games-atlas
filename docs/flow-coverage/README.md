@@ -6,7 +6,7 @@
 
 [可筛选网页](index.html) · [结构化数据](coverage.json) · [来源Git对象清单](source-manifest.json)
 
-[本轮截图时序与执行恢复说明](pause-semantics-notes.md)
+[本轮截图时序与执行恢复说明](pause-followup-notes.md)
 
 [全局后续关段清单](later-stage-inventory.html) · [清单数据](later-stage-inventory.json)；仍缺0款0个后续关段/赛场的成功或合法完赛证据，独立分支另列。
 
@@ -22,7 +22,7 @@
 |06 山口守望 [v2 候选](../../versions/v2/games/pass/)|已验有限流程|已验有限流程：缚索四波胜；重弩第二波败|已验有限流程：重新布防230金/12城门/空场|已验有限流程：只有一短图，刷新保留最好不续战 [1](../../docs/pass-v2-qa/PUBLIC_BROWSER_QA.md)|
 |07 风行小径 [v2 候选](../../versions/v2/games/trail/)|已验有限流程|已验有限流程：正常 UI 连续三程胜利；第2/3程各18.09秒、3生命、3果实|已验有限流程：另一个新局43.223秒自然体力总失败→重试与暂停刷新|已验有限流程：三段正常胜利与逐段结算刷新、下一程清场、末段无第四程、重试第3程通过；固定辅助路线，非全收集/真机验收 [1](../../docs/trail-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/trail-save-qa/) / [3](../../docs/trail-main-flow-qa/) / [4](../../docs/trail-later-qa/)|
 |08 夜航拾光 [v2 候选](../../versions/v2/games/lantern/)|已验有限流程|已验有限流程：两图各有自然胜利；此前第二图13.3244秒/46点/3命/2反制/0死亡|已验有限流程：次图失败重试3命，刷新回该图准备|已验有限流程：第二图收齐成功、刷新保留最好/所选图、同图干净重试与两图菜单通过；策略脚本辅助 [1](../../docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/lantern-later-qa/) / [3](../../docs/lantern-pause-semantics-qa/)|
-|09 云隙巡航 [v2 候选](../../versions/v2/games/cloud/)|已验有限流程|已验有限流程：两段各有自然胜利；此前第二段53.4313秒/6060分/14敌/3血，集中火力鼠标策略辅助|已验有限流程：失败重试3命2风幕/0分|已验有限流程：第二段真实清编队精英、刷新最好/干净重试/两段菜单通过；本次未切换散射 [1](../../docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/cloud-later-qa/)|
+|09 云隙巡航 [v2 候选](../../versions/v2/games/cloud/)|已验有限流程|已验有限流程：两段各有自然胜利；此前第二段53.4313秒/6060分/14敌/3血，集中火力鼠标策略辅助|已验有限流程：失败重试3命2风幕/0分|已验有限流程：第二段真实清编队精英、刷新最好/干净重试/两段菜单通过；本次未切换散射 [1](../../docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/cloud-later-qa/) / [3](../../docs/cloud-pause-followup-qa/)|
 |10 晶簇花园 [v2 候选](../../versions/v2/games/garden/)|已验有限流程|已验有限流程：两题公开解各2步成功|已验有限流程：自然6步耗尽180分败；重试原盘且460纪录留|已验有限流程：两题开放，无解锁链；动画刷新未验 [1](../../docs/garden-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/garden-loss-qa/)|
 |11 青藤回廊 [v2 候选](../../versions/v2/games/vine/)|已验有限流程|已验有限流程：两图8/8与10/10后归门胜|已验有限流程：首图自然撞壁后同种子重试0步，身体/青芽/rng复位，暂停刷新和新方向通过|已验有限流程：两图开放，非16关全通 [1](../../docs/vine-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/vine-loss-qa/)|
 |12 花笺连线 [v1 既有原型](../../games/petal/)|已验有限流程|已验有限流程：原生提示/正常点击顺序完成1–20；1–9作必要前置，10–20此前补证|已验有限流程：v1第2页正常4次无通路同图案配对耗错失败；重写资源/棋盘复位，原生首纪录与2页解锁跨刷新保留|已验有限流程：10–20全部自然清页；下落/左移模式、稳定刷新、20页终局/无21页/重读与原生纪录保留通过 [1](../../docs/petal-v1-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/petal-loss-qa/) / [3](../../docs/petal-later-qa/)|

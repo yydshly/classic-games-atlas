@@ -1,0 +1,210 @@
+{
+  "game": "cloud",
+  "base": "local preview",
+  "mode": "verification",
+  "method": "Native UI only; copied diagnostics/DOM observations. No injected state/save/time/result.390CSS is emulation. Petal terminal uses four official-hint pairs as real unlock prerequisite, then four ordinary invalid pairs; not an independent win or20-page run.",
+  "views": [
+    {
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命按钮真实可用性",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "desktop-1.png",
+          "health": "passed"
+        },
+        {
+          "step": 2,
+          "description": "普通点按暂停和P未启动新局",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "desktop-2.png",
+          "health": "passed"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后暂停冻结，文案为继续",
+          "state": {
+            "state": "paused",
+            "time": 0.3333000000000005,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P",
+            "touchDisabled": false,
+            "touchText": "继续"
+          },
+          "screenshot": "desktop-3.png",
+          "health": "passed"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "state": {
+            "state": "paused",
+            "time": 0.6333000000000002,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P",
+            "touchDisabled": false,
+            "touchText": "继续"
+          },
+          "screenshot": "desktop-4.png",
+          "health": "passed"
+        },
+        {
+          "step": 5,
+          "description": "刷新遵循原设计：花笺暂停续局，云隙/堡垒回整备并保留记录",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "desktop-5.png",
+          "health": "passed"
+        },
+        {
+          "step": 6,
+          "description": "真实终态暂停禁用，P及点按不重开/恢复",
+          "state": {
+            "state": "won",
+            "time": 87.77966666667811,
+            "score": 4170,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "desktop-6.png",
+          "health": "passed"
+        }
+      ],
+      "terminalMethod": "original idle rules and real elapsed time"
+    },
+    {
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命按钮真实可用性",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "narrow-1.png",
+          "health": "passed"
+        },
+        {
+          "step": 2,
+          "description": "普通点按暂停和P未启动新局",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "narrow-2.png",
+          "health": "passed"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后暂停冻结，文案为继续",
+          "state": {
+            "state": "paused",
+            "time": 0.4000000000000005,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P",
+            "touchDisabled": false,
+            "touchText": "继续"
+          },
+          "screenshot": "narrow-3.png",
+          "health": "passed"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "state": {
+            "state": "paused",
+            "time": 0.7499999999999996,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": false,
+            "pauseText": "继续 P",
+            "touchDisabled": false,
+            "touchText": "继续"
+          },
+          "screenshot": "narrow-4.png",
+          "health": "passed"
+        },
+        {
+          "step": 5,
+          "description": "刷新遵循原设计：花笺暂停续局，云隙/堡垒回整备并保留记录",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "score": 0,
+            "hp": 3,
+            "level": 1,
+            "pauseDisabled": true,
+            "pauseText": "暂停 P",
+            "touchDisabled": true,
+            "touchText": "暂停"
+          },
+          "screenshot": "narrow-5.png",
+          "health": "passed"
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "status": "passed"
+}

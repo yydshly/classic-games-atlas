@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_pause_semantics",
+  "status": "closed_pause_source_clues",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "expedition",
-    "lantern",
-    "island"
+    "cloud",
+    "fortress",
+    "petal"
   ],
   "items": [
     {
@@ -356,7 +356,8 @@
       "endingBoundary": "第二段真实清编队精英、刷新最好/干净重试/两段菜单通过；本次未切换散射",
       "evidence": [
         "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/cloud-later-qa/"
+        "docs/cloud-later-qa/",
+        "docs/cloud-pause-followup-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两段有限主目标补齐；完整武器成长/演出/驾驶手感留产品后续",
@@ -382,6 +383,12 @@
         "status": "verified",
         "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
         "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      },
+      "pauseFollowupReview": {
+        "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+        "status": "fixed",
+        "evidence": "docs/cloud-pause-followup-qa/",
+        "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
       }
     },
     {
@@ -1621,36 +1628,18 @@
     }
   ],
   "evidenceThrough": "b42d551513a629c1c21c7e271ab05e08a741b9c2",
-  "roundCommits": {
-    "expedition": "fb63691ec8e947be23e72799fe813c483748fed5",
-    "lantern": "b42d551513a629c1c21c7e271ab05e08a741b9c2"
-  },
-  "roundDeployments": {
-    "expedition": {
-      "id": 39602579999,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39602579999"
-    },
-    "lantern": {
-      "id": 39603562514,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39603562514"
-    }
-  },
+  "roundCommits": {},
+  "roundDeployments": {},
   "roundScope": {
-    "kind": "bounded_pause_semantics",
+    "kind": "three_remaining_pause_clues",
     "selected": 3,
-    "reviewed": 3,
+    "reviewed": 1,
     "confirmedDefects": 2,
     "runtimeFixes": [
-      "expedition",
-      "lantern"
+      "cloud"
     ],
-    "noConfirmedDefect": [
-      "island"
-    ],
+    "noConfirmedDefect": [],
+    "noAutomaticNewQueue": true,
     "notWholeProductAcceptance": true
   },
   "roundHistory": [
@@ -2573,12 +2562,53 @@
       },
       "evidenceThrough": "39da434fc4951fab79ffe9e25d16911180db6e81",
       "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷；meadow普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。"
+    },
+    {
+      "selectedThisRound": [
+        "expedition",
+        "lantern",
+        "island"
+      ],
+      "roundScope": {
+        "kind": "bounded_pause_semantics",
+        "selected": 3,
+        "reviewed": 3,
+        "confirmedDefects": 2,
+        "runtimeFixes": [
+          "expedition",
+          "lantern"
+        ],
+        "noConfirmedDefect": [
+          "island"
+        ],
+        "notWholeProductAcceptance": true
+      },
+      "roundCommits": {
+        "expedition": "fb63691ec8e947be23e72799fe813c483748fed5",
+        "lantern": "b42d551513a629c1c21c7e271ab05e08a741b9c2"
+      },
+      "roundDeployments": {
+        "expedition": {
+          "id": 39602579999,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39602579999"
+        },
+        "lantern": {
+          "id": 39603562514,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39603562514"
+        }
+      },
+      "evidenceThrough": "b42d551513a629c1c21c7e271ab05e08a741b9c2",
+      "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据；island正常，保留实现。夹具与自然UI结局分开，不扩大为全关卡验收。"
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据；island正常，保留实现。夹具与自然UI结局分开，不扩大为全关卡验收。",
+  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证。终态夹具与实际UI分列，未新增泛化待测队列。",
   "laterStageTargets": [],
-  "roundEvidenceNotes": "pause-semantics-notes.md",
+  "roundEvidenceNotes": "pause-followup-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -3001,6 +3031,14 @@
       "status": "no_confirmed_defect",
       "evidence": "docs/island-pause-semantics-qa/",
       "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
+    }
+  },
+  "pauseFollowupReviews": {
+    "cloud": {
+      "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+      "status": "fixed",
+      "evidence": "docs/cloud-pause-followup-qa/",
+      "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
     }
   }
 }
