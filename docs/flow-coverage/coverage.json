@@ -1,12 +1,14 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_global_later_stage_inventory",
+  "status": "reviewed_five_finite_later_gaps",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "trail",
-    "echo",
-    "coaster"
+    "chime",
+    "maze",
+    "lantern",
+    "cloud",
+    "tide"
   ],
   "items": [
     {
@@ -50,22 +52,40 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "此前16.85秒自然胜，玩家11弹/8箱/2连锁；另90秒自然平局",
+      "observedCore": "两原创短图均有自然胜利；本轮第二图64.85秒/48我方弹/36连锁，强只读策略辅助",
       "observedRetry": "胜场刷新保持，干净新局通过；既有三败/重试保留",
-      "endingBoundary": "首图胜与期限平局已验；二图胜/同归/直接击破归因仍未验",
+      "endingBoundary": "第二图自然胜利/原生纪录刷新/同图空弹火新局通过；首图既有成功，非多人体验或全策略验收",
       "evidence": [
         "docs/maze-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/maze-v2-qa/LAYOUT_PUBLIC.md",
-        "docs/maze-first-win-qa/"
+        "docs/maze-first-win-qa/",
+        "docs/maze-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "此前已补首胜；剩余边界不自动追加",
+      "nextToolWork": "两图有限主目标已补齐；经典完整道具/多人/关卡跨度属于产品后续",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "maze",
+        "requestedStages": [
+          2
+        ],
+        "totalStages": 2,
+        "normalUiWinsThisRound": [
+          2
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+        "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      }
     },
     {
       "number": "03",
@@ -240,7 +260,7 @@
         "docs/trail-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "有限三段主链已覆盖；其余路线与真人手感不在本轮",
+      "nextToolWork": "有限三段主链已覆盖；其余路线与真人手感不在此前",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -279,20 +299,38 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "首图41/41胜，次图38/46败",
+      "observedCore": "两图各有自然胜利；本轮第二图13.3244秒/46点/3命/2反制/0死亡",
       "observedRetry": "次图失败重试3命，刷新回该图准备",
-      "endingBoundary": "首胜下一港可用，仅最好分保留",
+      "endingBoundary": "第二图收齐成功、刷新保留最好/所选图、同图干净重试与两图菜单通过；策略脚本辅助",
       "evidence": [
-        "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/lantern-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "两图有限主目标补齐；原作敌人细节/角色反馈与无辅助手感属产品后续",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "lantern",
+        "requestedStages": [
+          2
+        ],
+        "totalStages": 2,
+        "normalUiWinsThisRound": [
+          2
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+        "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      }
     },
     {
       "number": "09",
@@ -307,20 +345,38 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "首图78.8秒胜/5900；次图43秒败",
+      "observedCore": "两段各有自然胜利；本轮第二段53.4313秒/6060分/14敌/3血，集中火力鼠标策略辅助",
       "observedRetry": "失败重试3命2风幕/0分",
-      "endingBoundary": "前往下一段与所选图刷新准备已验",
+      "endingBoundary": "第二段真实清编队精英、刷新最好/干净重试/两段菜单通过；本次未切换散射",
       "evidence": [
-        "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/cloud-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "两段有限主目标补齐；完整武器成长/演出/驾驶手感留产品后续",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "cloud",
+        "requestedStages": [
+          2
+        ],
+        "totalStages": 2,
+        "normalUiWinsThisRound": [
+          2
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+        "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      }
     },
     {
       "number": "10",
@@ -620,20 +676,40 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "三题1胜2败；首题剪绳捕泡戳破落台",
+      "observedCore": "既有首题成功；本轮正常第2/3题10.1375/8.1000秒，各3星",
       "observedRetry": "自然失败及重试初态已见",
-      "endingBoundary": "两后题未成功，非16庭全通",
+      "endingBoundary": "三题均已有自然成功；本轮第2→3清场/刷新、末题无第4/重走与2份原生纪录保留；时窗脚本辅助",
       "evidence": [
-        "docs/chime-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/chime-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/chime-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "三题有限主链补齐；其它机关跨度/角色反馈/真人手感属于产品后续，不是本轮bug",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "chime",
+        "requestedStages": [
+          2,
+          3
+        ],
+        "totalStages": 3,
+        "normalUiWinsThisRound": [
+          2,
+          3
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+        "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      }
     },
     {
       "number": "19",
@@ -694,21 +770,39 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "此前原生滑杆强辅助71.45秒1659分/36潮量/余珠0胜，53发",
+      "observedCore": "两图各有自然成功；本轮第二图70.2333秒/1657分/61发/潮量42/余珠0，原生滑杆与暂停强辅助",
       "observedRetry": "失败重试初盘及暂停飞珠刷新已验",
-      "endingBoundary": "一次封口与结算/刷新最好保留；第二图胜与鼠标原路径仍未验",
+      "endingBoundary": "第二图封口一次/清余珠/单结算与刷新原生最好保留通过；首图已有证据，原鼠标路径与无辅助手感未验",
       "evidence": [
         "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/tide-first-win-qa/"
+        "docs/tide-first-win-qa/",
+        "docs/tide-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "此前已补首胜；不扩第二潮或凭远程延迟调难度",
+      "nextToolWork": "两图有限主目标补齐；原鼠标输入验证和经典完整内容/演出属于后续边界",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "tide",
+        "requestedStages": [
+          2
+        ],
+        "totalStages": 2,
+        "normalUiWinsThisRound": [
+          2
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+        "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      }
     },
     {
       "number": "21",
@@ -1072,7 +1166,7 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "既有首段成功；本轮自由选第2段后正常下一段到第3段，均持钥撤离100光息/余2匣",
+      "observedCore": "既有首段成功；此前自由选第2段后正常下一段到第3段，均持钥撤离100光息/余2匣",
       "observedRetry": "第二段败刷新/当前段重试不回首段",
       "endingBoundary": "后两段真实撤离、结算刷新、第三段无第四段、重试第三段/刷新/新行动通过；强暂停只读重放辅助，非连续无暂停三段",
       "evidence": [
@@ -1337,42 +1431,58 @@
       ]
     }
   ],
-  "evidenceThrough": "056ab7fdd76fedcfb0ede097cbbad4cebe693cf9",
+  "evidenceThrough": "7f68ee5cc7d261c1458fc71eabe6ac305c0aeda8",
   "roundCommits": {
-    "trail": "b255db2a0e67f60cfbc4cf732f1b0b85ef272acc",
-    "echo": "2d61c064f4f5b958ccdf1d33535952f812d8423f",
-    "coaster": "056ab7fdd76fedcfb0ede097cbbad4cebe693cf9"
+    "chime": "8da3466b1740be3e160cad6ca7ba420ec877f722",
+    "maze": "b92f293ca30eba1af85ebe7b85057a0ed43c26e0",
+    "lantern": "915e736f328708a47185f3cd449b46dbf24755b4",
+    "cloud": "9e2bfd03469d9759f009abbde7f61eec4986340b",
+    "tide": "7f68ee5cc7d261c1458fc71eabe6ac305c0aeda8"
   },
   "roundDeployments": {
-    "trail": {
-      "id": 39531535546,
+    "chime": {
+      "id": 39534179702,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39531535546"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39534179702"
     },
-    "echo": {
-      "id": 39532078225,
+    "maze": {
+      "id": 39534575900,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39532078225"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39534575900"
     },
-    "coaster": {
-      "id": 39532917881,
+    "lantern": {
+      "id": 39534868740,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39532917881"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39534868740"
+    },
+    "cloud": {
+      "id": 39535107282,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39535107282"
+    },
+    "tide": {
+      "id": 39535406075,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39535406075"
     }
   },
   "roundScope": {
-    "kind": "later_stages_and_global_inventory",
+    "kind": "five_later_gap_scopes",
     "runtimeChanged": false,
     "faultInjection": false,
     "confirmedBlockingDefectsInSelectedFlows": 0,
-    "normalUiEvidenceSeparateFromModels": true,
-    "finiteTargets": 3,
-    "verified": 3,
-    "blocked": 0,
-    "remainingFiniteTargets": []
+    "selectedWorks": 5,
+    "verifiedWorks": 5,
+    "selectedUnits": 6,
+    "verifiedUnits": 6,
+    "globalUnitsBefore": 29,
+    "globalUnitsAfter": 23,
+    "blocked": 0
   },
   "roundHistory": [
     {
@@ -1652,31 +1762,141 @@
           "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
         }
       ]
-    }
-  ],
-  "reviewBaseline": "988562d8505c23e320779e6173b8d746c7086189",
-  "roundSummary": "本轮风行小径正常连续完成三程，首程仅必要前置；回声自由选择第二仓段后正常下一段至第三段，两段均真实撤离；云岬从首园必要前置依次完成八园试车和有限班次运营。固定键盘路线、暂停只读重放、离线合法设计参考均与实际UI输入分列。未确认游戏阻断，不改运行实现。全局仍有9款29个后续单元待成功/合法完赛证据，另有独立胜利及真人边界。",
-  "laterStageTargets": [
-    {
-      "slug": "trail",
-      "requestedStages": [
-        2,
-        3
-      ],
-      "totalStages": 3,
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3
-      ],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "terminal": "third-stage end, no fourth; per-stage won refresh, clean next and retry current third stage"
     },
     {
-      "slug": "echo",
+      "selected": [
+        "trail",
+        "echo",
+        "coaster"
+      ],
+      "commits": {
+        "trail": "b255db2a0e67f60cfbc4cf732f1b0b85ef272acc",
+        "echo": "2d61c064f4f5b958ccdf1d33535952f812d8423f",
+        "coaster": "056ab7fdd76fedcfb0ede097cbbad4cebe693cf9"
+      },
+      "deployments": {
+        "trail": {
+          "id": 39531535546,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39531535546"
+        },
+        "echo": {
+          "id": 39532078225,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39532078225"
+        },
+        "coaster": {
+          "id": 39532917881,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39532917881"
+        }
+      },
+      "evidenceThrough": "056ab7fdd76fedcfb0ede097cbbad4cebe693cf9",
+      "laterStageTargets": [
+        {
+          "slug": "trail",
+          "requestedStages": [
+            2,
+            3
+          ],
+          "totalStages": 3,
+          "normalUiWinsThisRound": [
+            1,
+            2,
+            3
+          ],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "terminal": "third-stage end, no fourth; per-stage won refresh, clean next and retry current third stage"
+        },
+        {
+          "slug": "echo",
+          "requestedStages": [
+            2,
+            3
+          ],
+          "totalStages": 3,
+          "normalUiWinsThisRound": [
+            2,
+            3
+          ],
+          "priorCompletedStages": [
+            1
+          ],
+          "prerequisiteStages": [],
+          "status": "verified",
+          "terminal": "native free level select to second, next to third, both escape; final hidden next, result reload, ready retry and new action"
+        },
+        {
+          "slug": "coaster",
+          "requestedStages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "totalStages": 8,
+          "normalUiWinsThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "terminal": "eight parks real test and passenger runs, next clean, final no ninth, native eight bests retained and revisit"
+        }
+      ],
+      "globalLaterStageSummary": {
+        "catalog": 40,
+        "active": 36,
+        "laterUnitsMissingWorks": 9,
+        "laterUnitsMissingCount": 29,
+        "remainingLaterWorkSlugs": [
+          "maze",
+          "lantern",
+          "cloud",
+          "post",
+          "chime",
+          "tide",
+          "duel",
+          "kart",
+          "meadow"
+        ],
+        "noListedLaterGapIsNotAllVariantsWon": true,
+        "separateSuccessBranches": [
+          "fortress:first-map single-player success",
+          "post:first-race first-place",
+          "venture:festival victory"
+        ],
+        "humanBoundaries": [
+          "无辅助持续操作手感与读图",
+          "真实手机/多指/设备性能",
+          "已实现音频的听感与同步",
+          "审美、情绪价值和耐玩性"
+        ]
+      }
+    }
+  ],
+  "reviewBaseline": "bc8e07e717ba5b3c07f9a3a7b425d81851f02e09",
+  "roundSummary": "风铃第2–3题、迷宫/夜航/云隙/潮汐第二图均已正常UI自然成功；未重打既有首目标，未注入状态/时间/胜负或降低难度。固定时窗、独立只读策略、鼠标目标与滑杆暂停预测辅助均有明确记录。五款6个后续单元已补证，全局29减6至23，剩4款；经典来源/已有核心/产品明显缺失另表，不用流程通过代替经典体验。",
+  "laterStageTargets": [
+    {
+      "slug": "chime",
       "requestedStages": [
         2,
         3
@@ -1691,50 +1911,86 @@
       ],
       "prerequisiteStages": [],
       "status": "verified",
-      "terminal": "native free level select to second, next to third, both escape; final hidden next, result reload, ready retry and new action"
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
     },
     {
-      "slug": "coaster",
+      "slug": "maze",
       "requestedStages": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        2
       ],
-      "totalStages": 8,
+      "totalStages": 2,
       "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        2
       ],
-      "prerequisiteStages": [
+      "priorCompletedStages": [
         1
       ],
+      "prerequisiteStages": [],
       "status": "verified",
-      "terminal": "eight parks real test and passenger runs, next clean, final no ninth, native eight bests retained and revisit"
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "lantern",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "cloud",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "tide",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
     }
   ],
-  "roundEvidenceNotes": "continuation-notes.md",
+  "roundEvidenceNotes": "finite-gap-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
-    "laterUnitsMissingWorks": 9,
-    "laterUnitsMissingCount": 29,
+    "laterUnitsMissingWorks": 4,
+    "laterUnitsMissingCount": 23,
     "remainingLaterWorkSlugs": [
-      "maze",
-      "lantern",
-      "cloud",
       "post",
-      "chime",
-      "tide",
       "duel",
       "kart",
       "meadow"
@@ -1751,5 +2007,43 @@
       "已实现音频的听感与同步",
       "审美、情绪价值和耐玩性"
     ]
+  },
+  "referenceExperienceNote": "reference-experience.html",
+  "globalLaterOverrides": {
+    "chime": {
+      "scopeDescription": "首题既有成功；第2/3题时窗辅助10.1375/8.1秒，各3星",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "固定合法时窗脚本，非无辅助探索；三题成功不等于全部原作机关或第一题全星"
+      ]
+    },
+    "maze": {
+      "scopeDescription": "两张原创图均有自然胜利；第二图64.85秒/48弹/36连锁",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "独立只读避险策略；末帧不能归因为我方直接炸中对手；非多人手感验收"
+      ]
+    },
+    "lantern": {
+      "scopeDescription": "两图均收齐成功；第二图13.3244秒46点3命2反制",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "路线脚本辅助；开始首帧会吃出生点，过严测试断言已纠正并保留原记录"
+      ]
+    },
+    "cloud": {
+      "scopeDescription": "两航段均有自然胜利；第二图53.4313秒6060分14敌3血",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "鼠标目标策略辅助；此路线仅集中火力，同类补给不当切换散射验证"
+      ]
+    },
+    "tide": {
+      "scopeDescription": "两图均有自然成功；第二图70.2333秒1657分61发/潮量42/余珠0",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "强暂停与原生滑杆辅助，诊断含队列/随机数并短前推；非真人鼠标/只凭目视；原鼠标输入混杂未解决"
+      ]
+    }
   }
 }

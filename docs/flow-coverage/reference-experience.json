@@ -1,0 +1,52 @@
+{
+  "scope": "five current games only",
+  "method": "来源沿用data/experiments.json、data/comparisons.json与各自范围/来源说明；本轮核查当前实现和实际输入记录，未重新逐项验证外部原作资料，也未开展完整原作对照实玩。后续需先明确希望保留的核心体验，再评估范围；不承诺完整复刻或复制商业资产。",
+  "conclusion": "这五款都能追溯到最初经典目录的来源绑定，但实作是经典启发的原创机制实验。通过固定短流程，不等于原作还原度、核心乐趣、手感或审美通过。下面区分代码已有机制、本轮真实触达、产品明显缺失；这些缺失不是本轮确认的bug，也不因此自动启动整体重构。",
+  "rows": [
+    {
+      "slug": "chime",
+      "title": "风铃绳旅",
+      "reference": "Cut the Rope系列，以初代机制为切入",
+      "implemented": "三道原创物理题：剪绳摆动、一次捕泡、主动戳破、动量与可选星",
+      "observed": "本轮2/3题正常成功，各3星；固定合法时窗脚本辅助",
+      "missing": "完整机关/关卡跨度、角色反馈与持续探索感",
+      "source": "versions/v2/games/chime/NOTES.md"
+    },
+    {
+      "slug": "maze",
+      "title": "爆破迷宫",
+      "reference": "早期Bomberman系列迷宫玩法",
+      "implemented": "两原创图、放弹避险、破箱、连锁、AI对手",
+      "observed": "本轮第二图64.85秒自然胜利；只读避险/追击策略",
+      "missing": "更丰富道具/敌人/关卡组合与真正多人体验；本局不是玩家直接炸中对手的证据",
+      "source": "versions/v2/games/maze/NOTES.md"
+    },
+    {
+      "slug": "lantern",
+      "title": "夜航拾光",
+      "reference": "初代街机PAC-MAN",
+      "implemented": "两港口图收集、辉光反制、隧道、三类巡灯与巡逻/追逐",
+      "observed": "第二图13.3244秒/46点/3命/2反制；路线规划脚本",
+      "missing": "完整敌人行为细节、角色反馈、关卡节奏与内容跨度",
+      "source": "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md"
+    },
+    {
+      "slug": "cloud",
+      "title": "云隙巡航",
+      "reference": "初代雷电语境的纵向射击与武器选择",
+      "implemented": "两短航段、集中/散射拾取选择、预警弹幕、护盾、编队与精英",
+      "observed": "第二段53.4313秒/6060分/14敌/3血；本轮始终集中火力，同类补给不当切换验证",
+      "missing": "完整武器成长、敌机与关卡跨度、演出及真实驾驶质感",
+      "source": "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md"
+    },
+    {
+      "slug": "tide",
+      "title": "潮汐珠径",
+      "reference": "初代Zuma Deluxe语境的发射匹配珠链",
+      "implemented": "两图珠链、预览交换、射线遮挡、目标后封口与清余珠",
+      "observed": "第二图70.2333秒/1657分/61发；暂停与原生滑杆，诊断含队列/随机数的强预测辅助",
+      "missing": "完整关卡/道具/奖励与角色演出；原鼠标输入路径和无辅助手感仍未验证",
+      "source": "docs/tide-first-win-qa/README.md"
+    }
+  ]
+}

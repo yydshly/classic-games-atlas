@@ -8,25 +8,7 @@
   "failureRetryGaps": [],
   "laterStageTargets": [
     {
-      "slug": "trail",
-      "requestedStages": [
-        2,
-        3
-      ],
-      "totalStages": 3,
-      "normalUiWinsThisRound": [
-        1,
-        2,
-        3
-      ],
-      "prerequisiteStages": [
-        1
-      ],
-      "status": "verified",
-      "terminal": "third-stage end, no fourth; per-stage won refresh, clean next and retry current third stage"
-    },
-    {
-      "slug": "echo",
+      "slug": "chime",
       "requestedStages": [
         2,
         3
@@ -41,49 +23,85 @@
       ],
       "prerequisiteStages": [],
       "status": "verified",
-      "terminal": "native free level select to second, next to third, both escape; final hidden next, result reload, ready retry and new action"
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
     },
     {
-      "slug": "coaster",
+      "slug": "maze",
       "requestedStages": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        2
       ],
-      "totalStages": 8,
+      "totalStages": 2,
       "normalUiWinsThisRound": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        2
       ],
-      "prerequisiteStages": [
+      "priorCompletedStages": [
         1
       ],
+      "prerequisiteStages": [],
       "status": "verified",
-      "terminal": "eight parks real test and passenger runs, next clean, final no ninth, native eight bests retained and revisit"
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "lantern",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "cloud",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+    },
+    {
+      "slug": "tide",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
+      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
     }
   ],
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
-    "laterUnitsMissingWorks": 9,
-    "laterUnitsMissingCount": 29,
+    "laterUnitsMissingWorks": 4,
+    "laterUnitsMissingCount": 23,
     "remainingLaterWorkSlugs": [
-      "maze",
-      "lantern",
-      "cloud",
       "post",
-      "chime",
-      "tide",
       "duel",
       "kart",
       "meadow"
