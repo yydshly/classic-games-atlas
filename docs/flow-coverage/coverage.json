@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_remaining_four_later_chains",
+  "status": "reviewing_independent_success_targets",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
+    "venture",
+    "fortress",
     "post",
-    "duel",
-    "kart",
-    "meadow"
+    "kart"
   ],
   "items": [
     {
@@ -1011,15 +1011,16 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "三场两胜一负，交易/租金实际生效",
+      "observedCore": "历史三场两胜一负保留；当前修后灯会正常UI12轮净资产1955:625胜，含rng只读规划强辅助",
       "observedRetry": "负局终态刷新与确认/取消重开已验",
-      "endingBoundary": "浮点回收修后专项与保存保护另列",
+      "endingBoundary": "当前灯会完整胜利、终态原生JSON精确刷新、确认重开干净；旧三场修前与当前单场分开",
       "evidence": [
         "docs/venture-v2/PUBLIC_BROWSER_QA.md",
-        "docs/venture-storage-qa/"
+        "docs/venture-storage-qa/",
+        "docs/venture-independent-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "灯会独立胜利已补证；未知骰点真人经营、平衡与真机/声音审美仍未验",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1609,17 +1610,13 @@
     }
   },
   "roundScope": {
-    "kind": "remaining_four_finite_later_chains",
+    "kind": "four_independent_success_groups",
+    "targets": 13,
+    "completed": 1,
+    "uncompleted": 12,
+    "toolBlockedSubset": 0,
     "runtimeChanged": false,
-    "faultInjection": false,
-    "confirmedBlockingDefectsInSelectedFlows": 0,
-    "selectedWorks": 4,
-    "verifiedWorks": 4,
-    "selectedUnits": 23,
-    "verifiedUnits": 23,
-    "globalUnitsBefore": 23,
-    "globalUnitsAfter": 0,
-    "blocked": 0
+    "confirmedBlockingDefects": 0
   },
   "roundHistory": [
     {
@@ -2189,10 +2186,270 @@
           "审美、情绪价值和耐玩性"
         ]
       }
+    },
+    {
+      "selectedThisRound": [
+        "post",
+        "duel",
+        "kart",
+        "meadow"
+      ],
+      "roundCommits": {
+        "post": "89d4ffd8d52aa247c35f221a6d3d1e4f3f675af8",
+        "duel": "ef030490eebba11b9ca71911a73c812223fc4980",
+        "kart": "25ed9eafe6cb3ded5dee7558adc59946fecf3e1b",
+        "meadow": "1a0fd5d9857588587969e2dd39ace8870c4a6c9b"
+      },
+      "roundDeployments": {
+        "post": {
+          "id": 39537617397,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39537617397"
+        },
+        "duel": {
+          "id": 39538387023,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39538387023"
+        },
+        "kart": {
+          "id": 39539235479,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39539235479"
+        },
+        "meadow": {
+          "id": 39539663477,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39539663477"
+        }
+      },
+      "evidenceThrough": "1a0fd5d9857588587969e2dd39ace8870c4a6c9b",
+      "laterStageTargets": [
+        {
+          "slug": "post",
+          "requestedStages": [
+            2,
+            3
+          ],
+          "totalStages": 3,
+          "normalUiCompletedThisRound": [
+            1,
+            2,
+            3
+          ],
+          "normalUiWinsThisRound": [],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "completionKind": "legal two-lap finish, NOT victory",
+          "progression": "sequential native unlock and next; first unit is required prerequisite",
+          "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
+        },
+        {
+          "slug": "duel",
+          "requestedStages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "totalStages": 8,
+          "normalUiCompletedThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "normalUiWinsThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "completionKind": "natural victory",
+          "progression": "sequential native unlock and next; first unit is required prerequisite",
+          "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
+        },
+        {
+          "slug": "kart",
+          "requestedStages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "totalStages": 8,
+          "normalUiCompletedThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "normalUiWinsThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "completionKind": "native optional assist target met, manual not tested",
+          "progression": "sequential native unlock and next; first unit is required prerequisite",
+          "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
+        },
+        {
+          "slug": "meadow",
+          "requestedStages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "totalStages": 8,
+          "normalUiCompletedThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "normalUiWinsThisRound": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "prerequisiteStages": [
+            1
+          ],
+          "status": "verified",
+          "completionKind": "natural victory",
+          "progression": "sequential native unlock and next; first unit is required prerequisite",
+          "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
+        }
+      ],
+      "roundScope": {
+        "kind": "remaining_four_finite_later_chains",
+        "runtimeChanged": false,
+        "faultInjection": false,
+        "confirmedBlockingDefectsInSelectedFlows": 0,
+        "selectedWorks": 4,
+        "verifiedWorks": 4,
+        "selectedUnits": 23,
+        "verifiedUnits": 23,
+        "globalUnitsBefore": 23,
+        "globalUnitsAfter": 0,
+        "blocked": 0
+      },
+      "globalLaterStageSummary": {
+        "catalog": 40,
+        "active": 36,
+        "laterUnitsMissingWorks": 0,
+        "laterUnitsMissingCount": 0,
+        "remainingLaterWorkSlugs": [],
+        "noListedLaterGapIsNotAllVariantsWon": true,
+        "separateSuccessBranches": [
+          "fortress:first-map single-player success",
+          "post:first-place victory in each of races1-3",
+          "venture:festival victory",
+          "kart:manual curve-assist-OFF victory in each of courses1-8"
+        ],
+        "separateSuccessTargets": [
+          {
+            "slug": "fortress",
+            "units": [
+              1
+            ],
+            "condition": "single-player success",
+            "status": "not_evidenced"
+          },
+          {
+            "slug": "post",
+            "units": [
+              1,
+              2,
+              3
+            ],
+            "condition": "first place; this round rank2/3/3 legal finishes are not wins",
+            "status": "not_evidenced"
+          },
+          {
+            "slug": "venture",
+            "units": [
+              "festival"
+            ],
+            "condition": "victory; natural failure ending already covered",
+            "status": "not_evidenced"
+          },
+          {
+            "slug": "kart",
+            "units": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "condition": "curve assist OFF; this round all eight records assisted only",
+            "status": "not_evidenced"
+          }
+        ],
+        "humanBoundaries": [
+          "无辅助持续操作手感与读图",
+          "真实手机/多指/设备性能",
+          "已实现音频的听感与同步",
+          "审美、情绪价值和耐玩性"
+        ]
+      }
     }
   ],
-  "reviewBaseline": "4cd021fb912f12b1468ec803a9cd8b5f2df1aba8",
-  "roundSummary": "剩余四款23个后续单元均有普通UI完成证据：邮差2–3合法完赛但非第一名，风庭2–8自然胜利，林野2–8使用既有弯道辅助达到原定名次，草甸2–8自然终哨领先。每款首场均为原生解锁必要前置，逐关衔接、最终反馈、重赛和纪录刷新有记录。未注入状态、胜负或时间，未改难度与游戏代码；风庭驱动输入次序纠正前两次败局原样保留。全局后续证据缺口23减至0不等于独立胜利分支、全模式或真人品质通过。",
+  "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
+  "roundSummary": "13个指定独立胜利目标：已完成1，未完成12（其中具体工具阻塞0、尚未执行12）。剩余：堡垒首图单车:1；邮差第一名:1,2,3；林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
   "laterStageTargets": [
     {
       "slug": "post",
@@ -2336,7 +2593,7 @@
       "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
     }
   ],
-  "roundEvidenceNotes": "final-four-notes.md",
+  "roundEvidenceNotes": "independent-success-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -2345,10 +2602,9 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "fortress:first-map single-player success",
-      "post:first-place victory in each of races1-3",
-      "venture:festival victory",
-      "kart:manual curve-assist-OFF victory in each of courses1-8"
+      "fortress:single-player success;remaining=1",
+      "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
+      "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
       {
@@ -2375,7 +2631,13 @@
           "festival"
         ],
         "condition": "victory; natural failure ending already covered",
-        "status": "not_evidenced"
+        "status": "verified",
+        "verifiedUnits": [
+          "festival"
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/venture-independent-qa/"
       },
       {
         "slug": "kart",
@@ -2393,6 +2655,15 @@
         "status": "not_evidenced"
       }
     ],
+    "independentSuccessSummary": {
+      "targets": 13,
+      "completed": 1,
+      "uncompleted": 12,
+      "toolBlockedSubset": 0,
+      "notYetTried": 12,
+      "boundedUncompleted": 0,
+      "noMissingEvidenceIsBug": true
+    },
     "humanBoundaries": [
       "无辅助持续操作手感与读图",
       "真实手机/多指/设备性能",
@@ -2464,13 +2735,19 @@
       "otherEvidenceBoundaries": [
         "100ms只读策略与正常键盘辅助，非人手足球手感、全策略平衡或真人竞技"
       ]
+    },
+    "venture": {
+      "scopeDescription": "历史三场两胜一负保留；当前修后灯会正常UI12轮净资产1955:625胜，含rng只读规划强辅助",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "当前灯会完整胜利、终态原生JSON精确刷新、确认重开干净；旧三场修前与当前单场分开"
+      ]
     }
   },
   "separateSuccessBranches": [
-    "fortress:first-map single-player success",
-    "post:first-place victory in each of races1-3",
-    "venture:festival victory",
-    "kart:manual curve-assist-OFF victory in each of courses1-8"
+    "fortress:single-player success;remaining=1",
+    "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
+    "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
   ],
   "separateSuccessTargets": [
     {
@@ -2497,7 +2774,13 @@
         "festival"
       ],
       "condition": "victory; natural failure ending already covered",
-      "status": "not_evidenced"
+      "status": "verified",
+      "verifiedUnits": [
+        "festival"
+      ],
+      "blockedUnits": [],
+      "pendingUnits": [],
+      "evidence": "docs/venture-independent-qa/"
     },
     {
       "slug": "kart",
@@ -2515,6 +2798,53 @@
       "status": "not_evidenced"
     }
   ],
-  "independentBranchNote": "独立胜利分支仍缺：堡垒首图单车成功；邮差第1–3场各自第一名（本轮第2/3/3名仅合法完赛）；商旅灯会获胜；林野第1–8赛道关闭弯道辅助获胜（本轮仅辅助成绩）。四组共13个指定胜利目标不混入后续主链重复计数，也不据缺证据判bug。真人持续手感、真手机/多指/性能、音频听感与审美仍需真人。保留Gale同引擎历史通关、Venture修前整局/修后交易专项及全部既有辅助边界。",
-  "nextDeliveryNote": "本轮23个既定后续单元全部补证，没有另加主题或继续重刷。下一阶段由产品取舍与真人体验验收决定；如继续工具验证，先明确上述独立胜利分支的有限范围，不把它们当已失败或必须降难度。"
+  "independentBranchNote": "13个指定独立胜利目标：已完成1，未完成12（其中具体工具阻塞0、尚未执行12）。剩余：堡垒首图单车:1；邮差第一名:1,2,3；林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "nextDeliveryNote": "本轮23个既定后续单元全部补证，没有另加主题或继续重刷。下一阶段由产品取舍与真人体验验收决定；如继续工具验证，先明确上述独立胜利分支的有限范围，不把它们当已失败或必须降难度。",
+  "independentSuccessRound": {
+    "baseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
+    "scope": {
+      "venture": [
+        "festival"
+      ],
+      "fortress": [
+        1
+      ],
+      "post": [
+        1,
+        2,
+        3
+      ],
+      "kart": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "reports": {
+      "venture": {
+        "report": "docs/venture-independent-qa/public-report.json",
+        "verifiedUnits": [
+          "festival"
+        ],
+        "blockedUnits": [],
+        "uncompletedUnits": [],
+        "methodBoundary": "当前灯会完整胜利、终态原生JSON精确刷新、确认重开干净；旧三场修前与当前单场分开"
+      }
+    },
+    "runtimeChanged": false
+  },
+  "independentSuccessSummary": {
+    "targets": 13,
+    "completed": 1,
+    "uncompleted": 12,
+    "toolBlockedSubset": 0,
+    "notYetTried": 12,
+    "boundedUncompleted": 0,
+    "noMissingEvidenceIsBug": true
+  }
 }

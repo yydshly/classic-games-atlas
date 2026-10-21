@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scopeBaseline": "988562d8505c23e320779e6173b8d746c7086189",
-  "reviewBaseline": "4cd021fb912f12b1468ec803a9cd8b5f2df1aba8",
+  "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
   "evidenceThrough": "1a0fd5d9857588587969e2dd39ace8870c4a6c9b",
   "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected per-game reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
   "summary": {
@@ -12,10 +12,9 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "fortress:first-map single-player success",
-      "post:first-place victory in each of races1-3",
-      "venture:festival victory",
-      "kart:manual curve-assist-OFF victory in each of courses1-8"
+      "fortress:single-player success;remaining=1",
+      "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
+      "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
       {
@@ -42,7 +41,13 @@
           "festival"
         ],
         "condition": "victory; natural failure ending already covered",
-        "status": "not_evidenced"
+        "status": "verified",
+        "verifiedUnits": [
+          "festival"
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/venture-independent-qa/"
       },
       {
         "slug": "kart",
@@ -60,6 +65,15 @@
         "status": "not_evidenced"
       }
     ],
+    "independentSuccessSummary": {
+      "targets": 13,
+      "completed": 1,
+      "uncompleted": 12,
+      "toolBlockedSubset": 0,
+      "notYetTried": 12,
+      "boundedUncompleted": 0,
+      "noMissingEvidenceIsBug": true
+    },
     "humanBoundaries": [
       "无辅助持续操作手感与读图",
       "真实手机/多指/设备性能",
@@ -543,16 +557,17 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/venture/",
       "authoredFiniteUnits": 3,
-      "scopeDescription": "8/10/12轮三场均自然终局，两胜一负；修后只定向回归交易",
+      "scopeDescription": "历史三场两胜一负保留；当前修后灯会正常UI12轮净资产1955:625胜，含rng只读规划强辅助",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "灯会获胜未见证据；已有自然失败结局不记为通关；修前整局与修后专项分列"
+        "当前灯会完整胜利、终态原生JSON精确刷新、确认重开干净；旧三场修前与当前单场分开"
       ],
       "excludedFromActiveDebt": false,
       "status": "no_listed_later_gap",
       "evidence": [
         "docs/venture-v2/PUBLIC_BROWSER_QA.md",
-        "docs/venture-storage-qa/"
+        "docs/venture-storage-qa/",
+        "docs/venture-independent-qa/"
       ]
     },
     {

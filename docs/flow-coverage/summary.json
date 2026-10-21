@@ -6,6 +6,15 @@
   "activeWithFirstCoreEvidence": 36,
   "coreGaps": [],
   "failureRetryGaps": [],
+  "independentSuccessSummary": {
+    "targets": 13,
+    "completed": 1,
+    "uncompleted": 12,
+    "toolBlockedSubset": 0,
+    "notYetTried": 12,
+    "boundedUncompleted": 0,
+    "noMissingEvidenceIsBug": true
+  },
   "laterStageTargets": [
     {
       "slug": "post",
@@ -157,10 +166,9 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "fortress:first-map single-player success",
-      "post:first-place victory in each of races1-3",
-      "venture:festival victory",
-      "kart:manual curve-assist-OFF victory in each of courses1-8"
+      "fortress:single-player success;remaining=1",
+      "post:first place; this round rank2/3/3 legal finishes are not wins;remaining=1,2,3",
+      "kart:curve assist OFF; this round all eight records assisted only;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
       {
@@ -187,7 +195,13 @@
           "festival"
         ],
         "condition": "victory; natural failure ending already covered",
-        "status": "not_evidenced"
+        "status": "verified",
+        "verifiedUnits": [
+          "festival"
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/venture-independent-qa/"
       },
       {
         "slug": "kart",
@@ -205,6 +219,15 @@
         "status": "not_evidenced"
       }
     ],
+    "independentSuccessSummary": {
+      "targets": 13,
+      "completed": 1,
+      "uncompleted": 12,
+      "toolBlockedSubset": 0,
+      "notYetTried": 12,
+      "boundedUncompleted": 0,
+      "noMissingEvidenceIsBug": true
+    },
     "humanBoundaries": [
       "无辅助持续操作手感与读图",
       "真实手机/多指/设备性能",

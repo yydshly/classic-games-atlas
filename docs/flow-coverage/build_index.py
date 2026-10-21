@@ -15,6 +15,7 @@ fail_gaps = [e['slug'] for e in active if e['coverage']['failureRetry'] not in [
 summary = {'catalog': 40, 'activeScope': len(active), 'paused': 3, 'frozen': 1,
            'activeWithFirstCoreEvidence': len(active) - len(core_gaps),
            'coreGaps': core_gaps, 'failureRetryGaps': fail_gaps}
+if D.get('independentSuccessSummary'):summary['independentSuccessSummary']=D['independentSuccessSummary']
 if D.get('laterStageTargets'):
     summary['laterStageTargets'] = D['laterStageTargets']
 if D.get('globalLaterStageSummary'):
@@ -97,7 +98,7 @@ doc += '</tbody></table></div><p id="empty" hidden>没有匹配项。清除筛�
 remaining = [
     ('首条核心目标证据', ('、'.join(core_gaps) + '仍缺首条完整目标证据。失败或工具延迟不证明不可通关，不据此调难度。') if core_gaps else '活动范围36项均已有至少一条核心目标证据。它只统计有限首条，包含明确标注的强辅助操作，不代表全部关卡、无辅助水平或成品验收。'),
     ('分支及后续内容', (f'尚有{len(fail_gaps)}项失败/重试链仅局部或未验：' + '、'.join(fail_gaps) + '。上表保留具体范围。') if fail_gaps else '此前原列8项代表性失败/重试链均已逐项补证。每款仅验证记录所列路径，不代表全部失败原因或后段。') ,
-    ('保留的覆盖边界', '全局后续成功/合法完赛缺口的准确计数与关段见全局清单。另有堡垒首图单车成功、Post三场各自第一名、商旅灯会获胜与Kart八赛道关闭弯道辅助胜利等独立操作/胜利分支；不重复计数、不把缺证据判成bug。'),
+    ('保留的覆盖边界', D.get('independentBranchNote','全局后续及独立胜利范围见逐款清单，缺证据不是bug。')),
     ('必须真人确认', '连续操作手感、读图与策略是否自然、难度与耐玩性、审美/情绪价值。有音频实现的作品需真实听感与音画同步；无音频作品不因此判缺陷。真实手机触控、多指和设备差异须真机验证，桌面400CSS或脚本事件不能替代。'),
     ('已知非阻断表现', '原报告中的残留提示、字号/滚动、未验动画等保留。果园前后端点/转角样式不同、Trail失败0命但体力显示72、Post终局下一闸提示仍在均如实记录，不借此重开零碎美术/存档专项。'),
     ('暂停边界', '35/36/37不继续执行；纸翼不重启。保留在40项中，不能为提高通过数移除，也不计入本轮活动测试债。'),
