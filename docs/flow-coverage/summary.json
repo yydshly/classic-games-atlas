@@ -5,5 +5,111 @@
   "frozen": 1,
   "activeWithFirstCoreEvidence": 36,
   "coreGaps": [],
-  "failureRetryGaps": []
+  "failureRetryGaps": [],
+  "laterStageTargets": [
+    {
+      "slug": "brook",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "terminal": "second-stage final feedback, no third; retry/refresh and native best kept"
+    },
+    {
+      "slug": "prism",
+      "requestedStages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "totalStages": 12,
+      "normalUiWinsThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "prerequisiteStages": [
+        1
+      ],
+      "status": "verified",
+      "terminal": "twelfth-stage ending, no thirteenth; clean retry/refresh and twelve native bests"
+    },
+    {
+      "slug": "petal",
+      "requestedStages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "totalStages": 20,
+      "normalUiWinsThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "prerequisiteStages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "status": "verified",
+      "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
+    }
+  ]
 }

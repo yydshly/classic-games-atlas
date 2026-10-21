@@ -1,17 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "resolved_eight_failure_chains",
+  "status": "reviewed_three_later_stage_scopes",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "pinfall",
-    "vine",
-    "petal",
-    "gale",
-    "post",
-    "courier",
-    "coaster",
-    "kart"
+    "brook",
+    "prism",
+    "petal"
   ],
   "items": [
     {
@@ -113,21 +108,58 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "首关普通鼠标辅助跟球56.15秒清20砖",
+      "observedCore": "正常鼠标强辅助顺序完成原12关；第1关为必要解锁前置，2–12本轮补证",
       "observedRetry": "自然失球失败与重试；首胜解锁第二关",
-      "endingBoundary": "第二关干净入口及刷新，非12关全通",
+      "endingBoundary": "2–12逐关自然胜利与干净下一关；第12关最终反馈/无第13关/重试刷新及12关纪录保留通过",
       "evidence": [
         "docs/prism-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/prism-first-win-qa/"
+        "docs/prism-first-win-qa/",
+        "docs/prism-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "本轮第二关至现有终关目标完成；不自动扩控制方式或碰撞组合",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "prism",
+        "requestedStages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "totalStages": 12,
+        "normalUiWinsThisRound": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "prerequisiteStages": [
+          1
+        ],
+        "status": "verified",
+        "terminal": "twelfth-stage ending, no thirteenth; clean retry/refresh and twelve native bests"
+      }
     },
     {
       "number": "05",
@@ -198,7 +230,7 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "本轮首段18.074秒/5果/3命/4跳/风旗与终点；3敌击退",
+      "observedCore": "此前首段18.074秒/5果/3命/4跳/风旗与终点；3敌击退",
       "observedRetry": "另一个新局43.223秒自然体力总失败→重试与暂停刷新",
       "endingBoundary": "首段结算刷新/第二段干净入口；后两段未通",
       "evidence": [
@@ -207,7 +239,7 @@
         "docs/trail-main-flow-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮完整主流程",
+      "nextToolWork": "此前完整主流程",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -342,21 +374,74 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "v1顺序完成1–9；提示辅助，未洗牌",
+      "observedCore": "原生提示/正常点击顺序完成1–20；1–9作必要前置，10–20本轮补证",
       "observedRetry": "v1第2页正常4次无通路同图案配对耗错失败；重写资源/棋盘复位，原生首纪录与2页解锁跨刷新保留",
-      "endingBoundary": "9解锁与稳定落盘刷新；10–20未验",
+      "endingBoundary": "10–20全部自然清页；下落/左移模式、稳定刷新、20页终局/无21页/重读与原生纪录保留通过",
       "evidence": [
         "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md",
-        "docs/petal-loss-qa/"
+        "docs/petal-loss-qa/",
+        "docs/petal-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "代表性耗错恢复链已补；无解洗牌分支与其余页仍另列",
+      "nextToolWork": "本轮10–20页目标完成；不自动扩所有配对顺序或动画故障组合",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "petal",
+        "requestedStages": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "totalStages": 20,
+        "normalUiWinsThisRound": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "prerequisiteStages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "status": "verified",
+        "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
+      }
     },
     {
       "number": "13",
@@ -544,21 +629,38 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "首场1×66.9秒1070分9/9胜",
+      "observedCore": "已有首场1070分；本轮第二场1×70.983秒1043分10/10，3次根触发",
       "observedRetry": "此前两场自然败；失败重试空场230露",
-      "endingBoundary": "第二场干净入口与暂停刷新，未获第二胜",
+      "endingBoundary": "两场各有自然胜利；第二场最终反馈/无第三场/重玩刷新与新纪录保留通过，非全部策略验收",
       "evidence": [
         "docs/brook-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/brook-first-win-qa/"
+        "docs/brook-first-win-qa/",
+        "docs/brook-later-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "按缺口择一，非自动扩展队列",
+      "nextToolWork": "本轮第二场及两场终局范围完成；不自动扩充机制组合",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "laterContentCoverage": {
+        "slug": "brook",
+        "requestedStages": [
+          2
+        ],
+        "totalStages": 2,
+        "normalUiWinsThisRound": [
+          2
+        ],
+        "priorCompletedStages": [
+          1
+        ],
+        "prerequisiteStages": [],
+        "status": "verified",
+        "terminal": "second-stage final feedback, no third; retry/refresh and native best kept"
+      }
     },
     {
       "number": "20",
@@ -1151,7 +1253,7 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "本轮普通UI72秒4:0胜，10射门/12传球，脚本辅助快照策略",
+      "observedCore": "此前普通UI72秒4:0胜，10射门/12传球，脚本辅助快照策略",
       "observedRetry": "次场不输入74秒自然1:1平局失利→当前场重赛，首场纪录保留",
       "endingBoundary": "第二场开球暂停刷新/取消重开保持；第三仍锁，未踢后七场",
       "evidence": [
@@ -1159,7 +1261,7 @@
         "docs/meadow-main-flow-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "本轮完整主流程",
+      "nextToolWork": "此前完整主流程",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1168,76 +1270,42 @@
       ]
     }
   ],
-  "evidenceThrough": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431",
+  "evidenceThrough": "7bd7ebfbbacb97a4870f616f824fcc94f45751c2",
   "roundCommits": {
-    "pinfall": "e274e52e57727bb5ceb3cba4e2affbb7abe728bc",
-    "vine": "510f829e2c4ec1fc077e7e1e126529066261d21a",
-    "petal": "62a4484b3ad6bd6adc210b33de4b70dde84c2ef2",
-    "gale": "9e003bfe9852967fb1523cc885d6b2a87baaf151",
-    "post": "72ac140390fd1ad40182677891cc75f304acdc09",
-    "courier": "9e0fc4c173201e8b7693ab007892e69e6c6bffb6",
-    "coaster": "766be09815e1805b93935f41c36ee0ea11874050",
-    "kart": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431"
+    "brook": "1065b7a34ee64688bdf9d1ac13be5ba215d4c479",
+    "prism": "c30b2f3e94869a5ccdd74363ebaf4a6f882cc298",
+    "petal": "7bd7ebfbbacb97a4870f616f824fcc94f45751c2"
   },
   "roundDeployments": {
-    "pinfall": {
-      "id": 39502097276,
+    "brook": {
+      "id": 39526384735,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502097276"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39526384735"
     },
-    "vine": {
-      "id": 39502713493,
+    "prism": {
+      "id": 39528569766,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502713493"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39528569766"
     },
     "petal": {
-      "id": 39503172462,
+      "id": 39529750126,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503172462"
-    },
-    "gale": {
-      "id": 39503532367,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503532367"
-    },
-    "post": {
-      "id": 39503887057,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503887057"
-    },
-    "courier": {
-      "id": 39504173721,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504173721"
-    },
-    "coaster": {
-      "id": 39504461839,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504461839"
-    },
-    "kart": {
-      "id": 39504739141,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504739141"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39529750126"
     }
   },
   "roundScope": {
+    "kind": "later_stages",
     "runtimeChanged": false,
     "faultInjection": false,
     "confirmedBlockingDefectsInSelectedFlows": 0,
     "normalUiEvidenceSeparateFromModels": true,
-    "finiteItems": 8,
-    "verified": 8,
+    "finiteTargets": 3,
+    "verified": 3,
     "blocked": 0,
-    "indexRowsUpdatedAfterEachOnlineProof": true
+    "remainingFiniteTargets": []
   },
   "roundHistory": [
     {
@@ -1305,8 +1373,188 @@
         }
       },
       "evidenceThrough": "1f808d3f4a747dfc1614d56ec97102418e71cd0f"
+    },
+    {
+      "selected": [
+        "pinfall",
+        "vine",
+        "petal",
+        "gale",
+        "post",
+        "courier",
+        "coaster",
+        "kart"
+      ],
+      "commits": {
+        "pinfall": "e274e52e57727bb5ceb3cba4e2affbb7abe728bc",
+        "vine": "510f829e2c4ec1fc077e7e1e126529066261d21a",
+        "petal": "62a4484b3ad6bd6adc210b33de4b70dde84c2ef2",
+        "gale": "9e003bfe9852967fb1523cc885d6b2a87baaf151",
+        "post": "72ac140390fd1ad40182677891cc75f304acdc09",
+        "courier": "9e0fc4c173201e8b7693ab007892e69e6c6bffb6",
+        "coaster": "766be09815e1805b93935f41c36ee0ea11874050",
+        "kart": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431"
+      },
+      "deployments": {
+        "pinfall": {
+          "id": 39502097276,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502097276"
+        },
+        "vine": {
+          "id": 39502713493,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39502713493"
+        },
+        "petal": {
+          "id": 39503172462,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503172462"
+        },
+        "gale": {
+          "id": 39503532367,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503532367"
+        },
+        "post": {
+          "id": 39503887057,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39503887057"
+        },
+        "courier": {
+          "id": 39504173721,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504173721"
+        },
+        "coaster": {
+          "id": 39504461839,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504461839"
+        },
+        "kart": {
+          "id": 39504739141,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39504739141"
+        }
+      },
+      "evidenceThrough": "5f0f0fa53a97b57bab74b40d051d12c7a27ee431"
     }
   ],
-  "reviewBaseline": "5985aa0b3dd8041de867f7b008fb3ceedb393199",
-  "roundSummary": "原列8项代表性失败/重试链逐项通过：落星球尽、青藤撞壁、花笺耗错、钢岚耗命、邮差超时、山径错转、游园班次耗尽、林野杯超时。均为公开页面正常输入与原时钟终局；首纪录/解锁前置、只读策略及其它分支限制见各报告。各款独立提交与Pages核验完成，未改游戏规则。"
+  "reviewBaseline": "8e9e43b67ca38b6cda40f79e5dd57122d785ba3e",
+  "roundSummary": "本轮后续内容：溪谷第二场自然胜利与两场最终反馈；光轨正常顺序完成2–12至第十二关终局；花笺原生提示辅助完成10–20至第二十页终局。新上下文的光轨1、花笺1–9仅为必要解锁前置。普通UI实测、脚本/提示辅助、模型参考及真人边界分列；不把这三款的完整链路说成40款全关卡验收。",
+  "laterStageTargets": [
+    {
+      "slug": "brook",
+      "requestedStages": [
+        2
+      ],
+      "totalStages": 2,
+      "normalUiWinsThisRound": [
+        2
+      ],
+      "priorCompletedStages": [
+        1
+      ],
+      "prerequisiteStages": [],
+      "status": "verified",
+      "terminal": "second-stage final feedback, no third; retry/refresh and native best kept"
+    },
+    {
+      "slug": "prism",
+      "requestedStages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "totalStages": 12,
+      "normalUiWinsThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "prerequisiteStages": [
+        1
+      ],
+      "status": "verified",
+      "terminal": "twelfth-stage ending, no thirteenth; clean retry/refresh and twelve native bests"
+    },
+    {
+      "slug": "petal",
+      "requestedStages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "totalStages": 20,
+      "normalUiWinsThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "prerequisiteStages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "status": "verified",
+      "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
+    }
+  ],
+  "roundEvidenceNotes": "round-notes.md"
 }
