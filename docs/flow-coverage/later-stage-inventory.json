@@ -1,25 +1,64 @@
 {
   "schemaVersion": 1,
   "scopeBaseline": "988562d8505c23e320779e6173b8d746c7086189",
-  "reviewBaseline": "bc8e07e717ba5b3c07f9a3a7b425d81851f02e09",
-  "evidenceThrough": "7f68ee5cc7d261c1458fc71eabe6ac305c0aeda8",
+  "reviewBaseline": "4cd021fb912f12b1468ec803a9cd8b5f2df1aba8",
+  "evidenceThrough": "1a0fd5d9857588587969e2dd39ace8870c4a6c9b",
   "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected per-game reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
   "summary": {
     "catalog": 40,
     "active": 36,
-    "laterUnitsMissingWorks": 4,
-    "laterUnitsMissingCount": 23,
-    "remainingLaterWorkSlugs": [
-      "post",
-      "duel",
-      "kart",
-      "meadow"
-    ],
+    "laterUnitsMissingWorks": 0,
+    "laterUnitsMissingCount": 0,
+    "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
       "fortress:first-map single-player success",
-      "post:first-race first-place",
-      "venture:festival victory"
+      "post:first-place victory in each of races1-3",
+      "venture:festival victory",
+      "kart:manual curve-assist-OFF victory in each of courses1-8"
+    ],
+    "separateSuccessTargets": [
+      {
+        "slug": "fortress",
+        "units": [
+          1
+        ],
+        "condition": "single-player success",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "post",
+        "units": [
+          1,
+          2,
+          3
+        ],
+        "condition": "first place; this round rank2/3/3 legal finishes are not wins",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "venture",
+        "units": [
+          "festival"
+        ],
+        "condition": "victory; natural failure ending already covered",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "kart",
+        "units": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "condition": "curve assist OFF; this round all eight records assisted only",
+        "status": "not_evidenced"
+      }
     ],
     "humanBoundaries": [
       "无辅助持续操作手感与读图",
@@ -306,20 +345,18 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/post/",
       "authoredFiniteUnits": 3,
-      "scopeDescription": "单赛道三场；仅第一场合法第三名完赛并解锁第二场",
-      "pendingLaterUnits": [
-        2,
-        3
-      ],
+      "scopeDescription": "同一赛道三场正常合法完赛，名次2/3/3；每场16闸门两圈，非三张新图，也非三场获胜",
+      "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "第一场第一名未见证据；完赛即可推进，不把第三名当胜利"
+        "三场第一名仍未验；独立只读路线追踪脚本，非真人驾驶手感"
       ],
       "excludedFromActiveDebt": false,
-      "status": "later_units_pending",
+      "status": "no_listed_later_gap",
       "evidence": [
         "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/post-main-flow-qa/",
-        "docs/post-loss-qa/"
+        "docs/post-loss-qa/",
+        "docs/post-later-qa/"
       ]
     },
     {
@@ -560,22 +597,17 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/duel/",
       "authoredFiniteUnits": 8,
-      "scopeDescription": "首庭正常命中与胜利，第二庭解锁",
-      "pendingLaterUnits": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+      "scopeDescription": "纠正输入驱动后八庭各一次正常胜利，逐庭解锁至最终八庭结局",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "纠正前首庭两次自然败局保留，驱动松格挡次序问题非游戏bug；精确反应策略非人手读招"
       ],
-      "otherEvidenceBoundaries": [],
       "excludedFromActiveDebt": false,
-      "status": "later_units_pending",
+      "status": "no_listed_later_gap",
       "evidence": [
         "docs/duel-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/duel-first-win-qa/"
+        "docs/duel-first-win-qa/",
+        "docs/duel-later-qa/"
       ]
     },
     {
@@ -727,24 +759,17 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/kart/",
       "authoredFiniteUnits": 8,
-      "scopeDescription": "首赛道使用页面内可选转向辅助正常获胜",
-      "pendingLaterUnits": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
+      "scopeDescription": "八赛道均使用既有弯道辅助正常双圈达到名次目标；第5第二其余第一，八份辅助纪录",
+      "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "无辅助手动首胜未验，不能借此降低难度"
+        "第1–8赛道关闭弯道辅助胜利仍未验；辅助成绩不覆盖手动纪录；脚本追线非真人连续操控"
       ],
       "excludedFromActiveDebt": false,
-      "status": "later_units_pending",
+      "status": "no_listed_later_gap",
       "evidence": [
         "versions/v2/games/kart/about.html",
-        "docs/kart-loss-qa/"
+        "docs/kart-loss-qa/",
+        "docs/kart-later-qa/"
       ]
     },
     {
@@ -754,22 +779,17 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/meadow/",
       "authoredFiniteUnits": 8,
-      "scopeDescription": "首场脚本辅助普通UI完整4:0胜",
-      "pendingLaterUnits": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+      "scopeDescription": "正常原生档案逐场踢完八场并自然终哨领先，最终冠军反馈与八份纪录",
+      "pendingLaterUnits": [],
+      "otherEvidenceBoundaries": [
+        "100ms只读策略与正常键盘辅助，非人手足球手感、全策略平衡或真人竞技"
       ],
-      "otherEvidenceBoundaries": [],
       "excludedFromActiveDebt": false,
-      "status": "later_units_pending",
+      "status": "no_listed_later_gap",
       "evidence": [
         "versions/v2/games/meadow/about.html",
-        "docs/meadow-main-flow-qa/"
+        "docs/meadow-main-flow-qa/",
+        "docs/meadow-later-qa/"
       ]
     }
   ]

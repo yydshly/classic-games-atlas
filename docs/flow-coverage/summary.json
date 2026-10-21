@@ -8,109 +8,202 @@
   "failureRetryGaps": [],
   "laterStageTargets": [
     {
-      "slug": "chime",
+      "slug": "post",
       "requestedStages": [
         2,
         3
       ],
       "totalStages": 3,
-      "normalUiWinsThisRound": [
+      "normalUiCompletedThisRound": [
+        1,
         2,
         3
       ],
-      "priorCompletedStages": [
+      "normalUiWinsThisRound": [],
+      "prerequisiteStages": [
         1
       ],
-      "prerequisiteStages": [],
       "status": "verified",
-      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
-      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      "completionKind": "legal two-lap finish, NOT victory",
+      "progression": "sequential native unlock and next; first unit is required prerequisite",
+      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
     },
     {
-      "slug": "maze",
+      "slug": "duel",
       "requestedStages": [
-        2
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "totalStages": 2,
+      "totalStages": 8,
+      "normalUiCompletedThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
       "normalUiWinsThisRound": [
-        2
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "priorCompletedStages": [
+      "prerequisiteStages": [
         1
       ],
-      "prerequisiteStages": [],
       "status": "verified",
-      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
-      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      "completionKind": "natural victory",
+      "progression": "sequential native unlock and next; first unit is required prerequisite",
+      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
     },
     {
-      "slug": "lantern",
+      "slug": "kart",
       "requestedStages": [
-        2
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "totalStages": 2,
+      "totalStages": 8,
+      "normalUiCompletedThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
       "normalUiWinsThisRound": [
-        2
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "priorCompletedStages": [
+      "prerequisiteStages": [
         1
       ],
-      "prerequisiteStages": [],
       "status": "verified",
-      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
-      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      "completionKind": "native optional assist target met, manual not tested",
+      "progression": "sequential native unlock and next; first unit is required prerequisite",
+      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
     },
     {
-      "slug": "cloud",
+      "slug": "meadow",
       "requestedStages": [
-        2
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "totalStages": 2,
+      "totalStages": 8,
+      "normalUiCompletedThisRound": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
       "normalUiWinsThisRound": [
-        2
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
-      "priorCompletedStages": [
+      "prerequisiteStages": [
         1
       ],
-      "prerequisiteStages": [],
       "status": "verified",
-      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
-      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
-    },
-    {
-      "slug": "tide",
-      "requestedStages": [
-        2
-      ],
-      "totalStages": 2,
-      "normalUiWinsThisRound": [
-        2
-      ],
-      "priorCompletedStages": [
-        1
-      ],
-      "prerequisiteStages": [],
-      "status": "verified",
-      "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
-      "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      "completionKind": "natural victory",
+      "progression": "sequential native unlock and next; first unit is required prerequisite",
+      "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
     }
   ],
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
-    "laterUnitsMissingWorks": 4,
-    "laterUnitsMissingCount": 23,
-    "remainingLaterWorkSlugs": [
-      "post",
-      "duel",
-      "kart",
-      "meadow"
-    ],
+    "laterUnitsMissingWorks": 0,
+    "laterUnitsMissingCount": 0,
+    "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
       "fortress:first-map single-player success",
-      "post:first-race first-place",
-      "venture:festival victory"
+      "post:first-place victory in each of races1-3",
+      "venture:festival victory",
+      "kart:manual curve-assist-OFF victory in each of courses1-8"
+    ],
+    "separateSuccessTargets": [
+      {
+        "slug": "fortress",
+        "units": [
+          1
+        ],
+        "condition": "single-player success",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "post",
+        "units": [
+          1,
+          2,
+          3
+        ],
+        "condition": "first place; this round rank2/3/3 legal finishes are not wins",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "venture",
+        "units": [
+          "festival"
+        ],
+        "condition": "victory; natural failure ending already covered",
+        "status": "not_evidenced"
+      },
+      {
+        "slug": "kart",
+        "units": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "condition": "curve assist OFF; this round all eight records assisted only",
+        "status": "not_evidenced"
+      }
     ],
     "humanBoundaries": [
       "无辅助持续操作手感与读图",
