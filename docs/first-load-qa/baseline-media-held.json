@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "name": "home",
+      "scenario": "media-held",
+      "base": "https://yydshly.github.io/classic-games-atlas/",
+      "environment": "fresh isolated Chromium context, cache disabled via CDP; desktop hardware; no CPU/global network throttling; DNS/CDN not reset; narrow is emulation",
+      "faultInjected": true,
+      "injectedRequests": [
+        "https://yydshly.github.io/classic-games-atlas/data/reference-media.json?v=independent-targets-20261021"
+      ],
+      "snapshots": [
+        {
+          "file": "home-early.png",
+          "elapsedMs": 1515,
+          "state": {
+            "readyState": "complete",
+            "fonts": "loaded",
+            "title": "经典游戏图鉴 · Classic Games Atlas",
+            "text": "跳到游戏大厅\n✣\n经典游戏图鉴\nCLASSIC GAMES ATLAS\n开始玩\n原首页 v1\n图鉴目录 \n原创原型 \n阅读说明 \nGitHub \n（新窗口）\n\nOUR GAMES / 本项目原创游戏\n\n选一款，直接开始。\n\n40 款已有可玩入口，当前版本与开发状态都标清。\n作品仍是原创玩法原型；候选、暂停与已验证范围分别说明。\n\n进入游戏大厅 · 选择游戏\n最近更新：纸翼 v2（候选） \nPLAY / COMPARE / KEEP\n\n40 款可从首页选择\n\n0 / 72 原作条目已补参考图\n\n继续看原作图鉴与差异 \n\nCHOOSE & PLAY / 直接试玩\n\n我们的游戏\n\n主按钮直接进入对应游戏。\n有 v2 的条目保留 v1 入口；品质状态不等于上线状态。\n\n找游戏\n版本\n全部 40 款\n已有 v2 候选\n已有 v3 短冒险\n当前为 v1\n暂停 / 停止追加优化\n\n正在载入40款试玩入口…\n\n旧版封面与原型档案 · 冻结原首页 v1 · 72 条经典原作图鉴\n\nTHE COLLECTION / 图鉴目录\n\n原作图鉴，先从画面开始。\n\n按名称、主题和玩法筛选。\n原作参考图标注版本与出处；未补图会明确说明。\n\n搜索游戏，支持中文、英文及别名\n/\n玩法类型\n全部类型\n原作画面 · 本轮补图示例\n\n正在核对图片来源与版本。\n\n原作图片仅用于历史介绍与评论比较，来源核实不代表取得转载授权。This website is not endorsed by or affiliated with EA or its licensors.\n\n正在整理图鉴…\n\n保持原始清单顺序 · 分批展开\n\nOUR PROTOTYPES / 本项目原创原型\n\n原型能玩，差距也写清。\n\n34 个已有试玩入口 · 398 关配置。\n另有 6 个独立候选，尚未正式验收。\n\n已有完整 v1 继续保留。街巷护送 / 战术篇 v2 有限候选，未完成品质验收（查看分版实玩、真实战斗图与差异）；云岛工坊 / 同一座城 v2 有限候选，未完成品质验收（查看两桥三章实测与真实城市整页图）；街角商旅 / 街市双商 v2 有限候选，未完成品质验收（查看分版实测、取整修补与真实整页图）；遗迹灯火 / 归火石室 v2 有限候选，未完成品质验收（查看三关有限实玩与需滚动的整页图）；四季小田 v2 有限候选，未完成品质验收（查看三章有限实测与真实农场图）；云港调度 v2 有限候选，未完成品质验收（查看三关有限实测与真实截图）；纸翼投递 / 纸翼工坊 v2 有限候选，未完成品质验收（查看本轮前后实图与有限实测）；弯道邮差 v2 有限候选，未完成品质验收（查看竞速差异与一场有限实测）；风行小径 v2 有限候选，未完成品质验收（查看差异与首关局部实测）；回声走廊 v2 有限候选，未完成品质验收（查看差异与首关有限实测）；风庭对决 v2 有限候选，未完成品质验收（查看攻防差异与分次有限实测）；光轨砖阵 v2 布局修复候选，未完成品质验收（查看布局范围与有限实测）；苔原远征 v2 有限候选，未完成品质验收（查看差异与分次实测记录）；灯塔小队 v2 有限候选，未完成品质验收（查看差异与宽屏航程实玩记录）；星羽同伴 v2 有限候选，未完成品质验收（查看差异与宽屏实玩记录）；晴湾篮场 v2 阶段暂停，未完成品质验收（查看阶段差异）；雨街修理所 v2 本轮停止追加优化，未完成品质验收（查看阶段差异）；潮原纪事 v2 可玩原型，视觉质感未达用户要求（查看实现与边界）；云岬游乐园 v2 本轮交付候选，未完成整体品质验收（查看改高与游客反馈差异）；林野杯赛 v2 本轮交付候选，未完成整体品质验收（查看读弯与辅助差异）；草甸联赛 v2 首轮候选，未完成品质验收（查看传接与射门差异）。37与40旧项目未完成，无完整可玩v1。其余 v2 尚未开始。查看冻结原首页与当时的完整 v1\n\n每款可查看参考原作、流行证据与设计解释、实现范围和预期感受。这里展示本项目的原创实现。封面和实测截图均不代表原作画面；“已有入口”不代表成品质量、全部关卡实玩或美术验收。\n\n查看 34 个已有试玩入口与对标差异\n6 个独立候选 · 尚未完成验收\nA—Z\n\nPLAY / REMEMBER\n\nA NOTE FROM THE ATLAS\n\n经典，不止一种模样。\n\n这是一份跨平台、跨年代的代表作品图鉴，不是销量榜、评分榜或严格的历史排名。十个分组是阅读主题，混合时代、场景与类型，不是游戏平台分类。卡片另列代表平台与玩法类型。\n\n“系列”“作品”“作品版本”与“玩法谱系”分别标注。系列介绍概括共同体验，不代表每代都有相同规则；重制版、合集与后继品牌只作为注明范围的资料入口。\n\n读文字，也看出处\n\n优先引用开发商、发行商、官方商店和博物馆；详情显示来源关系与核读状态。页面可读不等于所有事实都已验证。\n\n留住记忆，尊重创作\n\n原作参考图仅用于说明与比较，单独标注作品版本、来源及权利人。公开可访问不等于取得转载授权。原创原型的图像与原作画面分开展示；本站不提供 ROM 或原作资源包。\n\n延伸阅读：The Strong 世界电子游戏名人堂 \n（新窗口）\n经典游戏图鉴 \n\n记忆没有通关画面。\nCLASSIC GAMES ATLAS · 2026\n\n开放图",
+            "playCount": 0,
+            "launches": [],
+            "progressCount": 0,
+            "save": null,
+            "paint": [
+              {
+                "name": "first-paint",
+                "startTime": 1396
+              },
+              {
+                "name": "first-contentful-paint",
+                "startTime": 1396
+              }
+            ]
+          }
+        },
+        {
+          "file": "home-6s.png",
+          "elapsedMs": 6078,
+          "state": {
+            "readyState": "complete",
+            "fonts": "loaded",
+            "title": "经典游戏图鉴 · Classic Games Atlas",
+            "text": "跳到游戏大厅\n✣\n经典游戏图鉴\nCLASSIC GAMES ATLAS\n开始玩\n原首页 v1\n图鉴目录 \n原创原型 \n阅读说明 \nGitHub \n（新窗口）\n\nOUR GAMES / 本项目原创游戏\n\n选一款，直接开始。\n\n40 款已有可玩入口，当前版本与开发状态都标清。\n作品仍是原创玩法原型；候选、暂停与已验证范围分别说明。\n\n进入游戏大厅 · 选择游戏\n最近更新：纸翼 v2（候选） \nPLAY / COMPARE / KEEP\n\n40 款可从首页选择\n\n0 / 72 原作条目已补参考图\n\n继续看原作图鉴与差异 \n\nCHOOSE & PLAY / 直接试玩\n\n我们的游戏\n\n主按钮直接进入对应游戏。\n有 v2 的条目保留 v1 入口；品质状态不等于上线状态。\n\n找游戏\n版本\n全部 40 款\n已有 v2 候选\n已有 v3 短冒险\n当前为 v1\n暂停 / 停止追加优化\n\n正在载入40款试玩入口…\n\n旧版封面与原型档案 · 冻结原首页 v1 · 72 条经典原作图鉴\n\nTHE COLLECTION / 图鉴目录\n\n原作图鉴，先从画面开始。\n\n按名称、主题和玩法筛选。\n原作参考图标注版本与出处；未补图会明确说明。\n\n搜索游戏，支持中文、英文及别名\n/\n玩法类型\n全部类型\n原作画面 · 本轮补图示例\n\n正在核对图片来源与版本。\n\n原作图片仅用于历史介绍与评论比较，来源核实不代表取得转载授权。This website is not endorsed by or affiliated with EA or its licensors.\n\n正在整理图鉴…\n\n保持原始清单顺序 · 分批展开\n\nOUR PROTOTYPES / 本项目原创原型\n\n原型能玩，差距也写清。\n\n34 个已有试玩入口 · 398 关配置。\n另有 6 个独立候选，尚未正式验收。\n\n已有完整 v1 继续保留。街巷护送 / 战术篇 v2 有限候选，未完成品质验收（查看分版实玩、真实战斗图与差异）；云岛工坊 / 同一座城 v2 有限候选，未完成品质验收（查看两桥三章实测与真实城市整页图）；街角商旅 / 街市双商 v2 有限候选，未完成品质验收（查看分版实测、取整修补与真实整页图）；遗迹灯火 / 归火石室 v2 有限候选，未完成品质验收（查看三关有限实玩与需滚动的整页图）；四季小田 v2 有限候选，未完成品质验收（查看三章有限实测与真实农场图）；云港调度 v2 有限候选，未完成品质验收（查看三关有限实测与真实截图）；纸翼投递 / 纸翼工坊 v2 有限候选，未完成品质验收（查看本轮前后实图与有限实测）；弯道邮差 v2 有限候选，未完成品质验收（查看竞速差异与一场有限实测）；风行小径 v2 有限候选，未完成品质验收（查看差异与首关局部实测）；回声走廊 v2 有限候选，未完成品质验收（查看差异与首关有限实测）；风庭对决 v2 有限候选，未完成品质验收（查看攻防差异与分次有限实测）；光轨砖阵 v2 布局修复候选，未完成品质验收（查看布局范围与有限实测）；苔原远征 v2 有限候选，未完成品质验收（查看差异与分次实测记录）；灯塔小队 v2 有限候选，未完成品质验收（查看差异与宽屏航程实玩记录）；星羽同伴 v2 有限候选，未完成品质验收（查看差异与宽屏实玩记录）；晴湾篮场 v2 阶段暂停，未完成品质验收（查看阶段差异）；雨街修理所 v2 本轮停止追加优化，未完成品质验收（查看阶段差异）；潮原纪事 v2 可玩原型，视觉质感未达用户要求（查看实现与边界）；云岬游乐园 v2 本轮交付候选，未完成整体品质验收（查看改高与游客反馈差异）；林野杯赛 v2 本轮交付候选，未完成整体品质验收（查看读弯与辅助差异）；草甸联赛 v2 首轮候选，未完成品质验收（查看传接与射门差异）。37与40旧项目未完成，无完整可玩v1。其余 v2 尚未开始。查看冻结原首页与当时的完整 v1\n\n每款可查看参考原作、流行证据与设计解释、实现范围和预期感受。这里展示本项目的原创实现。封面和实测截图均不代表原作画面；“已有入口”不代表成品质量、全部关卡实玩或美术验收。\n\n查看 34 个已有试玩入口与对标差异\n6 个独立候选 · 尚未完成验收\nA—Z\n\nPLAY / REMEMBER\n\nA NOTE FROM THE ATLAS\n\n经典，不止一种模样。\n\n这是一份跨平台、跨年代的代表作品图鉴，不是销量榜、评分榜或严格的历史排名。十个分组是阅读主题，混合时代、场景与类型，不是游戏平台分类。卡片另列代表平台与玩法类型。\n\n“系列”“作品”“作品版本”与“玩法谱系”分别标注。系列介绍概括共同体验，不代表每代都有相同规则；重制版、合集与后继品牌只作为注明范围的资料入口。\n\n读文字，也看出处\n\n优先引用开发商、发行商、官方商店和博物馆；详情显示来源关系与核读状态。页面可读不等于所有事实都已验证。\n\n留住记忆，尊重创作\n\n原作参考图仅用于说明与比较，单独标注作品版本、来源及权利人。公开可访问不等于取得转载授权。原创原型的图像与原作画面分开展示；本站不提供 ROM 或原作资源包。\n\n延伸阅读：The Strong 世界电子游戏名人堂 \n（新窗口）\n经典游戏图鉴 \n\n记忆没有通关画面。\nCLASSIC GAMES ATLAS · 2026\n\n开放图",
+            "playCount": 0,
+            "launches": [],
+            "progressCount": 0,
+            "save": null,
+            "paint": [
+              {
+                "name": "first-paint",
+                "startTime": 1396
+              },
+              {
+                "name": "first-contentful-paint",
+                "startTime": 1396
+              }
+            ]
+          }
+        }
+      ],
+      "events": {
+        "domContentLoadedMs": 1515
+      },
+      "functional": {},
+      "network": [
+        {
+          "elapsedMs": 703,
+          "url": "https://yydshly.github.io/classic-games-atlas/",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1093,
+          "url": "https://yydshly.github.io/classic-games-atlas/styles.css?v=reference-review-r63-gale-lifecycle-20261020",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1140,
+          "url": "https://yydshly.github.io/classic-games-atlas/app.js?v=journey-20261021",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1500,
+          "url": "https://yydshly.github.io/classic-games-atlas/play-return.mjs?v=journey-20261021",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1875,
+          "url": "https://yydshly.github.io/classic-games-atlas/data/games.json?v=independent-targets-20261021",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2328,
+          "url": "https://yydshly.github.io/classic-games-atlas/data/value-comparisons.json?v=independent-targets-20261021",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2640,
+          "url": "https://yydshly.github.io/classic-games-atlas/data/comparisons.json?v=independent-targets-20261021",
+          "status": 200
+        }
+      ],
+      "console": [],
+      "pageErrors": []
+    }
+  ]
+}

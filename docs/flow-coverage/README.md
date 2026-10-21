@@ -12,6 +12,8 @@
 
 [此前五款参考与体验差距](reference-experience.html)
 
+[首次加载可靠性与两项首页修复](../first-load-qa/)；局部技术证据，非全站或真机性能验收。
+
 |编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|
 |---|---|---|---|---|
 |01 堡垒防线 [v2 候选](../../versions/v2/games/fortress/)|已验有限流程|已验有限流程：旧首图基地败/次图双车胜保留；当前首图单车普通UI66.6833秒清六敌1860分，基地3/出击3|已验有限流程：失败整备复位；刷新仅留选择和最好|已验有限流程：首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感 [1](../../docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/fortress-independent-qa/) / [3](../../docs/fortress-pause-followup-qa/) / [4](../../docs/new-player-journey-qa/)|

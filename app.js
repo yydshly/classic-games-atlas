@@ -1,3 +1,4 @@
+import {readJson, validateRecommendations} from './catalogue-load.mjs?v=first-load-20261021';
 import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=journey-20261021';
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -8,6 +9,7 @@ const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
 const DATA_REVISION = 'independent-targets-20261021';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
+let unavailable = new Set();
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
 const candidateDefaults = [
  {number:'35',slug:'court',title:'晴湾篮场',play_url:'./preview/court/',levels:8},
@@ -29,7 +31,7 @@ function mediaMarkup(game, {detail = false, compact = false} = {}) {
   const item = mediaFor(game.id);
   if (!item?.image || item.status !== 'verified') {
     const source = item?.sourcePage || data.sources[game.sources[0]]?.url;
-    return `<div class="reference-pending"><span>${escapeHtml(item?.pendingLabel || '原作参考图待补')}</span>${!compact && source ? `<a href="${escapeHtml(safeUrl(source))}" target="_blank" rel="noopener noreferrer">原作资料 ${arrow}<span class="sr-only">（新窗口）</span></a>` : ''}</div>`;
+    return `<div class="reference-pending"><span>${escapeHtml(unavailable.has('原作参考图') ? '原作参考图资料暂未载入' : (item?.pendingLabel || '原作参考图待补'))}</span>${!compact && source ? `<a href="${escapeHtml(safeUrl(source))}" target="_blank" rel="noopener noreferrer">原作资料 ${arrow}<span class="sr-only">（新窗口）</span></a>` : ''}</div>`;
   }
   return `<figure class="original-media${detail ? ' detail-media' : ''}${item.pixelArt ? ' pixel-art' : ''}"><a href="${escapeHtml(safeUrl(item.sourcePage))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(game.title)}原作参考图来源（新窗口）"><img src="${escapeHtml(safeUrl(item.image))}" width="${Number(item.width) || 640}" height="${Number(item.height) || 400}" alt="${escapeHtml(item.alt || `${game.title}原作实机参考画面`)}" loading="lazy" decoding="async"></a><figcaption><span class="original-label">原作参考</span><span class="media-edition">${escapeHtml(item.exactEdition)}</span>${item.pixelArt ? `<span class="media-pixels">原图 ${item.width}×${item.height} 像素</span>` : ''}<span class="media-source"><a href="${escapeHtml(safeUrl(item.sourcePage))}" target="_blank" rel="noopener noreferrer">来源：${escapeHtml(item.sourceLabel || '原作资料页')} ${arrow}<span class="sr-only">（新窗口）</span></a> · ${escapeHtml(item.rightsHolder || '')}</span>${detail ? `<p>${escapeHtml(item.rightsNote || '仅用于介绍与比较。公开可访问不等于取得转载授权。')}</p>${item.requiredDisclaimer ? `<p lang="en">${escapeHtml(item.requiredDisclaimer)}</p>` : ''}` : ''}</figcaption></figure>`;
 }
@@ -61,6 +63,7 @@ function versionLinks(item, compact = false) {
 const valueFor = slug => valueComparisons.find(item => item.slug === slug);
 function valueBriefMarkup(item) {
   const value = valueFor(item.slug);
+  if (!value && unavailable.has('玩法价值说明')) return '<section class="value-brief"><h3>玩法价值说明暂未载入</h3><p>请重新加载以读取这部分资料；下方版本与实现记录仍可查看。</p></section>';
   if (!value) return '<section class="value-brief"><h3>玩法价值说明暂未载入</h3><p>原有对标、实现范围与版本入口仍可查看；暂不补写未核实的流行原因或玩家感受。</p></section>';
   const source = value.source || {}, popularity = value.popularityEvidence || {}, feeling = value.intendedEmotionalValue || {}, hypothesis = value.appealHypothesis || {};
   const facts = popularity.status === 'official_fact' && Array.isArray(popularity.facts) ? popularity.facts : [];
@@ -118,9 +121,9 @@ function card(game) {
 function renderShowcase() {
   const ids = ['nba-jam','theme-hospital','rollercoaster','mario-kart'];
   const verified = referenceMedia.filter(item => item.status === 'verified' && item.image && gameFor(item.gameId));
-  $('#reference-image-count').textContent = String(verified.length);
+  $('#reference-image-count').textContent = unavailable.has('原作参考图') ? '—' : String(verified.length);
   $('#comparison-count').textContent = String(comparisons.length);
-  $('#reference-coverage-note').textContent = `${verified.length} / ${data.games.length} 个原作条目已补参考图；其余明确待补。图片版本与出处单独标注。`;
+  $('#reference-coverage-note').textContent = unavailable.has('原作参考图') ? '原作参考图资料暂未载入，图片覆盖数量暂不可用。可重新加载重试，原作文字与游戏入口仍可使用。' : `${verified.length} / ${data.games.length} 个原作条目已补参考图；其余明确待补。图片版本与出处单独标注。`;
   $('#reference-showcase-grid').innerHTML = ids.map(id => {
     const game = gameFor(id); if (!game) return '';
     return `<article class="showcase-card">${mediaMarkup(game)}<div><h4>${escapeHtml(game.title)}</h4>${mediaFor(id)?.status === 'verified' ? '' : `<p class="pending-edition">${escapeHtml(mediaFor(id)?.exactEdition || game.edition)}</p>`}<a href="#game=${id}">查看原作条目 ${arrow}</a>${comparisonForGame(id).map(comparisonButton).join('')}</div></article>`;
@@ -184,16 +187,28 @@ function openComparison(slug) {
 }
 function handleRoute(){const gm=location.hash.match(/^#game=([a-z0-9-]+)$/),cm=location.hash.match(/^#compare=([a-z0-9-]+)$/);if(gm)openGame(gm[1]);else if(cm)openComparison(cm[1]);else if(dialog.open)dialog.close();}
 function closeGame(){if(/^#(?:game|compare)=/.test(location.hash))history.replaceState(null,'',`${location.pathname}${location.search}#collection`);dialog.close();}
-$('#reload').addEventListener('click',()=>location.reload());$('.dialog-close').addEventListener('click',closeGame);
+document.querySelectorAll('[data-reload]').forEach(button=>button.addEventListener('click',()=>location.reload()));$('.dialog-close').addEventListener('click',closeGame);
 dialog.addEventListener('cancel',event=>{event.preventDefault();closeGame();});
 dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeGame();});
 dialog.addEventListener('close',()=>{if(dialog.open)return;document.body.classList.remove('dialog-open');if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});});
 dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const f=[...dialog.querySelectorAll('button,a[href],input,select,textarea,[tabindex="0"]')].filter(e=>e.getClientRects().length),first=f[0],last=f.at(-1);if(event.shiftKey&&(document.activeElement===first||!dialog.contains(document.activeElement))){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}});
-async function optionalJson(path,fallback){try{const response=await fetch(`${path}?v=${DATA_REVISION}`, {cache:'no-cache'});if(!response.ok)throw new Error(`HTTP ${response.status}`);return await response.json();}catch(error){console.warn(`Supplemental catalogue unavailable: ${path}`,error);return fallback;}}
+async function optionalJson(path,label){
+ try{
+  const value=await readJson(`${path}?v=${DATA_REVISION}`,{timeoutMs:3000});
+  if(!Array.isArray(value?.items))throw new Error('Invalid supplemental catalogue');
+  return value;
+ }catch(error){unavailable.add(label);console.warn(`Supplemental catalogue unavailable: ${path}`,error);return {items:[]};}
+}
 try{
- const response=await fetch(`./data/games.json?v=${DATA_REVISION}`, {cache:'no-cache'});if(!response.ok)throw new Error(`Catalogue HTTP ${response.status}`);data=await response.json();if(!Array.isArray(data.games)||!data.games.length)throw new Error('Catalogue is empty');
- const [comparisonData,mediaData,valueData]=await Promise.all([optionalJson('./data/comparisons.json',{items:[]}),optionalJson('./data/reference-media.json',{items:[]}),optionalJson('./data/value-comparisons.json',{items:[]})]);
- comparisons=comparisonData.items||[];referenceMedia=mediaData.items||[];valueComparisons=valueData.items||[];
+ const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
+  readJson(`./data/games.json?v=${DATA_REVISION}`),
+  readJson(`./data/comparisons.json?v=${DATA_REVISION}`),
+  optionalJson('./data/reference-media.json','原作参考图'),
+  optionalJson('./data/value-comparisons.json','玩法价值说明')
+ ]);
+ data=catalogue;if(!Array.isArray(data?.games)||!data.games.length||!Array.isArray(data.experiments))throw new Error('Catalogue is empty');
+ comparisons=validateRecommendations(data,comparisonData,candidateDefaults);referenceMedia=mediaData.items;valueComparisons=valueData.items;
+ if(unavailable.size){$('#supplemental-message').textContent=`${[...unavailable].join('、')}暂未载入。推荐版本入口与原作文字仍可使用；可重新加载重试。`;$('#supplemental-warning').hidden=false;}
  $('#group-filter').innerHTML=`<button class="filter-chip" type="button" data-group="all" aria-pressed="true">全部图鉴 <span>${data.games.length}</span></button>${data.groups.map(group=>`<button class="filter-chip" type="button" data-group="${group.id}" aria-pressed="false">${escapeHtml(group.title)} <span>${data.games.filter(game=>game.group===group.id).length}</span></button>`).join('')}`;
  const genres=[...new Set(data.games.flatMap(game=>game.genres))].sort((a,b)=>a.localeCompare(b,'zh-CN'));$('#genre').insertAdjacentHTML('beforeend',genres.map(genre=>`<option value="${escapeHtml(genre)}">${escapeHtml(genre)}</option>`).join(''));
  const refilter=()=>{visibleLimit=PAGE_SIZE;render();};$('#search').addEventListener('input',refilter);$('#genre').addEventListener('change',refilter);$('#reset').addEventListener('click',resetFilters);$('#empty-reset').addEventListener('click',()=>{resetFilters();$('#search').focus();});
@@ -222,4 +237,10 @@ try{
   const link=links.find(e=>e.matches('.play-launch')&&e.href===playReturn.href)||links.find(e=>e.href===playReturn.href);
   (link||$('#play-search')).focus({preventScroll:true});window.scrollTo({top:playReturn.y,behavior:'instant'});
  }));
-}catch(error){$('#play-load-error').hidden=false;$('#play-result-count').textContent='游戏列表暂时未载入';$('#load-error').hidden=false;$('#catalogue').setAttribute('aria-busy','false');$('#result-count').textContent='图鉴读取失败';$('#search').disabled=true;$('#genre').disabled=true;console.error(error);}
+}catch(error){
+ $('#play-load-error').hidden=false;$('#play-result-count').textContent='游戏列表暂时未载入';$('#load-error').hidden=false;
+ $('#catalogue').setAttribute('aria-busy','false');$('#result-count').textContent='图鉴读取失败';
+ for(const selector of ['#search','#genre','#play-search','#play-version'])$(selector).disabled=true;
+ $('#comparison-count').textContent='—';$('#reference-image-count').textContent='—';
+ $('#reference-coverage-note').textContent='资料暂未载入，图片覆盖数量暂不可用。';console.error(error);
+}

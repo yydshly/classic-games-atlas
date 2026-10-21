@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: successful JSON and request options
+ok 1 - successful JSON and request options
+  ---
+  duration_ms: 1.9112
+  type: 'test'
+  ...
+# Subtest: HTTP, network and JSON failures propagate
+ok 2 - HTTP, network and JSON failures propagate
+  ---
+  duration_ms: 0.8609
+  type: 'test'
+  ...
+# Subtest: connection stall has a deadline and aborts
+ok 3 - connection stall has a deadline and aborts
+  ---
+  duration_ms: 29.9264
+  type: 'test'
+  ...
+# Subtest: body stall has a deadline and aborts
+ok 4 - body stall has a deadline and aborts
+  ---
+  duration_ms: 31.1132
+  type: 'test'
+  ...
+# Subtest: complete current forty recommendations validate without changing data
+ok 5 - complete current forty recommendations validate without changing data
+  ---
+  duration_ms: 9.4796
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 163.0926
