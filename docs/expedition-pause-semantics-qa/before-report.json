@@ -1,0 +1,108 @@
+{
+  "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+  "method": "Normal public UI only. Native click/tap/keyboard/scroll and read-only DOM/copied diagnostics; no game/save/time injection. Not full mission or new win replay.",
+  "views": [
+    {
+      "game": "expedition",
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "首局待命显示继续且可用",
+          "state": {
+            "layerVisible": true,
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 2,
+          "description": "普通点继续实际启动首次挑战并消耗真实时间",
+          "state": {
+            "layerVisible": false,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 3,
+          "description": "进行中暂停可冻结时间且文案继续",
+          "state": {
+            "layerVisible": true,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 4,
+          "description": "继续与再次暂停仍保留本局",
+          "state": {
+            "layerVisible": true,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        }
+      ]
+    },
+    {
+      "game": "expedition",
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "首局待命显示继续且可用",
+          "state": {
+            "layerVisible": true,
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 2,
+          "description": "普通点继续实际启动首次挑战并消耗真实时间",
+          "state": {
+            "layerVisible": false,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 3,
+          "description": "进行中暂停可冻结时间且文案继续",
+          "state": {
+            "layerVisible": true,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        },
+        {
+          "step": 4,
+          "description": "继续与再次暂停仍保留本局",
+          "state": {
+            "layerVisible": true,
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "observed"
+}

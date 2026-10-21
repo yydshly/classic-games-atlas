@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "game": "expedition",
+  "method": "Execute actual controller handler/presentation assignments; expedition uses actual rules command. Terminal states are explicit Node fixtures, not natural browser wins/losses. Baseline negative control reproduces original issue.",
+  "cases": [
+    {
+      "state": "ready",
+      "blocked": false,
+      "statusAfter": "ready",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "ready",
+      "blocked": true,
+      "statusAfter": "ready",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "running",
+      "blocked": false,
+      "statusAfter": "paused",
+      "pauseDisabled": false,
+      "label": "暂停",
+      "commandCount": 1,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "running",
+      "blocked": true,
+      "statusAfter": "running",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "paused",
+      "blocked": false,
+      "statusAfter": "running",
+      "pauseDisabled": false,
+      "label": "继续",
+      "commandCount": 1,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "paused",
+      "blocked": true,
+      "statusAfter": "paused",
+      "pauseDisabled": true,
+      "label": "继续",
+      "commandCount": 0,
+      "terminalModelFixture": false
+    },
+    {
+      "state": "won",
+      "blocked": false,
+      "statusAfter": "won",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": true
+    },
+    {
+      "state": "won",
+      "blocked": true,
+      "statusAfter": "won",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": true
+    },
+    {
+      "state": "lost",
+      "blocked": false,
+      "statusAfter": "lost",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": true
+    },
+    {
+      "state": "lost",
+      "blocked": true,
+      "statusAfter": "lost",
+      "pauseDisabled": true,
+      "label": "暂停",
+      "commandCount": 0,
+      "terminalModelFixture": true
+    }
+  ],
+  "baselineNegativeControl": true
+}

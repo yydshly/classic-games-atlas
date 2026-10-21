@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_first_use_player_ux",
+  "status": "reviewed_pause_semantics",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "echo",
-    "venture",
-    "meadow"
+    "expedition",
+    "lantern",
+    "island"
   ],
   "items": [
     {
@@ -1184,7 +1184,8 @@
       "evidence": [
         "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/expedition-v2-end-qa/",
-        "docs/expedition-loss-qa/"
+        "docs/expedition-loss-qa/",
+        "docs/expedition-pause-semantics-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前已补首段失守恢复，不扩后两段失败",
@@ -1193,7 +1194,13 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "pauseSemanticsReview": {
+        "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+        "status": "fixed",
+        "evidence": "docs/expedition-pause-semantics-qa/",
+        "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
+      }
     },
     {
       "number": "32",
@@ -1600,36 +1607,17 @@
     }
   ],
   "evidenceThrough": "39da434fc4951fab79ffe9e25d16911180db6e81",
-  "roundCommits": {
-    "echo": "7588ab9090bea1dbc79d327951e9867112df1e66",
-    "venture": "39da434fc4951fab79ffe9e25d16911180db6e81"
-  },
-  "roundDeployments": {
-    "echo": {
-      "id": 39596481480,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39596481480"
-    },
-    "venture": {
-      "id": 39597809783,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39597809783"
-    }
-  },
+  "roundCommits": {},
+  "roundDeployments": {},
   "roundScope": {
-    "kind": "three_first_use_player_ux",
+    "kind": "bounded_pause_semantics",
     "selected": 3,
-    "reviewed": 3,
-    "confirmedDefects": 1,
+    "reviewed": 1,
+    "confirmedDefects": 2,
     "runtimeFixes": [
-      "echo"
+      "expedition"
     ],
-    "noConfirmedDefect": [
-      "venture",
-      "meadow"
-    ],
+    "noConfirmedDefect": [],
     "notWholeProductAcceptance": true
   },
   "roundHistory": [
@@ -2511,12 +2499,53 @@
       },
       "evidenceThrough": "9baaf7d8522729e4d0b79d1a97eb34410e121862",
       "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。"
+    },
+    {
+      "selectedThisRound": [
+        "echo",
+        "venture",
+        "meadow"
+      ],
+      "roundScope": {
+        "kind": "three_first_use_player_ux",
+        "selected": 3,
+        "reviewed": 3,
+        "confirmedDefects": 1,
+        "runtimeFixes": [
+          "echo"
+        ],
+        "noConfirmedDefect": [
+          "venture",
+          "meadow"
+        ],
+        "notWholeProductAcceptance": true
+      },
+      "roundCommits": {
+        "echo": "7588ab9090bea1dbc79d327951e9867112df1e66",
+        "venture": "39da434fc4951fab79ffe9e25d16911180db6e81"
+      },
+      "roundDeployments": {
+        "echo": {
+          "id": 39596481480,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39596481480"
+        },
+        "venture": {
+          "id": 39597809783,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39597809783"
+        }
+      },
+      "evidenceThrough": "39da434fc4951fab79ffe9e25d16911180db6e81",
+      "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷；meadow普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。"
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷；meadow普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。",
+  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据。夹具与自然UI结局分开，不扩大为全关卡验收。",
   "laterStageTargets": [],
-  "roundEvidenceNotes": "player-ux-notes.md",
+  "roundEvidenceNotes": "pause-semantics-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -2919,6 +2948,14 @@
       "status": "no_confirmed_defect",
       "evidence": "docs/meadow-player-ux-qa/",
       "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
+    }
+  },
+  "pauseSemanticsReviews": {
+    "expedition": {
+      "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+      "status": "fixed",
+      "evidence": "docs/expedition-pause-semantics-qa/",
+      "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
     }
   }
 }
