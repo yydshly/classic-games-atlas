@@ -1,13 +1,12 @@
 {
   "schemaVersion": 1,
   "baseline": "1c32fc71dd2cbf007d580a14ab2d5542ef68e43d",
-  "status": "reviewed_independent_success_targets",
+  "status": "reviewed_first_use_player_ux",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
+    "echo",
     "venture",
-    "fortress",
-    "post",
-    "kart"
+    "meadow"
   ],
   "items": [
     {
@@ -1019,7 +1018,8 @@
       "evidence": [
         "docs/venture-v2/PUBLIC_BROWSER_QA.md",
         "docs/venture-storage-qa/",
-        "docs/venture-independent-qa/"
+        "docs/venture-independent-qa/",
+        "docs/venture-player-ux-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "灯会独立胜利已补证；未知骰点真人经营、平衡与真机/声音审美仍未验",
@@ -1028,7 +1028,13 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "playerUxReview": {
+        "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+        "status": "no_confirmed_defect",
+        "evidence": "docs/venture-player-ux-qa/",
+        "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
+      }
     },
     {
       "number": "28",
@@ -1586,47 +1592,30 @@
       }
     }
   ],
-  "evidenceThrough": "9baaf7d8522729e4d0b79d1a97eb34410e121862",
+  "evidenceThrough": "7588ab9090bea1dbc79d327951e9867112df1e66",
   "roundCommits": {
-    "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
-    "fortress": "90473990ada45aea87d7c46097e57570a892d41c",
-    "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
-    "kart": "9baaf7d8522729e4d0b79d1a97eb34410e121862"
+    "echo": "7588ab9090bea1dbc79d327951e9867112df1e66"
   },
   "roundDeployments": {
-    "venture": {
-      "id": 39541614069,
+    "echo": {
+      "id": 39596481480,
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39541614069"
-    },
-    "fortress": {
-      "id": 39542489909,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909"
-    },
-    "post": {
-      "id": 39543126983,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983"
-    },
-    "kart": {
-      "id": 39544242320,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39544242320"
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39596481480"
     }
   },
   "roundScope": {
-    "kind": "four_independent_success_groups",
-    "targets": 13,
-    "completed": 13,
-    "uncompleted": 0,
-    "toolBlockedSubset": 0,
-    "runtimeChanged": false,
-    "confirmedBlockingDefects": 0
+    "kind": "three_first_use_player_ux",
+    "selected": 3,
+    "reviewed": 2,
+    "confirmedDefects": 1,
+    "runtimeFixes": [
+      "echo"
+    ],
+    "noConfirmedDefect": [
+      "venture"
+    ],
+    "notWholeProductAcceptance": true
   },
   "roundHistory": [
     {
@@ -2456,10 +2445,61 @@
           "审美、情绪价值和耐玩性"
         ]
       }
+    },
+    {
+      "selectedThisRound": [
+        "venture",
+        "fortress",
+        "post",
+        "kart"
+      ],
+      "roundScope": {
+        "kind": "four_independent_success_groups",
+        "targets": 13,
+        "completed": 13,
+        "uncompleted": 0,
+        "toolBlockedSubset": 0,
+        "runtimeChanged": false,
+        "confirmedBlockingDefects": 0
+      },
+      "roundCommits": {
+        "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
+        "fortress": "90473990ada45aea87d7c46097e57570a892d41c",
+        "post": "c4d1d137a2c36a327d31655ee9fdee2e00395d47",
+        "kart": "9baaf7d8522729e4d0b79d1a97eb34410e121862"
+      },
+      "roundDeployments": {
+        "venture": {
+          "id": 39541614069,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39541614069"
+        },
+        "fortress": {
+          "id": 39542489909,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909"
+        },
+        "post": {
+          "id": 39543126983,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39543126983"
+        },
+        "kart": {
+          "id": 39544242320,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39544242320"
+        }
+      },
+      "evidenceThrough": "9baaf7d8522729e4d0b79d1a97eb34410e121862",
+      "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。"
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局。仅有限流程，历史通关及辅助边界仍归原报告。",
+  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "player-ux-notes.md",
   "globalLaterStageSummary": {
@@ -2851,6 +2891,12 @@
       "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
       "status": "fixed",
       "evidence": "docs/echo-player-ux-qa/",
+      "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
+    },
+    "venture": {
+      "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+      "status": "no_confirmed_defect",
+      "evidence": "docs/venture-player-ux-qa/",
       "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
     }
   }

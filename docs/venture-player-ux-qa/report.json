@@ -1,0 +1,127 @@
+{
+  "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+  "method": "Fresh public pages; native scroll, touch, keyboard and controls only. Read-only DOM and meadow snapshot. No storage/state/time mutation. Not full-match replay or real-device testing.",
+  "testedAt": "2026-10-21T11:56:30.603008+00:00",
+  "game": "venture",
+  "steps": [
+    {
+      "step": 1,
+      "description": "横向触摸拖动可查看棋盘右侧，页面本身不横溢",
+      "health": "passed",
+      "before": {
+        "left": 0,
+        "width": 388,
+        "total": 650
+      },
+      "after": {
+        "left": 262,
+        "width": 388,
+        "total": 650
+      }
+    },
+    {
+      "step": 2,
+      "description": "规则可正常展开，净资产结算和定步券操作有明确说明",
+      "health": "passed",
+      "keyboardFocusSequence": [
+        {
+          "tag": "A",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "SELECT",
+          "id": "level",
+          "cls": ""
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "canvas-wrap"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "roll",
+          "cls": "primary"
+        },
+        {
+          "tag": "SELECT",
+          "id": "steps",
+          "cls": ""
+        },
+        {
+          "tag": "BUTTON",
+          "id": "voucher",
+          "cls": ""
+        },
+        {
+          "tag": "SUMMARY",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "BUTTON",
+          "id": "restart",
+          "cls": ""
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": ""
+        },
+        {
+          "tag": "SELECT",
+          "id": "level",
+          "cls": ""
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "canvas-wrap"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "roll",
+          "cls": "primary"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "description": "正常选择1步、使用定步券、购买首铺；禁用状态和账簿反馈正确",
+      "health": "passed",
+      "place": "热笼包铺",
+      "portfolio": "热笼包铺 · 1级｜售 126",
+      "notice": "你的 1 级店铺，当前租金 45。"
+    },
+    {
+      "step": 4,
+      "description": "结束回合后对手正常行动，回到玩家可掷骰状态",
+      "health": "passed",
+      "round": "第 2 / 8 轮",
+      "save": "进度已自动保存"
+    }
+  ],
+  "status": "passed",
+  "errors": []
+}
