@@ -1,3 +1,4 @@
+import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=journey-20261021';
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const normalize = (text) => String(text ?? '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -48,7 +49,7 @@ function journeyMarkup(item) {
 }
 function comparisonIntro(item) {
   if (hasJourney(item)) return '当前为独立 v3 短冒险候选；下方分别保留 v1/v2 历史证据。有限浏览器验证不代表玩家体验、声音或审美验收。';
-  const start = item.legacy_playable === false ? (item.legacy_intro || '当前为 v2 可玩原型；旧版仅部分源码归档，非完整可玩v1。') : '当前为 v1 原创玩法原型。';
+  const start = item.legacy_playable === false ? '首页入口为 v2 可玩原型；旧版仅部分源码归档，非完整可玩v1。' : hasCandidate(item) ? '首页入口为 v2 原创玩法候选；保留的 v1 与历史证据另列。' : '首页入口为 v1 原创玩法原型。';
   const end = item.legacy_playable === false ? '本轮实现与有限验证边界如下，未完成整体品质验收。' : hasCandidate(item) ? (item.next_version.browser_screenshot ? '下方分别标注 v1 历史证据与 v2 真实网页截图；有限桌面实玩不代表品质验收。' : item.next_version.renderer_image ? 'v1历史证据与v2离屏图分别标明；v2有限宽屏实玩完成，未完成品质验收。' : '下方截图和实测记录仍对应 v1；v2 变化另列。') : '此页不是 v2 发布说明。';
   return start + versionLabel(item) + '。' + end;
 }
@@ -205,5 +206,20 @@ try{
  $('#play-search').addEventListener('input',playRefilter);$('#play-version').addEventListener('change',playRefilter);
  $('#play-more').addEventListener('click',()=>{playLimit=playableItems().length;renderPlayLibrary();});
  $('#play-reset').addEventListener('click',()=>{$('#play-search').value='';$('#play-version').value='all';playRefilter();$('#play-search').focus();});
+ document.addEventListener('click',event=>{
+  if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  const link=event.target.closest('a[href]');if(!link||link.target==='_blank'||link.hasAttribute('download'))return;
+  const card=link.closest('[data-play]')||(dialog.open?returnFocus?.closest('[data-play]'):null);if(!card)return;
+  try{rememberPlayReturn(sessionStorage,location.href,link.href,{query:$('#play-search').value,version:$('#play-version').value,limit:playLimit,y:scrollY,slug:card.dataset.play});}catch{/* Storage restrictions must not block navigation. */}
+ });
+ let playReturn=null;
+ if(!/^#(?:game|compare)=/.test(location.hash))try{playReturn=consumePlayReturn(sessionStorage,location.href,document.referrer);}catch{}
+ if(playReturn){$('#play-search').value=playReturn.query;$('#play-version').value=playReturn.version;playLimit=playReturn.limit;}
  window.addEventListener('hashchange',handleRoute);renderPlayLibrary();renderExperiments(data.experiments);renderShowcase();render();handleRoute();
+ if(playReturn)requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const card=[...document.querySelectorAll('#play-grid [data-play]')].find(e=>e.dataset.play===playReturn.slug);
+  const links=card?[...card.querySelectorAll('a[href]')]:[];
+  const link=links.find(e=>e.matches('.play-launch')&&e.href===playReturn.href)||links.find(e=>e.href===playReturn.href);
+  (link||$('#play-search')).focus({preventScroll:true});window.scrollTo({top:playReturn.y,behavior:'instant'});
+ }));
 }catch(error){$('#play-load-error').hidden=false;$('#play-result-count').textContent='游戏列表暂时未载入';$('#load-error').hidden=false;$('#catalogue').setAttribute('aria-busy','false');$('#result-count').textContent='图鉴读取失败';$('#search').disabled=true;$('#genre').disabled=true;console.error(error);}

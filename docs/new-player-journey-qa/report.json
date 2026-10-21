@@ -1,0 +1,357 @@
+{
+  "status": "passed",
+  "base": "local preview",
+  "views": [
+    {
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "name": "entry",
+          "description": "首页原创范围与候选状态可见；键盘跳到大厅后可到搜索",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#play",
+          "scrollY": 278,
+          "active": {
+            "id": "play-search",
+            "href": null,
+            "text": ""
+          }
+        },
+        {
+          "step": 2,
+          "name": "filtered",
+          "description": "名称与版本筛选指向一款；主入口明确为v2候选",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#play",
+          "scrollY": 316,
+          "active": {
+            "id": "play-version",
+            "href": null,
+            "text": "全部 40 款\n已有 v2 候选\n已有 v3 短冒险\n当前为 v1\n暂停 / 停止追加优化"
+          }
+        },
+        {
+          "step": 3,
+          "name": "comparison",
+          "description": "键盘打开对照，当前入口与v2一致；原作范围明确，焦点留在弹窗",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#compare=fortress",
+          "scrollY": 322,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "关闭\n×"
+          }
+        },
+        {
+          "step": 4,
+          "name": "recommended",
+          "description": "推荐版待命目标与操作提示可见；直接回大厅和旧版入口同时保留",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/versions/v2/games/fortress/",
+          "scrollY": 0,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "← 游戏大厅\n原版十关\n01 / FIELD NOTES · V2\n暂停 P\n\nFORTRESS / SHARED DEFENSE\n\n堡垒防线双车共守\n\n两条火线，一座信标。\n守住基地，清除全部来敌。"
+          }
+        },
+        {
+          "step": 5,
+          "name": "instructions",
+          "description": "正常展开并滚动阅读操作手册；Battle City参考、原创两图及刷新规则明确",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/versions/v2/games/fortress/",
+          "scrollY": 198,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "战场手册 / 操作与简化"
+          }
+        },
+        {
+          "step": 6,
+          "name": "returned",
+          "description": "直接返回保留堡垒/v2筛选、原位置与启动链接焦点；无需进入旧版",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/index.html#play",
+          "scrollY": 322,
+          "active": {
+            "id": "",
+            "href": "./versions/v2/games/fortress/",
+            "text": "试玩 v2 候选"
+          }
+        },
+        {
+          "step": 7,
+          "name": "expanded-return",
+          "description": "展开全部40款后试玩并返回，展开数量和位置仍保留",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/index.html#play",
+          "scrollY": 247,
+          "active": {
+            "id": "",
+            "href": "./versions/v2/games/fortress/",
+            "text": "试玩 v2 候选"
+          }
+        },
+        {
+          "step": 8,
+          "name": "browser-back",
+          "description": "浏览器后退保留40款展开；普通导航，不改存档",
+          "health": "passed"
+        }
+      ],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "navigationOrRerenderCancellations": [
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/pinfall-v2-echo-flight.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/echo-v2-public-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/escort-v2-marker-boss-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/post-cover.svg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/island-v2-lower-city-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/farm-v2-final-farm.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/duel-v2-fixed-wide-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/ruins-v2-public-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/tide-v2-supply-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/gale-v2-groundwave-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/brook-v2-counterplay-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/courier-v2-first-turn-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/venture-v2-sale-fixed-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/harbor-v2-public-overview.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/expedition-v2-fixed-running-2.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/beacon-v2-public-battle.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/docs/feather-journey-qa/public/fresh-trial.png",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/chime-v2-third-bubble-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/orchard-v2-branches-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/orbit-v2-new-round-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/paper-q2-comparison-running-20261019.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/docs/feather-journey-qa/public/fresh-trial.png",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/escort-v2-marker-boss-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/duel-v2-fixed-wide-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/echo-v2-public-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/farm-v2-final-farm.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/island-v2-lower-city-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/orchard-v2-branches-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/venture-v2-sale-fixed-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/harbor-v2-public-overview.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/tide-v2-supply-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/paper-q2-comparison-running-20261019.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/brook-v2-counterplay-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/courier-v2-first-turn-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/orbit-v2-new-round-running.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/ruins-v2-public-fullpage.jpg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/post-cover.svg",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:58109/assets/screenshots/v2/expedition-v2-fixed-running-2.jpg",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "method": "normal native pointer/keyboard/scroll/navigation only; no state/save/time injection",
+      "notRealDevice": false
+    },
+    {
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "name": "entry",
+          "description": "首页原创范围与候选状态可见；键盘跳到大厅后可到搜索",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#play",
+          "scrollY": 2,
+          "active": {
+            "id": "play-search",
+            "href": null,
+            "text": ""
+          }
+        },
+        {
+          "step": 2,
+          "name": "filtered",
+          "description": "名称与版本筛选指向一款；主入口明确为v2候选",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#play",
+          "scrollY": 163,
+          "active": {
+            "id": "play-version",
+            "href": null,
+            "text": "全部 40 款\n已有 v2 候选\n已有 v3 短冒险\n当前为 v1\n暂停 / 停止追加优化"
+          }
+        },
+        {
+          "step": 3,
+          "name": "comparison",
+          "description": "键盘打开对照，当前入口与v2一致；原作范围明确，焦点留在弹窗",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/#compare=fortress",
+          "scrollY": 609,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "关闭\n×"
+          }
+        },
+        {
+          "step": 4,
+          "name": "recommended",
+          "description": "推荐版待命目标与操作提示可见；直接回大厅和旧版入口同时保留",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/versions/v2/games/fortress/",
+          "scrollY": 0,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "← 游戏大厅\n原版十关\n01 / FIELD NOTES · V2\n暂停 P\n\nFORTRESS / SHARED DEFENSE\n\n堡垒防线双车共守\n行动\n01 双翼哨口\n02 交汇换防\n编组\n单人"
+          }
+        },
+        {
+          "step": 5,
+          "name": "instructions",
+          "description": "正常展开并滚动阅读操作手册；Battle City参考、原创两图及刷新规则明确",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/versions/v2/games/fortress/",
+          "scrollY": 335,
+          "active": {
+            "id": "",
+            "href": null,
+            "text": "战场手册 / 操作与简化"
+          }
+        },
+        {
+          "step": 6,
+          "name": "returned",
+          "description": "直接返回保留堡垒/v2筛选、原位置与启动链接焦点；无需进入旧版",
+          "health": "passed",
+          "url": "http://127.0.0.1:58109/index.html#play",
+          "scrollY": 687,
+          "active": {
+            "id": "",
+            "href": "./versions/v2/games/fortress/",
+            "text": "试玩 v2 候选"
+          }
+        }
+      ],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "navigationOrRerenderCancellations": [],
+      "method": "normal native pointer/keyboard/scroll/navigation only; no state/save/time injection",
+      "notRealDevice": true
+    }
+  ],
+  "scope": "home -> filter -> reference/implementation -> recommended ready -> instructions -> directory; no repeated game walkthrough"
+}

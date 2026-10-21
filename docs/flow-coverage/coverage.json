@@ -4,9 +4,7 @@
   "status": "closed_pause_source_clues",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "cloud",
-    "fortress",
-    "petal"
+    "fortress"
   ],
   "items": [
     {
@@ -28,7 +26,8 @@
       "evidence": [
         "docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/fortress-independent-qa/",
-        "docs/fortress-pause-followup-qa/"
+        "docs/fortress-pause-followup-qa/",
+        "docs/new-player-journey-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "首图单车独立胜利已补证；两人协作、全模式/地形及真人触控/声音审美未验",
@@ -1641,40 +1640,15 @@
       }
     }
   ],
-  "evidenceThrough": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb",
-  "roundCommits": {
-    "cloud": "d9951902a1c0e05092dc6703fe4354d74126b21d",
-    "fortress": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb"
-  },
-  "roundDeployments": {
-    "cloud": {
-      "id": 39609564307,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39609564307"
-    },
-    "fortress": {
-      "id": 39612860679,
-      "status": "completed",
-      "conclusion": "success",
-      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39612860679"
-    }
-  },
+  "evidenceThrough": "67558a9d9548ad563cefe08d106276e2fdf7aa42",
+  "roundCommits": {},
+  "roundDeployments": {},
   "roundScope": {
-    "kind": "three_remaining_pause_clues",
-    "selected": 3,
-    "reviewed": 3,
-    "confirmedDefects": 3,
-    "affectedGames": 2,
-    "runtimeFixes": [
-      "cloud",
-      "fortress"
-    ],
-    "noConfirmedDefect": [
-      "petal"
-    ],
-    "noAutomaticNewQueue": true,
-    "notWholeProductAcceptance": true
+    "kind": "new_player_journey",
+    "sampleGame": "fortress_v2",
+    "confirmedIssues": 3,
+    "notAll40NavigationAudited": true,
+    "notGameplayAcceptance": true
   },
   "roundHistory": [
     {
@@ -2637,12 +2611,55 @@
       },
       "evidenceThrough": "b42d551513a629c1c21c7e271ab05e08a741b9c2",
       "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据；island正常，保留实现。夹具与自然UI结局分开，不扩大为全关卡验收。"
+    },
+    {
+      "selectedThisRound": [
+        "cloud",
+        "fortress",
+        "petal"
+      ],
+      "roundScope": {
+        "kind": "three_remaining_pause_clues",
+        "selected": 3,
+        "reviewed": 3,
+        "confirmedDefects": 3,
+        "affectedGames": 2,
+        "runtimeFixes": [
+          "cloud",
+          "fortress"
+        ],
+        "noConfirmedDefect": [
+          "petal"
+        ],
+        "noAutomaticNewQueue": true,
+        "notWholeProductAcceptance": true
+      },
+      "roundCommits": {
+        "cloud": "d9951902a1c0e05092dc6703fe4354d74126b21d",
+        "fortress": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb"
+      },
+      "roundDeployments": {
+        "cloud": {
+          "id": 39609564307,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39609564307"
+        },
+        "fortress": {
+          "id": 39612860679,
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39612860679"
+        }
+      },
+      "evidenceThrough": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb",
+      "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证；petal普通UI正常，保留代码。终态夹具与实际UI分列，未新增泛化待测队列。"
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证；petal普通UI正常，保留代码。终态夹具与实际UI分列，未新增泛化待测队列。",
+  "roundSummary": "新玩家旅程样本（堡垒v2）：版本提示、直接返回大厅及筛选/位置/焦点保留已修复；桌面8步、窄屏6步普通UI通过，技术夹具另列，不扩展全款体验验收。",
   "laterStageTargets": [],
-  "roundEvidenceNotes": "pause-followup-notes.md",
+  "roundEvidenceNotes": "new-player-journey-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -3086,5 +3103,17 @@
       "evidence": "docs/petal-pause-followup-qa/",
       "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
     }
+  },
+  "playerJourneyReview": {
+    "baseline": "67558a9d9548ad563cefe08d106276e2fdf7aa42",
+    "status": "ui_verified",
+    "evidence": "docs/new-player-journey-qa/",
+    "normalUi": {
+      "desktop": 8,
+      "narrow": 6
+    },
+    "technicalCases": 7,
+    "confirmedIssues": 3,
+    "notWholeProductAcceptance": true
   }
 }

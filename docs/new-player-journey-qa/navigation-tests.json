@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "name": "same-tab one-use receipt preserves exact state without touching game saves",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "non-game/external/other-project destinations never write",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "unrelated entry and other game do not consume receipt",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "old-version detour of same game can return to directory context",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "malformed, expired, invalid-filter and extreme-position receipts ignored",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "denied storage and quota failures do not throw or erase valid game data",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    },
+    {
+      "name": "all current v1/v2/v3 and stopped comparison introductions match recommendation class",
+      "status": "passed",
+      "method": "isolated module/controller fixture; not browser play"
+    }
+  ],
+  "normalUiNotInjected": true
+}
