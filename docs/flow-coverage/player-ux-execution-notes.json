@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-21",
+  "scope": "Execution/harness issues observed in this three-game audit; not product failures. No game-state, save, time or result injection.",
+  "resolved": [
+    {
+      "issue": "Default local socket denied WinError10013",
+      "resolution": "Stopped only own stuck helpers, used reviewed existing browser-test execution permissions; same local address worked."
+    },
+    {
+      "issue": "Local echo guards.webp 404 from sparse working tree",
+      "resolution": "Materialized missing original HEAD asset only; final local and public runs had zero resource errors."
+    },
+    {
+      "issue": "Wrong test expectations for venture save message and echo second-stage name",
+      "resolution": "Native UI showed saved state and 分流仓库; corrected harness expectations against current source, retained observed failures separately from product findings."
+    },
+    {
+      "issue": "Publication preflight read ignored Python bytecode as UTF8; later found trailing blank line",
+      "resolution": "Both stopped before commit; limited scan to text and fixed EOF, preserving staged scope."
+    },
+    {
+      "issue": "Python HTTPS handshake returned local FileNotFoundError during canonical proof",
+      "resolution": "Used existing working Playwright HTTPS client with TLS verification retained; no credential/network configuration changed."
+    }
+  ],
+  "productDefectsConfirmed": [
+    "Echo ready pause starts action, fixed in 7588ab9090bea1dbc79d327951e9867112df1e66"
+  ],
+  "unresolvedProductBlockers": []
+}

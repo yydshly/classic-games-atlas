@@ -1540,7 +1540,8 @@
       "evidence": [
         "versions/v2/games/meadow/about.html",
         "docs/meadow-main-flow-qa/",
-        "docs/meadow-later-qa/"
+        "docs/meadow-later-qa/",
+        "docs/meadow-player-ux-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "八场有限后续主链已补齐；真人读球/触屏/平衡与声音审美仍独立未验",
@@ -1589,12 +1590,19 @@
         "completionKind": "natural victory",
         "progression": "sequential native unlock and next; first unit is required prerequisite",
         "terminal": "final no extra stage, clean retry and refresh, native records retained; helper boundaries in individual reports"
+      },
+      "playerUxReview": {
+        "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+        "status": "no_confirmed_defect",
+        "evidence": "docs/meadow-player-ux-qa/",
+        "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
       }
     }
   ],
-  "evidenceThrough": "7588ab9090bea1dbc79d327951e9867112df1e66",
+  "evidenceThrough": "39da434fc4951fab79ffe9e25d16911180db6e81",
   "roundCommits": {
-    "echo": "7588ab9090bea1dbc79d327951e9867112df1e66"
+    "echo": "7588ab9090bea1dbc79d327951e9867112df1e66",
+    "venture": "39da434fc4951fab79ffe9e25d16911180db6e81"
   },
   "roundDeployments": {
     "echo": {
@@ -1602,18 +1610,25 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39596481480"
+    },
+    "venture": {
+      "id": 39597809783,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39597809783"
     }
   },
   "roundScope": {
     "kind": "three_first_use_player_ux",
     "selected": 3,
-    "reviewed": 2,
+    "reviewed": 3,
     "confirmedDefects": 1,
     "runtimeFixes": [
       "echo"
     ],
     "noConfirmedDefect": [
-      "venture"
+      "venture",
+      "meadow"
     ],
     "notWholeProductAcceptance": true
   },
@@ -2499,7 +2514,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。",
+  "roundSummary": "本轮玩家体验核查：echo已修待命暂停误开局；venture普通上手/窄屏未确认缺陷；meadow普通上手/窄屏未确认缺陷。仅有限流程，历史通关及辅助边界仍归原报告。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "player-ux-notes.md",
   "globalLaterStageSummary": {
@@ -2897,6 +2912,12 @@
       "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
       "status": "no_confirmed_defect",
       "evidence": "docs/venture-player-ux-qa/",
+      "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
+    },
+    "meadow": {
+      "baseline": "aac355cdd1b3df45b876b219c5be9dd04da8e29e",
+      "status": "no_confirmed_defect",
+      "evidence": "docs/meadow-player-ux-qa/",
       "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
     }
   }
