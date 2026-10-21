@@ -47,7 +47,7 @@ function aim(e){if(game.state!=='playing'||game.flight)return;const rect=canvas.
 canvas.addEventListener('pointerdown',e=>{if(game.state!=='playing')return;e.preventDefault();canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);aim(e);});
 canvas.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'||canvas.hasPointerCapture(e.pointerId))aim(e);});
 canvas.addEventListener('pointerup',e=>{e.preventDefault();aim(e);if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);if(e.pointerType==='mouse')requestFire();});
-document.addEventListener('keydown',e=>{
+document.addEventListener('keydown',e=>{if(e.code==='Enter'&&e.target.closest('a[href]'))return;
  if(e.repeat&&['Space','Enter','KeyX','KeyP','Escape','KeyR'].includes(e.code)){e.preventDefault();return;}
  if(e.ctrlKey||e.metaKey||e.altKey||document.querySelector('dialog[open]')||e.target.matches('input,textarea,select'))return;
  if(['ArrowLeft','ArrowRight','KeyA','KeyD'].includes(e.code)){e.preventDefault();keys.add(e.code);}

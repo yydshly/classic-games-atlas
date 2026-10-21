@@ -4,7 +4,41 @@
   "status": "closed_pause_source_clues",
   "criteria": "verified仅指附证据所列首条/有限流程，不表示全部关卡或成品验收；not_evidenced是缺证据，不是bug；暂停项不执行。",
   "selectedThisRound": [
-    "fortress"
+    "maze",
+    "starline",
+    "prism",
+    "crate",
+    "pass",
+    "trail",
+    "lantern",
+    "cloud",
+    "garden",
+    "vine",
+    "petal",
+    "sand",
+    "pinfall",
+    "gale",
+    "post",
+    "beacon",
+    "chime",
+    "brook",
+    "tide",
+    "harbor",
+    "farm",
+    "ruins",
+    "orchard",
+    "courier",
+    "venture",
+    "island",
+    "orbit",
+    "duel",
+    "expedition",
+    "feather",
+    "echo",
+    "escort",
+    "coaster",
+    "kart",
+    "meadow"
   ],
   "items": [
     {
@@ -64,7 +98,8 @@
         "docs/maze-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/maze-v2-qa/LAYOUT_PUBLIC.md",
         "docs/maze-first-win-qa/",
-        "docs/maze-later-qa/"
+        "docs/maze-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两图有限主目标已补齐；经典完整道具/多人/关卡跨度属于产品后续",
@@ -109,7 +144,8 @@
       "observedRetry": "主动低效触底后重试，最好保留",
       "endingBoundary": "两图开放，恢复飞行回出手前",
       "evidence": [
-        "docs/starline-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/starline-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -139,7 +175,8 @@
       "evidence": [
         "docs/prism-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/prism-first-win-qa/",
-        "docs/prism-later-qa/"
+        "docs/prism-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前第二关至现有终关目标完成；不自动扩控制方式或碰撞组合",
@@ -203,7 +240,8 @@
       "observedRetry": "无失败弹窗；胜后撤销重做/重玩已验",
       "endingBoundary": "继续下一仓和跨刷新撤销已验",
       "evidence": [
-        "docs/crate-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/crate-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -231,7 +269,8 @@
       "observedRetry": "重新布防230金/12城门/空场",
       "endingBoundary": "只有一短图，刷新保留最好不续战",
       "evidence": [
-        "docs/pass-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/pass-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -262,7 +301,8 @@
         "docs/trail-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/trail-save-qa/",
         "docs/trail-main-flow-qa/",
-        "docs/trail-later-qa/"
+        "docs/trail-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "有限三段主链已覆盖；其余路线与真人手感不在此前",
@@ -310,7 +350,8 @@
       "evidence": [
         "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/lantern-later-qa/",
-        "docs/lantern-pause-semantics-qa/"
+        "docs/lantern-pause-semantics-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两图有限主目标补齐；原作敌人细节/角色反馈与无辅助手感属产品后续",
@@ -363,7 +404,8 @@
       "evidence": [
         "docs/cloud-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/cloud-later-qa/",
-        "docs/cloud-pause-followup-qa/"
+        "docs/cloud-pause-followup-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两段有限主目标补齐；完整武器成长/演出/驾驶手感留产品后续",
@@ -415,7 +457,8 @@
       "endingBoundary": "两题开放，无解锁链；动画刷新未验",
       "evidence": [
         "docs/garden-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/garden-loss-qa/"
+        "docs/garden-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -444,7 +487,8 @@
       "endingBoundary": "两图开放，非16关全通",
       "evidence": [
         "docs/vine-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/vine-loss-qa/"
+        "docs/vine-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "代表性撞壁失败恢复链已补；身体自撞与第二图失败仍另列",
@@ -475,7 +519,8 @@
         "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md",
         "docs/petal-loss-qa/",
         "docs/petal-later-qa/",
-        "docs/petal-pause-followup-qa/"
+        "docs/petal-pause-followup-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前10–20页目标完成；不自动扩所有配对顺序或动画故障组合",
@@ -561,7 +606,8 @@
       "observedRetry": "主动点已推知雷格失败，同盘重试/另开新盘",
       "endingBoundary": "两档独立进度，非全部种子证明",
       "evidence": [
-        "docs/sand-v2-qa/PUBLIC_BROWSER_QA.md"
+        "docs/sand-v2-qa/PUBLIC_BROWSER_QA.md",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -590,7 +636,8 @@
       "endingBoundary": "能力整球回退及最好保留，两庭开放",
       "evidence": [
         "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/pinfall-loss-qa/"
+        "docs/pinfall-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "球尽失败恢复链已补；末发返球优先仍为另列边界，不自动扩围",
@@ -619,7 +666,8 @@
       "endingBoundary": "修后只复验生命周期，通关属修前同引擎",
       "evidence": [
         "docs/gale-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/gale-loss-qa/"
+        "docs/gale-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "代表性耗命恢复链已补；后图与检查点后最终死亡仍另列",
@@ -651,7 +699,8 @@
         "docs/post-main-flow-qa/",
         "docs/post-loss-qa/",
         "docs/post-later-qa/",
-        "docs/post-independent-qa/"
+        "docs/post-independent-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "三场第一名独立目标已补齐；只保留真人操控/真机/声音审美与经典体验边界",
@@ -701,7 +750,8 @@
       "endingBoundary": "航程总结及刷新/再次行动已验",
       "evidence": [
         "docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/beacon-v2-loss-qa/"
+        "docs/beacon-v2-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -730,7 +780,8 @@
       "endingBoundary": "三题均已有自然成功；此前第2→3清场/刷新、末题无第4/重走与2份原生纪录保留；时窗脚本辅助",
       "evidence": [
         "docs/chime-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/chime-later-qa/"
+        "docs/chime-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "三题有限主链补齐；其它机关跨度/角色反馈/真人手感属于产品后续，不是此前bug",
@@ -779,7 +830,8 @@
       "evidence": [
         "docs/brook-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/brook-first-win-qa/",
-        "docs/brook-later-qa/"
+        "docs/brook-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前第二场及两场终局范围完成；不自动扩充机制组合",
@@ -825,7 +877,8 @@
       "evidence": [
         "docs/tide-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/tide-first-win-qa/",
-        "docs/tide-later-qa/"
+        "docs/tide-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两图有限主目标补齐；原鼠标输入验证和经典完整内容/演出属于后续边界",
@@ -899,7 +952,8 @@
       "endingBoundary": "三关后无第四；终局清会话为设计",
       "evidence": [
         "docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/harbor-storage-qa/"
+        "docs/harbor-storage-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -928,7 +982,8 @@
       "endingBoundary": "终局刷新与查看农场；动画多用正常跳过",
       "evidence": [
         "docs/farm-v2/PUBLIC_BROWSER_QA.md",
-        "docs/farm-storage-qa/"
+        "docs/farm-storage-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -957,7 +1012,8 @@
       "endingBoundary": "第三房清怪后仍须归途E才结算",
       "evidence": [
         "docs/ruins-v2/PUBLIC_BROWSER_QA.md",
-        "docs/ruins-v2-qa/LAYOUT_PUBLIC.md"
+        "docs/ruins-v2-qa/LAYOUT_PUBLIC.md",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -986,7 +1042,8 @@
       "endingBoundary": "39分霜中恢复和自然结束已验，误核未验",
       "evidence": [
         "docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/orchard-frost-recovery-qa/"
+        "docs/orchard-frost-recovery-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1015,7 +1072,8 @@
       "endingBoundary": "转向锁定跨刷新，两路开放",
       "evidence": [
         "docs/courier-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/courier-loss-qa/"
+        "docs/courier-loss-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "代表性错转恢复链已补；漏转/缺信/三碰等原因仍另列",
@@ -1046,7 +1104,8 @@
         "docs/venture-v2/PUBLIC_BROWSER_QA.md",
         "docs/venture-storage-qa/",
         "docs/venture-independent-qa/",
-        "docs/venture-player-ux-qa/"
+        "docs/venture-player-ux-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "灯会独立胜利已补证；未知骰点真人经营、平衡与真机/声音审美仍未验",
@@ -1082,7 +1141,8 @@
       "evidence": [
         "docs/island-v2/PUBLIC_BROWSER_QA.md",
         "docs/island-storage-qa/",
-        "docs/island-pause-semantics-qa/"
+        "docs/island-pause-semantics-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1118,7 +1178,8 @@
       "evidence": [
         "docs/orbit-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/orbit-natural-end-qa/",
-        "docs/orbit-first-speed-qa/"
+        "docs/orbit-first-speed-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1148,7 +1209,8 @@
       "evidence": [
         "docs/duel-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/duel-first-win-qa/",
-        "docs/duel-later-qa/"
+        "docs/duel-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "八庭有限主链补齐；人手读招、对战与原作完整格斗体验另行评估",
@@ -1219,7 +1281,8 @@
         "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/expedition-v2-end-qa/",
         "docs/expedition-loss-qa/",
-        "docs/expedition-pause-semantics-qa/"
+        "docs/expedition-pause-semantics-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前已补首段失守恢复，不扩后两段失败",
@@ -1254,7 +1317,8 @@
       "endingBoundary": "结局总结/自由出行/刷新及v2承接已验",
       "evidence": [
         "docs/feather-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/feather-journey-qa/"
+        "docs/feather-journey-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1285,7 +1349,8 @@
         "docs/echo-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/echo-continuity-qa/",
         "docs/echo-later-qa/",
-        "docs/echo-player-ux-qa/"
+        "docs/echo-player-ux-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "有限三段主要目标已有正常UI证据；无暂停手感与其它路线留真人验收",
@@ -1338,7 +1403,8 @@
       "endingBoundary": "第三段需护车到100%，结局刷新/从晨街重玩",
       "evidence": [
         "docs/escort-v2/PUBLIC_BROWSER_QA.md",
-        "docs/escort-storage-qa/"
+        "docs/escort-storage-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1452,7 +1518,8 @@
       "evidence": [
         "versions/v2/games/coaster/comparison.html",
         "docs/coaster-loss-qa/",
-        "docs/coaster-later-qa/"
+        "docs/coaster-later-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "现有八园有限主链已覆盖；开放设计乐趣/其它方案/真机体验留真人验收",
@@ -1511,7 +1578,8 @@
         "versions/v2/games/kart/about.html",
         "docs/kart-loss-qa/",
         "docs/kart-later-qa/",
-        "docs/kart-independent-qa/"
+        "docs/kart-independent-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "本轮13独立目标到此补齐；不扩测试主题，仅保留真人操控/真机/声音/平衡审美边界",
@@ -1582,7 +1650,8 @@
         "versions/v2/games/meadow/about.html",
         "docs/meadow-main-flow-qa/",
         "docs/meadow-later-qa/",
-        "docs/meadow-player-ux-qa/"
+        "docs/meadow-player-ux-qa/",
+        "docs/return-navigation-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "八场有限后续主链已补齐；真人读球/触屏/平衡与声音审美仍独立未验",
@@ -1640,14 +1709,14 @@
       }
     }
   ],
-  "evidenceThrough": "67558a9d9548ad563cefe08d106276e2fdf7aa42",
+  "evidenceThrough": "730541d8836a2a73f40c9af3776577834bdb4206",
   "roundCommits": {},
   "roundDeployments": {},
   "roundScope": {
-    "kind": "new_player_journey",
-    "sampleGame": "fortress_v2",
-    "confirmedIssues": 3,
-    "notAll40NavigationAudited": true,
+    "kind": "remaining_recommended_return_navigation",
+    "items": 35,
+    "normalUiCases": 70,
+    "priorFortressSeparate": true,
     "notGameplayAcceptance": true
   },
   "roundHistory": [
@@ -2654,12 +2723,28 @@
       },
       "evidenceThrough": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb",
       "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证；petal普通UI正常，保留代码。终态夹具与实际UI分列，未新增泛化待测队列。"
+    },
+    {
+      "selectedThisRound": [
+        "fortress"
+      ],
+      "roundScope": {
+        "kind": "new_player_journey",
+        "sampleGame": "fortress_v2",
+        "confirmedIssues": 3,
+        "notAll40NavigationAudited": true,
+        "notGameplayAcceptance": true
+      },
+      "roundCommits": {},
+      "roundDeployments": {},
+      "evidenceThrough": "67558a9d9548ad563cefe08d106276e2fdf7aa42",
+      "roundSummary": "新玩家旅程样本（堡垒v2）：版本提示、直接返回大厅及筛选/位置/焦点保留已修复；桌面8步、窄屏6步普通UI通过，技术夹具另列，不扩展全款体验验收。"
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "新玩家旅程样本（堡垒v2）：版本提示、直接返回大厅及筛选/位置/焦点保留已修复；桌面8步、窄屏6步普通UI通过，技术夹具另列，不扩展全款体验验收。",
+  "roundSummary": "推荐入口返回导航：其余35项桌面/390CSS共70场景通过；19入口链接、4处Enter路由、1处窄屏返回可见性修复；20款改动、15款保留，未重跑完整通关。",
   "laterStageTargets": [],
-  "roundEvidenceNotes": "new-player-journey-notes.md",
+  "roundEvidenceNotes": "return-navigation-notes.md",
   "globalLaterStageSummary": {
     "catalog": 40,
     "active": 36,
@@ -3114,6 +3199,17 @@
     },
     "technicalCases": 7,
     "confirmedIssues": 3,
+    "notWholeProductAcceptance": true
+  },
+  "returnNavigationReview": {
+    "evidence": "docs/return-navigation-qa/",
+    "staticItems": 35,
+    "normalUiItems": 35,
+    "sourceOnlyItems": [],
+    "desktopCases": 35,
+    "narrowCases": 35,
+    "freshEntryCases": 6,
+    "technicalFixtureCases": 24,
     "notWholeProductAcceptance": true
   }
 }
