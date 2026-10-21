@@ -8,10 +8,10 @@
   "failureRetryGaps": [],
   "independentSuccessSummary": {
     "targets": 13,
-    "completed": 2,
-    "uncompleted": 11,
+    "completed": 5,
+    "uncompleted": 8,
     "toolBlockedSubset": 0,
-    "notYetTried": 11,
+    "notYetTried": 8,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   },
@@ -23,7 +23,6 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
       "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
@@ -50,8 +49,16 @@
           3
         ],
         "condition": "player legal two laps16 gates, finish rank1 in each of three races",
-        "status": "not_evidenced",
-        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
+        "status": "verified",
+        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins",
+        "verifiedUnits": [
+          1,
+          2,
+          3
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/post-independent-qa/"
       },
       {
         "slug": "venture",
@@ -87,10 +94,10 @@
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 2,
-      "uncompleted": 11,
+      "completed": 5,
+      "uncompleted": 8,
       "toolBlockedSubset": 0,
-      "notYetTried": 11,
+      "notYetTried": 8,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "scopeBaseline": "988562d8505c23e320779e6173b8d746c7086189",
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "evidenceThrough": "437f0daad1f777b822c8c735ff22913c5487271c",
+  "evidenceThrough": "90473990ada45aea87d7c46097e57570a892d41c",
   "method": "Current recommended scopes and linked historical reports reviewed; no new gameplay test except the selected per-game reports. Missing proof is not a defect. Historical engine/controller version boundaries remain. Paused/frozen items excluded, not deleted.",
   "summary": {
     "catalog": 40,
@@ -12,7 +12,6 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
       "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
@@ -39,8 +38,16 @@
           3
         ],
         "condition": "player legal two laps16 gates, finish rank1 in each of three races",
-        "status": "not_evidenced",
-        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
+        "status": "verified",
+        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins",
+        "verifiedUnits": [
+          1,
+          2,
+          3
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/post-independent-qa/"
       },
       {
         "slug": "venture",
@@ -76,10 +83,10 @@
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 2,
-      "uncompleted": 11,
+      "completed": 5,
+      "uncompleted": 8,
       "toolBlockedSubset": 0,
-      "notYetTried": 11,
+      "notYetTried": 8,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
@@ -369,10 +376,10 @@
       "recommendedVersion": "v2",
       "playUrl": "versions/v2/games/post/",
       "authoredFiniteUnits": 3,
-      "scopeDescription": "同一赛道三场正常合法完赛，名次2/3/3；每场16闸门两圈，非三张新图，也非三场获胜",
+      "scopeDescription": "此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "三场第一名仍未验；独立只读路线追踪脚本，非真人驾驶手感"
+        "三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶"
       ],
       "excludedFromActiveDebt": false,
       "status": "no_listed_later_gap",
@@ -380,7 +387,8 @@
         "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/post-main-flow-qa/",
         "docs/post-loss-qa/",
-        "docs/post-later-qa/"
+        "docs/post-later-qa/",
+        "docs/post-independent-qa/"
       ]
     },
     {

@@ -617,17 +617,18 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "三场正常合法两圈完赛；第2/3场25.375/23.15秒均第3名，非第一名胜利",
+      "observedCore": "此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒",
       "observedRetry": "自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁",
-      "endingBoundary": "原生1→2→3衔接、16闸/两圈/单结算，末场无第4、3纪录/末结果刷新与同场重开通过；第一名仍未验",
+      "endingBoundary": "三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶",
       "evidence": [
         "docs/post-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/post-main-flow-qa/",
         "docs/post-loss-qa/",
-        "docs/post-later-qa/"
+        "docs/post-later-qa/",
+        "docs/post-independent-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
-      "nextToolWork": "三场合法进阶链补齐；第一名是独立成功分支，驾驶/原作体验留真人验收",
+      "nextToolWork": "三场第一名独立目标已补齐；只保留真人操控/真机/声音审美与经典体验边界",
       "humanRequired": [
         "持续操作与难度感受",
         "真实移动触控及设备表现",
@@ -1577,9 +1578,10 @@
       }
     }
   ],
-  "evidenceThrough": "437f0daad1f777b822c8c735ff22913c5487271c",
+  "evidenceThrough": "90473990ada45aea87d7c46097e57570a892d41c",
   "roundCommits": {
-    "venture": "437f0daad1f777b822c8c735ff22913c5487271c"
+    "venture": "437f0daad1f777b822c8c735ff22913c5487271c",
+    "fortress": "90473990ada45aea87d7c46097e57570a892d41c"
   },
   "roundDeployments": {
     "venture": {
@@ -1587,13 +1589,19 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39541614069"
+    },
+    "fortress": {
+      "id": 39542489909,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39542489909"
     }
   },
   "roundScope": {
     "kind": "four_independent_success_groups",
     "targets": 13,
-    "completed": 2,
-    "uncompleted": 11,
+    "completed": 5,
+    "uncompleted": 8,
     "toolBlockedSubset": 0,
     "runtimeChanged": false,
     "confirmedBlockingDefects": 0
@@ -2429,7 +2437,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "13个指定独立胜利目标：已完成2，未完成11（其中具体工具阻塞0、尚未执行11）。剩余：邮差第一名:1,2,3；林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "roundSummary": "13个指定独立胜利目标：已完成5，未完成8（其中具体工具阻塞0、尚未执行8）。剩余：林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "independent-success-notes.md",
   "globalLaterStageSummary": {
@@ -2440,7 +2448,6 @@
     "remainingLaterWorkSlugs": [],
     "noListedLaterGapIsNotAllVariantsWon": true,
     "separateSuccessBranches": [
-      "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
       "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
     ],
     "separateSuccessTargets": [
@@ -2467,8 +2474,16 @@
           3
         ],
         "condition": "player legal two laps16 gates, finish rank1 in each of three races",
-        "status": "not_evidenced",
-        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
+        "status": "verified",
+        "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins",
+        "verifiedUnits": [
+          1,
+          2,
+          3
+        ],
+        "blockedUnits": [],
+        "pendingUnits": [],
+        "evidence": "docs/post-independent-qa/"
       },
       {
         "slug": "venture",
@@ -2504,10 +2519,10 @@
     ],
     "independentSuccessSummary": {
       "targets": 13,
-      "completed": 2,
-      "uncompleted": 11,
+      "completed": 5,
+      "uncompleted": 8,
       "toolBlockedSubset": 0,
-      "notYetTried": 11,
+      "notYetTried": 8,
       "boundedUncompleted": 0,
       "noMissingEvidenceIsBug": true
     },
@@ -2556,10 +2571,10 @@
       ]
     },
     "post": {
-      "scopeDescription": "同一赛道三场正常合法完赛，名次2/3/3；每场16闸门两圈，非三张新图，也非三场获胜",
+      "scopeDescription": "此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒",
       "pendingLaterUnits": [],
       "otherEvidenceBoundaries": [
-        "三场第一名仍未验；独立只读路线追踪脚本，非真人驾驶手感"
+        "三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶"
       ]
     },
     "duel": {
@@ -2599,7 +2614,6 @@
     }
   },
   "separateSuccessBranches": [
-    "post:player legal two laps16 gates, finish rank1 in each of three races;remaining=1,2,3",
     "kart:assist OFF from ready through result; original course target met, manual score separate;remaining=1,2,3,4,5,6,7,8"
   ],
   "separateSuccessTargets": [
@@ -2626,8 +2640,16 @@
         3
       ],
       "condition": "player legal two laps16 gates, finish rank1 in each of three races",
-      "status": "not_evidenced",
-      "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins"
+      "status": "verified",
+      "previousCondition": "first place; this round rank2/3/3 legal finishes are not wins",
+      "verifiedUnits": [
+        1,
+        2,
+        3
+      ],
+      "blockedUnits": [],
+      "pendingUnits": [],
+      "evidence": "docs/post-independent-qa/"
     },
     {
       "slug": "venture",
@@ -2661,7 +2683,7 @@
       "previousCondition": "curve assist OFF; this round all eight records assisted only"
     }
   ],
-  "independentBranchNote": "13个指定独立胜利目标：已完成2，未完成11（其中具体工具阻塞0、尚未执行11）。剩余：邮差第一名:1,2,3；林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
+  "independentBranchNote": "13个指定独立胜利目标：已完成5，未完成8（其中具体工具阻塞0、尚未执行8）。剩余：林野关闭辅助达标:1,2,3,4,5,6,7,8。所有完成均须按各报告的普通UI与强辅助边界判读，不等于真人或全模式成品验收。真实手机多指/性能、持续手感与策略自然性、音频听感/同步及审美耐玩性仍需真人；35/36/37暂停与纸翼保留不变。",
   "nextDeliveryNote": "本轮23个既定后续单元全部补证，没有另加主题或继续重刷。下一阶段由产品取舍与真人体验验收决定；如继续工具验证，先明确上述独立胜利分支的有限范围，不把它们当已失败或必须降难度。",
   "independentSuccessRound": {
     "baseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
@@ -2706,16 +2728,27 @@
         "blockedUnits": [],
         "uncompletedUnits": [],
         "methodBoundary": "首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感"
+      },
+      "post": {
+        "report": "docs/post-independent-qa/public-report.json",
+        "verifiedUnits": [
+          1,
+          2,
+          3
+        ],
+        "blockedUnits": [],
+        "uncompletedUnits": [],
+        "methodBoundary": "三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶"
       }
     },
     "runtimeChanged": false
   },
   "independentSuccessSummary": {
     "targets": 13,
-    "completed": 2,
-    "uncompleted": 11,
+    "completed": 5,
+    "uncompleted": 8,
     "toolBlockedSubset": 0,
-    "notYetTried": 11,
+    "notYetTried": 8,
     "boundedUncompleted": 0,
     "noMissingEvidenceIsBug": true
   }
