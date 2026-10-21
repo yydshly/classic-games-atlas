@@ -1,0 +1,151 @@
+{
+  "game": "expedition",
+  "base": "https://yydshly.github.io/classic-games-atlas",
+  "method": "Native UI click/tap/keyboard/scroll only; read-only DOM/copied diagnostics. No injected game/save/time/terminal state. Desktop terminal requested only when --terminal;390CSS simulation is not physical-device evidence.",
+  "views": [
+    {
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命暂停禁用，开始入口明确保留",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": true
+          },
+          "screenshot": "desktop-1.png"
+        },
+        {
+          "step": 2,
+          "description": "普通点禁用暂停及P均不误启动",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": true
+          },
+          "screenshot": "desktop-2.png"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后可暂停，计时/回合冻结且显示继续",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "desktop-3.png"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "desktop-4.png"
+        },
+        {
+          "step": 5,
+          "description": "真实当前局刷新先暂停，资源/回合保留",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "desktop-5.png"
+        }
+      ]
+    },
+    {
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命暂停禁用，开始入口明确保留",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": true
+          },
+          "screenshot": "narrow-1.png"
+        },
+        {
+          "step": 2,
+          "description": "普通点禁用暂停及P均不误启动",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "title": "谷地等待你的安排",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n120 秒",
+            "pauseText": "暂停",
+            "pauseDisabled": true
+          },
+          "screenshot": "narrow-2.png"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后可暂停，计时/回合冻结且显示继续",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "narrow-3.png"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "narrow-4.png"
+        },
+        {
+          "step": 5,
+          "description": "真实当前局刷新先暂停，资源/回合保留",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "title": "营地已暂停",
+            "hud": "营地库存 · 粮\n32\n营地库存 · 木\n36\n营地耐久\n160 / 160\n本段剩余\n119 秒",
+            "pauseText": "继续",
+            "pauseDisabled": false
+          },
+          "screenshot": "narrow-5.png"
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "status": "passed"
+}

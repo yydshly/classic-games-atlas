@@ -1,0 +1,2372 @@
+{
+  "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+  "method": "Normal public UI only. Native click/tap/keyboard/scroll and read-only DOM/copied diagnostics; no game/save/time injection. Not full mission or new win replay.",
+  "views": [
+    {
+      "game": "lantern",
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "桌面待命主暂停禁用，触屏按钮隐藏",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 4.5,
+            "state": "ready",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 1.5
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 2.2,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.9000000000000004,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 3.6,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0,
+            "stats": {
+              "collected": 0,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 41,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 58.697234447189416,
+            "meanRenderMs": 0.30869565321051556
+          }
+        },
+        {
+          "step": 2,
+          "description": "正式启航后暂停冻结航行时间",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 4.199999999999986,
+            "state": "paused",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 1.200000000000001
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 1.9000000000000012,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.6000000000000014,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 3.300000000000001,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": true
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0.30000000000000016,
+            "stats": {
+              "collected": 1,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 40,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 54.96770647244741,
+            "meanRenderMs": 0.2383333384990692
+          }
+        },
+        {
+          "step": 3,
+          "description": "同一暂停按钮继续并再次暂停，不重开",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 3.900099999999979,
+            "state": "paused",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 0.9001000000000019
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 1.6001000000000019,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.3001000000000023,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 3.000100000000002,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": true
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0.5999000000000003,
+            "stats": {
+              "collected": 1,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 40,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 54.96518871381458,
+            "meanRenderMs": 0.2608333359162013
+          }
+        }
+      ]
+    },
+    {
+      "game": "lantern",
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命触屏暂停可按但无效，与顶部禁用不同",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 4.5,
+            "state": "ready",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 1.5
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 2.2,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.9000000000000004,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 3.6,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0,
+            "stats": {
+              "collected": 0,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 41,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 60.011709601873505,
+            "meanRenderMs": 0.2785714438983372
+          }
+        },
+        {
+          "step": 2,
+          "description": "正式启航后暂停冻结航行时间",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 4.1833999999999865,
+            "state": "paused",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 1.1834000000000007
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 1.8834000000000009,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.5834000000000015,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 3.283400000000001,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": true
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0.31660000000000016,
+            "stats": {
+              "collected": 1,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 40,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 60.003000150007466,
+            "meanRenderMs": 0.23666667739550273
+          }
+        },
+        {
+          "step": 3,
+          "description": "同一暂停按钮继续并再次暂停，不重开",
+          "state": {
+            "tunnelRows": [
+              5
+            ],
+            "phase": "patrol",
+            "phaseLeft": 3.883299999999977,
+            "state": "paused",
+            "level": 1,
+            "grid": [
+              "###############",
+              "#.............#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "..###########..",
+              "#.###########.#",
+              "#.###########.#",
+              "#.###########.#",
+              "#.............#",
+              "###############"
+            ],
+            "cols": 15,
+            "rows": 11,
+            "safe": [],
+            "home": {
+              "x": 13,
+              "y": 9
+            },
+            "waypoints": [
+              {
+                "x": 13,
+                "y": 1
+              },
+              {
+                "x": 13,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 9
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "player": {
+              "x": 1,
+              "y": 1,
+              "fromX": 1,
+              "fromY": 1,
+              "toX": 1,
+              "toY": 1,
+              "progress": 1,
+              "moving": false,
+              "dir": null,
+              "queued": null,
+              "segment": 0,
+              "invulnerable": 0.8833000000000014
+            },
+            "enemies": [
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 1,
+                "type": "tracker",
+                "mode": "waiting",
+                "timer": 1.5833000000000017,
+                "harmless": 0,
+                "waypoint": 0
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 2,
+                "type": "cutter",
+                "mode": "waiting",
+                "timer": 2.2833000000000023,
+                "harmless": 0,
+                "waypoint": 1
+              },
+              {
+                "x": 13,
+                "y": 9,
+                "fromX": 13,
+                "fromY": 9,
+                "toX": 13,
+                "toY": 9,
+                "progress": 1,
+                "moving": false,
+                "dir": null,
+                "queued": null,
+                "segment": 0,
+                "id": 3,
+                "type": "roamer",
+                "mode": "waiting",
+                "timer": 2.983300000000002,
+                "harmless": 0,
+                "waypoint": 2
+              }
+            ],
+            "dots": [
+              {
+                "x": 1,
+                "y": 1,
+                "power": false,
+                "taken": true
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 1,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 2,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 3,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 4,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 6,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 7,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 7,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 13,
+                "y": 8,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 1,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 2,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 3,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 6,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 7,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 9,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 10,
+                "y": 9,
+                "power": true,
+                "taken": false
+              },
+              {
+                "x": 11,
+                "y": 9,
+                "power": false,
+                "taken": false
+              },
+              {
+                "x": 12,
+                "y": 9,
+                "power": false,
+                "taken": false
+              }
+            ],
+            "power": 0,
+            "powerDuration": 6.4,
+            "lives": 3,
+            "time": 0.6167000000000007,
+            "stats": {
+              "collected": 1,
+              "captures": 0,
+              "deaths": 0,
+              "turns": 0
+            },
+            "reason": "",
+            "remaining": 40,
+            "availableLevels": 2,
+            "best": {},
+            "sound": true,
+            "storageAvailable": true,
+            "heldKeys": 0,
+            "heldTouches": 0,
+            "fps": 60.00300015000749,
+            "meanRenderMs": 0.25166667302449547
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "observed"
+}

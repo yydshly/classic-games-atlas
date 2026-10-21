@@ -303,7 +303,8 @@
       "endingBoundary": "第二图收齐成功、刷新保留最好/所选图、同图干净重试与两图菜单通过；策略脚本辅助",
       "evidence": [
         "docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/lantern-later-qa/"
+        "docs/lantern-later-qa/",
+        "docs/lantern-pause-semantics-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "两图有限主目标补齐；原作敌人细节/角色反馈与无辅助手感属产品后续",
@@ -329,6 +330,12 @@
         "status": "verified",
         "progression": "native next2-to3 for chime; other two-map games are normally freely selectable, not a locked campaign",
         "terminal": "actual natural win(s), same-stage reset and native best refresh; helper limits preserved"
+      },
+      "pauseSemanticsReview": {
+        "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+        "status": "fixed",
+        "evidence": "docs/lantern-pause-semantics-qa/",
+        "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
       }
     },
     {
@@ -1606,16 +1613,26 @@
       }
     }
   ],
-  "evidenceThrough": "39da434fc4951fab79ffe9e25d16911180db6e81",
-  "roundCommits": {},
-  "roundDeployments": {},
+  "evidenceThrough": "fb63691ec8e947be23e72799fe813c483748fed5",
+  "roundCommits": {
+    "expedition": "fb63691ec8e947be23e72799fe813c483748fed5"
+  },
+  "roundDeployments": {
+    "expedition": {
+      "id": 39602579999,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39602579999"
+    }
+  },
   "roundScope": {
     "kind": "bounded_pause_semantics",
     "selected": 3,
-    "reviewed": 1,
+    "reviewed": 2,
     "confirmedDefects": 2,
     "runtimeFixes": [
-      "expedition"
+      "expedition",
+      "lantern"
     ],
     "noConfirmedDefect": [],
     "notWholeProductAcceptance": true
@@ -2543,7 +2560,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据。夹具与自然UI结局分开，不扩大为全关卡验收。",
+  "roundSummary": "本轮仅审查开始/暂停/继续语义：expedition已修复并有针对性状态/普通UI证据；lantern已修复并有针对性状态/普通UI证据。夹具与自然UI结局分开，不扩大为全关卡验收。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "pause-semantics-notes.md",
   "globalLaterStageSummary": {
@@ -2955,6 +2972,12 @@
       "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
       "status": "fixed",
       "evidence": "docs/expedition-pause-semantics-qa/",
+      "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
+    },
+    "lantern": {
+      "baseline": "166497b857d57658d8858f23f65b68d9f2cec0f4",
+      "status": "fixed",
+      "evidence": "docs/lantern-pause-semantics-qa/",
       "scope": "最多三款，开始/暂停/继续状态语义；非全关卡重验"
     }
   }

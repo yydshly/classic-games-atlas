@@ -1,0 +1,166 @@
+{
+  "game": "lantern",
+  "base": "local preview",
+  "method": "Native UI click/tap/keyboard/scroll only; read-only DOM/copied diagnostics. No injected game/save/time/terminal state. Desktop terminal requested only when --terminal;390CSS simulation is not physical-device evidence.",
+  "views": [
+    {
+      "view": "desktop",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命暂停禁用，开始入口明确保留",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "lives": 3,
+            "collected": 0,
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "touchText": "暂停",
+            "touchDisabled": true
+          },
+          "screenshot": "desktop-1.png"
+        },
+        {
+          "step": 2,
+          "description": "普通点禁用暂停及P均不误启动",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "lives": 3,
+            "collected": 0,
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "touchText": "暂停",
+            "touchDisabled": true
+          },
+          "screenshot": "desktop-2.png"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后可暂停，计时/回合冻结且显示继续",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "time": 0.34990000000000043,
+            "lives": 3,
+            "collected": 1,
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "touchText": "继续",
+            "touchDisabled": false
+          },
+          "screenshot": "desktop-3.png"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "time": 0.6831999999999997,
+            "lives": 3,
+            "collected": 1,
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "touchText": "继续",
+            "touchDisabled": false
+          },
+          "screenshot": "desktop-4.png"
+        },
+        {
+          "step": 6,
+          "description": "自然终态暂停禁用，P及普通点按不重开、不恢复计时",
+          "health": "passed",
+          "state": {
+            "state": "lost",
+            "time": 26.423933333332744,
+            "lives": 0,
+            "collected": 1,
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "touchText": "暂停",
+            "touchDisabled": true
+          },
+          "screenshot": "desktop-6.png"
+        }
+      ],
+      "terminalKind": "native idle elapsed time and original enemies/round rules"
+    },
+    {
+      "view": "narrow",
+      "steps": [
+        {
+          "step": 1,
+          "description": "待命暂停禁用，开始入口明确保留",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "lives": 3,
+            "collected": 0,
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "touchText": "暂停",
+            "touchDisabled": true
+          },
+          "screenshot": "narrow-1.png"
+        },
+        {
+          "step": 2,
+          "description": "普通点禁用暂停及P均不误启动",
+          "health": "passed",
+          "state": {
+            "state": "ready",
+            "time": 0,
+            "lives": 3,
+            "collected": 0,
+            "pauseText": "暂停 P",
+            "pauseDisabled": true,
+            "touchText": "暂停",
+            "touchDisabled": true
+          },
+          "screenshot": "narrow-2.png"
+        },
+        {
+          "step": 3,
+          "description": "明确开始后可暂停，计时/回合冻结且显示继续",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "time": 0.3332000000000005,
+            "lives": 3,
+            "collected": 1,
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "touchText": "继续",
+            "touchDisabled": false
+          },
+          "screenshot": "narrow-3.png"
+        },
+        {
+          "step": 4,
+          "description": "同一按钮继续及再次暂停，保留当前局",
+          "health": "passed",
+          "state": {
+            "state": "paused",
+            "time": 0.6665000000000005,
+            "lives": 3,
+            "collected": 1,
+            "pauseText": "继续 P",
+            "pauseDisabled": false,
+            "touchText": "继续",
+            "touchDisabled": false
+          },
+          "screenshot": "narrow-4.png"
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "status": "passed"
+}

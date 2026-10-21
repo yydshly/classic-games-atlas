@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "game": "lantern",
+  "method": "Execute actual controller handler/presentation assignments; expedition uses actual rules command. Terminal states are explicit Node fixtures, not natural browser wins/losses. Baseline negative control reproduces original issue.",
+  "cases": [
+    {
+      "state": "ready",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "label": "暂停",
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "playing",
+      "mainDisabled": false,
+      "touchDisabled": false,
+      "label": "暂停",
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "paused",
+      "mainDisabled": false,
+      "touchDisabled": false,
+      "label": "继续",
+      "terminalPresentationFixture": false
+    },
+    {
+      "state": "won",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "label": "暂停",
+      "terminalPresentationFixture": true
+    },
+    {
+      "state": "lost",
+      "mainDisabled": true,
+      "touchDisabled": true,
+      "label": "暂停",
+      "terminalPresentationFixture": true
+    }
+  ],
+  "baselineNegativeControl": true
+}
