@@ -1,0 +1,855 @@
+{
+  "kind": "public normal stage selection, cards, explicit row/column option indices and buttons; fixed legal model-reference plan, 1x native clock, no hidden-state/save/time injection",
+  "codeBaseline": "8e9e43b67ca38b6cda40f79e5dd57122d785ba3e",
+  "actions": [
+    {
+      "hudTime": 0.0,
+      "kind": "place",
+      "type": "dew",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "hudTime": 0.3,
+      "kind": "place",
+      "type": "bolt",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "hudTime": 0.5,
+      "kind": "place",
+      "type": "wall",
+      "row": 0,
+      "col": 6
+    },
+    {
+      "hudTime": 0.8,
+      "kind": "place",
+      "type": "root",
+      "row": 1,
+      "col": 6
+    },
+    {
+      "hudTime": 4.2,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 4.2,
+      "kind": "place",
+      "type": "bolt",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "hudTime": 8.3,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 8.3,
+      "kind": "place",
+      "type": "wall",
+      "row": 0,
+      "col": 5
+    },
+    {
+      "hudTime": 10.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 16.2,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 16.2,
+      "kind": "place",
+      "type": "bolt",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "hudTime": 22.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 22.1,
+      "kind": "place",
+      "type": "dew",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "hudTime": 24.2,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 28.0,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 30.4,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 30.4,
+      "kind": "place",
+      "type": "bolt",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "hudTime": 32.3,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 32.3,
+      "kind": "place",
+      "type": "root",
+      "row": 1,
+      "col": 6
+    },
+    {
+      "hudTime": 34.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 38.4,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 40.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 40.1,
+      "kind": "place",
+      "type": "bolt",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "hudTime": 46.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 46.3,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 48.4,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 52.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 54.0,
+      "kind": "place",
+      "type": "root",
+      "row": 1,
+      "col": 6
+    },
+    {
+      "hudTime": 54.4,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 56.2,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 58.0,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 62.4,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 64.1,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 70.2,
+      "kind": "collect"
+    },
+    {
+      "hudTime": 70.4,
+      "kind": "collect"
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "visibleGoal": "先读来敌预告，再开始布防。准备时不计时。\n\n开始守护 →\n选择溪谷",
+  "ready": {
+    "level": 2,
+    "state": "ready",
+    "ticks": 0,
+    "time": 0,
+    "accumulator": 0,
+    "resource": 230,
+    "cooldown": {
+      "root": 0,
+      "dew": 0,
+      "bolt": 0,
+      "wall": 0,
+      "mist": 0
+    },
+    "plants": [],
+    "enemies": [],
+    "bullets": [],
+    "tokens": [],
+    "nextSpawn": 0,
+    "nextSky": 4,
+    "ids": {
+      "plant": 1,
+      "enemy": 1,
+      "bullet": 1,
+      "token": 1
+    },
+    "revision": 0,
+    "log": [],
+    "effects": [],
+    "stats": {
+      "placed": 0,
+      "spent": 0,
+      "collected": 0,
+      "expired": 0,
+      "produced": 0,
+      "kills": 0,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 0,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 0,
+      "jumps": 0,
+      "triggers": 0
+    },
+    "reason": null,
+    "score": 1000,
+    "unlocked": 2,
+    "best": {},
+    "row": 0,
+    "col": 2,
+    "selection": "bolt",
+    "remove": false,
+    "speed": 1,
+    "storageAvailable": true,
+    "dialogs": {
+      "help": false,
+      "levels": false
+    }
+  },
+  "outcome": {
+    "level": 2,
+    "state": "won",
+    "ticks": 4259,
+    "time": 70.98333333333333,
+    "accumulator": 0.004166666642832596,
+    "resource": 295,
+    "cooldown": {
+      "root": 61.166666666666664,
+      "dew": 27.333333333333332,
+      "bolt": 43.88333333333333,
+      "wall": 14.516666666666666,
+      "mist": 0
+    },
+    "plants": [
+      {
+        "id": 1,
+        "type": "dew",
+        "row": 0,
+        "col": 0,
+        "hp": 85,
+        "nextFire": 0.5333333333333333,
+        "nextProduce": 72.18333333333334,
+        "matureAt": 0.18333333333333332
+      },
+      {
+        "id": 2,
+        "type": "bolt",
+        "row": 2,
+        "col": 2,
+        "hp": 95,
+        "nextFire": 64.6,
+        "nextProduce": 8.45,
+        "matureAt": 0.45
+      },
+      {
+        "id": 3,
+        "type": "wall",
+        "row": 0,
+        "col": 6,
+        "hp": 280,
+        "nextFire": 1.0166666666666666,
+        "nextProduce": 8.666666666666666,
+        "matureAt": 0.6666666666666666
+      },
+      {
+        "id": 5,
+        "type": "bolt",
+        "row": 0,
+        "col": 2,
+        "hp": 95,
+        "nextFire": 59.8,
+        "nextProduce": 12.416666666666668,
+        "matureAt": 4.416666666666667
+      },
+      {
+        "id": 7,
+        "type": "bolt",
+        "row": 0,
+        "col": 3,
+        "hp": 95,
+        "nextFire": 59.8,
+        "nextProduce": 24.383333333333333,
+        "matureAt": 16.383333333333333
+      },
+      {
+        "id": 8,
+        "type": "dew",
+        "row": 2,
+        "col": 0,
+        "hp": 85,
+        "nextFire": 22.683333333333334,
+        "nextProduce": 78.33333333333333,
+        "matureAt": 22.333333333333332
+      },
+      {
+        "id": 9,
+        "type": "bolt",
+        "row": 2,
+        "col": 3,
+        "hp": 95,
+        "nextFire": 64.6,
+        "nextProduce": 38.68333333333334,
+        "matureAt": 30.683333333333334
+      },
+      {
+        "id": 11,
+        "type": "bolt",
+        "row": 0,
+        "col": 1,
+        "hp": 95,
+        "nextFire": 59.8,
+        "nextProduce": 48.38333333333333,
+        "matureAt": 40.38333333333333
+      }
+    ],
+    "enemies": [],
+    "bullets": [],
+    "tokens": [],
+    "nextSpawn": 10,
+    "nextSky": 76,
+    "ids": {
+      "plant": 13,
+      "enemy": 11,
+      "bullet": 72,
+      "token": 27
+    },
+    "revision": 35,
+    "log": [
+      {
+        "tick": 11,
+        "kind": "place",
+        "type": "dew",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "tick": 27,
+        "kind": "place",
+        "type": "bolt",
+        "row": 2,
+        "col": 2
+      },
+      {
+        "tick": 40,
+        "kind": "place",
+        "type": "wall",
+        "row": 0,
+        "col": 6
+      },
+      {
+        "tick": 55,
+        "kind": "place",
+        "type": "root",
+        "row": 1,
+        "col": 6
+      },
+      {
+        "tick": 258,
+        "kind": "collect",
+        "ids": [
+          1
+        ]
+      },
+      {
+        "tick": 265,
+        "kind": "place",
+        "type": "bolt",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "tick": 504,
+        "kind": "collect",
+        "ids": [
+          2
+        ]
+      },
+      {
+        "tick": 511,
+        "kind": "place",
+        "type": "wall",
+        "row": 0,
+        "col": 5
+      },
+      {
+        "tick": 615,
+        "kind": "collect",
+        "ids": [
+          3
+        ]
+      },
+      {
+        "tick": 975,
+        "kind": "collect",
+        "ids": [
+          4,
+          5
+        ]
+      },
+      {
+        "tick": 983,
+        "kind": "place",
+        "type": "bolt",
+        "row": 0,
+        "col": 3
+      },
+      {
+        "tick": 1333,
+        "kind": "collect",
+        "ids": [
+          6
+        ]
+      },
+      {
+        "tick": 1340,
+        "kind": "place",
+        "type": "dew",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "tick": 1458,
+        "kind": "collect",
+        "ids": [
+          7
+        ]
+      },
+      {
+        "tick": 1687,
+        "kind": "collect",
+        "ids": [
+          8
+        ]
+      },
+      {
+        "tick": 1834,
+        "kind": "collect",
+        "ids": [
+          9
+        ]
+      },
+      {
+        "tick": 1841,
+        "kind": "place",
+        "type": "bolt",
+        "row": 2,
+        "col": 3
+      },
+      {
+        "tick": 1941,
+        "kind": "collect",
+        "ids": [
+          10
+        ]
+      },
+      {
+        "tick": 1946,
+        "kind": "place",
+        "type": "root",
+        "row": 1,
+        "col": 6
+      },
+      {
+        "tick": 2053,
+        "kind": "collect",
+        "ids": [
+          11
+        ]
+      },
+      {
+        "tick": 2311,
+        "kind": "collect",
+        "ids": [
+          12
+        ]
+      },
+      {
+        "tick": 2415,
+        "kind": "collect",
+        "ids": [
+          13,
+          14
+        ]
+      },
+      {
+        "tick": 2423,
+        "kind": "place",
+        "type": "bolt",
+        "row": 0,
+        "col": 1
+      },
+      {
+        "tick": 2775,
+        "kind": "collect",
+        "ids": [
+          15
+        ]
+      },
+      {
+        "tick": 2785,
+        "kind": "collect",
+        "ids": [
+          16
+        ]
+      },
+      {
+        "tick": 2907,
+        "kind": "collect",
+        "ids": [
+          17
+        ]
+      },
+      {
+        "tick": 3128,
+        "kind": "collect",
+        "ids": [
+          18
+        ]
+      },
+      {
+        "tick": 3250,
+        "kind": "place",
+        "type": "root",
+        "row": 1,
+        "col": 6
+      },
+      {
+        "tick": 3268,
+        "kind": "collect",
+        "ids": [
+          19
+        ]
+      },
+      {
+        "tick": 3381,
+        "kind": "collect",
+        "ids": [
+          20
+        ]
+      },
+      {
+        "tick": 3488,
+        "kind": "collect",
+        "ids": [
+          21
+        ]
+      },
+      {
+        "tick": 3747,
+        "kind": "collect",
+        "ids": [
+          22
+        ]
+      },
+      {
+        "tick": 3855,
+        "kind": "collect",
+        "ids": [
+          23,
+          24
+        ]
+      },
+      {
+        "tick": 4214,
+        "kind": "collect",
+        "ids": [
+          25
+        ]
+      },
+      {
+        "tick": 4231,
+        "kind": "collect",
+        "ids": [
+          26
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "x": 620,
+        "row": 1,
+        "until": 71.63333333333334
+      }
+    ],
+    "stats": {
+      "placed": 12,
+      "spent": 585,
+      "collected": 650,
+      "expired": 0,
+      "produced": 650,
+      "kills": 10,
+      "losses": 1,
+      "withdrawals": 0,
+      "shots": 71,
+      "wallHits": 14,
+      "slowHits": 0,
+      "settlements": 1,
+      "jumps": 3,
+      "triggers": 3
+    },
+    "reason": "所有预告波次已结束，溪谷守住了",
+    "score": 1043,
+    "unlocked": 2,
+    "best": {
+      "2": {
+        "score": 1043,
+        "time": 70.98333333333333,
+        "losses": 1
+      }
+    },
+    "row": 1,
+    "col": 6,
+    "selection": "root",
+    "remove": false,
+    "speed": 1,
+    "storageAvailable": true,
+    "dialogs": {
+      "help": false,
+      "levels": false
+    }
+  },
+  "visibleEnding": "溪谷的回信\n溪谷安静下来了\n\n所有预告均已出现，来敌已全部清除。\n\n1043 分 · 71.0s · 损失 1 座\n\n再守这一段 →\n重玩本关",
+  "savedBest": {
+    "2": {
+      "score": 1043,
+      "time": 70.98333333333333,
+      "losses": 1
+    }
+  },
+  "cleanReplay": {
+    "level": 2,
+    "state": "ready",
+    "ticks": 0,
+    "time": 0,
+    "accumulator": 0,
+    "resource": 230,
+    "cooldown": {
+      "root": 0,
+      "dew": 0,
+      "bolt": 0,
+      "wall": 0,
+      "mist": 0
+    },
+    "plants": [],
+    "enemies": [],
+    "bullets": [],
+    "tokens": [],
+    "nextSpawn": 0,
+    "nextSky": 4,
+    "ids": {
+      "plant": 1,
+      "enemy": 1,
+      "bullet": 1,
+      "token": 1
+    },
+    "revision": 0,
+    "log": [],
+    "effects": [],
+    "stats": {
+      "placed": 0,
+      "spent": 0,
+      "collected": 0,
+      "expired": 0,
+      "produced": 0,
+      "kills": 0,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 0,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 0,
+      "jumps": 0,
+      "triggers": 0
+    },
+    "reason": null,
+    "score": 1000,
+    "unlocked": 2,
+    "best": {
+      "2": {
+        "score": 1043,
+        "time": 70.98333333333333,
+        "losses": 1
+      }
+    },
+    "row": 0,
+    "col": 2,
+    "selection": "bolt",
+    "remove": false,
+    "speed": 1,
+    "storageAvailable": true,
+    "dialogs": {
+      "help": false,
+      "levels": false
+    }
+  },
+  "refresh": {
+    "level": 2,
+    "state": "ready",
+    "ticks": 0,
+    "time": 0,
+    "accumulator": 0,
+    "resource": 230,
+    "cooldown": {
+      "root": 0,
+      "dew": 0,
+      "bolt": 0,
+      "wall": 0,
+      "mist": 0
+    },
+    "plants": [],
+    "enemies": [],
+    "bullets": [],
+    "tokens": [],
+    "nextSpawn": 0,
+    "nextSky": 4,
+    "ids": {
+      "plant": 1,
+      "enemy": 1,
+      "bullet": 1,
+      "token": 1
+    },
+    "revision": 0,
+    "log": [],
+    "effects": [],
+    "stats": {
+      "placed": 0,
+      "spent": 0,
+      "collected": 0,
+      "expired": 0,
+      "produced": 0,
+      "kills": 0,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 0,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 0,
+      "jumps": 0,
+      "triggers": 0
+    },
+    "reason": null,
+    "score": 1000,
+    "unlocked": 2,
+    "best": {
+      "2": {
+        "score": 1043,
+        "time": 70.98333333333333,
+        "losses": 1
+      }
+    },
+    "row": 0,
+    "col": 2,
+    "selection": "bolt",
+    "remove": false,
+    "speed": 1,
+    "storageAvailable": true,
+    "dialogs": {
+      "help": false,
+      "levels": false
+    }
+  },
+  "normalReplayStart": {
+    "level": 2,
+    "state": "paused",
+    "ticks": 24,
+    "time": 0.4,
+    "accumulator": 0.0046000000715255285,
+    "resource": 230,
+    "cooldown": {
+      "root": 0,
+      "dew": 0,
+      "bolt": 0,
+      "wall": 0,
+      "mist": 0
+    },
+    "plants": [],
+    "enemies": [],
+    "bullets": [],
+    "tokens": [],
+    "nextSpawn": 0,
+    "nextSky": 4,
+    "ids": {
+      "plant": 1,
+      "enemy": 1,
+      "bullet": 1,
+      "token": 1
+    },
+    "revision": 0,
+    "log": [],
+    "effects": [],
+    "stats": {
+      "placed": 0,
+      "spent": 0,
+      "collected": 0,
+      "expired": 0,
+      "produced": 0,
+      "kills": 0,
+      "losses": 0,
+      "withdrawals": 0,
+      "shots": 0,
+      "wallHits": 0,
+      "slowHits": 0,
+      "settlements": 0,
+      "jumps": 0,
+      "triggers": 0
+    },
+    "reason": null,
+    "score": 999,
+    "unlocked": 2,
+    "best": {
+      "2": {
+        "score": 1043,
+        "time": 70.98333333333333,
+        "losses": 1
+      }
+    },
+    "row": 0,
+    "col": 2,
+    "selection": "bolt",
+    "remove": false,
+    "speed": 1,
+    "storageAvailable": true,
+    "dialogs": {
+      "help": false,
+      "levels": false
+    }
+  },
+  "status": "passed"
+}
