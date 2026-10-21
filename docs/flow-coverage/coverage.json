@@ -475,7 +475,8 @@
       "evidence": [
         "docs/petal-v1-qa/PUBLIC_BROWSER_QA.md",
         "docs/petal-loss-qa/",
-        "docs/petal-later-qa/"
+        "docs/petal-later-qa/",
+        "docs/petal-pause-followup-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前10–20页目标完成；不自动扩所有配对顺序或动画故障组合",
@@ -536,6 +537,12 @@
         ],
         "status": "verified",
         "terminal": "twentieth-page ending, no twenty-first; stable refresh/re-read and twenty native bests"
+      },
+      "pauseFollowupReview": {
+        "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+        "status": "no_confirmed_defect",
+        "evidence": "docs/petal-pause-followup-qa/",
+        "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
       }
     },
     {
@@ -1634,9 +1641,10 @@
       }
     }
   ],
-  "evidenceThrough": "d9951902a1c0e05092dc6703fe4354d74126b21d",
+  "evidenceThrough": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb",
   "roundCommits": {
-    "cloud": "d9951902a1c0e05092dc6703fe4354d74126b21d"
+    "cloud": "d9951902a1c0e05092dc6703fe4354d74126b21d",
+    "fortress": "ab3c4f4e387dfc47efe3758f24afe4f52a3be0eb"
   },
   "roundDeployments": {
     "cloud": {
@@ -1644,19 +1652,27 @@
       "status": "completed",
       "conclusion": "success",
       "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39609564307"
+    },
+    "fortress": {
+      "id": 39612860679,
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yydshly/classic-games-atlas/actions/runs/39612860679"
     }
   },
   "roundScope": {
     "kind": "three_remaining_pause_clues",
     "selected": 3,
-    "reviewed": 2,
+    "reviewed": 3,
     "confirmedDefects": 3,
     "affectedGames": 2,
     "runtimeFixes": [
       "cloud",
       "fortress"
     ],
-    "noConfirmedDefect": [],
+    "noConfirmedDefect": [
+      "petal"
+    ],
     "noAutomaticNewQueue": true,
     "notWholeProductAcceptance": true
   },
@@ -2624,7 +2640,7 @@
     }
   ],
   "reviewBaseline": "7879c38219a45ba3f7e16a5a2e2a021b999748bd",
-  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证。终态夹具与实际UI分列，未新增泛化待测队列。",
+  "roundSummary": "本批仅闭环三条暂停线索：cloud无效暂停入口已最小修复并验证；fortress无效暂停入口已最小修复并验证；petal普通UI正常，保留代码。终态夹具与实际UI分列，未新增泛化待测队列。",
   "laterStageTargets": [],
   "roundEvidenceNotes": "pause-followup-notes.md",
   "globalLaterStageSummary": {
@@ -3062,6 +3078,12 @@
       "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
       "status": "fixed",
       "evidence": "docs/fortress-pause-followup-qa/",
+      "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
+    },
+    "petal": {
+      "baseline": "091ab6e8eafdd167d72ea14db6b730a0e222f5de",
+      "status": "no_confirmed_defect",
+      "evidence": "docs/petal-pause-followup-qa/",
       "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
     }
   }
