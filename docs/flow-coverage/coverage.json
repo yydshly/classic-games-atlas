@@ -3220,5 +3220,19 @@
     "unitGroups": 5,
     "realDevice": false,
     "allGamesLoadTest": false
+  },
+  "interruptionReview": {
+    "baseline": "0589f2b6bc98f3f82ff44f53239165cdf6382d13",
+    "evidence": "../interruption-qa/",
+    "scope": [
+      "starline-v2",
+      "prism-v2",
+      "tide-v2"
+    ],
+    "nativeSwitchCycles": 15,
+    "explicitResumeChecks": 3,
+    "runtimeChanges": false,
+    "terminalCoverage": "one normal-UI loss each; not all win states",
+    "realDevice": false
   }
 }

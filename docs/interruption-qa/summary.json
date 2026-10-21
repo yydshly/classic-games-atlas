@@ -1,0 +1,61 @@
+{
+  "baseline": "0589f2b6bc98f3f82ff44f53239165cdf6382d13",
+  "status": "verified_bounded_no_runtime_change",
+  "games": 3,
+  "nativeSwitchCycles": 15,
+  "explicitResumeChecks": 3,
+  "runtimeChanges": false,
+  "savedStateInjected": false,
+  "fakeVisibilityEvents": false,
+  "gameTimeModified": false,
+  "desktopViewport": [
+    1440,
+    1050
+  ],
+  "cases": [
+    {
+      "slug": "starline",
+      "passed": true,
+      "checks": 6,
+      "events": 25,
+      "terminal": {
+        "state": "lost",
+        "level": 2,
+        "time": 4.333333333333323,
+        "reason": "星群触及底线。试着优先解除深处的支撑点。"
+      },
+      "pageErrors": 0,
+      "httpErrors": 0
+    },
+    {
+      "slug": "prism",
+      "passed": true,
+      "checks": 6,
+      "events": 25,
+      "terminal": {
+        "state": "lost",
+        "level": 1,
+        "time": 12.083333333333513,
+        "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。"
+      },
+      "pageErrors": 0,
+      "httpErrors": 0
+    },
+    {
+      "slug": "tide",
+      "passed": true,
+      "checks": 6,
+      "events": 25,
+      "terminal": {
+        "state": "lost",
+        "level": 1,
+        "time": 126.54166666666667,
+        "reason": "有海珠触及珠径终点"
+      },
+      "pageErrors": 0,
+      "httpErrors": 0
+    }
+  ],
+  "browserVersion": "147.0.7727.15",
+  "nodeVersion": "22.15.0"
+}

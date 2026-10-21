@@ -1,0 +1,6362 @@
+{
+  "slug": "prism",
+  "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/prism/",
+  "environment": "Installed Chromium headless=new, independent profile, native CDP without Playwright focus emulation; desktop 1440x1050. No device claims.",
+  "steps": [
+    {
+      "label": "ready stays ready",
+      "before": {
+        "state": "ready",
+        "level": 1,
+        "time": 0,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 300,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 300,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "hidden": {
+        "state": "ready",
+        "level": 1,
+        "time": 0,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 300,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 300,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "afterWait": {
+        "state": "ready",
+        "level": 1,
+        "time": 0,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 300,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 300,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "returned": {
+        "state": "ready",
+        "level": 1,
+        "time": 0,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 300,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 300,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "events": [
+        {
+          "type": "blur",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 1471.6999999284744
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": true,
+          "focused": false,
+          "at": 1474.3999999761581
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 2749.1999999284744
+        },
+        {
+          "type": "focus",
+          "trusted": true,
+          "hidden": false,
+          "focused": true,
+          "at": 2752.6999999284744
+        }
+      ]
+    },
+    {
+      "label": "held key released in another tab",
+      "before": {
+        "state": "playing",
+        "level": 1,
+        "time": 0.3,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": -600
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "hidden": {
+        "state": "paused",
+        "level": 1,
+        "time": 0.3,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": -600
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "afterWait": {
+        "state": "paused",
+        "level": 1,
+        "time": 0.3,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": -600
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "returned": {
+        "state": "paused",
+        "level": 1,
+        "time": 0.3,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": -600
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "events": [
+        {
+          "type": "blur",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 3462.2999999523163
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": true,
+          "focused": false,
+          "at": 3463.399999976158
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 4717.600000023842
+        },
+        {
+          "type": "focus",
+          "trusted": true,
+          "hidden": false,
+          "focused": true,
+          "at": 4723.299999952316
+        }
+      ]
+    },
+    {
+      "label": "explicit resume has no stale direction",
+      "before": {
+        "state": "playing",
+        "level": 1,
+        "time": 0.6166666666666669,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "after": {
+        "state": "playing",
+        "level": 1,
+        "time": 1.1333333333333342,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      }
+    },
+    {
+      "label": "manual pause survives repeated switch",
+      "before": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.1333333333333342,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "hidden": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.1333333333333342,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "afterWait": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.1333333333333342,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "returned": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.1333333333333342,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 190,
+            "y": 633,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": true,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": true,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "events": [
+        {
+          "type": "blur",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 6061.5
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": true,
+          "focused": false,
+          "at": 6063.399999976158
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 7334.299999952316
+        },
+        {
+          "type": "focus",
+          "trusted": true,
+          "hidden": false,
+          "focused": true,
+          "at": 7338.5
+        }
+      ]
+    },
+    {
+      "label": "active projectile and clock freeze",
+      "before": {
+        "state": "playing",
+        "level": 1,
+        "time": 1.3666666666666667,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 200.1266666666666,
+            "y": 598.2799999999997,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": false,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0.11666666666666665,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "hidden": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.3666666666666667,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 200.1266666666666,
+            "y": 598.2799999999997,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": false,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0.11666666666666665,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "afterWait": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.3666666666666667,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 200.1266666666666,
+            "y": 598.2799999999997,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": false,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0.11666666666666665,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "returned": {
+        "state": "paused",
+        "level": 1,
+        "time": 1.3666666666666667,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 190,
+          "velocity": 0
+        },
+        "balls": [
+          {
+            "id": 1,
+            "x": 200.1266666666666,
+            "y": 598.2799999999997,
+            "dx": 0.28,
+            "dy": -0.96,
+            "attached": false,
+            "alive": true,
+            "contact": null
+          }
+        ],
+        "nextBall": 2,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 3,
+        "speed": 310,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 0.11666666666666665,
+        "reason": "",
+        "stats": {
+          "score": 0,
+          "hits": 0,
+          "destroyed": 0,
+          "paddleHits": 0,
+          "livesLost": 0,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 20,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "events": [
+        {
+          "type": "blur",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 7816.399999976158
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": true,
+          "focused": false,
+          "at": 7817.399999976158
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 9075.299999952316
+        },
+        {
+          "type": "focus",
+          "trusted": true,
+          "hidden": false,
+          "focused": true,
+          "at": 9079
+        }
+      ]
+    },
+    {
+      "label": "terminal survives switch without restart",
+      "before": {
+        "state": "lost",
+        "level": 1,
+        "time": 12.083333333333513,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 83,
+          "velocity": 0
+        },
+        "balls": [],
+        "nextBall": 4,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 0,
+        "speed": 311.80000000000007,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 1.9333333333333313,
+        "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。",
+        "stats": {
+          "score": 150,
+          "hits": 3,
+          "destroyed": 3,
+          "paddleHits": 0,
+          "livesLost": 3,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 17,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "hidden": {
+        "state": "lost",
+        "level": 1,
+        "time": 12.083333333333513,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 83,
+          "velocity": 0
+        },
+        "balls": [],
+        "nextBall": 4,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 0,
+        "speed": 311.80000000000007,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 1.9333333333333313,
+        "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。",
+        "stats": {
+          "score": 150,
+          "hits": 3,
+          "destroyed": 3,
+          "paddleHits": 0,
+          "livesLost": 3,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 17,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "afterWait": {
+        "state": "lost",
+        "level": 1,
+        "time": 12.083333333333513,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 83,
+          "velocity": 0
+        },
+        "balls": [],
+        "nextBall": 4,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 0,
+        "speed": 311.80000000000007,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 1.9333333333333313,
+        "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。",
+        "stats": {
+          "score": 150,
+          "hits": 3,
+          "destroyed": 3,
+          "paddleHits": 0,
+          "livesLost": 3,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 17,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "returned": {
+        "state": "lost",
+        "level": 1,
+        "time": 12.083333333333513,
+        "bricks": [
+          {
+            "id": 2,
+            "x": 147,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 3,
+            "x": 199,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "split"
+          },
+          {
+            "id": 4,
+            "x": 251,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 5,
+            "x": 303,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 6,
+            "x": 355,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "wide"
+          },
+          {
+            "id": 7,
+            "x": 407,
+            "y": 90,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 11,
+            "x": 95,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 12,
+            "x": 147,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 13,
+            "x": 199,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 14,
+            "x": 251,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 15,
+            "x": 303,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 16,
+            "x": 355,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 17,
+            "x": 407,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 18,
+            "x": 459,
+            "y": 119,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 22,
+            "x": 147,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": "slow"
+          },
+          {
+            "id": 23,
+            "x": 199,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 24,
+            "x": 251,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 25,
+            "x": 303,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 0,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 26,
+            "x": 355,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          },
+          {
+            "id": 27,
+            "x": 407,
+            "y": 148,
+            "w": 46,
+            "h": 22,
+            "steel": false,
+            "hp": 1,
+            "maxHP": 1,
+            "power": null
+          }
+        ],
+        "initial": 20,
+        "paddle": {
+          "x": 83,
+          "velocity": 0
+        },
+        "balls": [],
+        "nextBall": 4,
+        "nextDrop": 1,
+        "serving": false,
+        "lives": 0,
+        "speed": 311.80000000000007,
+        "buffs": {
+          "wide": 0,
+          "slow": 0
+        },
+        "drops": [],
+        "effects": [],
+        "sinceHit": 1.9333333333333313,
+        "reason": "光球全部落下，生命已用完。重新挑战时，提前向落点移动。",
+        "stats": {
+          "score": 150,
+          "hits": 3,
+          "destroyed": 3,
+          "paddleHits": 0,
+          "livesLost": 3,
+          "corrections": 0,
+          "powers": {
+            "wide": 0,
+            "split": 0,
+            "slow": 0
+          }
+        },
+        "remaining": 17,
+        "paddleWidth": 118,
+        "unlocked": 1,
+        "storageAvailable": true,
+        "sound": true
+      },
+      "events": [
+        {
+          "type": "blur",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 20370.399999976158
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": true,
+          "focused": false,
+          "at": 20371.299999952316
+        },
+        {
+          "type": "visibilitychange",
+          "trusted": true,
+          "hidden": false,
+          "focused": false,
+          "at": 21632.799999952316
+        },
+        {
+          "type": "focus",
+          "trusted": true,
+          "hidden": false,
+          "focused": true,
+          "at": 21633.199999928474
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "terminalMethod": "Normal mouse moves deliberately away from read-only ball positions, Space serves; intentional natural ball losses",
+  "pageErrors": [],
+  "httpErrors": [],
+  "events": [
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 412.5
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 1356.1999999284744
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 1359.3999999761581
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 1446.8999999761581
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 1447.6999999284744
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 1471.6999999284744
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 1474.3999999761581
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 2749.1999999284744
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 2752.6999999284744
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 3462.2999999523163
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 3463.399999976158
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 4717.600000023842
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 4723.299999952316
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 6061.5
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 6063.399999976158
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 7334.299999952316
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 7338.5
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 7816.399999976158
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 7817.399999976158
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 9075.299999952316
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 9079
+    },
+    {
+      "type": "blur",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 20370.399999976158
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": true,
+      "focused": false,
+      "at": 20371.299999952316
+    },
+    {
+      "type": "visibilitychange",
+      "trusted": true,
+      "hidden": false,
+      "focused": false,
+      "at": 21632.799999952316
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "hidden": false,
+      "focused": true,
+      "at": 21633.199999928474
+    }
+  ]
+}

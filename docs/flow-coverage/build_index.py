@@ -60,6 +60,9 @@ if D.get('roundEvidenceNotes'):
 if D.get('firstLoadReview'):
     doc += '<p><a href="' + escape(D['firstLoadReview']['evidence'], quote=True) + '">首次加载：正常样本、故障注入与两项首页修复</a>（局部技术证据，非全站或真机性能验收）</p>'
 
+if D.get('interruptionReview'):
+    doc += '<p><a href="' + escape(D['interruptionReview']['evidence'], quote=True) + '">三款实时游戏：失焦、后台与返回</a>（15次原生切换，无运行代码改动，非真机验收）</p>'
+
 doc += '''<div class="toolbar"><label for="filter">筛选编号、名称、版本或待验词
 <input id="filter" type="search" placeholder="例如：失败、maze、40"></label>
 <span id="count" aria-live="polite">40 / 40 项</span></div>
@@ -77,6 +80,8 @@ if D.get('referenceExperienceNote'):
     md += '[此前五款参考与体验差距](' + D['referenceExperienceNote'] + ')\n\n'
 if D.get('firstLoadReview'):
     md += '[首次加载可靠性与两项首页修复](' + D['firstLoadReview']['evidence'] + ')；局部技术证据，非全站或真机性能验收。\n\n'
+if D.get('interruptionReview'):
+    md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 md += '|编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|\n|---|---|---|---|---|\n'
 for e in E:
     c = e['coverage']
