@@ -66,6 +66,8 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('coasterFeedbackReview'):
+    doc += '<p><a href="' + escape(D['coasterFeedbackReview']['evidence'], quote=True) + '">云岬v2：诊断直达对应修改面板</a>（一项定位改进，两尺寸有限失败→修正→营业链）</p>'
 if D.get('pinfallFocusReview'):
     doc += '<p><a href="' + escape(D['pinfallFocusReview']['evidence'], quote=True) + '">弹庭v2：查看失利后的可见重试焦点</a>（修复上轮窄屏候选，规则不改）</p>'
 if D.get('resultReturnAudit'):
@@ -98,6 +100,8 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('coasterFeedbackReview'):
+    md += '[云岬诊断直达对应修改面板](' + D['coasterFeedbackReview']['evidence'] + ')；一项定位改进，两尺寸有限失败→修正→营业链。\n\n'
 if D.get('pinfallFocusReview'):
     md += '[弹庭查看失利后的可见重试焦点](' + D['pinfallFocusReview']['evidence'] + ')；修复上轮窄屏候选，规则不改。\n\n'
 if D.get('resultReturnAudit'):

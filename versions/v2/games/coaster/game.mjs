@@ -68,6 +68,13 @@ function selection(index, focus = false) {
   refresh(); draw();
   if (focus) segmentButtons[index].button.focus({ preventScroll: true });
 }
+function locateDiagnosis(index) {
+  if (modalOpen() || !Number.isInteger(index) || index < 0 || index >= game.modules.length) return;
+  selection(index);
+  const workshop = $('track-workshop');
+  workshop.focus({ preventScroll: true });
+  workshop.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'instant' });
+}
 function run(input) {
   if (modalOpen()) return false;
   clearPress();
@@ -148,7 +155,7 @@ function setupControls() {
   // Keep diagnostic buttons in place, including across reports, so keyboard focus survives updates.
   for (let i = 0; i < 48; i++) {
     const row = element('li'), text = element('span'), button = element('button'); button.type = 'button'; button.id = `diagnosis-${i}`;
-    button.addEventListener('click', () => { const index = Number(button.dataset.segment); if (Number.isInteger(index)) selection(index, true); });
+    button.addEventListener('click', () => { const index = Number(button.dataset.segment); if (Number.isInteger(index)) locateDiagnosis(index); });
     row.append(text, button); row.hidden = true; $('diagnosis-list').append(row); diagnosisRows.push({ row, text, button });
   }
   LEVELS.forEach((level, index) => {
@@ -182,7 +189,7 @@ function refreshReport() {
       if (!item) { button.hidden = true; return; }
       row.dataset.severity = item.severity === 'danger' ? 'error' : item.severity; text.textContent = item.message;
       button.hidden = !Number.isInteger(item.segment);
-      if (!button.hidden) { button.dataset.segment = String(item.segment); button.textContent = `查看 ${item.segment + 1} 号段 →`; }
+      if (!button.hidden) { button.dataset.segment = String(item.segment); button.textContent = `定位 ${item.segment + 1} 号段 →`; }
     });
   }
   const segment = report?.segments[selected];

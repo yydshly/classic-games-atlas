@@ -1554,7 +1554,8 @@
         "versions/v2/games/coaster/comparison.html",
         "docs/coaster-loss-qa/",
         "docs/coaster-later-qa/",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/coaster-feedback-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "现有八园有限主链已覆盖；开放设计乐趣/其它方案/真机体验留真人验收",
@@ -1591,6 +1592,12 @@
         ],
         "status": "verified",
         "terminal": "eight parks real test and passenger runs, next clean, final no ninth, native eight bests retained and revisit"
+      },
+      "diagnosisNavigationReview": {
+        "baseline": "357fd0863cc4935c5e7d38011cbdea699ac0a76f",
+        "status": "improved",
+        "evidence": "../coaster-feedback-qa/",
+        "scope": "诊断定位直接显示模块修改区；桌面390CSS普通两次失败修正、试车通过及一班营业，非八园重通关"
       }
     },
     {
@@ -3318,5 +3325,11 @@
     "status": "fixed",
     "evidence": "../pinfall-focus-qa/",
     "scope": "查看失利后就近可见重试焦点；Enter/R显式回准备、无自动开始；桌面390各两次自然失败与fixture分开"
+  },
+  "coasterFeedbackReview": {
+    "baseline": "357fd0863cc4935c5e7d38011cbdea699ac0a76f",
+    "status": "improved",
+    "evidence": "../coaster-feedback-qa/",
+    "scope": "诊断定位直接显示模块修改区；桌面390CSS普通两次失败修正、试车通过及一班营业，非八园重通关"
   }
 }

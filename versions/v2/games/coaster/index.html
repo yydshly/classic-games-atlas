@@ -8,8 +8,8 @@
   <meta name="description" content="云岬游乐园 v2：改三个峰顶的高程，实测速度与乘坐体验，看两类游客如何选择。八园独立进度，保留 v1。">
   <title>云岬游乐园 v2 · 轨道设计与游客反馈</title>
   <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./coaster.css">
-  <script type="module" src="./game.mjs"></script>
+  <link rel="stylesheet" href="./coaster.css?diagnosis-focus-r1">
+  <script type="module" src="./game.mjs?diagnosis-focus-r1"></script>
 </head>
 <body>
   <header class="page-header"><a href="../../../../index.html#play" class="back-link">← 游戏大厅</a><a class="version-link" href="../../../../preview/coaster/">保留的 v1</a><a class="version-link" href="./comparison.html">设计对照</a><span class="candidate-label" title="有限增强候选；v2 独立存档，不覆盖 v1。">v2 · 有限轨道设计</span></header>
@@ -27,7 +27,7 @@
           <div class="height-heading"><h2 id="height-title">把高程，变成你的设计。</h2><div class="height-picks" role="group" aria-label="快速选择可改造峰顶"><button id="height-pick-0" type="button">1号峰</button><button id="height-pick-3" type="button">4号峰</button><button id="height-pick-6" type="button">7号峰</button></div></div>
           <p id="height-detail" class="detail-copy"></p><div class="height-controls" role="group" aria-label="当前峰顶高程"><button id="height-lower" type="button">降低 4 米</button><button id="height-raise" type="button">升高 4 米</button><button id="height-reset" type="button">恢复原高</button></div><p id="height-note" class="fine-note"></p>
         </section>
-        <section class="module-panel" aria-labelledby="selected-title"><p class="panel-label">TRACK WORKSHOP <span id="selected-code">01 / 12</span></p><h2 id="selected-title">选择一段轨道</h2><p id="selected-facts" class="selected-facts"></p><p id="selected-description" class="detail-copy"></p><div id="module-controls" class="module-controls" role="group" aria-label="当前轨道可安装模块"></div><p id="module-note" class="fine-note"></p></section>
+        <section id="track-workshop" class="module-panel" tabindex="-1" aria-labelledby="selected-code selected-title"><p class="panel-label">TRACK WORKSHOP <span id="selected-code">01 / 12</span></p><h2 id="selected-title">选择一段轨道</h2><p id="selected-facts" class="selected-facts"></p><p id="selected-description" class="detail-copy"></p><div id="module-controls" class="module-controls" role="group" aria-label="当前轨道可安装模块"></div><p id="module-note" class="fine-note"></p></section>
 
         <section class="guest-panel" aria-labelledby="guest-heading"><div class="section-heading"><h2 id="guest-heading">游客会怎么选？</h2><span id="guest-status">先完成安全试车</span></div><div class="guest-groups">
         <article id="guest-gentle" class="guest-card" data-mood="waiting"><span class="guest-face" aria-hidden="true"><i></i></span><div><h3>舒缓派</h3><strong id="guest-gentle-count">等待实测</strong><p id="guest-gentle-reason"></p></div></article>

@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[云岬诊断直达对应修改面板](../coaster-feedback-qa/)；一项定位改进，两尺寸有限失败→修正→营业链。
+
 [弹庭查看失利后的可见重试焦点](../pinfall-focus-qa/)；修复上轮窄屏候选，规则不改。
 
 [结果关闭路径有限同类排查](../result-return-review/)；无运行改动，另记弹庭窄屏焦点候选。
@@ -67,7 +69,7 @@
 |35 晴湾篮场 [v2 暂停回看](../../versions/v2/games/court/)|仅局部|仅局部：v2仅有限开局；v1首场8:6不能冒充v2|缺普通UI证据：v2完整失败/重试未验|缺普通UI证据：暂停开发，不补完整比赛 [1](../../docs/court-v2/README.md)|
 |36 雨街修理所 [v2 暂停回看](../../versions/v2/games/repair/)|仅局部|仅局部：v2仅有限诊断/动作开局；v1两天不能移植|缺普通UI证据：v2完整经营日/失败待验|缺普通UI证据：停止追加优化，不重启 [1](../../docs/repair-v2-qa/README.md)|
 |37 潮原纪事 [v2 暂停回看](../../versions/v2/games/civic/)|已验有限流程|已验有限流程：v2首章两种建田方案自然胜|已验有限流程：首章缺粮败/重试/刷新与第2章解锁|已验有限流程：已停止路线；2–8章未验，不继续执行 [1](../../versions/v2/games/civic/about.html)|
-|38 云岬游乐园 [v2 候选](../../versions/v2/games/coaster/)|已验有限流程|已验有限流程：正常UI连续八园试车及20班载客全部达标；首园仅必要解锁前置|已验有限流程：首园原UI安全但低刺激方案，3班21人/收入336/口碑60自然败；重试与刷新恢复设计台，新试车无旧收益|已验有限流程：2–8园正常衔接到八园终局，无第9园；下一园空方案/刷新与8份原生纪录/重访通过；离线配方只参考 [1](../../versions/v2/games/coaster/comparison.html) / [2](../../docs/coaster-loss-qa/) / [3](../../docs/coaster-later-qa/) / [4](../../docs/return-navigation-qa/)|
+|38 云岬游乐园 [v2 候选](../../versions/v2/games/coaster/)|已验有限流程|已验有限流程：正常UI连续八园试车及20班载客全部达标；首园仅必要解锁前置|已验有限流程：首园原UI安全但低刺激方案，3班21人/收入336/口碑60自然败；重试与刷新恢复设计台，新试车无旧收益|已验有限流程：2–8园正常衔接到八园终局，无第9园；下一园空方案/刷新与8份原生纪录/重访通过；离线配方只参考 [1](../../versions/v2/games/coaster/comparison.html) / [2](../../docs/coaster-loss-qa/) / [3](../../docs/coaster-later-qa/) / [4](../../docs/return-navigation-qa/) / [5](../../docs/coaster-feedback-qa/)|
 |39 林野杯赛 [v2 候选](../../versions/v2/games/kart/)|已验有限流程|已验有限流程：既有原生赛程逐站选关，关闭游戏内弯道辅助后八站普通键盘脚本各一次第1；外部只读策略仍辅助|已验有限流程：v2首站辅助关/按住刹车，92秒自然超时；面板重试清旧结果/刹车，暂停刷新后新倒计时与加速通过|已验有限流程：八站assist=false/result.assisted=false，8新best与8旧assistedBest分离、末站重试刷新保持；非新档关闭辅助解锁链或人手无辅助 [1](../../versions/v2/games/kart/about.html) / [2](../../docs/kart-loss-qa/) / [3](../../docs/kart-later-qa/) / [4](../../docs/kart-independent-qa/) / [5](../../docs/return-navigation-qa/)|
 |40 草甸联赛 [v2 候选](../../versions/v2/games/meadow/)|已验有限流程|已验有限流程：新原生档案普通输入连续八场自然终哨领先；比分7:1/3:1/10:1/7:1/5:0/8:1/13:1/6:3|已验有限流程：次场不输入74秒自然1:1平局失利→当前场重赛，首场纪录保留|已验有限流程：八场完整自然胜利、逐场干净衔接、最终冠军无第9、8份纪录及末场重赛暂停刷新通过；100ms作者策略非真人手感 [1](../../versions/v2/games/meadow/about.html) / [2](../../docs/meadow-main-flow-qa/) / [3](../../docs/meadow-later-qa/) / [4](../../docs/meadow-player-ux-qa/) / [5](../../docs/return-navigation-qa/)|
 
