@@ -1,0 +1,35 @@
+{
+  "completedThisRound": {
+    "originalPriority": 2,
+    "title": "未完成里程碑在出行时给出匹配的当前目标",
+    "status": "implemented_local_verified; online verified only after deployment handoff",
+    "evidence": "./"
+  },
+  "remaining": [
+    {
+      "priority": 1,
+      "title": "营地编队前可比较伙伴技能",
+      "evidenceLevel": "已观察界面与源码；不是已确认玩法bug",
+      "evidence": [
+        "images/camp-observation.png",
+        "versions/v3/games/feather/game.mjs:card(camp=true)"
+      ],
+      "observation": "营地仅显示角色定位与成长；玩家能选择同行，却要进入相遇才看到具体技能。当前改进只处理行动中技能，不处理选队前比较。",
+      "value": "让发现新伙伴后的换队选择有实际依据，减少盲选和往返试探。",
+      "acceptance": "先用普通UI确认现有玩法帮助是否已足够；有价值才利用既有卡片显示或按需展开技能与属性，不强制指定队伍、不改技能；390与键盘可读可收起，原编队/保存不变。"
+    },
+    {
+      "priority": 3,
+      "title": "完成后自由出行时能否重读旅途总结",
+      "evidenceLevel": "仅源码线索/待当前普通UI复现；未确认用户障碍",
+      "evidence": [
+        "versions/v3/games/feather/model.mjs:continue",
+        "versions/v3/games/feather/game.mjs:campPanel/endingPanel"
+      ],
+      "observation": "continue会清ending，campPanel完成文案写“旅途总结已记下”，但未见重读入口。本轮未重复自然结局，不能把源码线索称为已复现缺陷。",
+      "value": "完成短冒险后能回看伙伴与旅途成果，保留收束感；不是新增结局。",
+      "acceptance": "先核现有记录/入口并用正常结局后自由出行复现；如确实无法重读，再在不重新结算、不改存档格式、不覆盖旧档的前提下提供只读入口，键盘和窄屏可返回。"
+    }
+  ],
+  "scope": "Candidate1 remains future work; candidate3 remains source-only, not a reproduced bug; no new topics added."
+}

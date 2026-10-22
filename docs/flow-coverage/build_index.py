@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('featherObjectiveReview'):
+    doc += '<p><a href="' + escape(D['featherObjectiveReview']['evidence'], quote=True) + '">星羽v3：旅途中当前目标连续性</a>（目标显示单项改进，原任务/存档不变）</p>'
+
 if D.get('featherSkillFeedbackReview'):
     doc += '<p><a href="' + escape(D['featherSkillFeedbackReview']['evidence'], quote=True) + '">星羽v3：当前技能效果、能量与不可用原因</a>（单项反馈改进，三条有证据等级的后续候选）</p>'
 
@@ -103,6 +106,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('featherObjectiveReview'):
+    md += '[星羽旅途中当前目标连续性](' + D['featherObjectiveReview']['evidence'] + ')；仅目标显示，普通UI与已完成模型fixture分列。\n\n'
+
 if D.get('featherSkillFeedbackReview'):
     md += '[星羽当前技能效果、能量与不可用原因](' + D['featherSkillFeedbackReview']['evidence'] + ')；一项反馈改进，三条后续品质候选已标证据等级。\n\n'
 

@@ -1,0 +1,4567 @@
+{
+  "at": "2026-10-22T09:36:50.959916+00:00",
+  "baseline": "fed4e45f10a7bd3e46be5c8862e7d2cf3aaabf4c",
+  "url": "https://yydshly.github.io/classic-games-atlas/versions/v3/games/feather/",
+  "method": "Fresh contexts, normal UI with known route/strategy. Read-only snapshots/storage; no state/time/save/result injection. No ending replay; completed branch covered by separately labelled offline model commands.",
+  "cases": [
+    {
+      "width": 1440,
+      "stages": [
+        {
+          "label": "01-search-camp",
+          "hint": "先结识任意一位野外新伙伴，并一起回营。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [],
+            "phase": "camp",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 0,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "从三位老朋友中选两位出行。每次出行补满体力、能量和背包。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "02-search-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第1次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "03-search-encounter",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              }
+            ],
+            "phase": "encounter",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "encounter",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 19,
+              "notice": "发现晶雾芽！可切磋削弱，或用露莓安抚。羽结并非必定成功。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "04-pending-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 15,
+              "notice": "羽结回应了！晶雾芽愿意同行。成功率88%，本次判定64。回营后可换入队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": [
+                "bud"
+              ]
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "04-pending-refreshed",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 15,
+              "notice": "羽结回应了！晶雾芽愿意同行。成功率88%，本次判定64。回营后可换入队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": [
+                "bud"
+              ]
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "05-adjust-camp",
+          "hint": "在营地把任意一位新伙伴换入队伍，试试不同的搭配。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 15,
+              "notice": "你选择提前回营。 新伙伴已在营地等你，可换入下一次队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "06-growth-camp",
+          "hint": "让任意伙伴参与两次有结果的相遇，获得一次成长，再回营。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 15,
+              "notice": "出行队伍：岚翎、晶雾芽。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "07-growth-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第2次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "07-growth-refreshed",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第2次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "08-growth-encounter",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              }
+            ],
+            "phase": "encounter",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "encounter",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 19,
+              "notice": "发现晶雾芽！可切磋削弱，或用露莓安抚。羽结并非必定成功。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "09-grown-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 17,
+              "notice": "岚翎获得一次成长：体力上限+8，基础威力+2。本版成长到此为止。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "10-ready-camp",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你选择提前回营。 可免费整备，再试一次。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "10-ready-refreshed",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你选择提前回营。 可免费整备，再试一次。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "11-trial",
+          "hint": "属性和来招都已预告：每次行动都占一拍，看清再决定。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              },
+              {
+                "kind": "trialStart",
+                "revision": 22
+              }
+            ],
+            "phase": "trial",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "浅滩回响开始：24拍内消去190余势。属性每两拍变化；试探、蓄势、回涌循环。看清预告，再决定换位、守息或技能。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "12-return-camp",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              },
+              {
+                "kind": "trialStart",
+                "revision": 22
+              },
+              {
+                "kind": "trialRetreat",
+                "revision": 23
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你们选择回营重新准备。 已结识的伙伴和成长全部保留；整备免费，不必重新招募。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        }
+      ],
+      "actions": [
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6
+        },
+        {
+          "kind": "skill",
+          "arg": null,
+          "revision": 7
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 8
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 9
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 10
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 11
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 12
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 13
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 14
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 15
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 16
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 17
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 18
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 19
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 20
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 21
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 22
+        },
+        {
+          "kind": "trialStart",
+          "arg": null,
+          "revision": 23
+        },
+        {
+          "kind": "trialRetreat",
+          "arg": null,
+          "revision": 24
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "passed": true,
+      "refreshExactCount": 3
+    },
+    {
+      "width": 390,
+      "stages": [
+        {
+          "label": "01-search-camp",
+          "hint": "先结识任意一位野外新伙伴，并一起回营。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [],
+            "phase": "camp",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 0,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "从三位老朋友中选两位出行。每次出行补满体力、能量和背包。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "02-search-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第1次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "03-search-encounter",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              }
+            ],
+            "phase": "encounter",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "encounter",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 19,
+              "notice": "发现晶雾芽！可切磋削弱，或用露莓安抚。羽结并非必定成功。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "04-pending-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 15,
+              "notice": "羽结回应了！晶雾芽愿意同行。成功率88%，本次判定64。回营后可换入队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": [
+                "bud"
+              ]
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "04-pending-refreshed",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": false,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 15,
+              "notice": "羽结回应了！晶雾芽愿意同行。成功率88%，本次判定64。回营后可换入队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": [
+                "bud"
+              ]
+            }
+          },
+          "milestones": [
+            {
+              "text": "01 · 结识新伙伴",
+              "done": "false"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "05-adjust-camp",
+          "hint": "在营地把任意一位新伙伴换入队伍，试试不同的搭配。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": false,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 1,
+              "team": [
+                "a",
+                "b"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 15,
+              "notice": "你选择提前回营。 新伙伴已在营地等你，可换入下一次队伍。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "02 · 调整出行队伍",
+              "done": "false"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "06-growth-camp",
+          "hint": "让任意伙伴参与两次有结果的相遇，获得一次成长，再回营。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 1,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 15,
+              "notice": "出行队伍：岚翎、晶雾芽。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "07-growth-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第2次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "07-growth-refreshed",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 24,
+              "notice": "第2次短出行。每走一格或做一次相遇行动消耗1日光；随时可以免费回营。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "08-growth-encounter",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              }
+            ],
+            "phase": "encounter",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": false,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "encounter",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 19,
+              "notice": "发现晶雾芽！可切磋削弱，或用露莓安抚。羽结并非必定成功。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 1,
+                  "rank": 0
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "03 · 成长与准备",
+              "done": "false"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "09-grown-explore",
+          "hint": "先回营，再一起准备。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              }
+            ],
+            "phase": "explore",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "explore",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 4,
+                "y": 1
+              },
+              "daylight": 17,
+              "notice": "岚翎获得一次成长：体力上限+8，基础威力+2。本版成长到此为止。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "10-ready-camp",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你选择提前回营。 可免费整备，再试一次。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "10-ready-refreshed",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你选择提前回营。 可免费整备，再试一次。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "11-trial",
+          "hint": "属性和来招都已预告：每次行动都占一拍，看清再决定。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              },
+              {
+                "kind": "trialStart",
+                "revision": 22
+              }
+            ],
+            "phase": "trial",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "浅滩回响开始：24拍内消去190余势。属性每两拍变化；试探、蓄势、回涌循环。看清预告，再决定换位、守息或技能。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        },
+        {
+          "label": "12-return-camp",
+          "hint": "准备就绪：可以自由编队，在营地迎接浅滩回响。",
+          "snapshot": {
+            "version": 3,
+            "origin": {
+              "version": 2,
+              "seed": 85949129,
+              "commands": []
+            },
+            "commands": [
+              {
+                "kind": "depart",
+                "revision": 0
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 1
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 2
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 3
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 4
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 5
+              },
+              {
+                "kind": "skill",
+                "revision": 6
+              },
+              {
+                "kind": "soothe",
+                "revision": 7
+              },
+              {
+                "kind": "soothe",
+                "revision": 8
+              },
+              {
+                "kind": "capture",
+                "revision": 9
+              },
+              {
+                "kind": "home",
+                "revision": 10
+              },
+              {
+                "kind": "team",
+                "arg": "b",
+                "revision": 11
+              },
+              {
+                "kind": "team",
+                "arg": "bud",
+                "revision": 12
+              },
+              {
+                "kind": "depart",
+                "revision": 13
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 14
+              },
+              {
+                "kind": "move",
+                "arg": "up",
+                "revision": 15
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 16
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 17
+              },
+              {
+                "kind": "move",
+                "arg": "right",
+                "revision": 18
+              },
+              {
+                "kind": "attack",
+                "revision": 19
+              },
+              {
+                "kind": "attack",
+                "revision": 20
+              },
+              {
+                "kind": "home",
+                "revision": 21
+              },
+              {
+                "kind": "trialStart",
+                "revision": 22
+              },
+              {
+                "kind": "trialRetreat",
+                "revision": 23
+              }
+            ],
+            "phase": "camp",
+            "progress": {
+              "discovered": true,
+              "adjusted": true,
+              "grown": true,
+              "completed": false
+            },
+            "observedBase": {
+              "phase": "camp",
+              "outing": 2,
+              "team": [
+                "a",
+                "bud"
+              ],
+              "active": "a",
+              "pos": {
+                "x": 1,
+                "y": 3
+              },
+              "daylight": 17,
+              "notice": "你们选择回营重新准备。 已结识的伙伴和成长全部保留；整备免费，不必重新招募。",
+              "roster": [
+                {
+                  "id": "a",
+                  "xp": 2,
+                  "rank": 1
+                },
+                {
+                  "id": "b",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "c",
+                  "xp": 0,
+                  "rank": 0
+                },
+                {
+                  "id": "bud",
+                  "xp": 0,
+                  "rank": 0
+                }
+              ],
+              "pending": []
+            }
+          },
+          "milestones": [
+            {
+              "text": "✓ 01 · 结识新伙伴",
+              "done": "true"
+            },
+            {
+              "text": "✓ 02 · 调整出行队伍",
+              "done": "true"
+            },
+            {
+              "text": "✓ 03 · 成长与准备",
+              "done": "true"
+            },
+            {
+              "text": "04 · 完成浅滩冒险",
+              "done": "false"
+            }
+          ],
+          "geometry": {
+            "inside": true,
+            "overflow": false
+          }
+        }
+      ],
+      "actions": [
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 1
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 2
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 3
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 4
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 5
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 6
+        },
+        {
+          "kind": "skill",
+          "arg": null,
+          "revision": 7
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 8
+        },
+        {
+          "kind": "soothe",
+          "arg": null,
+          "revision": 9
+        },
+        {
+          "kind": "capture",
+          "arg": null,
+          "revision": 10
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 11
+        },
+        {
+          "kind": "team",
+          "arg": "b",
+          "revision": 12
+        },
+        {
+          "kind": "team",
+          "arg": "bud",
+          "revision": 13
+        },
+        {
+          "kind": "depart",
+          "arg": null,
+          "revision": 14
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 15
+        },
+        {
+          "kind": "move",
+          "arg": "up",
+          "revision": 16
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 17
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 18
+        },
+        {
+          "kind": "move",
+          "arg": "right",
+          "revision": 19
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 20
+        },
+        {
+          "kind": "attack",
+          "arg": null,
+          "revision": 21
+        },
+        {
+          "kind": "home",
+          "arg": null,
+          "revision": 22
+        },
+        {
+          "kind": "trialStart",
+          "arg": null,
+          "revision": 23
+        },
+        {
+          "kind": "trialRetreat",
+          "arg": null,
+          "revision": 24
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "passed": true,
+      "refreshExactCount": 3
+    }
+  ],
+  "publicFormat": "Read-only observed fields subset plus full origin/commands for reproducible model replay. Full raw captures retained privately."
+}

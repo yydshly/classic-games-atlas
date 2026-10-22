@@ -1,6 +1,7 @@
 import {SAVE_KEY,LEGACY_SAVE_KEY,SPECIES,ELEMENTS,TRIAL,V2,createGame,input,checkpoint,restore,allowed,phase,progress,readiness,active,partner,maxHP,power,trialElement,trialIntent,trialIncoming,trialHit,invariants} from './model.mjs';
 import {render,hitNode} from './renderer.mjs';
 import {skillFeedback} from './skill-feedback.mjs';
+import {journeyObjective} from './objective-feedback.mjs';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
 let state,paused=false,showPaths=true,storage=true,saveBlocked=false,lastInput=-1000,previousFocus=null,legacy=null,assetsReady=false;
@@ -88,7 +89,7 @@ function draw(){
  $('#notice').textContent=b.notice;$('#field-controls').hidden=mode!=='explore';
  $('#panel').innerHTML=mode==='camp'?campPanel():mode==='explore'?explorePanel():mode==='encounter'?encounterPanel():mode==='trial'?trialPanel():endingPanel();
  $('#progress-list').innerHTML=[['discovered','01 · 结识新伙伴'],['adjusted','02 · 调整出行队伍'],['grown','03 · 成长与准备'],['completed','04 · 完成浅滩冒险']].map(([key,label])=>'<li data-done="'+p[key]+'">'+(p[key]?'✓ ':'')+label+'</li>').join('');
- $('#progress-hint').textContent=p.completed?'旅途已完成，归羽营地仍欢迎自由出行。':state.trial?'属性和来招都已预告：每次行动都占一拍，看清再决定。':readiness(state)||'准备就绪：可以自由编队，在营地迎接浅滩回响。';
+ $('#progress-hint').textContent=journeyObjective(state);
  $('#journal-count').textContent=' · '+b.journal.length+'条';
  $('#journal').replaceChildren(...[...b.journal].reverse().map(e=>{const li=document.createElement('li');li.textContent='第'+e.outing+'次 · '+e.text;return li;}));
  document.querySelectorAll('.field-controls [data-action]').forEach(el=>{el.dataset.revision=state.revision;el.disabled=!!allowed(state,el.dataset.action,el.dataset.arg);});
