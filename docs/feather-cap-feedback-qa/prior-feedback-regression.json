@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "groups": 10,
+  "checks": [
+    "Real three-action trace reconstructs exact observed resource/target transitions",
+    "Incremental reader and a restored old record give identical bounded rows",
+    "Repeated reads and returned-copy changes do not modify game or record",
+    "Invalid skill creates no phantom row and consumes no command",
+    "Full-energy guard display uses actual zero gain; positive regeneration stays unchanged",
+    "Retreat retains last beats, retry clears them and a fresh journey cannot leak them",
+    "Terminal overwrite does not invent missing damage/absorption facts",
+    "Legacy-v2 origin has no invented trial history; existing completion stays readable",
+    "Calm cap is shown as actual44-to60, not inferred nominal22 (OFFLINE MODEL)",
+    "Invalid/stale records hide feedback without modifying supplied data"
+  ],
+  "method": "Actual UI-earned trace plus separately labelled legal offline model branches. Reader never writes game/storage; unknown response facts omitted. No browser state injection or ending replay.",
+  "modelChanged": false
+}

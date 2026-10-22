@@ -4,7 +4,7 @@ import {skillFeedback} from './skill-feedback.mjs';
 import {journeyObjective} from './objective-feedback.mjs';
 import {campSkillInfo} from './camp-feedback.mjs';
 import {completedSummary} from './summary-review.mjs';
-import {createTrialFeedbackReader,trialFeedbackText,trialNotice} from './trial-feedback.mjs';
+import {createTrialFeedbackReader,trialFeedbackText,trialNotice} from './trial-feedback.mjs?cap-r1';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
 const readTrialFeedback=createTrialFeedbackReader();let displayedTrialAttempt=0;

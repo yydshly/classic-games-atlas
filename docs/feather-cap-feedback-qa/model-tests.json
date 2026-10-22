@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "groups": 8,
+  "checks": [
+    "Actual UI earned44-to60 shows+16, raw notice and record remain unchanged",
+    "Full calm60-to60 shows actual+0 and preserves weakening/attack response",
+    "Ordinary0-to22 and22-to44 retain existing text",
+    "Other calm skill54-to60 uses actual+6 and full cap+0 through same function (OFFLINE)",
+    "Energy lower bound0 and upper bound3 preserve actual guard increments (OFFLINE)",
+    "Invalid skill at zero energy leaves history, notice, state and checkpoint exact",
+    "No-row, stale revision, retreat and legacy-v2 origin do not replace unrelated messages",
+    "Existing earned record reload and repeated display cannot mutate state/save"
+  ],
+  "method": "Actual UI-earned checkpoint plus explicitly offline legal boundary sequences. No browser injection, no model or save changes."
+}

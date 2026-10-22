@@ -1,0 +1,27 @@
+{
+  "resolvedHarnessErrors": [
+    "Before any game command: initial syntax missing whitespace after else; fixed.",
+    "Before any game command: Windows defaultGBK read of strategy JSON; fixed with explicitUTF8.",
+    "Documentation check syntax failed before execution; corrected.",
+    "Byte-preservation check caught index newline normalization from text write; restored original bytes with only cache marker replacement, then passed.",
+    "Two read-only shell inline Python quote errors did not execute; subsequent checks use script files.",
+    "Documentation check syntax failed before execution; corrected.",
+    "Byte-preservation check caught index newline normalization from text write; restored original bytes with only cache marker replacement, then passed.",
+    "Two read-only shell inline Python quote errors did not execute; subsequent checks use script files."
+  ],
+  "ordinaryUi": {
+    "baselineCommands": 7,
+    "localCommands": 9,
+    "baselineNativeProfileStart": 50,
+    "baselineNativeProfileEnd": 57,
+    "localNativeProfileEnd": 59,
+    "endingRepeated": false,
+    "injection": false
+  },
+  "modelOnly": [
+    "澄心54→60 actual+6 and60→60 zero",
+    "Energy0→1/2→3/3→3 boundary sequence",
+    "Legacy-v2-origin no-row and terminal overwrite regression"
+  ],
+  "reproduction": "verify_browser.py is this exact internal test harness and requires prior native earned profiles under .local/feather-feedback-history-round; before-verification.json includes the original legal ordinary command sequence for manual reproduction. Do not copy it into localStorage. No browser tools or packages installed this round."
+}

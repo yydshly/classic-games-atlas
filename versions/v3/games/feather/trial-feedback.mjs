@@ -43,5 +43,11 @@ export function trialFeedbackText(row){
 }
 export function trialNotice(state,feedback){
  const latest=feedback.rows.at(-1),notice=state.base.notice;
- return latest?.revision===state.revision&&latest.kind==='trialGuard'&&latest.energy===latest.after.energy?notice.replace('能量+1','能量+0（已达上限）'):notice;
+ if(latest?.revision!==state.revision)return notice;
+ if(latest.kind==='trialGuard'&&latest.energy===latest.after.energy)return notice.replace('能量+1','能量+0（已达上限）');
+ if(latest.kind==='trialSkill'&&['c','bud'].includes(latest.id)){
+  const gain=latest.after.calm-latest.calm;
+  return notice.replace(/合奏安心\+\d+/,'合奏安心+'+gain+(gain===0?'（已达上限）':''));
+ }
+ return notice;
 }

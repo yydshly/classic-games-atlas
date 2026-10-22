@@ -1,0 +1,14 @@
+{
+  "title": "苔原远征v2：调兵来源与两线防守的决策反馈",
+  "level": "当前源码线索，尚未普通UI确认理解缺口；不是已确认bug",
+  "basis": "源码确认为营地预备队优先，随后按id选其他防线的可用盾卫；界面只给目的地按钮、各线人数/耐久和行军总数。需要普通UI确认无预备队时，调兵来源和跨线7秒行军是否已足够清楚，不把简化规则自动判为bug。",
+  "sources": [
+    "versions/v2/games/expedition/game.mjs:deployment buttons and army rows",
+    "versions/v2/games/expedition/engine.mjs:deploy command",
+    "docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md",
+    "docs/expedition-loss-qa/"
+  ],
+  "value": "直接影响双线守备和兵力分配的核心决策，比继续寻找星羽微小文案更有玩家价值。",
+  "acceptance": "先普通UI建立营地预备队与前线守军并观察一次调兵前后；若实际来源/到达状态已充分清楚则保留。若确有理解缺口，仅使既有来源和目的地可见，不改抽调规则、行军时间、难度或存档；无需再跑三段胜利。",
+  "implementedThisRound": false
+}
