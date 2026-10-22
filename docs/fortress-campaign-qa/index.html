@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>堡垒防线 · 两段短战役交付证据</title><link rel="icon" href="../../assets/favicon.svg"><style>
+:root{font-family:system-ui,sans-serif;background:#f1f2e9;color:#20393c}body{max-width:1080px;margin:36px auto;padding:0 20px;line-height:1.8}
+h1{font-size:clamp(26px,4vw,44px);line-height:1.3}h2{margin-top:36px}a{color:#176075;text-underline-offset:4px}
+.note{padding:18px;background:#fff8d9;border-left:4px solid #af8339}.actions{display:flex;gap:18px;flex-wrap:wrap;margin:24px 0}.actions a{padding:12px 18px;background:#17383d;color:white}
+figure{margin:24px 0}img{display:block;width:100%;height:auto;border:1px solid #aebfbb}figcaption{color:#456167;font-size:14px;padding:8px 0}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.phones img{max-width:390px}
+.table{overflow:auto}table{border-collapse:collapse;width:100%;min-width:620px;background:#fff}th,td{padding:12px;border:1px solid #ccd6cf;text-align:left;vertical-align:top}
+code{overflow-wrap:anywhere}:focus-visible{outline:3px solid #b08232;outline-offset:4px}@media(max-width:650px){.phones{grid-template-columns:1fr}.phones figure{max-width:390px;margin:12px auto}.actions a{width:100%;text-align:center}}
+</style></head><body>
+<p><a href="../../#selected-play">精选试玩大厅</a> · <a href="../flow-coverage/#fortress">40项覆盖索引</a> · <a href="../../versions/v2/games/fortress/">原v2自由选图</a></p>
+<h1>同一座信标，两段完整归途。</h1>
+<p>堡垒v3是独立可选的两图短战役：双翼哨口守住后，整备接防交汇换防，再留下两段真实总结。原v2自由选图继续保留，目录仍为40项。</p>
+<div class="actions"><a href="../../versions/v3/games/fortress/">开始两段短战役 →</a><a href="../../versions/v3/games/fortress/NOTES.md">范围与保存说明</a></div>
+<p class="note">这是经典启发的原创体验，复用原两图及引擎，不是完整《Battle City》复刻。以下为Windows桌面Chromium 147自动化证据；单人胜利使用强策略辅助输入。双人仅验证短时独立控制，触控仅浏览器仿真，不能替代真人合作、真机性能、手感或审美验收。不保证五分钟通关。</p>
+<h2>本次实际实现</h2>
+<p>出发前选单车或同键双车，两图保持同一编组。第一行动胜利后先看结果，再明确开始第二行动。每图按原初态整备，基地3点耐久、每车3次出击，不继承场内位置和临时补给。失利重试当前图，首图成果保留；末图完成后没有第三图，最终总结可刷新重读。没有额外奖励或成长经济。</p>
+<p>新记录键为 <code>classic-atlas.fortress.campaign.v3</code>（schema 1），不读写v1/v2记录。只保存编组、阶段和已结束结果；战斗刷新回当前图整备。坏档保全原字节，只允许临时游玩；写失败提示刷新风险，后续成功写入清除失败提示。重新开始需要确认，只重开这份战役。</p>
+<h2>普通UI完整链与边界</h2>
+<div class="table"><table><thead><tr><th>流程</th><th>真实观察</th><th>证据性质</th></tr></thead><tbody>
+<tr><td>首图清六敌→关间</td><td>66.6833秒、1860分、基地3；关间刷新保留原结果</td><td>普通键盘UI；只读快照策略每约100ms决定WASD/J</td></tr>
+<tr><td>第二图自然失利→刷新→重试</td><td>刻意不输入，21.6秒出击耗尽；首图保留，失败次数1，只重试第二图</td><td>自然引擎失利，未注入胜负或时间</td></tr>
+<tr><td>第二图胜利→最终总结</td><td>69.6667秒、1910分、基地3；成功合计3770分 / 136.35活动秒，不含暂停或失败尝试</td><td>普通UI策略辅助；不是两人协作或手工无辅助成绩</td></tr>
+<tr><td>结束刷新、取消/确认重开、返回</td><td>刷新保留两结果；取消不改状态；确认回首图空成绩。原v2字节不变，返回精选恢复入口焦点和“溪谷”筛选</td><td>真实完成会话，桌面与390CSS。尾部截图脚本API错误后复用同一真实完成会话续验，未注入完成档</td></tr>
+<tr><td>双人、触控、故障</td><td>两车各自移动/开火；原生touch多指部分释放/取消、暂停恢复及返回；配额失败恢复/坏档保护</td><td>双人短输入由同一执行者操作，非真人合作；touch非真机；存储异常为独立故障fixture</td></tr>
+</tbody></table></div>
+<p>本地完整链无页面异常、资源HTTP错误或未解释请求失败。第一次尾部测试调用了错误的Playwright视口API，修正测试后继续真实会话；该工具错误没有当作游戏缺陷。原引擎、地图、渲染、共享输入模块和v2整目录未改。线上提交、构建和普通操作的最终核验另由发布交付记录确认，不把本地截图标成线上截图。</p>
+<h2>实际页面截图</h2>
+<figure><img src="01-ready-1440.png" alt="桌面首图整备，编组、两段目标及原有战场"><figcaption>新旅程的目标与出发编组，1440×1000 CSS像素。</figcaption></figure>
+<figure><img src="02-intermission-1440.png" alt="第一图自然胜利后的关间页面，1860分并显示整备第二行动"><figcaption>首图完成后由玩家明确推进，未自动开战。</figcaption></figure>
+<figure><img src="04-second-loss-1440.png" alt="第二图自然失利，首图结果保留，提供只重试第二行动"><figcaption>刻意无输入造成的自然失利，首图成果仍在。</figcaption></figure>
+<figure><img src="05-complete-1440.png" alt="两图自然胜利后的真实总结，两张结果卡、3770分、一次失利"><figcaption>原规则两图真实完成后的总结，没有虚构第三图。</figcaption></figure>
+<div class="phones">
+<figure><img src="ready-390.png" alt="390CSS首屏，开始按钮和五个触控键均可见"><figcaption>390×844首屏。浏览器尺寸模拟，非真机。</figcaption></figure>
+<figure><img src="06-complete-390.png" alt="390CSS完整通关后的结果卡纵向排列"><figcaption>同一真实完成会话，结果卡纵向排列，操作可正常滚动到达。</figcaption></figure>
+<figure><img src="quota-warning-390.png" alt="隔离模拟写入失败，顶部显示保存风险，仍可开始游戏"><figcaption>隔离故障注入；风险提示不遮挡开始与触控区域。</figcaption></figure>
+</div>
+<h2>可核对的数据与复验</h2>
+<p><a href="local-ui.json">普通UI真实阶段、结果与执行恢复说明</a> · <a href="input-storage.json">双人/原生触控及隔离存储故障</a> · <a href="model-tests.json">10组模型/存储检查</a> · <a href="README.md">复验命令与限制</a>。</p>
+<p>10组包括合法引擎两胜一败、阶段去重/当前图重试、活动刷新、旧键隔离、坏档/未知格式保护、配额恢复、读拒绝，以及明确标注的双人结果形状fixture。模型和fixture不计作普通UI通关。原地图、伤害、速度、敌人和补给规则保持不变。</p>
+<p>尚需真人确认：单车持续操作与读图体验、两人共用键盘的配合与键位冲突、真实手机多指/滚动/性能、整体美感和耐玩性。本轮没有增加声音，不能把画面与技术测试当作声音验收。达到有限短战役里程碑，不扩第三图或新成长系统。</p>
+</body></html>

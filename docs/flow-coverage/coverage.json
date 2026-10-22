@@ -65,7 +65,8 @@
         "docs/fortress-feedback-qa/",
         "docs/featured-play-qa/",
         "docs/fortress-native-key-qa/",
-        "docs/featured-touch-qa/"
+        "docs/featured-touch-qa/",
+        "docs/fortress-campaign-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "首图单车独立胜利已补证；两人协作、全模式/地形及真人触控/声音审美未验",
@@ -80,6 +81,11 @@
         "status": "fixed",
         "evidence": "docs/fortress-pause-followup-qa/",
         "scope": "已指定三条源码线索的四态语义；不是全站UI验收"
+      },
+      "optionalCampaign": {
+        "version": "v3",
+        "playUrl": "versions/v3/games/fortress/",
+        "summary": "两图连续目标、关间整备、当前图重试与可刷新总结；独立阶段存档；真人合作/真机/总体品质未验收"
       }
     },
     {
@@ -3421,5 +3427,11 @@
     "evidence": "../featured-touch-qa/",
     "status": "native_touch_simulation_verified_one_fortress_fix",
     "scope": "Three currentv2 native touch flows, capture/release/cancel/pause/return; real hardware and human experience pending. Brook/Post unchanged public evidence reused."
+  },
+  "fortressCampaignReview": {
+    "baseline": "8985dc4b837eeb20f465c1c55e19e8bf50e01a5f",
+    "status": "optional_v3_local_verified",
+    "evidence": "../fortress-campaign-qa/",
+    "scope": "可选两图短战役：正常UI单人强策略两胜/一次自然失利与刷新重试；双人短输入/触控仿真/故障fixture分列；v2仍默认"
   }
 }

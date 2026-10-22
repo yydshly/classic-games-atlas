@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "groups": 10,
+  "results": [
+    "Mode fixed after departure, invalid phase actions are inert",
+    "First legal engine win creates exactly one intermission result",
+    "Second legal idle loss retains first result; retry stays second map",
+    "Second win completes two maps; no third, no duplicate result or reward",
+    "Active refresh is current-stage briefing, never a fake battle snapshot",
+    "Only new key read/written; valid old v1/v2 bytes untouched",
+    "Corrupt/unknown new records preserved and never auto-overwritten",
+    "Write failure preserves last valid record and later success clears warning",
+    "Read denial never risks writing unknown prior data",
+    "Explicit two-player result-shape fixture keeps separate participation, rejects wrong mode"
+  ],
+  "method": "Legal engine simulations, campaign/storage state-machine and explicit storage-failure fixtures. Not browser play or human cooperation.",
+  "legalEngineRuns": [
+    {
+      "state": "won",
+      "stage": 0,
+      "time": 66.66666666666417,
+      "score": 1860,
+      "kills": 6,
+      "base": 3
+    },
+    {
+      "state": "lost",
+      "stage": 1,
+      "time": 21.566666666666723,
+      "score": 0,
+      "kills": 0,
+      "base": 3
+    },
+    {
+      "state": "won",
+      "stage": 1,
+      "time": 69.49999999999734,
+      "score": 1910,
+      "kills": 6,
+      "base": 3
+    }
+  ],
+  "completed": {
+    "schema": 1,
+    "mode": 1,
+    "started": true,
+    "stage": 1,
+    "phase": "complete",
+    "wins": [
+      {
+        "stage": 0,
+        "mode": 1,
+        "kind": "won",
+        "time": 66.66666666666417,
+        "score": 1860,
+        "kills": 6,
+        "base": 3,
+        "reason": "",
+        "players": [
+          {
+            "number": 1,
+            "lives": 3,
+            "inputTicks": 4000
+          }
+        ]
+      },
+      {
+        "stage": 1,
+        "mode": 1,
+        "kind": "won",
+        "time": 69.49999999999734,
+        "score": 1910,
+        "kills": 6,
+        "base": 3,
+        "reason": "",
+        "players": [
+          {
+            "number": 1,
+            "lives": 3,
+            "inputTicks": 4170
+          }
+        ]
+      }
+    ],
+    "failures": [
+      0,
+      1
+    ],
+    "lastLoss": null
+  }
+}

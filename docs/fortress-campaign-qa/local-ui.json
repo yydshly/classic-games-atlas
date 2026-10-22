@@ -1,0 +1,1016 @@
+{
+  "mode": "local",
+  "method": "Normal UI with a strong external copied-snapshot routing policy, W/A/S/D/J keys only. Single player, not human co-op. No live state/time/HP/save/win injection. Local includes intentional idle loss; online repeats successful two-map journey only.",
+  "phases": [
+    {
+      "name": "newJourney",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": false,
+          "stage": 0,
+          "phase": "briefing",
+          "wins": [],
+          "failures": [
+            0,
+            0
+          ],
+          "lastLoss": null
+        },
+        "battle": {
+          "state": "ready",
+          "level": 1,
+          "time": 0,
+          "score": 0,
+          "shots": 0,
+          "kills": 0,
+          "spawned": 0,
+          "total": 6,
+          "mode": 1,
+          "players": [
+            {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            }
+          ],
+          "lives": 3,
+          "player": {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 2.6,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 3,
+            "dead": false
+          },
+          "base": {
+            "x": 300,
+            "y": 564,
+            "hp": 3,
+            "shield": 0,
+            "flash": 0
+          },
+          "enemies": [],
+          "bullets": [],
+          "items": [
+            {
+              "x": 204,
+              "y": 468,
+              "type": "shield",
+              "ttl": 40
+            },
+            {
+              "x": 396,
+              "y": 468,
+              "type": "rapid",
+              "ttl": 40
+            }
+          ],
+          "tiles": [
+            "SSSSSSSSSSSSSSSSSSSSSSSSS",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..BBBBBB.......BBBBBB..S",
+            "S.......................S",
+            "S.......................S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........BBB..........S",
+            "S..........B.B..........S",
+            "SSSSSSSSSSSSSSSSSSSSSSSSS"
+          ]
+        },
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    },
+    {
+      "name": "activeRefreshCurrentMission",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 0,
+          "phase": "briefing",
+          "wins": [],
+          "failures": [
+            0,
+            0
+          ],
+          "lastLoss": null
+        },
+        "battle": {
+          "state": "ready",
+          "level": 1,
+          "time": 0,
+          "score": 0,
+          "shots": 0,
+          "kills": 0,
+          "spawned": 0,
+          "total": 6,
+          "mode": 1,
+          "players": [
+            {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            }
+          ],
+          "lives": 3,
+          "player": {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 2.6,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 3,
+            "dead": false
+          },
+          "base": {
+            "x": 300,
+            "y": 564,
+            "hp": 3,
+            "shield": 0,
+            "flash": 0
+          },
+          "enemies": [],
+          "bullets": [],
+          "items": [
+            {
+              "x": 204,
+              "y": 468,
+              "type": "shield",
+              "ttl": 40
+            },
+            {
+              "x": 396,
+              "y": 468,
+              "type": "rapid",
+              "ttl": 40
+            }
+          ],
+          "tiles": [
+            "SSSSSSSSSSSSSSSSSSSSSSSSS",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..BBBBBB.......BBBBBB..S",
+            "S.......................S",
+            "S.......................S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........BBB..........S",
+            "S..........B.B..........S",
+            "SSSSSSSSSSSSSSSSSSSSSSSSS"
+          ]
+        },
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    },
+    {
+      "name": "firstWon",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 0,
+          "phase": "intermission",
+          "wins": [
+            {
+              "stage": 0,
+              "mode": 1,
+              "kind": "won",
+              "time": 66.68333333333084,
+              "score": 1860,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4000
+                }
+              ]
+            }
+          ],
+          "failures": [
+            0,
+            0
+          ],
+          "lastLoss": null
+        },
+        "battle": null,
+        "inputTicks": [
+          4000,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      },
+      "time": 66.68333333333084,
+      "score": 1860
+    },
+    {
+      "name": "secondBriefing",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 1,
+          "phase": "briefing",
+          "wins": [
+            {
+              "stage": 0,
+              "mode": 1,
+              "kind": "won",
+              "time": 66.68333333333084,
+              "score": 1860,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4000
+                }
+              ]
+            }
+          ],
+          "failures": [
+            0,
+            0
+          ],
+          "lastLoss": null
+        },
+        "battle": {
+          "state": "ready",
+          "level": 2,
+          "time": 0,
+          "score": 0,
+          "shots": 0,
+          "kills": 0,
+          "spawned": 0,
+          "total": 6,
+          "mode": 1,
+          "players": [
+            {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            }
+          ],
+          "lives": 3,
+          "player": {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 2.6,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 3,
+            "dead": false
+          },
+          "base": {
+            "x": 300,
+            "y": 564,
+            "hp": 3,
+            "shield": 0,
+            "flash": 0
+          },
+          "enemies": [],
+          "bullets": [],
+          "items": [
+            {
+              "x": 204,
+              "y": 468,
+              "type": "shield",
+              "ttl": 40
+            },
+            {
+              "x": 396,
+              "y": 468,
+              "type": "rapid",
+              "ttl": 40
+            }
+          ],
+          "tiles": [
+            "SSSSSSSSSSSSSSSSSSSSSSSSS",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S....S....W...W....S....S",
+            "S....S....W...W....S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S....S...BBBBBBB...S....S",
+            "S....S...BBBBBBB...S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S.......................S",
+            "S........BBBBBBB........S",
+            "S.......................S",
+            "S......BB.......BB......S",
+            "S......BB.......BB......S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........BBB..........S",
+            "S..........B.B..........S",
+            "SSSSSSSSSSSSSSSSSSSSSSSSS"
+          ]
+        },
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    },
+    {
+      "name": "secondNaturalIdleLoss",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 1,
+          "phase": "defeat",
+          "wins": [
+            {
+              "stage": 0,
+              "mode": 1,
+              "kind": "won",
+              "time": 66.68333333333084,
+              "score": 1860,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4000
+                }
+              ]
+            }
+          ],
+          "failures": [
+            0,
+            1
+          ],
+          "lastLoss": {
+            "stage": 1,
+            "mode": 1,
+            "kind": "lost",
+            "time": 21.566666666666723,
+            "score": 0,
+            "kills": 0,
+            "base": 3,
+            "reason": "全队出击次数耗尽。",
+            "players": [
+              {
+                "number": 1,
+                "lives": 0,
+                "inputTicks": 0
+              }
+            ]
+          }
+        },
+        "battle": null,
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    },
+    {
+      "name": "retryOnlySecond",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 1,
+          "phase": "briefing",
+          "wins": [
+            {
+              "stage": 0,
+              "mode": 1,
+              "kind": "won",
+              "time": 66.68333333333084,
+              "score": 1860,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4000
+                }
+              ]
+            }
+          ],
+          "failures": [
+            0,
+            1
+          ],
+          "lastLoss": null
+        },
+        "battle": {
+          "state": "ready",
+          "level": 2,
+          "time": 0,
+          "score": 0,
+          "shots": 0,
+          "kills": 0,
+          "spawned": 0,
+          "total": 6,
+          "mode": 1,
+          "players": [
+            {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            }
+          ],
+          "lives": 3,
+          "player": {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 2.6,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 3,
+            "dead": false
+          },
+          "base": {
+            "x": 300,
+            "y": 564,
+            "hp": 3,
+            "shield": 0,
+            "flash": 0
+          },
+          "enemies": [],
+          "bullets": [],
+          "items": [
+            {
+              "x": 204,
+              "y": 468,
+              "type": "shield",
+              "ttl": 40
+            },
+            {
+              "x": 396,
+              "y": 468,
+              "type": "rapid",
+              "ttl": 40
+            }
+          ],
+          "tiles": [
+            "SSSSSSSSSSSSSSSSSSSSSSSSS",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S....S....W...W....S....S",
+            "S....S....W...W....S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S....S...BBBBBBB...S....S",
+            "S....S...BBBBBBB...S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S....S.............S....S",
+            "S.......................S",
+            "S........BBBBBBB........S",
+            "S.......................S",
+            "S......BB.......BB......S",
+            "S......BB.......BB......S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........BBB..........S",
+            "S..........B.B..........S",
+            "SSSSSSSSSSSSSSSSSSSSSSSSS"
+          ]
+        },
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    },
+    {
+      "name": "complete",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": true,
+          "stage": 1,
+          "phase": "complete",
+          "wins": [
+            {
+              "stage": 0,
+              "mode": 1,
+              "kind": "won",
+              "time": 66.68333333333084,
+              "score": 1860,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4000
+                }
+              ]
+            },
+            {
+              "stage": 1,
+              "mode": 1,
+              "kind": "won",
+              "time": 69.666666666664,
+              "score": 1910,
+              "kills": 6,
+              "base": 3,
+              "reason": "",
+              "players": [
+                {
+                  "number": 1,
+                  "lives": 3,
+                  "inputTicks": 4180
+                }
+              ]
+            }
+          ],
+          "failures": [
+            0,
+            1
+          ],
+          "lastLoss": null
+        },
+        "battle": null,
+        "inputTicks": [
+          4180,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      },
+      "successActiveSeconds": 136.34999999999485,
+      "score": 3770
+    },
+    {
+      "name": "confirmedNewJourneyOldV2Preserved",
+      "snapshot": {
+        "journey": {
+          "schema": 1,
+          "mode": 1,
+          "started": false,
+          "stage": 0,
+          "phase": "briefing",
+          "wins": [],
+          "failures": [
+            0,
+            0
+          ],
+          "lastLoss": null
+        },
+        "battle": {
+          "state": "ready",
+          "level": 1,
+          "time": 0,
+          "score": 0,
+          "shots": 0,
+          "kills": 0,
+          "spawned": 0,
+          "total": 6,
+          "mode": 1,
+          "players": [
+            {
+              "id": "player-1",
+              "x": 204,
+              "y": 516,
+              "dir": 0,
+              "speed": 104,
+              "invulnerable": 2.6,
+              "cooldown": 0,
+              "rapid": 0,
+              "shield": 0,
+              "number": 1,
+              "lives": 3,
+              "dead": false
+            }
+          ],
+          "lives": 3,
+          "player": {
+            "id": "player-1",
+            "x": 204,
+            "y": 516,
+            "dir": 0,
+            "speed": 104,
+            "invulnerable": 2.6,
+            "cooldown": 0,
+            "rapid": 0,
+            "shield": 0,
+            "number": 1,
+            "lives": 3,
+            "dead": false
+          },
+          "base": {
+            "x": 300,
+            "y": 564,
+            "hp": 3,
+            "shield": 0,
+            "flash": 0
+          },
+          "enemies": [],
+          "bullets": [],
+          "items": [
+            {
+              "x": 204,
+              "y": 468,
+              "type": "shield",
+              "ttl": 40
+            },
+            {
+              "x": 396,
+              "y": 468,
+              "type": "rapid",
+              "ttl": 40
+            }
+          ],
+          "tiles": [
+            "SSSSSSSSSSSSSSSSSSSSSSSSS",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S..BBBBBB.......BBBBBB..S",
+            "S.......................S",
+            "S.......................S",
+            "S....BB....SSS....BB....S",
+            "S....BB....SSS....BB....S",
+            "S..........SSS..........S",
+            "S..........SSS..........S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S.......................S",
+            "S..........BBB..........S",
+            "S..........B.B..........S",
+            "SSSSSSSSSSSSSSSSSSSSSSSSS"
+          ]
+        },
+        "inputTicks": [
+          0,
+          0
+        ],
+        "storage": {
+          "blocked": false,
+          "reason": "",
+          "key": "classic-atlas.fortress.campaign.v3"
+        }
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "attempts": [
+    {
+      "stage": 1,
+      "strategy": "copied-snapshot policy",
+      "wallSeconds": 66.79700000002049,
+      "outcome": {
+        "schema": 1,
+        "mode": 1,
+        "started": true,
+        "stage": 0,
+        "phase": "intermission",
+        "wins": [
+          {
+            "stage": 0,
+            "mode": 1,
+            "kind": "won",
+            "time": 66.68333333333084,
+            "score": 1860,
+            "kills": 6,
+            "base": 3,
+            "reason": "",
+            "players": [
+              {
+                "number": 1,
+                "lives": 3,
+                "inputTicks": 4000
+              }
+            ]
+          }
+        ],
+        "failures": [
+          0,
+          0
+        ],
+        "lastLoss": null
+      },
+      "decisionCount": 627
+    },
+    {
+      "stage": 2,
+      "strategy": "intentional no-input idle loss",
+      "wallSeconds": 21.656000000075437,
+      "outcome": {
+        "schema": 1,
+        "mode": 1,
+        "started": true,
+        "stage": 1,
+        "phase": "defeat",
+        "wins": [
+          {
+            "stage": 0,
+            "mode": 1,
+            "kind": "won",
+            "time": 66.68333333333084,
+            "score": 1860,
+            "kills": 6,
+            "base": 3,
+            "reason": "",
+            "players": [
+              {
+                "number": 1,
+                "lives": 3,
+                "inputTicks": 4000
+              }
+            ]
+          }
+        ],
+        "failures": [
+          0,
+          1
+        ],
+        "lastLoss": {
+          "stage": 1,
+          "mode": 1,
+          "kind": "lost",
+          "time": 21.566666666666723,
+          "score": 0,
+          "kills": 0,
+          "base": 3,
+          "reason": "全队出击次数耗尽。",
+          "players": [
+            {
+              "number": 1,
+              "lives": 0,
+              "inputTicks": 0
+            }
+          ]
+        }
+      },
+      "decisionCount": 203
+    },
+    {
+      "stage": 2,
+      "strategy": "copied-snapshot policy",
+      "wallSeconds": 69.75,
+      "outcome": {
+        "schema": 1,
+        "mode": 1,
+        "started": true,
+        "stage": 1,
+        "phase": "complete",
+        "wins": [
+          {
+            "stage": 0,
+            "mode": 1,
+            "kind": "won",
+            "time": 66.68333333333084,
+            "score": 1860,
+            "kills": 6,
+            "base": 3,
+            "reason": "",
+            "players": [
+              {
+                "number": 1,
+                "lives": 3,
+                "inputTicks": 4000
+              }
+            ]
+          },
+          {
+            "stage": 1,
+            "mode": 1,
+            "kind": "won",
+            "time": 69.666666666664,
+            "score": 1910,
+            "kills": 6,
+            "base": 3,
+            "reason": "",
+            "players": [
+              {
+                "number": 1,
+                "lives": 3,
+                "inputTicks": 4180
+              }
+            ]
+          }
+        ],
+        "failures": [
+          0,
+          1
+        ],
+        "lastLoss": null
+      },
+      "decisionCount": 639
+    }
+  ],
+  "completedOutcome": {
+    "schema": 1,
+    "mode": 1,
+    "started": true,
+    "stage": 1,
+    "phase": "complete",
+    "wins": [
+      {
+        "stage": 0,
+        "mode": 1,
+        "kind": "won",
+        "time": 66.68333333333084,
+        "score": 1860,
+        "kills": 6,
+        "base": 3,
+        "reason": "",
+        "players": [
+          {
+            "number": 1,
+            "lives": 3,
+            "inputTicks": 4000
+          }
+        ]
+      },
+      {
+        "stage": 1,
+        "mode": 1,
+        "kind": "won",
+        "time": 69.666666666664,
+        "score": 1910,
+        "kills": 6,
+        "base": 3,
+        "reason": "",
+        "players": [
+          {
+            "number": 1,
+            "lives": 3,
+            "inputTicks": 4180
+          }
+        ]
+      }
+    ],
+    "failures": [
+      0,
+      1
+    ],
+    "lastLoss": null
+  },
+  "oldV2BytesPreserved": true,
+  "executionNotes": [
+    "First run naturally completed both maps and one second-map idle loss; a test harness used BrowserContext.set_viewport_size instead of Page API.",
+    "Reopened that same genuine completed profile, recreated ordinary launch receipt, resumed only tail checks. No completed save was injected and no battles rerun."
+  ],
+  "navigationCancellations": [],
+  "passed": true
+}

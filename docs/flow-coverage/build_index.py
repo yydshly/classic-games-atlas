@@ -69,6 +69,9 @@ if D.get('fortressFeedbackReview'):
 if D.get('fortressNativeKeyReview'):
     doc += '<p><a href="' + escape(D['fortressNativeKeyReview']['evidence'], quote=True) + '">堡垒v2：Enter原生返回与游戏快捷键分开</a>（精选/旧目录双尺寸三态，非真人体验验收）</p>'
 
+if D.get('fortressCampaignReview'):
+    doc += '<p><a href="' + escape(D['fortressCampaignReview']['evidence'], quote=True) + '">堡垒v3：可选两段短战役</a>（阶段独立保存，v2仍默认；策略辅助、双人短输入与触控仿真分列）</p>'
+
 if D.get('featuredTouchReview'):
     doc += '<p><a href="' + escape(D['featuredTouchReview']['evidence'], quote=True) + '">三款精选：原生触控仿真与堡垒多指释放修复</a>（模拟非真机，后续转向有限产品里程碑）</p>'
 
@@ -135,6 +138,9 @@ if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
 if D.get('fortressNativeKeyReview'):
     md += '[堡垒Enter原生返回修复](' + D['fortressNativeKeyReview']['evidence'] + ')；精选/旧目录两尺寸三态回归，不增加通关覆盖计数。\n\n'
+
+if D.get('fortressCampaignReview'):
+    md += '[堡垒可选两段短战役](' + D['fortressCampaignReview']['evidence'] + ')；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。\n\n'
 
 if D.get('featuredTouchReview'):
     md += '[三款精选原生触控模拟](' + D['featuredTouchReview']['evidence'] + ')；一项堡垒多指归属修复，真机/真人边界保留。\n\n'

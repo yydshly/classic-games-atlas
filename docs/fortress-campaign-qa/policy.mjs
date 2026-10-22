@@ -1,0 +1,15 @@
+// Copied-snapshot targeting and grid routing. Live page receives WASD+J only.
+import{createGame,start,update,snapshot}from'../../versions/v2/games/fortress/engine.mjs';
+const V=[[0,-1],[1,0],[0,1],[-1,0]],center=n=>n*24+12,cell=n=>Math.floor(n/24),dist=(a,b)=>Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
+function walk(g,x,y){return x>0&&y>0&&x<24&&y<24&&!['S','B','W'].includes(g.tiles[y]?.[x])&&!(x===12&&y===23);}
+function line(g,a,b){const dx=b.x-a.x,dy=b.y-a.y;if(Math.abs(dx)>8&&Math.abs(dy)>8)return-1;const dir=Math.abs(dx)<=8?(dy<0?0:2):(dx<0?3:1),v=V[dir],len=Math.max(Math.abs(dx),Math.abs(dy));for(let d=16;d<len-10;d+=6){if(['S','B'].includes(g.tiles[cell(a.y+v[1]*d)]?.[cell(a.x+v[0]*d)]))return-1;}return dir;}
+function turn(p,dir){if(dir%2!==p.dir%2){const n=dir%2===1?p.y:p.x,c=center(cell(n));if(Math.abs(n-c)>6.5)return p.dir%2===0?(n<c?2:0):(n<c?1:3);}return dir;}
+export function decide(g,{aggression=.35,home=19}={}){const p=g.players[0];if(p.dead)return{dir:null,fire:false};const enemies=g.enemies.filter(e=>!e.dead).sort((a,b)=>dist(a,g.base)-dist(b,g.base));
+for(const e of enemies){const d=line(g,p,e);if(d>=0&&dist(p,e)<490){const dir=turn(p,d);return{dir:p.dir===d?null:dir,fire:true,aim:e.id};}}
+const sx=cell(p.x),sy=cell(p.y),q=[[sx,sy]],visited=new Map([[sx+','+sy,{n:0,first:null}]]);for(let i=0;i<q.length;i++){const[x,y]=q[i],here=visited.get(x+','+y);for(let d=0;d<4;d++){const[nx,ny]=[x+V[d][0],y+V[d][1]],k=nx+','+ny;if(!walk(g,nx,ny)||visited.has(k)||g.enemies.some(e=>cell(e.x)===nx&&cell(e.y)===ny))continue;visited.set(k,{n:here.n+1,first:here.first??[nx,ny]});q.push([nx,ny]);}}
+let best={score:Infinity,target:null,point:null};for(const e of enemies){for(const[x,y]of q){const a={x:center(x),y:center(y)},r=dist(a,e),d=line(g,a,e);if(d<0||r<45||r>420)continue;const path=visited.get(x+','+y),score=path.n*24+r*aggression+dist(e,g.base)*.7+Math.max(0,center(home)-a.y)*.02;if(score<best.score)best={score,target:e.id,point:a,path};}}
+if(!best.point){const item=g.items.find(x=>x.type==='shield'&&p.shield<1)||g.items.find(x=>x.type==='rapid'&&p.rapid<1);const a=item||{x:204,y:center(home)},path=visited.get(cell(a.x)+','+cell(a.y));best={point:{x:center(cell(a.x)),y:center(cell(a.y))},path,target:'staging'};}
+let a=best.point;if(best.path?.first)a={x:center(best.path.first[0]),y:center(best.path.first[1])};const dx=a.x-p.x,dy=a.y-p.y;let d=Math.abs(dx)>Math.abs(dy)?dx>0?1:3:dy>0?2:0;
+if(Math.abs(dx)<3&&Math.abs(dy)<3)return{dir:null,fire:true,target:best.target};d=turn(p,d);return{dir:d,fire:true,target:best.target};}
+
+if(process.argv.includes('--stdio')){const{createInterface}=await import('node:readline');for await(const line of createInterface({input:process.stdin})){console.log(JSON.stringify(decide(JSON.parse(line))));}}
