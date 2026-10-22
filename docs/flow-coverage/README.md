@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[结果关闭路径有限同类排查](../result-return-review/)；无运行改动，另记弹庭窄屏焦点候选。
+
 [邮差查看赛场后返回结算](../post-result-qa/)；键盘入口与焦点，不重复结算/保存。
 
 [邮差下一合法闸门地图反馈前后实图](../post-feedback-qa/)；一项只读标记，不改驾驶与过闸规则。
@@ -39,7 +41,7 @@
 |11 青藤回廊 [v2 候选](../../versions/v2/games/vine/)|已验有限流程|已验有限流程：两图8/8与10/10后归门胜|已验有限流程：首图自然撞壁后同种子重试0步，身体/青芽/rng复位，暂停刷新和新方向通过|已验有限流程：两图开放，非16关全通 [1](../../docs/vine-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/vine-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |12 花笺连线 [v1 既有原型](../../games/petal/)|已验有限流程|已验有限流程：原生提示/正常点击顺序完成1–20；1–9作必要前置，10–20此前补证|已验有限流程：v1第2页正常4次无通路同图案配对耗错失败；重写资源/棋盘复位，原生首纪录与2页解锁跨刷新保留|已验有限流程：10–20全部自然清页；下落/左移模式、稳定刷新、20页终局/无21页/重读与原生纪录保留通过 [1](../../docs/petal-v1-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/petal-loss-qa/) / [3](../../docs/petal-later-qa/) / [4](../../docs/petal-pause-followup-qa/) / [5](../../docs/return-navigation-qa/)|
 |13 星砂勘探 [v2 候选](../../versions/v2/games/sand/)|已验有限流程|已验有限流程：浅/深两盘有提示解完安全格|已验有限流程：主动点已推知雷格失败，同盘重试/另开新盘|已验有限流程：两档独立进度，非全部种子证明 [1](../../docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
-|14 落星弹庭 [v2 候选](../../versions/v2/games/pinfall/)|已验有限流程|已验有限流程：两庭参考角度自然胜1555/1485|已验有限流程：首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留|已验有限流程：能力整球回退及最好保留，两庭开放 [1](../../docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/pinfall-loss-qa/) / [3](../../docs/return-navigation-qa/)|
+|14 落星弹庭 [v2 候选](../../versions/v2/games/pinfall/)|已验有限流程|已验有限流程：两庭参考角度自然胜1555/1485|已验有限流程：首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留|已验有限流程：能力整球回退及最好保留，两庭开放 [1](../../docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/pinfall-loss-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/result-return-review/)|
 |15 钢岚突进 [v2 候选](../../versions/v2/games/gale/)|已验有限流程|已验有限流程：两场清装置走出口200分|已验有限流程：首图原地承受15命中/3死亡自然败；重试3命5甲2脉冲、满敌/空弹体，暂停刷新再继续通过|已验有限流程：修后只复验生命周期，通关属修前同引擎 [1](../../docs/gale-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/gale-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |16 弯道邮差 [v2 候选](../../versions/v2/games/post/)|已验有限流程|已验有限流程：此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒|已验有限流程：自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁|已验有限流程：三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶 [1](../../docs/post-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/post-main-flow-qa/) / [3](../../docs/post-loss-qa/) / [4](../../docs/post-later-qa/) / [5](../../docs/post-independent-qa/) / [6](../../docs/return-navigation-qa/) / [7](../../docs/post-feedback-qa/) / [8](../../docs/post-result-qa/)|
 |17 灯塔小队 [v2 候选](../../versions/v2/games/beacon/)|已验有限流程|已验有限流程：21天归港7地点/3遭遇胜|已验有限流程：付代价撤退与透镜遗失败→确认重开已验|已验有限流程：航程总结及刷新/再次行动已验 [1](../../docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/beacon-v2-loss-qa/) / [3](../../docs/return-navigation-qa/)|
@@ -48,7 +50,7 @@
 |20 潮汐珠径 [v2 候选](../../versions/v2/games/tide/)|已验有限流程|已验有限流程：两图各有自然成功；此前第二图70.2333秒/1657分/61发/潮量42/余珠0，原生滑杆与暂停强辅助|已验有限流程：失败重试初盘及暂停飞珠刷新已验|已验有限流程：第二图封口一次/清余珠/单结算与刷新原生最好保留通过；首图已有证据，原鼠标路径与无辅助手感未验 [1](../../docs/tide-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/tide-first-win-qa/) / [3](../../docs/tide-later-qa/) / [4](../../docs/return-navigation-qa/)|
 |21 纸翼投递 [v2 阶段保留](../../versions/v2/games/paper/)|已验有限流程|已验有限流程：q2首关一发及第二关多次低效后重试成功|已验有限流程：保留既有失败与重试证据，不重启路线|已验有限流程：当前阶段保留，不追加细节验收 [1](../../docs/paper-quality-qa/PUBLIC_BROWSER_QA.md)|
 |22 云港调度 [v2 候选](../../versions/v2/games/harbor/)|已验有限流程|已验有限流程：三关逐回合胜，二关两方案|已验有限流程：首关23回合货物逾期败→重试|已验有限流程：三关后无第四；终局清会话为设计 [1](../../docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/harbor-storage-qa/) / [3](../../docs/return-navigation-qa/)|
-|23 四季小田 [v2 候选](../../versions/v2/games/farm/)|已验有限流程|已验有限流程：连续三章携带至11天30币结局|已验有限流程：第二章超期败→章首重试不丢前章|已验有限流程：终局刷新与查看农场；动画多用正常跳过 [1](../../docs/farm-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/farm-storage-qa/) / [3](../../docs/return-navigation-qa/)|
+|23 四季小田 [v2 候选](../../versions/v2/games/farm/)|已验有限流程|已验有限流程：连续三章携带至11天30币结局|已验有限流程：第二章超期败→章首重试不丢前章|已验有限流程：终局刷新与查看农场；动画多用正常跳过 [1](../../docs/farm-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/farm-storage-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/result-return-review/)|
 |24 遗迹灯火 [v2 候选](../../versions/v2/games/ruins/)|已验有限流程|已验有限流程：三房取钥/机关/破甲并实际归门|已验有限流程：首房自然0血败→房间重试/刷新|已验有限流程：第三房清怪后仍须归途E才结算 [1](../../docs/ruins-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/ruins-v2-qa/LAYOUT_PUBLIC.md) / [3](../../docs/return-navigation-qa/)|
 |25 节拍果园 [v2 候选](../../versions/v2/games/orchard/)|已验有限流程|已验有限流程：两场各60活动秒自然完成，无分数胜门槛|设计不适用：设计无失败；再来一场重置，最好分独立|已验有限流程：39分霜中恢复和自然结束已验，误核未验 [1](../../docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/orchard-frost-recovery-qa/) / [3](../../docs/return-navigation-qa/)|
 |26 山径快递 [v2 候选](../../versions/v2/games/courier/)|已验有限流程|已验有限流程：两路360/432米成功并正确转弯|已验有限流程：首路金色窗口正常按错right，96米自然败；重跑清来信/伤害/转向锁，暂停刷新再继续通过|已验有限流程：转向锁定跨刷新，两路开放 [1](../../docs/courier-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/courier-loss-qa/) / [3](../../docs/return-navigation-qa/)|

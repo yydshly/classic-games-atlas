@@ -1,0 +1,178 @@
+{
+  "testedAt": "2026-10-22T04:53:48.551828+00:00",
+  "url": "https://yydshly.github.io/classic-games-atlas/versions/v2/games/pinfall/",
+  "method": "Fresh isolated browser contexts; visible UI start/tutorial, slider click+Home (-68 degrees), normal fire button repeatedly until natural shot exhaustion. No record prerequisite or prior success repeated; no state/time/outcome/storage injection. Existing prior success/best retention evidence remains separate.",
+  "cases": [
+    {
+      "width": 1440,
+      "shots": [
+        {
+          "shot": 1,
+          "state": "playing",
+          "budget": 4,
+          "score": 125,
+          "catches": 0
+        },
+        {
+          "shot": 2,
+          "state": "playing",
+          "budget": 4,
+          "score": 325,
+          "catches": 1
+        },
+        {
+          "shot": 3,
+          "state": "playing",
+          "budget": 3,
+          "score": 325,
+          "catches": 1
+        },
+        {
+          "shot": 4,
+          "state": "playing",
+          "budget": 2,
+          "score": 325,
+          "catches": 1
+        },
+        {
+          "shot": 5,
+          "state": "playing",
+          "budget": 1,
+          "score": 325,
+          "catches": 1
+        },
+        {
+          "shot": 6,
+          "state": "lost",
+          "budget": 0,
+          "score": 325,
+          "catches": 1
+        }
+      ],
+      "states": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "passed": false,
+      "naturalLoss": {
+        "state": "lost",
+        "level": 1,
+        "phase": "aiming",
+        "aim": -68,
+        "shots": 0,
+        "initialShots": 5,
+        "initialTargets": 5,
+        "pegs": [
+          {
+            "id": 2,
+            "x": 286,
+            "y": 285,
+            "r": 17,
+            "kind": "target",
+            "hit": false
+          },
+          {
+            "id": 3,
+            "x": 328,
+            "y": 360,
+            "r": 17,
+            "kind": "target",
+            "hit": false
+          },
+          {
+            "id": 4,
+            "x": 370,
+            "y": 435,
+            "r": 17,
+            "kind": "target",
+            "hit": false
+          },
+          {
+            "id": 101,
+            "x": 190,
+            "y": 370,
+            "r": 12,
+            "kind": "normal",
+            "hit": false
+          },
+          {
+            "id": 102,
+            "x": 290,
+            "y": 515,
+            "r": 12,
+            "kind": "normal",
+            "hit": false
+          },
+          {
+            "id": 103,
+            "x": 485,
+            "y": 400,
+            "r": 12,
+            "kind": "normal",
+            "hit": false
+          }
+        ],
+        "stones": [
+          {
+            "id": 1,
+            "x": 145,
+            "y": 510,
+            "r": 23
+          }
+        ],
+        "bucketPhase": 0.3,
+        "tick": 4004,
+        "accumulator": 0,
+        "time": 26.66059999999996,
+        "ball": null,
+        "shot": null,
+        "angles": [
+          -68,
+          -68,
+          -68,
+          -68,
+          -68,
+          -68
+        ],
+        "powers": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "power": "refraction",
+        "uses": 2,
+        "armed": false,
+        "preShot": null,
+        "effects": [],
+        "reason": "shots",
+        "stats": {
+          "score": 325,
+          "shots": 6,
+          "targets": 2,
+          "normal": 1,
+          "pulses": 0,
+          "hits": 3,
+          "contacts": 23,
+          "catches": 1,
+          "maxChain": 2,
+          "nudges": 0,
+          "retrievals": 0,
+          "collisionCaps": 0,
+          "settlements": 1
+        },
+        "unlocked": 2,
+        "best": {},
+        "sound": false,
+        "storageAvailable": true,
+        "wasRestored": false,
+        "pressActive": false,
+        "discardedResume": false
+      },
+      "failure": "Error(\"Page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')\\n    at eval (eval at evaluate (:302:30), <anonymous>:1:316)\\n    at UtilityScript.evaluate (<anonymous>:309:18)\\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\")"
+    }
+  ]
+}

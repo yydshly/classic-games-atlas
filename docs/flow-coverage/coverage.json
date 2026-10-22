@@ -638,7 +638,8 @@
       "evidence": [
         "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/pinfall-loss-qa/",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/result-return-review/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "球尽失败恢复链已补；末发返球优先仍为另列边界，不自动扩围",
@@ -647,7 +648,12 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "resultReturnAudit": {
+        "status": "reviewed_no_same_action_loss",
+        "evidence": "docs/result-return-review/",
+        "newUi": true
+      }
     },
     {
       "number": "15",
@@ -999,7 +1005,8 @@
       "evidence": [
         "docs/farm-v2/PUBLIC_BROWSER_QA.md",
         "docs/farm-storage-qa/",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/result-return-review/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -1008,7 +1015,12 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "resultReturnAudit": {
+        "status": "reviewed_no_same_action_loss",
+        "evidence": "docs/result-return-review/",
+        "newUi": false
+      }
     },
     {
       "number": "24",
@@ -3285,5 +3297,12 @@
     "status": "fixed",
     "evidence": "../post-result-qa/",
     "scope": "查看赛场后可键盘返回结算；无重复保存/奖励；桌面下一场、390CSS终局重赛与非终态隐藏"
+  },
+  "resultReturnAudit": {
+    "baseline": "1186f7371f94a403e1dfb9b0bb6e2466379ad821",
+    "status": "no_same_failure_reproduced",
+    "evidence": "../result-return-review/",
+    "scope": "35入口70HTML/控制器静态，pinfall当前两个普通UI视口，farm既有终局证据；无运行修改",
+    "nextCandidate": "pinfall390查看后焦点移至屏外重试按钮，功能仍可用"
   }
 }
