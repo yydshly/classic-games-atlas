@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "evidence": "pure model and storage fixtures, not ordinary UI",
+  "checks": [
+    "Fresh isolated store, ready snapshot and round-trip",
+    "Three legal model closures, ordered transition and final save",
+    "Natural second-stage loss, lost refresh and current retry keep earlier result",
+    "Repeated completion leaves results unchanged",
+    "Write failure preserves prior bytes; successful retry clears failure",
+    "Corrupt bytes preserved and never overwritten",
+    "Invalid ordering, phase, resources and checkpoint rejected; explicit new journey fresh"
+  ]
+}

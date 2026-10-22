@@ -12,8 +12,8 @@
     "40依据134e921提交的独立v2及来源说明补充；PES为明确系列参考，代际未定，未把未完成恢复项目计作可玩v1。"
   ],
   "summary": {
-    "published_games": 37,
-    "published_levels": 407,
+    "published_games": 38,
+    "published_levels": 410,
     "previews": 6,
     "preview_numbers": [
       "35",
@@ -24,7 +24,7 @@
       "40"
     ],
     "preview_levels": 48,
-    "confirmed_reference_bindings": 39,
+    "confirmed_reference_bindings": 40,
     "unconfirmed_reference_bindings": [
       "35",
       "36",
@@ -5158,6 +5158,65 @@
       "current_screenshot": {
         "image": "./docs/moss-qa/ready-desktop.png",
         "label": "真实桌面浏览器首关准备画面，原创林地和灯灵，非原作截图。"
+      }
+    },
+    {
+      "number": "44",
+      "slug": "inlet",
+      "title": "汀光织界",
+      "english": "INLET WEAVER",
+      "status": "published",
+      "status_label": "三关首版已发布；未完成真人品质验收",
+      "play_url": "./preview/inlet/",
+      "original_title": "QIX / Xonix 式圈地",
+      "original_english": "QIX / Xonix",
+      "reference_id": "qix",
+      "reference_binding": "本轮明确指定的新增经典机制方向；未计入原72条图鉴",
+      "reference_version": "闭合路径圈地、内部追踪者和外岸危险方向；未锁定某一版本逐项还原。",
+      "version_note": "三张原创海图、同速潮影、暂停观察与独立目标百分比；原72条图鉴不变。",
+      "original_core": "从已占区域拉出风险线，闭合路径后填充区域，规避水域与岸线追踪危险。",
+      "implemented": [
+        "三张原创海湾：岸线初织、汀口与浮岛、双流织岛；第三图同时有两股潮影。",
+        "从所有潮影位置做分区连通检查，只填不含潮影的水域；开放线自交、潮影碰线/针和岸巡伤灯。",
+        "方向键/WASD及触控方向按钮，暂停观察、当前湾确认重试、独立刷新暂停、关间回执和最终航记、确认新旅程。"
+      ],
+      "gaps": [
+        "只有三张小海图；熟练辅助主路线每关约3秒即可达标，没有完整街机分数系统、技能层次或大型关卡集。",
+        "敌人按原创网格规则游动，百分比、命数、暂停及浮岛均为本作设计，不宣称等同某一经典版本。"
+      ],
+      "relation": "原创闭合路径圈地小品，参考本轮指定的Qix / Xonix式机制，不复制原作角色、地图或素材，不是官方复刻。该方向未在原72条图鉴中，本轮只增加原创作品和参考说明，原图鉴72条不变。",
+      "levels": 3,
+      "evidence": [
+        {
+          "path": "preview/inlet/README.md",
+          "url": "./preview/inlet/README.md",
+          "claim": "规则、原创范围、操作与独立保存说明"
+        },
+        {
+          "path": "docs/inlet-qa/",
+          "url": "./docs/inlet-qa/",
+          "claim": "模型、普通UI三湾、失败重试/刷新及触控模拟分别记录"
+        }
+      ],
+      "validation_boundary": "只读几何策略建议配合原生键盘输入连续完成三湾；自然回踩失利、当前关重试和真实开放线/关间/完成态刷新已验。模型替代路线、浏览器存储故障夹具、390CSS触控模拟分列。未验真人无辅助乐趣、长期难度、真机性能和触控；无音频。",
+      "original_sources": [
+        {
+          "label": "Nintendo · Arcade Archives QIX",
+          "url": "https://www.nintendo.com/us/store/products/arcade-archives-qix-switch/",
+          "kind": "official",
+          "relation": "发行平台官方产品介绍，只作圈地与避敌机制来源",
+          "checkedAt": "2026-10-22",
+          "status": "页面可读",
+          "note": "核读Marker画线圈区和QIX/Sparx危险方向；不下载图片，不新增发行年份销量评分主张。"
+        }
+      ],
+      "version": "v1",
+      "has_frozen_version": false,
+      "current_status_label": "v1 三湾圈地 · 流程已验证，真人品质待验",
+      "release_intro": "独立原创圈地机制新作，不存在此前冻结版。原72条图鉴不扩充。",
+      "current_screenshot": {
+        "image": "./docs/inlet-qa/ready-desktop.png",
+        "label": "真实桌面浏览器准备画面；原创海图和角色，非原作截图。"
       }
     }
   ],
