@@ -873,7 +873,8 @@
         "docs/return-navigation-qa/",
         "docs/brook-feedback-qa/",
         "docs/featured-play-qa/",
-        "docs/featured-touch-qa/"
+        "docs/featured-touch-qa/",
+        "docs/brook-campaign-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前第二场及两场终局范围完成；不自动扩充机制组合",
@@ -898,6 +899,11 @@
         "prerequisiteStages": [],
         "status": "verified",
         "terminal": "second-stage final feedback, no third; retry/refresh and native best kept"
+      },
+      "optionalCampaign": {
+        "version": "v3",
+        "playUrl": "versions/v3/games/brook/",
+        "summary": "三场连续目标与混合路线终场；隔离阶段/活动重放记录；原v2仍保留"
       }
     },
     {
@@ -3433,5 +3439,11 @@
     "status": "optional_v3_local_verified",
     "evidence": "../fortress-campaign-qa/",
     "scope": "可选两图短战役：正常UI单人强策略两胜/一次自然失利与刷新重试；双人短输入/触控仿真/故障fixture分列；v2仍默认"
+  },
+  "brookCampaignReview": {
+    "baseline": "1108ca772542246973909130085b9cccf97468c0",
+    "status": "optional_v3_local_verified",
+    "evidence": "../brook-campaign-qa/",
+    "scope": "原两场加原创混合终场；三场普通UI/自然失利当前场重试/刷新总结；两种终场模型、原生触控仿真分列，非真人体验验收"
   }
 }

@@ -22,6 +22,8 @@
 
 [堡垒可选两段短战役](../fortress-campaign-qa/)；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。
 
+[溪谷三溪归途与混合终场](../brook-campaign-qa/)；三场主链与独立存档，真人和真机仍待验。
+
 [三款精选原生触控模拟](../featured-touch-qa/)；一项堡垒多指归属修复，真机/真人边界保留。
 
 [三款精选试玩入口与溪谷开场预告](../featured-play-qa/)；候选展示与实际未验边界分列，不增加通关覆盖计数。
@@ -74,7 +76,7 @@
 |16 弯道邮差 [v2 候选](../../versions/v2/games/post/)|已验有限流程|已验有限流程：此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒|已验有限流程：自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁|已验有限流程：三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶 [1](../../docs/post-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/post-main-flow-qa/) / [3](../../docs/post-loss-qa/) / [4](../../docs/post-later-qa/) / [5](../../docs/post-independent-qa/) / [6](../../docs/return-navigation-qa/) / [7](../../docs/post-feedback-qa/) / [8](../../docs/post-result-qa/) / [9](../../docs/featured-play-qa/) / [10](../../docs/featured-touch-qa/)|
 |17 灯塔小队 [v2 候选](../../versions/v2/games/beacon/)|已验有限流程|已验有限流程：21天归港7地点/3遭遇胜|已验有限流程：付代价撤退与透镜遗失败→确认重开已验|已验有限流程：航程总结及刷新/再次行动已验 [1](../../docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/beacon-v2-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |18 风铃绳旅 [v2 候选](../../versions/v2/games/chime/)|已验有限流程|已验有限流程：既有首题成功；此前正常第2/3题10.1375/8.1000秒，各3星|已验有限流程：自然失败及重试初态已见|已验有限流程：三题均已有自然成功；此前第2→3清场/刷新、末题无第4/重走与2份原生纪录保留；时窗脚本辅助 [1](../../docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/chime-later-qa/) / [3](../../docs/return-navigation-qa/)|
-|19 溪谷守芽 [v2 候选](../../versions/v2/games/brook/)|已验有限流程|已验有限流程：已有首场1070分；此前第二场1×70.983秒1043分10/10，3次根触发|已验有限流程：此前两场自然败；失败重试空场230露|已验有限流程：两场各有自然胜利；第二场最终反馈/无第三场/重玩刷新与新纪录保留通过，非全部策略验收 [1](../../docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/brook-first-win-qa/) / [3](../../docs/brook-later-qa/) / [4](../../docs/return-navigation-qa/) / [5](../../docs/brook-feedback-qa/) / [6](../../docs/featured-play-qa/) / [7](../../docs/featured-touch-qa/)|
+|19 溪谷守芽 [v2 候选](../../versions/v2/games/brook/)|已验有限流程|已验有限流程：已有首场1070分；此前第二场1×70.983秒1043分10/10，3次根触发|已验有限流程：此前两场自然败；失败重试空场230露|已验有限流程：两场各有自然胜利；第二场最终反馈/无第三场/重玩刷新与新纪录保留通过，非全部策略验收 [1](../../docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/brook-first-win-qa/) / [3](../../docs/brook-later-qa/) / [4](../../docs/return-navigation-qa/) / [5](../../docs/brook-feedback-qa/) / [6](../../docs/featured-play-qa/) / [7](../../docs/featured-touch-qa/) / [8](../../docs/brook-campaign-qa/)|
 |20 潮汐珠径 [v2 候选](../../versions/v2/games/tide/)|已验有限流程|已验有限流程：两图各有自然成功；此前第二图70.2333秒/1657分/61发/潮量42/余珠0，原生滑杆与暂停强辅助|已验有限流程：失败重试初盘及暂停飞珠刷新已验|已验有限流程：第二图封口一次/清余珠/单结算与刷新原生最好保留通过；首图已有证据，原鼠标路径与无辅助手感未验 [1](../../docs/tide-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/tide-first-win-qa/) / [3](../../docs/tide-later-qa/) / [4](../../docs/return-navigation-qa/)|
 |21 纸翼投递 [v2 阶段保留](../../versions/v2/games/paper/)|已验有限流程|已验有限流程：q2首关一发及第二关多次低效后重试成功|已验有限流程：保留既有失败与重试证据，不重启路线|已验有限流程：当前阶段保留，不追加细节验收 [1](../../docs/paper-quality-qa/PUBLIC_BROWSER_QA.md)|
 |22 云港调度 [v2 候选](../../versions/v2/games/harbor/)|已验有限流程|已验有限流程：三关逐回合胜，二关两方案|已验有限流程：首关23回合货物逾期败→重试|已验有限流程：三关后无第四；终局清会话为设计 [1](../../docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/harbor-storage-qa/) / [3](../../docs/return-navigation-qa/)|

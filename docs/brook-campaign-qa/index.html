@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>三溪归途 · 内容升级与实际证据</title><link rel="icon" href="../../assets/favicon.svg"><style>
+body{max-width:1100px;margin:30px auto;padding:0 18px;font:16px/1.8 system-ui,sans-serif;background:#f1ecdf;color:#243e3b}h1{font-size:clamp(28px,4vw,44px)}a{color:#286751;text-underline-offset:4px}figure{margin:26px 0}img{width:100%;height:auto;border:1px solid #bac9b4}.phones{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px}.note{background:#faf9ed;border-left:4px solid #a27b39;padding:18px}code{overflow-wrap:anywhere}figcaption{font-size:13px;color:#5c7163}:focus-visible{outline:3px solid #ad7c36;outline-offset:4px}@media(max-width:600px){.phones{grid-template-columns:1fr}.phones figure{max-width:390px;margin:auto}}
+</style></head><body><p><a href="../../#selected-play">精选试玩</a> · <a href="../../versions/v3/games/brook/">直接进入三场战役 →</a> · <a href="../../versions/v2/games/brook/">原v2自由选场</a></p>
+<h1>三溪相接，守护有了归途。</h1>
+<p>溪谷v3将原两场与一场新增原创终场串成完整目标。第三场“三溪合流”轮换三行的跃行、重甲与快敌，溪石限制不同格位；沿用原敌人和装置数值，新增的是路线组合与时机，不是只换背景或增加旧敌血量。全部五种装置、图集与绘制风格复用。</p>
+<p>每场重新整备，胜利后由玩家进入下一场；失利只重试当前场，前场结果保留。活动刷新按合法操作记录恢复并先暂停，关间/失利/总结可重读。新键classic-atlas.brook.campaign.v3隔离旧档；原v1/v2和40目录保留，原两场引擎正文及重放结果保持一致。<a href="../../versions/v3/games/brook/NOTES.md">三场机制与保存说明</a>。</p>
+<p class="note">证据分开：9组模型/存储/第三场显示检查；正常UI一条三场成功链，中间第三场刻意无输入自然失利再重试；390CSS原生touch仿真及独立配额故障。模型与脚本辅助不代表真人乐趣、真机触控、声音听感或整体精品验收。最终线上SHA和短操作核验由交付回报确认，这些截图为本地真实页面。</p>
+<p>终场两种合法模型布局：伏根配后排火线，88.67活动秒、3次伏根/0减速；雾环配复合防线，86.72活动秒、0伏根/32次减速。空防29.7秒失败，忽略收露50.7秒失败。模型只说明这些方案及控制成立，不证明全部解法或普通玩家难度；普通UI实际结果见<a href="verification.json">精简结果记录</a>。</p>
+<figure><img src="04-final-goal.png" alt="普通UI连续完成前两场后，第三场三溪合流准备目标与混合路线预告"><figcaption>前两场实际完成后进入新终场；没有注入解锁。</figcaption></figure>
+<figure><img src="05-third-loss.png" alt="第三场自然失利，前两场结果保留，提供当前场重试"><figcaption>刻意不布防造成自然失利，只重试第三场。</figcaption></figure>
+<figure><img src="06-complete-1440.png" alt="三场实际胜利后的总结与三张结果卡"><figcaption>三场真实结果，不重复结算，没有第四场。</figcaption></figure>
+<div class="phones"><figure><img src="07-complete-390.png" alt="390CSS总结纵向布局"><figcaption>390CSS桌面浏览器模拟，非真机。</figcaption></figure><figure><img src="touch-paused-390.png" alt="原生触控仿真部署伏根后暂停，控件与棋盘可滚动到达"><figcaption>真实浏览器touch事件，非物理设备。</figcaption></figure></div>
+<p><a href="model-tests.json">9组模型与边界</a> · <a href="plans.json">合法布局参考</a> · <a href="test-model.mjs">模型复验</a> · <a href="verify-flow.py">普通UI复验脚本</a>。复验需现有Node与Python/Playwright环境，不自动安装依赖；仓库根目录运行node docs/brook-campaign-qa/test-model.mjs，浏览器脚本默认预览58252或加--online。</p>
+<p>保留失败证据：初期缺装置顺序常量已修；UI脚本选项匹配可见标签而行列错位，改明确索引后复用真实失利档重试。第三场出敌时，行号提示错误读取仅两场的数据并停帧，已局部修正绑定、补针对性检查；前两场成绩保留。另一次执行通道中断后复用同一档续验。旧v2离页会保存自己的检查点，比较基线取离页之后；没有据工具或显示问题调整规则难度，也未重跑全库或宣称精品验收。</p>
+</body></html>

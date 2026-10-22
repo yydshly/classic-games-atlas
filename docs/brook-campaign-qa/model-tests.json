@@ -1,0 +1,236 @@
+{
+  "passed": true,
+  "groups": 9,
+  "checks": [
+    "Original two levels/data and engine body unchanged; existing command replay matches old engine",
+    "New mixed routes have the original enemy and unit values; two distinct legal approaches win",
+    "Finite difficulty controls: empty defense and not collecting resources naturally fail",
+    "Third-stage display reads extended data before/after natural spawn and in terminal state",
+    "Two original wins progress to third; a real third loss preserves both results and retries only third",
+    "Third result ends campaign exactly once, no fourth or repeated settlement",
+    "New key only; existing v1/v2 remain exact, terminal record reloads",
+    "Third active legal replay restores paused with exact wave/resource/cooldown/world",
+    "Corrupt/unknown/malformed checkpoint preserved; write failure preserves valid bytes and later success clears"
+  ],
+  "method": "OFFLINE legal command simulation / explicit storage faults; not UI or human fun acceptance.",
+  "outcomes": [
+    {
+      "name": "first",
+      "state": "won",
+      "time": 66.91666666666667,
+      "score": 980,
+      "stats": {
+        "placed": 11,
+        "spent": 545,
+        "collected": 650,
+        "expired": 0,
+        "produced": 650,
+        "kills": 9,
+        "losses": 2,
+        "withdrawals": 0,
+        "shots": 90,
+        "wallHits": 28,
+        "slowHits": 0,
+        "settlements": 1,
+        "jumps": 3,
+        "triggers": 0
+      }
+    },
+    {
+      "name": "second",
+      "state": "won",
+      "time": 70.98333333333333,
+      "score": 1043,
+      "stats": {
+        "placed": 12,
+        "spent": 585,
+        "collected": 650,
+        "expired": 0,
+        "produced": 650,
+        "kills": 10,
+        "losses": 1,
+        "withdrawals": 0,
+        "shots": 72,
+        "wallHits": 14,
+        "slowHits": 0,
+        "settlements": 1,
+        "jumps": 3,
+        "triggers": 3
+      }
+    },
+    {
+      "name": "roots",
+      "state": "won",
+      "time": 88.66666666666667,
+      "score": 1094,
+      "stats": {
+        "placed": 16,
+        "spent": 755,
+        "collected": 1025,
+        "expired": 0,
+        "produced": 1025,
+        "kills": 12,
+        "losses": 0,
+        "withdrawals": 0,
+        "shots": 134,
+        "wallHits": 0,
+        "slowHits": 0,
+        "settlements": 1,
+        "jumps": 2,
+        "triggers": 3
+      }
+    },
+    {
+      "name": "slow",
+      "state": "won",
+      "time": 86.71666666666667,
+      "score": 1100,
+      "stats": {
+        "placed": 17,
+        "spent": 915,
+        "collected": 975,
+        "expired": 0,
+        "produced": 975,
+        "kills": 12,
+        "losses": 0,
+        "withdrawals": 0,
+        "shots": 175,
+        "wallHits": 10,
+        "slowHits": 32,
+        "settlements": 1,
+        "jumps": 4,
+        "triggers": 0
+      }
+    },
+    {
+      "name": "idle",
+      "state": "lost",
+      "time": 29.7,
+      "score": 911,
+      "stats": {
+        "placed": 0,
+        "spent": 0,
+        "collected": 125,
+        "expired": 0,
+        "produced": 125,
+        "kills": 0,
+        "losses": 0,
+        "withdrawals": 0,
+        "shots": 0,
+        "wallHits": 0,
+        "slowHits": 0,
+        "settlements": 1,
+        "jumps": 0,
+        "triggers": 0
+      }
+    },
+    {
+      "name": "noCollect",
+      "state": "lost",
+      "time": 50.7,
+      "score": 968,
+      "stats": {
+        "placed": 5,
+        "spent": 250,
+        "collected": 0,
+        "expired": 250,
+        "produced": 350,
+        "kills": 4,
+        "losses": 0,
+        "withdrawals": 0,
+        "shots": 29,
+        "wallHits": 0,
+        "slowHits": 0,
+        "settlements": 1,
+        "jumps": 0,
+        "triggers": 2
+      }
+    }
+  ],
+  "final": {
+    "version": 3,
+    "stage": 2,
+    "phase": "complete",
+    "completed": [
+      {
+        "stage": 0,
+        "kind": "won",
+        "time": 66.91666666666667,
+        "score": 980,
+        "reason": "所有预告波次已结束，溪谷守住了",
+        "stats": {
+          "placed": 11,
+          "spent": 545,
+          "collected": 650,
+          "expired": 0,
+          "produced": 650,
+          "kills": 9,
+          "losses": 2,
+          "withdrawals": 0,
+          "shots": 90,
+          "wallHits": 28,
+          "slowHits": 0,
+          "settlements": 1,
+          "jumps": 3,
+          "triggers": 0
+        }
+      },
+      {
+        "stage": 1,
+        "kind": "won",
+        "time": 70.98333333333333,
+        "score": 1043,
+        "reason": "所有预告波次已结束，溪谷守住了",
+        "stats": {
+          "placed": 12,
+          "spent": 585,
+          "collected": 650,
+          "expired": 0,
+          "produced": 650,
+          "kills": 10,
+          "losses": 1,
+          "withdrawals": 0,
+          "shots": 72,
+          "wallHits": 14,
+          "slowHits": 0,
+          "settlements": 1,
+          "jumps": 3,
+          "triggers": 3
+        }
+      },
+      {
+        "stage": 2,
+        "kind": "won",
+        "time": 88.66666666666667,
+        "score": 1094,
+        "reason": "所有预告波次已结束，溪谷守住了",
+        "stats": {
+          "placed": 16,
+          "spent": 755,
+          "collected": 1025,
+          "expired": 0,
+          "produced": 1025,
+          "kills": 12,
+          "losses": 0,
+          "withdrawals": 0,
+          "shots": 134,
+          "wallHits": 0,
+          "slowHits": 0,
+          "settlements": 1,
+          "jumps": 2,
+          "triggers": 3
+        }
+      }
+    ],
+    "failures": [
+      0,
+      0,
+      1
+    ],
+    "lastLoss": null,
+    "resume": null,
+    "tutorialSeen": false,
+    "sound": true,
+    "speed": 1
+  }
+}
