@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('featherSummaryReview'):
+    doc += '<p><a href="' + escape(D['featherSummaryReview']['evidence'], quote=True) + '">星羽v3：回营后只读重读通关总结</a>（实际通关确认，后续队伍/旅行不改历史）</p>'
+
 if D.get('featherTeamReview'):
     doc += '<p><a href="' + escape(D['featherTeamReview']['evidence'], quote=True) + '">星羽v3：营地选队前比较技能</a>（固定基础作用，原编队/规则不变）</p>'
 
@@ -109,6 +112,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('featherSummaryReview'):
+    md += '[星羽回营后只读重读通关总结](' + D['featherSummaryReview']['evidence'] + ')；真实完成会话、原生profile复用，历史事实不随新旅程改变。\n\n'
+
 if D.get('featherTeamReview'):
     md += '[星羽营地选队前比较技能](' + D['featherTeamReview']['evidence'] + ')；基础作用与战斗预览分开，保留原生键盘与编队顺序。\n\n'
 

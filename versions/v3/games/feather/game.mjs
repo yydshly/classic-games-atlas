@@ -3,6 +3,7 @@ import {render,hitNode} from './renderer.mjs';
 import {skillFeedback} from './skill-feedback.mjs';
 import {journeyObjective} from './objective-feedback.mjs';
 import {campSkillInfo} from './camp-feedback.mjs';
+import {completedSummary} from './summary-review.mjs';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
 let state,paused=false,showPaths=true,storage=true,saveBlocked=false,lastInput=-1000,previousFocus=null,legacy=null,assetsReady=false;
@@ -42,7 +43,7 @@ function campPanel(){
  b.roster.map(q=>card(q,true)).join('')+'<div class="leader-row">领队 '+b.team.map(id=>button('lead',id,SPECIES[id].name,'',b.active===id?'chosen':'')).join('')+'</div>'+
  button('depart',null,p.completed?'自由出行':'整备并出行','', 'primary wide')+
  '<div class="trial-card"><strong>'+(p.completed?'浅滩冒险已完成':'终挑战 · 浅滩回响')+'</strong><p>'+(reason||'准备就绪。可任选两位伙伴；免费回满体力与能量，带2露莓。')+'</p>'+
- (!p.completed?button('trialStart',null,'迎接浅滩回响','24拍 · 属性与来招公开预告','primary'):'<p>旅途总结已记下；还可以结识另一位伙伴、自由探索。</p>')+'</div>'+
+ (!p.completed?button('trialStart',null,'迎接浅滩回响','24拍 · 属性与来招公开预告','primary'):'<p>旅途总结已记下；还可以结识另一位伙伴、自由探索。</p><button id="review-summary" class="quiet" type="button">重读旅途总结</button>')+'</div>'+
  '<p class="tiny">出行免费回满体力、能量和背包。2羽结、2露莓、24日光；成长仍只发生一次。</p>';
 }
 function explorePanel(){
@@ -76,9 +77,12 @@ function trialPanel(){
  '<div class="trial-team">'+b.team.map(id=>{const q=partner(b,id);return SPECIES[id].name+(id===b.active?'（前方）':'')+'：'+q.hp+'/'+maxHP(q)+'体力，'+q.energy+'/3能量';}).join('<br>')+'</div><p class="tiny">技能仍是原来的五种；没有指定伙伴钥匙。成长增加上限与威力。回营保留已结识伙伴和成长。</p>'+
  button('trialRetreat',null,'回营再准备','','quiet');
 }
+function endingDetails(e){
+ const names=e.team.map(id=>SPECIES[id].name).join('、'),newcomers=e.companions.filter(id=>['bud','fin'].includes(id)).map(id=>SPECIES[id].name).join('、');
+ return '<p class="ending-story">潮声重新变得轻柔，回响散成细小星光。'+names+'并肩回到归羽营地。曾经陌生的'+newcomers+'，如今也在这条归途上。</p><ul class="summary-list"><li>完成出行：'+e.outings+'次</li><li>营地伙伴：'+e.companions.length+'/5</li><li>已成长：'+e.grown.map(id=>SPECIES[id].name).join('、')+'</li><li>浅滩回响：第'+e.attempt+'次挑战，'+e.turns+'拍完成</li><li>使用技能 '+(e.actions.trialSkill||0)+'次 · 守息 '+(e.actions.trialGuard||0)+'次 · 主动换位 '+(e.actions.trialSwitch||0)+'次</li></ul>';
+}
 function endingPanel(){
- const e=state.ending,b=state.base,names=e.team.map(id=>SPECIES[id].name).join('、'),newcomers=e.companions.filter(id=>['bud','fin'].includes(id)).map(id=>SPECIES[id].name).join('、');
- return '<p class="eyebrow">浅滩冒险 · 完成</p><h2 tabindex="-1" id="ending-title">新的同行，也是归途</h2><p class="ending-story">潮声重新变得轻柔，回响散成细小星光。'+names+'并肩回到归羽营地。曾经陌生的'+newcomers+'，如今也在这条归途上。</p><ul class="summary-list"><li>完成出行：'+e.outings+'次</li><li>营地伙伴：'+e.companions.length+'/5</li><li>已成长：'+e.grown.map(id=>SPECIES[id].name).join('、')+'</li><li>浅滩回响：第'+e.attempt+'次挑战，'+e.turns+'拍完成</li><li>使用技能 '+(e.actions.trialSkill||0)+'次 · 守息 '+(e.actions.trialGuard||0)+'次 · 主动换位 '+(e.actions.trialSwitch||0)+'次</li></ul><p class="intro">这段短冒险到此结束。伙伴、成长与这份总结会保存；之后仍可自由出行，不会开启第二地区。</p>'+button('continue',null,'带着故事，回营自由出行','','primary wide');
+ return '<p class="eyebrow">浅滩冒险 · 完成</p><h2 tabindex="-1" id="ending-title">新的同行，也是归途</h2>'+endingDetails(state.ending)+'<p class="intro">这段短冒险到此结束。伙伴、成长与这份总结会保存；之后仍可自由出行，不会开启第二地区。</p>'+button('continue',null,'带着故事，回营自由出行','','primary wide');
 }
 function draw(){
  const b=state.base,mode=phase(state),p=progress(state);
@@ -116,6 +120,12 @@ $('#new-record').onclick=()=>openDialog('开始一份新的v3旅途？','<p>确�
 $('#confirm-reset').onclick=()=>{saveBlocked=false;state=createGame();resume();persist();draw();};
 $('#import-v2').onclick=()=>{if(!legacy||saveBlocked||state.commands.length)return;state=createGame(undefined,legacy);persist();draw();openDialog('已承接v2旅途','<p>队伍、背包、相遇和原羽结结果均从原命令重放恢复。之后另存为v3，原v2记录没有被覆盖。</p>');};
 document.addEventListener('click',e=>{const el=e.target.closest('button[data-action]');if(el&&!el.disabled)command(el.dataset.action,el.dataset.arg,Number(el.dataset.revision));});
+document.addEventListener('click',e=>{
+ if(!e.target.closest('#review-summary')||paused||phase(state)!=='camp')return;
+ const summary=completedSummary(state);
+ openDialog(summary?'新的同行，也是归途':'总结暂时无法读取',summary?endingDetails(summary)+'<p>这是完成当时的记录。重读不消耗行动，也不会再次结算。</p>':'<p>原记录保持不变，本次没有找到可重读的完成总结。</p>');
+ $('#resume').textContent='回到营地';
+});
 canvas.addEventListener('click',e=>{if(phase(state)!=='explore'||paused)return;const dir=hitNode(e.clientX,e.clientY,canvas.getBoundingClientRect(),state.base);if(dir)command('move',dir);});
 $('#path-toggle').onclick=()=>{showPaths=!showPaths;$('#path-toggle').textContent='步道提示：'+(showPaths?'开':'关');$('#path-toggle').setAttribute('aria-pressed',String(showPaths));render(ctx,state,assets,{showPaths,viewportWidth:canvas.getBoundingClientRect().width});};
 document.addEventListener('keydown',e=>{

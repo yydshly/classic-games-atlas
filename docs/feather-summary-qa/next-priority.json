@@ -1,0 +1,13 @@
+{
+  "title": "终挑战行动反馈的回看性",
+  "evidenceLevel": "已观察到记录范围；改进价值待确认，不是已确认玩法bug",
+  "observed": "本轮正常14拍终挑战实际使用3次技能、1次守息、1次主动换位；结束后旅途记录仍为野外行动，没有浅滩回响/回涌的逐拍结果。源码notice只更新最新提示，不追加到base.journal。现有新总结可重读总体统计，但不提供逐拍回看。",
+  "evidence": [
+    "before-verification.json:journalVisibleText",
+    "earned-ending.json",
+    "versions/v3/games/feather/model.mjs:notice/actTrial"
+  ],
+  "value": "玩家尝试不同技能、守息与换位后，能够回看刚才的结果以理解策略；先判断现有即时反馈是否足够。",
+  "acceptance": "先普通UI做一小段技能/守息/换位并查看现有记录，确认是否确有学习价值；如值得再只设计一段有界的最近行动回顾，不改规则/数值/存档，不重跑全部结局或扩地区。",
+  "implementedThisRound": false
+}

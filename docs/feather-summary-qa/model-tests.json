@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "groups": 8,
+  "checks": [
+    "Unfinished journey has no invented summary or state changes",
+    "Real normal-UI completed record after free travel replays the exact earned ending",
+    "Changed team and later travel retain original actors, outing count and growth snapshot",
+    "Repeated reading and mutation of a returned copy never changes current state/checkpoint",
+    "A later legitimate new companion does not rewrite the completion roster",
+    "Existing imported-v2 origin and ending/free-travel replay: a+bud (OFFLINE MODEL)",
+    "Existing imported-v2 origin and ending/free-travel replay: b+fin (OFFLINE MODEL)",
+    "Invalid/incomplete records return null without modifying supplied data"
+  ],
+  "method": "Read-only reconstruction tests over actual UI-earned command evidence; imported origins and later-companion branches are separately labelled offline model commands, never installed into a browser.",
+  "modelChanged": false
+}
