@@ -4,8 +4,10 @@ import {skillFeedback} from './skill-feedback.mjs';
 import {journeyObjective} from './objective-feedback.mjs';
 import {campSkillInfo} from './camp-feedback.mjs';
 import {completedSummary} from './summary-review.mjs';
+import {createTrialFeedbackReader,trialFeedbackText,trialNotice} from './trial-feedback.mjs';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
+const readTrialFeedback=createTrialFeedbackReader();let displayedTrialAttempt=0;
 let state,paused=false,showPaths=true,storage=true,saveBlocked=false,lastInput=-1000,previousFocus=null,legacy=null,assetsReady=false;
 try {
  const raw=localStorage.getItem(SAVE_KEY);
@@ -71,7 +73,7 @@ function trialPanel(){
  return '<h2 tabindex="-1">终挑战 · 浅滩回响</h2><p class="intro">24拍内消去'+TRIAL.hp+'余势。不是捕捉新物种；这是伙伴共同平息的自然回响。</p><div class="trial-readout"><span>余势 <strong>'+t.hp+'/'+TRIAL.hp+'</strong></span><span>合奏安心 <strong>'+t.calm+'/60</strong></span><span>这一拍 <strong>'+ELEMENTS[trialElement(state)].name+' / '+trialIntent(state)+'</strong></span><span>预计来招 <strong>'+trialIncoming(state)+'</strong></span></div><div class="intent">下一拍：'+ELEMENTS[nextElement].name+' / '+next+'<br>回涌较强，蓄势不攻击。安心≥30时来招×0.65；属性相克和弱化仍有效。</div><div class="action-grid">'+
  button('trialAttack',null,'1 · 轻击 '+trialHit(state),'伤害随本拍属性变化')+
  skillButton('trialSkill','2 · '+SPECIES[p.id].skill)+
- button('trialGuard',null,'3 · 守息','能量+1 / 本次16护盾')+
+ button('trialGuard',null,'3 · 守息',(p.energy===3?'能量已满':'能量+1')+' / 本次16护盾')+
  button('trialHeal',null,'4 · 吃颗露莓','恢复26 / 剩余'+t.berries+'颗')+
  button('trialSwitch',other,'5 · 换 '+SPECIES[other].name,'换位占一拍；新领队承受本次来招','wide')+'</div>'+
  '<div class="trial-team">'+b.team.map(id=>{const q=partner(b,id);return SPECIES[id].name+(id===b.active?'（前方）':'')+'：'+q.hp+'/'+maxHP(q)+'体力，'+q.energy+'/3能量';}).join('<br>')+'</div><p class="tiny">技能仍是原来的五种；没有指定伙伴钥匙。成长增加上限与威力。回营保留已结识伙伴和成长。</p>'+
@@ -92,7 +94,16 @@ function draw(){
  $('#knots').textContent=state.trial?'余势 '+state.trial.hp:'羽结 '+b.bag.knots+'/2';
  $('#berries').textContent='露莓 '+(state.trial?state.trial.berries:b.bag.berries);
  $('#collection').textContent='伙伴 '+b.roster.length+'/5';
- $('#notice').textContent=b.notice;$('#field-controls').hidden=mode!=='explore';
+ const recent=readTrialFeedback(state);
+ $('#notice').textContent=trialNotice(state,recent);$('#field-controls').hidden=mode!=='explore';
+ if(displayedTrialAttempt!==recent.attempt){$('#trial-recent').open=false;displayedTrialAttempt=recent.attempt;}
+ $('#trial-recent').hidden=!recent.rows.length;
+ $('#trial-recent-title').textContent=(state.trial?'本次':'上次')+'回响 '+recent.attempt+' · 最近'+recent.rows.length+'拍';
+ $('#trial-recent-list').replaceChildren(...[...recent.rows].reverse().map(row=>{
+  const text=trialFeedbackText(row),li=document.createElement('li'),title=document.createElement('strong'),changes=document.createElement('p');
+  title.textContent='第'+row.beat+'拍 · '+text.label+' · '+ELEMENTS[row.element].name+'/'+row.intent;changes.textContent=text.changes;li.append(title,changes);
+  if(text.response){const response=document.createElement('p');response.textContent=text.response;li.append(response);}return li;
+ }));
  $('#panel').innerHTML=mode==='camp'?campPanel():mode==='explore'?explorePanel():mode==='encounter'?encounterPanel():mode==='trial'?trialPanel():endingPanel();
  $('#progress-list').innerHTML=[['discovered','01 · 结识新伙伴'],['adjusted','02 · 调整出行队伍'],['grown','03 · 成长与准备'],['completed','04 · 完成浅滩冒险']].map(([key,label])=>'<li data-done="'+p[key]+'">'+(p[key]?'✓ ':'')+label+'</li>').join('');
  $('#progress-hint').textContent=journeyObjective(state);

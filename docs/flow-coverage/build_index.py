@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('featherRecentFeedbackReview'):
+    doc += '<p><a href="' + escape(D['featherRecentFeedbackReview']['evidence'], quote=True) + '">星羽v3：只读最近三拍与实际守息反馈</a>（最多三条，规则和存档不变）</p>'
+
 if D.get('featherSummaryReview'):
     doc += '<p><a href="' + escape(D['featherSummaryReview']['evidence'], quote=True) + '">星羽v3：回营后只读重读通关总结</a>（实际通关确认，后续队伍/旅行不改历史）</p>'
 
@@ -112,6 +115,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('featherRecentFeedbackReview'):
+    md += '[星羽最近三拍与实际守息反馈](' + D['featherRecentFeedbackReview']['evidence'] + ')；仅三条状态对照，原生profile短流程与模型边界分列。\n\n'
+
 if D.get('featherSummaryReview'):
     md += '[星羽回营后只读重读通关总结](' + D['featherSummaryReview']['evidence'] + ')；真实完成会话、原生profile复用，历史事实不随新旅程改变。\n\n'
 

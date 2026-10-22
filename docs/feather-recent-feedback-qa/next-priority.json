@@ -1,0 +1,13 @@
+{
+  "title": "安心封顶时即时提示的名义增量",
+  "evidenceLevel": "源码与合法离线命令复现；普通UI封顶场景尚未验证",
+  "observed": "模型中的晶雾把安心从44封顶到60，实际+16，原notice仍写合奏安心+22。本轮近期状态对照按真实44→60显示，不照搬名义值。当前普通UI只验了0→22，不能声称封顶UI已复现。",
+  "evidence": [
+    "test-feedback.mjs:calm cap case",
+    "model-tests.json",
+    "versions/v3/games/feather/model.mjs:actTrial"
+  ],
+  "value": "让即时提示与实际效果一致，减少玩家对资源封顶和技能收益的误解。",
+  "acceptance": "先用普通UI在同一段挑战让安心接近/达到60，核对当前可见提示；确认后只修正显示的实际增量，保留数值、技能、记录格式。别把封顶规则本身当bug，不必重新通关。",
+  "implementedThisRound": false
+}

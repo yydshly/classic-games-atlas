@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e34"><title>星羽同伴 · 浅滩的归途 | v3 短冒险候选</title><link rel="stylesheet" href="journey.css?camp-feedback-r1"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e34"><title>星羽同伴 · 浅滩的归途 | v3 短冒险候选</title><link rel="stylesheet" href="journey.css?trial-feedback-r1"></head>
 <body>
 <header class="topbar"><a class="wordmark" href="../../../../">星羽同伴 <span>FEATHER / A SMALL JOURNEY</span></a><nav aria-label="页面导航"><a href="../../../v2/games/feather/">v2 自由出行</a><a href="../../../../games/feather/">旧版8章</a><button id="help" type="button">玩法</button><button id="pause" type="button">暂停</button></nav></header>
 <main id="main">
@@ -8,6 +8,7 @@
 <section class="game-frame" aria-label="浅滩短冒险">
 <div class="hud"><strong id="phase">归羽营地</strong><span id="daylight">日光24</span><span id="knots">羽结2</span><span id="berries">露莓2</span><span id="collection">伙伴3/5</span></div>
 <div class="game-grid"><div class="scene-column"><div class="scene-wrap"><canvas id="scene" width="1200" height="675" aria-label="可探索的回声浅滩；使用方向键或下方按钮沿步道移动"></canvas><p id="asset-error" class="asset-error" hidden>美术资源尚未加载完整，本页仍可用文字按钮操作。</p></div><div class="notice" id="notice" role="status" aria-live="polite"></div>
+<details id="trial-recent" class="trial-recent" hidden><summary id="trial-recent-title">最近三拍</summary><p class="tiny">体力为行动与来招后的净值。每次回响保留最近三拍，可在回营后查看。</p><ol id="trial-recent-list"></ol></details>
 <div class="field-controls" id="field-controls" hidden><div class="dpad" aria-label="沿步道移动"><button data-action="move" data-arg="up" aria-label="向上一步">↑</button><button data-action="move" data-arg="left" aria-label="向左一步">←</button><button data-action="move" data-arg="down" aria-label="向下一步">↓</button><button data-action="move" data-arg="right" aria-label="向右一步">→</button></div><button id="path-toggle" type="button" aria-pressed="true">步道提示：开</button><button data-action="home" class="quiet">安全回营</button></div></div>
 <aside id="panel" aria-label="当前行动"></aside></div>
 </section>
@@ -16,5 +17,5 @@
 <p class="scope">发现伙伴 → 换队与一次成长 → 浅滩回响 → 旅途总结。仍是一张浅滩与五位已有伙伴，完成后可自由出行。<a href="../../../../docs/FEATHER_JOURNEY_SCOPE.md">版本与兼容说明</a> · <a href="../../../../docs/feather-journey-qa/">验证记录</a></p>
 </main>
 <div class="overlay" id="overlay" hidden><section role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1"><p class="eyebrow">星羽同伴 / 浅滩的归途</p><h2 id="dialog-title"></h2><div id="dialog-body"></div><button id="resume" class="primary">继续</button><button id="confirm-reset" class="wide quiet" hidden>确认清空v3记录</button></section></div>
-<script type="module" src="game.mjs?summary-review-r1"></script>
+<script type="module" src="game.mjs?trial-feedback-r1"></script>
 </body></html>
