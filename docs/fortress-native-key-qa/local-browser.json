@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "mode": "local",
+  "method": "Ordinary Tab/ShiftTab/Enter/P/Escape/Space/Arrow keys, native controls, read-only snapshots. Fresh profiles; no injected game/save/time/result state.",
+  "cases": [
+    {
+      "width": 1440,
+      "entry": "featured",
+      "stateBeforeReturn": "ready",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 1
+    },
+    {
+      "width": 1440,
+      "entry": "featured",
+      "stateBeforeReturn": "playing",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 6
+    },
+    {
+      "width": 1440,
+      "entry": "featured",
+      "stateBeforeReturn": "paused",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 6
+    },
+    {
+      "width": 1440,
+      "entry": "library",
+      "stateBeforeReturn": "ready",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 1
+    },
+    {
+      "width": 1440,
+      "entry": "library",
+      "stateBeforeReturn": "playing",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 6
+    },
+    {
+      "width": 1440,
+      "entry": "library",
+      "stateBeforeReturn": "paused",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 6
+    },
+    {
+      "width": 1440,
+      "kind": "nativeAndGameControls",
+      "nativeSummaryEnterSpace": true,
+      "selectArrowAndP": true,
+      "prepareEnter": true,
+      "primaryEnterSpaceNoP2Shot": true,
+      "canvasEnterStarts": true,
+      "pauseButtonPAndEnter": true,
+      "canvasPAndEscape": true,
+      "p2EnterFiresAndReleases": true,
+      "refreshReadySelectionSaveIdentical": true
+    },
+    {
+      "width": 390,
+      "entry": "featured",
+      "stateBeforeReturn": "ready",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 1
+    },
+    {
+      "width": 390,
+      "entry": "featured",
+      "stateBeforeReturn": "playing",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 3
+    },
+    {
+      "width": 390,
+      "entry": "featured",
+      "stateBeforeReturn": "paused",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "溪谷",
+      "tabLaunchPresses": 7,
+      "tabReturnPresses": 3
+    },
+    {
+      "width": 390,
+      "entry": "library",
+      "stateBeforeReturn": "ready",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 1
+    },
+    {
+      "width": 390,
+      "entry": "library",
+      "stateBeforeReturn": "playing",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 3
+    },
+    {
+      "width": 390,
+      "entry": "library",
+      "stateBeforeReturn": "paused",
+      "keyboardLaunch": true,
+      "keyboardReturn": true,
+      "focusRestored": true,
+      "queryPreserved": "堡垒",
+      "tabLaunchPresses": 4,
+      "tabReturnPresses": 3
+    },
+    {
+      "width": 390,
+      "kind": "nativeAndGameControls",
+      "nativeSummaryEnterSpace": true,
+      "selectArrowAndP": true,
+      "prepareEnter": true,
+      "primaryEnterSpaceNoP2Shot": true,
+      "canvasEnterStarts": true,
+      "pauseButtonPAndEnter": true,
+      "canvasPAndEscape": true,
+      "p2EnterFiresAndReleases": true,
+      "refreshReadySelectionSaveIdentical": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "executionNotes": [
+    "First10 cases passed; library390 return sampled during scroll, resumed only remaining library paths after waiting native scroll stable.",
+    "Three remaining library390 returns passed; control fixture then targeted hidden prepare on mobile paused layout. Actual visible retry used, and only390 controls resumed. No production change for harness failures.",
+    "All12 return paths plus2 control groups accepted; failed runs and screenshots retained locally."
+  ]
+}

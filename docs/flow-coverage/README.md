@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[堡垒Enter原生返回修复](../fortress-native-key-qa/)；精选/旧目录两尺寸三态回归，不增加通关覆盖计数。
+
 [三款精选试玩入口与溪谷开场预告](../featured-play-qa/)；候选展示与实际未验边界分列，不增加通关覆盖计数。
 
 [果园最近一刀可读反馈](../orchard-stroke-feedback-qa/)：普通UI误核/续切，几何稳定，原规则与存档不变。
@@ -50,7 +52,7 @@
 
 |编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|
 |---|---|---|---|---|
-|01 堡垒防线 [v2 候选](../../versions/v2/games/fortress/)|已验有限流程|已验有限流程：旧首图基地败/次图双车胜保留；当前首图单车普通UI66.6833秒清六敌1860分，基地3/出击3|已验有限流程：失败整备复位；刷新仅留选择和最好|已验有限流程：首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感 [1](../../docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/fortress-independent-qa/) / [3](../../docs/fortress-pause-followup-qa/) / [4](../../docs/new-player-journey-qa/) / [5](../../docs/fortress-feedback-qa/) / [6](../../docs/featured-play-qa/)|
+|01 堡垒防线 [v2 候选](../../versions/v2/games/fortress/)|已验有限流程|已验有限流程：旧首图基地败/次图双车胜保留；当前首图单车普通UI66.6833秒清六敌1860分，基地3/出击3|已验有限流程：失败整备复位；刷新仅留选择和最好|已验有限流程：首图单车自然胜利、0-1最好原生保存；刷新仅回整备且纪录保留，短重赛正常；坐标策略非真人手感 [1](../../docs/fortress-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/fortress-independent-qa/) / [3](../../docs/fortress-pause-followup-qa/) / [4](../../docs/new-player-journey-qa/) / [5](../../docs/fortress-feedback-qa/) / [6](../../docs/featured-play-qa/) / [7](../../docs/fortress-native-key-qa/)|
 |02 爆破迷宫 [v2 候选](../../versions/v2/games/maze/)|已验有限流程|已验有限流程：两原创短图均有自然胜利；此前第二图64.85秒/48我方弹/36连锁，强只读策略辅助|已验有限流程：胜场刷新保持，干净新局通过；既有三败/重试保留|已验有限流程：第二图自然胜利/原生纪录刷新/同图空弹火新局通过；首图既有成功，非多人体验或全策略验收 [1](../../docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/maze-v2-qa/LAYOUT_PUBLIC.md) / [3](../../docs/maze-first-win-qa/) / [4](../../docs/maze-later-qa/) / [5](../../docs/return-navigation-qa/)|
 |03 星泡航线 [v2 候选](../../versions/v2/games/starline/)|已验有限流程|已验有限流程：两图清场1260/1460分|已验有限流程：主动低效触底后重试，最好保留|已验有限流程：两图开放，恢复飞行回出手前 [1](../../docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
 |04 光轨砖阵 [v2 候选](../../versions/v2/games/prism/)|已验有限流程|已验有限流程：正常鼠标强辅助顺序完成原12关；第1关为必要解锁前置，2–12此前补证|已验有限流程：自然失球失败与重试；首胜解锁第二关|已验有限流程：2–12逐关自然胜利与干净下一关；第12关最终反馈/无第13关/重试刷新及12关纪录保留通过 [1](../../docs/prism-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/prism-first-win-qa/) / [3](../../docs/prism-later-qa/) / [4](../../docs/return-navigation-qa/)|
