@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>山口守望 · 三隘短战役</title><link rel="stylesheet" href="./pass.css"><script type="module" src="./game.mjs"></script></head>
+<body><header><a id="back" href="../../../../index.html#play">← 游戏大厅</a><span>06 / PASS WATCH</span><a href="../../../v2/games/pass/">原单图模式 ↗</a></header>
+<main><section class="heading"><div><p class="eyebrow">山口守望 / 可选三图短战役</p><h1>三隘连守</h1></div><p>同一支守军，三种布防取舍。<br>重新选塔位，守住下一道山口。</p></section>
+<section class="campaign-bar" aria-labelledby="campaign-title"><ol class="progress" id="progress" aria-label="战役进度"></ol><h2 id="campaign-title" tabindex="-1"></h2><p id="campaign-note"></p><ol id="summary" hidden></ol><button class="primary" id="advance">开始战役</button></section>
+<div class="layout"><section class="battle"><div class="hud"><span>金币 <b id="gold">230</b></span><span>城门 <b id="hp">12/12</b></span><span>波次 <b id="wave">0/4</b></span><button id="pause">暂停</button><button id="speed">1×</button><button id="sound">声音 关</button></div>
+<canvas id="field" width="800" height="533" aria-label="当前山口战场。点编号塔位选择，或使用下方1至5号按钮建造。援军可点道路或三个固定位置按钮部署。"></canvas>
+<p id="map-note"></p><div class="wavebar"><div><b id="wave-title"></b><p id="wave-hint"></p></div><button class="primary" id="next">开始第 1 波</button></div>
+<div class="rescue"><button id="reinforce">部署盾卫</button><p>双人接敌 11 秒，最多挡 2 人，22 秒冷却。选择位置再落地。</p></div><div id="rally" hidden><span>部署到：</span><button data-rally="0">前段</button><button data-rally="1">中段</button><button data-rally="2">后段</button><button id="cancel">取消部署</button></div>
+<div id="status" role="status" aria-live="polite">先读本图目标，再开始布防。</div></section>
+<aside><div class="label">FIELD COMMAND / 战术指挥</div><h2 id="selection">选择一个塔位</h2><p id="details">从编号塔位开始。先布防，再开波；战斗中也能建造。</p><div id="sites"></div>
+<div id="choices"><button data-build="bolt"><img src="../../../v2/games/pass/assets/unit-0.webp" alt=""><span><b>弩台 · 70 金</b><small>单体攻击，可选择专精</small></span></button><button data-build="mortar"><img src="../../../v2/games/pass/assets/unit-3.webp" alt=""><span><b>石炮 · 100 金</b><small>范围攻击，适合密集敌群</small></span></button></div>
+<div id="branches" hidden><button data-upgrade="heavy"><img src="../../../v2/games/pass/assets/unit-1.webp" alt=""><span><b>破甲重弩 · 110 金</b><small>无视护甲，射程更远<br>慢速重击，留意快骑</small></span></button><button data-upgrade="snare"><img src="../../../v2/games/pass/assets/unit-2.webp" alt=""><span><b>缚索连弩 · 110 金</b><small>最多 3 目标，降速至 38%<br>配合石炮集中火力</small></span></button></div>
+<button id="sell" hidden>出售</button><p class="hint">专精不能直接换路；出售返还总投入 70%。</p><button id="retry">重试当前图</button><button id="help">玩法说明</button><button id="new-run">新战役…</button><p id="record" class="hint"></p><p id="save" class="hint" role="status"></p></aside></div>
+<footer>原创路径塔防小品，经典机制启发于《王国保卫战》，不使用其地图、角色或音画。第1图沿用原单图，第2–3图为原创路线与塔位；各图敌人、塔和经济数值不变。原单图、旧八图与各自纪录保留。<a href="./NOTES.md">范围与验证 ↗</a></footer></main>
+<dialog id="manual"><h2>三图连续守望</h2><ol><li>每图 230 金、12 城门生命，守住四波后前往下一隘。图间重置金币、塔和盾卫，保留已完成图的战报。</li><li>弩台可专精破甲或缚索；石炮打群体。射程圈和路线折返决定一座塔能覆盖几段路。</li><li>战斗时部署双盾卫，选择道路或前/中/后段。每人 95 生命、存续 11 秒，22 秒冷却。</li><li>城门归零即败；重试只重开当前图，不丢前图战报。活动局刷新先暂停；关间与最终总结保留。P 暂停，Esc 取消部署或暂停。按钮获焦时按 Enter 使用原生操作。</li></ol><button id="close-help">返回战场</button></dialog>
+<dialog id="confirm-new" aria-labelledby="new-title"><h2 id="new-title">从第一隘重新开始？</h2><p>将覆盖本战役的当前进度与三图战报。原单图和旧八图的存档、纪录不受影响。</p><button id="cancel-new" autofocus>保留当前战役</button><button id="confirm-reset">确认新战役</button></dialog>
+</body></html>

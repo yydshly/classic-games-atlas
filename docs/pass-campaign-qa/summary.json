@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-22T20:42:38.245751+00:00",
+  "baseline": "650ccf2ad87f8a409e2e3eb820abf785006ac45a",
+  "catalog": 42,
+  "active": 38,
+  "modelStorageGroups": 9,
+  "rendererFixture": {
+    "evidence": "browser-rendered fixtures only, no gameplay or real-device proof",
+    "originalMapPixelMatch": {
+      "equal": true,
+      "differentChannels": 0
+    },
+    "pageErrors": [],
+    "allRequestedAssetsPresent": true,
+    "drawDoesNotMutateState": true,
+    "horizontalOverflow390": false,
+    "requests": [
+      {
+        "path": "/versions/v3/games/pass/renderer.mjs",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/renderer.mjs",
+        "exists": true
+      },
+      {
+        "path": "/versions/v3/games/pass/engine.mjs",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/engine.mjs",
+        "exists": true
+      },
+      {
+        "path": "/versions/v3/games/pass/maps.mjs",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/valley.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-0.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-1.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-2.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-3.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-4.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-5.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-6.webp",
+        "exists": true
+      },
+      {
+        "path": "/versions/v2/games/pass/assets/unit-7.webp",
+        "exists": true
+      }
+    ]
+  },
+  "boundaries": [
+    "Ordinary UI uses native buttons/canvas, read-only strategy, and existing 2x. No game/time/resource/win injection.",
+    "Completed session actually earned by the UI chain was preserved and reused; no completed fixture substituted.",
+    "Quota, denied read, corrupt save and legacy sentinel are explicitly injected browser storage fixtures.",
+    "390 CSS and Chromium touch simulation are not hardware, sound, human strategy fun or long-term balance acceptance.",
+    "Original firstmap live battle fixture pixels equal; campaign terminal overlay prompts intentionally updated."
+  ]
+}

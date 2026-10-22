@@ -1,0 +1,32 @@
+{
+  "evidence": "bounded model checks, not ordinary UI",
+  "ok": true,
+  "checks": [
+    "Original PATH/SITES/stats/waves/length/point/roadAt identical",
+    "Both original-map command replays match every checkpoint and final state exactly; failed fixed-rally heavy attempt retained",
+    "All maps: build/active/paused and natural loss checkpoints round-trip, pause stops timers, resumed replay exact",
+    "Malformed map/hp/time/economy/speed/tower/queue/effect checkpoint rejected without mutation"
+  ],
+  "replays": [
+    {
+      "branch": "snare",
+      "state": "won",
+      "hp": 12,
+      "time": 129.0833333333282,
+      "kills": 65,
+      "leaks": 0,
+      "frames": 7745,
+      "exact": true
+    },
+    {
+      "branch": "heavy",
+      "state": "lost",
+      "hp": 0,
+      "time": 60.083333333331204,
+      "kills": 15,
+      "leaks": 6,
+      "frames": 3605,
+      "exact": true
+    }
+  ]
+}
