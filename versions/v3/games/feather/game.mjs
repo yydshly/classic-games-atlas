@@ -2,6 +2,7 @@ import {SAVE_KEY,LEGACY_SAVE_KEY,SPECIES,ELEMENTS,TRIAL,V2,createGame,input,chec
 import {render,hitNode} from './renderer.mjs';
 import {skillFeedback} from './skill-feedback.mjs';
 import {journeyObjective} from './objective-feedback.mjs';
+import {campSkillInfo} from './camp-feedback.mjs';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
 let state,paused=false,showPaths=true,storage=true,saveBlocked=false,lastInput=-1000,previousFocus=null,legacy=null,assetsReady=false;
@@ -30,12 +31,13 @@ function skillButton(kind,label){
 }
 function card(p,camp=false){
  const b=state.base,sp=SPECIES[p.id],selected=b.team.includes(p.id);
- return '<article class="partner-card '+(selected?'selected':'')+'"><img src="'+art(p.id)+'" alt="'+sp.name+'的已有原创形象"><div class="partner-info"><strong>'+sp.name+' <span class="tiny">'+ELEMENTS[sp.element].name+'</span></strong><small>'+(camp?sp.role:'体力 '+p.hp+'/'+maxHP(p)+' · 能量 '+p.energy+'/3')+'</small><small>'+(p.rank?'已成长 · 上限+8 / 威力+2':'经历 '+p.xp+'/2 · 两次相遇后成长一次')+'</small></div>'+(camp?button('team',p.id,selected?'留营':'同行'):phase(state)==='explore'?button('leadField',p.id,p.id===b.active?'领队':'换领队'):'')+'</article>';
+ const skill=camp?campSkillInfo(p):null;
+ return '<article class="partner-card '+(selected?'selected':'')+'"><img src="'+art(p.id)+'" alt="'+sp.name+'的已有原创形象"><div class="partner-info"><strong>'+sp.name+' <span class="tiny">'+ELEMENTS[sp.element].name+'</span></strong><small>'+(camp?sp.role:'体力 '+p.hp+'/'+maxHP(p)+' · 能量 '+p.energy+'/3')+'</small><small>'+(p.rank?'已成长 · 上限+8 / '+(camp?'轻击威力':'威力')+'+2':'经历 '+p.xp+'/2 · 两次相遇后成长一次')+'</small>'+(skill?'<div class="camp-skill"><strong>'+skill.name+' · '+skill.cost+'</strong><span>'+skill.effect+'</span></div>':'')+'</div>'+(camp?button('team',p.id,selected?'留营':'同行'):phase(state)==='explore'?button('leadField',p.id,p.id===b.active?'领队':'换领队'):'')+'</article>';
 }
 function campPanel(){
  const b=state.base,p=progress(state),last=state.journey.lastAttempt,reason=readiness(state);
  const recap=last&&last.outcome!=='completed'?'<div class="recap">上次回响：'+({defeated:'体力耗尽',timeout:'24拍结束',retreated:'主动回营'}[last.outcome])+'。伙伴与成长保留，下一次免费整备。</div>':'';
- return '<h2 tabindex="-1">归羽营地</h2><p class="intro">两个出行位。先让一位留营，再换入新朋友；领队影响属性、技能与来招。</p>'+recap+
+ return '<h2 tabindex="-1">归羽营地</h2><p class="intro">两个出行位。先让一位留营，再换入新朋友；领队影响属性、技能与来招。</p><p class="tiny">技能列出基础作用；实际效果在相遇或回响中预览。</p>'+recap+
  (b.report?.recruited.length?'<div class="recap">'+b.report.recruited.map(id=>SPECIES[id].name).join('、')+'已经加入营地，可自由编队。</div>':'')+
  b.roster.map(q=>card(q,true)).join('')+'<div class="leader-row">领队 '+b.team.map(id=>button('lead',id,SPECIES[id].name,'',b.active===id?'chosen':'')).join('')+'</div>'+
  button('depart',null,p.completed?'自由出行':'整备并出行','', 'primary wide')+

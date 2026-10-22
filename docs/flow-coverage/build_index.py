@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('featherTeamReview'):
+    doc += '<p><a href="' + escape(D['featherTeamReview']['evidence'], quote=True) + '">星羽v3：营地选队前比较技能</a>（固定基础作用，原编队/规则不变）</p>'
+
 if D.get('featherObjectiveReview'):
     doc += '<p><a href="' + escape(D['featherObjectiveReview']['evidence'], quote=True) + '">星羽v3：旅途中当前目标连续性</a>（目标显示单项改进，原任务/存档不变）</p>'
 
@@ -106,6 +109,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('featherTeamReview'):
+    md += '[星羽营地选队前比较技能](' + D['featherTeamReview']['evidence'] + ')；基础作用与战斗预览分开，保留原生键盘与编队顺序。\n\n'
+
 if D.get('featherObjectiveReview'):
     md += '[星羽旅途中当前目标连续性](' + D['featherObjectiveReview']['evidence'] + ')；仅目标显示，普通UI与已完成模型fixture分列。\n\n'
 
