@@ -1,0 +1,354 @@
+{
+  "kind": "bounded model review, NOT UI play evidence",
+  "engineSHA256": "d58b0612aa17331b785751aec2f5b8e65b90c5e7465fa7a84a7e7090ea89005b",
+  "policyReadsEnemies": false,
+  "policyVerdict": "Fixed coordinate plans plus safe-grid routing; no enemy position/direction/clock or patroller read. Default start succeeds without threat adaptation.",
+  "timing": "input sampled every 50/100/200 simulated ms; engine always advanced in .02s, avoiding update(dt>.1) clamp. wall runtime measured separately.",
+  "wallSeconds": 0.7706983000000001,
+  "groups": [
+    {
+      "fixture": "baseline",
+      "runs": 12,
+      "wins": 12,
+      "noLossWins": 12,
+      "anyLoss": 0
+    },
+    {
+      "fixture": "enemy-clock-near-next-step",
+      "runs": 12,
+      "wins": 11,
+      "noLossWins": 11,
+      "anyLoss": 1
+    },
+    {
+      "fixture": "natural-idle-1.28s",
+      "runs": 12,
+      "wins": 5,
+      "noLossWins": 5,
+      "anyLoss": 6
+    },
+    {
+      "fixture": "natural-idle-2.56s",
+      "runs": 12,
+      "wins": 2,
+      "noLossWins": 2,
+      "anyLoss": 6
+    },
+    {
+      "fixture": "natural-idle-5.12s",
+      "runs": 12,
+      "wins": 0,
+      "noLossWins": 0,
+      "anyLoss": 7
+    },
+    {
+      "fixture": "natural-idle-7.68s",
+      "runs": 12,
+      "wins": 0,
+      "noLossWins": 0,
+      "anyLoss": 9
+    }
+  ],
+  "baselineCuts50ms": [
+    {
+      "level": 2,
+      "variant": "main",
+      "simSeconds": 3.36,
+      "losses": 0,
+      "cuts": [
+        {
+          "from": {
+            "x": 0,
+            "y": 4
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 0.84,
+          "minimumEnemyManhattanToFullLineAtOpen": 3,
+          "minimumDistanceToActuallyOpenTrail": 3,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 1.08,
+          "minimumEnemyManhattanToFullLineAtOpen": 8,
+          "minimumDistanceToActuallyOpenTrail": 6,
+          "outcome": "closed"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "simSeconds": 6.96,
+      "losses": 0,
+      "cuts": [
+        {
+          "from": {
+            "x": 4,
+            "y": 15
+          },
+          "direction": "U",
+          "closeSecondsAfterFirstWaterCell": 1.68,
+          "minimumEnemyManhattanToFullLineAtOpen": 3,
+          "minimumDistanceToActuallyOpenTrail": 3,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 1.08,
+          "minimumEnemyManhattanToFullLineAtOpen": 2,
+          "minimumDistanceToActuallyOpenTrail": 5,
+          "outcome": "closed"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "simSeconds": 7.08,
+      "losses": 0,
+      "cuts": [
+        {
+          "from": {
+            "x": 0,
+            "y": 3
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 0.6,
+          "minimumEnemyManhattanToFullLineAtOpen": 2,
+          "minimumDistanceToActuallyOpenTrail": 2,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 17,
+            "y": 0
+          },
+          "direction": "D",
+          "closeSecondsAfterFirstWaterCell": 1.68,
+          "minimumEnemyManhattanToFullLineAtOpen": 1,
+          "minimumDistanceToActuallyOpenTrail": 1,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 7,
+            "y": 11
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 0.6,
+          "minimumEnemyManhattanToFullLineAtOpen": 3,
+          "minimumDistanceToActuallyOpenTrail": 3,
+          "outcome": "closed"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "simSeconds": 7.8,
+      "losses": 0,
+      "cuts": [
+        {
+          "from": {
+            "x": 0,
+            "y": 4
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 0.6,
+          "minimumEnemyManhattanToFullLineAtOpen": 3,
+          "minimumDistanceToActuallyOpenTrail": 3,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 18,
+            "y": 0
+          },
+          "direction": "D",
+          "closeSecondsAfterFirstWaterCell": 0.96,
+          "minimumEnemyManhattanToFullLineAtOpen": 2,
+          "minimumDistanceToActuallyOpenTrail": 4,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 18,
+            "y": 10
+          },
+          "direction": "D",
+          "closeSecondsAfterFirstWaterCell": 0.48,
+          "minimumEnemyManhattanToFullLineAtOpen": 2,
+          "minimumDistanceToActuallyOpenTrail": 2,
+          "outcome": "closed"
+        },
+        {
+          "from": {
+            "x": 9,
+            "y": 9
+          },
+          "direction": "R",
+          "closeSecondsAfterFirstWaterCell": 0.36,
+          "minimumEnemyManhattanToFullLineAtOpen": 5,
+          "minimumDistanceToActuallyOpenTrail": 6,
+          "outcome": "closed"
+        }
+      ]
+    }
+  ],
+  "naturalDangerCounterexamples": [
+    {
+      "level": 2,
+      "variant": "main",
+      "inputIntervalMs": 50,
+      "fixture": "natural-idle-2.56s",
+      "policyStartedAt": 2.56,
+      "firstCollision": {
+        "time": 3.18,
+        "reason": "与水域游光相撞，风险线已清除，已织岸线保留。"
+      },
+      "firstCut": {
+        "from": {
+          "x": 0,
+          "y": 4
+        },
+        "direction": "R",
+        "openedAt": 3.9,
+        "duration": 0.84,
+        "outcome": "closed",
+        "minDistanceToOpenTrail": 3
+      },
+      "finalState": "lost"
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "inputIntervalMs": 50,
+      "fixture": "natural-idle-1.28s",
+      "policyStartedAt": 1.28,
+      "firstCollision": {
+        "time": 1.92,
+        "reason": "游光碰到了风险线，风险线已清除，已织岸线保留。"
+      },
+      "firstCut": {
+        "from": {
+          "x": 0,
+          "y": 3
+        },
+        "direction": "R",
+        "openedAt": 1.78,
+        "duration": 0.14,
+        "outcome": "loss",
+        "minDistanceToOpenTrail": 1
+      },
+      "finalState": "lost"
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "inputIntervalMs": 200,
+      "fixture": "enemy-clock-near-next-step",
+      "policyStartedAt": 0,
+      "firstCollision": {
+        "time": 1.62,
+        "reason": "游光碰到了风险线，风险线已清除，已织岸线保留。"
+      },
+      "firstCut": {
+        "from": {
+          "x": 0,
+          "y": 3
+        },
+        "direction": "R",
+        "openedAt": 1.02,
+        "duration": 0.6,
+        "outcome": "loss",
+        "minDistanceToOpenTrail": 1
+      },
+      "finalState": "lost"
+    }
+  ],
+  "orbitVerdict": "Not permanently adjacent to shore: 25 simulated seconds without player input reached Manhattan distance 2–4 from initial safe cells. Enemy movement is forward/right/left/back wall avoidance, not trail pursuit.",
+  "orbits": [
+    {
+      "level": 2,
+      "seconds": 25,
+      "enemies": [
+        {
+          "id": 1,
+          "visitedCells": 55,
+          "distancesToInitialSafe": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "id": 2,
+          "visitedCells": 58,
+          "distancesToInitialSafe": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "seconds": 25,
+      "enemies": [
+        {
+          "id": 1,
+          "visitedCells": 52,
+          "distancesToInitialSafe": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "id": 2,
+          "visitedCells": 23,
+          "distancesToInitialSafe": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": 3,
+          "visitedCells": 51,
+          "distancesToInitialSafe": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "A universal always-safe claim is false. Start phase and enemy position can cause real player/trail collisions. Some late losses occur after fixed plans have no useful further action and the boat waits for a shore patrol; aggregate loss totals are not all cutting danger. Baseline near enemies can remain harmless because they do not turn toward the open line.",
+  "directions": [
+    {
+      "id": "warn-then-chase",
+      "chosen": true,
+      "scope": "Level2/3 only: visible target and model-time warning, then shortest legal water path toward an existing open trail cell at unchanged ENEMY_STEP. No future-line knowledge. Safe closure cancels pursuit.",
+      "acceptance": "A nearby blind fixed cut can lose after visible warning; an alternate departure/short closure in the same fixture survives. No random kill, no speed increase, no forced wait."
+    },
+    {
+      "id": "visible-cross-bay-patrol",
+      "chosen": false,
+      "scope": "Keep nonreactive movement but use a clear, telegraphed interior crossing patrol rather than edge-biased route.",
+      "tradeoff": "Simpler to read, but fixed initial-phase routes can still bypass its timing; less direct position-dependent pressure."
+    }
+  ],
+  "limits": "Fixtures alter initial clocks/positions explicitly and natural-idle cases advance the real model. No UI, wall-clock gameplay, human difficulty or new pursuit implementation validated. review.json remains private scratch; do not publish the full table."
+}

@@ -1,0 +1,1761 @@
+{
+  "kind": "bounded-model-assistance-not-browser-or-human",
+  "version": 3,
+  "mechanism": {
+    "warning": 0.5,
+    "warningStationary": true,
+    "pursuitStep": 0.32,
+    "playerStep": 0.12,
+    "lives": 3,
+    "lesson1OriginalBehavior": true
+  },
+  "inputAccounting": "Each 50/100/200ms held-input interval is accumulated with <=.02s update calls, including the residual .01 for 50ms; never update(.2) and silently cap it.",
+  "runs": [
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.05,
+      "shift": 0,
+      "time": 8.64,
+      "lives": 3,
+      "cuts": 2,
+      "steps": 72,
+      "percent": 62.54826254826254,
+      "trace": [
+        {
+          "added": 110,
+          "percent": 42.471042471042466,
+          "time": 3.72,
+          "start": {
+            "x": 11,
+            "y": 11
+          },
+          "end": {
+            "x": 21,
+            "y": 11
+          },
+          "steps": 31,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 80.2919708029197,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 0,
+            "anchor": {
+              "x": 11,
+              "y": 11
+            },
+            "dir": "R",
+            "to": {
+              "x": 21,
+              "y": 11
+            },
+            "exposureCells": 9,
+            "predictedGain": 110,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 2,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 19,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.1800000000000002,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 52,
+          "percent": 62.54826254826254,
+          "time": 8.64,
+          "start": {
+            "x": 6,
+            "y": 0
+          },
+          "end": {
+            "x": 6,
+            "y": 15
+          },
+          "steps": 72,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 42.62295081967213,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 80.2919708029197,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 3.74,
+            "anchor": {
+              "x": 6,
+              "y": 0
+            },
+            "dir": "D",
+            "to": {
+              "x": 6,
+              "y": 15
+            },
+            "exposureCells": 14,
+            "predictedGain": 52,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 3,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 12,
+                "y": 13,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.7999999999999998,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.05,
+      "shift": 0,
+      "time": 12.12,
+      "lives": 3,
+      "cuts": 4,
+      "steps": 101,
+      "percent": 75.84745762711864,
+      "trace": [
+        {
+          "added": 82,
+          "percent": 34.74576271186441,
+          "time": 1.08,
+          "start": {
+            "x": 0,
+            "y": 2
+          },
+          "end": {
+            "x": 6,
+            "y": 2
+          },
+          "steps": 9,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 94.25287356321839,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 0,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 0,
+            "anchor": {
+              "x": 0,
+              "y": 2
+            },
+            "dir": "R",
+            "to": {
+              "x": 6,
+              "y": 2
+            },
+            "exposureCells": 5,
+            "predictedGain": 82,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 4,
+                "y": 1,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 13,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 19,
+                "y": 1,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.6799999999999999,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 34,
+          "percent": 49.152542372881356,
+          "time": 3.6,
+          "start": {
+            "x": 10,
+            "y": 0
+          },
+          "end": {
+            "x": 10,
+            "y": 15
+          },
+          "steps": 30,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 94.25287356321839,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 43.58974358974359,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 0,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 1.1,
+            "anchor": {
+              "x": 10,
+              "y": 0
+            },
+            "dir": "D",
+            "to": {
+              "x": 10,
+              "y": 15
+            },
+            "exposureCells": 14,
+            "predictedGain": 34,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 1,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 14,
+                "y": 13,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 16,
+                "y": 2,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.7999999999999998,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 14,
+          "percent": 55.08474576271186,
+          "time": 8.4,
+          "start": {
+            "x": 20,
+            "y": 0
+          },
+          "end": {
+            "x": 20,
+            "y": 15
+          },
+          "steps": 70,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 94.25287356321839,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 43.58974358974359,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 19.718309859154928,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 3.6,
+            "anchor": {
+              "x": 20,
+              "y": 0
+            },
+            "dir": "D",
+            "to": {
+              "x": 20,
+              "y": 15
+            },
+            "exposureCells": 14,
+            "predictedGain": 14,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 2,
+                "y": 1,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 13,
+                "y": 4,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 15,
+                "y": 8,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.7999999999999998,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 49,
+          "percent": 75.84745762711864,
+          "time": 12.12,
+          "start": {
+            "x": 16,
+            "y": 0
+          },
+          "end": {
+            "x": 16,
+            "y": 12
+          },
+          "steps": 101,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 94.25287356321839,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 43.58974358974359,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 88.73239436619718,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 8.4,
+            "anchor": {
+              "x": 16,
+              "y": 0
+            },
+            "dir": "D",
+            "to": {
+              "x": 16,
+              "y": 12
+            },
+            "exposureCells": 11,
+            "predictedGain": 49,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 4,
+                "y": 1,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 14,
+                "y": 5,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 14,
+                "y": 8,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.42,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.05,
+      "shift": 0,
+      "time": 12.72,
+      "lives": 3,
+      "cuts": 5,
+      "steps": 106,
+      "percent": 85.71428571428571,
+      "trace": [
+        {
+          "added": 2,
+          "percent": 0.7722007722007722,
+          "time": 2.16,
+          "start": {
+            "x": 16,
+            "y": 0
+          },
+          "end": {
+            "x": 16,
+            "y": 3
+          },
+          "steps": 18,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 1.4598540145985401,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 0,
+            "anchor": {
+              "x": 16,
+              "y": 0
+            },
+            "dir": "D",
+            "to": {
+              "x": 16,
+              "y": 3
+            },
+            "exposureCells": 2,
+            "predictedGain": 2,
+            "freshIslandStop": true,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 2,
+                "y": 1,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 17,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.36,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 14,
+          "percent": 6.177606177606178,
+          "time": 4.08,
+          "start": {
+            "x": 21,
+            "y": 4
+          },
+          "end": {
+            "x": 17,
+            "y": 4
+          },
+          "steps": 34,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 11.678832116788321,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 2.2,
+            "anchor": {
+              "x": 21,
+              "y": 4
+            },
+            "dir": "L",
+            "to": {
+              "x": 17,
+              "y": 4
+            },
+            "exposureCells": 3,
+            "predictedGain": 14,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 6,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 20,
+                "y": 12,
+                "dir": 0,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.48,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 42,
+          "percent": 22.393822393822393,
+          "time": 8.28,
+          "start": {
+            "x": 0,
+            "y": 6
+          },
+          "end": {
+            "x": 8,
+            "y": 6
+          },
+          "steps": 69,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 34.42622950819672,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 11.678832116788321,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 4.1,
+            "anchor": {
+              "x": 0,
+              "y": 6
+            },
+            "dir": "R",
+            "to": {
+              "x": 8,
+              "y": 6
+            },
+            "exposureCells": 7,
+            "predictedGain": 42,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 4,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 16,
+                "y": 5,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.94,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 100,
+          "percent": 61.003861003861005,
+          "time": 11.4,
+          "start": {
+            "x": 16,
+            "y": 4
+          },
+          "end": {
+            "x": 8,
+            "y": 4
+          },
+          "steps": 95,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 34.42622950819672,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 84.67153284671532,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 8.3,
+            "anchor": {
+              "x": 16,
+              "y": 4
+            },
+            "dir": "L",
+            "to": {
+              "x": 8,
+              "y": 4
+            },
+            "exposureCells": 7,
+            "predictedGain": 100,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 6,
+                "y": 7,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 9,
+                "y": 3,
+                "dir": 0,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.96,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 64,
+          "percent": 85.71428571428571,
+          "time": 12.72,
+          "start": {
+            "x": 8,
+            "y": 6
+          },
+          "end": {
+            "x": 8,
+            "y": 15
+          },
+          "steps": 106,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 86.88524590163934,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 84.67153284671532,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 11.4,
+            "anchor": {
+              "x": 8,
+              "y": 6
+            },
+            "dir": "D",
+            "to": {
+              "x": 8,
+              "y": 15
+            },
+            "exposureCells": 8,
+            "predictedGain": 64,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 9,
+                "y": 7,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 10,
+                "y": 3,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 1.08,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.05,
+      "shift": 0,
+      "time": 7.56,
+      "lives": 3,
+      "cuts": 4,
+      "steps": 63,
+      "percent": 75.84745762711864,
+      "trace": [
+        {
+          "added": 52,
+          "percent": 22.033898305084744,
+          "time": 2.64,
+          "start": {
+            "x": 9,
+            "y": 10
+          },
+          "end": {
+            "x": 13,
+            "y": 10
+          },
+          "steps": 22,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "lantern",
+              "percent": 66.66666666666666,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 0,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 0,
+            "anchor": {
+              "x": 9,
+              "y": 10
+            },
+            "dir": "R",
+            "to": {
+              "x": 13,
+              "y": 10
+            },
+            "exposureCells": 3,
+            "predictedGain": 52,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 3,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 13,
+                "y": 13,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 16,
+                "y": 3,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.43999999999999995,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 1,
+          "percent": 22.45762711864407,
+          "time": 5.04,
+          "start": {
+            "x": 21,
+            "y": 10
+          },
+          "end": {
+            "x": 19,
+            "y": 10
+          },
+          "steps": 42,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "lantern",
+              "percent": 66.66666666666666,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 1.4084507042253522,
+              "complete": false
+            }
+          ],
+          "decision": {
+            "chosenAt": 2.64,
+            "anchor": {
+              "x": 21,
+              "y": 10
+            },
+            "dir": "L",
+            "to": {
+              "x": 19,
+              "y": 10
+            },
+            "exposureCells": 1,
+            "predictedGain": 1,
+            "freshIslandStop": true,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 12,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 8,
+                "y": 11,
+                "dir": 0,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 15,
+                "y": 11,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.24,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 51,
+          "percent": 44.06779661016949,
+          "time": 5.76,
+          "start": {
+            "x": 18,
+            "y": 10
+          },
+          "end": {
+            "x": 13,
+            "y": 10
+          },
+          "steps": 48,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "lantern",
+              "percent": 66.66666666666666,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 73.23943661971832,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 5.04,
+            "anchor": {
+              "x": 18,
+              "y": 10
+            },
+            "dir": "L",
+            "to": {
+              "x": 13,
+              "y": 10
+            },
+            "exposureCells": 4,
+            "predictedGain": 51,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 1,
+                "y": 13,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 10,
+                "y": 11,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 15,
+                "y": 11,
+                "dir": 3,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.5599999999999999,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        },
+        {
+          "added": 75,
+          "percent": 75.84745762711864,
+          "time": 7.56,
+          "start": {
+            "x": 7,
+            "y": 12
+          },
+          "end": {
+            "x": 0,
+            "y": 12
+          },
+          "steps": 63,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 86.20689655172413,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 66.66666666666666,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 73.23943661971832,
+              "complete": true
+            }
+          ],
+          "decision": {
+            "chosenAt": 5.8,
+            "anchor": {
+              "x": 7,
+              "y": 12
+            },
+            "dir": "L",
+            "to": {
+              "x": 0,
+              "y": 12
+            },
+            "exposureCells": 6,
+            "predictedGain": 75,
+            "freshIslandStop": false,
+            "observedEnemies": [
+              {
+                "id": 1,
+                "x": 5,
+                "y": 14,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 2,
+                "x": 12,
+                "y": 13,
+                "dir": 2,
+                "behavior": "patrol",
+                "tellTimer": 0
+              },
+              {
+                "id": 3,
+                "x": 17,
+                "y": 11,
+                "dir": 1,
+                "behavior": "patrol",
+                "tellTimer": 0
+              }
+            ],
+            "forecast": {
+              "risk": "safe",
+              "closeIn": 0.82,
+              "hitIn": null,
+              "margin": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.1,
+      "shift": 0,
+      "time": 6.72,
+      "lives": 3,
+      "cuts": 2,
+      "steps": 55,
+      "percent": 66.40926640926641
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.1,
+      "shift": 0,
+      "time": 8.9,
+      "lives": 3,
+      "cuts": 3,
+      "steps": 70,
+      "percent": 90.67796610169492
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.1,
+      "shift": 0,
+      "time": 12.78,
+      "lives": 3,
+      "cuts": 5,
+      "steps": 105,
+      "percent": 89.96138996138995
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.1,
+      "shift": 0,
+      "time": 8.14,
+      "lives": 3,
+      "cuts": 4,
+      "steps": 65,
+      "percent": 75.84745762711864
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.2,
+      "shift": 0,
+      "time": 11.5,
+      "lives": 3,
+      "cuts": 2,
+      "steps": 87,
+      "percent": 73.74517374517374
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.2,
+      "shift": 0,
+      "time": 11.5,
+      "lives": 3,
+      "cuts": 3,
+      "steps": 83,
+      "percent": 80.08474576271186
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.2,
+      "shift": 0,
+      "time": 18.18,
+      "lives": 3,
+      "cuts": 5,
+      "steps": 139,
+      "percent": 72.97297297297297
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.2,
+      "shift": 0,
+      "time": 16.78,
+      "lives": 3,
+      "cuts": 5,
+      "steps": 123,
+      "percent": 67.37288135593221
+    }
+  ],
+  "causalPair": {
+    "sameInitialGrid": true,
+    "sameInitialPlayer": true,
+    "naturalPhaseOnly": true,
+    "a": {
+      "shift": 0,
+      "initialEnemies": [
+        {
+          "id": 1,
+          "x": 7,
+          "y": 1,
+          "dir": 3
+        },
+        {
+          "id": 2,
+          "x": 12,
+          "y": 14,
+          "dir": 1
+        }
+      ],
+      "firstActualClosure": {
+        "added": 110,
+        "percent": 42.471042471042466,
+        "time": 3.72,
+        "start": {
+          "x": 11,
+          "y": 11
+        },
+        "end": {
+          "x": 21,
+          "y": 11
+        },
+        "steps": 31,
+        "objectives": [
+          {
+            "id": "reed",
+            "percent": 0,
+            "complete": false
+          },
+          {
+            "id": "islet",
+            "percent": 80.2919708029197,
+            "complete": true
+          }
+        ],
+        "decision": {
+          "chosenAt": 0,
+          "anchor": {
+            "x": 11,
+            "y": 11
+          },
+          "dir": "R",
+          "to": {
+            "x": 21,
+            "y": 11
+          },
+          "exposureCells": 9,
+          "predictedGain": 110,
+          "freshIslandStop": false,
+          "observedEnemies": [
+            {
+              "id": 1,
+              "x": 1,
+              "y": 2,
+              "dir": 2,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 2,
+              "x": 19,
+              "y": 14,
+              "dir": 1,
+              "behavior": "patrol",
+              "tellTimer": 0
+            }
+          ],
+          "forecast": {
+            "risk": "safe",
+            "closeIn": 1.1800000000000002,
+            "hitIn": null,
+            "margin": null
+          }
+        }
+      }
+    },
+    "b": {
+      "shift": 1.28,
+      "initialEnemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "dir": 3
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 14,
+          "dir": 1
+        }
+      ],
+      "firstActualClosure": {
+        "added": 108,
+        "percent": 41.6988416988417,
+        "time": 2.62,
+        "start": {
+          "x": 0,
+          "y": 3
+        },
+        "end": {
+          "x": 8,
+          "y": 3
+        },
+        "steps": 12,
+        "objectives": [
+          {
+            "id": "reed",
+            "percent": 88.52459016393442,
+            "complete": true
+          },
+          {
+            "id": "islet",
+            "percent": 0,
+            "complete": false
+          }
+        ],
+        "decision": {
+          "chosenAt": 1.28,
+          "anchor": {
+            "x": 0,
+            "y": 3
+          },
+          "dir": "R",
+          "to": {
+            "x": 8,
+            "y": 3
+          },
+          "exposureCells": 7,
+          "predictedGain": 108,
+          "freshIslandStop": false,
+          "observedEnemies": [
+            {
+              "id": 1,
+              "x": 2,
+              "y": 1,
+              "dir": 3,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 2,
+              "x": 17,
+              "y": 14,
+              "dir": 1,
+              "behavior": "patrol",
+              "tellTimer": 0
+            }
+          ],
+          "forecast": {
+            "risk": "safe",
+            "closeIn": 0.94,
+            "hitIn": null,
+            "margin": null
+          }
+        }
+      }
+    }
+  },
+  "shortShift": {
+    "shift": 2.56,
+    "level": 3,
+    "cuts": 3,
+    "trace": [
+      {
+        "added": 52,
+        "percent": 22.033898305084744,
+        "time": 5.1,
+        "start": {
+          "x": 9,
+          "y": 10
+        },
+        "end": {
+          "x": 13,
+          "y": 10
+        },
+        "steps": 22,
+        "objectives": [
+          {
+            "id": "fern",
+            "percent": 0,
+            "complete": false
+          },
+          {
+            "id": "lantern",
+            "percent": 66.66666666666666,
+            "complete": true
+          },
+          {
+            "id": "tide",
+            "percent": 0,
+            "complete": false
+          }
+        ],
+        "decision": {
+          "chosenAt": 2.56,
+          "anchor": {
+            "x": 9,
+            "y": 10
+          },
+          "dir": "R",
+          "to": {
+            "x": 13,
+            "y": 10
+          },
+          "exposureCells": 3,
+          "predictedGain": 52,
+          "freshIslandStop": false,
+          "observedEnemies": [
+            {
+              "id": 1,
+              "x": 1,
+              "y": 11,
+              "dir": 2,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 2,
+              "x": 9,
+              "y": 11,
+              "dir": 1,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 3,
+              "x": 16,
+              "y": 11,
+              "dir": 2,
+              "behavior": "patrol",
+              "tellTimer": 0
+            }
+          ],
+          "forecast": {
+            "risk": "safe",
+            "closeIn": 0.43999999999999995,
+            "hitIn": null,
+            "margin": null
+          }
+        }
+      },
+      {
+        "added": 67,
+        "percent": 50.42372881355932,
+        "time": 6.18,
+        "start": {
+          "x": 15,
+          "y": 12
+        },
+        "end": {
+          "x": 15,
+          "y": 7
+        },
+        "steps": 31,
+        "objectives": [
+          {
+            "id": "fern",
+            "percent": 0,
+            "complete": false
+          },
+          {
+            "id": "lantern",
+            "percent": 66.66666666666666,
+            "complete": true
+          },
+          {
+            "id": "tide",
+            "percent": 94.36619718309859,
+            "complete": true
+          }
+        ],
+        "decision": {
+          "chosenAt": 5.1,
+          "anchor": {
+            "x": 15,
+            "y": 12
+          },
+          "dir": "U",
+          "to": {
+            "x": 15,
+            "y": 7
+          },
+          "exposureCells": 4,
+          "predictedGain": 67,
+          "freshIslandStop": false,
+          "observedEnemies": [
+            {
+              "id": 1,
+              "x": 1,
+              "y": 14,
+              "dir": 2,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 2,
+              "x": 11,
+              "y": 11,
+              "dir": 1,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 3,
+              "x": 14,
+              "y": 10,
+              "dir": 0,
+              "behavior": "patrol",
+              "tellTimer": 0
+            }
+          ],
+          "forecast": {
+            "risk": "safe",
+            "closeIn": 0.58,
+            "hitIn": null,
+            "margin": null
+          }
+        }
+      },
+      {
+        "added": 69,
+        "percent": 79.66101694915254,
+        "time": 8.46,
+        "start": {
+          "x": 7,
+          "y": 11
+        },
+        "end": {
+          "x": 0,
+          "y": 11
+        },
+        "steps": 50,
+        "objectives": [
+          {
+            "id": "fern",
+            "percent": 79.3103448275862,
+            "complete": true
+          },
+          {
+            "id": "lantern",
+            "percent": 66.66666666666666,
+            "complete": true
+          },
+          {
+            "id": "tide",
+            "percent": 94.36619718309859,
+            "complete": true
+          }
+        ],
+        "decision": {
+          "chosenAt": 6.2,
+          "anchor": {
+            "x": 7,
+            "y": 11
+          },
+          "dir": "L",
+          "to": {
+            "x": 0,
+            "y": 11
+          },
+          "exposureCells": 6,
+          "predictedGain": 69,
+          "freshIslandStop": false,
+          "observedEnemies": [
+            {
+              "id": 1,
+              "x": 6,
+              "y": 13,
+              "dir": 0,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 2,
+              "x": 10,
+              "y": 14,
+              "dir": 3,
+              "behavior": "patrol",
+              "tellTimer": 0
+            },
+            {
+              "id": 3,
+              "x": 14,
+              "y": 11,
+              "dir": 2,
+              "behavior": "patrol",
+              "tellTimer": 0
+            }
+          ],
+          "forecast": {
+            "risk": "safe",
+            "closeIn": 0.7999999999999999,
+            "hitIn": null,
+            "margin": null
+          }
+        }
+      }
+    ]
+  },
+  "oldFixedCounterexamples": [
+    {
+      "shift": 0,
+      "state": "won",
+      "time": 13.48,
+      "lives": 1,
+      "cuts": 3,
+      "chaseLosses": [
+        {
+          "time": 3.68,
+          "text": "潮影3碰到了风险线，风险线已清除，已织岸线保留。"
+        },
+        {
+          "time": 7.36,
+          "text": "潮影3碰到了风险线，风险线已清除，已织岸线保留。"
+        }
+      ]
+    },
+    {
+      "shift": 1.28,
+      "state": "lost",
+      "time": 12.32,
+      "lives": 0,
+      "cuts": 1,
+      "chaseLosses": [
+        {
+          "time": 5.28,
+          "text": "潮影3碰到了风险线，风险线已清除，已织岸线保留。"
+        },
+        {
+          "time": 8.96,
+          "text": "潮影3碰到了风险线，风险线已清除，已织岸线保留。"
+        },
+        {
+          "time": 12.32,
+          "text": "潮影3碰到了风险线，风险线已清除，已织岸线保留。"
+        }
+      ]
+    },
+    {
+      "shift": 2.56,
+      "state": "playing",
+      "time": 16,
+      "lives": 2,
+      "cuts": 3,
+      "chaseLosses": []
+    }
+  ],
+  "deliberateRedForecastFailure": {
+    "state": "lost",
+    "time": 3.36,
+    "lives": 0,
+    "redLaunches": [
+      {
+        "time": 0,
+        "from": {
+          "x": 1,
+          "y": 0
+        },
+        "dir": "D",
+        "forecast": {
+          "risk": "danger",
+          "closeIn": 1.7999999999999998,
+          "hitIn": 1.76,
+          "margin": -0.039999999999999813
+        }
+      },
+      {
+        "time": 1.9,
+        "from": {
+          "x": 2,
+          "y": 0
+        },
+        "dir": "D",
+        "forecast": {
+          "risk": "danger",
+          "closeIn": 1.78,
+          "hitIn": 0.6600000000000001,
+          "margin": -1.1199999999999999
+        }
+      },
+      {
+        "time": 2.6,
+        "from": {
+          "x": 1,
+          "y": 0
+        },
+        "dir": "D",
+        "forecast": {
+          "risk": "danger",
+          "closeIn": 1.76,
+          "hitIn": 0.7599999999999998,
+          "margin": -1.0000000000000002
+        }
+      }
+    ],
+    "chaseEvents": [
+      {
+        "time": 1.76,
+        "text": "潮影1碰到了风险线，风险线已清除，已织岸线保留。"
+      },
+      {
+        "time": 2.56,
+        "text": "潮影1碰到了风险线，风险线已清除，已织岸线保留。"
+      },
+      {
+        "time": 3.36,
+        "text": "潮影1碰到了风险线，风险线已清除，已织岸线保留。"
+      }
+    ]
+  },
+  "limits": [
+    "Policy clones simulate only the visible deterministic model; they are automation assistance, not human play.",
+    "Forecast assumes current visible state and an uninterrupted straight direction, not a safety guarantee after changing inputs.",
+    "No exhaustive search over all phases or routes.",
+    "No browser, real-device or subjective fun claim."
+  ]
+}
