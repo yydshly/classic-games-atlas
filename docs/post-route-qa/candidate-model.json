@@ -1,0 +1,574 @@
+{
+  "baseline": "1108ca772542246973909130085b9cccf97468c0",
+  "candidateRouteId": "post-v2-sluice-switchbacks-v1",
+  "baselineRouteId": "post-v2-morning-block-v1",
+  "binding": "Production engine source unchanged except its one tracks import URI; candidate singleton bound only inside this offline process.",
+  "sourceHashes": {
+    "engine": "02da54521aaeadc4317ac6012f3223fdede367d4d0c9eac8853465cdb38cb773",
+    "tracks": "29761e9e4f88c8a0a3db9644addc5cfbc8a500af2f27659f0b11a81d0da59eaf",
+    "candidate": "c2c9eb32735e208714924258f7cf76fa47e90ce21e4ee84055943606482f7070"
+  },
+  "physics": {
+    "step": 0.008333333333333333,
+    "maxSpeed": 255,
+    "acceleration": 150,
+    "drag": 29,
+    "brake": 330,
+    "turn": 3.25,
+    "shoulderSpeed": 83,
+    "resetPenalty": 3,
+    "carRadius": 11
+  },
+  "builderParity": "Original first-track points, segments, gateArcs and length deep-equal.",
+  "geometry": {
+    "length": 2369.8289,
+    "width": 86,
+    "gateCount": 12,
+    "rightTurns": 9,
+    "leftTurns": 3,
+    "longestAuthoringEdge": 595,
+    "bounds": {
+      "left": 98.5633,
+      "right": 798.834,
+      "top": 100,
+      "bottom": 535
+    },
+    "borderStrokeCanvasMargin": 49.0633,
+    "centerlineIntersections": 0,
+    "sampledNonlocalClearance": 139.3912,
+    "clearanceSampleStep": 4,
+    "clearanceMinArcGap": 260,
+    "gateArcs": [
+      0,
+      365.8898,
+      519.8947,
+      694.5639,
+      863.3088,
+      1060.1517,
+      1266.8751,
+      1433.8725,
+      1591.8169,
+      1747.2717,
+      1895.736,
+      2021.4324
+    ],
+    "turnDegrees": [
+      62.354,
+      60.7512,
+      103.1045,
+      -122.6697,
+      89.8232,
+      48.9909,
+      50.8263,
+      -94.7847,
+      98.2045,
+      81.8772,
+      -104.5158,
+      86.0385
+    ]
+  },
+  "baselineGeometry": {
+    "length": 1793.8797,
+    "width": 100,
+    "gateCount": 8,
+    "rightTurns": 8,
+    "leftTurns": 0,
+    "longestAuthoringEdge": 470,
+    "bounds": {
+      "left": 110,
+      "right": 760,
+      "top": 140,
+      "bottom": 510
+    },
+    "borderStrokeCanvasMargin": 53.5,
+    "centerlineIntersections": 0,
+    "sampledNonlocalClearance": 220.2548,
+    "clearanceSampleStep": 4,
+    "clearanceMinArcGap": 260,
+    "gateArcs": [
+      0,
+      313.0352,
+      487.0507,
+      644.1584,
+      925.5665,
+      1215.8591,
+      1367.0053,
+      1506.2362
+    ],
+    "turnDegrees": [
+      55.008,
+      45,
+      45,
+      61.3895,
+      28.6105,
+      47.7263,
+      42.2737,
+      34.992
+    ]
+  },
+  "simulations": [
+    {
+      "kind": "ordinary-input model",
+      "stage": 0,
+      "rank": 2,
+      "time": 52.55,
+      "settlements": 1,
+      "brakeSeconds": 0.0583,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": 52.55,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": null,
+          "laps": 1,
+          "gates": 19,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 52.3,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ],
+      "gateSegments": [
+        {
+          "gate": 0,
+          "seconds": 8.75,
+          "brakeSeconds": 0.0333,
+          "minSpeed": 0,
+          "maxSpeed": 181.1674
+        },
+        {
+          "gate": 1,
+          "seconds": 3.6083,
+          "brakeSeconds": 0,
+          "minSpeed": 45.9949,
+          "maxSpeed": 108.0185
+        },
+        {
+          "gate": 2,
+          "seconds": 6.7167,
+          "brakeSeconds": 0,
+          "minSpeed": 8.4212,
+          "maxSpeed": 134.5023
+        },
+        {
+          "gate": 3,
+          "seconds": 3.4,
+          "brakeSeconds": 0.025,
+          "minSpeed": 87.2362,
+          "maxSpeed": 114.488
+        },
+        {
+          "gate": 4,
+          "seconds": 3.275,
+          "brakeSeconds": 0,
+          "minSpeed": 89.0366,
+          "maxSpeed": 142.3933
+        },
+        {
+          "gate": 5,
+          "seconds": 4.2917,
+          "brakeSeconds": 0,
+          "minSpeed": 67.6807,
+          "maxSpeed": 130.2056
+        },
+        {
+          "gate": 6,
+          "seconds": 4.225,
+          "brakeSeconds": 0,
+          "minSpeed": 47.6699,
+          "maxSpeed": 104.4076
+        },
+        {
+          "gate": 7,
+          "seconds": 3.55,
+          "brakeSeconds": 0,
+          "minSpeed": 75.0678,
+          "maxSpeed": 91.3799
+        },
+        {
+          "gate": 8,
+          "seconds": 2.9417,
+          "brakeSeconds": 0,
+          "minSpeed": 78.0823,
+          "maxSpeed": 122.108
+        },
+        {
+          "gate": 9,
+          "seconds": 3.9333,
+          "brakeSeconds": 0,
+          "minSpeed": 47.1771,
+          "maxSpeed": 80.6834
+        },
+        {
+          "gate": 10,
+          "seconds": 2.525,
+          "brakeSeconds": 0,
+          "minSpeed": 80.4582,
+          "maxSpeed": 99.2044
+        },
+        {
+          "gate": 11,
+          "seconds": 5.3333,
+          "brakeSeconds": 0,
+          "minSpeed": 91.6868,
+          "maxSpeed": 157.2196
+        }
+      ]
+    },
+    {
+      "kind": "ordinary-input model",
+      "stage": 1,
+      "rank": 2,
+      "time": 44.1917,
+      "settlements": 1,
+      "brakeSeconds": 0.6583,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": 44.1917,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": null,
+          "laps": 1,
+          "gates": 21,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 44.0083,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ],
+      "gateSegments": [
+        {
+          "gate": 0,
+          "seconds": 7.1917,
+          "brakeSeconds": 0.2917,
+          "minSpeed": 0,
+          "maxSpeed": 182.5181
+        },
+        {
+          "gate": 1,
+          "seconds": 3.2583,
+          "brakeSeconds": 0,
+          "minSpeed": 48.4225,
+          "maxSpeed": 134.6409
+        },
+        {
+          "gate": 2,
+          "seconds": 6.7583,
+          "brakeSeconds": 0.15,
+          "minSpeed": 8.8982,
+          "maxSpeed": 142.06
+        },
+        {
+          "gate": 3,
+          "seconds": 2.7167,
+          "brakeSeconds": 0.075,
+          "minSpeed": 94.2791,
+          "maxSpeed": 148.0881
+        },
+        {
+          "gate": 4,
+          "seconds": 2.2833,
+          "brakeSeconds": 0.1417,
+          "minSpeed": 138.6346,
+          "maxSpeed": 203.8625
+        },
+        {
+          "gate": 5,
+          "seconds": 3.05,
+          "brakeSeconds": 0,
+          "minSpeed": 72.9136,
+          "maxSpeed": 162.8729
+        },
+        {
+          "gate": 6,
+          "seconds": 3.5083,
+          "brakeSeconds": 0,
+          "minSpeed": 52.2479,
+          "maxSpeed": 141.7283
+        },
+        {
+          "gate": 7,
+          "seconds": 3.1917,
+          "brakeSeconds": 0,
+          "minSpeed": 83.1754,
+          "maxSpeed": 113.659
+        },
+        {
+          "gate": 8,
+          "seconds": 2.65,
+          "brakeSeconds": 0,
+          "minSpeed": 80.2436,
+          "maxSpeed": 146.4921
+        },
+        {
+          "gate": 9,
+          "seconds": 3.5,
+          "brakeSeconds": 0,
+          "minSpeed": 48.6984,
+          "maxSpeed": 105.3697
+        },
+        {
+          "gate": 10,
+          "seconds": 2.1833,
+          "brakeSeconds": 0,
+          "minSpeed": 88.3884,
+          "maxSpeed": 123.2446
+        },
+        {
+          "gate": 11,
+          "seconds": 3.9,
+          "brakeSeconds": 0,
+          "minSpeed": 123.7643,
+          "maxSpeed": 205.6143
+        }
+      ]
+    },
+    {
+      "kind": "ordinary-input model",
+      "stage": 2,
+      "rank": 3,
+      "time": 46.45,
+      "settlements": 1,
+      "brakeSeconds": 4.1167,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": 46.45,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": 46.0917,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0.175
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 41.1167,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ],
+      "gateSegments": [
+        {
+          "gate": 0,
+          "seconds": 6.6333,
+          "brakeSeconds": 0.8667,
+          "minSpeed": 0,
+          "maxSpeed": 205.9968
+        },
+        {
+          "gate": 1,
+          "seconds": 3.0083,
+          "brakeSeconds": 0.2833,
+          "minSpeed": 60.8305,
+          "maxSpeed": 137.0549
+        },
+        {
+          "gate": 2,
+          "seconds": 4.6,
+          "brakeSeconds": 0.325,
+          "minSpeed": 6.4281,
+          "maxSpeed": 142.3221
+        },
+        {
+          "gate": 3,
+          "seconds": 2.65,
+          "brakeSeconds": 0.2167,
+          "minSpeed": 94.1162,
+          "maxSpeed": 147.8742
+        },
+        {
+          "gate": 4,
+          "seconds": 2.225,
+          "brakeSeconds": 0.4833,
+          "minSpeed": 144.7496,
+          "maxSpeed": 203.8326
+        },
+        {
+          "gate": 5,
+          "seconds": 2.725,
+          "brakeSeconds": 0.9,
+          "minSpeed": 103.8118,
+          "maxSpeed": 178.3454
+        },
+        {
+          "gate": 6,
+          "seconds": 2.7167,
+          "brakeSeconds": 0.6333,
+          "minSpeed": 90.1098,
+          "maxSpeed": 149.8535
+        },
+        {
+          "gate": 7,
+          "seconds": 2.8417,
+          "brakeSeconds": 0.2417,
+          "minSpeed": 74.0999,
+          "maxSpeed": 126.9071
+        },
+        {
+          "gate": 8,
+          "seconds": 2.5333,
+          "brakeSeconds": 0.0917,
+          "minSpeed": 91.706,
+          "maxSpeed": 149.77
+        },
+        {
+          "gate": 9,
+          "seconds": 6.1,
+          "brakeSeconds": 0.075,
+          "minSpeed": 6.2059,
+          "maxSpeed": 118.2726
+        },
+        {
+          "gate": 10,
+          "seconds": 6.6667,
+          "brakeSeconds": 0,
+          "minSpeed": 0,
+          "maxSpeed": 128.3998
+        },
+        {
+          "gate": 11,
+          "seconds": 3.75,
+          "brakeSeconds": 0,
+          "minSpeed": 123.0718,
+          "maxSpeed": 205.9915
+        }
+      ]
+    },
+    {
+      "kind": "idle-player rival feasibility",
+      "stage": 0,
+      "observedTime": 59.9083,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": null,
+          "laps": 0,
+          "gates": 0,
+          "resets": 1,
+          "offroadSeconds": 0.775
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": 59.9083,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 56.575,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "kind": "idle-player rival feasibility",
+      "stage": 1,
+      "observedTime": 45.875,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": null,
+          "laps": 0,
+          "gates": 0,
+          "resets": 1,
+          "offroadSeconds": 0.6667
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": 45.875,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 44.75,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "kind": "idle-player rival feasibility",
+      "stage": 2,
+      "observedTime": 41.0917,
+      "cars": [
+        {
+          "id": "player",
+          "finishedAt": null,
+          "laps": 0,
+          "gates": 0,
+          "resets": 1,
+          "offroadSeconds": 0.6
+        },
+        {
+          "id": "rival-1",
+          "finishedAt": 41.0917,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0.2917
+        },
+        {
+          "id": "rival-2",
+          "finishedAt": 40.3583,
+          "laps": 2,
+          "gates": 24,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    }
+  ],
+  "fixtures": {
+    "skippedGateCannotAdvanceOrFinish": true,
+    "oneCandidateBoundCheckpointRoundTrip": true
+  },
+  "limits": [
+    "Offline ordinary-input models and explicit fixtures only; no normal UI play or human handling claim.",
+    "Single source-bound route per engine instance. Route selection, route-aware restore and persistent record isolation are not implemented or verified.",
+    "Clearance is a 4-unit centerline sampling diagnostic, not a complete road-region proof. No pixel/browser/phone QA.",
+    "Six fixed simulations, no parameter search; model ranks are observations, not a balance or first-place guarantee."
+  ]
+}

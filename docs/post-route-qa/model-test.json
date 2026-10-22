@@ -1,0 +1,61 @@
+{
+  "kind": "Offline model and storage fixtures, not UI",
+  "groups": [
+    "Old route deterministic physics and controls unchanged",
+    "Per-game route binding; interleaved games and correct geometry",
+    "Old checkpoint only maps to old route; invalid route/geometry rejected",
+    "Skipped and reverse gates grant no credit (position fixture, not play)",
+    "Read-only v2 import belongs only to original route; no cross-route records",
+    "Bad bytes preserved; quota failure and subsequent success accurate"
+  ],
+  "models": [
+    {
+      "params": {
+        "speed": 155,
+        "bend": 65,
+        "lane": 0,
+        "look": 0.3,
+        "threshold": 0.12
+      },
+      "time": 56.86666666666408,
+      "rank": 2,
+      "gates": 24,
+      "resets": 0,
+      "finished": 56.86666666666408,
+      "opponents": [
+        {
+          "gates": 19,
+          "finished": null
+        },
+        {
+          "gates": 24,
+          "finished": 56.62499999999743
+        }
+      ]
+    },
+    {
+      "params": {
+        "speed": 180,
+        "bend": 65,
+        "lane": 0,
+        "look": 0.3,
+        "threshold": 0.12
+      },
+      "time": 59.474999999997266,
+      "rank": 2,
+      "gates": 24,
+      "resets": 0,
+      "finished": 59.474999999997266,
+      "opponents": [
+        {
+          "gates": 20,
+          "finished": null
+        },
+        {
+          "gates": 24,
+          "finished": 59.23333333333061
+        }
+      ]
+    }
+  ]
+}

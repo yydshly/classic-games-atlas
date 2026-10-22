@@ -1,0 +1,104 @@
+{
+  "baseline": "2598b2301017e2d5d73946be717918bec1d8bd76",
+  "scope": "Optional v3 second route; v2 runtime, namespace and rules retained.",
+  "status": "local_verified",
+  "normalUi": {
+    "method": "Ordinary native keyboard with read-only telemetry steering policy (digital WASD about50ms). No clock, position, win or v3 save injection. Mobile separately uses CDP native touch simulation, not hardware. Storage migration/failure fixtures explicitly separate.",
+    "routeId": "post-v2-sluice-switchbacks-v1",
+    "time": 57.7333333333307,
+    "rank": 2,
+    "legalGates": 24,
+    "resets": 0,
+    "settlements": 1,
+    "unlocked": 2,
+    "exactThreeCarRefresh": true,
+    "perRouteRecordsAndResume": true,
+    "resultReopenNext": true,
+    "visibleResult": {
+      "overlay-title": "已抵达，下一次再争先",
+      "summary": "第 2 / 3 名 · 57.7 秒 · 复位 0 次",
+      "last-result": "上次：01 · 第 2 / 3 名 · 57.7 秒",
+      "best": "57.73 秒"
+    }
+  },
+  "separateFixtures": {
+    "migration": "51.2 old-route best only; old bytes unchanged",
+    "gateSkip": "Offline position fixture; no gate/lap/finish credit",
+    "storage": "Bad bytes preserved, quota failure and successful retry; offline storage fixtures"
+  },
+  "touchSimulation": {
+    "events": [
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      },
+      {
+        "type": "touch",
+        "trusted": true
+      }
+    ],
+    "gasAndSteer": true,
+    "partialRelease": true,
+    "outsideRelease": true,
+    "cancel": true,
+    "pauseResume": true,
+    "returnFocusQuery": true
+  },
+  "initialHarnessBoundary": {
+    "error": [
+      "TypeError: Failed to fetch"
+    ],
+    "causeEvidence": [
+      {
+        "request": "http://127.0.0.1:58253/data/comparisons.json?v=independent-targets-20261021",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "request": "http://127.0.0.1:58253/data/games.json?v=independent-targets-20261021",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "request": "http://127.0.0.1:58253/data/reference-media.json?v=independent-targets-20261021",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "request": "http://127.0.0.1:58253/data/value-comparisons.json?v=independent-targets-20261021",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "note": "Initial harness left a fresh directory before its fetches finished. All race/record assertions already passed. Remaining normal return/touch checks passed without errors; full race not rerun."
+  },
+  "remainingNormalErrors": [],
+  "remainingHttpErrors": [],
+  "humanBoundaries": [
+    "No physical phone or human driving/handling acceptance",
+    "Second-route opponent stages2/3 use reviewed offline model feasibility, not new UI wins",
+    "Rank2 is legal completion, not first-place victory",
+    "No repeated full original-route history"
+  ],
+  "browserStorageFaultFixtures": "Three isolated fixtures: write-fail/recover, bad bytes preserved, read-denied page remains playable; browser-faults.json. Not real device failures."
+}

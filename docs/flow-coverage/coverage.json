@@ -727,7 +727,8 @@
         "docs/post-feedback-qa/",
         "docs/post-result-qa/",
         "docs/featured-play-qa/",
-        "docs/featured-touch-qa/"
+        "docs/featured-touch-qa/",
+        "docs/post-route-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "三场第一名独立目标已补齐；只保留真人操控/真机/声音审美与经典体验边界",
@@ -769,6 +770,16 @@
         "status": "fixed",
         "evidence": "../post-result-qa/",
         "scope": "查看赛场后可键盘返回结算；无重复保存/奖励；桌面下一场、390CSS终局重赛与非终态隐藏"
+      },
+      "optionalRoutes": {
+        "version": "v3",
+        "playUrl": "versions/v3/games/post/",
+        "routes": [
+          "晨光街区",
+          "水闸折线"
+        ],
+        "evidence": "docs/post-route-qa/",
+        "acceptance": "candidate_unaccepted"
       }
     },
     {
@@ -3445,5 +3456,11 @@
     "status": "optional_v3_local_verified",
     "evidence": "../brook-campaign-qa/",
     "scope": "原两场加原创混合终场；三场普通UI/自然失利当前场重试/刷新总结；两种终场模型、原生触控仿真分列，非真人体验验收"
+  },
+  "postRouteReview": {
+    "baseline": "2598b2301017e2d5d73946be717918bec1d8bd76",
+    "status": "optional_v3_local_verified",
+    "evidence": "../post-route-qa/",
+    "scope": "两图独立进度；水闸折线普通UI两圈24闸57.73秒第2名零复位，非第一名；触控仿真/旧档与漏闸fixture分别列示"
   }
 }

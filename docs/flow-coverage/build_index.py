@@ -72,6 +72,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     doc += '<p><a href="' + escape(D['fortressCampaignReview']['evidence'], quote=True) + '">堡垒v3：可选两段短战役</a>（阶段独立保存，v2仍默认；策略辅助、双人短输入与触控仿真分列）</p>'
 
+if D.get('postRouteReview'):
+    doc += '<p><a href="../post-route-qa/">邮差v3：双赛道与分图纪录</a>（新图合法完赛，非第一名；触控仅模拟）</p>'
 if D.get('brookCampaignReview'):
     doc += '<p><a href="' + escape(D['brookCampaignReview']['evidence'], quote=True) + '">溪谷v3：三场短战役与原创混合终场</a>（原两场/旧档保留，模型与普通UI分列）</p>'
 
@@ -145,6 +147,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     md += '[堡垒可选两段短战役](' + D['fortressCampaignReview']['evidence'] + ')；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。\n\n'
 
+if D.get('postRouteReview'):
+    md += '[邮差双赛道与独立纪录](../post-route-qa/)；原版保留，新图普通UI合法完赛、模型与触控模拟分列。\n\n'
 if D.get('brookCampaignReview'):
     md += '[溪谷三溪归途与混合终场](' + D['brookCampaignReview']['evidence'] + ')；三场主链与独立存档，真人和真机仍待验。\n\n'
 

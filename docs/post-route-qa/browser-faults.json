@@ -1,0 +1,23 @@
+{
+  "method": "Explicit browser storage fault injection, NOT real device failures or ordinary play",
+  "rows": [
+    {
+      "fixture": "write-fail-recover",
+      "warning": "保存失败，本次仍可玩；刷新可能丢失当前进度。旧存档未删除。",
+      "playable": true,
+      "errors": []
+    },
+    {
+      "fixture": "bad-bytes",
+      "warning": "发现无法读取的 v3 存档，已保留原内容且停止覆盖。本次仍可玩，刷新会丢失新进度。",
+      "playable": true,
+      "errors": []
+    },
+    {
+      "fixture": "read-denied",
+      "warning": "本机存储无法读取；本次仍可玩，刷新会丢失新进度。未覆盖旧存档。",
+      "playable": true,
+      "errors": []
+    }
+  ]
+}
