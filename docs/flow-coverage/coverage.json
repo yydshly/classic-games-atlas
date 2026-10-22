@@ -1813,6 +1813,36 @@
         "evidence": "docs/meadow-player-ux-qa/",
         "scope": "有限首次上手、目标/暂停反馈与390CSS普通UI；非真人/真机/完整通关重验"
       }
+    },
+    {
+      "number": "41",
+      "slug": "windowlife",
+      "title": "栖窗日常",
+      "recommendedVersion": "v1",
+      "playUrl": "preview/windowlife/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "普通UI辅助安排三日连续成功；实际完成秒数见报告",
+      "observedRetry": "第二日自然100秒超时后刷新保持失败，重试仅重置当天；前日回顾保留",
+      "endingBoundary": "普通UI按已知排程辅助安排三日连续成功；第二日自然超时后重试、活动与终态刷新、键盘和390CSS原生touch事件模拟已验。模型两种安排与存储故障夹具另列；不等于真人趣味、真手机或审美验收。无声音。",
+      "evidence": [
+        "docs/windowlife-qa/"
+      ],
+      "browserScope": "桌面与390CSS Chromium，普通按钮；touch事件模拟非真机",
+      "nextToolWork": "不新增泛化QA；真人自由安排节奏和美术体验尚待评估",
+      "humanRequired": [
+        "自由安排与趣味/难度感受",
+        "真实手机触控/性能",
+        "审美体验"
+      ],
+      "laterStageCoverage": {
+        "allThreeDays": "verified"
+      }
     }
   ],
   "evidenceThrough": "730541d8836a2a73f40c9af3776577834bdb4206",
@@ -3500,5 +3530,10 @@
     "status": "optional_cup_local_verified",
     "evidence": "../post-cup-qa/",
     "scope": "两站正常UI一次：37.69秒第3名1分、59.57秒第2名2分，总3分第2；活动/终态刷新、站间退出、整届重开、原自由赛独立；平分/DNF模型另列"
+  },
+  "windowlifeReview": {
+    "baseline": "d564c3551631520199cb6326a5b7b26004924123",
+    "scope": "新增原创三日小品；41目录、37活动、3停止、1保留；旧40覆盖记录不改",
+    "evidence": "docs/windowlife-qa/"
   }
 }

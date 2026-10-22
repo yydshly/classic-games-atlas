@@ -1,0 +1,484 @@
+{
+  "kind": "bounded deterministic model proof, not UI evidence",
+  "schedules": [
+    {
+      "id": "day1-basic",
+      "state": "won",
+      "time": 29.1,
+      "needs": [
+        {
+          "id": "a",
+          "needs": {
+            "hunger": 96.50799999999987,
+            "energy": 58.08999999999851,
+            "hygiene": 90.25399999999993,
+            "mood": 59.54500000000068
+          }
+        }
+      ],
+      "completed": [
+        {
+          "id": "a",
+          "cook": 1,
+          "eat": 1,
+          "wash": 1,
+          "work": 1
+        }
+      ],
+      "events": [
+        {
+          "time": 0.1,
+          "text": "禾禾开始做饭"
+        },
+        {
+          "time": 7.4,
+          "text": "禾禾完成做饭"
+        },
+        {
+          "time": 7.5,
+          "text": "禾禾开始吃饭（使用1份餐食）"
+        },
+        {
+          "time": 13.4,
+          "text": "禾禾完成吃饭"
+        },
+        {
+          "time": 13.5,
+          "text": "禾禾开始洗漱"
+        },
+        {
+          "time": 18.5,
+          "text": "禾禾完成洗漱"
+        },
+        {
+          "time": 20.1,
+          "text": "禾禾开始写手记"
+        },
+        {
+          "time": 29.1,
+          "text": "禾禾完成写手记"
+        },
+        {
+          "time": 29.1,
+          "text": "今日安排完成，窗灯照亮了这段日常。"
+        }
+      ]
+    },
+    {
+      "id": "day2-kitchen-first",
+      "state": "won",
+      "time": 52.6,
+      "needs": [
+        {
+          "id": "a",
+          "needs": {
+            "hunger": 83.68799999999976,
+            "energy": 50.74000000000034,
+            "hygiene": 80.84399999999988,
+            "mood": 55.36999999999911
+          }
+        },
+        {
+          "id": "b",
+          "needs": {
+            "hunger": 83.68799999999976,
+            "energy": 50.74000000000034,
+            "hygiene": 80.84399999999988,
+            "mood": 55.36999999999904
+          }
+        }
+      ],
+      "completed": [
+        {
+          "id": "a",
+          "cook": 1,
+          "eat": 1,
+          "wash": 1,
+          "work": 1,
+          "chat": 1
+        },
+        {
+          "id": "b",
+          "cook": 1,
+          "wash": 1,
+          "work": 1,
+          "eat": 1,
+          "chat": 1
+        }
+      ],
+      "events": [
+        {
+          "time": 7.5,
+          "text": "禾禾开始吃饭（使用1份餐食）"
+        },
+        {
+          "time": 13.4,
+          "text": "禾禾完成吃饭"
+        },
+        {
+          "time": 13.5,
+          "text": "禾禾开始洗漱"
+        },
+        {
+          "time": 15.3,
+          "text": "阿沐完成做饭"
+        },
+        {
+          "time": 18.5,
+          "text": "禾禾完成洗漱"
+        },
+        {
+          "time": 18.5,
+          "text": "阿沐开始洗漱"
+        },
+        {
+          "time": 22.1,
+          "text": "禾禾开始写手记"
+        },
+        {
+          "time": 22.6,
+          "text": "阿沐完成洗漱"
+        },
+        {
+          "time": 32,
+          "text": "禾禾完成写手记"
+        },
+        {
+          "time": 32,
+          "text": "阿沐开始写手记"
+        },
+        {
+          "time": 41.9,
+          "text": "阿沐完成写手记"
+        },
+        {
+          "time": 42,
+          "text": "阿沐开始吃饭（使用1份餐食）"
+        },
+        {
+          "time": 46.1,
+          "text": "阿沐完成吃饭"
+        },
+        {
+          "time": 46.2,
+          "text": "禾禾与阿沐开始一起聊天"
+        },
+        {
+          "time": 52.6,
+          "text": "禾禾与阿沐完成一起聊天"
+        },
+        {
+          "time": 52.6,
+          "text": "今日安排完成，窗灯照亮了这段日常。"
+        }
+      ]
+    },
+    {
+      "id": "day2-desk-first",
+      "state": "won",
+      "time": 46.2,
+      "needs": [
+        {
+          "id": "a",
+          "needs": {
+            "hunger": 84.45599999999979,
+            "energy": 51.380000000000294,
+            "hygiene": 81.2279999999999,
+            "mood": 55.689999999999046
+          }
+        },
+        {
+          "id": "b",
+          "needs": {
+            "hunger": 84.45599999999979,
+            "energy": 51.380000000000216,
+            "hygiene": 81.2279999999999,
+            "mood": 55.689999999999046
+          }
+        }
+      ],
+      "completed": [
+        {
+          "id": "a",
+          "work": 1,
+          "wash": 1,
+          "cook": 1,
+          "eat": 1,
+          "chat": 1
+        },
+        {
+          "id": "b",
+          "wash": 1,
+          "cook": 1,
+          "eat": 1,
+          "work": 1,
+          "chat": 1
+        }
+      ],
+      "events": [
+        {
+          "time": 5.2,
+          "text": "阿沐开始做饭"
+        },
+        {
+          "time": 8.8,
+          "text": "禾禾完成写手记"
+        },
+        {
+          "time": 8.9,
+          "text": "禾禾开始洗漱"
+        },
+        {
+          "time": 12.5,
+          "text": "阿沐完成做饭"
+        },
+        {
+          "time": 12.6,
+          "text": "阿沐开始吃饭（使用1份餐食）"
+        },
+        {
+          "time": 13,
+          "text": "禾禾完成洗漱"
+        },
+        {
+          "time": 13.1,
+          "text": "禾禾开始做饭"
+        },
+        {
+          "time": 17.3,
+          "text": "阿沐完成吃饭"
+        },
+        {
+          "time": 19.8,
+          "text": "禾禾完成做饭"
+        },
+        {
+          "time": 24.1,
+          "text": "阿沐开始写手记"
+        },
+        {
+          "time": 25.1,
+          "text": "禾禾开始吃饭（使用1份餐食）"
+        },
+        {
+          "time": 29.8,
+          "text": "禾禾完成吃饭"
+        },
+        {
+          "time": 32.2,
+          "text": "阿沐完成写手记"
+        },
+        {
+          "time": 40.1,
+          "text": "禾禾与阿沐开始一起聊天"
+        },
+        {
+          "time": 46.2,
+          "text": "禾禾与阿沐完成一起聊天"
+        },
+        {
+          "time": 46.2,
+          "text": "今日安排完成，窗灯照亮了这段日常。"
+        }
+      ]
+    },
+    {
+      "id": "day3-early-prep",
+      "state": "won",
+      "time": 48.7,
+      "needs": [
+        {
+          "id": "a",
+          "needs": {
+            "hunger": 86.15599999999978,
+            "energy": 46.13000000000097,
+            "hygiene": 52.07799999999989,
+            "mood": 61.564999999998754
+          }
+        },
+        {
+          "id": "b",
+          "needs": {
+            "hunger": 86.15599999999978,
+            "energy": 46.13000000000097,
+            "hygiene": 52.07799999999989,
+            "mood": 61.564999999998754
+          }
+        }
+      ],
+      "completed": [
+        {
+          "id": "a",
+          "cook": 1,
+          "work": 1,
+          "dinner": 1
+        },
+        {
+          "id": "b",
+          "cook": 1,
+          "work": 1,
+          "dinner": 1
+        }
+      ],
+      "events": [
+        {
+          "time": 0.1,
+          "text": "禾禾开始做饭"
+        },
+        {
+          "time": 7.4,
+          "text": "禾禾完成做饭"
+        },
+        {
+          "time": 7.4,
+          "text": "阿沐开始做饭"
+        },
+        {
+          "time": 7.5,
+          "text": "禾禾开始写手记"
+        },
+        {
+          "time": 15.3,
+          "text": "阿沐完成做饭"
+        },
+        {
+          "time": 17.1,
+          "text": "禾禾完成写手记"
+        },
+        {
+          "time": 17.1,
+          "text": "阿沐开始写手记"
+        },
+        {
+          "time": 26.7,
+          "text": "阿沐完成写手记"
+        },
+        {
+          "time": 40,
+          "text": "禾禾与阿沐开始共享晚餐（使用2份餐食）"
+        },
+        {
+          "time": 48.7,
+          "text": "禾禾与阿沐完成共享晚餐"
+        },
+        {
+          "time": 48.7,
+          "text": "今日安排完成，窗灯照亮了这段日常。"
+        }
+      ]
+    },
+    {
+      "id": "day3-late-prep",
+      "state": "won",
+      "time": 61.8,
+      "needs": [
+        {
+          "id": "a",
+          "needs": {
+            "hunger": 84.58399999999972,
+            "energy": 82.81999999999816,
+            "hygiene": 51.29199999999986,
+            "mood": 60.90999999999842
+          }
+        },
+        {
+          "id": "b",
+          "needs": {
+            "hunger": 84.58399999999972,
+            "energy": 44.82000000000123,
+            "hygiene": 93.29199999999986,
+            "mood": 60.90999999999842
+          }
+        }
+      ],
+      "completed": [
+        {
+          "id": "a",
+          "work": 1,
+          "sleep": 1,
+          "cook": 1,
+          "dinner": 1
+        },
+        {
+          "id": "b",
+          "work": 1,
+          "wash": 1,
+          "cook": 1,
+          "dinner": 1
+        }
+      ],
+      "events": [
+        {
+          "time": 0.1,
+          "text": "禾禾开始写手记"
+        },
+        {
+          "time": 8.8,
+          "text": "禾禾完成写手记"
+        },
+        {
+          "time": 8.8,
+          "text": "阿沐开始写手记"
+        },
+        {
+          "time": 8.9,
+          "text": "禾禾开始小睡"
+        },
+        {
+          "time": 18.1,
+          "text": "阿沐完成写手记"
+        },
+        {
+          "time": 18.2,
+          "text": "阿沐开始洗漱"
+        },
+        {
+          "time": 18.5,
+          "text": "禾禾完成小睡"
+        },
+        {
+          "time": 22.3,
+          "text": "阿沐完成洗漱"
+        },
+        {
+          "time": 32.1,
+          "text": "禾禾开始做饭"
+        },
+        {
+          "time": 40.3,
+          "text": "禾禾完成做饭"
+        },
+        {
+          "time": 40.3,
+          "text": "阿沐开始做饭"
+        },
+        {
+          "time": 47,
+          "text": "阿沐完成做饭"
+        },
+        {
+          "time": 53.1,
+          "text": "禾禾与阿沐开始共享晚餐（使用2份餐食）"
+        },
+        {
+          "time": 61.8,
+          "text": "禾禾与阿沐完成共享晚餐"
+        },
+        {
+          "time": 61.8,
+          "text": "今日安排完成，窗灯照亮了这段日常。"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "five legal schedules; day2 and day3 two distinct schedules/layouts",
+    "facility waiting without double occupancy",
+    "atomic joint enqueue/cancel and no food refund",
+    "queue limit including current; rejected joint leaves other queue untouched",
+    "prep-only placement",
+    "stove closure waits without facility lock",
+    "pause/restore exact simulation; ready/won/lost restore",
+    "natural timeout; malformed checkpoint rejected"
+  ]
+}

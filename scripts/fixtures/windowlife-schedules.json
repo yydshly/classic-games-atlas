@@ -1,0 +1,21 @@
+{
+  "evidence": "纯模型按0.1秒更新；是合法排程证明，不是普通UI或真人乐趣验收。at为开始本日后的模型秒，kind均为正常enqueue命令；等候会显示实际原因。",
+  "schedules": [
+    {"id":"day1-basic","level":1,"label":"第一日基础安排","commands":[
+      {"at":0,"actor":"a","kind":"cook"},{"at":0,"actor":"a","kind":"eat"},{"at":0,"actor":"a","kind":"wash"},{"at":20,"actor":"a","kind":"work"}]},
+    {"id":"day2-kitchen-first","level":2,"label":"先轮流备餐，再做手记和聊天","commands":[
+      {"at":0,"actor":"a","kind":"cook"},{"at":0,"actor":"a","kind":"eat"},{"at":0,"actor":"a","kind":"wash"},
+      {"at":0,"actor":"b","kind":"cook"},{"at":0,"actor":"b","kind":"wash"},{"at":0,"actor":"b","kind":"work"},
+      {"at":22,"actor":"a","kind":"work"},{"at":32,"actor":"b","kind":"eat"},{"at":44,"actor":"a","kind":"chat"}]},
+    {"id":"day2-desk-first","level":2,"label":"先写手记和洗漱，再轮流备餐，书桌长座换位","layout":{"desk":{"x":3,"y":3},"bench":{"x":4,"y":5}},"commands":[
+      {"at":0,"actor":"a","kind":"work"},{"at":0,"actor":"a","kind":"wash"},{"at":0,"actor":"a","kind":"cook"},
+      {"at":0,"actor":"b","kind":"wash"},{"at":0,"actor":"b","kind":"cook"},{"at":0,"actor":"b","kind":"eat"},
+      {"at":24,"actor":"b","kind":"work"},{"at":25,"actor":"a","kind":"eat"},{"at":40,"actor":"a","kind":"chat"}]},
+    {"id":"day3-early-prep","level":3,"label":"维护前做好两份餐，双方完成手记后等相聚时段","commands":[
+      {"at":0,"actor":"a","kind":"cook"},{"at":0,"actor":"a","kind":"work"},{"at":0,"actor":"b","kind":"cook"},{"at":0,"actor":"b","kind":"work"},
+      {"at":30,"actor":"a","kind":"dinner"}]},
+    {"id":"day3-late-prep","level":3,"label":"先写手记和休息，维护后再备餐共享晚餐","layout":{"desk":{"x":3,"y":3},"bench":{"x":4,"y":5}},"commands":[
+      {"at":0,"actor":"a","kind":"work"},{"at":0,"actor":"a","kind":"sleep"},{"at":0,"actor":"b","kind":"work"},{"at":0,"actor":"b","kind":"wash"},
+      {"at":32,"actor":"a","kind":"cook"},{"at":32,"actor":"b","kind":"cook"},{"at":53,"actor":"a","kind":"dinner"}]}
+  ]
+}

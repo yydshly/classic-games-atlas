@@ -14,7 +14,7 @@ function gameSlug(value, base) {
 
 function valid(state, base, now) {
   return state?.schema === 1 && typeof state.query === 'string' && state.query.length <= 120 &&
-    versions.has(state.version) && Number.isInteger(state.limit) && state.limit >= 12 && state.limit <= 40 &&
+    versions.has(state.version) && Number.isInteger(state.limit) && state.limit >= 12 && state.limit <= 41 &&
     Number.isFinite(state.y) && state.y >= 0 && state.y <= 2e6 &&
     Number.isFinite(state.at) && now >= state.at && now - state.at <= 86400000 &&
     typeof state.slug === 'string' && gameSlug(state.href, base) === state.slug;

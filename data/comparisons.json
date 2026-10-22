@@ -12,8 +12,8 @@
     "40依据134e921提交的独立v2及来源说明补充；PES为明确系列参考，代际未定，未把未完成恢复项目计作可玩v1。"
   ],
   "summary": {
-    "published_games": 34,
-    "published_levels": 398,
+    "published_games": 35,
+    "published_levels": 401,
     "previews": 6,
     "preview_numbers": [
       "35",
@@ -24,7 +24,7 @@
       "40"
     ],
     "preview_levels": 48,
-    "confirmed_reference_bindings": 36,
+    "confirmed_reference_bindings": 37,
     "unconfirmed_reference_bindings": [
       "35",
       "36",
@@ -4939,6 +4939,67 @@
           }
         ]
       }
+    },
+    {
+      "number": "41",
+      "slug": "windowlife",
+      "title": "栖窗日常",
+      "english": "WINDOWLIFE",
+      "status": "published",
+      "status_label": "三关首版已发布；未完成真人品质验收",
+      "play_url": "./preview/windowlife/",
+      "original_title": "模拟人生",
+      "original_english": "The Sims",
+      "reference_id": "sims",
+      "reference_binding": "明确参考原72条清单中的模拟人生系列，未锁定具体代际",
+      "reference_version": "系列机制方向，不对应某一代或原版关卡",
+      "version_note": "需求与生活安排是参考方向；四需求、三项队列、三日目标均为本项目的有界设计。",
+      "original_core": [
+        "安排人物的日常需求、家居生活与关系，由玩家选择生活方向。"
+      ],
+      "implemented": [
+        "两位原创住户、四项需求、五类设施；实际寻路、共享设施排队、每人三项行动队列和共同活动。",
+        "三日原创目标：自理、合住协作、时段共餐；准备阶段书桌/双人座预设换位。",
+        "当前日失败重试保留前日回顾；独立存档、活动刷新先暂停、三日结局可重读。"
+      ],
+      "gaps": [
+        "没有开放沙盒、完整建造/装饰、家庭世代或大型社会关系模拟。",
+        "仅三关和最多两住户；自动排程证明可行性，真人自由安排的趣味与难度仍需体验。"
+      ],
+      "relation": "原创三关生活安排小品，参考模拟人生系列的需求照料与行动安排方向；人物、房间和目标原创，不是官方复刻或开放沙盒。",
+      "levels": 3,
+      "evidence": [
+        {
+          "path": "preview/windowlife/README.md",
+          "url": "./preview/windowlife/README.md",
+          "claim": "三关规则、原创范围与独立存档说明"
+        },
+        {
+          "path": "docs/windowlife-qa/",
+          "url": "./docs/windowlife-qa/",
+          "claim": "普通UI三日、自然失败重试、刷新、触控模拟与独立模型/存储夹具边界"
+        }
+      ],
+      "validation_boundary": "普通UI按已知排程辅助安排三日连续成功；第二日自然超时后重试、活动与终态刷新、键盘和390CSS原生touch事件模拟已验。模型两种安排与存储故障夹具另列；不等于真人趣味、真手机或审美验收。无声音。",
+      "original_sources": [
+        {
+          "key": "sims",
+          "label": "EA · The Sims",
+          "url": "https://www.ea.com/games/the-sims",
+          "kind": "official",
+          "relation": "系列入口",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。"
+        }
+      ],
+      "version": "v1",
+      "has_frozen_version": false,
+      "current_status_label": "v1 三日小品 · 流程已验证，真人品质待验",
+      "current_screenshot": {
+        "image": "./docs/windowlife-qa/ready-desktop.png",
+        "label": "1440×1100真实浏览器首日准备画面；原创Canvas房间，不是原作截图。"
+      }
     }
   ],
   "supplemental_records": [
@@ -5077,6 +5138,11 @@
       ],
       "kind": "four bounded independent-success groups, normal UI with transparent strong assistance; no whole-catalogue quality acceptance",
       "evidence": "./docs/flow-coverage/independent-success-notes.md"
+    },
+    {
+      "number": "41",
+      "scope": "新增栖窗日常三关原创首版；旧40项与历史统计记录保留，目录现41，活动37、停止/保留4。",
+      "evidence": "./docs/windowlife-qa/"
     }
   ]
 }
