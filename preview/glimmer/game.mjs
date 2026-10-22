@@ -1,11 +1,12 @@
 import {createGame,start,pause,update,command,snapshot,checkpoint,GEAR,LEVELS,deriveStats,getNearby} from './engine.mjs';
 import {Renderer} from './renderer.mjs';
-import {readSave,writeSave,warning} from './storage.mjs';
+import {fresh,readSave,writeSave,warning} from './storage.mjs';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={ready:'整备中',playing:'探索中',paused:'已暂停',choosing:'选择装备 · 时间停止',won:'本段完成',lost:'本段失利'};
 let loaded;try{loaded=readSave(localStorage);}catch{loaded=readSave({getItem(){throw Error('read denied');}});}
 let {progress,game:g,protection}=loaded,lastStamp=0,lastSave=0,lastRender=0,previousState=g.state,writeFailed=false,saved=false;
-const keys=new Set(),touches=new Map(),pulses=new Map(),renderer=new Renderer($('#battle')),cache=new Map(),loot=$('#loot-dialog');
+const keys=new Set(),touches=new Map(),pulses=new Map(),renderer=new Renderer($('#battle')),cache=new Map(),loot=$('#loot-dialog'),journey=$('#journey-dialog');
+let journeyInvoker=null;
 function text(id,t){if($(id).textContent!==String(t))$(id).textContent=t;}
 function html(id,value){if(cache.get(id)===value)return;const root=$(id),active=document.activeElement,inside=root.contains(active),attrs=inside?[...active.attributes].filter(a=>a.name.startsWith('data-')):[];root.innerHTML=value;cache.set(id,value);if(inside){const sel=attrs.map(a=>'['+a.name+'="'+CSS.escape(a.value)+'"]').join('');(sel?root.querySelector(sel):null)?.focus({preventScroll:true});}}
 function speak(t){text('#feedback',t);}
@@ -17,6 +18,17 @@ function act(c){clearInput();const r=command(g,c);speak(r.reason);if(r.ok)save()
 function toggle(){clearInput();if(g.state==='playing'){pause(g);speak('已暂停。可查看装备和目标。');}else if(['ready','paused'].includes(g.state)){start(g);speak('出发。留意守卫蓄势预警，E查看附近遗匣或离开。');$('#battle').focus({preventScroll:true});}save();render();}
 function loadStage(index){clearInput();g=createGame(index,progress.entries[index+1]||{});previousState=g.state;lastStamp=0;if(loot.open)loot.close();save();render();speak('本段整备：生命与晶能恢复，使用保存的入场装备。');$('#toggle').focus();}
 function retry(){clearInput();if(g.state==='playing')pause(g);save();render();if(confirm('重试本段？本段战斗和拾取将重置，前段成果与本段入场装备保留。'))loadStage(g.level-1);}
+function askNewJourney(event){
+ if(journey.open||loot.open)return;journeyInvoker=event.currentTarget;clearInput();pause(g);save();render();
+ text('#journey-storage-note',protection?'原存档当前受保护：新旅程只会临时开始，不覆盖原字节；刷新或关闭会丢失本次临时进度。':'仅覆盖本作的当前旅程；其他游戏存档不受影响。');
+ journey.showModal();$('#journey-cancel').focus();
+}
+function cancelNewJourney(){journey.close();clearInput();speak('已取消新旅程，原进度与装备保持。');journeyInvoker?.focus({preventScroll:true});}
+function confirmNewJourney(){
+ clearInput();journey.close();progress=fresh();g=createGame(0);previousState=g.state;lastStamp=0;lastSave=0;save();render();
+ speak(saved?'新旅程已开始并保存：第一庭、旅行短棍、无护符，等待整备出发。':'新旅程已在本页开始，但未能保存；请留意存档提示。');$('#toggle').focus();
+}
+$('#new-journey').addEventListener('click',askNewJourney);$('#result-new-journey').addEventListener('click',askNewJourney);$('#journey-cancel').addEventListener('click',cancelNewJourney);$('#journey-confirm').addEventListener('click',confirmNewJourney);journey.addEventListener('cancel',e=>{e.preventDefault();cancelNewJourney();});
 function blockReason(action){const s=deriveStats(g),p=g.player;if(action==='skill'){if(p.skillCooldown>0)return '晶环仍在冷却，剩余'+p.skillCooldown.toFixed(1)+'秒。';if(p.energy<s.skillCost)return '晶能不足：晶环需要'+s.skillCost+'，当前'+Math.floor(p.energy)+'。';}if(action==='dodge'&&p.dodgeCooldown>0)return '闪步仍在冷却，剩余'+p.dodgeCooldown.toFixed(1)+'秒。';return '';}
 const gearName=id=>GEAR[id]?.name||'尚无护符';
 const statRows=s=>[['挥击伤害',s.damage],['出手间隔',s.attackInterval.toFixed(2)+'秒'],['挥击距离',s.attackRange+'格'],['生命上限',s.maxHp],['晶能上限',s.maxEnergy],['晶环伤害',s.skillDamage],['晶环消耗',s.skillCost],['晶环冷却',s.skillCooldown.toFixed(1)+'秒']];
@@ -36,7 +48,7 @@ $('#offers').addEventListener('click',e=>{const b=e.target.closest('[data-choose
 document.querySelectorAll('[data-hold]').forEach(b=>{b.addEventListener('pointerdown',e=>{if(g.state!=='playing')return;e.preventDefault();const reason=blockReason(b.dataset.hold);if(reason)speak(reason);touches.set(e.pointerId,b.dataset.hold);b.classList.add('held');b.setPointerCapture(e.pointerId);});b.addEventListener('lostpointercapture',e=>release(e.pointerId));b.addEventListener('click',e=>{if(e.detail===0&&g.state==='playing'){const reason=blockReason(b.dataset.hold);if(reason)speak(reason);pulses.set(b.dataset.hold,performance.now()+120);}});});
 function release(id){const action=touches.get(id);touches.delete(id);if(![...touches.values()].includes(action))document.querySelector(`[data-hold="${action}"]`)?.classList.remove('held');}
 document.addEventListener('pointerup',e=>release(e.pointerId));document.addEventListener('pointercancel',e=>release(e.pointerId));
-document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey||e.target.closest('a,button,input,select,textarea,summary,[contenteditable]')||loot.open)return;const controls=['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyJ','KeyK','Space'];if(controls.includes(e.code)){e.preventDefault();if(g.state==='playing'){if(!e.repeat){const reason=blockReason(e.code==='KeyK'?'skill':e.code==='Space'?'dodge':'');if(reason)speak(reason);}keys.add(e.code);}return;}if(e.repeat)return;if(e.code==='KeyP'){e.preventDefault();toggle();}else if(e.code==='KeyE'&&g.state==='playing'){e.preventDefault();act({type:'interact'});}else if(e.code==='KeyH'&&g.state==='playing'){e.preventDefault();act({type:'heal'});}else if(e.code==='Enter'&&['ready','paused'].includes(g.state)){e.preventDefault();toggle();}});
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey||e.target.closest('a,button,input,select,textarea,summary,[contenteditable]')||loot.open||journey.open)return;const controls=['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyJ','KeyK','Space'];if(controls.includes(e.code)){e.preventDefault();if(g.state==='playing'){if(!e.repeat){const reason=blockReason(e.code==='KeyK'?'skill':e.code==='Space'?'dodge':'');if(reason)speak(reason);}keys.add(e.code);}return;}if(e.repeat)return;if(e.code==='KeyP'){e.preventDefault();toggle();}else if(e.code==='KeyE'&&g.state==='playing'){e.preventDefault();act({type:'interact'});}else if(e.code==='KeyH'&&g.state==='playing'){e.preventDefault();act({type:'heal'});}else if(e.code==='Enter'&&['ready','paused'].includes(g.state)){e.preventDefault();toggle();}});
 document.addEventListener('keyup',e=>keys.delete(e.code));function interrupt(){clearInput();if(pause(g)){save();render();speak('已自动暂停。返回后点继续探索，按键不会自动恢复。');}lastStamp=0;}
 window.addEventListener('blur',interrupt);document.addEventListener('visibilitychange',()=>{if(document.hidden)interrupt();});window.addEventListener('pagehide',()=>{clearInput();pause(g);save();});
 export const diagnostics={snapshot:()=>snapshot(g),progress:()=>JSON.parse(JSON.stringify(progress)),input:()=>({keys:[...keys],touches:touches.size,...input()}),storage:()=>({protection,writeFailed,saved})};
