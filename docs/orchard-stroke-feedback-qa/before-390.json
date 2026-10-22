@@ -1,0 +1,940 @@
+{
+  "width": 390,
+  "at": "2026-10-22T12:10:41.538862+00:00",
+  "method": "Fresh isolated native profile, ordinary mouse/keyboard. Scripted timing/world coordinates use existing fixed launch schedule. Checkpoints inspected in separate Node process only; no live state/time/save injection.",
+  "cases": [
+    {
+      "label": "01-ready",
+      "ui": {
+        "score": "0",
+        "time": "60.0",
+        "combo": "0",
+        "status": "已切 0果 · 漏果 0 · 误核 0 · 累计扣分 0",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "等果实相聚，画一道弧",
+        "curtain-copy": "按开始后，按住并拖动切果"
+      }
+    },
+    {
+      "label": "02-thorn-live",
+      "ui": {
+        "score": "10",
+        "time": "58.3",
+        "combo": "1",
+        "status": "已切 2果 · 漏果 0 · 误核 1 · 累计扣分 10",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "等果实相聚，画一道弧",
+        "curtain-copy": "按开始后，按住并拖动切果"
+      }
+    },
+    {
+      "label": "03-thorn-paused",
+      "ui": {
+        "score": "10",
+        "time": "58.3",
+        "combo": "1",
+        "status": "已切 2果 · 漏果 0 · 误核 1 · 累计扣分 10",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "弧光暂歇",
+        "curtain-copy": "已暂停。继续后请重新按下划切。"
+      }
+    },
+    {
+      "label": "04-safe-next-slice",
+      "ui": {
+        "score": "20",
+        "time": "56.3",
+        "combo": "1",
+        "status": "已切 3果 · 漏果 1 · 误核 1 · 累计扣分 10",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "等果实相聚，画一道弧",
+        "curtain-copy": "按开始后，按住并拖动切果"
+      }
+    },
+    {
+      "label": "05-refresh-same",
+      "ui": {
+        "score": "20",
+        "time": "56.3",
+        "combo": "1",
+        "status": "已切 3果 · 漏果 1 · 误核 1 · 累计扣分 10",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "弧光暂歇",
+        "curtain-copy": "已暂停。继续后请重新按下划切。"
+      }
+    },
+    {
+      "label": "06-keyboard-paused",
+      "ui": {
+        "score": "0",
+        "time": "59.9",
+        "combo": "0",
+        "status": "已切 0果 · 漏果 0 · 误核 0 · 累计扣分 0",
+        "frost": "❄ 六棱霜果 · 运动减速",
+        "best": "分枝场最好：暂无",
+        "curtain-title": "弧光暂歇",
+        "curtain-copy": "已暂停。继续后请重新按下划切。"
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "thorn": {
+    "progress": {
+      "version": 2,
+      "last": 2,
+      "sound": false,
+      "best": {},
+      "resume": {
+        "version": 2,
+        "level": 2,
+        "state": "running",
+        "ticks": 205,
+        "commands": [
+          {
+            "at": 0,
+            "kind": "start"
+          },
+          {
+            "at": 189,
+            "kind": "down",
+            "x": 145.00000712635753,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 189,
+            "kind": "move",
+            "x": 226.24999664642,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 191,
+            "kind": "move",
+            "x": 307.50000503037,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 193,
+            "kind": "move",
+            "x": 388.75001341432005,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 195,
+            "kind": "move",
+            "x": 469.9999840704949,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 197,
+            "kind": "up"
+          }
+        ]
+      }
+    },
+    "snapshot": {
+      "level": 2,
+      "state": "paused",
+      "ticks": 205,
+      "frostUntil": 0,
+      "logOverflow": false,
+      "accumulator": 0,
+      "nextWave": 2,
+      "targets": [
+        {
+          "kind": "pear",
+          "x": 198.1555555555555,
+          "y": 261.8666666666667,
+          "vx": 20.3333333333332,
+          "vy": -56,
+          "id": "1:1",
+          "wave": 1,
+          "r": 27,
+          "age": 0.9333333333333325,
+          "state": "cut",
+          "cutAt": 189,
+          "cutAngle": 0
+        },
+        {
+          "kind": "citrus",
+          "x": 415.99930555555545,
+          "y": 250.28333333333322,
+          "vx": -29.916666666666806,
+          "vy": -24,
+          "id": "1:2",
+          "wave": 1,
+          "r": 29,
+          "age": 0.9833333333333323,
+          "state": "cut",
+          "cutAt": 195,
+          "cutAngle": 0
+        },
+        {
+          "kind": "thorn",
+          "x": 284.86375000000004,
+          "y": 261.05,
+          "vx": 4.85,
+          "vy": -42,
+          "id": "1:3",
+          "wave": 1,
+          "r": 27,
+          "age": 0.9499999999999991,
+          "state": "burst",
+          "cutAt": 191,
+          "cutAngle": 0
+        },
+        {
+          "kind": "berry",
+          "x": 175.0993055555556,
+          "y": 271.8833333333332,
+          "vx": 30.083333333333393,
+          "vy": -192,
+          "id": "2:1",
+          "wave": 2,
+          "r": 24,
+          "age": 0.783333333333333,
+          "state": "flying",
+          "cutAt": null
+        }
+      ],
+      "score": 10,
+      "errors": 1,
+      "cutIds": [
+        "1:1",
+        "1:2"
+      ],
+      "missIds": [],
+      "bombIds": [
+        "1:3"
+      ],
+      "stroke": null,
+      "strokeSerial": 1,
+      "trail": [
+        {
+          "x": 145.00000712635753,
+          "y": 269.99997565896064,
+          "tick": 189
+        },
+        {
+          "x": 226.24999664642,
+          "y": 269.99997565896064,
+          "tick": 189
+        },
+        {
+          "x": 307.50000503037,
+          "y": 269.99997565896064,
+          "tick": 191
+        },
+        {
+          "x": 388.75001341432005,
+          "y": 269.99997565896064,
+          "tick": 193
+        },
+        {
+          "x": 469.9999840704949,
+          "y": 269.99997565896064,
+          "tick": 195
+        }
+      ],
+      "feedback": [
+        {
+          "tick": 189,
+          "x": 198.1555555555555,
+          "y": 261.8666666666667,
+          "text": "+10",
+          "kind": "good"
+        },
+        {
+          "tick": 191,
+          "x": 284.86375000000004,
+          "y": 261.05,
+          "text": "荆核 −10 · 断连",
+          "kind": "bad"
+        },
+        {
+          "tick": 195,
+          "x": 415.99930555555545,
+          "y": 250.28333333333322,
+          "text": "+10",
+          "kind": "good"
+        }
+      ],
+      "log": [
+        {
+          "at": 0,
+          "kind": "start"
+        },
+        {
+          "at": 189,
+          "kind": "down",
+          "x": 145.00000712635753,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 189,
+          "kind": "move",
+          "x": 226.24999664642,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 191,
+          "kind": "move",
+          "x": 307.50000503037,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 193,
+          "kind": "move",
+          "x": 388.75001341432005,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 195,
+          "kind": "move",
+          "x": 469.9999840704949,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 197,
+          "kind": "up"
+        }
+      ],
+      "reason": null,
+      "stats": {
+        "spawnedFruit": 3,
+        "spawnedThorns": 1,
+        "cuts": 2,
+        "misses": 0,
+        "bombs": 1,
+        "strokes": 1,
+        "combos": 0,
+        "maxCombo": 1,
+        "basePoints": 20,
+        "comboPoints": 0,
+        "settlements": 0,
+        "penalties": 10,
+        "frostCuts": 0
+      }
+    },
+    "conservation": {
+      "score": true,
+      "errors": true,
+      "uniqueTargets": true,
+      "uniqueCuts": true,
+      "uniqueMisses": true,
+      "uniqueBombs": true,
+      "accounted": true,
+      "disjoint": true,
+      "waveBounds": true,
+      "finite": true,
+      "singleSettlement": true
+    },
+    "ui": {
+      "score": "10",
+      "time": "58.3",
+      "combo": "1",
+      "status": "已切 2果 · 漏果 0 · 误核 1 · 累计扣分 10",
+      "frost": "❄ 六棱霜果 · 运动减速",
+      "best": "分枝场最好：暂无",
+      "curtain-title": "弧光暂歇",
+      "curtain-copy": "已暂停。继续后请重新按下划切。"
+    }
+  },
+  "recovered": {
+    "progress": {
+      "version": 2,
+      "last": 2,
+      "sound": false,
+      "best": {},
+      "resume": {
+        "version": 2,
+        "level": 2,
+        "state": "running",
+        "ticks": 446,
+        "commands": [
+          {
+            "at": 0,
+            "kind": "start"
+          },
+          {
+            "at": 189,
+            "kind": "down",
+            "x": 145.00000712635753,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 189,
+            "kind": "move",
+            "x": 226.24999664642,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 191,
+            "kind": "move",
+            "x": 307.50000503037,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 193,
+            "kind": "move",
+            "x": 388.75001341432005,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 195,
+            "kind": "move",
+            "x": 469.9999840704949,
+            "y": 269.99997565896064
+          },
+          {
+            "at": 197,
+            "kind": "up"
+          },
+          {
+            "at": 430,
+            "kind": "down",
+            "x": 418.0000179416531,
+            "y": 280.0000194728315
+          },
+          {
+            "at": 430,
+            "kind": "move",
+            "x": 438.50000821627106,
+            "y": 280.0000194728315
+          },
+          {
+            "at": 432,
+            "kind": "move",
+            "x": 458.99999849088897,
+            "y": 280.0000194728315
+          },
+          {
+            "at": 434,
+            "kind": "move",
+            "x": 479.49998876550694,
+            "y": 280.0000194728315
+          },
+          {
+            "at": 436,
+            "kind": "move",
+            "x": 500.0000167679001,
+            "y": 280.0000194728315
+          },
+          {
+            "at": 438,
+            "kind": "up"
+          }
+        ]
+      }
+    },
+    "snapshot": {
+      "level": 2,
+      "state": "paused",
+      "ticks": 446,
+      "frostUntil": 0,
+      "logOverflow": false,
+      "accumulator": 0,
+      "nextWave": 4,
+      "targets": [
+        {
+          "kind": "pear",
+          "x": 198.1555555555555,
+          "y": 261.8666666666667,
+          "vx": 20.3333333333332,
+          "vy": -56,
+          "id": "1:1",
+          "wave": 1,
+          "r": 27,
+          "age": 0.9333333333333325,
+          "state": "cut",
+          "cutAt": 189,
+          "cutAngle": 0
+        },
+        {
+          "kind": "citrus",
+          "x": 415.99930555555545,
+          "y": 250.28333333333322,
+          "vx": -29.916666666666806,
+          "vy": -24,
+          "id": "1:2",
+          "wave": 1,
+          "r": 29,
+          "age": 0.9833333333333323,
+          "state": "cut",
+          "cutAt": 195,
+          "cutAngle": 0
+        },
+        {
+          "kind": "thorn",
+          "x": 284.86375000000004,
+          "y": 261.05,
+          "vx": 4.85,
+          "vy": -42,
+          "id": "1:3",
+          "wave": 1,
+          "r": 27,
+          "age": 0.9499999999999991,
+          "state": "burst",
+          "cutAt": 191,
+          "cutAngle": 0
+        },
+        {
+          "kind": "berry",
+          "x": 208.59843750000002,
+          "y": 681.0124999999999,
+          "vx": 23.874999999999883,
+          "vy": 851,
+          "id": "2:1",
+          "wave": 2,
+          "r": 24,
+          "age": 2.0249999999999955,
+          "state": "escaped",
+          "cutAt": null
+        },
+        {
+          "kind": "citrus",
+          "x": 455.2248263888888,
+          "y": 278.2291666666667,
+          "vx": 21.041666666666554,
+          "vy": -175,
+          "id": "3:1",
+          "wave": 3,
+          "r": 29,
+          "age": 0.7916666666666663,
+          "state": "cut",
+          "cutAt": 430,
+          "cutAngle": 0
+        },
+        {
+          "kind": "berry",
+          "x": 677.7359375000001,
+          "y": 253.1124999999999,
+          "vx": -29.62500000000013,
+          "vy": -73,
+          "id": "3:2",
+          "wave": 3,
+          "r": 24,
+          "age": 0.9249999999999992,
+          "state": "flying",
+          "cutAt": null
+        },
+        {
+          "kind": "thorn",
+          "x": 590.9809375,
+          "y": 262.3625,
+          "vx": -14.224999999999934,
+          "vy": -63,
+          "id": "3:3",
+          "wave": 3,
+          "r": 27,
+          "age": 0.9249999999999992,
+          "state": "flying",
+          "cutAt": null
+        },
+        {
+          "kind": "bell",
+          "x": 707.1539930555556,
+          "y": 307.5124999999999,
+          "vx": -37.20833333333315,
+          "vy": -311,
+          "id": "4:1",
+          "wave": 4,
+          "r": 30,
+          "age": 0.6416666666666668,
+          "state": "flying",
+          "cutAt": null
+        }
+      ],
+      "score": 20,
+      "errors": 2,
+      "cutIds": [
+        "1:1",
+        "1:2",
+        "3:1"
+      ],
+      "missIds": [
+        "2:1"
+      ],
+      "bombIds": [
+        "1:3"
+      ],
+      "stroke": null,
+      "strokeSerial": 2,
+      "trail": [
+        {
+          "x": 418.0000179416531,
+          "y": 280.0000194728315,
+          "tick": 430
+        },
+        {
+          "x": 438.50000821627106,
+          "y": 280.0000194728315,
+          "tick": 430
+        },
+        {
+          "x": 458.99999849088897,
+          "y": 280.0000194728315,
+          "tick": 432
+        },
+        {
+          "x": 479.49998876550694,
+          "y": 280.0000194728315,
+          "tick": 434
+        },
+        {
+          "x": 500.0000167679001,
+          "y": 280.0000194728315,
+          "tick": 436
+        }
+      ],
+      "feedback": [
+        {
+          "tick": 354,
+          "x": 208.59843750000002,
+          "y": 570,
+          "text": "漏果 · 继续找下一弧",
+          "kind": "bad"
+        },
+        {
+          "tick": 430,
+          "x": 455.2248263888888,
+          "y": 278.2291666666667,
+          "text": "+10",
+          "kind": "good"
+        }
+      ],
+      "log": [
+        {
+          "at": 0,
+          "kind": "start"
+        },
+        {
+          "at": 189,
+          "kind": "down",
+          "x": 145.00000712635753,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 189,
+          "kind": "move",
+          "x": 226.24999664642,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 191,
+          "kind": "move",
+          "x": 307.50000503037,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 193,
+          "kind": "move",
+          "x": 388.75001341432005,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 195,
+          "kind": "move",
+          "x": 469.9999840704949,
+          "y": 269.99997565896064
+        },
+        {
+          "at": 197,
+          "kind": "up"
+        },
+        {
+          "at": 430,
+          "kind": "down",
+          "x": 418.0000179416531,
+          "y": 280.0000194728315
+        },
+        {
+          "at": 430,
+          "kind": "move",
+          "x": 438.50000821627106,
+          "y": 280.0000194728315
+        },
+        {
+          "at": 432,
+          "kind": "move",
+          "x": 458.99999849088897,
+          "y": 280.0000194728315
+        },
+        {
+          "at": 434,
+          "kind": "move",
+          "x": 479.49998876550694,
+          "y": 280.0000194728315
+        },
+        {
+          "at": 436,
+          "kind": "move",
+          "x": 500.0000167679001,
+          "y": 280.0000194728315
+        },
+        {
+          "at": 438,
+          "kind": "up"
+        }
+      ],
+      "reason": null,
+      "stats": {
+        "spawnedFruit": 6,
+        "spawnedThorns": 2,
+        "cuts": 3,
+        "misses": 1,
+        "bombs": 1,
+        "strokes": 2,
+        "combos": 0,
+        "maxCombo": 1,
+        "basePoints": 30,
+        "comboPoints": 0,
+        "settlements": 0,
+        "penalties": 10,
+        "frostCuts": 0
+      }
+    },
+    "conservation": {
+      "score": true,
+      "errors": true,
+      "uniqueTargets": true,
+      "uniqueCuts": true,
+      "uniqueMisses": true,
+      "uniqueBombs": true,
+      "accounted": true,
+      "disjoint": true,
+      "waveBounds": true,
+      "finite": true,
+      "singleSettlement": true
+    }
+  },
+  "refreshExact": true,
+  "keyboard": {
+    "progress": {
+      "version": 2,
+      "last": 2,
+      "sound": false,
+      "best": {},
+      "resume": {
+        "version": 2,
+        "level": 2,
+        "state": "running",
+        "ticks": 13,
+        "commands": [
+          {
+            "at": 0,
+            "kind": "start"
+          },
+          {
+            "at": 0,
+            "kind": "down",
+            "x": 450,
+            "y": 330
+          },
+          {
+            "at": 1,
+            "kind": "move",
+            "x": 456.93600003242494,
+            "y": 330
+          },
+          {
+            "at": 3,
+            "kind": "move",
+            "x": 468.29200003242494,
+            "y": 330
+          },
+          {
+            "at": 5,
+            "kind": "move",
+            "x": 479.64800003242493,
+            "y": 330
+          },
+          {
+            "at": 7,
+            "kind": "move",
+            "x": 491.004000032425,
+            "y": 330
+          },
+          {
+            "at": 9,
+            "kind": "move",
+            "x": 502.29200003242494,
+            "y": 330
+          },
+          {
+            "at": 11,
+            "kind": "move",
+            "x": 513.6480000324249,
+            "y": 330
+          },
+          {
+            "at": 13,
+            "kind": "move",
+            "x": 524.9360000324249,
+            "y": 330
+          },
+          {
+            "at": 13,
+            "kind": "up"
+          }
+        ]
+      }
+    },
+    "snapshot": {
+      "level": 2,
+      "state": "paused",
+      "ticks": 13,
+      "frostUntil": 0,
+      "logOverflow": false,
+      "accumulator": 0,
+      "nextWave": 0,
+      "targets": [],
+      "score": 0,
+      "errors": 0,
+      "cutIds": [],
+      "missIds": [],
+      "bombIds": [],
+      "stroke": null,
+      "strokeSerial": 1,
+      "trail": [
+        {
+          "x": 450,
+          "y": 330,
+          "tick": 0
+        },
+        {
+          "x": 456.93600003242494,
+          "y": 330,
+          "tick": 1
+        },
+        {
+          "x": 468.29200003242494,
+          "y": 330,
+          "tick": 3
+        },
+        {
+          "x": 479.64800003242493,
+          "y": 330,
+          "tick": 5
+        },
+        {
+          "x": 491.004000032425,
+          "y": 330,
+          "tick": 7
+        },
+        {
+          "x": 502.29200003242494,
+          "y": 330,
+          "tick": 9
+        },
+        {
+          "x": 513.6480000324249,
+          "y": 330,
+          "tick": 11
+        },
+        {
+          "x": 524.9360000324249,
+          "y": 330,
+          "tick": 13
+        }
+      ],
+      "feedback": [],
+      "log": [
+        {
+          "at": 0,
+          "kind": "start"
+        },
+        {
+          "at": 0,
+          "kind": "down",
+          "x": 450,
+          "y": 330
+        },
+        {
+          "at": 1,
+          "kind": "move",
+          "x": 456.93600003242494,
+          "y": 330
+        },
+        {
+          "at": 3,
+          "kind": "move",
+          "x": 468.29200003242494,
+          "y": 330
+        },
+        {
+          "at": 5,
+          "kind": "move",
+          "x": 479.64800003242493,
+          "y": 330
+        },
+        {
+          "at": 7,
+          "kind": "move",
+          "x": 491.004000032425,
+          "y": 330
+        },
+        {
+          "at": 9,
+          "kind": "move",
+          "x": 502.29200003242494,
+          "y": 330
+        },
+        {
+          "at": 11,
+          "kind": "move",
+          "x": 513.6480000324249,
+          "y": 330
+        },
+        {
+          "at": 13,
+          "kind": "move",
+          "x": 524.9360000324249,
+          "y": 330
+        },
+        {
+          "at": 13,
+          "kind": "up"
+        }
+      ],
+      "reason": null,
+      "stats": {
+        "spawnedFruit": 0,
+        "spawnedThorns": 0,
+        "cuts": 0,
+        "misses": 0,
+        "bombs": 0,
+        "strokes": 1,
+        "combos": 0,
+        "maxCombo": 0,
+        "basePoints": 0,
+        "comboPoints": 0,
+        "settlements": 0,
+        "penalties": 0,
+        "frostCuts": 0
+      }
+    },
+    "conservation": {
+      "score": true,
+      "errors": true,
+      "uniqueTargets": true,
+      "uniqueCuts": true,
+      "uniqueMisses": true,
+      "uniqueBombs": true,
+      "accounted": true,
+      "disjoint": true,
+      "waveBounds": true,
+      "finite": true,
+      "singleSettlement": true
+    }
+  },
+  "nativeCanvasFocusVisible": true,
+  "passed": true
+}

@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[果园最近一刀可读反馈](../orchard-stroke-feedback-qa/)：普通UI误核/续切，几何稳定，原规则与存档不变。
+
 [远征调兵来源与空防代价](../expedition-deploy-feedback-qa/)：只读预览，原规则与指令不变。
 
 [星羽安心封顶实际增量](../feather-cap-feedback-qa/)：普通UI确认，显示修复与本轮收束。
@@ -70,7 +72,7 @@
 |22 云港调度 [v2 候选](../../versions/v2/games/harbor/)|已验有限流程|已验有限流程：三关逐回合胜，二关两方案|已验有限流程：首关23回合货物逾期败→重试|已验有限流程：三关后无第四；终局清会话为设计 [1](../../docs/harbor-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/harbor-storage-qa/) / [3](../../docs/return-navigation-qa/)|
 |23 四季小田 [v2 候选](../../versions/v2/games/farm/)|已验有限流程|已验有限流程：连续三章携带至11天30币结局|已验有限流程：第二章超期败→章首重试不丢前章|已验有限流程：终局刷新与查看农场；动画多用正常跳过 [1](../../docs/farm-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/farm-storage-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/result-return-review/)|
 |24 遗迹灯火 [v2 候选](../../versions/v2/games/ruins/)|已验有限流程|已验有限流程：三房取钥/机关/破甲并实际归门|已验有限流程：首房自然0血败→房间重试/刷新|已验有限流程：第三房清怪后仍须归途E才结算 [1](../../docs/ruins-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/ruins-v2-qa/LAYOUT_PUBLIC.md) / [3](../../docs/return-navigation-qa/)|
-|25 节拍果园 [v2 候选](../../versions/v2/games/orchard/)|已验有限流程|已验有限流程：两场各60活动秒自然完成，无分数胜门槛|设计不适用：设计无失败；再来一场重置，最好分独立|已验有限流程：39分霜中恢复和自然结束已验，误核未验 [1](../../docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/orchard-frost-recovery-qa/) / [3](../../docs/return-navigation-qa/)|
+|25 节拍果园 [v2 候选](../../versions/v2/games/orchard/)|已验有限流程|已验有限流程：两场各60活动秒自然完成，无分数胜门槛|设计不适用：设计无失败；再来一场重置，最好分独立|已验有限流程：39分霜中恢复和自然结束已验，误核扣分/断连→安全续切/暂停刷新已补验（双视口），未重复60秒终局 [1](../../docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/orchard-frost-recovery-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/orchard-stroke-feedback-qa/)|
 |26 山径快递 [v2 候选](../../versions/v2/games/courier/)|已验有限流程|已验有限流程：两路360/432米成功并正确转弯|已验有限流程：首路金色窗口正常按错right，96米自然败；重跑清来信/伤害/转向锁，暂停刷新再继续通过|已验有限流程：转向锁定跨刷新，两路开放 [1](../../docs/courier-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/courier-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |27 街角商旅 [v2 候选](../../versions/v2/games/venture/)|已验有限流程|已验有限流程：历史三场两胜一负保留；当前修后灯会正常UI12轮净资产1955:625胜，含rng只读规划强辅助|已验有限流程：负局终态刷新与确认/取消重开已验|已验有限流程：当前灯会完整胜利、终态原生JSON精确刷新、确认重开干净；旧三场修前与当前单场分开 [1](../../docs/venture-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/venture-storage-qa/) / [3](../../docs/venture-independent-qa/) / [4](../../docs/venture-player-ux-qa/) / [5](../../docs/return-navigation-qa/)|
 |28 云岛工坊 [v2 候选](../../versions/v2/games/island/)|已验有限流程|已验有限流程：同地图两桥路线各完成三章|已验有限流程：第三章需求失衡败→章首恢复城市|已验有限流程：跨章库存/拨款不重复，终局已验 [1](../../docs/island-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/island-storage-qa/) / [3](../../docs/island-pause-semantics-qa/) / [4](../../docs/return-navigation-qa/)|

@@ -1074,11 +1074,12 @@
       },
       "observedCore": "两场各60活动秒自然完成，无分数胜门槛",
       "observedRetry": "设计无失败；再来一场重置，最好分独立",
-      "endingBoundary": "39分霜中恢复和自然结束已验，误核未验",
+      "endingBoundary": "39分霜中恢复和自然结束已验，误核扣分/断连→安全续切/暂停刷新已补验（双视口），未重复60秒终局",
       "evidence": [
         "docs/orchard-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/orchard-frost-recovery-qa/",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/orchard-stroke-feedback-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -3386,5 +3387,12 @@
     "status": "confirmed_and_fixed",
     "evidence": "../expedition-deploy-feedback-qa/",
     "scope": "普通UI确认跨线来源/空防理解缺口，仅只读来源/时间/余量预览；双视口Enter/Tab与刷新；批量/死亡/终态仅离线模型"
+  },
+  "orchardStrokeFeedbackReview": {
+    "baseline": "4aa6c9525a8baf3f1ccdf6cd289c5c8722671649",
+    "status": "confirmed_and_fixed",
+    "evidence": "../orchard-stroke-feedback-qa/",
+    "scope": "三候选有限比较；误核/续切规则正常，仅补6.47CSS像素关键反馈的画布外14px显示；固定预留避免移动画布；双视口几何/键盘/刷新；边界模型另列",
+    "nextMilestone": "../orchard-stroke-feedback-qa/next-milestone.json"
   }
 }

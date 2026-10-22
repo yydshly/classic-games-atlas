@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "groups": 10,
+  "checks": [
+    "Actual ordinaryUI trace reports real cuts, clipped penalty and final score without game/save mutation",
+    "Later fruit in same real stroke cannot replace the thorn/chain-break result",
+    "Next real safe stroke replaces old warning with its own actual gain",
+    "Zero-score thorn uses actual0, not nominal20 (LEGAL OFFLINE MODEL)",
+    "Two safe strokes then thorn use actual20 and reset current stroke feedback (LEGAL OFFLINE MODEL)",
+    "Invalid input and empty stroke cannot invent a hit or penalty",
+    "New journey/field clears old warning; restored record states known cumulative facts",
+    "Pause/cancel clears active gesture and does not resurrect a held blade",
+    "Completed state reports totals and repeated reads do not settle again (LEGAL OFFLINE MODEL)",
+    "Repeated reads, marks and returned-copy edits never change game/checkpoint"
+  ],
+  "method": "Actual UI-earned command replays plus separately labelled legal offline boundary sequences; presentation tracker never changes game, score, timing or checkpoint."
+}
