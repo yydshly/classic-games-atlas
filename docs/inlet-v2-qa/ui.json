@@ -1,0 +1,350 @@
+{
+  "base": "http://127.0.0.1:58258/",
+  "method": "Native keyboard direction/Space input with read-only geometric policy, ordinary UI pause for observation; no state/time/result/save injection.",
+  "stages": [
+    {
+      "level": 1,
+      "time": 2.88,
+      "percent": 50,
+      "lives": 3,
+      "stats": {
+        "cuts": 1,
+        "losses": 0,
+        "filled": 140,
+        "steps": 24
+      },
+      "objectives": [
+        {
+          "id": "bay",
+          "label": "初织湾",
+          "target": 40,
+          "total": 280,
+          "claimed": 140,
+          "percent": 50,
+          "complete": true,
+          "labelAt": {
+            "x": 10,
+            "y": 9
+          }
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 3.4,
+      "percent": 64.0926640926641,
+      "lives": 3,
+      "stats": {
+        "cuts": 2,
+        "losses": 0,
+        "filled": 166,
+        "steps": 28
+      },
+      "objectives": [
+        {
+          "id": "reed",
+          "label": "苇汀",
+          "target": 40,
+          "total": 122,
+          "claimed": 101,
+          "percent": 82.78688524590164,
+          "complete": true,
+          "labelAt": {
+            "x": 3,
+            "y": 8
+          }
+        },
+        {
+          "id": "islet",
+          "label": "岛汀",
+          "target": 40,
+          "total": 137,
+          "claimed": 65,
+          "percent": 47.44525547445255,
+          "complete": true,
+          "labelAt": {
+            "x": 18,
+            "y": 10
+          }
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 7.08,
+      "percent": 78.8135593220339,
+      "lives": 3,
+      "stats": {
+        "cuts": 3,
+        "losses": 0,
+        "filled": 186,
+        "steps": 59
+      },
+      "objectives": [
+        {
+          "id": "fern",
+          "label": "蕨湾",
+          "target": 40,
+          "total": 87,
+          "claimed": 77,
+          "percent": 88.50574712643679,
+          "complete": true,
+          "labelAt": {
+            "x": 3,
+            "y": 8
+          }
+        },
+        {
+          "id": "lantern",
+          "label": "灯湾",
+          "target": 40,
+          "total": 78,
+          "claimed": 57,
+          "percent": 73.07692307692307,
+          "complete": true,
+          "labelAt": {
+            "x": 11,
+            "y": 8
+          }
+        },
+        {
+          "id": "tide",
+          "label": "潮湾",
+          "target": 40,
+          "total": 71,
+          "claimed": 52,
+          "percent": 73.23943661971832,
+          "complete": true,
+          "labelAt": {
+            "x": 18,
+            "y": 8
+          }
+        }
+      ]
+    }
+  ],
+  "cuts": [
+    {
+      "level": 1,
+      "cut": 1,
+      "time": 2.88,
+      "from": {
+        "x": 10,
+        "y": 0
+      },
+      "to": {
+        "x": 10,
+        "y": 15
+      },
+      "total": 50,
+      "objectives": [
+        {
+          "id": "bay",
+          "percent": 50,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "cut": 1,
+      "time": 1.6,
+      "from": {
+        "x": 0,
+        "y": 4
+      },
+      "to": {
+        "x": 8,
+        "y": 4
+      },
+      "total": 38.996138996138995,
+      "objectives": [
+        {
+          "id": "reed",
+          "percent": 82.78688524590164,
+          "complete": true
+        },
+        {
+          "id": "islet",
+          "percent": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "cut": 2,
+      "time": 3.4,
+      "from": {
+        "x": 11,
+        "y": 6
+      },
+      "to": {
+        "x": 21,
+        "y": 6
+      },
+      "total": 64.0926640926641,
+      "objectives": [
+        {
+          "id": "reed",
+          "percent": 82.78688524590164,
+          "complete": true
+        },
+        {
+          "id": "islet",
+          "percent": 47.44525547445255,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "cut": 1,
+      "time": 1.24,
+      "from": {
+        "x": 0,
+        "y": 3
+      },
+      "to": {
+        "x": 6,
+        "y": 3
+      },
+      "total": 32.6271186440678,
+      "objectives": [
+        {
+          "id": "fern",
+          "percent": 88.50574712643679,
+          "complete": true
+        },
+        {
+          "id": "lantern",
+          "percent": 0,
+          "complete": false
+        },
+        {
+          "id": "tide",
+          "percent": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "cut": 2,
+      "time": 4.68,
+      "from": {
+        "x": 17,
+        "y": 0
+      },
+      "to": {
+        "x": 17,
+        "y": 15
+      },
+      "total": 54.66101694915254,
+      "objectives": [
+        {
+          "id": "fern",
+          "percent": 88.50574712643679,
+          "complete": true
+        },
+        {
+          "id": "lantern",
+          "percent": 0,
+          "complete": false
+        },
+        {
+          "id": "tide",
+          "percent": 73.23943661971832,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "cut": 3,
+      "time": 7.08,
+      "from": {
+        "x": 7,
+        "y": 11
+      },
+      "to": {
+        "x": 13,
+        "y": 11
+      },
+      "total": 78.8135593220339,
+      "objectives": [
+        {
+          "id": "fern",
+          "percent": 88.50574712643679,
+          "complete": true
+        },
+        {
+          "id": "lantern",
+          "percent": 73.07692307692307,
+          "complete": true
+        },
+        {
+          "id": "tide",
+          "percent": 73.23943661971832,
+          "complete": true
+        }
+      ]
+    }
+  ],
+  "errors": [
+    "TypeError: Failed to fetch"
+  ],
+  "httpErrors": [],
+  "openPathRefreshPaused": true,
+  "betweenRefresh": true,
+  "naturalFailure": {
+    "level": 2,
+    "time": 1.08,
+    "percent": 0,
+    "lives": 0,
+    "reason": "三盏织灯已熄，重试这一湾可以重新规划。"
+  },
+  "currentRetryKeepsEarlier": true,
+  "actualCompletedRefresh": true,
+  "newJourneyCancelRetainsActualRecord": true,
+  "confirmedNewResetsOnlyJourney": true,
+  "touchHoldRelease": true,
+  "touchCancelClears": true,
+  "multiFingerReleaseFallback": true,
+  "touchArmAndRiskPath": true,
+  "touchPauseClears": true,
+  "touchEvents": [
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    }
+  ],
+  "returnLink": true,
+  "v1ActualCompletedBytesUntouched": true,
+  "actualV1CompleteStillLoadsWithoutTouchingV2": true,
+  "passed": true
+}

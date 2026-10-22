@@ -7,7 +7,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'inlet-44-r1';
+const DATA_REVISION = 'inlet-v2-r1';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let unavailable = new Set();
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
@@ -207,9 +207,9 @@ async function optionalJson(path,label){
 try{
  const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
   readJson(`./data/games.json?v=${DATA_REVISION}`),
-  readJson('./data/comparisons.json?v=inlet-44-r1'),
+  readJson('./data/comparisons.json?v=inlet-v2-r1'),
   optionalJson('./data/reference-media.json','原作参考图'),
-  optionalJson('./data/value-comparisons.json?v=inlet-44-r1','玩法价值说明')
+  optionalJson('./data/value-comparisons.json?v=inlet-v2-r1','玩法价值说明')
  ]);
  data=catalogue;if(!Array.isArray(data?.games)||!data.games.length||!Array.isArray(data.experiments))throw new Error('Catalogue is empty');
  comparisons=validateRecommendations(data,comparisonData,candidateDefaults);referenceMedia=mediaData.items;valueComparisons=valueData.items;

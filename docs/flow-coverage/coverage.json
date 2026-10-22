@@ -1936,8 +1936,8 @@
       "number": "44",
       "slug": "inlet",
       "title": "汀光织界",
-      "recommendedVersion": "v1",
-      "playUrl": "preview/inlet/",
+      "recommendedVersion": "v2",
+      "playUrl": "versions/v2/preview/inlet/",
       "acceptance": "candidate_unaccepted",
       "coverage": {
         "startup": "verified",
@@ -1945,14 +1945,15 @@
         "failureRetry": "verified",
         "endingNext": "verified"
       },
-      "observedCore": "普通UI原生键盘加只读路线建议三湾连续闭合达标，不注入状态或胜负。",
-      "observedRetry": "第二湾自然回踩用尽三灯、失利刷新、当前湾重试保留前湾。开放线与完成态真实刷新。",
-      "endingBoundary": "真实完成档私下保留；模型、浏览器故障夹具和触控模拟分开。",
+      "observedCore": "v2普通UI原生键盘辅助：1/2/3刀，24/28/59步；分区目标使初始一刀不能跨过进阶内容。",
+      "observedRetry": "第二湾自然回踩用尽灯、当前湾重试保留第一湾；开放线/关间/失利/真实完成态刷新。旧v1实际完成档仍可加载且未变字节。",
+      "endingBoundary": "本地Chromium原生键盘+只读路线建议三湾实际完成：1刀24步2.88秒、2刀28步3.40秒、3刀59步7.08秒；第二湾仍有很短的熟练路线，不把时间或辅助通关当真人乐趣证明。模型替代路线/初始直切夹具、浏览器触控和存储故障分列。旧v1真实完成档可加载且字节不变。真人乐趣、长期难度、真机与审美未验；无音频。",
       "evidence": [
-        "docs/inlet-qa/"
+        "docs/inlet-qa/",
+        "docs/inlet-v2-qa/"
       ],
       "browserScope": "桌面和390CSS Chromium策略辅助；触控为模拟，不是真机。",
-      "nextToolWork": "当前三湾流程闭环，不自动扩为街机全套系统或全关卡。",
+      "nextToolWork": "三湾有限流程已验；二湾熟练路线仍短，先真人反馈，再判断是否值得继续扩内容。",
       "humanRequired": [
         "无辅助乐趣与难度",
         "真机触控性能",

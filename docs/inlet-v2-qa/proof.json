@@ -1,0 +1,807 @@
+{
+  "kind": "bounded-model-proof-not-ui",
+  "version": 2,
+  "rules": {
+    "global": [
+      50,
+      60,
+      65
+    ],
+    "eachBasin": 40,
+    "playerStep": 0.12,
+    "enemyStep": 0.32,
+    "patrolStep": 0.38,
+    "lives": 3
+  },
+  "routes": [
+    {
+      "level": 1,
+      "variant": "main",
+      "sample": 0.05,
+      "plan": [
+        {
+          "from": {
+            "x": 10,
+            "y": 0
+          },
+          "to": {
+            "x": 10,
+            "y": 15
+          }
+        }
+      ],
+      "state": "won",
+      "time": 2.88,
+      "lives": 3,
+      "percent": 50,
+      "cuts": 1,
+      "steps": 24,
+      "objectives": [
+        {
+          "id": "bay",
+          "percent": 50,
+          "complete": true
+        }
+      ],
+      "trace": [
+        {
+          "added": 140,
+          "percent": 50,
+          "time": 2.88,
+          "start": {
+            "x": 10,
+            "y": 0
+          },
+          "end": {
+            "x": 10,
+            "y": 15
+          },
+          "steps": 24,
+          "objectives": [
+            {
+              "id": "bay",
+              "percent": 50,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "sample": 0.05,
+      "plan": [
+        {
+          "from": {
+            "x": 0,
+            "y": 4
+          },
+          "to": {
+            "x": 8,
+            "y": 4
+          }
+        },
+        {
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "to": {
+            "x": 21,
+            "y": 6
+          }
+        }
+      ],
+      "state": "won",
+      "time": 3.36,
+      "lives": 3,
+      "percent": 64.0926640926641,
+      "cuts": 2,
+      "steps": 28,
+      "objectives": [
+        {
+          "id": "reed",
+          "percent": 82.78688524590164,
+          "complete": true
+        },
+        {
+          "id": "islet",
+          "percent": 47.44525547445255,
+          "complete": true
+        }
+      ],
+      "trace": [
+        {
+          "added": 101,
+          "percent": 38.996138996138995,
+          "time": 1.56,
+          "start": {
+            "x": 0,
+            "y": 4
+          },
+          "end": {
+            "x": 8,
+            "y": 4
+          },
+          "steps": 13,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 82.78688524590164,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 0,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "added": 65,
+          "percent": 64.0926640926641,
+          "time": 3.36,
+          "start": {
+            "x": 11,
+            "y": 6
+          },
+          "end": {
+            "x": 21,
+            "y": 6
+          },
+          "steps": 28,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 82.78688524590164,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 47.44525547445255,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "sample": 0.05,
+      "plan": [
+        {
+          "from": {
+            "x": 0,
+            "y": 3
+          },
+          "to": {
+            "x": 6,
+            "y": 3
+          }
+        },
+        {
+          "from": {
+            "x": 17,
+            "y": 0
+          },
+          "to": {
+            "x": 17,
+            "y": 15
+          }
+        },
+        {
+          "from": {
+            "x": 7,
+            "y": 11
+          },
+          "to": {
+            "x": 13,
+            "y": 11
+          }
+        }
+      ],
+      "state": "won",
+      "time": 7.08,
+      "lives": 3,
+      "percent": 78.8135593220339,
+      "cuts": 3,
+      "steps": 59,
+      "objectives": [
+        {
+          "id": "fern",
+          "percent": 88.50574712643679,
+          "complete": true
+        },
+        {
+          "id": "lantern",
+          "percent": 73.07692307692307,
+          "complete": true
+        },
+        {
+          "id": "tide",
+          "percent": 73.23943661971832,
+          "complete": true
+        }
+      ],
+      "trace": [
+        {
+          "added": 77,
+          "percent": 32.6271186440678,
+          "time": 1.2,
+          "start": {
+            "x": 0,
+            "y": 3
+          },
+          "end": {
+            "x": 6,
+            "y": 3
+          },
+          "steps": 10,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 88.50574712643679,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 0,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "added": 52,
+          "percent": 54.66101694915254,
+          "time": 4.68,
+          "start": {
+            "x": 17,
+            "y": 0
+          },
+          "end": {
+            "x": 17,
+            "y": 15
+          },
+          "steps": 39,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 88.50574712643679,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 73.23943661971832,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "added": 57,
+          "percent": 78.8135593220339,
+          "time": 7.08,
+          "start": {
+            "x": 7,
+            "y": 11
+          },
+          "end": {
+            "x": 13,
+            "y": 11
+          },
+          "steps": 59,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 88.50574712643679,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 73.07692307692307,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 73.23943661971832,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "sample": 0.05,
+      "plan": [
+        {
+          "from": {
+            "x": 4,
+            "y": 15
+          },
+          "to": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "to": {
+            "x": 21,
+            "y": 6
+          }
+        }
+      ],
+      "state": "won",
+      "time": 6.96,
+      "lives": 3,
+      "percent": 62.16216216216216,
+      "cuts": 2,
+      "steps": 58,
+      "objectives": [
+        {
+          "id": "reed",
+          "percent": 65.57377049180327,
+          "complete": true
+        },
+        {
+          "id": "islet",
+          "percent": 59.12408759124088,
+          "complete": true
+        }
+      ],
+      "trace": [
+        {
+          "added": 80,
+          "percent": 30.888030888030887,
+          "time": 4.2,
+          "start": {
+            "x": 4,
+            "y": 15
+          },
+          "end": {
+            "x": 4,
+            "y": 0
+          },
+          "steps": 35,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 65.57377049180327,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 0,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "added": 81,
+          "percent": 62.16216216216216,
+          "time": 6.96,
+          "start": {
+            "x": 11,
+            "y": 6
+          },
+          "end": {
+            "x": 21,
+            "y": 6
+          },
+          "steps": 58,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 65.57377049180327,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 59.12408759124088,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "sample": 0.05,
+      "plan": [
+        {
+          "from": {
+            "x": 0,
+            "y": 4
+          },
+          "to": {
+            "x": 6,
+            "y": 4
+          }
+        },
+        {
+          "from": {
+            "x": 18,
+            "y": 0
+          },
+          "to": {
+            "x": 18,
+            "y": 15
+          }
+        },
+        {
+          "from": {
+            "x": 9,
+            "y": 9
+          },
+          "to": {
+            "x": 13,
+            "y": 9
+          }
+        }
+      ],
+      "state": "won",
+      "time": 7.8,
+      "lives": 3,
+      "percent": 67.37288135593221,
+      "cuts": 4,
+      "steps": 65,
+      "objectives": [
+        {
+          "id": "fern",
+          "percent": 82.75862068965517,
+          "complete": true
+        },
+        {
+          "id": "lantern",
+          "percent": 62.82051282051282,
+          "complete": true
+        },
+        {
+          "id": "tide",
+          "percent": 53.52112676056338,
+          "complete": true
+        }
+      ],
+      "trace": [
+        {
+          "added": 72,
+          "percent": 30.508474576271187,
+          "time": 1.32,
+          "start": {
+            "x": 0,
+            "y": 4
+          },
+          "end": {
+            "x": 6,
+            "y": 4
+          },
+          "steps": 11,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 82.75862068965517,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 0,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "added": 8,
+          "percent": 33.89830508474576,
+          "time": 4.32,
+          "start": {
+            "x": 18,
+            "y": 0
+          },
+          "end": {
+            "x": 18,
+            "y": 9
+          },
+          "steps": 36,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 82.75862068965517,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 11.267605633802818,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "added": 30,
+          "percent": 46.61016949152542,
+          "time": 5.04,
+          "start": {
+            "x": 18,
+            "y": 10
+          },
+          "end": {
+            "x": 18,
+            "y": 15
+          },
+          "steps": 42,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 82.75862068965517,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 53.52112676056338,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "added": 49,
+          "percent": 67.37288135593221,
+          "time": 7.8,
+          "start": {
+            "x": 9,
+            "y": 9
+          },
+          "end": {
+            "x": 13,
+            "y": 9
+          },
+          "steps": 65,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 82.75862068965517,
+              "complete": true
+            },
+            {
+              "id": "lantern",
+              "percent": 62.82051282051282,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 53.52112676056338,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "samplingChecks": [
+    {
+      "level": 1,
+      "variant": "main",
+      "sample": 0.1,
+      "state": "won",
+      "time": 2.9,
+      "lives": 3,
+      "cuts": 1,
+      "steps": 24,
+      "percent": 50
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "sample": 0.1,
+      "state": "won",
+      "time": 3.4,
+      "lives": 3,
+      "cuts": 2,
+      "steps": 28,
+      "percent": 64.0926640926641
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "sample": 0.1,
+      "state": "won",
+      "time": 7.12,
+      "lives": 3,
+      "cuts": 3,
+      "steps": 59,
+      "percent": 78.8135593220339
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "sample": 0.1,
+      "state": "won",
+      "time": 7,
+      "lives": 3,
+      "cuts": 2,
+      "steps": 58,
+      "percent": 62.16216216216216
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "sample": 0.1,
+      "state": "won",
+      "time": 7.88,
+      "lives": 3,
+      "cuts": 4,
+      "steps": 65,
+      "percent": 67.37288135593221
+    }
+  ],
+  "losses": [
+    {
+      "kind": "legal-backtrack",
+      "time": 1.08,
+      "lives": 0
+    },
+    {
+      "kind": "no-input",
+      "time": 68.78,
+      "lives": 0
+    }
+  ],
+  "coverage": [
+    {
+      "level": 2,
+      "kind": "initial-anchor-fixtures-not-ui-or-all-timings",
+      "initialSafeDirectedEntries": 108,
+      "closed": 91,
+      "collided": 17,
+      "won": 0,
+      "maxChanged": 1,
+      "axisSweepTrials": 34,
+      "axisSweepWon": 0,
+      "old": [
+        {
+          "variant": "main",
+          "state": "playing",
+          "won": false,
+          "time": 15,
+          "cuts": 1,
+          "percent": 22.00772200772201,
+          "lives": 3,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "islet",
+              "percent": 41.605839416058394,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "variant": "alternate",
+          "state": "playing",
+          "won": false,
+          "time": 15,
+          "cuts": 2,
+          "percent": 47.49034749034749,
+          "lives": 2,
+          "objectives": [
+            {
+              "id": "reed",
+              "percent": 54.09836065573771,
+              "complete": true
+            },
+            {
+              "id": "islet",
+              "percent": 41.605839416058394,
+              "complete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "kind": "initial-anchor-fixtures-not-ui-or-all-timings",
+      "initialSafeDirectedEntries": 154,
+      "closed": 133,
+      "collided": 21,
+      "won": 0,
+      "maxChanged": 1,
+      "axisSweepTrials": 34,
+      "axisSweepWon": 0,
+      "old": [
+        {
+          "variant": "main",
+          "state": "playing",
+          "won": false,
+          "time": 15,
+          "cuts": 3,
+          "percent": 5.932203389830509,
+          "lives": 3,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "lantern",
+              "percent": 12.82051282051282,
+              "complete": false
+            },
+            {
+              "id": "tide",
+              "percent": 5.633802816901409,
+              "complete": false
+            }
+          ]
+        },
+        {
+          "variant": "alternate",
+          "state": "playing",
+          "won": false,
+          "time": 15,
+          "cuts": 4,
+          "percent": 31.779661016949152,
+          "lives": 2,
+          "objectives": [
+            {
+              "id": "fern",
+              "percent": 0,
+              "complete": false
+            },
+            {
+              "id": "lantern",
+              "percent": 85.8974358974359,
+              "complete": true
+            },
+            {
+              "id": "tide",
+              "percent": 11.267605633802818,
+              "complete": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Input strategy and topology fixtures are distinct from ordinary browser UI.",
+    "Initial-anchor enumeration fixes initial hazard phase; it is not exhaustive over every later timing.",
+    "Each contiguous water trail lies within one initial basin, so it cannot advance other untouched basin objectives.",
+    "No claim about human fun or real-device touch/performance."
+  ]
+}
