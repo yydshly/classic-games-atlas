@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('featuredPlayReview'):
+    doc += '<p><a href="' + escape(D['featuredPlayReview']['evidence'], quote=True) + '">三款精选试玩入口与溪谷开场预告</a>（候选展示，堡垒Enter返回问题单列）</p>'
+
 if D.get('orchardStrokeFeedbackReview'):
     doc += '<p><a href="' + escape(D['orchardStrokeFeedbackReview']['evidence'], quote=True) + '">果园v2：读懂最近一刀</a>（14px实际反馈，画布不随换行移动）</p>'
 
@@ -124,6 +127,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('featuredPlayReview'):
+    md += '[三款精选试玩入口与溪谷开场预告](' + D['featuredPlayReview']['evidence'] + ')；候选展示与实际未验边界分列，不增加通关覆盖计数。\n\n'
+
 if D.get('orchardStrokeFeedbackReview'):
     md += '[果园最近一刀可读反馈](' + D['orchardStrokeFeedbackReview']['evidence'] + ')：普通UI误核/续切，几何稳定，原规则与存档不变。\n\n'
 

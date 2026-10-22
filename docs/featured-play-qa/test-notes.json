@@ -1,0 +1,35 @@
+{
+  "baseline": "d4a028c61e32df434dd4c8df1bfb52d3b0dc73d0",
+  "method": "Native installed Chromium/Playwright, desktop 1440x1000 and simulated narrow viewport 390x844. No injected game/save/time/win states.",
+  "scope": "Existing homepage plus fortress/brook/post v2. Only brook ready-state presentation changed.",
+  "assets": "Three JPEGs captured directly from visible real running canvas via Chromium Page.captureScreenshot clip; no image synthesis, redraw, or borrowed game art. 144521 bytes total.",
+  "ordinaryUi": [
+    "Three featured keyboard launches at both widths; short real runtime only.",
+    "Brook/post keyboard return; fortress mouse return because existing Enter binding intercepts anchor. All six returns focus corresponding featured CTA and preserve the Creek library filter.",
+    "Old Post library keyboard round trip at both widths still focuses the original library card.",
+    "No-result/reset/search and native details keyboard toggle; 40 entries/initial12 retained.",
+    "Both Brook freely selected openings read correct actual first arrivals; selection refresh and active refresh-to-paused preserve raw native save."
+  ],
+  "modelOnly": [
+    "Seven data/formatter/navigation-receipt groups, including simultaneous-arrival and missing-schedule fixtures. No claim fixtures are real completed gameplay."
+  ],
+  "observedIssue": {
+    "slug": "fortress",
+    "status": "reproduced_existing_not_fixed_this_batch",
+    "detail": "When the header return anchor is focused, Enter is consumed by global PLAY_KEYS handler. It starts/resumes play instead of following the link. Native mouse return works. Fortress source unchanged from baseline.",
+    "priority": "Next bounded product fix: exclude native links from game Enter binding; preserve real P1/P2 Enter controls on canvas/body, prove no resume on link activation."
+  },
+  "evidenceCautions": [
+    "Initial home capture taken before lazy thumbnails completed was rejected; settled before screenshot used.",
+    "First candidate featured image sizing cropped the full square battlefield. Fixed with constrained contain box; final geometry and screenshots accepted.",
+    "Navigation-cancelled image requests are listed separately as ERR_ABORTED, not resource404; no uncancelled request failures or console/page/http errors.",
+    "Earlier harness waited on wrong page after Fortress Enter failed. Failure retained; not presented as successful keyboard coverage."
+  ],
+  "humanRequired": [
+    "Independent new-player comprehension and fun",
+    "Real touch device performance and ergonomics",
+    "Two actual players on the shared keyboard",
+    "Audio, visual taste and screen-reader experience"
+  ],
+  "noExtraScope": "No re-run of all endings, difficulty changes, save format changes, new game or service."
+}

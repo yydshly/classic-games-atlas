@@ -225,14 +225,14 @@ try{
   if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
   const link=event.target.closest('a[href]');if(!link||link.target==='_blank'||link.hasAttribute('download'))return;
   const card=link.closest('[data-play]')||(dialog.open?returnFocus?.closest('[data-play]'):null);if(!card)return;
-  try{rememberPlayReturn(sessionStorage,location.href,link.href,{query:$('#play-search').value,version:$('#play-version').value,limit:playLimit,y:scrollY,slug:card.dataset.play});}catch{/* Storage restrictions must not block navigation. */}
+  try{rememberPlayReturn(sessionStorage,location.href,link.href,{query:$('#play-search').value,version:$('#play-version').value,limit:playLimit,y:scrollY,slug:card.dataset.play,...(card.dataset.featured?{entry:'featured'}:{})});}catch{/* Storage restrictions must not block navigation. */}
  });
  let playReturn=null;
  if(!/^#(?:game|compare)=/.test(location.hash))try{playReturn=consumePlayReturn(sessionStorage,location.href,document.referrer);}catch{}
  if(playReturn){$('#play-search').value=playReturn.query;$('#play-version').value=playReturn.version;playLimit=playReturn.limit;}
  window.addEventListener('hashchange',handleRoute);renderPlayLibrary();renderExperiments(data.experiments);renderShowcase();render();handleRoute();
  if(playReturn)requestAnimationFrame(()=>requestAnimationFrame(()=>{
-  const card=[...document.querySelectorAll('#play-grid [data-play]')].find(e=>e.dataset.play===playReturn.slug);
+  const card=[...document.querySelectorAll(playReturn.entry==='featured'?'#selected-play [data-play]':'#play-grid [data-play]')].find(e=>e.dataset.play===playReturn.slug);
   const links=card?[...card.querySelectorAll('a[href]')]:[];
   const link=links.find(e=>e.matches('.play-launch')&&e.href===playReturn.href)||links.find(e=>e.href===playReturn.href);
   (link||$('#play-search')).focus({preventScroll:true});window.scrollTo({top:playReturn.y,behavior:'instant'});
