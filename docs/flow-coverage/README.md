@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[邮差下一合法闸门地图反馈前后实图](../post-feedback-qa/)；一项只读标记，不改驾驶与过闸规则。
+
 [溪谷左岸行号提醒前后实图](../brook-feedback-qa/)；一项只读提示，非真人注意力验收。
 
 |编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|
@@ -37,7 +39,7 @@
 |13 星砂勘探 [v2 候选](../../versions/v2/games/sand/)|已验有限流程|已验有限流程：浅/深两盘有提示解完安全格|已验有限流程：主动点已推知雷格失败，同盘重试/另开新盘|已验有限流程：两档独立进度，非全部种子证明 [1](../../docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
 |14 落星弹庭 [v2 候选](../../versions/v2/games/pinfall/)|已验有限流程|已验有限流程：两庭参考角度自然胜1555/1485|已验有限流程：首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留|已验有限流程：能力整球回退及最好保留，两庭开放 [1](../../docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/pinfall-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |15 钢岚突进 [v2 候选](../../versions/v2/games/gale/)|已验有限流程|已验有限流程：两场清装置走出口200分|已验有限流程：首图原地承受15命中/3死亡自然败；重试3命5甲2脉冲、满敌/空弹体，暂停刷新再继续通过|已验有限流程：修后只复验生命周期，通关属修前同引擎 [1](../../docs/gale-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/gale-loss-qa/) / [3](../../docs/return-navigation-qa/)|
-|16 弯道邮差 [v2 候选](../../versions/v2/games/post/)|已验有限流程|已验有限流程：此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒|已验有限流程：自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁|已验有限流程：三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶 [1](../../docs/post-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/post-main-flow-qa/) / [3](../../docs/post-loss-qa/) / [4](../../docs/post-later-qa/) / [5](../../docs/post-independent-qa/) / [6](../../docs/return-navigation-qa/)|
+|16 弯道邮差 [v2 候选](../../versions/v2/games/post/)|已验有限流程|已验有限流程：此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒|已验有限流程：自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁|已验有限流程：三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶 [1](../../docs/post-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/post-main-flow-qa/) / [3](../../docs/post-loss-qa/) / [4](../../docs/post-later-qa/) / [5](../../docs/post-independent-qa/) / [6](../../docs/return-navigation-qa/) / [7](../../docs/post-feedback-qa/)|
 |17 灯塔小队 [v2 候选](../../versions/v2/games/beacon/)|已验有限流程|已验有限流程：21天归港7地点/3遭遇胜|已验有限流程：付代价撤退与透镜遗失败→确认重开已验|已验有限流程：航程总结及刷新/再次行动已验 [1](../../docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/beacon-v2-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |18 风铃绳旅 [v2 候选](../../versions/v2/games/chime/)|已验有限流程|已验有限流程：既有首题成功；此前正常第2/3题10.1375/8.1000秒，各3星|已验有限流程：自然失败及重试初态已见|已验有限流程：三题均已有自然成功；此前第2→3清场/刷新、末题无第4/重走与2份原生纪录保留；时窗脚本辅助 [1](../../docs/chime-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/chime-later-qa/) / [3](../../docs/return-navigation-qa/)|
 |19 溪谷守芽 [v2 候选](../../versions/v2/games/brook/)|已验有限流程|已验有限流程：已有首场1070分；此前第二场1×70.983秒1043分10/10，3次根触发|已验有限流程：此前两场自然败；失败重试空场230露|已验有限流程：两场各有自然胜利；第二场最终反馈/无第三场/重玩刷新与新纪录保留通过，非全部策略验收 [1](../../docs/brook-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/brook-first-win-qa/) / [3](../../docs/brook-later-qa/) / [4](../../docs/return-navigation-qa/) / [5](../../docs/brook-feedback-qa/)|

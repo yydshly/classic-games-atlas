@@ -1,0 +1,572 @@
+{
+  "cases": [
+    {
+      "width": 1440,
+      "normalUi": true,
+      "method": "visible start and ordinary W held through countdown, no steering or state injection",
+      "states": [
+        {
+          "label": "01-ready",
+          "game": {
+            "version": 2,
+            "level": 1,
+            "stage": 0,
+            "state": "ready",
+            "time": 0,
+            "countdown": 3,
+            "accumulator": 0,
+            "cars": [
+              {
+                "id": "player",
+                "name": "你",
+                "player": true,
+                "x": 420.9802477155556,
+                "y": 114,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-1",
+                "name": "青鸟",
+                "player": false,
+                "x": 420.9802477155556,
+                "y": 140,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-2",
+                "name": "赤狐",
+                "player": false,
+                "x": 420.9802477155556,
+                "y": 166,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              }
+            ],
+            "stats": {
+              "settlements": 0,
+              "contacts": 0
+            },
+            "result": null,
+            "reason": null,
+            "lap": 1,
+            "lapTimes": [],
+            "lapStartedAt": 0,
+            "nextGate": 1,
+            "lastGate": 0,
+            "travel": 0,
+            "previousArc": 10,
+            "lock": 0,
+            "offroad": false,
+            "wrongWay": false,
+            "ranking": [
+              "player",
+              "rival-1",
+              "rival-2"
+            ],
+            "unlocked": 1,
+            "best": {},
+            "lastResult": null,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "discardedResume": false,
+            "input": {
+              "keys": [],
+              "touches": 0
+            },
+            "viewport": {
+              "width": 900,
+              "height": 640
+            }
+          },
+          "nextGateText": "下一闸门：1 / 7",
+          "status": "黄色 1 号是你。车头灯朝前；方向盘相对车头转向。",
+          "field": {
+            "x": 161,
+            "y": 202,
+            "width": 806,
+            "height": 573.140625
+          },
+          "nextGateBox": {
+            "x": 1016,
+            "y": 363.234375,
+            "width": 87.625,
+            "height": 15
+          }
+        },
+        {
+          "label": "02-driving",
+          "game": {
+            "version": 2,
+            "level": 1,
+            "stage": 0,
+            "state": "playing",
+            "time": 1.4916666666666638,
+            "countdown": 0,
+            "accumulator": 0.00813333333333415,
+            "cars": [
+              {
+                "id": "player",
+                "name": "你",
+                "player": true,
+                "x": 518.2376471971211,
+                "y": 108.71093578710108,
+                "angle": 0,
+                "speed": 98.61217798129653,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 97.56366776933532,
+                "previousArc": 107.25739948156547,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-1",
+                "name": "青鸟",
+                "player": false,
+                "x": 508.307136969001,
+                "y": 129.2708115156499,
+                "angle": -0.09766670740981098,
+                "speed": 102.13523652850778,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 87.02062096567738,
+                "previousArc": 97.32688925344542,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-2",
+                "name": "赤狐",
+                "player": false,
+                "x": 535.0309249867338,
+                "y": 155.4822411196717,
+                "angle": -0.017437141414772483,
+                "speed": 97.9075856336458,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 114.05067727117807,
+                "previousArc": 124.05067727117819,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              }
+            ],
+            "stats": {
+              "settlements": 0,
+              "contacts": 120
+            },
+            "result": null,
+            "reason": null,
+            "lap": 1,
+            "lapTimes": [],
+            "lapStartedAt": 0,
+            "nextGate": 1,
+            "lastGate": 0,
+            "travel": 97.56366776933532,
+            "previousArc": 107.25739948156547,
+            "lock": 0,
+            "offroad": false,
+            "wrongWay": false,
+            "ranking": [
+              "rival-2",
+              "player",
+              "rival-1"
+            ],
+            "unlocked": 1,
+            "best": {},
+            "lastResult": null,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "discardedResume": false,
+            "input": {
+              "keys": [],
+              "touches": 0
+            },
+            "viewport": {
+              "width": 900,
+              "height": 640
+            }
+          },
+          "nextGateText": "下一闸门：1 / 7",
+          "status": "三秒起跑。先看下一个弯，沿箭头正向行驶。",
+          "field": {
+            "x": 161,
+            "y": 202,
+            "width": 806,
+            "height": 573.140625
+          },
+          "nextGateBox": {
+            "x": 1016,
+            "y": 363.234375,
+            "width": 87.625,
+            "height": 15
+          }
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "normalUi": true,
+      "method": "visible start and ordinary W held through countdown, no steering or state injection",
+      "states": [
+        {
+          "label": "01-ready",
+          "game": {
+            "version": 2,
+            "level": 1,
+            "stage": 0,
+            "state": "ready",
+            "time": 0,
+            "countdown": 3,
+            "accumulator": 0,
+            "cars": [
+              {
+                "id": "player",
+                "name": "你",
+                "player": true,
+                "x": 420.9802477155556,
+                "y": 114,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-1",
+                "name": "青鸟",
+                "player": false,
+                "x": 420.9802477155556,
+                "y": 140,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-2",
+                "name": "赤狐",
+                "player": false,
+                "x": 420.9802477155556,
+                "y": 166,
+                "angle": 0,
+                "speed": 0,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 0,
+                "previousArc": 10,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              }
+            ],
+            "stats": {
+              "settlements": 0,
+              "contacts": 0
+            },
+            "result": null,
+            "reason": null,
+            "lap": 1,
+            "lapTimes": [],
+            "lapStartedAt": 0,
+            "nextGate": 1,
+            "lastGate": 0,
+            "travel": 0,
+            "previousArc": 10,
+            "lock": 0,
+            "offroad": false,
+            "wrongWay": false,
+            "ranking": [
+              "player",
+              "rival-1",
+              "rival-2"
+            ],
+            "unlocked": 1,
+            "best": {},
+            "lastResult": null,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "discardedResume": false,
+            "input": {
+              "keys": [],
+              "touches": 0
+            },
+            "viewport": {
+              "width": 900,
+              "height": 640
+            }
+          },
+          "nextGateText": "下一闸门：1 / 7",
+          "status": "黄色 1 号是你。车头灯朝前；方向盘相对车头转向。",
+          "field": {
+            "x": 13,
+            "y": 226,
+            "width": 364,
+            "height": 258.84375
+          },
+          "nextGateBox": {
+            "x": 211,
+            "y": 717.828125,
+            "width": 87.625,
+            "height": 15
+          }
+        },
+        {
+          "label": "02-driving",
+          "game": {
+            "version": 2,
+            "level": 1,
+            "stage": 0,
+            "state": "playing",
+            "time": 1.4583333333333306,
+            "countdown": 0,
+            "accumulator": 0.0012666666428249353,
+            "cars": [
+              {
+                "id": "player",
+                "name": "你",
+                "player": true,
+                "x": 514.9083726643638,
+                "y": 108.84386675940056,
+                "angle": 0,
+                "speed": 99.56576943016786,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 94.23000802063257,
+                "previousArc": 103.9281249488082,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-1",
+                "name": "青鸟",
+                "player": false,
+                "x": 504.94957122623964,
+                "y": 129.47296608473383,
+                "angle": -0.1029030313304542,
+                "speed": 100.57026742156481,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 83.6674404388616,
+                "previousArc": 93.96932351068403,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              },
+              {
+                "id": "rival-2",
+                "name": "赤狐",
+                "player": false,
+                "x": 531.7401034383741,
+                "y": 155.5418504966942,
+                "angle": -0.019268340649539084,
+                "speed": 99.50194350423823,
+                "lap": 1,
+                "lapTimes": [],
+                "lapStartedAt": 0,
+                "nextGate": 1,
+                "lastGate": 0,
+                "travel": 110.7598557228182,
+                "previousArc": 120.75985572281854,
+                "lock": 0,
+                "offroad": false,
+                "wrongWay": false,
+                "finishedAt": null,
+                "stats": {
+                  "gates": 0,
+                  "resets": 0,
+                  "offroadSeconds": 0
+                }
+              }
+            ],
+            "stats": {
+              "settlements": 0,
+              "contacts": 116
+            },
+            "result": null,
+            "reason": null,
+            "lap": 1,
+            "lapTimes": [],
+            "lapStartedAt": 0,
+            "nextGate": 1,
+            "lastGate": 0,
+            "travel": 94.23000802063257,
+            "previousArc": 103.9281249488082,
+            "lock": 0,
+            "offroad": false,
+            "wrongWay": false,
+            "ranking": [
+              "rival-2",
+              "player",
+              "rival-1"
+            ],
+            "unlocked": 1,
+            "best": {},
+            "lastResult": null,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "discardedResume": false,
+            "input": {
+              "keys": [],
+              "touches": 0
+            },
+            "viewport": {
+              "width": 900,
+              "height": 640
+            }
+          },
+          "nextGateText": "下一闸门：1 / 7",
+          "status": "三秒起跑。先看下一个弯，沿箭头正向行驶。",
+          "field": {
+            "x": 13,
+            "y": 226,
+            "width": 364,
+            "height": 258.84375
+          },
+          "nextGateBox": {
+            "x": 211,
+            "y": 717.828125,
+            "width": 87.625,
+            "height": 15
+          }
+        }
+      ],
+      "pageErrors": []
+    }
+  ]
+}

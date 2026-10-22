@@ -66,6 +66,8 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('postFeedbackReview'):
+    doc += '<p><a href="' + escape(D['postFeedbackReview']['evidence'], quote=True) + '">邮差v2：下一合法闸门地图反馈前后对比</a>（一项只读标记，不改驾驶与过闸规则）</p>'
 if D.get('brookFeedbackReview'):
     doc += '<p><a href="' + escape(D['brookFeedbackReview']['evidence'], quote=True) + '">溪谷v2：左岸行号提醒前后对比</a>（一项只读提示，非真人注意力验收）</p>'
 
@@ -90,6 +92,8 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('postFeedbackReview'):
+    md += '[邮差下一合法闸门地图反馈前后实图](' + D['postFeedbackReview']['evidence'] + ')；一项只读标记，不改驾驶与过闸规则。\n\n'
 if D.get('brookFeedbackReview'):
     md += '[溪谷左岸行号提醒前后实图](' + D['brookFeedbackReview']['evidence'] + ')；一项只读提示，非真人注意力验收。\n\n'
 md += '|编号/作品及推荐版本|启动|核心目标|失败/重试|终局/下一关与证据|\n|---|---|---|---|---|\n'
