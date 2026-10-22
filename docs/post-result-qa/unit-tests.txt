@@ -1,0 +1,12 @@
+PASS 1: finished card closes to discoverable trigger and reopens with correct focus
+PASS 2: twenty close/reopen cycles cannot settle, create, save or unlock again
+PASS 3: reopened next-race action starts exactly next stage with clean resources
+PASS 4: terminal restart resets selected race and retains recorded result
+PASS 5: final-stage replay has no fourth race and no extra record change
+PASS 6: timeout result also reopens, never grants completion or next race
+PASS 7: ready, countdown, running and pause hide trigger; guarded calls do nothing
+7 controller fixture groups passed; NOT normal browser play.
+
+Node VM fixture runner diagnostic (expected experimental flag notice):
+(node:37936) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
