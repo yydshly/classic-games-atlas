@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f0e5"><meta name="description" content="晶簇花园三题连续原创谜题旅程。排成五连，锻造彩虹棱镜，再用一束光清除同色晶簇。">
+  <title>晶簇花园 · 三束光旅程</title>
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./garden.css"><script type="module" src="./game.mjs"></script>
+</head>
+<body>
+<header class="game-header"><a class="back-link" href="../../../../index.html#play">← 返回游戏大厅</a><span>PLAY LAB <b>V3</b></span><a class="reference-link" href="../../../v2/games/garden/">原两题模式 ↗</a></header>
+<main>
+  <div class="game-heading"><div><p class="eyebrow">THREE PUZZLES · A JOURNEY OF LIGHT</p><h1>晶簇花园 <span>LIGHT JOURNEY</span></h1></div><p>五束光，凝成一枚棱镜。<br>下一步，让同色的花园亮起来。</p></div>
+  <section class="journey-panel"><h2 id="journey-title" tabindex="-1">光的旅程</h2><ol id="journey-summary"></ol><button id="new-journey" type="button">新旅程…</button></section>
+  <div class="game-layout">
+    <section class="garden-column" aria-label="三消花园">
+      <div class="arena-heading"><div><span id="mission-number">01 / 03</span><strong id="mission-name">棱镜谜题</strong></div><div class="arena-actions"><button id="quick-start" class="quick-start primary" type="button">开始</button><button id="sound" type="button" aria-pressed="true">声音 开</button><button id="help" type="button">玩法</button><button id="pause" type="button" disabled>暂停 <kbd>P</kbd></button></div></div>
+      <nav id="puzzle-picker" class="puzzle-picker" aria-label="连续旅程进度"></nav>
+      <div class="garden-hud"><span>余下步数 <b id="moves">—</b></span><span>花园得分 <b id="score">00000</b></span><span>当前连锁 <b id="chain">—</b></span></div>
+      <div id="mobile-targets" class="mobile-targets" aria-label="当前目标进度"></div>
+      <div class="garden-frame"><div id="board" role="grid" aria-label="8行8列晶簇花园，相邻交换三连消除" aria-rowcount="8" aria-colcount="8"></div></div>
+      <div class="board-actions"><button id="hint" type="button">找一步 <kbd>H</kbd></button><p id="phase-label" role="status">整备花园</p><button id="touch-pause" type="button">暂停</button></div>
+      <p id="battle-status" class="battle-status" role="status" aria-live="polite">观察本题目标后开始。点击两格或拖动交换；按顺序完成三题，失败可重试当前题。</p>
+      <div class="keyboard-guide"><span>点击两格 / 拖动交换</span><span>方向键选格 · Enter 选中</span><span>Shift + 方向键交换</span></div>
+    </section>
+    <aside class="garden-notebook">
+      <div id="overlay" class="overlay"><div class="overlay-card"><span id="overlay-eyebrow" class="eyebrow">PUZZLE 01 / 03</span><h2 id="overlay-title">棱镜谜题</h2><p id="overlay-copy">观察固定棋盘，再让下一束光相遇。</p><div id="overlay-summary" class="briefing"></div><button id="primary-action" type="button" class="primary">开始解谜 ↗</button><button id="secondary-action" type="button" class="secondary">选择谜题</button></div></div>
+      <div class="panel-label">FIELD NOTES <span>✦</span></div>
+      <div class="mission-note"><span>这道题的线索</span><p id="mission-tip"></p></div>
+      <div id="targets" class="targets" aria-label="本关目标"></div>
+      <details class="public-puzzle" id="puzzle-details"><summary>公开题面与解法 <span>可选查看</span></summary><p id="puzzle-hint"></p><p class="public-seed">固定种子 <b id="seed">—</b> · <span id="starting-caption">起始棋盘</span></p><div id="starting-board" class="starting-board" aria-label="固定起始棋盘"></div><p class="solution-heading">参考解法 · 行、列均从 1 开始</p><ol id="solution-list"></ol><small>请从重开后的固定棋盘依次操作，每步等待棋盘稳定。当前局面已改变时，参考解法不保证仍然适用。</small></details>
+      <details class="special-guide"><summary>棱镜与特殊晶簇</summary><p><i class="prism-mini">◈</i><span><b>直线五连 · 彩虹棱镜</b>与相邻普通晶簇交换，清除它的颜色</span></p><p><i>↔ ↕</i><span><b>四连 · 清行 / 清列</b>横四连清行，竖四连清列</span></p><p><i>✺</i><span><b>T / L 交叉 · 花蕊</b>展开周围 3×3 格</span></p><small>特殊效果命中棱镜时，选择当前棋盘中有色晶簇（含行列晶簇与花蕊）最多的颜色；平手按日珀、叶翡、雨蓝、暮紫、莓红、月白的顺序。两枚棱镜交换，清除整个棋盘。</small></details>
+      <div id="color-legend" class="color-legend" aria-label="晶簇颜色与形状"></div>
+      <div class="garden-ledger"><span>已用步数 <b id="used">0</b></span><span>最长连锁 <b id="max-chain">0</b></span><span>本题最佳 <b id="best">—</b></span></div>
+      <div class="panel-buttons"><button id="levels" type="button">旅程进度 ↗</button><button id="restart" type="button">重开本题 <kbd>R</kbd></button><button id="manual" type="button">完整玩法</button></div>
+      <p id="save-note" class="save-note"></p>
+    </aside>
+  </div>
+  <footer class="game-colophon"><p><b>晶簇花园 · 三束光旅程</b> · 原两题加原创混合题，公开固定棋盘与参考解法。消除规则与数值沿用原模式，旅程进度独立保存。<a href="./NOTES.md">范围与证据</a></p><a href="../../../../games/garden/">继续原版 20 关 ↗</a></footer>
+</main>
+<dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-content"><span class="eyebrow">PRISM GARDEN / 解谜手册</span><h2 id="help-title">把五束光，凝成一枚棱镜。</h2><ol><li><b>相邻交换，三连消除。</b><p>点击相邻两格，或向邻格拖动 / 滑动。横纵同色三连消除，下落补充继续使用原有连锁规则。无效交换回弹，不扣步。方向键选格，Enter / 空格选中，Shift + 方向键直接交换。</p></li><li><b>看清新晶簇怎样生成。</b><p>横四连留下 ↔ 清行晶簇，竖四连留下 ↕ 清列晶簇。T / L 交叉留下 ✺ 花蕊，清除周围 3×3；直线五连留下白色虹彩多边形棱镜。生成位置优先交换的目标格、再源格；下落连锁中选左上普通晶簇。生成格本轮保留，不计收集或松土；若被旧特殊效果命中则仍会消除。消除后，新特殊晶簇会短暂停留，再下落。</p></li><li><b>为棱镜选一种颜色。</b><p>棱镜与相邻普通晶簇交换，清除棋盘上该颜色的晶簇，并触发被命中的特殊晶簇。其他特殊效果命中棱镜时，清除当前棋盘上有色晶簇（含行列晶簇与花蕊）最多的颜色，平手按日珀、叶翡、雨蓝、暮紫、莓红、月白的顺序；两枚棱镜交换清除全盘。棱镜与其他特殊晶簇交换时，各自触发。普通特殊晶簇也可直接交换或同色匹配触发。</p></li><li><b>三题旅程，依次点亮。</b><p>展开「公开题面与解法」查看固定种子、起始棋盘和逐步参考解法。每次重开回到本题固定开局。寻找一步不扣步，但仅提示当前有效交换，不一定是谜题的参考解法。全部连锁结束后先判断目标，再判断步数是否用尽；最后一步达标也获胜。</p></li></ol><p class="manual-note">完整交换结束后自动保存稳定棋盘；动画中刷新回到这次交换之前，恢复时暂停等待。离开窗口自动暂停。P / Esc 暂停，R 重试当前题，H 提示。本旅程与原两题及20关的进度相互独立。</p><button id="help-confirm" type="button" class="primary">明白了，开始解谜 ↗</button><button id="help-close" type="button" class="secondary">返回</button></div></dialog>
+<dialog id="levels-dialog" aria-labelledby="levels-title"><div class="dialog-content"><span class="eyebrow">JOURNEY PROGRESS</span><h2 id="levels-title">三束光的旅程</h2><p>三题按顺序推进；重试只重开当前题，保留前题战报。</p><div id="level-list" class="level-list"></div><button id="levels-close" type="button" class="secondary">返回花园</button></div></dialog>
+<dialog id="new-dialog" aria-labelledby="new-title"><div class="dialog-content"><h2 id="new-title">从第一束光重新出发？</h2><p>清空本旅程当前进度和三题战报，保留本旅程最佳分及原两题/20关存档。</p><button id="keep-journey" type="button" autofocus>保留当前旅程</button><button id="confirm-journey" type="button">确认新旅程</button></div></dialog>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "evidence": "Model checks; zero-move winning shape explicitly a fixture, not normal UI",
+  "ok": true,
+  "checks": [
+    "Original first two authored levels exactly preserved",
+    "Original two public solutions replay every animation/refill step, board IDs/RNG/score exactly",
+    "Stable active restores paused; animations still require last stable checkpoint; ready retained",
+    "Winning/lost goal priority and zero-move terminal boundary; bad terminal/board/soil/stats/RNG rejected",
+    "Engine before checkpoint/restore is byte-for-byte unchanged"
+  ],
+  "replays": [
+    {
+      "level": 1,
+      "score": 460,
+      "moves": 4,
+      "stats": {
+        "validSwaps": 2,
+        "invalidSwaps": 0,
+        "cleared": 34,
+        "created": 2,
+        "activated": 1,
+        "waves": 4,
+        "maxChain": 2,
+        "shuffles": 0,
+        "hints": 0,
+        "prismsCreated": 1,
+        "prismsActivated": 1
+      },
+      "exact": true
+    },
+    {
+      "level": 2,
+      "score": 380,
+      "moves": 6,
+      "stats": {
+        "validSwaps": 2,
+        "invalidSwaps": 0,
+        "cleared": 29,
+        "created": 1,
+        "activated": 2,
+        "waves": 4,
+        "maxChain": 3,
+        "shuffles": 0,
+        "hints": 0,
+        "prismsCreated": 1,
+        "prismsActivated": 1
+      },
+      "exact": true
+    }
+  ]
+}
