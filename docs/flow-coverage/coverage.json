@@ -1904,6 +1904,33 @@
         "scope": "普通UI进行中确认/取消/刷新；完成态为旧格式模型夹具，未复用真实完成会话或重跑三关",
         "evidence": "docs/glimmer-new-journey-qa/"
       }
+    },
+    {
+      "number": "43",
+      "slug": "moss",
+      "title": "苔灯归途",
+      "recommendedVersion": "v1",
+      "playUrl": "preview/moss/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "三关连续普通UI辅助救援，有限工作与暂停施令，不注入胜负。",
+      "observedRetry": "自然失败、当前关重试保留前关结果，活动/关间/终态刷新。",
+      "endingBoundary": "真实完成档保留；模型策略、故障夹具与触控模拟分开。",
+      "evidence": [
+        "docs/moss-qa/"
+      ],
+      "browserScope": "桌面和390CSS Chromium策略辅助；触控为模拟，不是真机。",
+      "nextToolWork": "有限三关已闭环，不自动扩为全原作职业或关卡集。",
+      "humanRequired": [
+        "无辅助乐趣与难度",
+        "真机触控性能",
+        "审美；本作无音频"
+      ]
     }
   ],
   "evidenceThrough": "730541d8836a2a73f40c9af3776577834bdb4206",

@@ -12,8 +12,8 @@
     "40依据134e921提交的独立v2及来源说明补充；PES为明确系列参考，代际未定，未把未完成恢复项目计作可玩v1。"
   ],
   "summary": {
-    "published_games": 36,
-    "published_levels": 404,
+    "published_games": 37,
+    "published_levels": 407,
     "previews": 6,
     "preview_numbers": [
       "35",
@@ -24,7 +24,7 @@
       "40"
     ],
     "preview_levels": 48,
-    "confirmed_reference_bindings": 38,
+    "confirmed_reference_bindings": 39,
     "unconfirmed_reference_bindings": [
       "35",
       "36",
@@ -5099,6 +5099,65 @@
       "current_screenshot": {
         "image": "./docs/glimmer-qa/ready-desktop.png",
         "label": "1440×1100真实浏览器第一庭整备视口，已滚动至战场；不是原作截图或完整首屏。"
+      }
+    },
+    {
+      "number": "43",
+      "slug": "moss",
+      "title": "苔灯归途",
+      "english": "MOSS PARADE",
+      "status": "published",
+      "status_label": "三关首版已发布；未完成真人品质验收",
+      "play_url": "./preview/moss/",
+      "original_title": "Lemmings（旅鼠）",
+      "original_english": "Lemmings",
+      "reference_id": "lemmings",
+      "reference_binding": "本轮明确指定的新增经典机制参考；未计入原72条图鉴",
+      "reference_version": "群体救援与有限工作指令方向，未锁定某一原作版本逐项复刻；官方移动版介绍只作机制资料。",
+      "version_note": "原72条经典图鉴保持不变；本作使用原创角色、美术、地图与原创暂停施令规则。",
+      "original_core": "引导自主前进的群体，分配有限工作改变路径与行为，救回目标人数。",
+      "implemented": [
+        "三张原创林地：短桥教学、土道短路/桥路绕行、开土和架桥综合救援。",
+        "自主行走、驻守转向、1–3格整段施工、免费放行、落差与险地、有限工具及救援目标。",
+        "暂停观察与施令，原生名册选人，无必需拖拽；三关推进、当前关重试、独立刷新暂停与最终回顾。"
+      ],
+      "gaps": [
+        "只有三关、驻守/桥/横向开土三种有限指令，无原作全部职业、释放速率编辑、完整地形物理或大型关卡集。",
+        "暂停施令、可免费放行、原创定长整段施工等是本作简化设计，不宣称与经典某版本规则等价。"
+      ],
+      "relation": "原创群体路径规划与有限工作指令小品，参考本轮指定的Lemmings式救援机制；不复制角色、素材或地图，不是官方复刻。Lemmings未在原72条图鉴中，本轮只新增原创作品与参考说明，原图鉴72条保持不变。",
+      "levels": 3,
+      "evidence": [
+        {
+          "path": "preview/moss/README.md",
+          "url": "./preview/moss/README.md",
+          "claim": "机制、原创范围、输入与独立保存说明"
+        },
+        {
+          "path": "docs/moss-qa/",
+          "url": "./docs/moss-qa/",
+          "claim": "普通UI三关、自然失败重试与刷新、模型和触控模拟分别记录"
+        }
+      ],
+      "validation_boundary": "三关使用只读策略建议、原生名册与工具按钮、普通暂停施令完成；自然失败重试和真实活动/关间/结局刷新已验。模型替代路线、存储故障夹具与浏览器触控模拟另列，不是真人乐趣、成熟难度或真实手机验收。无音频。",
+      "original_sources": [
+        {
+          "label": "PlayStation.Blog · Lemmings Comes to Mobile Devices Today",
+          "url": "https://blog.playstation.com/2018/12/20/lemmings-comes-to-mobile-devices-today/",
+          "kind": "official",
+          "relation": "官方移动版机制介绍，非初代逐项规则手册",
+          "checkedAt": "2026-10-22",
+          "status": "页面可读",
+          "note": "本轮核读官方介绍中挖掘、搭建、阻挡与救援方向；未核销量评分，不下载其图像。"
+        }
+      ],
+      "version": "v1",
+      "has_frozen_version": false,
+      "current_status_label": "v1 三段救援 · 流程已验证，真人品质待验",
+      "release_intro": "新增独立原创群体救援小品，不存在此前冻结版；本轮指定机制方向，原72条图鉴不扩充。",
+      "current_screenshot": {
+        "image": "./docs/moss-qa/ready-desktop.png",
+        "label": "真实桌面浏览器首关准备画面，原创林地和灯灵，非原作截图。"
       }
     }
   ],

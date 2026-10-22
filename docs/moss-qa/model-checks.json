@@ -1,0 +1,53 @@
+{
+  "evidence": "bounded model tests; no browser UI or human acceptance claim",
+  "ok": true,
+  "checks": [
+    "Five strategies still save everyone with an extra0.15s real-world simulation delay before pausing for each order",
+    "Invalid preflight uses no resources; paused order allowed; pause freezes; release free without refund; no repeat blocker charge",
+    "Bridge reserved cells and resource persist; job completion commits whole span; active job restore resumes exact world",
+    "No-input first stage naturally loses all five at real gap; failure checkpoint retained",
+    "Leaving blocker behind cannot falsely finish despite rescue quota; finite timeout remains a failure",
+    "Malformed terrain, crew IDs, jobs, counts, resource conservation and terminal checkpoints rejected"
+  ],
+  "delayed": [
+    {
+      "level": 1,
+      "options": {},
+      "state": "won",
+      "time": 23.25,
+      "rescued": 5
+    },
+    {
+      "level": 2,
+      "options": {},
+      "state": "won",
+      "time": 30.15,
+      "rescued": 6
+    },
+    {
+      "level": 2,
+      "options": {
+        "route": "bridge"
+      },
+      "state": "won",
+      "time": 33.8,
+      "rescued": 6
+    },
+    {
+      "level": 3,
+      "options": {},
+      "state": "won",
+      "time": 35.75,
+      "rescued": 7
+    },
+    {
+      "level": 3,
+      "options": {
+        "strategy": "regroup"
+      },
+      "state": "won",
+      "time": 45.25,
+      "rescued": 7
+    }
+  ]
+}

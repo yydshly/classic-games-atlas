@@ -1,0 +1,301 @@
+{
+  "evidence": "Bounded ordinary pause/select/tool/apply model orders, not browser UI or human experience",
+  "results": [
+    {
+      "level": 1,
+      "options": {},
+      "state": "won",
+      "time": 22.95,
+      "rescued": 5,
+      "lost": 0,
+      "total": 5,
+      "quota": 4,
+      "resources": {
+        "block": 0,
+        "bridge": 0,
+        "dig": 0
+      },
+      "orders": [
+        {
+          "actorId": 2,
+          "tool": "block",
+          "time": 2.8,
+          "preview": [
+            {
+              "x": 4,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "actorId": 1,
+          "tool": "bridge",
+          "time": 3.6,
+          "preview": [
+            {
+              "x": 8,
+              "y": 9
+            },
+            {
+              "x": 9,
+              "y": 9
+            },
+            {
+              "x": 10,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "actorId": 2,
+          "tool": "release",
+          "time": 5.7,
+          "preview": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "options": {},
+      "state": "won",
+      "time": 30.15,
+      "rescued": 6,
+      "lost": 0,
+      "total": 6,
+      "quota": 5,
+      "resources": {
+        "block": 1,
+        "bridge": 1,
+        "dig": 0
+      },
+      "orders": [
+        {
+          "actorId": 1,
+          "tool": "dig",
+          "time": 2,
+          "preview": [
+            {
+              "x": 14,
+              "y": 6
+            },
+            {
+              "x": 15,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "options": {
+        "route": "bridge"
+      },
+      "state": "won",
+      "time": 33.8,
+      "rescued": 6,
+      "lost": 0,
+      "total": 6,
+      "quota": 5,
+      "resources": {
+        "block": 0,
+        "bridge": 0,
+        "dig": 1
+      },
+      "orders": [
+        {
+          "actorId": 1,
+          "tool": "block",
+          "time": 1.2,
+          "preview": [
+            {
+              "x": 12,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "actorId": 2,
+          "tool": "bridge",
+          "time": 5.3,
+          "preview": [
+            {
+              "x": 7,
+              "y": 7
+            },
+            {
+              "x": 6,
+              "y": 7
+            },
+            {
+              "x": 5,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "actorId": 1,
+          "tool": "release",
+          "time": 7.4,
+          "preview": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "options": {},
+      "state": "won",
+      "time": 35.35,
+      "rescued": 7,
+      "lost": 0,
+      "total": 7,
+      "quota": 6,
+      "resources": {
+        "block": 1,
+        "bridge": 0,
+        "dig": 0
+      },
+      "orders": [
+        {
+          "actorId": 1,
+          "tool": "dig",
+          "time": 2,
+          "preview": [
+            {
+              "x": 6,
+              "y": 6
+            },
+            {
+              "x": 7,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "actorId": 2,
+          "tool": "block",
+          "time": 6.6,
+          "preview": [
+            {
+              "x": 8,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "actorId": 1,
+          "tool": "bridge",
+          "time": 7.4,
+          "preview": [
+            {
+              "x": 11,
+              "y": 7
+            },
+            {
+              "x": 12,
+              "y": 7
+            },
+            {
+              "x": 13,
+              "y": 7
+            }
+          ]
+        },
+        {
+          "actorId": 2,
+          "tool": "release",
+          "time": 9.5,
+          "preview": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "options": {
+        "strategy": "regroup"
+      },
+      "state": "won",
+      "time": 44.85,
+      "rescued": 7,
+      "lost": 0,
+      "total": 7,
+      "quota": 6,
+      "resources": {
+        "block": 1,
+        "bridge": 0,
+        "dig": 0
+      },
+      "orders": [
+        {
+          "actorId": 1,
+          "tool": "dig",
+          "time": 2,
+          "preview": [
+            {
+              "x": 6,
+              "y": 6
+            },
+            {
+              "x": 7,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "actorId": 1,
+          "tool": "block",
+          "time": 7.4,
+          "preview": [
+            {
+              "x": 10,
+              "y": 6
+            }
+          ]
+        },
+        {
+          "actorId": 1,
+          "tool": "release",
+          "time": 18.8,
+          "preview": []
+        },
+        {
+          "actorId": 1,
+          "tool": "bridge",
+          "time": 18.9,
+          "preview": [
+            {
+              "x": 11,
+              "y": 7
+            },
+            {
+              "x": 12,
+              "y": 7
+            },
+            {
+              "x": 13,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "options": {
+        "noInput": true
+      },
+      "state": "lost",
+      "time": 10,
+      "rescued": 0,
+      "lost": 5,
+      "total": 5,
+      "quota": 4,
+      "resources": {
+        "block": 1,
+        "bridge": 1,
+        "dig": 0
+      },
+      "orders": []
+    }
+  ]
+}

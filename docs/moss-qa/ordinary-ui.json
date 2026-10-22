@@ -1,0 +1,160 @@
+{
+  "base": "http://127.0.0.1:58258/",
+  "method": "Native roster/tool/apply keyboard clicks with read-only policy, ordinary P pause for planning; ~50ms wall-clock observation, no actor/terrain/time/result/save injection.",
+  "stages": [
+    {
+      "level": 1,
+      "time": 22.95,
+      "rescued": 5,
+      "lost": 0,
+      "total": 5,
+      "quota": 4,
+      "resources": {
+        "block": 0,
+        "bridge": 0,
+        "dig": 0
+      }
+    },
+    {
+      "level": 2,
+      "time": 30.15,
+      "rescued": 6,
+      "lost": 0,
+      "total": 6,
+      "quota": 5,
+      "resources": {
+        "block": 1,
+        "bridge": 1,
+        "dig": 0
+      }
+    },
+    {
+      "level": 3,
+      "time": 35.35,
+      "rescued": 7,
+      "lost": 0,
+      "total": 7,
+      "quota": 6,
+      "resources": {
+        "block": 1,
+        "bridge": 0,
+        "dig": 0
+      }
+    }
+  ],
+  "actions": [
+    {
+      "stage": 1,
+      "time": 2.8,
+      "id": 2,
+      "tool": "block",
+      "reason": "已驻足；记得在安全后放行。",
+      "resources": {
+        "block": 0,
+        "bridge": 1,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 1,
+      "time": 3.65,
+      "id": 1,
+      "tool": "bridge",
+      "reason": "开始施工，暂停时进度也会停止。",
+      "resources": {
+        "block": 0,
+        "bridge": 0,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 1,
+      "time": 5.75,
+      "id": 2,
+      "tool": "release",
+      "reason": "已免费放行。",
+      "resources": {
+        "block": 0,
+        "bridge": 0,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 2,
+      "time": 2,
+      "id": 1,
+      "tool": "dig",
+      "reason": "开始施工，暂停时进度也会停止。",
+      "resources": {
+        "block": 1,
+        "bridge": 1,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 3,
+      "time": 2,
+      "id": 1,
+      "tool": "dig",
+      "reason": "开始施工，暂停时进度也会停止。",
+      "resources": {
+        "block": 2,
+        "bridge": 1,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 3,
+      "time": 6.6,
+      "id": 2,
+      "tool": "block",
+      "reason": "已驻足；记得在安全后放行。",
+      "resources": {
+        "block": 1,
+        "bridge": 1,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 3,
+      "time": 7.4,
+      "id": 1,
+      "tool": "bridge",
+      "reason": "开始施工，暂停时进度也会停止。",
+      "resources": {
+        "block": 1,
+        "bridge": 0,
+        "dig": 0
+      }
+    },
+    {
+      "stage": 3,
+      "time": 9.5,
+      "id": 2,
+      "tool": "release",
+      "reason": "已免费放行。",
+      "resources": {
+        "block": 1,
+        "bridge": 0,
+        "dig": 0
+      }
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "keyboardSelectionTools": true,
+  "actualActiveRefreshPaused": true,
+  "actualBetweenRefresh": true,
+  "naturalFailure": {
+    "level": 2,
+    "time": 20.55,
+    "rescued": 0,
+    "lost": 6,
+    "quota": 5
+  },
+  "failureRetryKeepsEarlier": true,
+  "actualCompletedRefresh": true,
+  "terminalResultReopen": true,
+  "newJourneyCancelKeepsActualCompletedRecord": true,
+  "passed": true
+}

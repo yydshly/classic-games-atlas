@@ -1021,3 +1021,8 @@ Duel v2一次正常UI首庭胜利1188分，命中扣血可见；刷新后纪录�
 
 原双段自由模式保留，新增交风编队终段与独立连续战役：火力/补给换线、当前段重试、刷新暂停及最终记录。目录仍42项。
 [直接试玩](https://yydshly.github.io/classic-games-atlas/versions/v3/games/cloud/) · [验证与边界](https://yydshly.github.io/classic-games-atlas/docs/cloud-campaign-qa/)；普通UI采用只读策略辅助，不代表真人或真机体验验收。
+
+### 新增43 · 苔灯归途
+
+原创三关群体救援：有限驻守、架桥与横向开土，暂停安排人流，送灯灵归队。第二关两条路线，第三关组合施工；独立保存、当前关重试与三段回顾。原42项保留，现43项／39项活动作品，四项停止或冻结状态不变；原72条图鉴不扩充。
+[直接试玩](https://yydshly.github.io/classic-games-atlas/preview/moss/) · [流程证据与边界](https://yydshly.github.io/classic-games-atlas/docs/moss-qa/)。本轮指定Lemmings式机制方向，原创角色素材地图；辅助UI通关、模型可解和触控模拟均不等于真人乐趣或真机验收。
