@@ -22,6 +22,8 @@
 
 [堡垒可选两段短战役](../fortress-campaign-qa/)；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。
 
+[仓格六题进阶包](../crate-pack-qa/)；新增三题实际输入完成，旧档与撤销保留，真人难度仍待验。
+
 [邮差双赛道与独立纪录](../post-route-qa/)；原版保留，新图普通UI合法完赛、模型与触控模拟分列。
 
 [溪谷三溪归途与混合终场](../brook-campaign-qa/)；三场主链与独立存档，真人和真机仍待验。
@@ -64,7 +66,7 @@
 |02 爆破迷宫 [v2 候选](../../versions/v2/games/maze/)|已验有限流程|已验有限流程：两原创短图均有自然胜利；此前第二图64.85秒/48我方弹/36连锁，强只读策略辅助|已验有限流程：胜场刷新保持，干净新局通过；既有三败/重试保留|已验有限流程：第二图自然胜利/原生纪录刷新/同图空弹火新局通过；首图既有成功，非多人体验或全策略验收 [1](../../docs/maze-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/maze-v2-qa/LAYOUT_PUBLIC.md) / [3](../../docs/maze-first-win-qa/) / [4](../../docs/maze-later-qa/) / [5](../../docs/return-navigation-qa/)|
 |03 星泡航线 [v2 候选](../../versions/v2/games/starline/)|已验有限流程|已验有限流程：两图清场1260/1460分|已验有限流程：主动低效触底后重试，最好保留|已验有限流程：两图开放，恢复飞行回出手前 [1](../../docs/starline-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
 |04 光轨砖阵 [v2 候选](../../versions/v2/games/prism/)|已验有限流程|已验有限流程：正常鼠标强辅助顺序完成原12关；第1关为必要解锁前置，2–12此前补证|已验有限流程：自然失球失败与重试；首胜解锁第二关|已验有限流程：2–12逐关自然胜利与干净下一关；第12关最终反馈/无第13关/重试刷新及12关纪录保留通过 [1](../../docs/prism-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/prism-first-win-qa/) / [3](../../docs/prism-later-qa/) / [4](../../docs/return-navigation-qa/)|
-|05 仓格计划 [v2 候选](../../versions/v2/games/crate/)|已验有限流程|已验有限流程：三题正常解到2/2，15/19/15步|设计不适用：无失败弹窗；胜后撤销重做/重玩已验|已验有限流程：继续下一仓和跨刷新撤销已验 [1](../../docs/crate-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
+|05 仓格计划 [v2 候选](../../versions/v2/games/crate/)|已验有限流程|已验有限流程：三题正常解到2/2，15/19/15步|设计不适用：无失败弹窗；胜后撤销重做/重玩已验|已验有限流程：继续下一仓和跨刷新撤销已验 [1](../../docs/crate-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/) / [3](../../docs/crate-pack-qa/)|
 |06 山口守望 [v2 候选](../../versions/v2/games/pass/)|已验有限流程|已验有限流程：缚索四波胜；重弩第二波败|已验有限流程：重新布防230金/12城门/空场|已验有限流程：只有一短图，刷新保留最好不续战 [1](../../docs/pass-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
 |07 风行小径 [v2 候选](../../versions/v2/games/trail/)|已验有限流程|已验有限流程：正常 UI 连续三程胜利；第2/3程各18.09秒、3生命、3果实|已验有限流程：另一个新局43.223秒自然体力总失败→重试与暂停刷新|已验有限流程：三段正常胜利与逐段结算刷新、下一程清场、末段无第四程、重试第3程通过；固定辅助路线，非全收集/真机验收 [1](../../docs/trail-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/trail-save-qa/) / [3](../../docs/trail-main-flow-qa/) / [4](../../docs/trail-later-qa/) / [5](../../docs/return-navigation-qa/)|
 |08 夜航拾光 [v2 候选](../../versions/v2/games/lantern/)|已验有限流程|已验有限流程：两图各有自然胜利；此前第二图13.3244秒/46点/3命/2反制/0死亡|已验有限流程：次图失败重试3命，刷新回该图准备|已验有限流程：第二图收齐成功、刷新保留最好/所选图、同图干净重试与两图菜单通过；策略脚本辅助 [1](../../docs/lantern-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/lantern-later-qa/) / [3](../../docs/lantern-pause-semantics-qa/) / [4](../../docs/return-navigation-qa/)|

@@ -72,6 +72,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     doc += '<p><a href="' + escape(D['fortressCampaignReview']['evidence'], quote=True) + '">堡垒v3：可选两段短战役</a>（阶段独立保存，v2仍默认；策略辅助、双人短输入与触控仿真分列）</p>'
 
+if D.get('cratePackReview'):
+    doc += '<p><a href="../crate-pack-qa/">仓格v3：六题进阶包与完成回顾</a>（新三题普通UI、原三题保留，作者路线非盲解）</p>'
 if D.get('postRouteReview'):
     doc += '<p><a href="../post-route-qa/">邮差v3：双赛道与分图纪录</a>（新图合法完赛，非第一名；触控仅模拟）</p>'
 if D.get('brookCampaignReview'):
@@ -147,6 +149,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     md += '[堡垒可选两段短战役](' + D['fortressCampaignReview']['evidence'] + ')；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。\n\n'
 
+if D.get('cratePackReview'):
+    md += '[仓格六题进阶包](../crate-pack-qa/)；新增三题实际输入完成，旧档与撤销保留，真人难度仍待验。\n\n'
 if D.get('postRouteReview'):
     md += '[邮差双赛道与独立纪录](../post-route-qa/)；原版保留，新图普通UI合法完赛、模型与触控模拟分列。\n\n'
 if D.get('brookCampaignReview'):

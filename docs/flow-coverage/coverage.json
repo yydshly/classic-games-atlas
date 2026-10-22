@@ -251,7 +251,8 @@
       "endingBoundary": "继续下一仓和跨刷新撤销已验",
       "evidence": [
         "docs/crate-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/crate-pack-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -260,7 +261,19 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "optionalPack": {
+        "version": "v3",
+        "playUrl": "versions/v3/games/crate/",
+        "totalPuzzles": 6,
+        "normalUiNewPuzzles": [
+          4,
+          5,
+          6
+        ],
+        "evidence": "docs/crate-pack-qa/",
+        "acceptance": "candidate_unaccepted"
+      }
     },
     {
       "number": "06",
@@ -3462,5 +3475,11 @@
     "status": "optional_v3_local_verified",
     "evidence": "../post-route-qa/",
     "scope": "两图独立进度；水闸折线普通UI两圈24闸57.73秒第2名零复位，非第一名；触控仿真/旧档与漏闸fixture分别列示"
+  },
+  "cratePackReview": {
+    "baseline": "4c2879f494028161633ca6c146c20ad6855c004b",
+    "status": "optional_v3_local_verified",
+    "evidence": "../crate-pack-qa/",
+    "scope": "原三题/引擎/渲染器保留，新4–6题普通UI22/44/44步，连续撤销/刷新/六仓回顾/旧档承接；作者解法非盲解，触控仅模拟"
   }
 }

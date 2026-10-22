@@ -1,0 +1,1045 @@
+{
+  "baseline": "1108ca772542246973909130085b9cccf97468c0",
+  "method": "Hand-authored layouts; bounded guided push-state search invokes the unchanged production move() for every successor. Fresh full-route replay, push transition checks, continuous undo, replay after undo, and restoreActions use the same production engine. This is a legal-engine proof, not a live UI or public-site result.",
+  "scope": {
+    "originalIdsPreserved": [
+      1,
+      2,
+      3
+    ],
+    "newIds": [
+      4,
+      5,
+      6
+    ],
+    "perPhaseMaxExpanded": 10000,
+    "perPhaseMaxMs": 3000,
+    "guidedPhases": true,
+    "exhaustiveOrUniqueSolutionClaim": false,
+    "optimalityClaim": false,
+    "browserTested": false
+  },
+  "engineSha256": "291c03f89c663685c4d52b4f82fac1d98c07679fbc48e0d0a341f2ccc248b48d",
+  "baselineGitBlobs": {
+    "engine": "3e0ac4af9ecc1fbfef541f05ccb827c5405c631b",
+    "originalLevels": "cbeeeb32d23808e3adf9a1a05e9b0405729e2fe3"
+  },
+  "levels": [
+    {
+      "id": 4,
+      "name": "借位，再回收",
+      "actions": "UURRUDDRRULDDLLLUUURRD",
+      "moves": 22,
+      "pushes": 4,
+      "final": {
+        "state": "won",
+        "level": 4,
+        "grid": [
+          "########",
+          "####.###",
+          "##...###",
+          "#......#",
+          "#..#...#",
+          "#......#",
+          "########"
+        ],
+        "goals": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "boxes": [
+          {
+            "id": 1,
+            "x": 4,
+            "y": 4
+          },
+          {
+            "id": 2,
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "player": {
+          "x": 4,
+          "y": 3,
+          "dir": 2
+        },
+        "moves": 22,
+        "pushes": 4,
+        "time": 0,
+        "historyDepth": 22,
+        "actions": "UURRUDDRRULDDLLLUUURRD",
+        "serial": 22,
+        "lastAction": {
+          "kind": "push",
+          "from": {
+            "x": 4,
+            "y": 2,
+            "dir": 1
+          },
+          "to": {
+            "x": 4,
+            "y": 3,
+            "dir": 2
+          },
+          "boxId": 1
+        },
+        "satisfied": 2,
+        "cornerBoxIds": []
+      },
+      "checkpoints": [
+        {
+          "name": "Borrow the right staging cell",
+          "actions": "UURR",
+          "moves": 4,
+          "pushes": 1,
+          "phaseMoves": 4,
+          "phasePushes": 1,
+          "player": {
+            "x": 4,
+            "y": 3,
+            "dir": 1
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 3
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 2
+            }
+          ],
+          "search": {
+            "expanded": 1,
+            "visited": 3,
+            "elapsedMs": 0.36,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Deliver upper crate while staging cell remains occupied",
+          "actions": "U",
+          "moves": 5,
+          "pushes": 2,
+          "phaseMoves": 1,
+          "phasePushes": 1,
+          "player": {
+            "x": 4,
+            "y": 2,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 3
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 1
+            }
+          ],
+          "search": {
+            "expanded": 1,
+            "visited": 2,
+            "elapsedMs": 0.14,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Recover staged crate into lower goal",
+          "actions": "DDRRULDDLLLUUURRD",
+          "moves": 22,
+          "pushes": 4,
+          "phaseMoves": 17,
+          "phasePushes": 2,
+          "player": {
+            "x": 4,
+            "y": 3,
+            "dir": 2
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 4,
+              "y": 4
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 1
+            }
+          ],
+          "search": {
+            "expanded": 5,
+            "visited": 7,
+            "elapsedMs": 0.22,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        }
+      ],
+      "pushTrace": [
+        {
+          "move": 4,
+          "action": "R",
+          "boxId": 1,
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "to": {
+            "x": 5,
+            "y": 3
+          },
+          "goalsFilled": 0
+        },
+        {
+          "move": 5,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 4,
+            "y": 2
+          },
+          "to": {
+            "x": 4,
+            "y": 1
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 11,
+          "action": "L",
+          "boxId": 1,
+          "from": {
+            "x": 5,
+            "y": 3
+          },
+          "to": {
+            "x": 4,
+            "y": 3
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 22,
+          "action": "D",
+          "boxId": 1,
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "to": {
+            "x": 4,
+            "y": 4
+          },
+          "goalsFilled": 2
+        }
+      ],
+      "checks": {
+        "allActionsAcceptedByProductionMove": true,
+        "everyPushChangesExactlyOneCrateByOneCell": true,
+        "continuousUndoCount": 22,
+        "everyUndoMatchesRecordedPriorBoardAndCounters": true,
+        "initialBoardRecovered": true,
+        "undoOnEmptyHistoryRejected": true,
+        "replayAfterUndoWon": true,
+        "restoreActionsWonAndRetainedFullHistory": true
+      }
+    },
+    {
+      "id": 5,
+      "name": "三站入库",
+      "actions": "UURRRDRUUUDDDDLLUDLLUURRRDRUUDDDLLLULURRRDRU",
+      "moves": 44,
+      "pushes": 14,
+      "final": {
+        "state": "won",
+        "level": 5,
+        "grid": [
+          "########",
+          "#####.##",
+          "#####.##",
+          "#####.##",
+          "#.....##",
+          "#......#",
+          "#......#",
+          "########"
+        ],
+        "goals": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "boxes": [
+          {
+            "id": 1,
+            "x": 5,
+            "y": 1
+          },
+          {
+            "id": 2,
+            "x": 5,
+            "y": 2
+          },
+          {
+            "id": 3,
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "player": {
+          "x": 5,
+          "y": 4,
+          "dir": 0
+        },
+        "moves": 44,
+        "pushes": 14,
+        "time": 0,
+        "historyDepth": 44,
+        "actions": "UURRRDRUUUDDDDLLUDLLUURRRDRUUDDDLLLULURRRDRU",
+        "serial": 44,
+        "lastAction": {
+          "kind": "push",
+          "from": {
+            "x": 5,
+            "y": 5,
+            "dir": 1
+          },
+          "to": {
+            "x": 5,
+            "y": 4,
+            "dir": 0
+          },
+          "boxId": 3
+        },
+        "satisfied": 3,
+        "cornerBoxIds": []
+      },
+      "checkpoints": [
+        {
+          "name": "Deliver first crate to deepest goal",
+          "actions": "UURRRDRUUU",
+          "moves": 10,
+          "pushes": 4,
+          "phaseMoves": 10,
+          "phasePushes": 4,
+          "player": {
+            "x": 5,
+            "y": 2,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 1
+            },
+            {
+              "id": 2,
+              "x": 3,
+              "y": 5
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 5
+            }
+          ],
+          "search": {
+            "expanded": 9,
+            "visited": 10,
+            "elapsedMs": 0.25,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Deliver second crate to middle goal",
+          "actions": "DDDDLLUDLLUURRRDRUU",
+          "moves": 29,
+          "pushes": 9,
+          "phaseMoves": 19,
+          "phasePushes": 5,
+          "player": {
+            "x": 5,
+            "y": 3,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 1
+            },
+            {
+              "id": 2,
+              "x": 5,
+              "y": 2
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 5
+            }
+          ],
+          "search": {
+            "expanded": 18,
+            "visited": 19,
+            "elapsedMs": 2.11,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Fill entrance with final crate",
+          "actions": "DDDLLLULURRRDRU",
+          "moves": 44,
+          "pushes": 14,
+          "phaseMoves": 15,
+          "phasePushes": 5,
+          "player": {
+            "x": 5,
+            "y": 4,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 1
+            },
+            {
+              "id": 2,
+              "x": 5,
+              "y": 2
+            },
+            {
+              "id": 3,
+              "x": 5,
+              "y": 3
+            }
+          ],
+          "search": {
+            "expanded": 31,
+            "visited": 34,
+            "elapsedMs": 1,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        }
+      ],
+      "pushTrace": [
+        {
+          "move": 5,
+          "action": "R",
+          "boxId": 1,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 4
+          },
+          "goalsFilled": 0
+        },
+        {
+          "move": 8,
+          "action": "U",
+          "boxId": 1,
+          "from": {
+            "x": 5,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 3
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 9,
+          "action": "U",
+          "boxId": 1,
+          "from": {
+            "x": 5,
+            "y": 3
+          },
+          "to": {
+            "x": 5,
+            "y": 2
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 10,
+          "action": "U",
+          "boxId": 1,
+          "from": {
+            "x": 5,
+            "y": 2
+          },
+          "to": {
+            "x": 5,
+            "y": 1
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 17,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 3,
+            "y": 5
+          },
+          "to": {
+            "x": 3,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 24,
+          "action": "R",
+          "boxId": 2,
+          "from": {
+            "x": 3,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 25,
+          "action": "R",
+          "boxId": 2,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 28,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 5,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 3
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 29,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 5,
+            "y": 3
+          },
+          "to": {
+            "x": 5,
+            "y": 2
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 36,
+          "action": "U",
+          "boxId": 3,
+          "from": {
+            "x": 2,
+            "y": 5
+          },
+          "to": {
+            "x": 2,
+            "y": 4
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 39,
+          "action": "R",
+          "boxId": 3,
+          "from": {
+            "x": 2,
+            "y": 4
+          },
+          "to": {
+            "x": 3,
+            "y": 4
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 40,
+          "action": "R",
+          "boxId": 3,
+          "from": {
+            "x": 3,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 4
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 41,
+          "action": "R",
+          "boxId": 3,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 4
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 44,
+          "action": "U",
+          "boxId": 3,
+          "from": {
+            "x": 5,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 3
+          },
+          "goalsFilled": 3
+        }
+      ],
+      "checks": {
+        "allActionsAcceptedByProductionMove": true,
+        "everyPushChangesExactlyOneCrateByOneCell": true,
+        "continuousUndoCount": 44,
+        "everyUndoMatchesRecordedPriorBoardAndCounters": true,
+        "initialBoardRecovered": true,
+        "undoOnEmptyHistoryRejected": true,
+        "replayAfterUndoWon": true,
+        "restoreActionsWonAndRetainedFullHistory": true
+      }
+    },
+    {
+      "id": 6,
+      "name": "借位与先后",
+      "actions": "LUURRRUUDDDDLLULURRLDDRRUUUDDRRULDDLLLUUURRD",
+      "moves": 44,
+      "pushes": 10,
+      "final": {
+        "state": "won",
+        "level": 6,
+        "grid": [
+          "########",
+          "####.###",
+          "####.###",
+          "##...###",
+          "#......#",
+          "#..#...#",
+          "#......#",
+          "########"
+        ],
+        "goals": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "boxes": [
+          {
+            "id": 1,
+            "x": 4,
+            "y": 5
+          },
+          {
+            "id": 2,
+            "x": 4,
+            "y": 1
+          },
+          {
+            "id": 3,
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "player": {
+          "x": 4,
+          "y": 4,
+          "dir": 2
+        },
+        "moves": 44,
+        "pushes": 10,
+        "time": 0,
+        "historyDepth": 44,
+        "actions": "LUURRRUUDDDDLLULURRLDDRRUUUDDRRULDDLLLUUURRD",
+        "serial": 44,
+        "lastAction": {
+          "kind": "push",
+          "from": {
+            "x": 4,
+            "y": 3,
+            "dir": 1
+          },
+          "to": {
+            "x": 4,
+            "y": 4,
+            "dir": 2
+          },
+          "boxId": 1
+        },
+        "satisfied": 3,
+        "cornerBoxIds": []
+      },
+      "checkpoints": [
+        {
+          "name": "Borrow the right staging cell",
+          "actions": "LUURRR",
+          "moves": 6,
+          "pushes": 1,
+          "phaseMoves": 6,
+          "phasePushes": 1,
+          "player": {
+            "x": 4,
+            "y": 4,
+            "dir": 1
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 4
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 3
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 5
+            }
+          ],
+          "search": {
+            "expanded": 1,
+            "visited": 3,
+            "elapsedMs": 0.06,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Deliver upper crate to deepest shaft goal",
+          "actions": "UU",
+          "moves": 8,
+          "pushes": 3,
+          "phaseMoves": 2,
+          "phasePushes": 2,
+          "player": {
+            "x": 4,
+            "y": 2,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 4
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 1
+            },
+            {
+              "id": 3,
+              "x": 2,
+              "y": 5
+            }
+          ],
+          "search": {
+            "expanded": 2,
+            "visited": 3,
+            "elapsedMs": 0.05,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Feed third crate to shallower shaft goal",
+          "actions": "DDDDLLULURRLDDRRUUU",
+          "moves": 27,
+          "pushes": 8,
+          "phaseMoves": 19,
+          "phasePushes": 5,
+          "player": {
+            "x": 4,
+            "y": 3,
+            "dir": 0
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 5,
+              "y": 4
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 1
+            },
+            {
+              "id": 3,
+              "x": 4,
+              "y": 2
+            }
+          ],
+          "search": {
+            "expanded": 17,
+            "visited": 22,
+            "elapsedMs": 0.67,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        },
+        {
+          "name": "Recover borrowed crate into lower goal",
+          "actions": "DDRRULDDLLLUUURRD",
+          "moves": 44,
+          "pushes": 10,
+          "phaseMoves": 17,
+          "phasePushes": 2,
+          "player": {
+            "x": 4,
+            "y": 4,
+            "dir": 2
+          },
+          "boxes": [
+            {
+              "id": 1,
+              "x": 4,
+              "y": 5
+            },
+            {
+              "id": 2,
+              "x": 4,
+              "y": 1
+            },
+            {
+              "id": 3,
+              "x": 4,
+              "y": 2
+            }
+          ],
+          "search": {
+            "expanded": 5,
+            "visited": 7,
+            "elapsedMs": 0.14,
+            "maxExpanded": 10000,
+            "maxMs": 3000
+          }
+        }
+      ],
+      "pushTrace": [
+        {
+          "move": 6,
+          "action": "R",
+          "boxId": 1,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 5,
+            "y": 4
+          },
+          "goalsFilled": 0
+        },
+        {
+          "move": 7,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "to": {
+            "x": 4,
+            "y": 2
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 8,
+          "action": "U",
+          "boxId": 2,
+          "from": {
+            "x": 4,
+            "y": 2
+          },
+          "to": {
+            "x": 4,
+            "y": 1
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 15,
+          "action": "U",
+          "boxId": 3,
+          "from": {
+            "x": 2,
+            "y": 5
+          },
+          "to": {
+            "x": 2,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 18,
+          "action": "R",
+          "boxId": 3,
+          "from": {
+            "x": 2,
+            "y": 4
+          },
+          "to": {
+            "x": 3,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 19,
+          "action": "R",
+          "boxId": 3,
+          "from": {
+            "x": 3,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 4
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 26,
+          "action": "U",
+          "boxId": 3,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 3
+          },
+          "goalsFilled": 1
+        },
+        {
+          "move": 27,
+          "action": "U",
+          "boxId": 3,
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "to": {
+            "x": 4,
+            "y": 2
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 33,
+          "action": "L",
+          "boxId": 1,
+          "from": {
+            "x": 5,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 4
+          },
+          "goalsFilled": 2
+        },
+        {
+          "move": 44,
+          "action": "D",
+          "boxId": 1,
+          "from": {
+            "x": 4,
+            "y": 4
+          },
+          "to": {
+            "x": 4,
+            "y": 5
+          },
+          "goalsFilled": 3
+        }
+      ],
+      "checks": {
+        "allActionsAcceptedByProductionMove": true,
+        "everyPushChangesExactlyOneCrateByOneCell": true,
+        "continuousUndoCount": 44,
+        "everyUndoMatchesRecordedPriorBoardAndCounters": true,
+        "initialBoardRecovered": true,
+        "undoOnEmptyHistoryRejected": true,
+        "replayAfterUndoWon": true,
+        "restoreActionsWonAndRetainedFullHistory": true
+      }
+    }
+  ]
+}

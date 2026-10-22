@@ -1,0 +1,41 @@
+{
+  "method": "Separate browser storage fixtures: legacy valid format and simulated quota/corrupt/read-denied. Not natural wins or real device faults.",
+  "rows": [
+    {
+      "kind": "legacy",
+      "oldBoardHistory": "UR/2,player3,2",
+      "best": {
+        "1": {
+          "moves": 15,
+          "pushes": 4
+        }
+      },
+      "v3SixSelectable": true,
+      "switchRefreshKeepsOldBest": true,
+      "v3PreservesOldBytes": true,
+      "oldV2OwnProgressStillReadable": true,
+      "errors": []
+    },
+    {
+      "kind": "bad-bytes",
+      "warning": "v3存档无法读取，已保留原内容并停止覆盖；本次仍可玩，刷新会丢失新进度。",
+      "stillPlayable": true,
+      "recovered": false,
+      "errors": []
+    },
+    {
+      "kind": "quota-recover",
+      "warning": "浏览器存储不可用，本次仍可游玩和撤销，新进度暂无法保存。",
+      "stillPlayable": true,
+      "recovered": true,
+      "errors": []
+    },
+    {
+      "kind": "read-denied",
+      "warning": "本机存储无法读取；本次仍可玩，刷新会丢失新进度。",
+      "stillPlayable": true,
+      "recovered": false,
+      "errors": []
+    }
+  ]
+}

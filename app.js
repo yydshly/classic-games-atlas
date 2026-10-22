@@ -55,10 +55,14 @@ function comparisonIntro(item) {
   const end = item.legacy_playable === false ? '本轮实现与有限验证边界如下，未完成整体品质验收。' : hasCandidate(item) ? (item.next_version.browser_screenshot ? '下方分别标注 v1 历史证据与 v2 真实网页截图；有限桌面实玩不代表品质验收。' : item.next_version.renderer_image ? 'v1历史证据与v2离屏图分别标明；v2有限宽屏实玩完成，未完成品质验收。' : '下方截图和实测记录仍对应 v1；v2 变化另列。') : '此页不是 v2 发布说明。';
   return start + versionLabel(item) + '。' + end;
 }
+function contentPackLink(item) {
+  const pack=item.content_pack;
+  return pack?.url ? `<a class="play-launch content-pack-launch" href="${escapeHtml(safeUrl(localUrl(pack.url)))}">${escapeHtml(pack.label)} ${arrow}</a>` : '';
+}
 function versionLinks(item, compact = false) {
   const url = localUrl(item.play_url || item.url);
   if (item.legacy_playable === false) return `<div class="version-links${compact ? ' compact' : ''}"><a class="v2-candidate-link" href="${escapeHtml(safeUrl(url))}">试玩 v2 原型 ${arrow}</a>${item.about_url ? `<a href="${escapeHtml(safeUrl(item.about_url))}">版本说明 ${arrow}</a>` : ''}<span>${escapeHtml(versionLabel(item))}</span><span>${escapeHtml(item.legacy_note || '旧版仅部分源码归档，非完整可玩 v1')}</span></div>`;
-  return journeyLink(item) + `<div class="version-links${compact ? ' compact' : ''}"><a href="${escapeHtml(safeUrl(url))}">试玩 v1 ${arrow}</a><a href="${escapeHtml(safeUrl(frozenUrl(url)))}">冻结 v1 ${arrow}</a>${hasCandidate(item) ? `<a class="v2-candidate-link" href="${escapeHtml(safeUrl(localUrl(item.next_version.url)))}">${item.next_version.status === 'paused_unaccepted' ? '回看 v2 阶段版本' : '试玩 v2 首轮候选'} ${arrow}</a>` : ''}<span>${escapeHtml(versionLabel(item))}</span></div>`;
+  return contentPackLink(item) + journeyLink(item) + `<div class="version-links${compact ? ' compact' : ''}"><a href="${escapeHtml(safeUrl(url))}">试玩 v1 ${arrow}</a><a href="${escapeHtml(safeUrl(frozenUrl(url)))}">冻结 v1 ${arrow}</a>${hasCandidate(item) ? `<a class="v2-candidate-link" href="${escapeHtml(safeUrl(localUrl(item.next_version.url)))}">${item.next_version.status === 'paused_unaccepted' ? '回看 v2 阶段版本' : '试玩 v2 首轮候选'} ${arrow}</a>` : ''}<span>${escapeHtml(versionLabel(item))}</span></div>`;
 }
 const valueFor = slug => valueComparisons.find(item => item.slug === slug);
 function valueBriefMarkup(item) {
@@ -92,7 +96,7 @@ function playableFilter() {
 function playCard(item) {
   const current=currentPlay(item),old=data.experiments.find(e=>e.id===item.slug),shot=current.version==='v3'?item.journey_version.browser_screenshot:current.version==='v2'?(item.next_version?.browser_comparison?.after||item.next_version?.browser_screenshot):null;
   const imageUrl=shot?.url||old?.cover,source=item.original_title&&item.original_title!=='未明确'?item.original_title:'待确定';
-  return `<article class="play-card" data-play="${escapeHtml(item.slug)}"><div class="play-card-heading">${imageUrl?`<a class="play-thumbnail" href="${escapeHtml(safeUrl(current.url))}" aria-label="打开${escapeHtml(item.title)} ${current.version}"><img src="${escapeHtml(safeUrl(imageUrl))}" width="100" height="64" loading="lazy" decoding="async" alt="${escapeHtml(item.title)}${shot?'真实桌面实机图':'本项目原创封面，非当前实机截图'}"><span>${shot?'真实桌面图':'原创封面'}</span></a>`:''}<div><span class="play-number">${escapeHtml(item.number)} · ${current.version.toUpperCase()}</span><h3><a href="${escapeHtml(safeUrl(current.url))}">${escapeHtml(item.title)}</a></h3></div></div><p class="play-state${current.paused?' is-paused':''}">${escapeHtml(current.label)}</p><p class="play-source">参考原作：${escapeHtml(source)}</p><a class="play-launch" href="${escapeHtml(safeUrl(current.url))}">${current.paused?'打开 v2 阶段版':current.version==='v3'?'试玩 v3 短冒险':current.version==='v2'?'试玩 v2 候选':'开始玩 v1'} ${arrow}</a><div class="play-card-links">${['v2','v3'].includes(current.version)&&item.legacy_playable!==false?`<a href="${escapeHtml(safeUrl(localUrl(item.play_url)))}">保留的 v1</a>`:''}${hasJourney(item)?`<a href="${escapeHtml(safeUrl(localUrl(item.next_version.url)))}">保留的 v2</a>`:''}<a href="#compare=${escapeHtml(item.slug)}">原作、差异与记录</a></div>${item.legacy_playable===false?'<p class="play-legacy-note">旧项目未完成，无完整可玩 v1</p>':''}</article>`;
+  return `<article class="play-card" data-play="${escapeHtml(item.slug)}"><div class="play-card-heading">${imageUrl?`<a class="play-thumbnail" href="${escapeHtml(safeUrl(current.url))}" aria-label="打开${escapeHtml(item.title)} ${current.version}"><img src="${escapeHtml(safeUrl(imageUrl))}" width="100" height="64" loading="lazy" decoding="async" alt="${escapeHtml(item.title)}${shot?'真实桌面实机图':'本项目原创封面，非当前实机截图'}"><span>${shot?'真实桌面图':'原创封面'}</span></a>`:''}<div><span class="play-number">${escapeHtml(item.number)} · ${current.version.toUpperCase()}</span><h3><a href="${escapeHtml(safeUrl(current.url))}">${escapeHtml(item.title)}</a></h3></div></div><p class="play-state${current.paused?' is-paused':''}">${escapeHtml(current.label)}</p><p class="play-source">参考原作：${escapeHtml(source)}</p><a class="play-launch" href="${escapeHtml(safeUrl(current.url))}">${current.paused?'打开 v2 阶段版':current.version==='v3'?'试玩 v3 短冒险':current.version==='v2'?'试玩 v2 候选':'开始玩 v1'} ${arrow}</a>${contentPackLink(item)}<div class="play-card-links">${['v2','v3'].includes(current.version)&&item.legacy_playable!==false?`<a href="${escapeHtml(safeUrl(localUrl(item.play_url)))}">保留的 v1</a>`:''}${hasJourney(item)?`<a href="${escapeHtml(safeUrl(localUrl(item.next_version.url)))}">保留的 v2</a>`:''}<a href="#compare=${escapeHtml(item.slug)}">原作、差异与记录</a></div>${item.legacy_playable===false?'<p class="play-legacy-note">旧项目未完成，无完整可玩 v1</p>':''}</article>`;
 }
 function renderPlayLibrary() {
   const items=playableFilter(),shown=items.slice(0,playLimit);
@@ -202,7 +206,7 @@ async function optionalJson(path,label){
 try{
  const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
   readJson(`./data/games.json?v=${DATA_REVISION}`),
-  readJson(`./data/comparisons.json?v=${DATA_REVISION}`),
+  readJson('./data/comparisons.json?v=crate-pack-r1'),
   optionalJson('./data/reference-media.json','原作参考图'),
   optionalJson('./data/value-comparisons.json','玩法价值说明')
  ]);
