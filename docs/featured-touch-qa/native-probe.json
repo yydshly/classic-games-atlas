@@ -1,0 +1,47 @@
+[
+  {
+    "method": "move-remaining",
+    "events": [
+      {
+        "type": "pointerdown",
+        "id": 2,
+        "target": "a",
+        "ptr": "touch",
+        "trusted": true
+      },
+      {
+        "type": "pointerdown",
+        "id": 3,
+        "target": "b",
+        "ptr": "touch",
+        "trusted": true
+      }
+    ]
+  },
+  {
+    "method": "end-lifted",
+    "events": [
+      {
+        "type": "pointerdown",
+        "id": 2,
+        "target": "a",
+        "ptr": "touch",
+        "trusted": true
+      },
+      {
+        "type": "pointerdown",
+        "id": 3,
+        "target": "b",
+        "ptr": "touch",
+        "trusted": true
+      },
+      {
+        "type": "pointerup",
+        "id": 2,
+        "target": "a",
+        "ptr": "touch",
+        "trusted": true
+      }
+    ]
+  }
+]

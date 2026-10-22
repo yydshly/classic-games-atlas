@@ -1,0 +1,1641 @@
+{
+  "mode": "before-corrected",
+  "base": "https://yydshly.github.io/classic-games-atlas/",
+  "method": "Chromium mobile/touch emulation390x844, native CDP touch input up to5 contacts. Not hardware. No game/save/time/result injection. Setup scrollIntoView used where needed; gesture scrolling tested separately.",
+  "games": [
+    {
+      "slug": "fortress",
+      "checks": [
+        {
+          "name": "touchStart",
+          "state": "playing"
+        },
+        {
+          "name": "moveAndFireTwoContacts",
+          "moved": 48.53333333333376,
+          "shotsWhileOnlyFireHeld": 1
+        },
+        {
+          "name": "captureOutsideAndRelease",
+          "scrollUnchanged": true,
+          "noResidualFire": true
+        },
+        {
+          "name": "twoContactCancel",
+          "noMovementOrFireResidual": true
+        },
+        {
+          "name": "twoContactsSameFire",
+          "remainingContactStillHeld": true,
+          "shotsAfterPartialRelease": 0,
+          "passed": false
+        },
+        {
+          "name": "pauseResumeNoOldTouches",
+          "pausedFrozen": true,
+          "noAutomaticFire": true
+        },
+        {
+          "name": "touchReturnLobby",
+          "returned": true
+        }
+      ],
+      "issues": [
+        {
+          "id": "shared-control-contact-release",
+          "expected": "One held fire contact keeps firing after second contact lifts.",
+          "actual": "Shooting stopped while first touch remained down.",
+          "shotsBefore": 8,
+          "shotsAfter520ms": 8
+        }
+      ],
+      "emulation": {
+        "maxTouchPoints": 5,
+        "coarse": true,
+        "width": 390,
+        "height": 844
+      },
+      "sharedControlEvidence": {
+        "events": [
+          {
+            "type": "pointerdown",
+            "ptr": "touch",
+            "id": 7,
+            "trusted": true,
+            "target": "BUTTON",
+            "key": "KeyJ",
+            "x": 334.3984375,
+            "y": 812
+          },
+          {
+            "type": "pointerdown",
+            "ptr": "touch",
+            "id": 8,
+            "trusted": true,
+            "target": "BUTTON",
+            "key": "KeyJ",
+            "x": 356.3984375,
+            "y": 812
+          },
+          {
+            "type": "gotpointercapture",
+            "ptr": "touch",
+            "id": 8,
+            "trusted": true,
+            "target": "BUTTON",
+            "key": "KeyJ",
+            "x": 356.3984375,
+            "y": 812
+          },
+          {
+            "type": "pointerup",
+            "ptr": "touch",
+            "id": 8,
+            "trusted": true,
+            "target": "BUTTON",
+            "key": "KeyJ",
+            "x": 356.3984375,
+            "y": 812
+          },
+          {
+            "type": "lostpointercapture",
+            "ptr": "touch",
+            "id": 8,
+            "trusted": true,
+            "target": "BUTTON",
+            "key": "KeyJ",
+            "x": 356.3984375,
+            "y": 812
+          }
+        ],
+        "activeContactCDPIds": [
+          1
+        ],
+        "shotsBefore": 8,
+        "shotsAfter520ms": 8
+      },
+      "events": [
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 598.59375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 598.59375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 598.59375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 598.59375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 599
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 345.3984375,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 265.3984375,
+          "y": 722
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 265.3984375,
+          "y": 722
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 265.3984375,
+          "y": 722
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 345.3984375,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyW",
+          "x": 119.7890625,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 345.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 345.3984375,
+          "y": 812
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 345.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 334.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 356.3984375,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 356.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 356.3984375,
+          "y": 812
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 356.3984375,
+          "y": 812
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 334.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 334.3984375,
+          "y": 812
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "KeyJ",
+          "x": 334.3984375,
+          "y": 812
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 511.296875
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 511.296875
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 511.296875
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 511.296875
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary",
+          "x": 195,
+          "y": 511
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 348,
+          "y": 32
+        }
+      ],
+      "pointerDowns": 10,
+      "nativePointerCancels": 2,
+      "passed": false,
+      "actions": [
+        {
+          "tap": "#primary",
+          "x": 195.0,
+          "y": 598.59375
+        },
+        {
+          "tap": "#pause",
+          "x": 348.0,
+          "y": 32.0
+        },
+        {
+          "tap": "#primary",
+          "x": 195.0,
+          "y": 511.296875
+        },
+        {
+          "tap": "#pause",
+          "x": 348.0,
+          "y": 32.0
+        },
+        {
+          "tap": "header a:first-child",
+          "x": 36.8359375,
+          "y": 32.0
+        }
+      ]
+    },
+    {
+      "slug": "brook",
+      "checks": [
+        {
+          "name": "touchStart",
+          "state": "playing"
+        },
+        {
+          "name": "touchSelectAndDeploy",
+          "row": 2,
+          "col": 2,
+          "actualCost": 60
+        },
+        {
+          "name": "canvasDragCancel",
+          "noAccidentalSelectionOrCommand": true,
+          "scrollUnchanged": true
+        },
+        {
+          "name": "pageMarginScroll",
+          "before": 0,
+          "after": 375,
+          "direction": "upward finger swipe on outer page margin"
+        },
+        {
+          "name": "pauseResume",
+          "pausedFrozen": true
+        },
+        {
+          "name": "touchReturnLobby",
+          "returned": true
+        }
+      ],
+      "issues": [],
+      "emulation": {
+        "maxTouchPoints": 5,
+        "coarse": true,
+        "width": 390,
+        "height": 844
+      },
+      "events": [
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 555.375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 555.375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 555.375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 555.375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 149,
+          "y": 555
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "help-confirm",
+          "x": 88.4296875,
+          "y": 739
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "help-confirm",
+          "x": 88.4296875,
+          "y": 739
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "help-confirm",
+          "x": 88.4296875,
+          "y": 739
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "help-confirm",
+          "x": 88.4296875,
+          "y": 739
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "help-confirm",
+          "x": 88,
+          "y": 739
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "2 晶枝弩60露同一行远程攻击 · 冷却3.5s",
+          "x": 194.9921875,
+          "y": 292.5
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "2 晶枝弩60露同一行远程攻击 · 冷却3.5s",
+          "x": 194.9921875,
+          "y": 292.5
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "2 晶枝弩60露同一行远程攻击 · 冷却3.5s",
+          "x": 194.9921875,
+          "y": 292.5
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "2 晶枝弩60露同一行远程攻击 · 冷却3.5s",
+          "x": 194.9921875,
+          "y": 292.5
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "2 晶枝弩60露同一行远程攻击 · 冷却3.5s",
+          "x": 195,
+          "y": 293
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 106.24705505371094,
+          "y": 566.5440063476562
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 106.24705505371094,
+          "y": 566.5440063476562
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 106.24705505371094,
+          "y": 566.5440063476562
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 106.24705505371094,
+          "y": 566.5440063476562
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 106,
+          "y": 567
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "deploy",
+          "x": 212.5,
+          "y": 669.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "deploy",
+          "x": 212.5,
+          "y": 669.84375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "deploy",
+          "x": 212.5,
+          "y": 669.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "deploy",
+          "x": 212.5,
+          "y": 669.84375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "deploy",
+          "x": 213,
+          "y": 670
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 84.5999984741211,
+          "y": 554.421875
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 195,
+          "y": 503.76873779296875
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 195,
+          "y": 503.76873779296875
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 195,
+          "y": 503.76873779296875
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 744.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 744.84375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 744.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 744.84375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 195,
+          "y": 745
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 388,
+          "y": 690
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 388,
+          "y": 620
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "CANVAS",
+          "key": "battle",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 266.671875
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 266.671875
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 266.671875
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 148.9921875,
+          "y": 266.671875
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 149,
+          "y": 267
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 369.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 369.84375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 369.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 194.9921875,
+          "y": 369.84375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 11,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 195,
+          "y": 370
+        }
+      ],
+      "pointerDowns": 10,
+      "nativePointerCancels": 2,
+      "passed": true,
+      "actions": [
+        {
+          "tap": "#primary-action",
+          "x": 148.9921875,
+          "y": 555.375
+        },
+        {
+          "tap": "#help-confirm",
+          "x": 88.4296875,
+          "y": 739.0
+        },
+        {
+          "tap": "[data-type=\"bolt\"]",
+          "x": 194.9921875,
+          "y": 292.5
+        },
+        {
+          "tap": "#deploy",
+          "x": 212.5,
+          "y": 669.84375
+        },
+        {
+          "tap": "#pause",
+          "x": 194.9921875,
+          "y": 744.84375
+        },
+        {
+          "tap": "#primary-action",
+          "x": 148.9921875,
+          "y": 266.671875
+        },
+        {
+          "tap": "#pause",
+          "x": 194.9921875,
+          "y": 369.84375
+        },
+        {
+          "tap": "header a:last-child",
+          "x": 338.1796875,
+          "y": 21.0
+        }
+      ]
+    },
+    {
+      "slug": "post",
+      "checks": [
+        {
+          "name": "touchStart",
+          "state": "playing"
+        },
+        {
+          "name": "gasAndSteerCaptureRelease",
+          "twoContactsRegistered": true,
+          "oneRemainsAfterPartialRelease": true,
+          "noneAfterRelease": true,
+          "scrollUnchanged": true,
+          "actualSpeed": 60.49999999999998
+        },
+        {
+          "name": "twoContactCancel",
+          "noTouchResidual": true
+        },
+        {
+          "name": "pageMarginScroll",
+          "before": 0,
+          "after": 375,
+          "direction": "upward finger swipe on outer page margin"
+        },
+        {
+          "name": "pauseResume",
+          "pausedFrozen": true,
+          "noTouchResidual": true
+        },
+        {
+          "name": "touchReturnLobby",
+          "returned": true
+        }
+      ],
+      "issues": [],
+      "emulation": {
+        "maxTouchPoints": 5,
+        "coarse": true,
+        "width": 390,
+        "height": 844
+      },
+      "events": [
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 439.8984375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 439.8984375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 439.8984375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 439.8984375
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 2,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 127,
+          "y": 440
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 334.875,
+          "y": 513.84375
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "left",
+          "x": 55.125,
+          "y": 513.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "left",
+          "x": 55.125,
+          "y": 513.84375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "left",
+          "x": 55.125,
+          "y": 513.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 4,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "left",
+          "x": 55.125,
+          "y": 513.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 254.875,
+          "y": 423.84375
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 254.875,
+          "y": 423.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 3,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 254.875,
+          "y": 423.84375
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 334.875,
+          "y": 513.84375
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "right",
+          "x": 148.375,
+          "y": 513.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 334.875,
+          "y": 513.84375
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 334.875,
+          "y": 513.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 5,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "gas",
+          "x": 334.875,
+          "y": 513.84375
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "right",
+          "x": 148.375,
+          "y": 513.84375
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "right",
+          "x": 148.375,
+          "y": 513.84375
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 6,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "right",
+          "x": 148.375,
+          "y": 513.84375
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 7,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BODY",
+          "key": "← 经典游戏图鉴PLAY LAB 16 / V2",
+          "x": 388,
+          "y": 690
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BODY",
+          "key": "← 经典游戏图鉴PLAY LAB 16 / V2",
+          "x": 388,
+          "y": 620
+        },
+        {
+          "type": "pointercancel",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BODY",
+          "key": "← 经典游戏图鉴PLAY LAB 16 / V2",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 8,
+          "trusted": true,
+          "target": "BODY",
+          "key": "← 经典游戏图鉴PLAY LAB 16 / V2",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 52.8046875
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 52.8046875
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 52.8046875
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 126.984375,
+          "y": 52.8046875
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 9,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "primary-action",
+          "x": 127,
+          "y": 53
+        },
+        {
+          "type": "pointerdown",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "gotpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "pointerup",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "lostpointercapture",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        },
+        {
+          "type": "click",
+          "ptr": "touch",
+          "id": 10,
+          "trusted": true,
+          "target": "BUTTON",
+          "key": "pause",
+          "x": 352,
+          "y": 147
+        }
+      ],
+      "pointerDowns": 9,
+      "nativePointerCancels": 3,
+      "passed": true,
+      "actions": [
+        {
+          "tap": "#primary-action",
+          "x": 126.984375,
+          "y": 439.8984375
+        },
+        {
+          "tap": "#pause",
+          "x": 352.0,
+          "y": 147.0
+        },
+        {
+          "tap": "#primary-action",
+          "x": 126.984375,
+          "y": 52.8046875
+        },
+        {
+          "tap": "#pause",
+          "x": 352.0,
+          "y": 147.0
+        },
+        {
+          "tap": "header a:first-child",
+          "x": 52.1328125,
+          "y": 21.9921875
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestFailures": [],
+  "navigationCancellations": [],
+  "completed": true,
+  "passed": false
+}

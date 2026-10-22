@@ -4,7 +4,7 @@
 
 **在线图鉴：[https://yydshly.github.io/classic-games-atlas/](https://yydshly.github.io/classic-games-atlas/)**
 
-**[从三款开始试玩](https://yydshly.github.io/classic-games-atlas/#selected-play)**：堡垒、溪谷、邮差当前v2候选，真实画面、操作与首个目标；[本轮交付与未验边界](docs/featured-play-qa/)。精选不代表精品认证，40款目录继续保留。 [堡垒键盘返回修复](docs/fortress-native-key-qa/)已补齐原有Enter冲突；真人整体品质仍待验收。
+**[从三款开始试玩](https://yydshly.github.io/classic-games-atlas/#selected-play)**：堡垒、溪谷、邮差当前v2候选，真实画面、操作与首个目标；[本轮交付与未验边界](docs/featured-play-qa/)。精选不代表精品认证，40款目录继续保留。 [堡垒键盘返回修复](docs/fortress-native-key-qa/)已补齐原有Enter冲突；真人整体品质仍待验收。 [三款触控事件模拟与堡垒多指释放修复](docs/featured-touch-qa/)已补证，仍非真机验收。
 
 本项目独立于其他仓库。只包含原创介绍、原创 HTML/CSS/JavaScript、原创 SVG、资料链接与开发/验证脚本。没有账户、后端、模型调用、统计追踪、外部字体或运行时第三方依赖。不提供 ROM、模拟器、原作音画或原游戏下载。原创游戏在浏览器内直接运行。
 

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "groups": 7,
+  "baseline": "c66befb195f638e1731e139947fb168d9a21f066",
+  "baselineNegativeControl": true,
+  "oldKeyboardReplayCommands": 1200,
+  "results": [
+    "Native before trace: second fire contact lifts, first stays held",
+    "Separate move/fire contacts release and cancel independently",
+    "Keyboard and pointer ownership of one control remain independent",
+    "P1 touch fire and P2 keyboard fire do not clear each other",
+    "Clear removes all owners; stale lost-capture cannot clear a new keyboard hold",
+    "Default keyboard command replay exactly matches original direction/fire priority",
+    "Read operations do not alter input ownership"
+  ],
+  "method": "Production Controls and old-class negative control; source ownership boundary tests, not physical touch or gameplay wins."
+}

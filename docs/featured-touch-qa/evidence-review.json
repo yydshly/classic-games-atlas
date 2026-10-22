@@ -1,0 +1,25 @@
+{
+  "scope": "Current fortress/brook/post v2 only; selected relevant reports, not exhaustive historical audit.",
+  "reviewed": [
+    {
+      "path": "../fortress-v2-qa/PUBLIC_BROWSER_QA.md",
+      "finding": "Desktop keyboard and explicit native-touch untested boundary."
+    },
+    {
+      "path": "../post-v2-qa/PUBLIC_BROWSER_QA.md",
+      "finding": "Desktop keyboard/mouse, not actual touch pointer proof."
+    },
+    {
+      "path": "../brook-feedback-qa/verify_browser.py",
+      "finding": "has_touch/is_mobile flags present, but actions use locator.click, not touchscreen.tap or native touch input."
+    },
+    {
+      "path": "../fortress-native-key-qa/",
+      "finding": "390CSS and actual keyboard navigation, not touch coverage."
+    }
+  ],
+  "decision": "Fill actual touch pointer, multi-contact lifecycle, cancel and capture evidence, without replaying wins.",
+  "browser": "HeadlessChrome/147.0.7727.15",
+  "nativeAdapter": "Independent blank probe corrected partial lift. Passing remaining contacts to touchEnd lifted the wrong pointer in initial harness; explicit lifted-point input matched the intended pointer ID in this browser. Native traces retained; first invalid attempt was not treated as a game bug.",
+  "notHardware": "isTrusted and pointerType touch describe browser-generated events, not physical fingers, iOS/Android, performance or OS gestures."
+}

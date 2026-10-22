@@ -1,7 +1,7 @@
 import {BaseFeedback} from './base-feedback.mjs?base-feedback-r1';
 import {createGame,start,pause,update,snapshot} from './engine.mjs';
 import {Renderer} from './renderer.mjs';
-import {Controls,PLAY_KEYS} from './input.mjs';
+import {Controls,PLAY_KEYS} from './input.mjs?touch-sources-r1';
 import {readProgress,saveProgress} from './progress.mjs';
 const $=s=>document.querySelector(s),controls=new Controls();
 let storage;try{storage=localStorage;}catch{storage=null;}
@@ -40,6 +40,6 @@ function sync(){
 $('#primary').onclick=()=>{if(['won','lost'].includes(game.state))prepare();begin();};$('#retry').onclick=prepare;$('#prepare').onclick=prepare;$('#pause').onclick=()=>{if(game.state==='paused')begin();else if(game.state==='playing')stop();};
 window.addEventListener('keydown',event=>{if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.altKey||event.target.closest('a[href],select,input,textarea,summary,[contenteditable]:not([contenteditable="false"])'))return;if(['KeyP','Escape'].includes(event.code)){event.preventDefault();if(!event.repeat)$('#pause').click();return;}if(event.target.closest('button'))return;if(PLAY_KEYS.includes(event.code))event.preventDefault();if(event.code==='Enter'&&startEnterHeld)return;if(event.code==='Enter'&&game.state!=='playing'){if(!event.repeat){if(['won','lost'].includes(game.state))prepare();begin();startEnterHeld=true;}return;}if(game.state==='playing'&&PLAY_KEYS.includes(event.code))controls.press(event.code);});
 window.addEventListener('keyup',event=>{if(event.code==='Enter')startEnterHeld=false;controls.release(event.code);});window.addEventListener('blur',stop);document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
-for(const button of document.querySelectorAll('[data-key]')){button.addEventListener('pointerdown',event=>{event.preventDefault();if(game.state!=='playing')return;button.setPointerCapture(event.pointerId);controls.press(button.dataset.key);});for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,()=>controls.release(button.dataset.key));}
+for(const button of document.querySelectorAll('[data-key]')){button.addEventListener('pointerdown',event=>{event.preventDefault();if(game.state!=='playing')return;button.setPointerCapture(event.pointerId);controls.press(button.dataset.key,event.pointerId);});for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,event=>controls.release(button.dataset.key,event.pointerId));}
 function frame(now){const dt=Math.min((now-previous)/1000,.1);previous=now;if(game.state==='playing'){accumulator+=dt;while(accumulator>=1/60){update(game,controls.read(),1/60);accumulator-=1/60;}}else accumulator=0;renderer.effects(game.events.splice(0));renderer.draw(game,dt);sync();requestAnimationFrame(frame);}
 window.__fortress={snapshot:()=>snapshot(game)};save();sync();requestAnimationFrame(frame);
