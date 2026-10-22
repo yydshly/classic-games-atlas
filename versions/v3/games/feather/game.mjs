@@ -1,5 +1,6 @@
 import {SAVE_KEY,LEGACY_SAVE_KEY,SPECIES,ELEMENTS,TRIAL,V2,createGame,input,checkpoint,restore,allowed,phase,progress,readiness,active,partner,maxHP,power,trialElement,trialIntent,trialIncoming,trialHit,invariants} from './model.mjs';
 import {render,hitNode} from './renderer.mjs';
+import {skillFeedback} from './skill-feedback.mjs';
 const $=q=>document.querySelector(q),canvas=$('#scene'),ctx=canvas.getContext('2d');
 const ART='../../../v2/games/feather/assets/',assets={};
 let state,paused=false,showPaths=true,storage=true,saveBlocked=false,lastInput=-1000,previousFocus=null,legacy=null,assetsReady=false;
@@ -21,6 +22,10 @@ function imageLoad(name,url){return new Promise(resolve=>{const im=new Image();i
 function button(kind,arg,label,sub='',css=''){
  const error=allowed(state,kind,arg);
  return '<button data-action="'+kind+'"'+(arg?' data-arg="'+arg+'"':'')+' data-revision="'+state.revision+'" class="'+css+'"'+(error?' disabled title="'+error+'"':'')+'>'+label+(sub?'<small>'+sub+'</small>':'')+'</button>';
+}
+function skillButton(kind,label){
+ const f=skillFeedback(state);
+ return button(kind,null,label,f.cost+'<br>'+f.effect+(f.reason?'<span class="skill-blocked">暂不可用：'+f.reason+'</span>':''),'skill-action');
 }
 function card(p,camp=false){
  const b=state.base,sp=SPECIES[p.id],selected=b.team.includes(p.id);
@@ -49,7 +54,7 @@ function encounterPanel(){
  (owned?'已在名册中，可切磋或安心道别。':'打到0会错过本次招募。羽结失败也会消耗。')+'</p><p class="wild-status">野外体力 <strong>'+w.hp+'/'+w.maxHP+'</strong> · 安心 <strong>'+w.calm+'/60</strong></p><div class="intent">下次：'+V2.nextIntent(b)+' · 预计'+V2.incoming(b)+'伤害<br>警觉 '+w.wariness+'；安心≥30时来招减弱。</div><div class="action-grid">'+
  button('attack',null,'轻击 · '+V2.estimateHit(b)+'伤害','警觉+4，击倒后本次不能招募')+
  button('soothe',null,'分享露莓','消耗1露莓；安心+'+Math.min(60-w.calm,20+SPECIES[p.id].soothe))+
- button('skill',null,SPECIES[p.id].skill,SPECIES[p.id].skillHint)+button('guard',null,'守息','回复1能量 / 本次16护盾')+
+ skillButton('skill',SPECIES[p.id].skill)+button('guard',null,'守息','回复1能量 / 本次16护盾')+
  button('heal',null,'吃颗露莓','消耗1露莓 / 恢复26体力')+
  button('switch',other,'换 '+SPECIES[other].name,'换位消耗一次行动并承受来招')+
  button('capture',null,'系羽结 · '+chance+'%','消耗1羽结；回营后编队','primary wide')+
@@ -61,7 +66,7 @@ function trialPanel(){
  const nextElement=['moss','moss','water','water','wind','wind'][(t.turn+1)%6],next=['试探','蓄势','回涌'][(t.turn+1)%3];
  return '<h2 tabindex="-1">终挑战 · 浅滩回响</h2><p class="intro">24拍内消去'+TRIAL.hp+'余势。不是捕捉新物种；这是伙伴共同平息的自然回响。</p><div class="trial-readout"><span>余势 <strong>'+t.hp+'/'+TRIAL.hp+'</strong></span><span>合奏安心 <strong>'+t.calm+'/60</strong></span><span>这一拍 <strong>'+ELEMENTS[trialElement(state)].name+' / '+trialIntent(state)+'</strong></span><span>预计来招 <strong>'+trialIncoming(state)+'</strong></span></div><div class="intent">下一拍：'+ELEMENTS[nextElement].name+' / '+next+'<br>回涌较强，蓄势不攻击。安心≥30时来招×0.65；属性相克和弱化仍有效。</div><div class="action-grid">'+
  button('trialAttack',null,'1 · 轻击 '+trialHit(state),'伤害随本拍属性变化')+
- button('trialSkill',null,'2 · '+SPECIES[p.id].skill,SPECIES[p.id].skillHint)+
+ skillButton('trialSkill','2 · '+SPECIES[p.id].skill)+
  button('trialGuard',null,'3 · 守息','能量+1 / 本次16护盾')+
  button('trialHeal',null,'4 · 吃颗露莓','恢复26 / 剩余'+t.berries+'颗')+
  button('trialSwitch',other,'5 · 换 '+SPECIES[other].name,'换位占一拍；新领队承受本次来招','wide')+'</div>'+
