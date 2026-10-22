@@ -1,0 +1,33 @@
+{
+  "evidence": "bounded model tests, not ordinary UI",
+  "ok": true,
+  "checks": [
+    "Original two level objects and all same-command state replays exactly unchanged",
+    "Ready retained; active restores paused; pause freezes world and shields; resumed same-input state exactly",
+    "Shield consumption, repeated-use rejection, finite charge checkpoint",
+    "Legal top-edge avoidance naturally expires exactly at120; expired restore and terminal immutability",
+    "Malformed stage/schedule/time/player/projectile/stats/charge/terminal checkpoint rejected",
+    "Third uses same second-stage physical level, HP, bullet speed and fan count; new geometry and all three patterns"
+  ],
+  "replays": [
+    {
+      "level": 1,
+      "time": 49.83333333333115,
+      "hp": 3,
+      "score": 8010,
+      "exact": true
+    },
+    {
+      "level": 2,
+      "time": 53.19166666666429,
+      "hp": 3,
+      "score": 6060,
+      "exact": true
+    }
+  ],
+  "expiry": {
+    "state": "expired",
+    "time": 120,
+    "hp": 3
+  }
+}

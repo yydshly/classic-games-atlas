@@ -1016,3 +1016,8 @@ Duel v2一次正常UI首庭胜利1188分，命中扣血可见；刷新后纪录�
 ### 可选夜航三港归航
 
 [直接试玩](versions/v3/games/lantern/)：原双港加原创支巷环港，结合内环绕行/共用穿隧与力量侧路/避风等待，三港连续、当前港重试、实际进度恢复及结尾记录。原自由模式、十港和存档保留。[核心证据](docs/lantern-journey-qa/)区分普通UI三港完成、模型两路线和触控模拟；完成会话直接刷新通过，未注入完成态。
+
+### 云隙巡航 · 可选三段连航
+
+原双段自由模式保留，新增交风编队终段与独立连续战役：火力/补给换线、当前段重试、刷新暂停及最终记录。目录仍42项。
+[直接试玩](https://yydshly.github.io/classic-games-atlas/versions/v3/games/cloud/) · [验证与边界](https://yydshly.github.io/classic-games-atlas/docs/cloud-campaign-qa/)；普通UI采用只读策略辅助，不代表真人或真机体验验收。

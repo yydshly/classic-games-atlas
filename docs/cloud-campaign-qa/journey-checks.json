@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "evidence": "model and injected storage fixtures; not UI",
+  "checks": [
+    "Fresh isolated store round-trip",
+    "Three legal model wins; lost/refresh/current retry retains earlier result; ordered between and final saves",
+    "Repeated finish idempotent, no repeated best or result writes",
+    "Write failure preserves old bytes and recovery clears warning",
+    "Bad save preserved and blocked, separate from recoverable write failure",
+    "Confirmed new campaign resets journey only and keeps own best",
+    "Mismatched stage, phase, result ordering and terminal rejected"
+  ]
+}
