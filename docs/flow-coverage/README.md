@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[弹庭查看失利后的可见重试焦点](../pinfall-focus-qa/)；修复上轮窄屏候选，规则不改。
+
 [结果关闭路径有限同类排查](../result-return-review/)；无运行改动，另记弹庭窄屏焦点候选。
 
 [邮差查看赛场后返回结算](../post-result-qa/)；键盘入口与焦点，不重复结算/保存。
@@ -41,7 +43,7 @@
 |11 青藤回廊 [v2 候选](../../versions/v2/games/vine/)|已验有限流程|已验有限流程：两图8/8与10/10后归门胜|已验有限流程：首图自然撞壁后同种子重试0步，身体/青芽/rng复位，暂停刷新和新方向通过|已验有限流程：两图开放，非16关全通 [1](../../docs/vine-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/vine-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |12 花笺连线 [v1 既有原型](../../games/petal/)|已验有限流程|已验有限流程：原生提示/正常点击顺序完成1–20；1–9作必要前置，10–20此前补证|已验有限流程：v1第2页正常4次无通路同图案配对耗错失败；重写资源/棋盘复位，原生首纪录与2页解锁跨刷新保留|已验有限流程：10–20全部自然清页；下落/左移模式、稳定刷新、20页终局/无21页/重读与原生纪录保留通过 [1](../../docs/petal-v1-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/petal-loss-qa/) / [3](../../docs/petal-later-qa/) / [4](../../docs/petal-pause-followup-qa/) / [5](../../docs/return-navigation-qa/)|
 |13 星砂勘探 [v2 候选](../../versions/v2/games/sand/)|已验有限流程|已验有限流程：浅/深两盘有提示解完安全格|已验有限流程：主动点已推知雷格失败，同盘重试/另开新盘|已验有限流程：两档独立进度，非全部种子证明 [1](../../docs/sand-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/return-navigation-qa/)|
-|14 落星弹庭 [v2 候选](../../versions/v2/games/pinfall/)|已验有限流程|已验有限流程：两庭参考角度自然胜1555/1485|已验有限流程：首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留|已验有限流程：能力整球回退及最好保留，两庭开放 [1](../../docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/pinfall-loss-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/result-return-review/)|
+|14 落星弹庭 [v2 候选](../../versions/v2/games/pinfall/)|已验有限流程|已验有限流程：两庭参考角度自然胜1555/1485|已验有限流程：首庭6球自然耗尽/余3目标，直接重试5发2能力0分，1555原生最好跨刷新保留|已验有限流程：能力整球回退及最好保留，两庭开放 [1](../../docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/pinfall-loss-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/result-return-review/) / [5](../../docs/pinfall-focus-qa/)|
 |15 钢岚突进 [v2 候选](../../versions/v2/games/gale/)|已验有限流程|已验有限流程：两场清装置走出口200分|已验有限流程：首图原地承受15命中/3死亡自然败；重试3命5甲2脉冲、满敌/空弹体，暂停刷新再继续通过|已验有限流程：修后只复验生命周期，通关属修前同引擎 [1](../../docs/gale-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/gale-loss-qa/) / [3](../../docs/return-navigation-qa/)|
 |16 弯道邮差 [v2 候选](../../versions/v2/games/post/)|已验有限流程|已验有限流程：此前三场合法完赛第2/3/3名保留；当前普通UI三场各一次rank1自然胜，14.90/18.9917/17.775秒|已验有限流程：自然95秒超时面板直接重赛：新倒计时/0用时/零结算，暂停刷新与新起跑通过，超时不解锁|已验有限流程：三场严格第一名/16闸两圈/零复位、三纪录与末场第一名刷新通过；50ms只读避车策略非人手驾驶 [1](../../docs/post-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/post-main-flow-qa/) / [3](../../docs/post-loss-qa/) / [4](../../docs/post-later-qa/) / [5](../../docs/post-independent-qa/) / [6](../../docs/return-navigation-qa/) / [7](../../docs/post-feedback-qa/) / [8](../../docs/post-result-qa/)|
 |17 灯塔小队 [v2 候选](../../versions/v2/games/beacon/)|已验有限流程|已验有限流程：21天归港7地点/3遭遇胜|已验有限流程：付代价撤退与透镜遗失败→确认重开已验|已验有限流程：航程总结及刷新/再次行动已验 [1](../../docs/beacon-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/beacon-v2-loss-qa/) / [3](../../docs/return-navigation-qa/)|

@@ -639,7 +639,8 @@
         "docs/pinfall-v2-qa/PUBLIC_BROWSER_QA.md",
         "docs/pinfall-loss-qa/",
         "docs/return-navigation-qa/",
-        "docs/result-return-review/"
+        "docs/result-return-review/",
+        "docs/pinfall-focus-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "球尽失败恢复链已补；末发返球优先仍为另列边界，不自动扩围",
@@ -653,6 +654,12 @@
         "status": "reviewed_no_same_action_loss",
         "evidence": "docs/result-return-review/",
         "newUi": true
+      },
+      "focusReview": {
+        "baseline": "38c3fd2485d57676991e4ac286d2304d70b1b5d0",
+        "status": "fixed",
+        "evidence": "../pinfall-focus-qa/",
+        "scope": "查看失利后就近可见重试焦点；Enter/R显式回准备、无自动开始；桌面390各两次自然失败与fixture分开"
       }
     },
     {
@@ -3303,6 +3310,13 @@
     "status": "no_same_failure_reproduced",
     "evidence": "../result-return-review/",
     "scope": "35入口70HTML/控制器静态，pinfall当前两个普通UI视口，farm既有终局证据；无运行修改",
-    "nextCandidate": "pinfall390查看后焦点移至屏外重试按钮，功能仍可用"
+    "nextCandidate": "pinfall390查看后焦点移至屏外重试按钮，功能仍可用",
+    "nextCandidateResolvedBy": "../pinfall-focus-qa/"
+  },
+  "pinfallFocusReview": {
+    "baseline": "38c3fd2485d57676991e4ac286d2304d70b1b5d0",
+    "status": "fixed",
+    "evidence": "../pinfall-focus-qa/",
+    "scope": "查看失利后就近可见重试焦点；Enter/R显式回准备、无自动开始；桌面390各两次自然失败与fixture分开"
   }
 }

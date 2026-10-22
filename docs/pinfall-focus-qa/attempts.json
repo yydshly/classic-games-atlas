@@ -1,0 +1,13 @@
+[
+  {
+    "out": "local",
+    "result": "pre-release candidate failed390 ready-focus full visibility check after successful near-court focus",
+    "actualGeometry": "primary y800.203125 height44 viewport844; focus border clipped",
+    "cause": "Observed native focus left bottom844.203125 at viewport844; browser rounding is an inference, not independently proved.",
+    "correction": "only explicit retry: primary preventScroll focus plus nearest scroll with12CSS scroll margin; inspect action still never scrolls",
+    "preserved": [
+      "local/report.json",
+      "attempt-1.diff"
+    ]
+  }
+]

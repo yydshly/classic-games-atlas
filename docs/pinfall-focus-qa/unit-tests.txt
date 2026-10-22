@@ -1,0 +1,12 @@
+PASS 1: viewing loss focuses near-court retry without changing game or storage
+PASS 2: idle inspected result cannot automatically retry, save or reward again
+PASS 3: near-court button retries once into ready, focuses start and retains records
+PASS 4: R ignores repeat and explicitly retries inspected loss with visible-card focus
+PASS 5: ready, playing and pause hide action; direct hidden-handler calls cannot retry
+PASS 6: won result stays unchanged and normal another-court action still works
+PASS 7: second-court inspected loss retries same court, with no unlock or auto-start
+7 controller fixture groups passed; geometry requires browser checks.
+
+Node VM experimental-flag diagnostic (not browser console error):
+(node:23744) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

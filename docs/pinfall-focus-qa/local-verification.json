@@ -1,0 +1,3043 @@
+{
+  "testedAt": "2026-10-22T05:20:24.485989+00:00",
+  "url": "http://127.0.0.1:58191/versions/v2/games/pinfall/",
+  "method": "Isolated fresh contexts; each viewport naturally loses first court twice via normal slider click/Home -68 and fire. First view closes by mouse, retry Enter; second view closes by Tab/Space, retry R. No state/time/outcome/save/ball injection. 390CSS mobile/touch emulation is not physical phone.",
+  "cases": [
+    {
+      "width": 1440,
+      "rounds": [
+        {
+          "cycle": 1,
+          "shots": [
+            {
+              "shot": 1,
+              "state": "playing",
+              "budget": 4,
+              "score": 125,
+              "catches": 0
+            },
+            {
+              "shot": 2,
+              "state": "playing",
+              "budget": 4,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 3,
+              "state": "playing",
+              "budget": 3,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 4,
+              "state": "playing",
+              "budget": 2,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 5,
+              "state": "playing",
+              "budget": 1,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 6,
+              "state": "lost",
+              "budget": 0,
+              "score": 325,
+              "catches": 1
+            }
+          ],
+          "closeInput": "mouse",
+          "retryInput": "Enter",
+          "naturalLoss": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.222599999999712,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "view": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "focusInViewport": true,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 0,
+            "overflow": false
+          },
+          "gameAndStorageUnchangedOnView": true,
+          "retryReady": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "readyFocus": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 393,
+              "y": 588.765625,
+              "width": 155,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 0,
+            "overflow": false
+          }
+        },
+        {
+          "cycle": 2,
+          "shots": [
+            {
+              "shot": 1,
+              "state": "playing",
+              "budget": 4,
+              "score": 125,
+              "catches": 0
+            },
+            {
+              "shot": 2,
+              "state": "playing",
+              "budget": 4,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 3,
+              "state": "playing",
+              "budget": 3,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 4,
+              "state": "playing",
+              "budget": 2,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 5,
+              "state": "playing",
+              "budget": 1,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 6,
+              "state": "lost",
+              "budget": 0,
+              "score": 325,
+              "catches": 1
+            }
+          ],
+          "closeInput": "Tab+Space",
+          "retryInput": "R",
+          "naturalLoss": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.832399999999634,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "view": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 0,
+            "overflow": false
+          },
+          "gameAndStorageUnchangedOnView": true,
+          "retryReady": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "readyFocus": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 393,
+              "y": 588.765625,
+              "width": 155,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 0,
+            "overflow": false
+          }
+        }
+      ],
+      "states": [
+        {
+          "label": "cycle-1-view",
+          "game": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.222599999999712,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "focusInViewport": true,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 0,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-1-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 393,
+              "y": 588.765625,
+              "width": 155,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 0,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-2-view",
+          "game": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.832399999999634,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 734.078125,
+              "y": 836.984375,
+              "width": 78.96875,
+              "height": 30
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 0,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-2-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 393,
+              "y": 588.765625,
+              "width": 155,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 0,
+            "overflow": false
+          }
+        },
+        {
+          "label": "retry-refresh",
+          "game": {
+            "state": "paused",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0.06670000000000437,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": true,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "",
+            "focusBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1059.375
+            },
+            "focusInViewport": false,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 291.953125,
+              "y": 209.375,
+              "width": 520.09375,
+              "height": 617.609375
+            },
+            "canvasVisibleRatio": 1,
+            "status": "先选庭院与能力，再瞄准发射。命中的钉在本球回收后移除。",
+            "overlayHidden": false,
+            "scrollY": 0,
+            "overflow": false
+          }
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "rounds": [
+        {
+          "cycle": 1,
+          "shots": [
+            {
+              "shot": 1,
+              "state": "playing",
+              "budget": 4,
+              "score": 125,
+              "catches": 0
+            },
+            {
+              "shot": 2,
+              "state": "playing",
+              "budget": 4,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 3,
+              "state": "playing",
+              "budget": 3,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 4,
+              "state": "playing",
+              "budget": 2,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 5,
+              "state": "playing",
+              "budget": 1,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 6,
+              "state": "lost",
+              "budget": 0,
+              "score": 325,
+              "catches": 1
+            }
+          ],
+          "closeInput": "mouse",
+          "retryInput": "Enter",
+          "naturalLoss": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.382399999999734,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "view": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 50,
+            "overflow": false
+          },
+          "gameAndStorageUnchangedOnView": true,
+          "retryReady": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "readyFocus": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 46,
+              "y": 788.203125,
+              "width": 145.5,
+              "height": 44
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 50,
+            "overflow": false
+          }
+        },
+        {
+          "cycle": 2,
+          "shots": [
+            {
+              "shot": 1,
+              "state": "playing",
+              "budget": 4,
+              "score": 125,
+              "catches": 0
+            },
+            {
+              "shot": 2,
+              "state": "playing",
+              "budget": 4,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 3,
+              "state": "playing",
+              "budget": 3,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 4,
+              "state": "playing",
+              "budget": 2,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 5,
+              "state": "playing",
+              "budget": 1,
+              "score": 325,
+              "catches": 1
+            },
+            {
+              "shot": 6,
+              "state": "lost",
+              "budget": 0,
+              "score": 325,
+              "catches": 1
+            }
+          ],
+          "closeInput": "Tab+Space",
+          "retryInput": "R",
+          "naturalLoss": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.786899999999807,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "view": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 50,
+            "overflow": false
+          },
+          "gameAndStorageUnchangedOnView": true,
+          "retryReady": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "readyFocus": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 46,
+              "y": 788.203125,
+              "width": 145.5,
+              "height": 44
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 50,
+            "overflow": false
+          }
+        }
+      ],
+      "states": [
+        {
+          "label": "cycle-1-view",
+          "game": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.382399999999734,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 50,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-1-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 46,
+              "y": 788.203125,
+              "width": 145.5,
+              "height": 44
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 50,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-2-view",
+          "game": {
+            "state": "lost",
+            "level": 1,
+            "phase": "aiming",
+            "aim": -68,
+            "shots": 0,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 4004,
+            "accumulator": 0,
+            "time": 24.786899999999807,
+            "ball": null,
+            "shot": null,
+            "angles": [
+              -68,
+              -68,
+              -68,
+              -68,
+              -68,
+              -68
+            ],
+            "powers": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": "shots",
+            "stats": {
+              "score": 325,
+              "shots": 6,
+              "targets": 2,
+              "normal": 1,
+              "pulses": 0,
+              "hits": 3,
+              "contacts": 23,
+              "catches": 1,
+              "maxChain": 2,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 1
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "view-retry",
+            "focusBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": false,
+            "retryBox": {
+              "x": 295.03125,
+              "y": 614.828125,
+              "width": 78.96875,
+              "height": 42
+            },
+            "phaseHidden": true,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": true,
+            "scrollY": 50,
+            "overflow": false
+          }
+        },
+        {
+          "label": "cycle-2-ready",
+          "game": {
+            "state": "ready",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": false,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "primary-action",
+            "focusBox": {
+              "x": 46,
+              "y": 788.203125,
+              "width": 145.5,
+              "height": 44
+            },
+            "focusInViewport": true,
+            "focusVisible": true,
+            "outlineWidth": "3px",
+            "outlineStyle": "solid",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "庭院已展开，可查看剩余目标。点击重新入庭或按 R 重试。",
+            "overlayHidden": false,
+            "scrollY": 50,
+            "overflow": false
+          }
+        },
+        {
+          "label": "retry-refresh",
+          "game": {
+            "state": "paused",
+            "level": 1,
+            "phase": "aiming",
+            "aim": 0,
+            "shots": 5,
+            "initialShots": 5,
+            "initialTargets": 5,
+            "pegs": [
+              {
+                "id": 1,
+                "x": 244,
+                "y": 210,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 2,
+                "x": 286,
+                "y": 285,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 3,
+                "x": 328,
+                "y": 360,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 4,
+                "x": 370,
+                "y": 435,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 5,
+                "x": 412,
+                "y": 510,
+                "r": 17,
+                "kind": "target",
+                "hit": false
+              },
+              {
+                "id": 100,
+                "x": 377,
+                "y": 210,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 101,
+                "x": 190,
+                "y": 370,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 102,
+                "x": 290,
+                "y": 515,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              },
+              {
+                "id": 103,
+                "x": 485,
+                "y": 400,
+                "r": 12,
+                "kind": "normal",
+                "hit": false
+              }
+            ],
+            "stones": [
+              {
+                "id": 1,
+                "x": 145,
+                "y": 510,
+                "r": 23
+              }
+            ],
+            "bucketPhase": 0.3,
+            "tick": 0,
+            "accumulator": 0,
+            "time": 0.03540000000000145,
+            "ball": null,
+            "shot": null,
+            "angles": [],
+            "powers": [],
+            "power": "refraction",
+            "uses": 2,
+            "armed": false,
+            "preShot": null,
+            "effects": [],
+            "reason": null,
+            "stats": {
+              "score": 0,
+              "shots": 0,
+              "targets": 0,
+              "normal": 0,
+              "pulses": 0,
+              "hits": 0,
+              "contacts": 0,
+              "catches": 0,
+              "maxChain": 0,
+              "nudges": 0,
+              "retrievals": 0,
+              "collisionCaps": 0,
+              "settlements": 0
+            },
+            "unlocked": 2,
+            "best": {},
+            "sound": false,
+            "storageAvailable": true,
+            "wasRestored": true,
+            "pressActive": false,
+            "discardedResume": false
+          },
+          "scene": {
+            "focus": "",
+            "focusBox": {
+              "x": 0,
+              "y": -50,
+              "width": 390,
+              "height": 2105.890625
+            },
+            "focusInViewport": false,
+            "focusVisible": false,
+            "outlineWidth": "3px",
+            "outlineStyle": "none",
+            "retryHidden": true,
+            "retryBox": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "phaseHidden": false,
+            "canvasBox": {
+              "x": 17,
+              "y": 181.078125,
+              "width": 356,
+              "height": 422.75
+            },
+            "canvasVisibleRatio": 1,
+            "status": "先选庭院与能力，再瞄准发射。命中的钉在本球回收后移除。",
+            "overlayHidden": false,
+            "scrollY": 50,
+            "overflow": false
+          }
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "httpErrors": [],
+      "requestFailures": [],
+      "passed": true
+    }
+  ]
+}
