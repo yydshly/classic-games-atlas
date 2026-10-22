@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {readFileSync}from'node:fs';
+import {LEVELS}from'../versions/v3/games/lantern/levels.mjs';
+import {LEVELS as OLD}from'../versions/v2/games/lantern/levels.mjs';
+import {createGame,start,update,requestTurn,snapshot,checkpoint,restore}from'../versions/v3/games/lantern/engine.mjs';
+import {fresh,valid,finish,JourneyStore,KEY}from'../versions/v3/games/lantern/journey.mjs';
+import {chooseAction}from'./lantern-route-policy.mjs';
+const checks=[];function test(name,fn){fn();checks.push(name);console.log('PASS '+name)}
+function play(g,options={}){start(g);for(let i=0;i<1800&&g.state==='playing';i++){const dir=chooseAction(g,options);if(dir!==null)requestTurn(g,dir);update(g,.1);}assert.equal(g.state,'won');return g}
+const memory=()=>{const values=new Map();return {values,getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v)}};
+let completed;
+test('original levels and entire mechanics prefix preserved',()=>{assert.deepEqual(LEVELS.slice(0,2),OLD);const a=readFileSync(new URL('../versions/v3/games/lantern/engine.mjs',import.meta.url),'utf8'),b=readFileSync(new URL('../versions/v2/games/lantern/engine.mjs',import.meta.url),'utf8');assert(a.startsWith(b))});
+test('three harbours settle sequentially only once',()=>{const p=fresh();for(let i=0;i<3;i++){p.last=i+1;p.phase='playing';const g=play(createGame(i));assert(finish(p,g));assert(!finish(p,g));assert(valid(p));assert.equal(p.results.length,i+1);assert.equal(restore(p.resume).state,'won')}assert.equal(p.phase,'complete');completed=p});
+test('third harbour also supports refuge detour under original rules',()=>{const g=play(createGame(2),{refuge:true});assert(g.lives>0);assert.equal(g.stats.collected,g.dots.length)});
+test('natural loss and current retry preserve earlier reports',()=>{const g=createGame(1);start(g);for(let i=0;i<900&&g.state==='playing';i++)update(g,.1);assert.equal(g.state,'lost');assert.equal(restore(checkpoint(g)).state,'lost');const p=structuredClone(completed);p.last=2;p.phase='playing';p.results=p.results.slice(0,1);p.resume=checkpoint(g);assert(valid(p));const before=structuredClone(p.results);p.resume=checkpoint(createGame(1));assert(valid(p));assert.deepEqual(p.results,before)});
+test('active refresh pauses and clears queued turn without losing position',()=>{const g=createGame(0);start(g);requestTurn(g,'R');update(g,.1);requestTurn(g,'D');const cp=checkpoint(g),after=restore(cp);assert.equal(after.state,'paused');assert.equal(after.player.queued,null);for(const k of['x','y','fromX','fromY','toX','toY','progress','segment'])assert.equal(after.player[k],g.player[k]);assert.equal(after.time,g.time);assert.deepEqual(after.dots,g.dots)});
+test('write failure keeps valid bytes; later write clears warning',()=>{const mem=memory(),s=new JourneyStore(mem);assert(s.save(fresh()));const bytes=mem.getItem(KEY),set=mem.setItem;mem.setItem=()=>{throw Error('QuotaExceededError')};assert.equal(s.save(completed),false);assert.equal(s.reason,'write');assert.equal(mem.getItem(KEY),bytes);mem.setItem=set;assert(s.save(completed));assert.equal(s.reason,'')});
+test('corrupt and old free-mode bytes are untouched',()=>{const mem=memory();mem.values.set(KEY,'broken bytes');mem.values.set('classic-atlas.lantern.v2','old sentinel');const s=new JourneyStore(mem);assert.equal(s.reason,'corrupt');assert.equal(s.save(fresh()),false);assert.equal(mem.getItem(KEY),'broken bytes');assert.equal(mem.getItem('classic-atlas.lantern.v2'),'old sentinel')});
+test('read failure remains playable, malformed and cross-stage records rejected',()=>{const s=new JourneyStore({getItem(){throw Error('SecurityError')}});assert.equal(s.reason,'read');assert(valid(s.data));const p=structuredClone(completed);p.resume.level=1;assert(!valid(p));const g=createGame(0);g.state='won';assert.equal(restore(snapshot(g)),null);g.state='playing';g.lives=99;assert.equal(restore(snapshot(g)),null)});
+test('new journey keeps best, resets only its current results',()=>{const p=fresh();p.best=completed.best;assert(valid(p));assert.equal(p.results.length,0);assert.equal(p.last,1);assert.equal(Object.keys(p.best).length,3)});
+console.log(JSON.stringify({passed:true,groups:checks.length,evidence:'Model and storage checks; not normal UI, human fun or hardware',checks}));

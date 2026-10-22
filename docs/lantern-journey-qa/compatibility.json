@@ -1,0 +1,49 @@
+{
+  "evidence": "bounded deterministic model checks, not ordinary UI",
+  "ok": true,
+  "checks": [
+    "Original first two level objects exact; original engine bytes preserved before appended restore; ordinary-input replay exact throughout",
+    "All dots reachable; all nonsafe enemy routes connected; home/waypoints/four powers valid; ready/active/paused/natural lost checkpoints",
+    "Third has real deadend safe pocket and shared wraparound tunnel with unaltered requested speeds/timers",
+    "Malformed map, continuous actor, queued input, enemies, dots, timers, stats and terminal goal states refused"
+  ],
+  "replays": [
+    {
+      "level": 1,
+      "time": 10.450000000000047,
+      "lives": 3,
+      "collected": 41,
+      "exact": true
+    },
+    {
+      "level": 2,
+      "time": 13.308333333333218,
+      "lives": 3,
+      "collected": 46,
+      "exact": true
+    }
+  ],
+  "losses": [
+    {
+      "level": 1,
+      "time": 26.42499999999914,
+      "deaths": 3,
+      "collected": 1,
+      "naturalIdle": true
+    },
+    {
+      "level": 2,
+      "time": 24.549999999999248,
+      "deaths": 3,
+      "collected": 1,
+      "naturalIdle": true
+    },
+    {
+      "level": 3,
+      "time": 17.108333333333004,
+      "deaths": 3,
+      "collected": 1,
+      "naturalIdle": true
+    }
+  ]
+}

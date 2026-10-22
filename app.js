@@ -207,9 +207,9 @@ async function optionalJson(path,label){
 try{
  const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
   readJson(`./data/games.json?v=${DATA_REVISION}`),
-  readJson('./data/comparisons.json?v=garden-journey-r1'),
+  readJson('./data/comparisons.json?v=lantern-journey-r1'),
   optionalJson('./data/reference-media.json','原作参考图'),
-  optionalJson('./data/value-comparisons.json?v=garden-journey-r1','玩法价值说明')
+  optionalJson('./data/value-comparisons.json?v=lantern-journey-r1','玩法价值说明')
  ]);
  data=catalogue;if(!Array.isArray(data?.games)||!data.games.length||!Array.isArray(data.experiments))throw new Error('Catalogue is empty');
  comparisons=validateRecommendations(data,comparisonData,candidateDefaults);referenceMedia=mediaData.items;valueComparisons=valueData.items;
