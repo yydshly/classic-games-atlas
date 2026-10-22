@@ -1,0 +1,19 @@
+{
+  "resolvedHarnessIssue": "Initial offline batch assertion assumed returned move-array order was engine selection order. The preview lists changed units in guard iteration order; corrected to verify actual chosen subset, travel costs and explicit single-unit reserve-first choice. Engine/helper did not change to fit test.",
+  "ordinaryUi": {
+    "baselineDeploys": 4,
+    "localDeploys": 6,
+    "naturalTicks": 107,
+    "freshIndependentProfiles": true,
+    "noFullEndingRepeated": true,
+    "keyboardFocusAcrossLiveRenders": true,
+    "refresh": "Paused checkpoint bytes exact; re-open defense tab after normal reload to compare existing amounts and previews."
+  },
+  "modelOnly": [
+    "Count2 mixed reserve/front request (UI still sends1)",
+    "Dead guard exclusion after natural legal100second engine sequence",
+    "Ready/paused/natural terminal boundaries",
+    "Repeated previews preserve checkpoint"
+  ],
+  "reproduction": "Scripts are exact internal browser harnesses. Run from repository root; mode-specific isolated native profile under .local/expedition-deploy-round must be fresh for verify_browser.py. Focus check follows its earned paused profile. They use ordinary inputs and natural waiting, never write localStorage or alter game clock. Playwright already installed; no software added."
+}

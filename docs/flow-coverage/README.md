@@ -18,6 +18,8 @@
 
 [堡垒基地受击反馈前后实图](../fortress-feedback-qa/)；一项可见改进，战斗规则不改。
 
+[远征调兵来源与空防代价](../expedition-deploy-feedback-qa/)：只读预览，原规则与指令不变。
+
 [星羽安心封顶实际增量](../feather-cap-feedback-qa/)：普通UI确认，显示修复与本轮收束。
 
 [星羽最近三拍与实际守息反馈](../feather-recent-feedback-qa/)；仅三条状态对照，原生profile短流程与模型边界分列。
@@ -74,7 +76,7 @@
 |28 云岛工坊 [v2 候选](../../versions/v2/games/island/)|已验有限流程|已验有限流程：同地图两桥路线各完成三章|已验有限流程：第三章需求失衡败→章首恢复城市|已验有限流程：跨章库存/拨款不重复，终局已验 [1](../../docs/island-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/island-storage-qa/) / [3](../../docs/island-pause-semantics-qa/) / [4](../../docs/return-navigation-qa/)|
 |29 星环落块 [v2 候选](../../versions/v2/games/orbit/)|已验有限流程|已验有限流程：自然180秒6106分/38行/80枚一次结算|已验有限流程：原井满失败重开；新局空盘/0分/0结算|已验有限流程：终局刷新回ready，最好保留；非终局面板持久 [1](../../docs/orbit-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/orbit-natural-end-qa/) / [3](../../docs/orbit-first-speed-qa/) / [4](../../docs/return-navigation-qa/)|
 |30 风庭对决 [v2 候选](../../versions/v2/games/duel/)|已验有限流程|已验有限流程：纠正输入驱动后正常连续八庭胜利，2–8各一次；旧首庭两次辅助驱动败局保留|已验有限流程：自然失败与重赛资源重置|已验有限流程：八庭自然胜利/逐庭干净衔接/终庭无第9/8份原生纪录与终庭重赛刷新通过；强反应策略非真人手感 [1](../../docs/duel-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/duel-first-win-qa/) / [3](../../docs/duel-later-qa/) / [4](../../docs/return-navigation-qa/)|
-|31 苔原远征 [v2 候选](../../versions/v2/games/expedition/)|已验有限流程|已验有限流程：三段正常UI120/140/160秒连续胜|已验有限流程：此前120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过|已验有限流程：已有三段胜与终态保存；新补首段失守/取消重开，后两段失败未验 [1](../../docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/expedition-v2-end-qa/) / [3](../../docs/expedition-loss-qa/) / [4](../../docs/expedition-pause-semantics-qa/) / [5](../../docs/return-navigation-qa/)|
+|31 苔原远征 [v2 候选](../../versions/v2/games/expedition/)|已验有限流程|已验有限流程：三段正常UI120/140/160秒连续胜|已验有限流程：此前120秒自然失守/含未完成建设招募，终态刷新和直接/确认重开复位通过|已验有限流程：已有三段胜与终态保存；新补首段失守/取消重开，后两段失败未验 [1](../../docs/expedition-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/expedition-v2-end-qa/) / [3](../../docs/expedition-loss-qa/) / [4](../../docs/expedition-pause-semantics-qa/) / [5](../../docs/return-navigation-qa/) / [6](../../docs/expedition-deploy-feedback-qa/)|
 |32 星羽同伴 [v3 候选](../../versions/v3/games/feather/)|已验有限流程|已验有限流程：v3新旅途至固定终挑战结局，两种策略|已验有限流程：失败回营可再准备，成长保留|已验有限流程：结局总结/自由出行/刷新及v2承接已验 [1](../../docs/feather-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/feather-journey-qa/) / [3](../../docs/return-navigation-qa/) / [4](../../docs/feather-feedback-qa/) / [5](../../docs/feather-objective-qa/) / [6](../../docs/feather-team-qa/) / [7](../../docs/feather-summary-qa/) / [8](../../docs/feather-recent-feedback-qa/) / [9](../../docs/feather-cap-feedback-qa/)|
 |33 回声走廊 [v2 候选](../../versions/v2/games/echo/)|已验有限流程|已验有限流程：既有首段成功；此前自由选第2段后正常下一段到第3段，均持钥撤离100光息/余2匣|已验有限流程：第二段败刷新/当前段重试不回首段|已验有限流程：后两段真实撤离、结算刷新、第三段无第四段、重试第三段/刷新/新行动通过；强暂停只读重放辅助，非连续无暂停三段 [1](../../docs/echo-v2-qa/PUBLIC_BROWSER_QA.md) / [2](../../docs/echo-continuity-qa/) / [3](../../docs/echo-later-qa/) / [4](../../docs/echo-player-ux-qa/) / [5](../../docs/return-navigation-qa/)|
 |34 街巷护送 [v2 候选](../../versions/v2/games/escort/)|已验有限流程|已验有限流程：首/次/末街段护送胜1643/2040/1445|已验有限流程：第二段修前自然车0败→重试；标记修后胜|已验有限流程：第三段需护车到100%，结局刷新/从晨街重玩 [1](../../docs/escort-v2/PUBLIC_BROWSER_QA.md) / [2](../../docs/escort-storage-qa/) / [3](../../docs/return-navigation-qa/)|

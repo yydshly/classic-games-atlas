@@ -1317,7 +1317,8 @@
         "docs/expedition-v2-end-qa/",
         "docs/expedition-loss-qa/",
         "docs/expedition-pause-semantics-qa/",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/expedition-deploy-feedback-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "此前已补首段失守恢复，不扩后两段失败",
@@ -3379,5 +3380,11 @@
     "evidence": "../feather-cap-feedback-qa/",
     "scope": "普通UI44→60与满值0，仅即时结果实际增量；双视口、无效操作和刷新；模型边界另列，星羽本轮收束",
     "nextCandidate": "../feather-cap-feedback-qa/next-candidate.json"
+  },
+  "expeditionDeployFeedbackReview": {
+    "baseline": "2e1b104031bcb9a2ba04a4ca7c27b68722689619",
+    "status": "confirmed_and_fixed",
+    "evidence": "../expedition-deploy-feedback-qa/",
+    "scope": "普通UI确认跨线来源/空防理解缺口，仅只读来源/时间/余量预览；双视口Enter/Tab与刷新；批量/死亡/终态仅离线模型"
   }
 }

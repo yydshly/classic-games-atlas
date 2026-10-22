@@ -66,6 +66,9 @@ if D.get('interruptionReview'):
 if D.get('fortressFeedbackReview'):
     doc += '<p><a href="' + escape(D['fortressFeedbackReview']['evidence'], quote=True) + '">堡垒v2：基地受击反馈前后对比</a>（一项可见改进，战斗规则不改）</p>'
 
+if D.get('expeditionDeployFeedbackReview'):
+    doc += '<p><a href="' + escape(D['expeditionDeployFeedbackReview']['evidence'], quote=True) + '">远征v2：调兵来源与空防代价</a>（只读预览，原规则与指令不变）</p>'
+
 if D.get('featherCapFeedbackReview'):
     doc += '<p><a href="' + escape(D['featherCapFeedbackReview']['evidence'], quote=True) + '">星羽v3：安心封顶按实际增量反馈</a>（普通UI确认，显示修复与本轮收束）</p>'
 
@@ -118,6 +121,9 @@ if D.get('interruptionReview'):
     md += '[三款中断恢复普通UI证据](' + D['interruptionReview']['evidence'] + ')；15次原生切换，无运行代码改动，非真机验收。\n\n'
 if D.get('fortressFeedbackReview'):
     md += '[堡垒基地受击反馈前后实图](' + D['fortressFeedbackReview']['evidence'] + ')；一项可见改进，战斗规则不改。\n\n'
+if D.get('expeditionDeployFeedbackReview'):
+    md += '[远征调兵来源与空防代价](' + D['expeditionDeployFeedbackReview']['evidence'] + ')：只读预览，原规则与指令不变。\n\n'
+
 if D.get('featherCapFeedbackReview'):
     md += '[星羽安心封顶实际增量](' + D['featherCapFeedbackReview']['evidence'] + ')：普通UI确认，显示修复与本轮收束。\n\n'
 
