@@ -12,8 +12,8 @@
     "40依据134e921提交的独立v2及来源说明补充；PES为明确系列参考，代际未定，未把未完成恢复项目计作可玩v1。"
   ],
   "summary": {
-    "published_games": 35,
-    "published_levels": 401,
+    "published_games": 36,
+    "published_levels": 404,
     "previews": 6,
     "preview_numbers": [
       "35",
@@ -24,7 +24,7 @@
       "40"
     ],
     "preview_levels": 48,
-    "confirmed_reference_bindings": 37,
+    "confirmed_reference_bindings": 38,
     "unconfirmed_reference_bindings": [
       "35",
       "36",
@@ -5000,6 +5000,70 @@
         "image": "./docs/windowlife-qa/ready-desktop.png",
         "label": "1440×1100真实浏览器首日准备画面；原创Canvas房间，不是原作截图。"
       }
+    },
+    {
+      "number": "42",
+      "slug": "glimmer",
+      "title": "砾光行者",
+      "english": "GLIMMERSTRIDE",
+      "status": "published",
+      "status_label": "三关首版已发布；未完成真人品质验收",
+      "play_url": "./preview/glimmer/",
+      "original_title": "暗黑破坏神Ⅱ",
+      "original_english": "Diablo II",
+      "reference_id": "diablo-2",
+      "reference_binding": "明确参考原72条清单的暗黑破坏神Ⅱ战斗/掉落/构筑机制方向",
+      "reference_version": "机制方向参考，未锁定原版或重制版的逐项复刻标准",
+      "version_note": "官方重制版链接用于识别参考系列；本轮主页抓取403，未新增原作版本细节或流行数据主张。",
+      "original_core": [
+        "选择职业、探索地下城，实时击败怪物，寻找装备并组合技能成长。"
+      ],
+      "implemented": [
+        "三张原创二维矿遗庭；即时移动、朝近敌挥击、晶环、闪步、治疗药及三类守卫预警。",
+        "两装备槽：旧短棍升级为快刃或重锤；侧路护符在生命/机动与晶能/技能间取舍，属性实际影响规则。",
+        "第三庭精英两阶段、砾光印记和石门终点；关间恢复生命/晶能并保留装备，当前段重试保留前段回顾。",
+        "独立存档；选择装备停止时间，活动刷新先暂停，三段结局可回顾。"
+      ],
+      "gaps": [
+        "仅三庭短篇，无完整职业树、装备词缀、随机刷装、交易经济或在线联机。",
+        "仅方向键/触控方向按钮移动，不追求逐项还原原作操作；模型熟练路线很短，不证明真人节奏或成熟平衡。"
+      ],
+      "relation": "原创三关二维即时战斗与装备选择小品，参考暗黑破坏神Ⅱ的战斗/掉落/构筑方向；人物、地图和美术原创，非官方复刻。",
+      "levels": 3,
+      "evidence": [
+        {
+          "path": "preview/glimmer/README.md",
+          "url": "./preview/glimmer/README.md",
+          "claim": "本作原创范围、规则、装备和独立存档"
+        },
+        {
+          "path": "docs/glimmer-qa/",
+          "url": "./docs/glimmer-qa/",
+          "claim": "普通UI三关、自然失败重试、触控模拟、模型与独立故障夹具"
+        }
+      ],
+      "validation_boundary": "普通UI只读策略辅助，快刃/苔纹护符三关连续成功，第二关自然失利重试、选择/活动/终态刷新及390CSS原生触控多指短验通过。两套装备路线为独立纯模型证据；不是真人手感、难度、审美或真机验收，熟练策略可很快完成。无音频。",
+      "original_sources": [
+        {
+          "label": "Blizzard · 暗黑破坏神II狱火重生",
+          "url": "https://diablo2.blizzard.com/en-us/",
+          "kind": "official",
+          "relation": "重制版",
+          "checkedAt": "2026-10-16",
+          "status": "页面可读",
+          "note": "已检查 HTTP、标题与正文可访问；不代表逐条事实均已核验。",
+          "key": "diablo",
+          "latestAccessNote": "2026-10-22工具抓取官方主页返回HTTP403，未把历史核读状态升级为本轮独立资料核验。"
+        }
+      ],
+      "version": "v1",
+      "has_frozen_version": false,
+      "current_status_label": "v1 三庭拾遗 · 流程已验证，真人品质待验",
+      "release_intro": "新增独立v1三庭即时战斗与装备选择小品，无此前冻结版；有限浏览器流程已验，真人品质仍待验收。",
+      "current_screenshot": {
+        "image": "./docs/glimmer-qa/ready-desktop.png",
+        "label": "1440×1100真实浏览器第一庭整备视口，已滚动至战场；不是原作截图或完整首屏。"
+      }
     }
   ],
   "supplemental_records": [
@@ -5143,6 +5207,11 @@
       "number": "41",
       "scope": "新增栖窗日常三关原创首版；旧40项与历史统计记录保留，目录现41，活动37、停止/保留4。",
       "evidence": "./docs/windowlife-qa/"
+    },
+    {
+      "number": "42",
+      "scope": "新增原创三庭砾光行者；目录42、活动38、停止/保留4，旧41记录与所有旧版保留。",
+      "evidence": "./docs/glimmer-qa/"
     }
   ]
 }

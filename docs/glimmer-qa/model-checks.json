@@ -1,0 +1,13 @@
+{
+  "evidence": "bounded model checks; explicitly marked geometry fixture is not ordinary UI evidence",
+  "ok": true,
+  "groups": [
+    "choice stops time; valid listed equipment only; no duplicate pickup; preserving original gear is a valid decision",
+    "free movement blocked by wall; movement alone does not attack; cooldown and energy freeze paused; active checkpoint resumes exactly",
+    "enemy warns before first damage; one finite heal gives actual capped recovery",
+    "fixture: pulse blocked by wall; overkill summary records actual HP removed",
+    "natural idle loss without terminal injection; lost checkpoint retained",
+    "malformed checkpoint rejects impossible health, duplicate enemies, gear/map/events/offers/walls/exit corruption",
+    "weapon cadence/damage and survival/mobility versus skill-energy modifiers differ in actual derived stats"
+  ]
+}

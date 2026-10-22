@@ -1,0 +1,370 @@
+{
+  "method": "Normal native keyboard/buttons. A read-only full-visible-state policy suggests input at roughly100ms; wall-clock game time runs normally. No game/time/health/loot/win injection. Touch via Chromium CDP, not hardware.",
+  "base": "http://127.0.0.1:58258/",
+  "stages": [],
+  "errors": [],
+  "httpErrors": [],
+  "choiceRefreshStoppedExact": true,
+  "failure": "KeyError('attack')",
+  "last": {
+    "version": 1,
+    "level": 1,
+    "levelId": "shale-approach",
+    "title": "第一段 · 页岩前庭",
+    "brief": "打开近处的遗匣选择武器。观察敌人的蓄势红区，用近战、脉冲与闪避清路，再到亮起的石门离开。",
+    "state": "playing",
+    "time": 4.066666666666666,
+    "ticks": 122,
+    "accumulator": 0.016533333333333726,
+    "nextId": 12,
+    "grid": {
+      "width": 14,
+      "height": 10,
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 9
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 9
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 9
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 9
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 9
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 9
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 9
+        },
+        {
+          "x": 8,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 9
+        },
+        {
+          "x": 9,
+          "y": 0
+        },
+        {
+          "x": 9,
+          "y": 9
+        },
+        {
+          "x": 10,
+          "y": 0
+        },
+        {
+          "x": 10,
+          "y": 9
+        },
+        {
+          "x": 11,
+          "y": 0
+        },
+        {
+          "x": 11,
+          "y": 9
+        },
+        {
+          "x": 12,
+          "y": 0
+        },
+        {
+          "x": 12,
+          "y": 9
+        },
+        {
+          "x": 13,
+          "y": 0
+        },
+        {
+          "x": 13,
+          "y": 9
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 13,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 13,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 13,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 13,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 13,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 13,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 13,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 8
+        },
+        {
+          "x": 13,
+          "y": 8
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 8,
+          "y": 6
+        }
+      ]
+    },
+    "entryGear": {
+      "weapon": "worn",
+      "charm": null
+    },
+    "player": {
+      "x": 10.61622366364084,
+      "y": 6.826274169979701,
+      "hp": 95,
+      "maxHp": 95,
+      "energy": 63.833333333333556,
+      "maxEnergy": 80,
+      "gear": {
+        "weapon": "blade",
+        "charm": null
+      },
+      "facing": {
+        "x": 0,
+        "y": -1
+      },
+      "attackCooldown": 0.25333333333333335,
+      "skillCooldown": 0.8666666666666707,
+      "dodgeCooldown": 0.8999999999999984,
+      "invuln": 0,
+      "dodgeTime": 0
+    },
+    "enemies": [
+      {
+        "id": "moss-a",
+        "type": "crawler",
+        "x": 6.82664122465087,
+        "y": 7.301128435965631,
+        "optional": false,
+        "name": "苔甲兽",
+        "hp": 0,
+        "maxHp": 25,
+        "state": "dead",
+        "windup": 0,
+        "windupMax": 0,
+        "recovery": 0,
+        "attack": null,
+        "alive": false,
+        "phase": 1,
+        "attackCount": 0
+      },
+      {
+        "id": "moss-b",
+        "type": "skirmisher",
+        "x": 10.5,
+        "y": 5.793333333333344,
+        "optional": false,
+        "name": "隙行兽",
+        "hp": 0,
+        "maxHp": 22,
+        "state": "dead",
+        "windup": 0,
+        "windupMax": 0.8,
+        "recovery": 0.8666666666666667,
+        "attack": null,
+        "alive": false,
+        "phase": 1,
+        "attackCount": 1
+      }
+    ],
+    "projectiles": [],
+    "effects": [
+      {
+        "id": "f10",
+        "kind": "slash",
+        "x": 10.61622366364084,
+        "y": 7.0262741699797004,
+        "radius": 1.25,
+        "dx": -0.09384935314948298,
+        "dy": -0.9955864095664542,
+        "ttl": 0.06000000000000002,
+        "duration": 0.16
+      },
+      {
+        "id": "f11",
+        "kind": "hit",
+        "x": 10.5,
+        "y": 5.793333333333344,
+        "radius": 0.4,
+        "dx": 0,
+        "dy": 0,
+        "ttl": 0.15000000000000002,
+        "duration": 0.25
+      }
+    ],
+    "chests": [
+      {
+        "id": "first-cache",
+        "x": 3.5,
+        "y": 7.5,
+        "offers": [
+          "blade",
+          "hammer"
+        ],
+        "lockedBy": [],
+        "required": true,
+        "opened": true,
+        "resolved": true,
+        "chosen": "blade"
+      }
+    ],
+    "exit": {
+      "x": 12.5,
+      "y": 1.5,
+      "open": true
+    },
+    "relic": false,
+    "heals": 1,
+    "kills": 2,
+    "stats": {
+      "damageDealt": 47,
+      "damageTaken": 0,
+      "attacks": 4,
+      "skills": 1,
+      "dodges": 1,
+      "heals": 0,
+      "loot": 1
+    },
+    "events": [
+      {
+        "time": 0,
+        "text": "已装备逐光短刃。"
+      },
+      {
+        "time": 1.1333333333333333,
+        "text": "苔甲兽已被击退。"
+      },
+      {
+        "time": 4,
+        "text": "隙行兽已被击退。"
+      }
+    ],
+    "choice": null,
+    "goals": [
+      {
+        "id": "clear",
+        "label": "清理通路敌人（剩余0）",
+        "done": true
+      },
+      {
+        "id": "loot",
+        "label": "查看遗匣并决定装备",
+        "done": true
+      },
+      {
+        "id": "exit",
+        "label": "前往亮起的石门，完成本段",
+        "done": false
+      }
+    ],
+    "reason": "已装备逐光短刃。",
+    "nearby": null
+  }
+}

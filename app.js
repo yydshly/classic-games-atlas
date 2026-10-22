@@ -1,5 +1,5 @@
 import {readJson, validateRecommendations} from './catalogue-load.mjs?v=first-load-20261021';
-import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=windowlife-return-r1';
+import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=glimmer-return-r1';
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const normalize = (text) => String(text ?? '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -7,7 +7,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'windowlife-41-r1';
+const DATA_REVISION = 'glimmer-42-r1';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let unavailable = new Set();
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;
@@ -50,7 +50,7 @@ function journeyMarkup(item) {
   return '<section class="comparison-callout" aria-label="星羽同伴v3短冒险"><p class="eyebrow">本轮独立 v3 · 浅滩冒险</p><h3>让相遇与成长，有一段归途</h3>' + list(j.changes) + '<p>' + escapeHtml(j.compatibility) + '</p><p>' + escapeHtml(j.validation_boundary) + '</p>' + (shot ? '<figure class="current-preview-media"><a href="' + escapeHtml(safeUrl(shot.url)) + '"><img src="' + escapeHtml(safeUrl(shot.url)) + '" alt="星羽同伴v3真实浏览器终挑战截图"></a><figcaption>' + escapeHtml(shot.label) + '</figcaption></figure>' : '') + '<p><a href="' + escapeHtml(safeUrl(j.details_url)) + '">范围、结局与兼容说明</a> · <a href="./docs/feather-journey-qa/">实际截图与验证记录</a></p>' + journeyLink(item) + '</section>';
 }
 function comparisonIntro(item) {
-  if(item.has_frozen_version===false)return '新增独立 v1 三日原创小品；不存在此前的冻结版。有限浏览器流程通过，真人品质仍待验收。';
+  if(item.has_frozen_version===false)return item.release_intro||'新增独立 v1 原创小品；不存在此前的冻结版。有限浏览器流程通过，真人品质仍待验收。';
   if (hasJourney(item)) return '当前为独立 v3 短冒险候选；下方分别保留 v1/v2 历史证据。有限浏览器验证不代表玩家体验、声音或审美验收。';
   const start = item.legacy_playable === false ? '首页入口为 v2 可玩原型；旧版仅部分源码归档，非完整可玩v1。' : hasCandidate(item) ? '首页入口为 v2 原创玩法候选；保留的 v1 与历史证据另列。' : '首页入口为 v1 原创玩法原型。';
   const end = item.legacy_playable === false ? '本轮实现与有限验证边界如下，未完成整体品质验收。' : hasCandidate(item) ? (item.next_version.browser_screenshot ? '下方分别标注 v1 历史证据与 v2 真实网页截图；有限桌面实玩不代表品质验收。' : item.next_version.renderer_image ? 'v1历史证据与v2离屏图分别标明；v2有限宽屏实玩完成，未完成品质验收。' : '下方截图和实测记录仍对应 v1；v2 变化另列。') : '此页不是 v2 发布说明。';
@@ -207,9 +207,9 @@ async function optionalJson(path,label){
 try{
  const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
   readJson(`./data/games.json?v=${DATA_REVISION}`),
-  readJson('./data/comparisons.json?v=windowlife-41-r1'),
+  readJson('./data/comparisons.json?v=glimmer-42-r1'),
   optionalJson('./data/reference-media.json','原作参考图'),
-  optionalJson('./data/value-comparisons.json?v=windowlife-41-r1','玩法价值说明')
+  optionalJson('./data/value-comparisons.json?v=glimmer-42-r1','玩法价值说明')
  ]);
  data=catalogue;if(!Array.isArray(data?.games)||!data.games.length||!Array.isArray(data.experiments))throw new Error('Catalogue is empty');
  comparisons=validateRecommendations(data,comparisonData,candidateDefaults);referenceMedia=mediaData.items;valueComparisons=valueData.items;

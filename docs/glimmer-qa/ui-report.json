@@ -1,0 +1,126 @@
+{
+  "method": "Normal native keyboard/buttons. A read-only full-visible-state policy suggests input at roughly100ms; wall-clock game time runs normally. No game/time/health/loot/win injection. Touch via Chromium CDP, not hardware.",
+  "base": "http://127.0.0.1:58258/",
+  "stages": [
+    {
+      "stage": 1,
+      "time": 6.133333333333334,
+      "hp": 95,
+      "gear": {
+        "weapon": "blade",
+        "charm": null
+      },
+      "stats": {
+        "damageDealt": 47,
+        "damageTaken": 0,
+        "attacks": 4,
+        "skills": 1,
+        "dodges": 1,
+        "heals": 0,
+        "loot": 1
+      },
+      "kills": 2,
+      "sideChest": [
+        {
+          "id": "first-cache",
+          "x": 3.5,
+          "y": 7.5,
+          "offers": [
+            "blade",
+            "hammer"
+          ],
+          "lockedBy": [],
+          "required": true,
+          "opened": true,
+          "resolved": true,
+          "chosen": "blade"
+        }
+      ],
+      "visible": "A CLEAR PATH AHEAD\n\n这一庭，已走过。\n\n已走出本段，整备后可继续下一段。 用时6.1秒，击退2名守卫，剩余生命95。\n\n第一段 · 页岩前庭\n6.1秒 · 逐光短刃\n尚无护符 · 承受0点伤害\n走向下一庭 →\n重走本段\n返回游戏大厅"
+    },
+    {
+      "stage": 2,
+      "time": 11.166666666666666,
+      "hp": 102,
+      "gear": {
+        "weapon": "blade",
+        "charm": "ward"
+      },
+      "stats": {
+        "damageDealt": 116,
+        "damageTaken": 18,
+        "attacks": 9,
+        "skills": 3,
+        "dodges": 3,
+        "heals": 0,
+        "loot": 1
+      },
+      "kills": 5,
+      "sideChest": [
+        {
+          "id": "side-cache",
+          "x": 1.5,
+          "y": 1.5,
+          "offers": [
+            "ward",
+            "spark"
+          ],
+          "lockedBy": [
+            "side-a",
+            "side-b"
+          ],
+          "required": false,
+          "opened": true,
+          "resolved": true,
+          "chosen": "ward"
+        }
+      ],
+      "visible": "A CLEAR PATH AHEAD\n\n这一庭，已走过。\n\n已走出本段，整备后可继续下一段。 用时11.2秒，击退5名守卫，剩余生命102。\n\n第一段 · 页岩前庭\n6.1秒 · 逐光短刃\n尚无护符 · 承受0点伤害\n第二段 · 岔脉回廊\n11.2秒 · 逐光短刃\n苔纹护符 · 承受18点伤害\n走向下一庭 →\n重走本段\n返回游戏大厅"
+    },
+    {
+      "stage": 3,
+      "time": 11.4,
+      "hp": 120,
+      "gear": {
+        "weapon": "blade",
+        "charm": "ward"
+      },
+      "stats": {
+        "damageDealt": 192,
+        "damageTaken": 0,
+        "attacks": 17,
+        "skills": 3,
+        "dodges": 3,
+        "heals": 0,
+        "loot": 0
+      },
+      "kills": 3,
+      "sideChest": [],
+      "visible": "THE RELIC RETURNS\n\n把砾光，带回归途。\n\n砾光印记已带出石庭，三段旅程抵达终点。 用时11.4秒，击退3名守卫，剩余生命120。\n\n第一段 · 页岩前庭\n6.1秒 · 逐光短刃\n尚无护符 · 承受0点伤害\n第二段 · 岔脉回廊\n11.2秒 · 逐光短刃\n苔纹护符 · 承受18点伤害\n第三段 · 灯核石庭\n11.4秒 · 逐光短刃\n苔纹护符 · 承受0点伤害\n重走本段\n返回游戏大厅"
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "choiceRefreshStoppedExact": true,
+  "terminalRefreshExact": true,
+  "naturalFailure": {
+    "time": 24.766666666666666,
+    "reason": "生命耗尽。本段可重试，前段成果和入场装备保留。",
+    "priorResultsPreserved": true
+  },
+  "retryKeepsEntryGearAndPriorResults": true,
+  "activeRefreshExactInputClear": true,
+  "actualBossPhase2Seen": true,
+  "threeStageReviewNoFourth": true,
+  "replayKeepsResults": true,
+  "touchSimulation": {
+    "twoContacts": true,
+    "partialRelease": true,
+    "outsideRelease": true,
+    "cancel": true,
+    "scrollStable": true,
+    "hardware": false,
+    "trustedTouchEvents": 4
+  },
+  "passed": true
+}

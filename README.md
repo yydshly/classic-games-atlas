@@ -4,9 +4,11 @@
 
 **在线图鉴：[https://yydshly.github.io/classic-games-atlas/](https://yydshly.github.io/classic-games-atlas/)**
 
-**当前目录41项：37款活动作品、3款停止项、1款保留项。新增[栖窗日常](preview/windowlife/)三关原创生活安排，参考《模拟人生》系列机制方向，非官方复刻或开放沙盒。[完整三日与验证边界](docs/windowlife-qa/)。旧40项及全部版本保留；72条是经典参考目录，不是承诺制作总数。**
+**新增[砾光行者](preview/glimmer/)三庭原创即时战斗与装备选择**：短棍→快刃/重锤，侧路护符取舍，精英两阶段与印记归途。[普通UI与模型分项证据](docs/glimmer-qa/)。这是有终点的很短初版，未完成真人手感与趣味验收；旧41项与所有版本保留。
 
-**[从三款开始试玩](https://yydshly.github.io/classic-games-atlas/#selected-play)**：堡垒、溪谷、邮差当前v2候选，真实画面、操作与首个目标；[本轮交付与未验边界](docs/featured-play-qa/)。精选不代表精品认证，41款目录继续保留。 [堡垒键盘返回修复](docs/fortress-native-key-qa/)已补齐原有Enter冲突；真人整体品质仍待验收。 [三款触控事件模拟与堡垒多指释放修复](docs/featured-touch-qa/)已补证，仍非真机验收。
+**当前目录42项：38款活动作品、3款停止项、1款保留项。新增[栖窗日常](preview/windowlife/)三关原创生活安排，参考《模拟人生》系列机制方向，非官方复刻或开放沙盒。[完整三日与验证边界](docs/windowlife-qa/)。旧40项及全部版本保留；72条是经典参考目录，不是承诺制作总数。**
+
+**[从三款开始试玩](https://yydshly.github.io/classic-games-atlas/#selected-play)**：堡垒、溪谷、邮差当前v2候选，真实画面、操作与首个目标；[本轮交付与未验边界](docs/featured-play-qa/)。精选不代表精品认证，42款目录继续保留。 [堡垒键盘返回修复](docs/fortress-native-key-qa/)已补齐原有Enter冲突；真人整体品质仍待验收。 [三款触控事件模拟与堡垒多指释放修复](docs/featured-touch-qa/)已补证，仍非真机验收。
 
 
 **新增可选体验：[堡垒 v3 · 两段短战役](versions/v3/games/fortress/)**。复用原两图，首图守住后整备接防；失利只重试当前图，完成后保留两段总结。单人/同机双人出发前选择；触控只操作1P。阶段记录与v1/v2隔离，活动中刷新回当前图整备；原v2自由选图仍保留。单人策略辅助普通UI两图与一次自然失利重试、双人短输入、触控仿真和存储故障分别记录于[交付证据](docs/fortress-campaign-qa/)，不等于真人合作或真机体验验收，不保证五分钟通关。

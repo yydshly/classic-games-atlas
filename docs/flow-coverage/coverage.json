@@ -1843,6 +1843,36 @@
       "laterStageCoverage": {
         "allThreeDays": "verified"
       }
+    },
+    {
+      "number": "42",
+      "slug": "glimmer",
+      "title": "砾光行者",
+      "recommendedVersion": "v1",
+      "playUrl": "preview/glimmer/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "普通UI快刃/苔纹护符三庭连续成功，第三庭精英第二阶段及印记出口实见",
+      "observedRetry": "第二庭自然24.7667秒失利、刷新保留失利，重试恢复入场装备与前庭成果",
+      "endingBoundary": "普通UI只读策略辅助，快刃/苔纹护符三关连续成功，第二关自然失利重试、选择/活动/终态刷新及390CSS原生触控多指短验通过。两套装备路线为独立纯模型证据；不是真人手感、难度、审美或真机验收，熟练策略可很快完成。无音频。",
+      "evidence": [
+        "docs/glimmer-qa/"
+      ],
+      "browserScope": "桌面与390CSS Chromium普通输入，可信touch事件为浏览器模拟",
+      "nextToolWork": "不追加泛化QA；真人自由战斗手感与难度仍待反馈",
+      "humanRequired": [
+        "自由战斗与装备选择趣味",
+        "真手机操作/性能及OS后台行为",
+        "审美体验"
+      ],
+      "laterStageCoverage": {
+        "allThreeStages": "verified"
+      }
     }
   ],
   "evidenceThrough": "730541d8836a2a73f40c9af3776577834bdb4206",
@@ -3535,5 +3565,10 @@
     "baseline": "d564c3551631520199cb6326a5b7b26004924123",
     "scope": "新增原创三日小品；41目录、37活动、3停止、1保留；旧40覆盖记录不改",
     "evidence": "docs/windowlife-qa/"
+  },
+  "glimmerReview": {
+    "baseline": "8d16aca7710713f986cac0fd6f2300eb83a11e60",
+    "scope": "新增原创即时战斗/拾取构筑三庭；42目录，38活动、4停止/保留；旧41记录不改",
+    "evidence": "docs/glimmer-qa/"
   }
 }
