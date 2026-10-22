@@ -741,7 +741,8 @@
         "docs/post-result-qa/",
         "docs/featured-play-qa/",
         "docs/featured-touch-qa/",
-        "docs/post-route-qa/"
+        "docs/post-route-qa/",
+        "docs/post-cup-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "三场第一名独立目标已补齐；只保留真人操控/真机/声音审美与经典体验边界",
@@ -792,6 +793,18 @@
           "水闸折线"
         ],
         "evidence": "docs/post-route-qa/",
+        "acceptance": "candidate_unaccepted"
+      },
+      "optionalCup": {
+        "playUrl": "versions/v3/games/post/cup/",
+        "stations": 2,
+        "normalUiCompleted": [
+          1,
+          2
+        ],
+        "points": 3,
+        "overallRank": 2,
+        "evidence": "docs/post-cup-qa/",
         "acceptance": "candidate_unaccepted"
       }
     },
@@ -3481,5 +3494,11 @@
     "status": "optional_v3_local_verified",
     "evidence": "../crate-pack-qa/",
     "scope": "原三题/引擎/渲染器保留，新4–6题普通UI22/44/44步，连续撤销/刷新/六仓回顾/旧档承接；作者解法非盲解，触控仅模拟"
+  },
+  "postCupReview": {
+    "baseline": "6fc8fed11f723ce9f3fefdd71cae7e51bcf5ef93",
+    "status": "optional_cup_local_verified",
+    "evidence": "../post-cup-qa/",
+    "scope": "两站正常UI一次：37.69秒第3名1分、59.57秒第2名2分，总3分第2；活动/终态刷新、站间退出、整届重开、原自由赛独立；平分/DNF模型另列"
   }
 }

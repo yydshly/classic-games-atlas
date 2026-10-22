@@ -1,5 +1,5 @@
 import {readJson, validateRecommendations} from './catalogue-load.mjs?v=first-load-20261021';
-import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=journey-20261021';
+import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=post-cup-return-r1';
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const normalize = (text) => String(text ?? '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -206,7 +206,7 @@ async function optionalJson(path,label){
 try{
  const [catalogue,comparisonData,mediaData,valueData]=await Promise.all([
   readJson(`./data/games.json?v=${DATA_REVISION}`),
-  readJson('./data/comparisons.json?v=crate-pack-r1'),
+  readJson('./data/comparisons.json?v=post-cup-r1'),
   optionalJson('./data/reference-media.json','原作参考图'),
   optionalJson('./data/value-comparisons.json','玩法价值说明')
  ]);

@@ -72,6 +72,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     doc += '<p><a href="' + escape(D['fortressCampaignReview']['evidence'], quote=True) + '">堡垒v3：可选两段短战役</a>（阶段独立保存，v2仍默认；策略辅助、双人短输入与触控仿真分列）</p>'
 
+if D.get('postCupReview'):
+    doc += '<p><a href="../post-cup-qa/">邮差：独立双站杯赛</a>（两站实际输入，3分第2；平分与未完赛模型另列，非真人验收）</p>'
 if D.get('cratePackReview'):
     doc += '<p><a href="../crate-pack-qa/">仓格v3：六题进阶包与完成回顾</a>（新三题普通UI、原三题保留，作者路线非盲解）</p>'
 if D.get('postRouteReview'):
@@ -149,6 +151,8 @@ if D.get('fortressNativeKeyReview'):
 if D.get('fortressCampaignReview'):
     md += '[堡垒可选两段短战役](' + D['fortressCampaignReview']['evidence'] + ')；两图真实UI主链，独立阶段存档，v2仍默认，真人合作与真机未验。\n\n'
 
+if D.get('postCupReview'):
+    md += '[邮差独立双站杯赛](../post-cup-qa/)；两站辅助输入完成，总分3第2，旧自由赛保留。\n\n'
 if D.get('cratePackReview'):
     md += '[仓格六题进阶包](../crate-pack-qa/)；新增三题实际输入完成，旧档与撤销保留，真人难度仍待验。\n\n'
 if D.get('postRouteReview'):

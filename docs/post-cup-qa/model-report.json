@@ -1,0 +1,111 @@
+{
+  "method": "Offline production-physics model and explicitly named tie/storage fixtures; NOT ordinary UI",
+  "checks": [
+    "First station actual production physics finish, sealed once; next cannot double advance",
+    "Second station active exact checkpoint, paused restore, old station retained",
+    "Second legal finish gives final totals; terminal restore/repeated scoring cannot add points",
+    "Natural offline timeout awards player zero and still permits second station",
+    "Explicit valid-result tie fixture: shared rank and no hidden time/ID tiebreak",
+    "Corrupt/mismatched route protected; storage key isolated and write failure recoverable"
+  ],
+  "races": [
+    {
+      "station": 1,
+      "time": 37.674999999998505,
+      "rank": 3,
+      "gates": 16,
+      "rows": [
+        {
+          "id": "rival-2",
+          "rank": 1,
+          "finishTime": 37.383333333331855,
+          "gates": 16
+        },
+        {
+          "id": "rival-1",
+          "rank": 2,
+          "finishTime": 37.43333333333185,
+          "gates": 16
+        },
+        {
+          "id": "player",
+          "rank": 3,
+          "finishTime": 37.674999999998505,
+          "gates": 16
+        }
+      ],
+      "totals": [
+        {
+          "id": "rival-2",
+          "name": "赤狐",
+          "points": 3,
+          "rank": 1,
+          "tied": false
+        },
+        {
+          "id": "rival-1",
+          "name": "青鸟",
+          "points": 2,
+          "rank": 2,
+          "tied": false
+        },
+        {
+          "id": "player",
+          "name": "你",
+          "points": 1,
+          "rank": 3,
+          "tied": false
+        }
+      ]
+    },
+    {
+      "station": 2,
+      "time": 58.266666666664,
+      "rank": 3,
+      "gates": 24,
+      "rows": [
+        {
+          "id": "rival-2",
+          "rank": 1,
+          "finishTime": 56.299999999997446,
+          "gates": 24
+        },
+        {
+          "id": "rival-1",
+          "rank": 2,
+          "finishTime": 57.76666666666403,
+          "gates": 24
+        },
+        {
+          "id": "player",
+          "rank": 3,
+          "finishTime": 58.266666666664,
+          "gates": 24
+        }
+      ],
+      "totals": [
+        {
+          "id": "rival-2",
+          "name": "赤狐",
+          "points": 6,
+          "rank": 1,
+          "tied": false
+        },
+        {
+          "id": "rival-1",
+          "name": "青鸟",
+          "points": 4,
+          "rank": 2,
+          "tied": false
+        },
+        {
+          "id": "player",
+          "name": "你",
+          "points": 2,
+          "rank": 3,
+          "tied": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "baseline": "6fc8fed11f723ce9f3fefdd71cae7e51bcf5ef93",
+  "status": "local_verified",
+  "method": "Ordinary native WASD using read-only copied telemetry and existing digital steering policy around50ms. No game/save/time/result injection. Fixed stage0 both stations. Touch is CDP native simulation at390CSS, not hardware.",
+  "stations": [
+    {
+      "station": 1,
+      "result": {
+        "routeId": "post-v2-morning-block-v1",
+        "time": 37.69166666666517,
+        "reason": "完成两圈",
+        "rows": [
+          {
+            "id": "rival-2",
+            "rank": 1,
+            "finishTime": 37.39999999999852,
+            "gates": 16
+          },
+          {
+            "id": "rival-1",
+            "rank": 2,
+            "finishTime": 37.45833333333185,
+            "gates": 16
+          },
+          {
+            "id": "player",
+            "rank": 3,
+            "finishTime": 37.69166666666517,
+            "gates": 16
+          }
+        ]
+      },
+      "totals": [
+        {
+          "id": "rival-2",
+          "name": "赤狐",
+          "points": 3,
+          "rank": 1,
+          "tied": false
+        },
+        {
+          "id": "rival-1",
+          "name": "青鸟",
+          "points": 2,
+          "rank": 2,
+          "tied": false
+        },
+        {
+          "id": "player",
+          "name": "你",
+          "points": 1,
+          "rank": 3,
+          "tied": false
+        }
+      ],
+      "samples": [
+        {
+          "time": 0,
+          "gates": 0,
+          "resets": 0
+        },
+        {
+          "time": 10.025000000000071,
+          "gates": 3,
+          "resets": 0
+        },
+        {
+          "time": 20.058333333332836,
+          "gates": 8,
+          "resets": 0
+        },
+        {
+          "time": 30.0916666666656,
+          "gates": 12,
+          "resets": 0
+        }
+      ]
+    },
+    {
+      "station": 2,
+      "result": {
+        "routeId": "post-v2-sluice-switchbacks-v1",
+        "time": 59.57499999999726,
+        "reason": "完成两圈",
+        "rows": [
+          {
+            "id": "rival-2",
+            "rank": 1,
+            "finishTime": 59.33333333333061,
+            "gates": 24
+          },
+          {
+            "id": "player",
+            "rank": 2,
+            "finishTime": 59.57499999999726,
+            "gates": 24
+          },
+          {
+            "id": "rival-1",
+            "rank": 3,
+            "finishTime": null,
+            "gates": 19
+          }
+        ]
+      },
+      "totals": [
+        {
+          "id": "rival-2",
+          "name": "赤狐",
+          "points": 6,
+          "rank": 1,
+          "tied": false
+        },
+        {
+          "id": "player",
+          "name": "你",
+          "points": 3,
+          "rank": 2,
+          "tied": false
+        },
+        {
+          "id": "rival-1",
+          "name": "青鸟",
+          "points": 2,
+          "rank": 3,
+          "tied": false
+        }
+      ],
+      "samples": [
+        {
+          "time": 0,
+          "gates": 0,
+          "resets": 0
+        },
+        {
+          "time": 10.016666666666739,
+          "gates": 2,
+          "resets": 0
+        },
+        {
+          "time": 20.083333333332835,
+          "gates": 2,
+          "resets": 0
+        },
+        {
+          "time": 30.133333333332263,
+          "gates": 8,
+          "resets": 0
+        },
+        {
+          "time": 40.16666666666503,
+          "gates": 13,
+          "resets": 0
+        },
+        {
+          "time": 50.18333333333113,
+          "gates": 19,
+          "resets": 0
+        }
+      ]
+    }
+  ],
+  "visibleFinal": {
+    "overlay-title": "本届双站，已结束",
+    "summary": "你的总分 3 · 第 2 / 3 名",
+    "cup-progress": "已封盘 2 / 2 站",
+    "cup-standings": "1. 赤狐\n6 分\n2. 你\n3 分\n3. 青鸟\n2 分",
+    "station-results": ""
+  },
+  "verified": {
+    "stationResultRefreshNoDuplicate": true,
+    "betweenExitReentry": true,
+    "activeRefreshExactAndPreviousStationPreserved": true,
+    "oldFreeKeysByteUnchanged": true,
+    "confirmedWholeCupRestart": true
+  },
+  "remainingShort": {
+    "method": "Continue own actual two-station profile; completed cup already recorded then confirmed reset. Only touch/return/free-save verification, no repeat full races.390CSS native CDP touch simulation, mouse for pause and keyboard resume explicitly allowed.",
+    "errors": [],
+    "httpErrors": [],
+    "touchSimulation": {
+      "twoContacts": true,
+      "partialRelease": true,
+      "outsideRelease": true,
+      "cancel": true,
+      "pauseResumeNoResidual": true,
+      "trustedTouchDowns": 4,
+      "mouseButtonDowns": 2
+    },
+    "returnFocusQuery": true,
+    "freeModeExactSavedRaceRestored": true,
+    "passed": true
+  },
+  "finalSharedLabelShort": {
+    "method": "Short ordinary UI check of shared secondary action label and help. Full cup already completed once; not repeated.",
+    "passed": true,
+    "label": "赛制说明",
+    "noProgressMutation": true
+  },
+  "integrationFix": "Exact Post/cup directory-return mapping; old paths remain. Continue same first-station result for second, no replay of first.",
+  "evidenceBoundaries": [
+    "Both station completions occurred before two shared UI text corrections; final ready screenshots show corrected label. No physics/scoring edits after actual completion.",
+    "Initial preview-only missing tracked SVG was materialized from HEAD; public assets unchanged.",
+    "Touch logger initially rejected deliberate mouse pause-button events; remaining native touch and return/free-restore checks passed without full race rerun.",
+    "DNF zero and ties were OFFLINE model/fixture checks, not ordinary UI outcomes.",
+    "No physical phone or human handling/fun acceptance; digital helper not blind human driving."
+  ],
+  "errors": [],
+  "httpErrors": []
+}
