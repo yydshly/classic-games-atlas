@@ -1,4 +1,4 @@
-import {resolvePlayEntry} from './play-entries.mjs?v=recent-play-r1';
+import {resolvePlayEntry} from './play-entries.mjs?v=recent-play-r2';
 
 // Visits only. This module never reads, migrates or removes game save keys.
 export const RECENT_PLAY_KEY='classic-games-atlas:recent-play:v1';

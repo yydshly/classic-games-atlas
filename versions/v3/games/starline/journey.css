@@ -1,0 +1,28 @@
+/* Additive v3 journey structure; the existing v2 chart and controls remain. */
+.journey-progress{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px 14px;max-width:880px;margin:0 auto 16px;padding:10px 0 12px;border-block:1px solid #526a6b66}
+.journey-progress ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;list-style:none;margin:0;padding:0;max-width:560px}
+.journey-progress li{min-width:0;padding:7px 10px;border:1px solid #4c686d;border-radius:5px;color:#b1c5bd;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.journey-progress li[aria-current=step]{border-color:#d2bd87;background:#314a50;color:#eed5a0}
+.journey-progress li.done{border-color:#719581;color:#c2dfbd}
+.journey-progress li.done::before{content:'✓ ';font-weight:700}
+#journey-goal{grid-column:1/-1;margin:0;color:#b9cbbb;font-size:11px;line-height:1.7}
+#new-journey{min-height:44px;white-space:nowrap;font-size:11px;padding:9px 12px}
+.journey-summary{position:static;margin:24px auto 0;padding:22px;max-width:1000px;border:1px solid #65817c;border-top:3px solid #d3bc87;border-radius:8px;background:#1b3540}
+#journey-summary-title{font-size:clamp(23px,3vw,32px);line-height:1.45;margin:10px 0 18px;font-weight:600}
+#journey-summary-title:focus-visible{outline:2px solid #f3d597;outline-offset:4px}
+#journey-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#journey-results>article{min-width:0;padding:17px;background:#213f49;border:1px solid #536f71;border-radius:6px}
+#journey-results h3{font-size:17px;line-height:1.5;margin:0 0 14px;color:#e4d9b4}
+#journey-results p{font-size:11px;line-height:1.8;color:#b7c9be}
+#journey-results dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 10px;margin:0;font-size:11px;line-height:1.7}
+#journey-results dt{color:#a9c0b7}#journey-results dd{margin:0;font-variant-numeric:tabular-nums;color:#e0dcc4}
+#journey-total{margin:18px 0 0;font-size:12px;line-height:1.9;color:#c2d0bc}
+.legacy-routes{display:grid;gap:6px}.legacy-routes a{text-decoration:underline;text-underline-offset:3px}
+#level-list>article{padding:15px;border:1px solid #58747a;border-radius:6px;background:#1d3844;line-height:1.8}
+#level-list>article[aria-current],#level-list>article.current{border-color:#d1bf8d}
+#level-list>article h3{margin:0 0 7px;font-size:14px}#level-list>article p{margin:0;font-size:12px}
+.dialog-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.dialog-actions button{min-height:44px;margin:0}.dialog-actions .primary{justify-content:center}.dialog-actions .secondary{border:1px solid #6c8585}
+@media(min-width:901px){.game-layout{grid-template-columns:minmax(300px,min(600px,calc((100dvh - 360px)*.9091))) 255px}}
+@media(max-width:760px){.journey-progress{gap:6px 8px;margin-bottom:12px;padding:8px 0 10px}.journey-progress ol{gap:5px}.journey-progress li{padding:6px 5px;font-size:10px}#journey-goal{font-size:10px}#new-journey{padding:8px 10px}.journey-summary{padding:18px 14px}#journey-results{grid-template-columns:1fr;gap:10px}#journey-results>article{padding:15px}#journey-results dl{font-size:12px}#journey-total{font-size:11px}}
+@media(max-width:600px){.aim-pad{grid-template-columns:44px 44px}.aim-pad button{min-width:44px;height:44px}.swap-control{flex:1;min-width:0;min-height:44px;white-space:normal;line-height:1.5}.fire-control{flex:0 0 92px}.arena-actions button,.panel-buttons button{min-height:44px}.game-heading{margin-bottom:12px}.journey-progress{margin-bottom:12px}}
+@media(max-width:360px){.journey-progress li{padding-inline:4px}.journey-progress ol{gap:4px}#new-journey{padding-inline:8px}.fire-control{flex-basis:84px}.aim-controls{gap:6px}}

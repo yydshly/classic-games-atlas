@@ -163,7 +163,8 @@
       "endingBoundary": "两图开放，恢复飞行回出手前",
       "evidence": [
         "docs/starline-v2-qa/PUBLIC_BROWSER_QA.md",
-        "docs/return-navigation-qa/"
+        "docs/return-navigation-qa/",
+        "docs/starline-journey-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "按缺口择一，非自动扩展队列",
@@ -172,7 +173,17 @@
         "真实移动触控及设备表现",
         "有音频实现时的听感/同步",
         "审美与情绪价值"
-      ]
+      ],
+      "optionalCampaign": {
+        "version": "v3",
+        "name": "三锚归航",
+        "playUrl": "versions/v3/games/starline/",
+        "summary": "三图依次清场、当前图重试保留前图战报；活动恢复与关间/总结独立保存，旧v1/v2保留。",
+        "acceptance": "candidate_unaccepted",
+        "verificationStatus": "assisted_ui_three_maps_verified",
+        "evidence": "docs/starline-journey-qa/",
+        "boundary": "4/4/6发公开规则辅助输入；刻意中心连射8发触底失利重试；活动/关间/终态刷新与390CSS触控模拟通过，真人乐趣/真机未验。"
+      }
     },
     {
       "number": "04",

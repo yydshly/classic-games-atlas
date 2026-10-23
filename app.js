@@ -1,7 +1,7 @@
 import {readJson, validateRecommendations} from './catalogue-load.mjs?v=first-load-20261021';
 import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=recent-play-r1';
 // Recent visits are optional: catalogue and filters still work if this asset fails.
-const recentReady=import('./play-recent.mjs?v=recent-play-r1').then(m=>m.mountRecentPlays()).catch(()=>null);
+const recentReady=import('./play-recent.mjs?v=recent-play-r2').then(m=>m.mountRecentPlays()).catch(()=>null);
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const normalize = (text) => String(text ?? '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -9,7 +9,7 @@ const arrow = '<svg class="inline-arrow" viewBox="0 0 16 16" aria-hidden="true">
 const sourceNames = {official:'官方资料', 'publisher-store':'发行方资料', museum:'博物馆资料', project:'项目资料', secondary:'百科参考'};
 const dialog = $('#game-dialog');
 const PAGE_SIZE = 12;
-const DATA_REVISION = 'post-three-r1';
+const DATA_REVISION = 'starline-journey-r1';
 const BASELINE = '86bb3267f50c1970c97f0dc875b9e0e0e690a36f';
 let unavailable = new Set();
 let data, comparisons = [], referenceMedia = [], valueComparisons = [], selectedGroup = 'all', visibleLimit = PAGE_SIZE, returnFocus;

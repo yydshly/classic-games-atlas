@@ -98,7 +98,8 @@ export const PLAY_ENTRIES=Object.freeze([
  {"slug":"inlet","title":"汀光织界","path":"versions/v3/preview/inlet/","version":"v3","chapter":"观潮择路","state":""},
  {"slug":"fortress","title":"堡垒防线","path":"versions/v4/games/fortress/","version":"v4","chapter":"三图战役","state":""},
  {"slug":"post","title":"弯道邮差","path":"versions/v4/games/post/cup/","version":"v4","chapter":"三站杯赛","state":""},
- {"slug":"post","title":"弯道邮差","path":"versions/v4/games/post/","version":"v4","chapter":"三赛道三车竞速","state":""}
+ {"slug":"post","title":"弯道邮差","path":"versions/v4/games/post/","version":"v4","chapter":"三赛道三车竞速","state":""},
+ {"slug":"starline","title":"星泡航线","path":"versions/v3/games/starline/","version":"v3","chapter":"三锚归航","state":""}
 ].map(Object.freeze));
 const paths=new Map(PLAY_ENTRIES.map(entry=>[entry.path,entry]));
 export function resolvePlayEntry(value,base=new URL("./",import.meta.url).href){
