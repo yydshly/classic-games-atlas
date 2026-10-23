@@ -12,8 +12,8 @@
     "40依据134e921提交的独立v2及来源说明补充；PES为明确系列参考，代际未定，未把未完成恢复项目计作可玩v1。"
   ],
   "summary": {
-    "published_games": 38,
-    "published_levels": 410,
+    "published_games": 39,
+    "published_levels": 413,
     "previews": 6,
     "preview_numbers": [
       "35",
@@ -24,7 +24,7 @@
       "40"
     ],
     "preview_levels": 48,
-    "confirmed_reference_bindings": 40,
+    "confirmed_reference_bindings": 41,
     "unconfirmed_reference_bindings": [
       "35",
       "36",
@@ -5258,6 +5258,65 @@
         "details_url": "./versions/v3/preview/inlet/README.md",
         "qa_url": "./docs/inlet-v3-qa/",
         "validation_boundary": "普通UI原生键盘+只读预测策略，正常暂停规划，三湾实际完成；第三湾看红色预览仍直行，三次真实追断失利、刷新重试后完成；预警开放线与实际终态刷新通过。390CSS为浏览器触控模拟。短线/长线及50/100/200ms、移相因果为模型证据。v3第三湾熟练路线5.88秒仍短，真人乐趣/长期深度/真机/审美未验，无音频。"
+      }
+    },
+    {
+      "number": "45",
+      "slug": "ladder",
+      "title": "梯港拾星",
+      "english": "LADDERLIGHT",
+      "status": "published",
+      "status_label": "三关原创首版可玩；未完成真人品质验收",
+      "play_url": "./preview/ladder/",
+      "original_title": "Lode Runner 式攀梯挖坑",
+      "original_english": "Lode Runner",
+      "reference_id": "lode-runner",
+      "reference_binding": "本轮明确指定的新增经典机制方向；未计入原72条图鉴",
+      "reference_version": "仅参考直接攀行收集、临时挖开地板与困敌的机制组合；未锁定某代逐项还原。",
+      "version_note": "关卡、人物、画面、巡卫规则和目标原创，不含经典官方地图、角色或音画。",
+      "original_core": "收集关卡物品后逃离，利用楼板挖掘和路径选择规避追逐者。",
+      "implemented": [
+        "三座原创梯港，直接控制一位拾灯工；梯、横索、硬钢、软砖和临时洞有不同通过规则，不可跳跃。",
+        "斜下方临时挖掘改变上下路线并暂困巡卫；洞回填和敌位影响何时绕行、下落或回收。",
+        "集齐灯芯后返回归灯门；暂停、当前关确认重试、独立刷新暂停续玩、关间目标、最终航记与确认新旅程。"
+      ],
+      "gaps": [
+        "仅三座小型原创梯港；没有经典完整关卡集、编辑器、联网或本地合作。",
+        "模型可解与辅助操作不能证明长期玩法深度；真人无辅助难度、乐趣、真机触控和审美仍待验。"
+      ],
+      "relation": "原创三关直接攀梯、临时挖坑与诱敌收集小品，参考本轮指定的Lode Runner式机制。人物、素材与关卡原创，非官方复刻；该方向未在原72条图鉴中，原图鉴保持不变。",
+      "levels": 3,
+      "evidence": [
+        {
+          "path": "preview/ladder/README.md",
+          "url": "./preview/ladder/README.md",
+          "claim": "规则、三关决策与独立存档边界"
+        },
+        {
+          "path": "docs/ladder-qa/",
+          "url": "./docs/ladder-qa/",
+          "claim": "模型、普通UI辅助三关、真实失利重试和刷新、触控与故障夹具分别记录"
+        }
+      ],
+      "validation_boundary": "模型路线与原生键盘辅助三关、当前关失败重试和实际完成档刷新分列；正常暂停用于规划。390CSS触控为浏览器模拟，存储故障为明确夹具。真人无辅助趣味、难度、长期深度、审美和真实手机性能未验；本作无音频。",
+      "original_sources": [
+        {
+          "label": "Nintendo · Lode Runner Legacy",
+          "url": "https://www.nintendo.com/us/store/products/lode-runner-legacy-switch/",
+          "kind": "official",
+          "relation": "发行平台官方介绍，仅作收集、逃脱、挖地板和困敌机制来源",
+          "checkedAt": "2026-10-22",
+          "status": "页面可读",
+          "note": "核读玩法介绍，不下载图片或地图，不新增年份、销量或评分主张。Tozai官网链接本轮工具不可读，未据其补写事实。"
+        }
+      ],
+      "version": "v1",
+      "has_frozen_version": false,
+      "current_status_label": "v1 三座梯港 · 原创首版，真人品质待验",
+      "release_intro": "新增独立v1原创三关小品；不存在此前的冻结v1。原44项及所有旧版、存档保持。",
+      "current_screenshot": {
+        "image": "./docs/ladder-qa/ready-desktop.png",
+        "label": "真实桌面浏览器准备画面；原创人物与梯港，非原作截图。"
       }
     }
   ],

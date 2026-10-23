@@ -1,0 +1,1131 @@
+{
+  "base": "http://127.0.0.1:58258/",
+  "method": "Native keyboard and buttons; readonly current-state route suggestions. Ordinary P pauses for planning/screenshots, no position/time/result injection. Touch is browser simulation, not physical phone.",
+  "stages": [
+    {
+      "level": 1,
+      "variant": "main",
+      "time": 4.94,
+      "wallSeconds": 5.25,
+      "pausedWallSeconds": 0.328,
+      "stats": {
+        "collected": 3,
+        "digs": 1,
+        "traps": 0,
+        "steps": 37
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        {
+          "time": 0.4,
+          "text": "取回星核 1/3。"
+        },
+        {
+          "time": 2.1,
+          "text": "取回星核 2/3。"
+        },
+        {
+          "time": 3.54,
+          "text": "取回星核 3/3。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "time": 8.06,
+      "wallSeconds": 8.047,
+      "pausedWallSeconds": 0,
+      "stats": {
+        "collected": 4,
+        "digs": 2,
+        "traps": 1,
+        "steps": 60
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        {
+          "time": 1.48,
+          "text": "取回星核 1/4。"
+        },
+        {
+          "time": 2.34,
+          "text": "取回星核 2/4。"
+        },
+        {
+          "time": 4.56,
+          "text": "取回星核 3/4。"
+        },
+        {
+          "time": 5.96,
+          "text": "取回星核 4/4。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "time": 8.74,
+      "wallSeconds": 8.782,
+      "pausedWallSeconds": 0,
+      "stats": {
+        "collected": 5,
+        "digs": 3,
+        "traps": 1,
+        "steps": 66
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        {
+          "time": 0.98,
+          "text": "取回星核 1/5。"
+        },
+        {
+          "time": 2.08,
+          "text": "取回星核 2/5。"
+        },
+        {
+          "time": 3.16,
+          "text": "取回星核 3/5。"
+        },
+        {
+          "time": 5.86,
+          "text": "取回星核 4/5。"
+        },
+        {
+          "time": 8.04,
+          "text": "取回星核 5/5。"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 0.04,
+      "player": {
+        "x": 3,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 4,
+        "y": 11
+      },
+      "reason": "先到埋核左上方开右下洞。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 16,
+          "y": 11,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 0.16,
+      "player": {
+        "x": 4,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 5,
+        "y": 12
+      },
+      "reason": "可开洞；下方封闭，取物后立即借相邻梯退出，5.5秒后回填。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 16,
+          "y": 11,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 0.4,
+      "player": {
+        "x": 5,
+        "y": 12,
+        "dir": 1,
+        "clock": 0.12000000000000001,
+        "fallClock": 1.3877787807814457e-17,
+        "pose": "stand",
+        "actionTimer": 0.02000000000000002,
+        "digCooldown": 0.02000000000000002
+      },
+      "collected": [
+        "buried"
+      ],
+      "target": {
+        "id": "loft",
+        "x": 3,
+        "y": 3,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 16,
+          "y": 11,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 2.14,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "dir": -1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "buried",
+        "loft"
+      ],
+      "target": {
+        "id": "rope",
+        "x": 11,
+        "y": 6,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 12,
+          "y": 11,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 3.58,
+      "player": {
+        "x": 11,
+        "y": 6,
+        "dir": 1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "rope",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "buried",
+        "loft",
+        "rope"
+      ],
+      "target": {
+        "x": 18,
+        "y": 3,
+        "open": true
+      },
+      "reason": "星核齐，返回出口。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 9,
+          "y": 11,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 0.02,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 9,
+        "y": 3
+      },
+      "reason": "直落方案：顶层开洞落到悬绳。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 14,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 1,
+      "player": {
+        "x": 9,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 10,
+        "y": 4
+      },
+      "reason": "可开洞，5.5秒后回填；下落前观察下层守卫。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 15,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 1.48,
+      "player": {
+        "x": 10,
+        "y": 6,
+        "dir": 1,
+        "clock": 0.14,
+        "fallClock": 4.163336342344337e-17,
+        "pose": "rope",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "rope"
+      ],
+      "target": {
+        "id": "middle",
+        "x": 4,
+        "y": 7,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 16,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 2.38,
+      "player": {
+        "x": 4,
+        "y": 7,
+        "dir": -1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "rope",
+        "middle"
+      ],
+      "target": {
+        "x": 11,
+        "y": 7
+      },
+      "reason": "直落方案：中层开洞换层。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 18,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 3.32,
+      "player": {
+        "x": 11,
+        "y": 7,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "rope",
+        "middle"
+      ],
+      "target": {
+        "x": 12,
+        "y": 8
+      },
+      "reason": "可开洞，5.5秒后回填；下落前观察下层守卫。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 15,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 4.58,
+      "player": {
+        "x": 17,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "rope",
+        "middle",
+        "lower"
+      ],
+      "target": {
+        "id": "upper",
+        "x": 17,
+        "y": 3,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 12,
+          "y": 8,
+          "state": "trapped"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 5.96,
+      "player": {
+        "x": 17,
+        "y": 3,
+        "dir": -1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upper",
+        "rope",
+        "middle",
+        "lower"
+      ],
+      "target": {
+        "x": 2,
+        "y": 3,
+        "open": true
+      },
+      "reason": "星核齐，返回出口。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 12,
+          "y": 8,
+          "state": "trapped"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": true,
+      "variant": "main",
+      "time": 0,
+      "player": {
+        "x": 11,
+        "y": 3,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": null,
+      "reason": "错误方案：不看下层巡卫，沿中央梯一直向下。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 0.02,
+      "player": {
+        "x": 11,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "id": "upperLeft",
+        "x": 4,
+        "y": 3,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 1,
+      "player": {
+        "x": 4,
+        "y": 3,
+        "dir": -1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft"
+      ],
+      "target": {
+        "id": "middleLeft",
+        "x": 5,
+        "y": 7,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 15,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 2.08,
+      "player": {
+        "x": 5,
+        "y": 7,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft"
+      ],
+      "target": {
+        "id": "lower",
+        "x": 10,
+        "y": 11,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 13,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 3.18,
+      "player": {
+        "x": 10,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower"
+      ],
+      "target": {
+        "id": "middleRight",
+        "x": 15,
+        "y": 7,
+        "collected": false
+      },
+      "reason": "按当前守卫位置沿梯绳取下一枚星核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 9,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 10,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 4.98,
+      "player": {
+        "x": 17,
+        "y": 7,
+        "dir": -1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower"
+      ],
+      "target": {
+        "x": 16,
+        "y": 8
+      },
+      "reason": "巡守同层靠近，开软砖洞截住它，再换梯路。",
+      "dig": -1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 13,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 5.22,
+      "player": {
+        "x": 18,
+        "y": 7,
+        "dir": 1,
+        "clock": 0.1,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 2.0816681711721685e-17,
+        "digCooldown": 2.0816681711721685e-17
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower"
+      ],
+      "target": {
+        "x": 17,
+        "y": 8
+      },
+      "reason": "巡守同层靠近，开软砖洞截住它，再换梯路。",
+      "dig": -1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 7,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 14,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 5.88,
+      "player": {
+        "x": 15,
+        "y": 7,
+        "dir": -1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "middleRight",
+        "lower"
+      ],
+      "target": {
+        "x": 14,
+        "y": 8
+      },
+      "reason": "巡守同层靠近，开软砖洞截住它，再换梯路。",
+      "dig": -1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 9,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 13,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 8.06,
+      "player": {
+        "x": 16,
+        "y": 3,
+        "dir": -1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "upperRight",
+        "middleLeft",
+        "middleRight",
+        "lower"
+      ],
+      "target": {
+        "x": 11,
+        "y": 3,
+        "open": true
+      },
+      "reason": "星核齐，返回出口。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 15,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 14,
+          "y": 8,
+          "state": "trapped"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "level": 1,
+      "time": 0.26,
+      "stats": {
+        "collected": 0,
+        "digs": 1,
+        "traps": 0,
+        "steps": 1
+      },
+      "events": [
+        {
+          "time": 0.18,
+          "text": "开洞：5,12，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 1.08,
+      "stats": {
+        "collected": 0,
+        "digs": 1,
+        "traps": 0,
+        "steps": 7
+      },
+      "events": [
+        {
+          "time": 1.02,
+          "text": "开洞：10,4，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 3.38,
+      "stats": {
+        "collected": 2,
+        "digs": 2,
+        "traps": 0,
+        "steps": 25
+      },
+      "events": [
+        {
+          "time": 1.02,
+          "text": "开洞：10,4，5.5秒后回填。"
+        },
+        {
+          "time": 1.48,
+          "text": "取回星核 1/4。"
+        },
+        {
+          "time": 2.34,
+          "text": "取回星核 2/4。"
+        },
+        {
+          "time": 3.32,
+          "text": "开洞：12,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 4.58,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 35
+      },
+      "events": [
+        {
+          "time": 2.34,
+          "text": "取回星核 2/4。"
+        },
+        {
+          "time": 3.32,
+          "text": "开洞：12,8，5.5秒后回填。"
+        },
+        {
+          "time": 4.52,
+          "text": "巡守1落入临时洞；回填后会回岗。"
+        },
+        {
+          "time": 4.56,
+          "text": "取回星核 3/4。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 5.02,
+      "stats": {
+        "collected": 3,
+        "digs": 1,
+        "traps": 0,
+        "steps": 38
+      },
+      "events": [
+        {
+          "time": 0.98,
+          "text": "取回星核 1/5。"
+        },
+        {
+          "time": 2.08,
+          "text": "取回星核 2/5。"
+        },
+        {
+          "time": 3.16,
+          "text": "取回星核 3/5。"
+        },
+        {
+          "time": 4.98,
+          "text": "开洞：16,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 5.28,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 39
+      },
+      "events": [
+        {
+          "time": 2.08,
+          "text": "取回星核 2/5。"
+        },
+        {
+          "time": 3.16,
+          "text": "取回星核 3/5。"
+        },
+        {
+          "time": 4.98,
+          "text": "开洞：16,8，5.5秒后回填。"
+        },
+        {
+          "time": 5.22,
+          "text": "开洞：17,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 5.94,
+      "stats": {
+        "collected": 4,
+        "digs": 3,
+        "traps": 0,
+        "steps": 44
+      },
+      "events": [
+        {
+          "time": 4.98,
+          "text": "开洞：16,8，5.5秒后回填。"
+        },
+        {
+          "time": 5.22,
+          "text": "开洞：17,8，5.5秒后回填。"
+        },
+        {
+          "time": 5.86,
+          "text": "取回星核 4/5。"
+        },
+        {
+          "time": 5.88,
+          "text": "开洞：14,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 6.06,
+      "stats": {
+        "collected": 4,
+        "digs": 3,
+        "traps": 1,
+        "steps": 45
+      },
+      "events": [
+        {
+          "time": 5.22,
+          "text": "开洞：17,8，5.5秒后回填。"
+        },
+        {
+          "time": 5.86,
+          "text": "取回星核 4/5。"
+        },
+        {
+          "time": 5.88,
+          "text": "开洞：14,8，5.5秒后回填。"
+        },
+        {
+          "time": 6.04,
+          "text": "巡守2落入临时洞；回填后会回岗。"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "activeHoleRefreshPaused": true,
+  "betweenRefresh": true,
+  "naturalFailure": {
+    "level": 3,
+    "variant": "main",
+    "time": 2.5,
+    "wallSeconds": 2.547,
+    "pausedWallSeconds": 0,
+    "stats": {
+      "collected": 0,
+      "digs": 0,
+      "traps": 0,
+      "steps": 8
+    },
+    "reason": "被巡守截住了；重试当前站，先观察梯口或用软砖洞改变追逐路线。",
+    "collectionOrder": []
+  },
+  "failureRetryKeepsEarlier": true,
+  "actualCompleteRefresh": true,
+  "resultCanReopen": true,
+  "newCancelKeepsActualEnd": true,
+  "touchHoldRelease": true,
+  "touchCancelClears": true,
+  "touchDigPause": true,
+  "touchEvents": [
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    }
+  ],
+  "returnLink": true,
+  "passed": true
+}

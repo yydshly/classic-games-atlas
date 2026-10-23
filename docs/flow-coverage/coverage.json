@@ -1960,6 +1960,33 @@
         "真机触控性能",
         "审美；本作无音频"
       ]
+    },
+    {
+      "number": "45",
+      "slug": "ladder",
+      "title": "梯港拾星",
+      "recommendedVersion": "v1",
+      "playUrl": "preview/ladder/",
+      "acceptance": "candidate_unaccepted",
+      "coverage": {
+        "startup": "verified",
+        "coreGoal": "verified",
+        "failureRetry": "verified",
+        "endingNext": "verified"
+      },
+      "observedCore": "原生键盘辅助三座梯港收集与逃离；普通暂停用于规划，未注入位置/时间/胜负。",
+      "observedRetry": "真实规则失利后当前关重试，前关结果保留；活动/关间/实际终态刷新。",
+      "endingBoundary": "模型路线与原生键盘辅助三关、当前关失败重试和实际完成档刷新分列；正常暂停用于规划。390CSS触控为浏览器模拟，存储故障为明确夹具。真人无辅助趣味、难度、长期深度、审美和真实手机性能未验；本作无音频。",
+      "evidence": [
+        "docs/ladder-qa/"
+      ],
+      "browserScope": "桌面Chromium与390CSS浏览器触控模拟，不是真机。",
+      "nextToolWork": "本轮完整三关首版收束，后续应依具体玩家反馈或独立内容里程碑。",
+      "humanRequired": [
+        "无辅助趣味与难度",
+        "真机触控性能",
+        "审美；本作无音频"
+      ]
     }
   ],
   "evidenceThrough": "730541d8836a2a73f40c9af3776577834bdb4206",
@@ -3657,5 +3684,11 @@
     "baseline": "8d16aca7710713f986cac0fd6f2300eb83a11e60",
     "scope": "新增原创即时战斗/拾取构筑三庭；42目录，38活动、4停止/保留；旧41记录不改",
     "evidence": "docs/glimmer-qa/"
+  },
+  "ladderReview": {
+    "report": "docs/ladder-qa/",
+    "catalog": 45,
+    "oldEntriesPreserved": 44,
+    "classicReferences": 72
   }
 }
