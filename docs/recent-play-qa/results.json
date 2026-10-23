@@ -1,0 +1,155 @@
+{
+  "baseline": "94fa55604e95722d0604b33ec35a98602711d9ce",
+  "unit": {
+    "passed": true,
+    "groups": 10,
+    "registryEntries": 98,
+    "tests": [
+      "Registry has45 games, exact entry paths and trustworthy version/chapters; no report or frozen mirror guesses",
+      "External, credential, script, escaped and unknown URLs cannot read/write recent storage",
+      "No records until an actual entry recorder writes; missing history is empty",
+      "Maximum five distinct games, newest first, repeated version replaces same game and exact path survives refresh",
+      "Stored metadata cannot forge names, URLs or progress; invalid/future records are filtered",
+      "Only the recent key is cleared; game saves, sound choices and return receipts are preserved",
+      "Read/write/remove failures are non-blocking, failed writes preserve previous bytes and later recovery works",
+      "Corrupt recent bytes never affect other keys; next actual visit can replace this isolated ledger",
+      "Recent and old return receipts preserve query/filter/limit plus optional visible anchor position",
+      "Stopped or retained entry visits stay honestly labelled and never imply a valid save"
+    ],
+    "method": "Pure registry/storage/receipt fixtures; no gameplay or real-device claim"
+  },
+  "ordinaryUi": {
+    "base": "http://127.0.0.1:58262/",
+    "method": "Ordinary page opening, native keyboard links/buttons, no injected visit records or game progress. This is an entry/navigation test, not replaying gameplay.",
+    "events": [
+      {
+        "name": "emptyHistoryHasNoVisibleShell"
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "fortress",
+        "path": "versions/v4/games/fortress/",
+        "at": 1792723026640
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "post",
+        "path": "versions/v3/games/post/",
+        "at": 1792723026725
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "brook",
+        "path": "versions/v3/games/brook/",
+        "at": 1792723026807
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "ladder",
+        "path": "versions/v2/preview/ladder/",
+        "at": 1792723026887
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "windowlife",
+        "path": "preview/windowlife/",
+        "at": 1792723026951
+      },
+      {
+        "name": "actualOpenedEntry",
+        "slug": "glimmer",
+        "path": "preview/glimmer/",
+        "at": 1792723027012
+      },
+      {
+        "name": "sixGamesCappedAtFive",
+        "paths": [
+          "preview/glimmer/",
+          "preview/windowlife/",
+          "versions/v2/preview/ladder/",
+          "versions/v3/games/brook/",
+          "versions/v3/games/post/"
+        ]
+      },
+      {
+        "name": "sameGameNewestExactVersionReplacesOld",
+        "path": "versions/v4/games/post/cup/"
+      },
+      {
+        "name": "homeRefreshDoesNotInventNewVisit"
+      },
+      {
+        "name": "reportPageNeverRecorded"
+      },
+      {
+        "name": "recentNativeEnterReturnsExactVersionFocusAndFilters"
+      },
+      {
+        "name": "directoryReturnFocusPositionAndFiltersPreserved"
+      },
+      {
+        "name": "escapeCancelRetainsLedgerAndAllGameBytes"
+      },
+      {
+        "name": "confirmedClearOnlyNewKeyDeleted",
+        "otherKeysPreserved": 8
+      },
+      {
+        "name": "hashComparisonStillWorksWithoutRecording"
+      }
+    ],
+    "errors": [],
+    "httpErrors": [],
+    "passed": true
+  },
+  "faultFixtures": {
+    "method": "Explicit browser fault fixtures, separate from ordinary page-opening evidence. No game progress or visit payload injection; storage seed was earned by earlier ordinary entry visits.",
+    "cases": [
+      {
+        "name": "controllerAborted",
+        "recorded": false
+      },
+      {
+        "name": "storageEntirelyDisabled",
+        "homepageAndGameWork": true,
+        "visibleEmptyShell": false
+      },
+      {
+        "name": "writeQuotaFailure",
+        "previousLedgerUnchanged": true
+      },
+      {
+        "name": "writeRecoveredOnNextRealOpen",
+        "newEntryRecorded": true
+      },
+      {
+        "name": "clearFailureThenRecovery",
+        "allGameAndSoundBytesPreserved": true
+      },
+      {
+        "name": "optionalAssetFailure",
+        "catalogueStillWorks": true
+      }
+    ],
+    "passed": true
+  },
+  "firstInsertionReturn": {
+    "passed": true,
+    "width": 390,
+    "firstHistoryInsertionReturnTopBefore": 414.375,
+    "after": 414.03125,
+    "query": "fortress",
+    "version": "v2",
+    "method": "Fresh browser, native directory Enter and native game-header return. No history seed."
+  },
+  "staticScope": {
+    "catalogueGames": 45,
+    "knownNonFrozenEntries": 98,
+    "onlySharedTagPerEntry": true,
+    "controllersChanged": false,
+    "all98RelativeUrlsResolveToSameModule": true,
+    "frozenV1MirrorsUnchangedAndNotRecorded": 38
+  },
+  "boundary": "Local device/browser entry visits, not saves or cloud sync;390CSS is simulation; no per-game replay or human quality certification.",
+  "passed": true
+}

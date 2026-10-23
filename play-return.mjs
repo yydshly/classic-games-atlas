@@ -10,7 +10,7 @@ function gameSlug(value, base) {
     if (/^versions\/v3\/games\/post\/cup\/(?:index\.html)?$/.test(path)) return 'post';
     if (/^versions\/v4\/games\/fortress\/(?:index\.html)?$/.test(path)) return 'fortress';
     if (/^versions\/v4\/games\/post\/(?:cup\/)?(?:index\.html)?$/.test(path)) return 'post';
-    return path.match(/^(?:versions\/v[23]\/)?(?:games|preview)\/([a-z0-9-]+)\/(?:index\.html)?$/)?.[1] || null;
+    return path.match(/^(?:versions\/v[123]\/)?(?:games|preview)\/([a-z0-9-]+)\/(?:index\.html)?$/)?.[1] || null;
   } catch { return null; }
 }
 
@@ -19,6 +19,8 @@ function valid(state, base, now) {
     versions.has(state.version) && Number.isInteger(state.limit) && state.limit >= 12 && state.limit <= 45 &&
     Number.isFinite(state.y) && state.y >= 0 && state.y <= 2e6 &&
     Number.isFinite(state.at) && now >= state.at && now - state.at <= 86400000 &&
+    (state.entry===undefined||['featured','recent'].includes(state.entry)) &&
+    (state.viewportTop===undefined||(Number.isFinite(state.viewportTop)&&Math.abs(state.viewportTop)<=2e6)) &&
     typeof state.slug === 'string' && gameSlug(state.href, base) === state.slug;
 }
 

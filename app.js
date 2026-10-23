@@ -1,5 +1,7 @@
 import {readJson, validateRecommendations} from './catalogue-load.mjs?v=first-load-20261021';
-import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=post-three-return-r1';
+import {rememberPlayReturn, consumePlayReturn} from './play-return.mjs?v=recent-play-r1';
+// Recent visits are optional: catalogue and filters still work if this asset fails.
+const recentReady=import('./play-recent.mjs?v=recent-play-r1').then(m=>m.mountRecentPlays()).catch(()=>null);
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const normalize = (text) => String(text ?? '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -234,17 +236,20 @@ try{
   if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
   const link=event.target.closest('a[href]');if(!link||link.target==='_blank'||link.hasAttribute('download'))return;
   const card=link.closest('[data-play]')||(dialog.open?returnFocus?.closest('[data-play]'):null);if(!card)return;
-  try{rememberPlayReturn(sessionStorage,location.href,link.href,{query:$('#play-search').value,version:$('#play-version').value,limit:playLimit,y:scrollY,slug:card.dataset.play,...(card.dataset.featured?{entry:'featured'}:{})});}catch{/* Storage restrictions must not block navigation. */}
+  try{rememberPlayReturn(sessionStorage,location.href,link.href,{query:$('#play-search').value,version:$('#play-version').value,limit:playLimit,y:scrollY,viewportTop:link.getBoundingClientRect().top,slug:card.dataset.play,...(card.dataset.recent?{entry:'recent'}:card.dataset.featured?{entry:'featured'}:{})});}catch{/* Storage restrictions must not block navigation. */}
  });
  let playReturn=null;
  if(!/^#(?:game|compare)=/.test(location.hash))try{playReturn=consumePlayReturn(sessionStorage,location.href,document.referrer);}catch{}
  if(playReturn){$('#play-search').value=playReturn.query;$('#play-version').value=playReturn.version;playLimit=playReturn.limit;}
  window.addEventListener('hashchange',handleRoute);renderPlayLibrary();renderExperiments(data.experiments);renderShowcase();render();handleRoute();
- if(playReturn)requestAnimationFrame(()=>requestAnimationFrame(()=>{
-  const card=[...document.querySelectorAll(playReturn.entry==='featured'?'#selected-play [data-play]':'#play-grid [data-play]')].find(e=>e.dataset.play===playReturn.slug);
+ if(playReturn)requestAnimationFrame(()=>requestAnimationFrame(async()=>{
+  let recentTimer;await Promise.race([recentReady,new Promise(resolve=>{recentTimer=setTimeout(resolve,1500);})]);clearTimeout(recentTimer);
+  const card=[...document.querySelectorAll(playReturn.entry==='recent'?'#recent-play [data-play]':playReturn.entry==='featured'?'#selected-play [data-play]':'#play-grid [data-play]')].find(e=>e.dataset.play===playReturn.slug);
   const links=card?[...card.querySelectorAll('a[href]')]:[];
   const link=links.find(e=>e.matches('.play-launch')&&e.href===playReturn.href)||links.find(e=>e.href===playReturn.href);
-  (link||$('#play-search')).focus({preventScroll:true});window.scrollTo({top:playReturn.y,behavior:'instant'});
+  (link||$('#play-search')).focus({preventScroll:true});
+  const top=link&&Number.isFinite(playReturn.viewportTop)?scrollY+link.getBoundingClientRect().top-Math.max(12,Math.min(playReturn.viewportTop,innerHeight-link.getBoundingClientRect().height-24)):playReturn.y;
+  window.scrollTo({top,behavior:'instant'});
  }));
 }catch(error){
  $('#play-load-error').hidden=false;$('#play-result-count').textContent='游戏列表暂时未载入';$('#load-error').hidden=false;
