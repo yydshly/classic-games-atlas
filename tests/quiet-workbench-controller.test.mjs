@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';import vm from 'node:vm';import {readFileSync} from 'node:fs';import {QuietWorld,ROOM} from '../experiments/quiet-workbench/physics.mjs';import {feedback} from '../experiments/quiet-workbench/feedback.mjs';
+const elements=new Map(),handlers={},win={},element=s=>{if(!elements.has(s))elements.set(s,{textContent:'',hidden:false,focus(){},addEventListener(){}});return elements.get(s)};let now=1000,bootTimeout;
+const document={querySelector:element,querySelectorAll:()=>[],addEventListener:(t,f)=>handlers[t]=f,hidden:false};
+const context=vm.createContext({document,window:{addEventListener:(t,f)=>win[t]=f},performance:{now:()=>now},requestAnimationFrame(){},setTimeout:fn=>{bootTimeout=fn;return 1},location:{reload(){}},QuietWorld,ROOM,feedback,createView:()=>({draw(){}})});
+element('#overlay-title').textContent='Ready title';element('#overlay-copy').textContent='Ready copy';
+const html=readFileSync(new URL('../experiments/quiet-workbench/index.html',import.meta.url),'utf8');vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],context);bootTimeout();assert.equal(element('#start').hidden,true);
+const source=readFileSync(new URL('../experiments/quiet-workbench/game.mjs',import.meta.url),'utf8').replace(/^import .*\n/gm,'').replace(/^export /gm,'');vm.runInContext(source+'\nglobalThis.test={frame,diagnostics};',context);
+assert.equal(element('#start').hidden,false);assert.equal(element('#reload').hidden,true);assert.equal(element('#overlay-title').textContent,'Ready title');
+const key=code=>({code,target:{closest:()=>null},preventDefault(){},repeat:false});element('#start').onclick();handlers.keydown(key('KeyD'));now+=100;context.test.frame(now);const moved=context.test.diagnostics();assert(moved.time>0);
+element('#pause').onclick();assert.equal(context.test.diagnostics().mode,'paused');const frozen=JSON.stringify(context.test.diagnostics());now+=5000;context.test.frame(now);assert.equal(JSON.stringify(context.test.diagnostics()),frozen);
+element('#start').onclick();now+=100;context.test.frame(now);assert.equal(context.test.diagnostics().mode,'playing');
+win.blur();assert.equal(context.test.diagnostics().mode,'paused');element('#retry').onclick();const fresh=context.test.diagnostics();assert.equal(fresh.mode,'playing');assert.equal(fresh.state,'playing');assert.deepEqual(Array.from(fresh.player.position),ROOM.spawn);assert.equal(fresh.noise,0);
+vm.runInContext("world.state='woke';sync()",context);assert.equal(element('#pause').disabled,true);element('#retry').onclick();assert.equal(element('#pause').disabled,false);
+console.log(JSON.stringify({passed:true,kind:'actual controller with DOM/render fixtures, not browser',checks:['late module success after boot timeout','terminal pause disabled','start','pause freezes simulation','resume','blur pauses','retry at entry clears reaction']}));

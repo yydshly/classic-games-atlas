@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';import {QuietWorld,ROOM} from '../experiments/quiet-workbench/physics.mjs';import {feedback} from '../experiments/quiet-workbench/feedback.mjs';
+function go(w,x,z,speed=1.6,dt=1/120){for(let i=0;i<30/dt&&w.state==='playing';i++){const p=w.player.position,v=w.player.velocity,dx=x-p.x,dz=z-p.z,n=Math.hypot(dx,dz);if(n<.08&&Math.hypot(v.x,v.z)<.2)return true;const f=Math.min(speed,n*2);w.step({x:((n?dx/n*f:0)-v.x)*1.2,z:((n?dz/n*f:0)-v.z)*1.2,brake:n<.12},dt);}return w.state==='charged';}
+function until(w,test,input,seconds=10,dt=1/120){for(let i=0;i<seconds/dt&&w.state==='playing';i++){if(test())return true;w.step(input,dt)}return test();}
+const metalRoute=[[-1.95,2.5],[-1.95,.55],[-.3,.55],[-.3,-3.65],[0,-3.65]],softRoute=[[-4.9,3.7],[-4.9,-3.6],[0,-3.65]],routes=[];
+for(const dt of [1/120,1/30,.1])for(const [name,route]of [['metal',metalRoute],['soft',softRoute]]){const w=new QuietWorld();for(const p of route)assert(go(w,...p,1.6,dt),`${name} ${dt} ${JSON.stringify(w.snapshot())}`);assert.equal(w.state,'charged');routes.push({name,dt,seconds:w.time,noise:w.noise});}
+const rush=new QuietWorld();assert(until(rush,()=>rush.state==='woke',{z:-1}));assert.equal(rush.lastImpact.material,'metal');assert(rush.lastImpact.impulse>0);const rushImpact=rush.lastImpact;
+const slow=new QuietWorld();assert(until(slow,()=>!!slow.lastImpact,{z:-1,brake:true}));assert.equal(slow.state,'playing');assert(slow.lastImpact.gain<rushImpact.gain);const slowImpact=slow.lastImpact;
+const foam=new QuietWorld();assert(go(foam,-4.9,3.7));assert(go(foam,-5.12,1.6));assert(until(foam,()=>!!foam.lastImpact,{z:-1}));assert.equal(foam.lastImpact.material,'soft');assert.equal(foam.state,'playing');assert(foam.lastImpact.gain<.6);const foamImpact=foam.lastImpact;
+// Sustained pushing is not a new impact every frame. Let quiet recovery occur
+// while contact remains, without manufacturing additional collision penalties.
+slow.drainEvents();const sustainedStart=slow.noise;for(let i=0;i<6*120;i++)slow.step({z:-1,brake:true});const repeatImpacts=slow.drainEvents().filter(e=>e.type==='impact');assert.equal(repeatImpacts.length,0);assert.equal(slow.state,'playing');assert(slow.noise<sustainedStart);
+const practice=[];for(const material of ['metal','soft']){const w=new QuietWorld();if(material==='soft')assert(go(w,-1.65,3.35,.7));assert(until(w,()=>!!w.lastImpact,material==='metal'?{x:1,brake:true}:{z:1,brake:true}));assert.equal(w.lastImpact.material,material);assert.equal(w.state,'playing');assert(w.grounded);practice.push({material,tool:w.lastImpact.tool,gain:w.lastImpact.gain});}
+const corner=new QuietWorld();assert(until(corner,()=>corner.player.position.x< -4.65,{x:-1}));assert(until(corner,()=>corner.state==='fell',{z:-1}));assert.equal(corner.noise,0);assert.match(feedback(corner.snapshot()).message,/横向速度/);
+// Broad metal surface can absorb the same approximate corner drift when braking.
+const forgiving=new QuietWorld();assert(until(forgiving,()=>forgiving.player.position.x< -1.8,{x:-1}));for(let i=0;i<120;i++)forgiving.step({z:-1,brake:true});assert.equal(forgiving.state,'playing');assert(forgiving.grounded);
+// No passive victory, collision-free movement does not fill a fake noise timer.
+const idle=new QuietWorld();for(let i=0;i<60*120;i++)idle.step({brake:true});assert.equal(idle.state,'playing');assert.equal(idle.noise,0);
+const frozen=corner.snapshot();corner.step({x:1},.1);assert.deepEqual(corner.snapshot(),frozen);corner.retry();assert.equal(corner.state,'playing');assert.deepEqual(corner.snapshot().player.position,ROOM.spawn);assert.equal(corner.noise,0);
+assert.match(feedback({...corner.snapshot(),state:'charged'}).title,/充上电/);
+console.log(JSON.stringify({passed:true,kind:'real-Cannon legal-input routes; not human/UI acceptance',routes,rushImpact,slowImpact,foamImpact,practice,sustainedContactRepeatedImpacts:repeatImpacts.length,sharpSoftTurn:'fell without noise',broadTurn:'survived with braking',retry:'entry',idle:'no victory'}));
