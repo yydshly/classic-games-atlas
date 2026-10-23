@@ -1,4 +1,5 @@
 import * as THREE from './vendor/three.module.min.js';
+import {ferryDeparture} from './feedback.mjs';
 
 // Integration: move to the runtime directory and change the import to its local
 // vendor path. distance=8 means the fitted whole-dock view; yaw/pitch still orbit.
@@ -146,8 +147,9 @@ export function createView(canvas,course){
   plateSignal.color.set(snapshot.platePressed?'#a6c8a6':'#bb9668');plateSignal.emissiveIntensity=snapshot.platePressed ? .35 : 0;
   pressureLampMat.color.set(snapshot.platePressed?'#77d6a5':'#d69a52');
   const held=!!(snapshot.gate?.heldClosing||snapshot.heldForSafety);gateSignal.color.set(held?'#d5ae68':snapshot.gateOpen||snapshot.gate?.openAmount>.9?'#a4cfac':'#759a87');
-  nearMat.color.set(phase==='dwellNear'?'#c4dfad':'#789a92');farMat.color.set(arrival?'#ead99e':phase==='dwellFar'?'#c4dfad':'#789a92');
-  boatLight.color.set(phase==='dwellNear'||phase==='dwellFar'?'#d6dfb5':phase==='inbound'?'#a3c8c3':'#d5bd8d');
+  const leavingSoon=ferryDeparture(f).leavingSoon;
+  nearMat.color.set(phase==='dwellNear'?(leavingSoon?'#edac55':'#c4dfad'):'#789a92');farMat.color.set(arrival?'#ead99e':phase==='dwellFar'?(leavingSoon?'#edac55':'#c4dfad'):'#789a92');
+  boatLight.color.set(phase==='dwellNear'||phase==='dwellFar'?(leavingSoon?'#edac55':'#d6dfb5'):phase==='inbound'?'#a3c8c3':'#d5bd8d');
   receiveMat.color.set(arrival?'#158a75':'#326965');receiveMat.opacity=arrival ? 1 : .92;receiveRing.scale.setScalar(arrival?1.12:1);
   scene.updateMatrixWorld(true);shadowAt(robotShadow,player.position,1);shadowAt(crateShadow,crate.position,1.1);boatShadow.position.set(ferry.position.x,waterY+.012,ferry.position.z);
   temp.copy(player.position);temp.y+=.6;desiredTarget.copy(anchor).lerp(temp,.4);

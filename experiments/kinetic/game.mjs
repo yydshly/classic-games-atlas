@@ -1,16 +1,15 @@
 import {KineticWorld,COURSE} from './physics.mjs';
 import {createView} from './view.mjs';
 import {checkpointStore} from './storage.mjs';
-import {dockFeedback} from './feedback.mjs';
+import {dockFeedback,ferryDeparture} from './feedback.mjs';
 const $=s=>document.querySelector(s),keys=new Set(),touch=new Map(),frames=[];
 let sim,view,store,state='loading',yaw=0,pitch=.48,distance=8,jumpQueued=false,cameraDrag=null,last=0,lastHud=0,started=false,graphicsFailed=false,overlayVisible=true,lastAttempt=null,plateTried=false,statusHoldUntil=0,statusContext='any';
-const phaseNames={dwellNear:'靠岸停留',outbound:'驶向对岸',dwellFar:'对岸停靠',inbound:'正在返航'};
 function announce(t,hold=0,context='any'){$('#status').textContent=t;statusHoldUntil=performance.now()+hold;statusContext=context;}
 function clearInput(){keys.clear();touch.clear();jumpQueued=false;cameraDrag=null;document.querySelectorAll('.pressed').forEach(e=>e.classList.remove('pressed'));}
 function save(force=false){if(!sim||!store)return;const v=sim.checkpointRecord(),serial=JSON.stringify(v);if(force||serial!==lastAttempt){store.write(v);lastAttempt=serial;}$('#save-note').textContent=store.message();}
 function showOverlay(title,copy,button,kicker='临港 · 一次短短的离岸'){$('#overlay-title').textContent=title;$('#overlay-copy').textContent=copy;$('#start').textContent=button;$('#overlay-kicker').textContent=kicker;$('#overlay').hidden=false;overlayVisible=true;}
 function sync(){
- const s=sim.snapshot(),by=s.plateBy;$('#boat-state').textContent=phaseNames[s.ferry?.phase]||'渡台正在往返';
+ const s=sim.snapshot(),by=s.plateBy;$('#boat-state').textContent=ferryDeparture(s.ferry).label;
  if(by==='player'||by==='both')plateTried=true;
  const feedback=dockFeedback(s,COURSE,{plateTried});
  $('#pressure-state').textContent=feedback.detail;$('#objective').textContent=feedback.objective;
