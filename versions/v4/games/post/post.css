@@ -4,3 +4,6 @@
 .cup-invite{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;margin-bottom:10px;border:1px dashed #a97b59;border-radius:6px;font-size:11px}.cup-invite a{text-decoration:underline;font-weight:600}.cup-invite span{color:#637c70}@media(max-width:850px){.cup-invite{display:block}.cup-invite span{display:block;margin-top:4px}}
 
 .legacy-note{font-size:11px;line-height:1.6;color:#637c70;margin:0 0 10px}.legacy-note a{text-decoration:underline;text-underline-offset:3px}.legacy-note a:focus-visible{outline:3px solid #a97b59;outline-offset:3px}
+
+/* Shared audio settings stay in document flow, outside the race canvas. */
+.post-audio{display:flex;justify-content:flex-end;min-width:0;margin:0 0 8px}.post-audio>details{max-width:100%}

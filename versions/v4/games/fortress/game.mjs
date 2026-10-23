@@ -1,3 +1,4 @@
+import {mountGameAudio} from '../../../../play-audio.mjs?v=featured-audio-r1';
 import {createGame,start,pause,update,snapshot} from './engine.mjs';
 import {LEVELS} from './levels.mjs';
 import {Renderer} from '../../../v2/games/fortress/renderer.mjs';
@@ -14,6 +15,26 @@ const ordinal=stage=>['一','二','三'][stage];
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function text(id,value){const el=$(id);if(el.textContent!==value)el.textContent=value;}
 function clear(){enterHeld=false;controls.clear();document.querySelectorAll('[data-key]').forEach(e=>e.classList.remove('pressed'));}
+// Audio is optional. Failures must never interrupt controls, saves or rendering.
+let audio=null;
+function callAudio(method,...args){try{return audio?.[method]?.(...args);}catch{return undefined;}}
+try{audio=mountGameAudio({theme:'fortress',host:$('#audio-host'),onOpen:()=>stop()});}
+catch{const host=$('#audio-host');host.textContent='声音暂不可用，仍可静音游玩。';host.dataset.unavailable='true';}
+function battleAudioCue(events){
+ const ending=events.findLast(event=>event.type==='win'||event.type==='lose');
+ if(ending)return ending.type;
+ if(events.some(event=>event.type==='base-hit'||event.type==='player-hit'))return 'hurt';
+ if(events.some(event=>event.type==='power'))return 'collect';
+ if(events.some(event=>event.type==='hit'))return 'hit';
+ return null;
+}
+function consumeBattleEvents(){
+ if(!game)return;
+ const events=game.events.splice(0);if(!events.length)return;
+ // The renderer and audio share the same drained events, including terminal frames.
+ renderer.effects(events);
+ const cue=battleAudioCue(events);if(cue)callAudio('cue',cue);
+}
 function persist(){
  const ok=store.save(journey);$('#save-note').dataset.warning=String(!ok);
  text('#save-note',ok?'短战役阶段已保存 · 战斗刷新回当前行动整备 · v1/v2/v3记录保留':
@@ -22,6 +43,7 @@ function persist(){
   '阶段保存失败，仍可继续游玩。刷新会回到上次成功保存的阶段，当前进度可能丢失；旧有效记录未删除。');
 }
 function prepareBattle(){
+ callAudio('stop');callAudio('pause');
  clear();game=createGame(journey.stage,{players:journey.mode});feedback=new BaseFeedback(game);inputTicks=[0,0];
  accumulator=0;previous=performance.now();renderer.terrainKey='';renderer.particles=[];renderer.rings=[];renderer.shake=0;
 }
@@ -31,13 +53,14 @@ function replace(next,{prepare=false,focus=false}={}){
 }
 function beginBattle(){
  if(journey.phase!=='briefing')return;
- journey=begin(journey);clear();$('#restore-note').hidden=true;start(game);previous=performance.now();persist();lastView='';sync();$('#battlefield').focus({preventScroll:true});
+ journey=begin(journey);callAudio('resume');clear();$('#restore-note').hidden=true;start(game);previous=performance.now();persist();lastView='';sync();$('#battlefield').focus({preventScroll:true});
 }
 function stop(){
+ callAudio('pause');
  clear();if(journey.phase==='battle'&&game?.state==='playing'){pause(game);lastView='';sync();}
 }
 function resume(){
- if(journey.phase==='battle'&&game?.state==='paused'){clear();start(game);previous=performance.now();lastView='';sync();$('#battlefield').focus({preventScroll:true});}
+ if(journey.phase==='battle'&&game?.state==='paused'){clear();start(game);callAudio('resume');previous=performance.now();lastView='';sync();$('#battlefield').focus({preventScroll:true});}
 }
 function primary(){
  if(journey.phase==='briefing')beginBattle();
@@ -102,7 +125,7 @@ function openRestart(){
 $('#new-campaign').onclick=openRestart;$('#restart-cancel').onclick=()=>$('#restart-dialog').close();
 $('#restart-confirm').onclick=()=>{$('#restart-dialog').close();$('#restore-note').hidden=true;replace(fresh(),{prepare:true,focus:true});};
 window.addEventListener('keydown',event=>{
- if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.altKey||$('#restart-dialog').open||event.target.closest('a[href],select,input,textarea,summary,[contenteditable]:not([contenteditable="false"])'))return;
+ if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.altKey||$('#restart-dialog').open||event.target.closest('a[href],select,input,textarea,summary,#audio-host,[contenteditable]:not([contenteditable="false"])'))return;
  if(['KeyP','Escape'].includes(event.code)){event.preventDefault();if(!event.repeat)$('#pause').click();return;}
  if(event.target.closest('button'))return;
  if(!['briefing','battle'].includes(journey.phase))return;
@@ -112,6 +135,7 @@ window.addEventListener('keydown',event=>{
  if(game.state==='playing'&&PLAY_KEYS.includes(event.code))controls.press(event.code);
 });
 window.addEventListener('keyup',event=>{if(event.code==='Enter')enterHeld=false;controls.release(event.code);});
+window.addEventListener('pagehide',stop);
 window.addEventListener('blur',stop);document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
 for(const button of document.querySelectorAll('[data-key]')){
  button.addEventListener('pointerdown',event=>{event.preventDefault();if(journey.phase!=='battle'||game.state!=='playing')return;button.setPointerCapture(event.pointerId);controls.press(button.dataset.key,event.pointerId);});
@@ -126,9 +150,10 @@ function frame(now){
    game.players.forEach((p,i)=>{const v=input.players[i];if(!p.dead&&(v.dir!==null||v.fire))inputTicks[i]++;});
    update(game,input,1/60);accumulator-=1/60;
   }
+  consumeBattleEvents();
   if(['won','lost'].includes(game.state)){journey=settle(journey,game,inputTicks);clear();persist();lastView='';}
  }else accumulator=0;
- if(game&&['briefing','battle'].includes(journey.phase)){renderer.effects(game.events.splice(0));renderer.draw(game,dt);}
+ if(game&&['briefing','battle'].includes(journey.phase)){renderer.draw(game,dt);}
  sync();requestAnimationFrame(frame);
 }
 if(journey.phase==='briefing')prepareBattle();
@@ -136,4 +161,4 @@ if(store.wasEmpty||store.restartedBattle||store.blocked)persist();
 else text('#save-note','已读取独立短战役阶段记录 · 战斗刷新回当前行动整备 · v1/v2/v3记录保留');
 $('#restore-note').hidden=!store.restartedBattle;
 sync();requestAnimationFrame(frame);
-window.__fortressCampaign={snapshot:()=>({journey:JSON.parse(JSON.stringify(journey)),battle:['briefing','battle'].includes(journey.phase)&&game?snapshot(game):null,inputTicks:[...inputTicks],storage:{blocked:store.blocked,reason:store.reason,key:KEY}})};
+window.__fortressCampaign={audio:()=>callAudio('diagnostics')??{available:false},snapshot:()=>({journey:JSON.parse(JSON.stringify(journey)),battle:['briefing','battle'].includes(journey.phase)&&game?snapshot(game):null,inputTicks:[...inputTicks],storage:{blocked:store.blocked,reason:store.reason,key:KEY}})};

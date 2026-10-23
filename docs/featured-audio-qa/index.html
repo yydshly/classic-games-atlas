@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>精选试玩 · 关键事件声音</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eeeade;color:#263f37;font:16px/1.8 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:32px 22px 64px}a{color:#36695b;text-underline-offset:4px}h1{font-size:clamp(28px,5vw,44px);line-height:1.3}h2{font-size:22px;margin-top:32px}.eyebrow{font-size:12px;letter-spacing:.15em;color:#7d694c}.lead{max-width:770px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:14px 12px;text-align:left;border-bottom:1px solid #b9c6b6;vertical-align:top}.samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.sample{padding:18px;border:1px solid #b9c6b6;border-radius:12px;background:#f8f5e9}.sample h3{margin:0 0 10px}.sample p{font-size:13px}audio{width:100%}.screens{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.screens img{width:100%;height:auto;border:1px solid #b9c6b6;border-radius:8px}.screens a{font-size:12px}.boundary{border-left:3px solid #a37e45;padding:8px 18px;background:#f5eddb}code{overflow-wrap:anywhere}a:focus-visible{outline:3px solid #aa743a;outline-offset:4px}@media(max-width:650px){main{padding:24px 14px}.samples{grid-template-columns:1fr}.screens{grid-template-columns:repeat(2,minmax(0,1fr))}table{font-size:12px}td,th{padding:10px 6px}}
+</style></head><body><main><a href="../../#selected-play">← 返回精选试玩</a><p class="eyebrow">FEATURED PLAY / ORIGINAL SYNTHESIZED CUES · 2026-10-23</p><h1>让重要的变化，有一声回应。</h1><p class="lead">三款精选使用本地 Web Audio 合成短音，没有背景音乐、外部音频或服务。默认静音；展开“声音”并点按“开启声音”。共同记忆音量与静音选择，每次打开页面仍需手势启用。设置位于画布外，打开时暂停游戏，关闭后由玩家继续。</p>
+<table><thead><tr><th>当前入口</th><th>配音事件</th><th>声音取向</th></tr></thead><tbody>
+<tr><td><a href="../../versions/v4/games/fortress/">堡垒防线 v4</a></td><td>有效命中、玩家/基地受损、道具拾取、行动胜负。同批优先结算与受损；逐发开火、破砖不配音。</td><td>低音三角波短促反馈</td></tr>
+<tr><td><a href="../../versions/v3/games/brook/">溪谷守芽 v3</a></td><td>有效部署/撤收、收露、装置损坏、伏石触发/清敌、场次胜负。复用原有有效动作反馈，移除重复音频实现。</td><td>较高音区的正弦短音、双音</td></tr>
+<tr><td><a href="../../versions/v4/games/post/">弯道邮差 v4 自由赛</a><br><a href="../../versions/v4/games/post/cup/">三站杯</a></td><td>玩家合法过闸、过圈、复位、合法完赛、未完赛超时。对手过闸静默；第三名合法完赛仍是完赛声，终点不再叠加闸门声。</td><td>中音区正弦提示，过闸双音与完赛上行短句</td></tr>
+</tbody></table>
+<p>默认合成输出增益 12%，设置范围 0–25%（不代表扬声器实测响度）。每页最多一个 AudioContext、六个短音节点，不排队补播旧事件；暂停、失焦、页面隐藏、离开和重开会释放正在发声的节点。缺少音频 API、解锁失败或设置无法保存都不会阻止游玩。游戏存档格式、数值与关卡保持原样。</p>
+<h2>已验证的范围</h2><p><a href="results.json">精简机器证据</a>记录了 14 组模型/控制器检查、四入口普通 UI 短操作、8 个浏览器容错场景。实际短操作观察到堡垒拾取与命中、溪谷部署/撤收和收露、邮差两个模式各三次过闸与一次复位；胜败等终态接线用明确的控制器夹具验证，本批没有重新跑完整战役。</p><p>桌面 1440 CSS 与 390 CSS 的设置、原生键盘、可信 pointerType=touch 模拟、静音/重启用、暂停释放、刷新重新解锁均通过；无页面错误或资源 404。无 AudioContext、设置写失败后恢复、已有上下文挂起后通过“继续”恢复分别验证，均未创建第二个上下文。</p>
+<div class="boundary"><b>验收边界</b><p>无头 Chromium 切换标签仍保持 visible/focused，未产生真实失焦。本批以明确的 blur/hidden 事件夹具检查这些处理器，不能视为真实设备切后台验收。下方声音是浏览器合成输出经 MediaRecorder 采集并解码的数字样本；检查了非零采样、峰值与重复触发，不是麦克风录音或扬声器响度测量。稀疏样本可能只编码发声片段。</p><p>尚未进行真人聆听、音色/混音审美、实体手机触控、设备输出与系统级中断验收。技术通过也不代表真人乐趣验收。</p></div>
+<h2>普通输入产生的数字样本</h2><div class="samples">
+<article class="sample"><h3>堡垒 · 拾取、命中</h3><audio controls preload="none" src="fortress-ordinary-input.webm"></audio><p>两次拾取、一次命中；捕获峰值约 0.0129（数字满量程）。</p></article>
+<article class="sample"><h3>溪谷 · 部署、收露、撤收</h3><audio controls preload="none" src="brook-ordinary-input.webm"></audio><p>两次有效动作、一次收露；捕获峰值约 0.0155。</p></article>
+<article class="sample"><h3>邮差 · 自由赛</h3><audio controls preload="none" src="post-ordinary-input.webm"></audio><p>三次玩家过闸、一次复位；捕获峰值约 0.0132。</p></article>
+<article class="sample"><h3>邮差 · 三站杯</h3><audio controls preload="none" src="cup-ordinary-input.webm"></audio><p>三次玩家过闸、一次复位；捕获峰值约 0.0131。</p></article></div>
+<h2>390 CSS 布局与键盘焦点</h2><div class="screens">
+<a href="fortress-settings-1440.png"><img src="fortress-settings-390.png" alt="堡垒窄屏声音面板，音量滑块获得可见焦点">堡垒：点开桌面截图</a>
+<a href="brook-settings-1440.png"><img src="brook-settings-390.png" alt="溪谷窄屏声音面板独占一行，未覆盖画布">溪谷：点开桌面截图</a>
+<a href="post-settings-1440.png"><img src="post-settings-390.png" alt="邮差自由赛窄屏设置与音量焦点">自由赛：点开桌面截图</a>
+<a href="cup-settings-1440.png"><img src="cup-settings-390.png" alt="三站杯窄屏声音设置与音量焦点">三站杯：点开桌面截图</a></div>
+<p>可重跑自动检查：<code>node tests/play-audio.test.mjs</code>、<code>node tests/featured-audio-events.test.mjs</code>。目录仍为 45 项，经典图鉴仍为 72 条。旧版本、其他作品与游戏存档格式均未改动。</p></main></body></html>

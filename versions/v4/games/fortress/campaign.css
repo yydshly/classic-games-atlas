@@ -46,3 +46,8 @@ dialog::backdrop{background:#071316bb}dialog p{font-size:14px;line-height:1.8}di
 /* Three-stage progress and an always-visible, read-only legacy route. */
 .legacy-note{font-size:11px;line-height:1.5;color:var(--muted);margin:0 0 4px}.legacy-note a{text-decoration:underline;text-underline-offset:3px}.journey-strip p{min-width:0}
 @media(max-width:760px){.journey-strip ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.journey-strip li{min-width:0;text-align:center;padding:4px 3px}.legacy-note{font-size:10px}.legacy-note a{display:inline-block;min-height:24px;line-height:24px}}
+
+/* Optional compact audio controls stay in document flow, outside the field. */
+.campaign-shell{grid-template-areas:"siteheader" "notice" "legacy" "audio" "battle";grid-template-rows:auto auto auto auto minmax(0,1fr)}
+.campaign-shell>#audio-host{grid-area:audio;min-width:0}
+body[data-state=intermission] .campaign-shell,body[data-state=defeat] .campaign-shell,body[data-state=complete] .campaign-shell{grid-template-rows:auto auto auto auto 0}

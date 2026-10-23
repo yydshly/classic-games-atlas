@@ -1,3 +1,4 @@
+import {mountGameAudio} from '../../../../../play-audio.mjs?v=featured-audio-r1';
 import {pause,update,resetCar,snapshot,standings} from '../engine.mjs?v=post-v4-r1';
 import {Renderer} from '../renderer.mjs?v=post-v4-r1';
 import {gateTarget} from '../gate-target.mjs?v=post-v4-r1';
@@ -7,18 +8,20 @@ const $=s=>document.querySelector(s);let store;try{store=window.localStorage;}ca
 const storage=readSession(store);let session=storage.session,restored=storage.restored,storageAvailable=storage.available;
 const renderer=new Renderer($('#battle')),keys=new Set(),touches=new Map(),taps={};
 let previous=performance.now(),lastSave=0,lastHud=0,lastView='',primary;
+const audio=mountGameAudio({theme:'post',host:$('#game-audio'),onOpen:()=>autoPause()});
+audio.pause();
 const active=()=>['ready','racing'].includes(session.cup.phase);
 const held=a=>[...touches.values()].includes(a)||(taps[a]||0)>0;
 function classes(){document.querySelectorAll('[data-hold]').forEach(b=>b.classList.toggle('active',held(b.dataset.hold)));}
 function clearInputs(){keys.clear();touches.clear();for(const k in taps)delete taps[k];classes();}
 function announce(text){if($('#status').textContent!==text)$('#status').textContent=text;}
 function save(){const result=writeSession(store,session,storage.blocked);storageAvailable=result==='saved';$('#save-note').textContent=result==='saved'?'本届独立保存。刷新或退出后回来，进行中比赛先暂停，已封盘站点保持。':result==='blocked'?(storage.available?'杯赛存档无法读取，已保留原内容并停止覆盖；本次仍可玩，刷新会丢失新进度。':'本机存储无法读取；本次仍可玩，刷新会丢失新进度。'):'杯赛保存失败；本次仍可玩，刷新可能丢失当前进度。原存档未删除。';}
-function beginRace(){clearInputs();if(!begin(session))return;restored=false;previous=performance.now();save();sync();$('#battle').focus({preventScroll:true});announce('三秒起跑。按序过闸，先稳住出弯。');}
-function togglePause(){const g=session.battle;if(session.cup.phase!=='racing'||!['countdown','playing','paused'].includes(g.state))return;clearInputs();pause(g);previous=performance.now();save();sync();hud();if(g.state!=='paused'){restored=false;$('#battle').focus({preventScroll:true});}}
-function autoPause(){clearInputs();const g=session.battle;if(session.cup.phase==='racing'&&['playing','countdown'].includes(g.state)){pause(g);previous=performance.now();save();sync();hud();}}
-function nextStation(){clearInputs();if(!advance(session))return;lastView='';restored=false;previous=performance.now();save();beginRace();}
+function beginRace(){clearInputs();if(!begin(session))return;audio.resume();restored=false;previous=performance.now();save();sync();$('#battle').focus({preventScroll:true});announce('三秒起跑。按序过闸，先稳住出弯。');}
+function togglePause(){const g=session.battle;if(session.cup.phase!=='racing'||!['countdown','playing','paused'].includes(g.state))return;clearInputs();pause(g);if(g.state==='paused')audio.pause();else audio.resume();previous=performance.now();save();sync();hud();if(g.state!=='paused'){restored=false;$('#battle').focus({preventScroll:true});}}
+function autoPause(){audio.pause();clearInputs();const g=session.battle;if(session.cup.phase==='racing'&&['playing','countdown'].includes(g.state)){pause(g);previous=performance.now();save();sync();hud();}}
+function nextStation(){audio.stop();clearInputs();if(!advance(session))return;lastView='';restored=false;previous=performance.now();save();beginRace();}
 function requestRestart(){autoPause();$('#restart-dialog').showModal();}
-function restartCup(){clearInputs();session=createSession();restored=false;lastView='';previous=performance.now();$('#restart-dialog').close();save();hud();sync();renderer.draw(session.battle);$('#primary-action').focus({preventScroll:true});announce('已重开整届杯赛，本届积分清零；自由练习及旧双站杯纪录保持。');}
+function restartCup(){audio.stop();clearInputs();session=createSession();restored=false;lastView='';previous=performance.now();$('#restart-dialog').close();save();hud();sync();renderer.draw(session.battle);$('#primary-action').focus({preventScroll:true});announce('已重开整届杯赛，本届积分清零；自由练习及旧双站杯纪录保持。');}
 function openHelp(){autoPause();$('#help-dialog').showModal();}
 function playerResult(index=session.cup.index){return session.cup.results[index]?.rows.find(r=>r.id==='player');}
 function show(title,copy,summary,label,action){$('#overlay-title').textContent=title;$('#overlay-copy').textContent=copy;$('#summary').textContent=summary;$('#primary-action').textContent=label;primary=action;$('#overlay').hidden=false;}
@@ -47,9 +50,22 @@ function hud(){
  if(cup.phase==='racing'&&g.state==='playing'){if(car.lock>0)announce(`复位停驶 ${car.lock.toFixed(1)} 秒，对手继续。`);else if(car.wrongWay)announce('正在逆行，沿箭头方向接续下一闸门。');else if(car.offroad)announce('驶入路肩，松油调整路线。');else if(/^(复位|正在逆行|驶入路肩)/.test($('#status').textContent))announce('沿箭头接续下一闸门，入弯前减速。');}
 }
 $('#primary-action').onclick=()=>primary?.();$('#secondary-action').onclick=openHelp;$('#pause').onclick=togglePause;$('#recover').onclick=()=>{if(session.cup.phase==='racing')resetCar(session.battle);clearInputs();save();};$('#restart').onclick=requestRestart;$('#restart-confirm').onclick=restartCup;$('#restart-cancel').onclick=()=>$('#restart-dialog').close();$('#help').onclick=openHelp;$('#help-close').onclick=()=>$('#help-dialog').close();
-window.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||$('dialog[open]')||e.target?.closest?.('a,input,select,textarea,summary,[contenteditable=true]'))return;const driving=['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyS','KeyA','KeyD'];if(driving.includes(e.code)){if(!e.target?.closest?.('button')&&session.cup.phase==='racing'&&['playing','countdown'].includes(session.battle.state)){e.preventDefault();keys.add(e.code);}return;}if(e.repeat)return;if(['KeyP','Escape'].includes(e.code)){e.preventDefault();togglePause();}if(e.code==='KeyR'){e.preventDefault();requestRestart();}if(e.code==='KeyB'){e.preventDefault();if(session.cup.phase==='racing')resetCar(session.battle);clearInputs();save();}});window.addEventListener('keyup',e=>keys.delete(e.code));
+window.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||$('dialog[open]')||e.target?.closest?.('a,input,select,textarea,summary,[contenteditable=true]')||e.target?.closest?.('#game-audio'))return;const driving=['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyS','KeyA','KeyD'];if(driving.includes(e.code)){if(!e.target?.closest?.('button')&&session.cup.phase==='racing'&&['playing','countdown'].includes(session.battle.state)){e.preventDefault();keys.add(e.code);}return;}if(e.repeat)return;if(['KeyP','Escape'].includes(e.code)){e.preventDefault();togglePause();}if(e.code==='KeyR'){e.preventDefault();requestRestart();}if(e.code==='KeyB'){e.preventDefault();if(session.cup.phase==='racing')resetCar(session.battle);clearInputs();save();}});window.addEventListener('keyup',e=>keys.delete(e.code));
 for(const b of document.querySelectorAll('[data-hold]')){b.addEventListener('pointerdown',e=>{if(e.button!==0||session.cup.phase!=='racing'||!['playing','countdown'].includes(session.battle.state))return;e.preventDefault();touches.set(e.pointerId,b.dataset.hold);b.setPointerCapture(e.pointerId);classes();});for(const event of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(event,e=>{touches.delete(e.pointerId);classes();});b.addEventListener('click',e=>{if(e.detail===0&&session.cup.phase==='racing'&&['playing','countdown'].includes(session.battle.state)){taps[b.dataset.hold]=.18;classes();}});}
 window.addEventListener('blur',autoPause);document.addEventListener('visibilitychange',()=>{if(document.hidden)autoPause();});window.addEventListener('pagehide',()=>{autoPause();save();});window.addEventListener('beforeunload',()=>{autoPause();save();});
-function frame(now){const dt=Math.max(0,Math.min(.08,(now-previous)/1000));previous=now;const g=session.battle;if(session.cup.phase==='racing')update(g,dt,{steer:Number(keys.has('KeyD')||keys.has('ArrowRight')||held('right'))-Number(keys.has('KeyA')||keys.has('ArrowLeft')||held('left')),gas:Number(keys.has('KeyW')||keys.has('ArrowUp')||held('gas')),brake:Number(keys.has('KeyS')||keys.has('ArrowDown')||held('brake'))});for(const k in taps){taps[k]=Math.max(0,taps[k]-dt);if(!taps[k]){delete taps[k];classes();}}if(session.cup.phase==='racing'&&g.state==='finished'){if(recordFinish(session)){clearInputs();save();announce(`第 ${session.cup.index+1} 站已封盘，成绩只记一次。`);}else announce('本届结算无法读取；未改写成绩，请保留页面。');}for(const e of g.events.splice(0))if(e.type==='reset'&&e.id==='player')clearInputs();sync();if(now-lastHud>80){hud();lastHud=now;}if(session.cup.phase==='racing'&&['countdown','playing'].includes(g.state)&&now-lastSave>700){save();lastSave=now;}renderer.draw(session.battle);requestAnimationFrame(frame);}
-export function diagnostics(){return {cup:JSON.parse(JSON.stringify(session.cup)),battle:snapshot(session.battle),totals:totals(session.cup),storageAvailable,storageBlocked:storage.blocked,restored,input:{keys:[...keys],touches:touches.size}};}
+function drainEvents(g){
+ const events=g.events.splice(0),terminal=events.some(e=>e.type==='finished');
+ for(const e of events){
+  if(e.type==='reset'&&e.id==='player')clearInputs();
+  if(terminal||e.id!==g.car.id)continue;
+  if(e.type==='gate')audio.cue('gate');
+  else if(e.type==='lap')audio.cue('action');
+  else if(e.type==='reset')audio.cue('reset');
+ }
+ // One global settlement event owns the final cue. Finishing in third is still
+ // a legal finish; a timeout with no player finish is the loss indication.
+ if(terminal)audio.cue(g.car.finishedAt!=null?'finish':'lose');
+}
+function frame(now){const dt=Math.max(0,Math.min(.08,(now-previous)/1000));previous=now;const g=session.battle;if(session.cup.phase==='racing')update(g,dt,{steer:Number(keys.has('KeyD')||keys.has('ArrowRight')||held('right'))-Number(keys.has('KeyA')||keys.has('ArrowLeft')||held('left')),gas:Number(keys.has('KeyW')||keys.has('ArrowUp')||held('gas')),brake:Number(keys.has('KeyS')||keys.has('ArrowDown')||held('brake'))});for(const k in taps){taps[k]=Math.max(0,taps[k]-dt);if(!taps[k]){delete taps[k];classes();}}if(session.cup.phase==='racing'&&g.state==='finished'){if(recordFinish(session)){clearInputs();save();announce(`第 ${session.cup.index+1} 站已封盘，成绩只记一次。`);}else announce('本届结算无法读取；未改写成绩，请保留页面。');}drainEvents(g);sync();if(now-lastHud>80){hud();lastHud=now;}if(session.cup.phase==='racing'&&['countdown','playing'].includes(g.state)&&now-lastSave>700){save();lastSave=now;}renderer.draw(session.battle);requestAnimationFrame(frame);}
+export function diagnostics(){return {cup:JSON.parse(JSON.stringify(session.cup)),battle:snapshot(session.battle),totals:totals(session.cup),storageAvailable,storageBlocked:storage.blocked,restored,audio:audio.diagnostics(),input:{keys:[...keys],touches:touches.size}};}
 save();hud();sync();renderer.draw(session.battle);requestAnimationFrame(frame);
