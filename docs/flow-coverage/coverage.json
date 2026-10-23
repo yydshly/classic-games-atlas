@@ -774,7 +774,8 @@
         "docs/featured-play-qa/",
         "docs/featured-touch-qa/",
         "docs/post-route-qa/",
-        "docs/post-cup-qa/"
+        "docs/post-cup-qa/",
+        "docs/post-third-qa/"
       ],
       "browserScope": "已有记录范围；仅有限桌面正常输入，模型/fixture另列",
       "nextToolWork": "三场第一名独立目标已补齐；只保留真人操控/真机/声音审美与经典体验边界",
@@ -838,6 +839,14 @@
         "overallRank": 2,
         "evidence": "docs/post-cup-qa/",
         "acceptance": "candidate_unaccepted"
+      },
+      "optionalThreeStationCup": {
+        "playUrl": "versions/v4/games/post/cup/",
+        "stations": 3,
+        "freePracticeUrl": "versions/v4/games/post/",
+        "evidence": "docs/post-third-qa/",
+        "acceptance": "candidate_unaccepted",
+        "compatibility": "新v4自由练习与三站杯独立，不读写旧v3自由赛/v1双站杯键。"
       }
     },
     {
@@ -3728,5 +3737,10 @@
     "status": "local_verified",
     "evidence": "docs/fortress-third-qa/",
     "scope": "新增原创第三图与可选三图战役，目录仍45，非全库重测"
+  },
+  "postThirdTrackReview": {
+    "baseline": "7d86587759ce0e9a71fbf44034c0ceb796282d85",
+    "scope": "仅邮差第三原创赛道与独立三站杯，目录仍45，不全库重测",
+    "evidence": "docs/post-third-qa/"
   }
 }

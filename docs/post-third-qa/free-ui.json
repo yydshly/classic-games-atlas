@@ -1,0 +1,118 @@
+{
+  "method": "Ordinary new third-track free practice: deliberate no-input95-second natural timeout, native current-race retry/reset, then browser-native touch simulation. Seed is actually earned first-station sealed cup context; no completed/new race state injected.",
+  "events": [
+    {
+      "name": "deliberateNoInput",
+      "time": 0,
+      "gates": 0
+    },
+    {
+      "name": "deliberateNoInput",
+      "time": 20.199999999999495,
+      "gates": 0
+    },
+    {
+      "name": "deliberateNoInput",
+      "time": 40.33333333333169,
+      "gates": 0
+    },
+    {
+      "name": "deliberateNoInput",
+      "time": 60.466666666663876,
+      "gates": 0
+    },
+    {
+      "name": "deliberateNoInput",
+      "time": 80.53333333334349,
+      "gates": 0
+    },
+    {
+      "name": "natural95SecondTimeout",
+      "rank": 3,
+      "newRoute": "post-v4-bridge-return-v1"
+    },
+    {
+      "name": "retryOnlyCurrentFreeRaceCupUnchanged"
+    },
+    {
+      "name": "nativeTouchPartialOutsideReleaseCancel"
+    },
+    {
+      "name": "nativeManualResetPreservesLegalProgress",
+      "method": "Same actual retry checkpoint, wait for existing3-second lock to end naturally, ordinary stationary B reset preserves counters/travel."
+    },
+    {
+      "name": "exactFreeRefreshCupAndOldBytesUnchanged"
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "nativeTouchEvents": [
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    }
+  ],
+  "executionNotes": [
+    "Initial live-before-tap travel equality assertion was too strict: the car legitimately continued coasting before the B click. No engine/rule change.",
+    "Reused actual interrupted retry save; validated stationary native B, pause/refresh/return only. No95-second failure or lap replay."
+  ],
+  "passed": true,
+  "naturalTimeout": {
+    "state": "finished",
+    "time": 95.00000000002167,
+    "routeId": "post-v4-bridge-return-v1",
+    "result": {
+      "rank": 3,
+      "rows": [
+        {
+          "id": "rival-2",
+          "name": "赤狐",
+          "player": false,
+          "lap": 2,
+          "finishedAt": 56.88333333333075,
+          "progress": 28,
+          "distanceProgress": 4562.093690938569,
+          "rank": 1
+        },
+        {
+          "id": "rival-1",
+          "name": "青鸟",
+          "player": false,
+          "lap": 2,
+          "finishedAt": 57.71666666666403,
+          "progress": 28,
+          "distanceProgress": 4562.093690938569,
+          "rank": 2
+        },
+        {
+          "id": "player",
+          "name": "你",
+          "player": true,
+          "lap": 1,
+          "finishedAt": null,
+          "progress": 0.668730982238467,
+          "distanceProgress": 127.90763565685165,
+          "rank": 3
+        }
+      ],
+      "outcome": "lost",
+      "reason": "超时",
+      "time": 95.00000000002167
+    },
+    "playerGates": 0,
+    "settlements": 1
+  }
+}

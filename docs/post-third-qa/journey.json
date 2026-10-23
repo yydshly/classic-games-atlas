@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "groups": 13,
+  "results": [
+    "Three stations preserve stage0 and original checkpoint version3",
+    "Failed station seals 0 points once and can continue without erasing earlier slots",
+    "Third-station active checkpoint restores exact cars/gates/countdown and pauses before input",
+    "Ready, first/second intermissions and three-station final summary persist without fake active races",
+    "Equal totals remain 1,1,3 with no hidden time/car-id tie break",
+    "Free-practice third route preserves its own activity, best and terminal metadata",
+    "Valid and corrupt old namespace bytes are never read, imported, overwritten or removed",
+    "Unknown/corrupt new records block writes and preserve exact bytes in both stores",
+    "Write failure preserves last valid record; later success recovers without touching old namespaces",
+    "Read denial never attempts a write into unknown existing data",
+    "Old cup rules/version, missing third slot, crossed route resume and fourth station are rejected",
+    "Static confirmation wiring keeps cancel inert; fresh session resets the whole cup",
+    "Three visible route/station options and old-mode links have unique stable IDs"
+  ],
+  "method": "Cup/free-store journey fixtures and explicit terminal score fixtures, plus native engine checkpoint round-trips through the integrated v4 runtime. No driving completion, browser, 390 CSS, true-touch, real-device or human-fun claim."
+}

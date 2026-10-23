@@ -1,0 +1,2229 @@
+{
+  "scope": "Deterministic model/declared geometry and position fixtures only. Not browser, physical-device, human enjoyment or first-place acceptance.",
+  "hashes": {
+    "engine.mjs": "ba5fd752299f4793dcf75355d1d1c9ffa18b8f4a138643b2d755593244dc5075",
+    "tracks.mjs": "30f7250ca75353dfa16e170bd8aeb30189f4b8ca188b5db0b5425dc4c670ce09",
+    "policy.mjs": "bfb25cc9e61799317c30b8ea6eef592fedf11ca0c9626aca0abda5c461748954"
+  },
+  "unchanged": {
+    "engineOnlyImportQueryChanged": true,
+    "physics": {
+      "step": 0.008333333333333333,
+      "maxSpeed": 255,
+      "acceleration": 150,
+      "drag": 29,
+      "brake": 330,
+      "turn": 3.25,
+      "shoulderSpeed": 83,
+      "resetPenalty": 3,
+      "carRadius": 11
+    },
+    "oldTrackSHA256": [
+      "f355685414abf12f4799625fc7944d1e5fe9760c36f2cf88cd75f2b218470381",
+      "9f4e3dba1e19e4021fcdc00930ce72b9eac28133ad389606e328c5d55f313814"
+    ],
+    "oldReplays": [
+      {
+        "routeId": "post-v2-morning-block-v1",
+        "frames": 2400,
+        "fullStateSHA256": "a34a4dfe4db994685f82a1426660f95e8ddaa70086729d829df23e129545b504"
+      },
+      {
+        "routeId": "post-v2-sluice-switchbacks-v1",
+        "frames": 2400,
+        "fullStateSHA256": "8c9bb88f730d2386cb24212882c74be56aa17ef6fba702edb70c369e810c28f7"
+      }
+    ]
+  },
+  "geometry": {
+    "length": 2281.047,
+    "gateCount": 14,
+    "width": 86,
+    "centerlineIntersections": 0,
+    "sampledNonlocalClearance": 134.021,
+    "clearanceStep": 4,
+    "minComparedArcGap": 260,
+    "authorVertices": [
+      [
+        130,
+        115
+      ],
+      [
+        420,
+        115
+      ],
+      [
+        500,
+        195
+      ],
+      [
+        585,
+        115
+      ],
+      [
+        770,
+        115
+      ],
+      [
+        815,
+        340
+      ],
+      [
+        705,
+        530
+      ],
+      [
+        520,
+        530
+      ],
+      [
+        470,
+        430
+      ],
+      [
+        360,
+        430
+      ],
+      [
+        305,
+        530
+      ],
+      [
+        115,
+        530
+      ],
+      [
+        85,
+        315
+      ],
+      [
+        230,
+        260
+      ]
+    ],
+    "gateArcs": [
+      0,
+      191.269,
+      296.309,
+      444.556,
+      638.692,
+      858.683,
+      1053.142,
+      1196.278,
+      1301.999,
+      1409.228,
+      1556.275,
+      1745.284,
+      1920.783,
+      2068.285
+    ]
+  },
+  "matrix": [
+    {
+      "strategy": "center",
+      "interval": 0.05,
+      "stage": 2,
+      "state": "finished",
+      "time": 50.217,
+      "finished": 50.21666666666446,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 4,
+      "gasSeconds": 20.217,
+      "steerSeconds": 15.85,
+      "meanAbsLateral": 7.303,
+      "maxAbsLateral": 27.881,
+      "contacts": 189,
+      "decisionCount": 1065,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 34.94166666666533,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.291666666665364,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "center",
+      "interval": 0.1,
+      "stage": 2,
+      "state": "finished",
+      "time": 55.375,
+      "finished": 55.3749999999975,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 11.8,
+      "gasSeconds": 38.375,
+      "steerSeconds": 32.075,
+      "meanAbsLateral": 6.693,
+      "maxAbsLateral": 27.881,
+      "contacts": 189,
+      "decisionCount": 584,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 34.94166666666533,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.291666666665364,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "center",
+      "interval": 0.2,
+      "stage": 2,
+      "state": "finished",
+      "time": 64.3,
+      "finished": 64.29999999999724,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 14.3,
+      "gasSeconds": 45.6,
+      "steerSeconds": 49.1,
+      "meanAbsLateral": 5.503,
+      "maxAbsLateral": 28.012,
+      "contacts": 191,
+      "decisionCount": 337,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 34.94166666666533,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.291666666665364,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "center",
+      "interval": [
+        0.033,
+        0.067,
+        0.05,
+        0.1
+      ],
+      "stage": 2,
+      "state": "finished",
+      "time": 50.433,
+      "finished": 50.43333333333111,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 5.483,
+      "gasSeconds": 23.567,
+      "steerSeconds": 18.7,
+      "meanAbsLateral": 7.093,
+      "maxAbsLateral": 28.012,
+      "contacts": 191,
+      "decisionCount": 856,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 34.94166666666533,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.291666666665364,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "late",
+      "interval": 0.05,
+      "stage": 2,
+      "state": "finished",
+      "time": 40.283,
+      "finished": 40.28333333333169,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 5.233,
+      "gasSeconds": 21.9,
+      "steerSeconds": 22.933,
+      "meanAbsLateral": 11.349,
+      "maxAbsLateral": 30.892,
+      "contacts": 622,
+      "decisionCount": 866,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 37.59999999999851,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.48333333333202,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "late",
+      "interval": 0.1,
+      "stage": 2,
+      "state": "finished",
+      "time": 45.475,
+      "finished": 45.47499999999806,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 1.417,
+      "brakeSeconds": 8.7,
+      "gasSeconds": 29.6,
+      "steerSeconds": 33.675,
+      "meanAbsLateral": 11.815,
+      "maxAbsLateral": 50.908,
+      "contacts": 874,
+      "decisionCount": 485,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 39.24166666666508,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.48333333333202,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "late",
+      "interval": 0.2,
+      "stage": 2,
+      "state": "finished",
+      "time": 49.275,
+      "finished": 49.274999999997846,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0.25,
+      "brakeSeconds": 9.675,
+      "gasSeconds": 35.4,
+      "steerSeconds": 43.875,
+      "meanAbsLateral": 10.675,
+      "maxAbsLateral": 35.718,
+      "contacts": 334,
+      "decisionCount": 262,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 37.17499999999853,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.48333333333202,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "strategy": "late",
+      "interval": [
+        0.033,
+        0.067,
+        0.05,
+        0.1
+      ],
+      "stage": 2,
+      "state": "finished",
+      "time": 40.542,
+      "finished": 40.54166666666501,
+      "rank": 2,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 7.917,
+      "gasSeconds": 21.917,
+      "steerSeconds": 25.283,
+      "meanAbsLateral": 9.259,
+      "maxAbsLateral": 29.223,
+      "contacts": 1155,
+      "decisionCount": 698,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": null,
+          "gates": 27,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.48333333333202,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    }
+  ],
+  "traces": [
+    {
+      "strategy": "center",
+      "trace": [
+        {
+          "time": 0,
+          "x": 292.6,
+          "y": 89,
+          "speed": 0,
+          "next": 1,
+          "lap": 1,
+          "desired": 137.22172029992225,
+          "lane": 0
+        },
+        {
+          "time": 1.008,
+          "x": 300.9,
+          "y": 87.1,
+          "speed": 0.2,
+          "next": 1,
+          "lap": 1,
+          "desired": 149.71432667065045,
+          "lane": 0
+        },
+        {
+          "time": 2.008,
+          "x": 350.7,
+          "y": 105.9,
+          "speed": 87.5,
+          "next": 1,
+          "lap": 1,
+          "desired": 82.80667821434741,
+          "lane": 0
+        },
+        {
+          "time": 3.008,
+          "x": 430.6,
+          "y": 137.2,
+          "speed": 70.5,
+          "next": 1,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 4.008,
+          "x": 493.4,
+          "y": 170.1,
+          "speed": 71.5,
+          "next": 2,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 5.008,
+          "x": 568.5,
+          "y": 133.4,
+          "speed": 87.5,
+          "next": 3,
+          "lap": 1,
+          "desired": 87.48060590768476,
+          "lane": 0
+        },
+        {
+          "time": 6.008,
+          "x": 670.7,
+          "y": 118.3,
+          "speed": 73.5,
+          "next": 3,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 7.008,
+          "x": 741.5,
+          "y": 126.8,
+          "speed": 74.5,
+          "next": 4,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 8.008,
+          "x": 786,
+          "y": 222.6,
+          "speed": 123.8,
+          "next": 4,
+          "lap": 1,
+          "desired": 116.78808854952769,
+          "lane": 0
+        },
+        {
+          "time": 9.008,
+          "x": 800.6,
+          "y": 321,
+          "speed": 109.5,
+          "next": 5,
+          "lap": 1,
+          "desired": 108.32442530960246,
+          "lane": 0
+        },
+        {
+          "time": 10.008,
+          "x": 755.6,
+          "y": 434.6,
+          "speed": 95.8,
+          "next": 6,
+          "lap": 1,
+          "desired": 89.20598649337694,
+          "lane": 0
+        },
+        {
+          "time": 11.008,
+          "x": 715,
+          "y": 497.8,
+          "speed": 74,
+          "next": 6,
+          "lap": 1,
+          "desired": 72.00708811813224,
+          "lane": 0
+        },
+        {
+          "time": 12.008,
+          "x": 619.8,
+          "y": 525.1,
+          "speed": 81.3,
+          "next": 6,
+          "lap": 1,
+          "desired": 73.97659043320137,
+          "lane": 0
+        },
+        {
+          "time": 13.008,
+          "x": 548.3,
+          "y": 522.5,
+          "speed": 69.8,
+          "next": 7,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 14.008,
+          "x": 494.8,
+          "y": 470.1,
+          "speed": 75.5,
+          "next": 8,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 15.008,
+          "x": 432.2,
+          "y": 437.7,
+          "speed": 70.3,
+          "next": 8,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 16.008,
+          "x": 361.7,
+          "y": 455.1,
+          "speed": 97.3,
+          "next": 9,
+          "lap": 1,
+          "desired": 72.62347507057628,
+          "lane": 0
+        },
+        {
+          "time": 17.008,
+          "x": 311.5,
+          "y": 507.2,
+          "speed": 75.5,
+          "next": 10,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 18.008,
+          "x": 218.8,
+          "y": 526.7,
+          "speed": 70.5,
+          "next": 10,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 19.008,
+          "x": 147.9,
+          "y": 518.8,
+          "speed": 71.5,
+          "next": 11,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 20.008,
+          "x": 107,
+          "y": 429.1,
+          "speed": 90.5,
+          "next": 11,
+          "lap": 1,
+          "desired": 87.26965523228552,
+          "lane": 0
+        },
+        {
+          "time": 21.008,
+          "x": 95.8,
+          "y": 356.8,
+          "speed": 75,
+          "next": 12,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 22.008,
+          "x": 143.6,
+          "y": 301.1,
+          "speed": 73,
+          "next": 12,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 23.008,
+          "x": 198.1,
+          "y": 256.2,
+          "speed": 74,
+          "next": 13,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 24.008,
+          "x": 174.2,
+          "y": 184.3,
+          "speed": 72,
+          "next": 0,
+          "lap": 1,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 25.008,
+          "x": 176.4,
+          "y": 117.5,
+          "speed": 96.8,
+          "next": 0,
+          "lap": 1,
+          "desired": 138.0758030327313,
+          "lane": 0
+        },
+        {
+          "time": 26.008,
+          "x": 307.4,
+          "y": 111.2,
+          "speed": 113.3,
+          "next": 1,
+          "lap": 2,
+          "desired": 104.58089161078674,
+          "lane": 0
+        },
+        {
+          "time": 27.008,
+          "x": 395,
+          "y": 120,
+          "speed": 85.3,
+          "next": 1,
+          "lap": 2,
+          "desired": 87.39153886789131,
+          "lane": 0
+        },
+        {
+          "time": 28.008,
+          "x": 461.6,
+          "y": 161.5,
+          "speed": 74.5,
+          "next": 2,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 29.008,
+          "x": 534,
+          "y": 152.1,
+          "speed": 90.5,
+          "next": 2,
+          "lap": 2,
+          "desired": 85.64847448058939,
+          "lane": 0
+        },
+        {
+          "time": 30.008,
+          "x": 630.9,
+          "y": 122.1,
+          "speed": 124.8,
+          "next": 3,
+          "lap": 2,
+          "desired": 112.5153101071339,
+          "lane": 0
+        },
+        {
+          "time": 31.008,
+          "x": 711.1,
+          "y": 118,
+          "speed": 70,
+          "next": 4,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 32.008,
+          "x": 770.3,
+          "y": 169.1,
+          "speed": 124.8,
+          "next": 4,
+          "lap": 2,
+          "desired": 149.02561656989127,
+          "lane": 0
+        },
+        {
+          "time": 33.008,
+          "x": 798.8,
+          "y": 280.6,
+          "speed": 82.3,
+          "next": 5,
+          "lap": 2,
+          "desired": 90.15969750985646,
+          "lane": 0
+        },
+        {
+          "time": 34.008,
+          "x": 778,
+          "y": 390.4,
+          "speed": 134.3,
+          "next": 5,
+          "lap": 2,
+          "desired": 136.62747882512133,
+          "lane": 0
+        },
+        {
+          "time": 35.008,
+          "x": 734.1,
+          "y": 473.1,
+          "speed": 74,
+          "next": 6,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 36.008,
+          "x": 662.1,
+          "y": 519.7,
+          "speed": 135,
+          "next": 6,
+          "lap": 2,
+          "desired": 134.70998613249444,
+          "lane": 0
+        },
+        {
+          "time": 37.008,
+          "x": 577,
+          "y": 527.7,
+          "speed": 69.8,
+          "next": 7,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 38.008,
+          "x": 513.2,
+          "y": 493.1,
+          "speed": 74,
+          "next": 7,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 39.008,
+          "x": 460.7,
+          "y": 445.1,
+          "speed": 75,
+          "next": 8,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 40.008,
+          "x": 389.7,
+          "y": 438.3,
+          "speed": 69.8,
+          "next": 9,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 41.008,
+          "x": 332.7,
+          "y": 488.6,
+          "speed": 74,
+          "next": 10,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 42.008,
+          "x": 254.1,
+          "y": 522.7,
+          "speed": 112.3,
+          "next": 10,
+          "lap": 2,
+          "desired": 119.43587589675488,
+          "lane": 0
+        },
+        {
+          "time": 43.008,
+          "x": 174.5,
+          "y": 526.8,
+          "speed": 69.8,
+          "next": 11,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 44.008,
+          "x": 118.1,
+          "y": 474.3,
+          "speed": 123.3,
+          "next": 11,
+          "lap": 2,
+          "desired": 149.79274906175917,
+          "lane": 0
+        },
+        {
+          "time": 45.008,
+          "x": 98.2,
+          "y": 385,
+          "speed": 70.5,
+          "next": 12,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 46.008,
+          "x": 118.9,
+          "y": 317.8,
+          "speed": 95.3,
+          "next": 12,
+          "lap": 2,
+          "desired": 107.36668501139575,
+          "lane": 0
+        },
+        {
+          "time": 47.008,
+          "x": 181.7,
+          "y": 278.9,
+          "speed": 70.8,
+          "next": 13,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 48.008,
+          "x": 187.7,
+          "y": 210.3,
+          "speed": 75,
+          "next": 13,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 49.008,
+          "x": 161,
+          "y": 144.2,
+          "speed": 69.8,
+          "next": 0,
+          "lap": 2,
+          "desired": 70,
+          "lane": 0
+        },
+        {
+          "time": 50.008,
+          "x": 253.3,
+          "y": 110.7,
+          "speed": 152,
+          "next": 0,
+          "lap": 2,
+          "desired": 148.9262398620519,
+          "lane": 0
+        }
+      ],
+      "playerEvents": [
+        {
+          "at": 3.475,
+          "type": "gate",
+          "id": "player",
+          "gate": 1,
+          "position": {
+            "x": 457.66,
+            "y": 157.65
+          },
+          "speed": 72.01,
+          "lateral": 3.52
+        },
+        {
+          "at": 4.617,
+          "type": "gate",
+          "id": "player",
+          "gate": 2,
+          "position": {
+            "x": 538.1,
+            "y": 149.62
+          },
+          "speed": 86.4,
+          "lateral": -6.93
+        },
+        {
+          "at": 6.108,
+          "type": "gate",
+          "id": "player",
+          "gate": 3,
+          "position": {
+            "x": 677.92,
+            "y": 117.78
+          },
+          "speed": 70.64,
+          "lateral": 2.78
+        },
+        {
+          "at": 8.067,
+          "type": "gate",
+          "id": "player",
+          "gate": 4,
+          "position": {
+            "x": 787.66,
+            "y": 229.03
+          },
+          "speed": 110.85,
+          "lateral": 5.05
+        },
+        {
+          "at": 9.992,
+          "type": "gate",
+          "id": "player",
+          "gate": 5,
+          "position": {
+            "x": 756.4,
+            "y": 433.19
+          },
+          "speed": 99.03,
+          "lateral": 4.02
+        },
+        {
+          "at": 12.117,
+          "type": "gate",
+          "id": "player",
+          "gate": 6,
+          "position": {
+            "x": 612.15,
+            "y": 525.55
+          },
+          "speed": 71.9,
+          "lateral": 4.45
+        },
+        {
+          "at": 13.883,
+          "type": "gate",
+          "id": "player",
+          "gate": 7,
+          "position": {
+            "x": 500.4,
+            "y": 477.13
+          },
+          "speed": 71.67,
+          "lateral": 6.12
+        },
+        {
+          "at": 15.25,
+          "type": "gate",
+          "id": "player",
+          "gate": 8,
+          "position": {
+            "x": 414.8,
+            "y": 435.62
+          },
+          "speed": 69.54,
+          "lateral": -5.62
+        },
+        {
+          "at": 16.517,
+          "type": "gate",
+          "id": "player",
+          "gate": 9,
+          "position": {
+            "x": 337.71,
+            "y": 483.4
+          },
+          "speed": 74.8,
+          "lateral": -6.2
+        },
+        {
+          "at": 18.133,
+          "type": "gate",
+          "id": "player",
+          "gate": 10,
+          "position": {
+            "x": 209.82,
+            "y": 527.66
+          },
+          "speed": 74.42,
+          "lateral": 2.34
+        },
+        {
+          "at": 20.1,
+          "type": "gate",
+          "id": "player",
+          "gate": 11,
+          "position": {
+            "x": 105.58,
+            "y": 421.55
+          },
+          "speed": 71.39,
+          "lateral": 5.65
+        },
+        {
+          "at": 22.267,
+          "type": "gate",
+          "id": "player",
+          "gate": 12,
+          "position": {
+            "x": 159.64,
+            "y": 291.68
+          },
+          "speed": 73.05,
+          "lateral": 4.67
+        },
+        {
+          "at": 23.933,
+          "type": "gate",
+          "id": "player",
+          "gate": 13,
+          "position": {
+            "x": 176.84,
+            "y": 189.13
+          },
+          "speed": 74.22,
+          "lateral": -3.52
+        },
+        {
+          "at": 25.808,
+          "type": "lap",
+          "id": "player",
+          "lap": 1,
+          "time": 25.80833333333251,
+          "position": {
+            "x": 282.98,
+            "y": 111.12
+          },
+          "speed": 130.84,
+          "lateral": -3.88
+        },
+        {
+          "at": 27.933,
+          "type": "gate",
+          "id": "player",
+          "gate": 1,
+          "position": {
+            "x": 457.06,
+            "y": 158.63
+          },
+          "speed": 69.22,
+          "lateral": 4.64
+        },
+        {
+          "at": 29.058,
+          "type": "gate",
+          "id": "player",
+          "gate": 2,
+          "position": {
+            "x": 537.78,
+            "y": 149.71
+          },
+          "speed": 89.09,
+          "lateral": -7.09
+        },
+        {
+          "at": 30.542,
+          "type": "gate",
+          "id": "player",
+          "gate": 3,
+          "position": {
+            "x": 677.52,
+            "y": 118.22
+          },
+          "speed": 74.83,
+          "lateral": 3.22
+        },
+        {
+          "at": 32.492,
+          "type": "gate",
+          "id": "player",
+          "gate": 4,
+          "position": {
+            "x": 787.17,
+            "y": 229.6
+          },
+          "speed": 123.03,
+          "lateral": 5.64
+        },
+        {
+          "at": 34.425,
+          "type": "gate",
+          "id": "player",
+          "gate": 5,
+          "position": {
+            "x": 756.67,
+            "y": 433.28
+          },
+          "speed": 101.46,
+          "lateral": 3.74
+        },
+        {
+          "at": 36.517,
+          "type": "gate",
+          "id": "player",
+          "gate": 6,
+          "position": {
+            "x": 612.09,
+            "y": 526.15
+          },
+          "speed": 62.8,
+          "lateral": 3.85
+        },
+        {
+          "at": 38.292,
+          "type": "gate",
+          "id": "player",
+          "gate": 7,
+          "position": {
+            "x": 500.24,
+            "y": 477
+          },
+          "speed": 73.33,
+          "lateral": 6.03
+        },
+        {
+          "at": 39.658,
+          "type": "gate",
+          "id": "player",
+          "gate": 8,
+          "position": {
+            "x": 414.63,
+            "y": 435.36
+          },
+          "speed": 71.19,
+          "lateral": -5.36
+        },
+        {
+          "at": 40.908,
+          "type": "gate",
+          "id": "player",
+          "gate": 9,
+          "position": {
+            "x": 337.64,
+            "y": 483.02
+          },
+          "speed": 70.69,
+          "lateral": -5.96
+        },
+        {
+          "at": 42.517,
+          "type": "gate",
+          "id": "player",
+          "gate": 10,
+          "position": {
+            "x": 209.94,
+            "y": 526.46
+          },
+          "speed": 70.3,
+          "lateral": 3.54
+        },
+        {
+          "at": 44.5,
+          "type": "gate",
+          "id": "player",
+          "gate": 11,
+          "position": {
+            "x": 104.36,
+            "y": 421.43
+          },
+          "speed": 86.79,
+          "lateral": 4.46
+        },
+        {
+          "at": 46.65,
+          "type": "gate",
+          "id": "player",
+          "gate": 12,
+          "position": {
+            "x": 159.54,
+            "y": 292.13
+          },
+          "speed": 72.44,
+          "lateral": 5.05
+        },
+        {
+          "at": 48.333,
+          "type": "gate",
+          "id": "player",
+          "gate": 13,
+          "position": {
+            "x": 176.28,
+            "y": 189.62
+          },
+          "speed": 73.12,
+          "lateral": -4.27
+        },
+        {
+          "at": 50.217,
+          "type": "lap",
+          "id": "player",
+          "lap": 2,
+          "time": 24.40833333333195,
+          "position": {
+            "x": 283.56,
+            "y": 110.77
+          },
+          "speed": 0,
+          "lateral": -4.23
+        },
+        {
+          "at": 50.217,
+          "type": "finish",
+          "id": "player",
+          "time": 50.21666666666446,
+          "position": {
+            "x": 283.56,
+            "y": 110.77
+          },
+          "speed": 0,
+          "lateral": -4.23
+        }
+      ]
+    },
+    {
+      "strategy": "late",
+      "trace": [
+        {
+          "time": 0,
+          "x": 292.6,
+          "y": 89,
+          "speed": 0,
+          "next": 1,
+          "lap": 1,
+          "desired": 185,
+          "lane": -26
+        },
+        {
+          "time": 1.008,
+          "x": 347,
+          "y": 86.2,
+          "speed": 72.9,
+          "next": 1,
+          "lap": 1,
+          "desired": 135.18319217905704,
+          "lane": -26
+        },
+        {
+          "time": 2.008,
+          "x": 412.4,
+          "y": 93.1,
+          "speed": 50.3,
+          "next": 1,
+          "lap": 1,
+          "desired": 138.39219722447194,
+          "lane": 26
+        },
+        {
+          "time": 3.008,
+          "x": 431.3,
+          "y": 115.7,
+          "speed": 14.8,
+          "next": 1,
+          "lap": 1,
+          "desired": 171.04231929723767,
+          "lane": 26
+        },
+        {
+          "time": 4.008,
+          "x": 461,
+          "y": 166.4,
+          "speed": 92.6,
+          "next": 2,
+          "lap": 1,
+          "desired": 87.01493075387589,
+          "lane": 20
+        },
+        {
+          "time": 5.008,
+          "x": 559,
+          "y": 128.7,
+          "speed": 126.7,
+          "next": 3,
+          "lap": 1,
+          "desired": 130.86290798530115,
+          "lane": 12
+        },
+        {
+          "time": 6.008,
+          "x": 689.4,
+          "y": 107.7,
+          "speed": 97.7,
+          "next": 4,
+          "lap": 1,
+          "desired": 99.07481801508388,
+          "lane": -20
+        },
+        {
+          "time": 7.008,
+          "x": 768.6,
+          "y": 176.4,
+          "speed": 162.6,
+          "next": 4,
+          "lap": 1,
+          "desired": 177.50181214522644,
+          "lane": -20
+        },
+        {
+          "time": 8.008,
+          "x": 805.6,
+          "y": 316.2,
+          "speed": 151.6,
+          "next": 5,
+          "lap": 1,
+          "desired": 152.0082708953209,
+          "lane": 12
+        },
+        {
+          "time": 9.008,
+          "x": 749.9,
+          "y": 466.5,
+          "speed": 134.7,
+          "next": 6,
+          "lap": 1,
+          "desired": 119.03444273616805,
+          "lane": -20
+        },
+        {
+          "time": 10.008,
+          "x": 632.9,
+          "y": 522,
+          "speed": 137.4,
+          "next": 6,
+          "lap": 1,
+          "desired": 123.87277859192085,
+          "lane": -20
+        },
+        {
+          "time": 11.008,
+          "x": 519.3,
+          "y": 500.5,
+          "speed": 124,
+          "next": 7,
+          "lap": 1,
+          "desired": 109.70825689553423,
+          "lane": 20
+        },
+        {
+          "time": 12.008,
+          "x": 444.5,
+          "y": 426.1,
+          "speed": 113.3,
+          "next": 8,
+          "lap": 1,
+          "desired": 113.922762193382,
+          "lane": 20
+        },
+        {
+          "time": 13.008,
+          "x": 334.2,
+          "y": 466.5,
+          "speed": 120.9,
+          "next": 9,
+          "lap": 1,
+          "desired": 118.38172597475833,
+          "lane": 26
+        },
+        {
+          "time": 14.008,
+          "x": 222.7,
+          "y": 505.5,
+          "speed": 117.4,
+          "next": 10,
+          "lap": 1,
+          "desired": 111.04303808190963,
+          "lane": 26
+        },
+        {
+          "time": 15.008,
+          "x": 140,
+          "y": 494.6,
+          "speed": 0,
+          "next": 11,
+          "lap": 1,
+          "desired": 139.9973496341167,
+          "lane": 26
+        },
+        {
+          "time": 16.008,
+          "x": 125.4,
+          "y": 449.1,
+          "speed": 110,
+          "next": 11,
+          "lap": 1,
+          "desired": 167.89390145693855,
+          "lane": 26
+        },
+        {
+          "time": 17.008,
+          "x": 110.7,
+          "y": 344,
+          "speed": 82.5,
+          "next": 12,
+          "lap": 1,
+          "desired": 90.64148175830405,
+          "lane": 26
+        },
+        {
+          "time": 18.008,
+          "x": 172.1,
+          "y": 295.4,
+          "speed": 71.5,
+          "next": 13,
+          "lap": 1,
+          "desired": 72.20604162846126,
+          "lane": 20
+        },
+        {
+          "time": 19.008,
+          "x": 197.7,
+          "y": 227.8,
+          "speed": 116.2,
+          "next": 13,
+          "lap": 1,
+          "desired": 109.39673033312107,
+          "lane": 26
+        },
+        {
+          "time": 20.008,
+          "x": 171.7,
+          "y": 158.5,
+          "speed": 75.2,
+          "next": 0,
+          "lap": 1,
+          "desired": 70,
+          "lane": -26
+        },
+        {
+          "time": 21.008,
+          "x": 202.1,
+          "y": 93.6,
+          "speed": 137.5,
+          "next": 0,
+          "lap": 1,
+          "desired": 177.4546724037936,
+          "lane": 0
+        },
+        {
+          "time": 22.008,
+          "x": 354.1,
+          "y": 97.3,
+          "speed": 138.7,
+          "next": 1,
+          "lap": 2,
+          "desired": 135.5539055404692,
+          "lane": -20
+        },
+        {
+          "time": 23.008,
+          "x": 453.6,
+          "y": 151.8,
+          "speed": 87.2,
+          "next": 1,
+          "lap": 2,
+          "desired": 86.8854569239464,
+          "lane": 20
+        },
+        {
+          "time": 24.008,
+          "x": 540.3,
+          "y": 142.2,
+          "speed": 139.2,
+          "next": 3,
+          "lap": 2,
+          "desired": 136.76217888892154,
+          "lane": -20
+        },
+        {
+          "time": 25.008,
+          "x": 675.2,
+          "y": 109.8,
+          "speed": 111.7,
+          "next": 3,
+          "lap": 2,
+          "desired": 104.70820830502164,
+          "lane": -20
+        },
+        {
+          "time": 26.008,
+          "x": 756.5,
+          "y": 152.6,
+          "speed": 141,
+          "next": 4,
+          "lap": 2,
+          "desired": 168.56931100931394,
+          "lane": 12
+        },
+        {
+          "time": 27.008,
+          "x": 811.5,
+          "y": 292.4,
+          "speed": 130,
+          "next": 5,
+          "lap": 2,
+          "desired": 136.55456089960649,
+          "lane": 12
+        },
+        {
+          "time": 28.008,
+          "x": 760.2,
+          "y": 438.9,
+          "speed": 137.5,
+          "next": 6,
+          "lap": 2,
+          "desired": 131.86142482316026,
+          "lane": -20
+        },
+        {
+          "time": 29.008,
+          "x": 668.5,
+          "y": 511.3,
+          "speed": 162,
+          "next": 6,
+          "lap": 2,
+          "desired": 166.21720941161482,
+          "lane": 12
+        },
+        {
+          "time": 30.008,
+          "x": 547.3,
+          "y": 528.4,
+          "speed": 121,
+          "next": 7,
+          "lap": 2,
+          "desired": 128.21829505700745,
+          "lane": 12
+        },
+        {
+          "time": 31.008,
+          "x": 465.1,
+          "y": 449.9,
+          "speed": 101.2,
+          "next": 8,
+          "lap": 2,
+          "desired": 98.73924937785449,
+          "lane": -12
+        },
+        {
+          "time": 32.008,
+          "x": 356.9,
+          "y": 459.4,
+          "speed": 119,
+          "next": 9,
+          "lap": 2,
+          "desired": 112.44091463223663,
+          "lane": -20
+        },
+        {
+          "time": 33.008,
+          "x": 255.8,
+          "y": 519.4,
+          "speed": 143.5,
+          "next": 10,
+          "lap": 2,
+          "desired": 150.44406065152933,
+          "lane": -20
+        },
+        {
+          "time": 34.008,
+          "x": 153.3,
+          "y": 531.7,
+          "speed": 92,
+          "next": 11,
+          "lap": 2,
+          "desired": 95.81342290572947,
+          "lane": 12
+        },
+        {
+          "time": 35.008,
+          "x": 96.1,
+          "y": 417.7,
+          "speed": 109.5,
+          "next": 12,
+          "lap": 2,
+          "desired": 116.96089848874055,
+          "lane": -20
+        },
+        {
+          "time": 36.008,
+          "x": 112.4,
+          "y": 326.3,
+          "speed": 130,
+          "next": 12,
+          "lap": 2,
+          "desired": 176.77726972518258,
+          "lane": 12
+        },
+        {
+          "time": 37.008,
+          "x": 187.9,
+          "y": 290.1,
+          "speed": 71.2,
+          "next": 13,
+          "lap": 2,
+          "desired": 70,
+          "lane": -12
+        },
+        {
+          "time": 38.008,
+          "x": 179.3,
+          "y": 214.7,
+          "speed": 69,
+          "next": 13,
+          "lap": 2,
+          "desired": 73.64010428549518,
+          "lane": -20
+        },
+        {
+          "time": 39.008,
+          "x": 150.5,
+          "y": 151.6,
+          "speed": 70,
+          "next": 0,
+          "lap": 2,
+          "desired": 70,
+          "lane": 12
+        },
+        {
+          "time": 40.008,
+          "x": 237.2,
+          "y": 119.1,
+          "speed": 153.5,
+          "next": 0,
+          "lap": 2,
+          "desired": 184.2444490148283,
+          "lane": 0
+        }
+      ],
+      "playerEvents": [
+        {
+          "at": 3.917,
+          "type": "gate",
+          "id": "player",
+          "gate": 1,
+          "position": {
+            "x": 454.51,
+            "y": 161.34
+          },
+          "speed": 87.75,
+          "lateral": 8.36
+        },
+        {
+          "at": 4.792,
+          "type": "gate",
+          "id": "player",
+          "gate": 2,
+          "position": {
+            "x": 533.51,
+            "y": 144.01
+          },
+          "speed": 139.47,
+          "lateral": -14.17
+        },
+        {
+          "at": 5.892,
+          "type": "gate",
+          "id": "player",
+          "gate": 3,
+          "position": {
+            "x": 678.3,
+            "y": 109.95
+          },
+          "speed": 107.57,
+          "lateral": -5.05
+        },
+        {
+          "at": 7.358,
+          "type": "gate",
+          "id": "player",
+          "gate": 4,
+          "position": {
+            "x": 797.2,
+            "y": 226.9
+          },
+          "speed": 157.21,
+          "lateral": -4.73
+        },
+        {
+          "at": 8.8,
+          "type": "gate",
+          "id": "player",
+          "gate": 5,
+          "position": {
+            "x": 762.88,
+            "y": 438.01
+          },
+          "speed": 169.33,
+          "lateral": -4
+        },
+        {
+          "at": 10.192,
+          "type": "gate",
+          "id": "player",
+          "gate": 6,
+          "position": {
+            "x": 611.83,
+            "y": 529.33
+          },
+          "speed": 115.59,
+          "lateral": 0.67
+        },
+        {
+          "at": 11.267,
+          "type": "gate",
+          "id": "player",
+          "gate": 7,
+          "position": {
+            "x": 504.66,
+            "y": 474.67
+          },
+          "speed": 117.76,
+          "lateral": 11.03
+        },
+        {
+          "at": 12.267,
+          "type": "gate",
+          "id": "player",
+          "gate": 8,
+          "position": {
+            "x": 414.07,
+            "y": 422.69
+          },
+          "speed": 119.51,
+          "lateral": 7.31
+        },
+        {
+          "at": 13.125,
+          "type": "gate",
+          "id": "player",
+          "gate": 9,
+          "position": {
+            "x": 322.91,
+            "y": 474.73
+          },
+          "speed": 121.3,
+          "lateral": 10.94
+        },
+        {
+          "at": 14.133,
+          "type": "gate",
+          "id": "player",
+          "gate": 10,
+          "position": {
+            "x": 209.21,
+            "y": 505.09
+          },
+          "speed": 102.31,
+          "lateral": 24.91
+        },
+        {
+          "at": 16.258,
+          "type": "gate",
+          "id": "player",
+          "gate": 11,
+          "position": {
+            "x": 121.92,
+            "y": 418.8
+          },
+          "speed": 116.25,
+          "lateral": 22.22
+        },
+        {
+          "at": 17.858,
+          "type": "gate",
+          "id": "player",
+          "gate": 12,
+          "position": {
+            "x": 161.64,
+            "y": 298.15
+          },
+          "speed": 74.6,
+          "lateral": 11.43
+        },
+        {
+          "at": 19.608,
+          "type": "gate",
+          "id": "player",
+          "gate": 13,
+          "position": {
+            "x": 189.26,
+            "y": 180.69
+          },
+          "speed": 71.85,
+          "lateral": 11.49
+        },
+        {
+          "at": 21.508,
+          "type": "lap",
+          "id": "player",
+          "lap": 1,
+          "time": 21.508333333332754,
+          "position": {
+            "x": 282.93,
+            "y": 101.29
+          },
+          "speed": 170,
+          "lateral": -13.71
+        },
+        {
+          "at": 23.092,
+          "type": "gate",
+          "id": "player",
+          "gate": 1,
+          "position": {
+            "x": 457.89,
+            "y": 157.7
+          },
+          "speed": 91.08,
+          "lateral": 3.4
+        },
+        {
+          "at": 23.958,
+          "type": "gate",
+          "id": "player",
+          "gate": 2,
+          "position": {
+            "x": 534.91,
+            "y": 146.7
+          },
+          "speed": 140.7,
+          "lateral": -11.24
+        },
+        {
+          "at": 25.033,
+          "type": "gate",
+          "id": "player",
+          "gate": 3,
+          "position": {
+            "x": 677.92,
+            "y": 109.08
+          },
+          "speed": 111.02,
+          "lateral": -5.92
+        },
+        {
+          "at": 26.533,
+          "type": "gate",
+          "id": "player",
+          "gate": 4,
+          "position": {
+            "x": 795.88,
+            "y": 226.89
+          },
+          "speed": 160.52,
+          "lateral": -3.43
+        },
+        {
+          "at": 27.992,
+          "type": "gate",
+          "id": "player",
+          "gate": 5,
+          "position": {
+            "x": 760.75,
+            "y": 436.68
+          },
+          "speed": 140.73,
+          "lateral": -1.49
+        },
+        {
+          "at": 29.442,
+          "type": "gate",
+          "id": "player",
+          "gate": 6,
+          "position": {
+            "x": 611.79,
+            "y": 529.78
+          },
+          "speed": 121.18,
+          "lateral": 0.22
+        },
+        {
+          "at": 30.567,
+          "type": "gate",
+          "id": "player",
+          "gate": 7,
+          "position": {
+            "x": 503.58,
+            "y": 475.39
+          },
+          "speed": 115.56,
+          "lateral": 9.73
+        },
+        {
+          "at": 31.483,
+          "type": "gate",
+          "id": "player",
+          "gate": 8,
+          "position": {
+            "x": 414.43,
+            "y": 439.92
+          },
+          "speed": 117.47,
+          "lateral": -9.92
+        },
+        {
+          "at": 32.275,
+          "type": "gate",
+          "id": "player",
+          "gate": 9,
+          "position": {
+            "x": 341.72,
+            "y": 485.87
+          },
+          "speed": 120.02,
+          "lateral": -10.91
+        },
+        {
+          "at": 33.4,
+          "type": "gate",
+          "id": "player",
+          "gate": 10,
+          "position": {
+            "x": 209.35,
+            "y": 534.59
+          },
+          "speed": 111.39,
+          "lateral": -4.59
+        },
+        {
+          "at": 34.967,
+          "type": "gate",
+          "id": "player",
+          "gate": 11,
+          "position": {
+            "x": 98,
+            "y": 421.99
+          },
+          "speed": 120.46,
+          "lateral": -1.91
+        },
+        {
+          "at": 36.633,
+          "type": "gate",
+          "id": "player",
+          "gate": 12,
+          "position": {
+            "x": 163.51,
+            "y": 301.85
+          },
+          "speed": 74.62,
+          "lateral": 15.55
+        },
+        {
+          "at": 38.317,
+          "type": "gate",
+          "id": "player",
+          "gate": 13,
+          "position": {
+            "x": 165.93,
+            "y": 196.68
+          },
+          "speed": 73.81,
+          "lateral": -16.8
+        },
+        {
+          "at": 40.283,
+          "type": "lap",
+          "id": "player",
+          "lap": 2,
+          "time": 18.774999999998936,
+          "position": {
+            "x": 282.74,
+            "y": 113.84
+          },
+          "speed": 0,
+          "lateral": -1.16
+        },
+        {
+          "at": 40.283,
+          "type": "finish",
+          "id": "player",
+          "time": 40.28333333333169,
+          "position": {
+            "x": 282.74,
+            "y": 113.84
+          },
+          "speed": 0,
+          "lateral": -1.16
+        }
+      ]
+    }
+  ],
+  "rivalFeasibility": [
+    {
+      "stage": 0,
+      "observedTime": 57.717,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "time": 57.717,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "time": 56.883,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "stage": 1,
+      "observedTime": 41.542,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "time": 40.8,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "time": 41.542,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "observedTime": 35.567,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "time": 34.992,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "time": 35.567,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ]
+    }
+  ],
+  "fixtures": {
+    "kind": "Explicit copied-position fixtures, not naturally driven or UI evidence",
+    "missedGateNoCredit": true,
+    "reverseGateNoCredit": true,
+    "manualResetPenalty": 3,
+    "repeatedResetWhileLockedRejected": true,
+    "noMotionDuringLock": true,
+    "checkpointVersion": 3,
+    "restoresPausedExact": true,
+    "invalidCheckpointRejected": true,
+    "oldEngineRejectsNewRoute": true
+  },
+  "mistakes": [
+    {
+      "strategy": "reckless",
+      "interval": 0.05,
+      "stage": 2,
+      "state": "finished",
+      "time": 48.792,
+      "finished": 48.79166666666454,
+      "rank": 3,
+      "gates": 28,
+      "resets": 0,
+      "offroadSeconds": 0,
+      "brakeSeconds": 0,
+      "gasSeconds": 48.792,
+      "steerSeconds": 16.35,
+      "meanAbsLateral": 9.732,
+      "maxAbsLateral": 27.881,
+      "contacts": 3719,
+      "decisionCount": 1036,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 48.2749999999979,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 34.53333333333202,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ],
+      "resetEvents": []
+    },
+    {
+      "strategy": "idle",
+      "interval": 0.05,
+      "stage": 2,
+      "state": "finished",
+      "time": 95,
+      "finished": null,
+      "rank": 3,
+      "gates": 0,
+      "resets": 1,
+      "offroadSeconds": 58.208,
+      "brakeSeconds": 0,
+      "gasSeconds": 0,
+      "steerSeconds": 0,
+      "meanAbsLateral": 30.8,
+      "maxAbsLateral": 66.729,
+      "contacts": 331,
+      "decisionCount": 1960,
+      "rivals": [
+        {
+          "id": "rival-1",
+          "finished": 34.991666666665324,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        },
+        {
+          "id": "rival-2",
+          "finished": 35.56666666666529,
+          "gates": 28,
+          "resets": 0,
+          "offroadSeconds": 0
+        }
+      ],
+      "resetEvents": [
+        {
+          "at": 19.642,
+          "type": "reset",
+          "id": "player",
+          "reason": "edge",
+          "position": {
+            "x": 292.56,
+            "y": 115
+          },
+          "speed": 0,
+          "lateral": 0
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Default original physics, no geometry/AI/stat mutation in driven runs.",
+    "Decisions held at listed intervals; time advances through real1/120s substeps, never one capped update per large interval.",
+    "Both strategies legally complete; ranks vary with traffic and are observations, not a first-place guarantee.",
+    "Full-throttle no-brake can still legally finish; it loses time to this observed traffic/line rather than proving braking is mandatory.",
+    "Road clearance is a4-unit sampled centerline diagnostic with260 minimum arc gap, not exhaustive swept-area proof.",
+    "Human feel, aesthetics, touch-device performance and UI journey remain root verification."
+  ],
+  "candidateWorkingCopyHashes": {
+    "engine.mjs": "ba5fd752299f4793dcf75355d1d1c9ffa18b8f4a138643b2d755593244dc5075",
+    "tracks.mjs": "30f7250ca75353dfa16e170bd8aeb30189f4b8ca188b5db0b5425dc4c670ce09",
+    "policy.mjs": "bfb25cc9e61799317c30b8ea6eef592fedf11ca0c9626aca0abda5c461748954"
+  },
+  "publishedSources": {
+    "versions/v4/games/post/engine.mjs": "df95b9562ae190e3cd1dd21653d9bc5a575af549f5bbc88631476c5655ea723e",
+    "versions/v4/games/post/tracks.mjs": "6f4359ee631577f24299cc8d8ff2db020ea8575fd16b26e3202438cc208f5f5c",
+    "docs/post-third-qa/policy.mjs": "6163852b0edf3a9af2dd66ea9d675681bd32b8ddde048318d6b3051bffce9eaa"
+  },
+  "integrationBoundary": "Candidate hashes retain exact model-tested files. Published sources adapt relative module imports and Git newline normalization only; root checked parsed first2 tracks/PHYSICS and runtime checkpoint integration. No driven-rule/geometry adjustment."
+}

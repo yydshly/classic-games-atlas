@@ -1,0 +1,21 @@
+{
+  "scope": "Bounded author-model history; not browser or human evidence",
+  "geometry": "One14-vertex original map; no physics/AI/stat changes made to force feasibility",
+  "trials": [
+    {
+      "id": "outside-only-lane",
+      "result": "Initial late pilot stayed outside every bend. Atstage0/50ms it had only5gates at95s with11346contact ticks; one rival still finished.",
+      "decision": "Rejected pilot. Add actual pre-bend outside/inside-corner transition and visible-car lane clearance, not stronger grip or altered opponents."
+    },
+    {
+      "id": "final-two-choices",
+      "result": "Both routes finish legally at50/100/200ms and jitter. Atstage2/50ms center50.217s versus late40.283s; late has greater lateral displacement. At100ms late spends1.417s on shoulder.",
+      "decision": "Retain tradeoff and all results. No claim that the faster observed pilot is more enjoyable or always best."
+    },
+    {
+      "id": "no-brake-counterexample",
+      "result": "Full throttle with no brake still legally finishes48.792s, with3719contact ticks atstage2/50ms.",
+      "decision": "Record it as a legal alternative with observed traffic/time cost; do not manufacture compulsory braking or a loss."
+    }
+  ]
+}
