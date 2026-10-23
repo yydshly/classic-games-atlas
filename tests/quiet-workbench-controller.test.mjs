@@ -11,4 +11,6 @@ element('#pause').onclick();assert.equal(context.test.diagnostics().mode,'paused
 element('#start').onclick();now+=100;context.test.frame(now);assert.equal(context.test.diagnostics().mode,'playing');
 win.blur();assert.equal(context.test.diagnostics().mode,'paused');element('#retry').onclick();const fresh=context.test.diagnostics();assert.equal(fresh.mode,'playing');assert.equal(fresh.state,'playing');assert.deepEqual(Array.from(fresh.player.position),ROOM.spawn);assert.equal(fresh.noise,0);
 vm.runInContext("world.state='woke';sync()",context);assert.equal(element('#pause').disabled,true);element('#retry').onclick();assert.equal(element('#pause').disabled,false);
+vm.runInContext("world.state='charged';sync()",context);assert.equal(element('#overlay').hidden,true);assert.equal(element('#result').hidden,false);assert.match(element('#result-retry').textContent,/另一条路/);element('#result-retry').onclick();assert.equal(element('#result').hidden,true);
+assert(html.indexOf('id="result"')>html.indexOf('</main>'));
 console.log(JSON.stringify({passed:true,kind:'actual controller with DOM/render fixtures, not browser',checks:['late module success after boot timeout','terminal pause disabled','start','pause freezes simulation','resume','blur pauses','retry at entry clears reaction']}));

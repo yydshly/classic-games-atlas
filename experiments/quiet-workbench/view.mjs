@@ -2,14 +2,16 @@ import * as T from '../kinetic/vendor/three.module.min.js';
 export function createView(canvas,room){
  const context=canvas.getContext('webgl2',{alpha:false,antialias:false});if(!context)throw Error('WebGL2 unavailable');
  const renderer=new T.WebGLRenderer({canvas,context,antialias:false});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.25));renderer.outputColorSpace=T.SRGBColorSpace;
- const scene=new T.Scene();scene.background=new T.Color('#d9d2c1');const camera=new T.PerspectiveCamera(45,1,.1,100);
+ const scene=new T.Scene();scene.background=new T.Color('#52616a');const camera=new T.PerspectiveCamera(45,1,.1,100);
  scene.add(new T.HemisphereLight('#fff4da','#62737a',2.2));const light=new T.DirectionalLight('#fff5d8',2);light.position.set(-5,12,5);scene.add(light);
  const materials={metal:new T.MeshLambertMaterial({color:'#a2aeb2'}),soft:new T.MeshLambertMaterial({color:'#467f77'}),wood:new T.MeshLambertMaterial({color:'#a47a53'}),tool:new T.MeshLambertMaterial({color:'#64737b'}),robot:new T.MeshLambertMaterial({color:'#173f57'}),skin:new T.MeshLambertMaterial({color:'#d5aa86'}),cloth:new T.MeshLambertMaterial({color:'#ab704d'}),dark:new T.MeshBasicMaterial({color:'#223b41'}),glow:new T.MeshBasicMaterial({color:'#f6d780'}),foam:new T.MeshLambertMaterial({color:'#b4b17c'})};
  const cube=new T.BoxGeometry(1,1,1),sphere=new T.SphereGeometry(1,18,12);
  function mesh(g,m,p,scale,parent=scene){const o=new T.Mesh(g,m);o.position.set(...p);o.scale.set(...scale);parent.add(o);return o;}
  const box=(p,size,m,parent=scene)=>mesh(cube,m,p,size,parent);
- box([0,-2.2,0],[26,.2,24],new T.MeshLambertMaterial({color:'#c3b69f'}));
- for(const s of room.surfaces){box(s.position,s.size,materials[s.material]);const [x,y,z]=s.position,[w,h,d]=s.size;if(s.material==='soft'){
+ // Distant workshop floor lies well below the -3 failure plane, never a nearby deck.
+ box([0,-7,0],[80,.2,80],new T.MeshLambertMaterial({color:'#485961'}));
+ const sides={metal:new T.MeshLambertMaterial({color:'#40535b'}),soft:new T.MeshLambertMaterial({color:'#244d48'})};
+ for(const s of room.surfaces){box(s.position,s.size,[sides[s.material],sides[s.material],materials[s.material],sides[s.material],sides[s.material],sides[s.material]]);const [x,y,z]=s.position,[w,h,d]=s.size;if(s.material==='soft'){
   // Stitches belong only to real narrow supporting strips; no fake guardrail.
   const horizontal=w>d;for(let t=-(horizontal?w:d)/2+.3;t<(horizontal?w:d)/2-.15;t+=.45)box([x+(horizontal?t:0),y+h/2+.012,z+(horizontal?0:t)],horizontal?[.13,.012,.04]:[.04,.012,.13],materials.foam);
  }else{for(const xx of [-1.8,2.8])for(const zz of [-3.5,3.6])box([xx,-1.2,zz],[.24,1.8,.24],materials.wood);}}
