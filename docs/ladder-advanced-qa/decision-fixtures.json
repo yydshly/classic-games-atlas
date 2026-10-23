@@ -1,0 +1,92 @@
+{
+  "scope": "Decision-only source/fixture review. Guard positions deliberately varied in fresh clones to confirm sensitivity; no claim these are natural reached sessions.",
+  "sourceFindings": [
+    "Fixed main/alternate core orders are explicit.",
+    "pathSafe weights actual nontrapped guard Manhattan distance (0:+1000,1:+14,2:+5,3:+1).",
+    "excavate chooses between legal left/right stands with guard-distance costs.",
+    "Same-row guard 2–4 cells away triggers a legal dig if available.",
+    "L3 alternate bottom return also has a fixed far-side ladder waypoint; policy is a hybrid of route design and reactive guard weighting, not anticipatory planning."
+  ],
+  "fixtures": [
+    {
+      "guardFixture": {
+        "x": 4,
+        "y": 7
+      },
+      "action": {
+        "dir": "right",
+        "input": {
+          "right": true
+        },
+        "target": {
+          "x": 6,
+          "y": 7,
+          "dig": -1,
+          "cost": 21
+        },
+        "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+      },
+      "inputUnchanged": true
+    },
+    {
+      "guardFixture": {
+        "x": 6,
+        "y": 7
+      },
+      "action": {
+        "dir": "right",
+        "input": {
+          "right": true
+        },
+        "target": {
+          "x": 4,
+          "y": 7,
+          "dig": 1,
+          "cost": 15
+        },
+        "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+      },
+      "inputUnchanged": true
+    },
+    {
+      "guardFixture": {
+        "x": 14,
+        "y": 7
+      },
+      "action": {
+        "dir": "right",
+        "input": {
+          "right": true
+        },
+        "target": {
+          "x": 4,
+          "y": 7,
+          "dig": 1,
+          "cost": 5
+        },
+        "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+      },
+      "inputUnchanged": true
+    },
+    {
+      "guardFixture": {
+        "x": 9,
+        "y": 11
+      },
+      "action": {
+        "dir": "right",
+        "input": {
+          "right": true
+        },
+        "target": {
+          "x": 4,
+          "y": 7,
+          "dig": 1,
+          "cost": 5
+        },
+        "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+      },
+      "inputUnchanged": true
+    }
+  ]
+}

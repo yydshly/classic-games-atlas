@@ -1,0 +1,2025 @@
+{
+  "kind": "advanced-native-input-model-baselines-not-browser-proof",
+  "orders": {
+    "main": [
+      [
+        "inner",
+        "low",
+        "high"
+      ],
+      [
+        "left",
+        "right",
+        "high"
+      ],
+      [
+        "upperLeft",
+        "middleLeft",
+        "lower",
+        "gate"
+      ]
+    ],
+    "alternate": [
+      [
+        "high",
+        "inner",
+        "low"
+      ],
+      [
+        "high",
+        "right",
+        "left"
+      ],
+      [
+        "gate",
+        "lower",
+        "middleLeft",
+        "upperLeft"
+      ]
+    ]
+  },
+  "instructions": "Prefer chooseAction(liveSnapshot,variant); waypoint input baselines are not blind timed guarantees after pauses or guard phase changes.",
+  "routes": [
+    {
+      "level": 1,
+      "variant": "main",
+      "period": 0.05,
+      "time": 7.52,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 57
+      },
+      "collectionOrder": [
+        {
+          "id": "inner",
+          "time": 1.4
+        },
+        {
+          "id": "low",
+          "time": 2.3
+        },
+        {
+          "id": "high",
+          "time": 4.14
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 2,
+            "y": 4
+          },
+          "time": 0,
+          "reason": "先走近侧入口，再由下层回环取远核。",
+          "until": {
+            "x": 8,
+            "y": 4
+          },
+          "seconds": 0.84
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 8,
+            "y": 4
+          },
+          "dir": 1,
+          "target": {
+            "x": 9,
+            "y": 5
+          },
+          "time": 0.84,
+          "reason": "开上层入口，进入可站稳的内绳室。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 8,
+            "y": 4
+          },
+          "time": 0.84,
+          "reason": "开上层入口，进入可站稳的内绳室。",
+          "until": {
+            "x": 8,
+            "y": 4
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 8,
+            "y": 4
+          },
+          "time": 0.9,
+          "reason": "先落入有绳索的内室，下一层需要另开一洞。",
+          "until": {
+            "x": 9,
+            "y": 4
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 9,
+            "y": 4
+          },
+          "time": 1,
+          "reason": "先落入有绳索的内室，下一层需要另开一洞。",
+          "until": {
+            "x": 9,
+            "y": 5
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 9,
+            "y": 5
+          },
+          "time": 1.1,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 10,
+            "y": 5
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 10,
+            "y": 5
+          },
+          "dir": 1,
+          "target": {
+            "x": 11,
+            "y": 6
+          },
+          "time": 1.14,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 10,
+            "y": 5
+          },
+          "time": 1.14,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 10,
+            "y": 5
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 10,
+            "y": 5
+          },
+          "time": 1.2,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 11,
+            "y": 5
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 11,
+            "y": 5
+          },
+          "time": 1.3,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 11,
+            "y": 6
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "time": 1.4,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 6
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 12,
+            "y": 6
+          },
+          "time": 1.54,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 11
+          },
+          "seconds": 0.6
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 12,
+            "y": 11
+          },
+          "time": 2.14,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 11
+          },
+          "seconds": 0.76
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 18,
+            "y": 11
+          },
+          "time": 2.9,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 2
+          },
+          "seconds": 1.24
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 18,
+            "y": 2
+          },
+          "time": 4.14,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 3,
+            "y": 2
+          },
+          "seconds": 2.1
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 3,
+            "y": 2
+          },
+          "time": 6.24,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 3,
+            "y": 6
+          },
+          "seconds": 0.56
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 3,
+            "y": 6
+          },
+          "time": 6.8,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 2,
+            "y": 6
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 2,
+            "y": 6
+          },
+          "time": 6.94,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 2,
+            "y": 11
+          },
+          "seconds": 0.58
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.05,
+      "time": 6.52,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 51
+      },
+      "collectionOrder": [
+        {
+          "id": "left",
+          "time": 1
+        },
+        {
+          "id": "right",
+          "time": 3.5
+        },
+        {
+          "id": "high",
+          "time": 4.64
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 3,
+            "y": 3
+          },
+          "time": 0,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 4,
+            "y": 3
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "time": 0.14,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 4,
+            "y": 7
+          },
+          "seconds": 0.56
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 4,
+            "y": 7
+          },
+          "dir": 1,
+          "target": {
+            "x": 5,
+            "y": 8
+          },
+          "time": 0.7,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 4,
+            "y": 7
+          },
+          "time": 0.7,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 4,
+            "y": 7
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 4,
+            "y": 7
+          },
+          "time": 0.74,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 5,
+            "y": 7
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 5,
+            "y": 7
+          },
+          "time": 0.84,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 5,
+            "y": 8
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 5,
+            "y": 8
+          },
+          "time": 1,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 6,
+            "y": 8
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 6,
+            "y": 8
+          },
+          "time": 1.04,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 6,
+            "y": 9
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 6,
+            "y": 9
+          },
+          "time": 1.2,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 7,
+            "y": 9
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 7,
+            "y": 9
+          },
+          "time": 1.3,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 7,
+            "y": 11
+          },
+          "seconds": 0.24
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 7,
+            "y": 11
+          },
+          "time": 1.54,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 16,
+            "y": 11
+          },
+          "seconds": 1.16
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 16,
+            "y": 11
+          },
+          "time": 2.7,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 16,
+            "y": 7
+          },
+          "seconds": 0.54
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 16,
+            "y": 7
+          },
+          "dir": -1,
+          "target": {
+            "x": 15,
+            "y": 8
+          },
+          "time": 3.24,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 16,
+            "y": 7
+          },
+          "time": 3.24,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 16,
+            "y": 7
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 16,
+            "y": 7
+          },
+          "time": 3.3,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 15,
+            "y": 7
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 15,
+            "y": 7
+          },
+          "time": 3.4,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 15,
+            "y": 8
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 15,
+            "y": 8
+          },
+          "time": 3.5,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 16,
+            "y": 8
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 16,
+            "y": 8
+          },
+          "time": 3.54,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 16,
+            "y": 7
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 16,
+            "y": 7
+          },
+          "time": 3.7,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 7
+          },
+          "seconds": 0.24
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 18,
+            "y": 7
+          },
+          "time": 3.94,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 3
+          },
+          "seconds": 0.56
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 18,
+            "y": 3
+          },
+          "time": 4.5,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 10,
+            "y": 3
+          },
+          "seconds": 1.14
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 10,
+            "y": 3
+          },
+          "time": 5.64,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 10,
+            "y": 4
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 10,
+            "y": 4
+          },
+          "time": 5.8,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 10,
+            "y": 7
+          },
+          "seconds": 0.34
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 10,
+            "y": 7
+          },
+          "time": 6.14,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 10,
+            "y": 8
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 10,
+            "y": 8
+          },
+          "time": 6.2,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 10,
+            "y": 11
+          },
+          "seconds": 0.32
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.05,
+      "time": 7.06,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 54
+      },
+      "collectionOrder": [
+        {
+          "id": "upperLeft",
+          "time": 1
+        },
+        {
+          "id": "middleLeft",
+          "time": 1.64
+        },
+        {
+          "id": "lower",
+          "time": 3.04
+        },
+        {
+          "id": "gate",
+          "time": 5.84
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 11,
+            "y": 3
+          },
+          "time": 0,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 4,
+            "y": 3
+          },
+          "seconds": 1
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "time": 1,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 4,
+            "y": 5
+          },
+          "seconds": 0.3
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 4,
+            "y": 5
+          },
+          "time": 1.3,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 3,
+            "y": 5
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 3,
+            "y": 5
+          },
+          "time": 1.4,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 3,
+            "y": 7
+          },
+          "seconds": 0.24
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 3,
+            "y": 7
+          },
+          "time": 1.64,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 7,
+            "y": 7
+          },
+          "seconds": 0.5
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 7,
+            "y": 7
+          },
+          "time": 2.14,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 7,
+            "y": 8
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 7,
+            "y": 8
+          },
+          "time": 2.24,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 7,
+            "y": 11
+          },
+          "seconds": 0.36
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 7,
+            "y": 11
+          },
+          "time": 2.6,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 11
+          },
+          "seconds": 1.44
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 18,
+            "y": 11
+          },
+          "time": 4.04,
+          "reason": "右侧梯口有巡守，先借梯顶短索从上方绕过，再进上层。",
+          "until": {
+            "x": 18,
+            "y": 6
+          },
+          "seconds": 0.7
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 18,
+            "y": 6
+          },
+          "time": 4.74,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 16,
+            "y": 6
+          },
+          "seconds": 0.26
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 16,
+            "y": 6
+          },
+          "time": 5,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 16,
+            "y": 3
+          },
+          "seconds": 0.44
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 16,
+            "y": 3
+          },
+          "time": 5.44,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 15,
+            "y": 3
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 15,
+            "y": 3
+          },
+          "dir": -1,
+          "target": {
+            "x": 14,
+            "y": 4
+          },
+          "time": 5.6,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 15,
+            "y": 3
+          },
+          "time": 5.6,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 15,
+            "y": 3
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 15,
+            "y": 3
+          },
+          "time": 5.64,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 14,
+            "y": 3
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 14,
+            "y": 3
+          },
+          "time": 5.7,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 14,
+            "y": 7
+          },
+          "seconds": 0.5
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 14,
+            "y": 7
+          },
+          "time": 6.2,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 11,
+            "y": 7
+          },
+          "seconds": 0.3
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 11,
+            "y": 7
+          },
+          "time": 6.5,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 11,
+            "y": 3
+          },
+          "seconds": 0.56
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 6.44,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 49
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2.54
+        },
+        {
+          "id": "inner",
+          "time": 3.84
+        },
+        {
+          "id": "low",
+          "time": 4.8
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 2,
+            "y": 4
+          },
+          "time": 0,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 3,
+            "y": 4
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 3,
+            "y": 4
+          },
+          "time": 0.14,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 3,
+            "y": 2
+          },
+          "seconds": 0.3
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 3,
+            "y": 2
+          },
+          "time": 0.44,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 18,
+            "y": 2
+          },
+          "seconds": 2.1
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 18,
+            "y": 2
+          },
+          "time": 2.54,
+          "reason": "高索先行后从另一侧进入砖室。",
+          "until": {
+            "x": 14,
+            "y": 2
+          },
+          "seconds": 0.56
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 14,
+            "y": 2
+          },
+          "time": 3.1,
+          "reason": "高索先行后从另一侧进入砖室。",
+          "until": {
+            "x": 14,
+            "y": 3
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 14,
+            "y": 3
+          },
+          "time": 3.24,
+          "reason": "高索先行后从另一侧进入砖室。",
+          "until": {
+            "x": 14,
+            "y": 4
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 14,
+            "y": 4
+          },
+          "dir": -1,
+          "target": {
+            "x": 13,
+            "y": 5
+          },
+          "time": 3.34,
+          "reason": "开上层入口，进入可站稳的内绳室。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 14,
+            "y": 4
+          },
+          "time": 3.34,
+          "reason": "开上层入口，进入可站稳的内绳室。",
+          "until": {
+            "x": 14,
+            "y": 4
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 14,
+            "y": 4
+          },
+          "time": 3.4,
+          "reason": "先落入有绳索的内室，下一层需要另开一洞。",
+          "until": {
+            "x": 13,
+            "y": 4
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 13,
+            "y": 4
+          },
+          "time": 3.44,
+          "reason": "先落入有绳索的内室，下一层需要另开一洞。",
+          "until": {
+            "x": 13,
+            "y": 5
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 13,
+            "y": 5
+          },
+          "time": 3.54,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 12,
+            "y": 5
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 12,
+            "y": 5
+          },
+          "dir": -1,
+          "target": {
+            "x": 11,
+            "y": 6
+          },
+          "time": 3.6,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 12,
+            "y": 5
+          },
+          "time": 3.6,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 12,
+            "y": 5
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 12,
+            "y": 5
+          },
+          "time": 3.64,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 11,
+            "y": 5
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 11,
+            "y": 5
+          },
+          "time": 3.7,
+          "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+          "until": {
+            "x": 11,
+            "y": 6
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 11,
+            "y": 6
+          },
+          "time": 3.84,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 6
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 12,
+            "y": 6
+          },
+          "time": 4,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 11
+          },
+          "seconds": 0.6
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 12,
+            "y": 11
+          },
+          "time": 4.6,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 14,
+            "y": 11
+          },
+          "seconds": 0.2
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 14,
+            "y": 11
+          },
+          "time": 4.8,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 2,
+            "y": 11
+          },
+          "seconds": 1.64
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 7.7,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 59
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2
+        },
+        {
+          "id": "right",
+          "time": 3.64
+        },
+        {
+          "id": "left",
+          "time": 6.84
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 3,
+            "y": 3
+          },
+          "time": 0,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 17,
+            "y": 3
+          },
+          "seconds": 2
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 17,
+            "y": 3
+          },
+          "time": 2,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 12,
+            "y": 3
+          },
+          "seconds": 0.7
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 12,
+            "y": 3
+          },
+          "time": 2.7,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 12,
+            "y": 4
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 12,
+            "y": 4
+          },
+          "time": 2.8,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 12,
+            "y": 7
+          },
+          "seconds": 0.4
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 12,
+            "y": 7
+          },
+          "time": 3.2,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 14,
+            "y": 7
+          },
+          "seconds": 0.2
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 14,
+            "y": 7
+          },
+          "dir": 1,
+          "target": {
+            "x": 15,
+            "y": 8
+          },
+          "time": 3.4,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 14,
+            "y": 7
+          },
+          "time": 3.4,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 14,
+            "y": 7
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 14,
+            "y": 7
+          },
+          "time": 3.44,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 14,
+            "y": 8
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 14,
+            "y": 8
+          },
+          "time": 3.5,
+          "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+          "until": {
+            "x": 15,
+            "y": 8
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 15,
+            "y": 8
+          },
+          "time": 3.64,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 14,
+            "y": 8
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 14,
+            "y": 8
+          },
+          "time": 3.8,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 14,
+            "y": 8
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 14,
+            "y": 8
+          },
+          "time": 3.9,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 14,
+            "y": 9
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 14,
+            "y": 9
+          },
+          "time": 3.94,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 13,
+            "y": 9
+          },
+          "seconds": 0.16
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 13,
+            "y": 9
+          },
+          "time": 4.1,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 13,
+            "y": 11
+          },
+          "seconds": 0.2
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 13,
+            "y": 11
+          },
+          "time": 4.3,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 2,
+            "y": 11
+          },
+          "seconds": 1.44
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 2,
+            "y": 11
+          },
+          "time": 5.74,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 2,
+            "y": 7
+          },
+          "seconds": 0.56
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 2,
+            "y": 7
+          },
+          "time": 6.3,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 4,
+            "y": 7
+          },
+          "seconds": 0.3
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 4,
+            "y": 7
+          },
+          "dir": 1,
+          "target": {
+            "x": 5,
+            "y": 8
+          },
+          "time": 6.6,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 4,
+            "y": 7
+          },
+          "time": 6.6,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 4,
+            "y": 7
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 4,
+            "y": 7
+          },
+          "time": 6.64,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 5,
+            "y": 7
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 5,
+            "y": 7
+          },
+          "time": 6.7,
+          "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+          "until": {
+            "x": 5,
+            "y": 8
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 5,
+            "y": 8
+          },
+          "time": 6.84,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 6,
+            "y": 8
+          },
+          "seconds": 0.06
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 6,
+            "y": 8
+          },
+          "time": 6.9,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 6,
+            "y": 9
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 6,
+            "y": 9
+          },
+          "time": 7,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 7,
+            "y": 9
+          },
+          "seconds": 0.14
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 7,
+            "y": 9
+          },
+          "time": 7.14,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 7,
+            "y": 11
+          },
+          "seconds": 0.26
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 7,
+            "y": 11
+          },
+          "time": 7.4,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 10,
+            "y": 11
+          },
+          "seconds": 0.3
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 6.94,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 52
+      },
+      "collectionOrder": [
+        {
+          "id": "gate",
+          "time": 0.54
+        },
+        {
+          "id": "lower",
+          "time": 1.64
+        },
+        {
+          "id": "middleLeft",
+          "time": 5.3
+        },
+        {
+          "id": "upperLeft",
+          "time": 6
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 11,
+            "y": 3
+          },
+          "time": 0,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 13,
+            "y": 3
+          },
+          "seconds": 0.3
+        },
+        {
+          "type": "dig",
+          "at": {
+            "x": 13,
+            "y": 3
+          },
+          "dir": 1,
+          "target": {
+            "x": 14,
+            "y": 4
+          },
+          "time": 0.3,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。"
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 13,
+            "y": 3
+          },
+          "time": 0.3,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 13,
+            "y": 3
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 13,
+            "y": 3
+          },
+          "time": 0.34,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 14,
+            "y": 3
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 14,
+            "y": 3
+          },
+          "time": 0.44,
+          "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+          "until": {
+            "x": 14,
+            "y": 7
+          },
+          "seconds": 0.46
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 14,
+            "y": 7
+          },
+          "time": 0.9,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 7
+          },
+          "seconds": 0.2
+        },
+        {
+          "type": "move",
+          "dir": "down",
+          "from": {
+            "x": 12,
+            "y": 7
+          },
+          "time": 1.1,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 8
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "wait",
+          "dir": null,
+          "from": {
+            "x": 12,
+            "y": 8
+          },
+          "time": 1.2,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 12,
+            "y": 11
+          },
+          "seconds": 0.4
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 12,
+            "y": 11
+          },
+          "time": 1.6,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 11,
+            "y": 11
+          },
+          "seconds": 0.04
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 11,
+            "y": 11
+          },
+          "time": 1.64,
+          "reason": "下层巡守在近侧追来，先绕远侧外梯返回中索，再补左侧星核。",
+          "until": {
+            "x": 18,
+            "y": 11
+          },
+          "seconds": 0.96
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 18,
+            "y": 11
+          },
+          "time": 2.6,
+          "reason": "下层巡守在近侧追来，先绕远侧外梯返回中索，再补左侧星核。",
+          "until": {
+            "x": 18,
+            "y": 7
+          },
+          "seconds": 0.6
+        },
+        {
+          "type": "move",
+          "dir": "left",
+          "from": {
+            "x": 18,
+            "y": 7
+          },
+          "time": 3.2,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 3,
+            "y": 7
+          },
+          "seconds": 2.1
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 3,
+            "y": 7
+          },
+          "time": 5.3,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 4,
+            "y": 7
+          },
+          "seconds": 0.1
+        },
+        {
+          "type": "move",
+          "dir": "up",
+          "from": {
+            "x": 4,
+            "y": 7
+          },
+          "time": 5.4,
+          "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+          "until": {
+            "x": 4,
+            "y": 3
+          },
+          "seconds": 0.6
+        },
+        {
+          "type": "move",
+          "dir": "right",
+          "from": {
+            "x": 4,
+            "y": 3
+          },
+          "time": 6,
+          "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+          "until": {
+            "x": 11,
+            "y": 3
+          },
+          "seconds": 0.94
+        }
+      ]
+    }
+  ]
+}

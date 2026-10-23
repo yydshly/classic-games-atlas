@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {createGame,start,pause,update,dig,checkpoint,restore,holeAt,neighbors,STEP,HOLE_TIME} from './engine.mjs';
+import {chooseAction,ORDERS} from './policy.mjs';
+import {createBlindPolicy} from './blind-policy.mjs';
+const clone=v=>JSON.parse(JSON.stringify(v));
+function advance(g,seconds,input={}){for(let left=seconds;left>1e-9;){const dt=Math.min(STEP,left);update(g,dt,input);left-=dt;}}
+function apply(g,a,seconds=.05){if(a.dig)assert.equal(dig(g,a.dig).ok,true);advance(g,seconds,a.input||{});}
+function finish(g,variant='main',period=.05){while(g.state==='playing'&&g.time<60)apply(g,chooseAction(g,variant),period);assert.equal(g.state,'won',JSON.stringify({level:g.level,variant,period,time:g.time,reason:g.reason}));return g;}
+function reach(g){const q=[{x:g.player.x,y:g.player.y}],seen=new Set([g.player.y*g.width+g.player.x]);for(let n=0;n<q.length;n++)for(const p of neighbors(g,q[n])){const k=p.y*g.width+p.x;if(!seen.has(k)){seen.add(k);q.push(p);}}return seen;}
+
+// The physical source is exactly v1 with the two schema literals changed.
+const text=readFileSync(new URL('./engine.mjs',import.meta.url),'utf8').replace(/\r\n/g,'\n'),back=text.replace('version:2,','version:1,').replace('g.version!==2','g.version!==1');assert.equal(createHash('sha256').update(back).digest('hex'),'33684fdebd0644239feddb1eed773c1b4b0e3a45202295a8ffbb2c5df979c0d9');
+const staticChecks=[];for(let i=0;i<3;i++){const g=createGame(i),seen=reach(g),missing=g.cores.filter(c=>!seen.has(c.y*g.width+c.x)).map(c=>c.id);assert.ok(missing.length);staticChecks.push({level:i+1,missingWithoutDig:missing,exitReachable:seen.has(g.exit.y*g.width+g.exit.x)});const old=checkpoint(g);old.version=1;assert.equal(restore(old),null);assert.ok(restore(checkpoint(g)));}
+// Topology-only fixtures: none of the three possible single openings accesses the
+// inner core, even if that hole were held open forever. This is not UI evidence.
+for(const [x,y]of [[9,5],[13,5],[11,6]]){const g=createGame();g.holes=[{x,y,remaining:HOLE_TIME,duration:HOLE_TIME}];assert.equal(reach(g).has(6*g.width+11),false);}
+
+function play(i,variant,period){const g=createGame(i);start(g);const actions=[],collectionOrder=[],known=new Set();let group=null;const flush=()=>{if(group){group.until={x:g.player.x,y:g.player.y};group.seconds=Number((g.time-group.time).toFixed(2));actions.push(group);group=null;}};
+ while(g.state==='playing'&&g.time<60){const before=checkpoint(g),a=chooseAction(g,variant);assert.deepEqual(checkpoint(g),before);if(a.dig){flush();const r=dig(g,a.dig);assert.equal(r.ok,true);actions.push({type:'dig',at:{x:g.player.x,y:g.player.y},dir:a.dig,target:r.target,time:g.time,reason:a.reason});}const dir=a.dir||null;if(!group||group.dir!==dir){flush();group={type:dir?'move':'wait',dir,from:{x:g.player.x,y:g.player.y},time:g.time,reason:a.reason};}advance(g,period,a.input);for(const c of g.cores)if(c.collected&&!known.has(c.id)){known.add(c.id);collectionOrder.push({id:c.id,time:g.time});}}
+ flush();assert.equal(g.state,'won',JSON.stringify({i,variant,period,state:g.state,reason:g.reason}));assert.equal(g.stats.collected,g.cores.length);assert.ok(restore(checkpoint(g)));assert.ok(g.stats.digs>0);return {level:i+1,variant,period,time:g.time,stats:clone(g.stats),collectionOrder,actions};}
+const runs=[];for(const period of [.05,.1,.2])for(const variant of ['main','alternate'])for(let i=0;i<3;i++)runs.push(play(i,variant,period));
+for(let level=1;level<=3;level++){const a=runs.find(r=>r.level===level&&r.variant==='main'&&r.period===.05),b=runs.find(r=>r.level===level&&r.variant==='alternate'&&r.period===.05);assert.notDeepEqual(a.collectionOrder.map(c=>c.id),b.collectionOrder.map(c=>c.id));if(level===1){assert.deepEqual(a.actions.filter(a=>a.type==='dig').map(a=>a.target),[{x:9,y:5},{x:11,y:6}]);assert.deepEqual(b.actions.filter(a=>a.type==='dig').map(a=>a.target),[{x:13,y:5},{x:11,y:6}]);}if(level===2){assert.ok(a.stats.traps>=1);assert.ok(b.stats.traps>=1);}}
+
+const recovery=[];
+{
+ const g=createGame();start(g);while(!(g.player.x===10&&g.player.y===5))apply(g,chooseAction(g),.02);const entered=g.time;while(holeAt(g,9,5)&&g.state==='playing')advance(g,.02);assert.equal(g.state,'playing');assert.deepEqual({x:g.player.x,y:g.player.y},{x:10,y:5});assert.equal(g.stats.collected,0);const afterRefill={time:g.time,player:{x:g.player.x,y:g.player.y},collected:g.stats.collected};pause(g);const frozen=checkpoint(g);advance(g,2,{down:true});assert.deepEqual(checkpoint(g),frozen);assert.ok(restore(frozen));start(g);finish(g);recovery.push({kind:'entry-refills-before-inner-excavation',entered,afterRefill,final:g.state,time:g.time,stats:g.stats});
+}
+{
+ const g=createGame(1);start(g);while(!g.cores.find(c=>c.id==='left').collected)apply(g,chooseAction(g),.02);while(!(g.player.x===6&&g.player.y===8)&&g.state==='playing')advance(g,.02,{right:true});while(g.player.y<11&&g.state==='playing')advance(g,.02,{down:true});assert.equal(g.state,'playing');assert.deepEqual({x:g.player.x,y:g.player.y},{x:6,y:11});assert.equal(g.stats.collected,1);const earlyDrop={time:g.time,player:{x:g.player.x,y:g.player.y},collected:g.stats.collected};finish(g);recovery.push({kind:'early-vault-retreat-to-lower-loop',earlyDrop,final:g.state,time:g.time,stats:g.stats});
+}
+
+const blindFailures=[];for(const i of [1,2]){const g=createGame(i),blind=createBlindPolicy();start(g);while(g.state==='playing'&&g.time<20)apply(g,blind(g));assert.equal(g.state,'lost');assert.equal(g.lossKind,'caught');assert.ok(restore(checkpoint(g)));blindFailures.push({level:i+1,time:g.time,state:g.state,lossKind:g.lossKind,player:{x:g.player.x,y:g.player.y},stats:g.stats,events:g.events});}
+const rush=createGame(2);start(rush);while(rush.state==='playing')advance(rush,.05,{down:true});assert.equal(rush.lossKind,'caught');assert.ok(restore(checkpoint(rush)));
+{
+ const g=createGame();start(g);apply(g,chooseAction(g));const cp=checkpoint(g);assert.equal(restore(cp).state,'paused');const invalid=clone(cp);invalid.version=1;assert.equal(restore(invalid),null);invalid.version=2;invalid.tiles[1]='bad';assert.equal(restore(invalid),null);assert.deepEqual(checkpoint(g),cp);
+}
+writeFileSync(new URL('./routes.json',import.meta.url),JSON.stringify({kind:'advanced-native-input-model-baselines-not-browser-proof',orders:ORDERS,instructions:'Prefer chooseAction(liveSnapshot,variant); waypoint input baselines are not blind timed guarantees after pauses or guard phase changes.',routes:runs.filter(r=>r.period===.05)},null,2)+'\n');
+writeFileSync(new URL('./proof.json',import.meta.url),JSON.stringify({kind:'bounded-model-content-proof-not-ui',version:2,physics:'Exactly the original v1 engine except create/restore schema literals; .14/.38/.12 and hole5.5 unchanged.',staticChecks,singleOpeningInnerCoreReachable:false,matrix:runs.map(({actions,...r})=>r),recovery,blindFailures,rushFailure:{input:'hold down then do nothing else',level:3,time:rush.time,lossKind:rush.lossKind,stats:rush.stats},preservedDraftFailures:['Original map2 guard at9,11 was background: blind legal nearest-core route won5.54s at min distance4; moved same guard to14,7 without a speed/stat change.','First map3 alternate returned directly left along lower floor and was caught at2.32s; the alternative now pays the far outer-ladder loop.','Before the upper right refuge rope, main200ms could overshoot the upper ladder and fall into the middle guard; a short rope supplies a nonfatal visible landing, with no physics change.'],limits:['No exhaustive solver or uniqueness claim.','Static one-hole checks are topology fixtures, not ordinary-input UI evidence.','The blind helper is the independently authored bounded <=3-opening nearest-core policy and intentionally ignores guard fields.','Main/alternate are hybrid authored collection orders plus guard-distance-aware routing, not general optimal AI.','Fast expert model wins do not prove human fun or depth.']},null,2)+'\n');
+console.log(JSON.stringify({ok:true,modelWins:runs.length,recoveries:recovery.length,blindFailures:blindFailures.length,physicsExactExceptVersion:true,files:['routes.json','proof.json']}));

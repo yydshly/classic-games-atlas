@@ -1,0 +1,1102 @@
+{
+  "base": "http://127.0.0.1:58258/",
+  "method": "Advanced chapter: native keyboard/buttons with readonly guard-weighted route suggestions; fail branch uses independent enemy-ignoring nearest-core suggestions. Ordinary P planning/check pauses. No position/time/result injection. Touch is browser simulation, not physical phone.",
+  "stages": [
+    {
+      "level": 1,
+      "variant": "main",
+      "time": 7.58,
+      "wallSeconds": 7.891,
+      "pausedWallSeconds": 0.313,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 57
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        "inner",
+        "low",
+        "high"
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "time": 7.72,
+      "wallSeconds": 7.719,
+      "pausedWallSeconds": 0,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 59
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        "high",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "time": 7.12,
+      "wallSeconds": 7.109,
+      "pausedWallSeconds": 0,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 54
+      },
+      "reason": "本站星核已取齐，顺利撤离。",
+      "collectionOrder": [
+        "upperLeft",
+        "middleLeft",
+        "lower",
+        "gate"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 0.02,
+      "player": {
+        "x": 2,
+        "y": 4,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 8,
+        "y": 4,
+        "dig": 1
+      },
+      "reason": "先走近侧入口，再由下层回环取远核。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 11,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 0.86,
+      "player": {
+        "x": 8,
+        "y": 4,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 9,
+        "y": 5
+      },
+      "reason": "开上层入口，进入可站稳的内绳室。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 11,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 1.16,
+      "player": {
+        "x": 10,
+        "y": 5,
+        "dir": 1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "rope",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 11,
+        "y": 6
+      },
+      "reason": "入口回填也不必退回；在内绳室开第二层，取核后从旁侧下撤。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 11,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 1.42,
+      "player": {
+        "x": 11,
+        "y": 6,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "inner"
+      ],
+      "target": {
+        "id": "low",
+        "x": 14,
+        "y": 11,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 10,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 2.38,
+      "player": {
+        "x": 14,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "inner",
+        "low"
+      ],
+      "target": {
+        "id": "high",
+        "x": 18,
+        "y": 2,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 8,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "fail": false,
+      "variant": "main",
+      "time": 4.18,
+      "player": {
+        "x": 18,
+        "y": 2,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "climb",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "inner",
+        "high",
+        "low"
+      ],
+      "target": {
+        "x": 2,
+        "y": 11,
+        "open": true
+      },
+      "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 7,
+          "y": 11,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 0.02,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "id": "high",
+        "x": 17,
+        "y": 3,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 14,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 1.98,
+      "player": {
+        "x": 17,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "high"
+      ],
+      "target": {
+        "x": 14,
+        "y": 7,
+        "dig": 1,
+        "cost": 11
+      },
+      "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 17,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 3.34,
+      "player": {
+        "x": 14,
+        "y": 7,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "high"
+      ],
+      "target": {
+        "x": 15,
+        "y": 8
+      },
+      "reason": "右埋核旁也是巡守入口；选择开洞的一侧，或经底层绕另一条梯。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 17,
+          "y": 5,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 3.66,
+      "player": {
+        "x": 15,
+        "y": 8,
+        "dir": 1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "right",
+        "high"
+      ],
+      "target": {
+        "x": 6,
+        "y": 7,
+        "dig": -1,
+        "cost": 10
+      },
+      "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 17,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 6.56,
+      "player": {
+        "x": 4,
+        "y": 7,
+        "dir": 1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "right",
+        "high"
+      ],
+      "target": {
+        "x": 5,
+        "y": 8
+      },
+      "reason": "接近左埋核时观察巡守；洞后可借内梯或落到底层绕回。",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 15,
+          "y": 8,
+          "state": "trapped"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "fail": false,
+      "variant": "alternate",
+      "time": 6.86,
+      "player": {
+        "x": 5,
+        "y": 8,
+        "dir": 1,
+        "clock": 0.14,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "left",
+        "right",
+        "high"
+      ],
+      "target": {
+        "x": 10,
+        "y": 11,
+        "open": true
+      },
+      "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 15,
+          "y": 8,
+          "state": "trapped"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": true,
+      "variant": "main",
+      "time": 0.02,
+      "player": {
+        "x": 11,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "id": "gate",
+        "x": 14,
+        "y": 4
+      },
+      "reason": "Blind native path, no guard positions read.",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": true,
+      "variant": "main",
+      "time": 0.3,
+      "player": {
+        "x": 13,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "rope",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "x": 14,
+        "y": 4
+      },
+      "reason": "Blind necessary opening; no guard positions read.",
+      "dig": 1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": true,
+      "variant": "main",
+      "time": 0.56,
+      "player": {
+        "x": 14,
+        "y": 4,
+        "dir": 1,
+        "clock": 0.14,
+        "fallClock": 0.020000000000000014,
+        "pose": "fall",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "gate"
+      ],
+      "target": {
+        "id": "lower",
+        "x": 11,
+        "y": 11
+      },
+      "reason": "Blind native path, no guard positions read.",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": true,
+      "variant": "main",
+      "time": 1.64,
+      "player": {
+        "x": 11,
+        "y": 11,
+        "dir": -1,
+        "clock": 0.04,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "lower",
+        "gate"
+      ],
+      "target": {
+        "id": "middleLeft",
+        "x": 3,
+        "y": 7
+      },
+      "reason": "Blind native path, no guard positions read.",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 14,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 0.02,
+      "player": {
+        "x": 11,
+        "y": 3,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [],
+      "target": {
+        "id": "upperLeft",
+        "x": 4,
+        "y": 3,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 6,
+          "y": 11,
+          "state": "warning"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 7,
+          "state": "warning"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 0.98,
+      "player": {
+        "x": 4,
+        "y": 3,
+        "dir": -1,
+        "clock": 0,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft"
+      ],
+      "target": {
+        "id": "middleLeft",
+        "x": 3,
+        "y": 7,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 15,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 1.68,
+      "player": {
+        "x": 3,
+        "y": 7,
+        "dir": -1,
+        "clock": 0.14,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft"
+      ],
+      "target": {
+        "id": "lower",
+        "x": 11,
+        "y": 11,
+        "collected": false
+      },
+      "reason": "根据当前巡守位置，按选定取核顺序走错开的梯索。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 14,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 3.1,
+      "player": {
+        "x": 11,
+        "y": 11,
+        "dir": 1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower"
+      ],
+      "target": {
+        "x": 15,
+        "y": 3,
+        "dig": -1,
+        "cost": 18
+      },
+      "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 10,
+          "y": 7,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 5.62,
+      "player": {
+        "x": 15,
+        "y": 3,
+        "dir": -1,
+        "clock": 0.02,
+        "fallClock": 0,
+        "pose": "stand",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower"
+      ],
+      "target": {
+        "x": 14,
+        "y": 4
+      },
+      "reason": "上层软口是必经的埋核；开洞后会落到中索，返回要选中央或侧环。",
+      "dig": -1,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 9,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 6,
+          "state": "chasing"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "fail": false,
+      "variant": "main",
+      "time": 5.88,
+      "player": {
+        "x": 14,
+        "y": 4,
+        "dir": -1,
+        "clock": 0.14,
+        "fallClock": 0.020000000000000014,
+        "pose": "fall",
+        "actionTimer": 0,
+        "digCooldown": 0
+      },
+      "collected": [
+        "upperLeft",
+        "middleLeft",
+        "lower",
+        "gate"
+      ],
+      "target": {
+        "x": 11,
+        "y": 3,
+        "open": true
+      },
+      "reason": "星核已齐，选择未被巡守堵住的回港梯路。",
+      "dig": null,
+      "enemies": [
+        {
+          "id": 1,
+          "x": 10,
+          "y": 11,
+          "state": "chasing"
+        },
+        {
+          "id": 2,
+          "x": 16,
+          "y": 6,
+          "state": "chasing"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "level": 1,
+      "time": 0.96,
+      "stats": {
+        "collected": 0,
+        "digs": 1,
+        "traps": 0,
+        "steps": 6
+      },
+      "events": [
+        {
+          "time": 0.86,
+          "text": "开洞：9,5，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "time": 1.22,
+      "stats": {
+        "collected": 0,
+        "digs": 2,
+        "traps": 0,
+        "steps": 9
+      },
+      "events": [
+        {
+          "time": 0.86,
+          "text": "开洞：9,5，5.5秒后回填。"
+        },
+        {
+          "time": 1.16,
+          "text": "开洞：11,6，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 3.38,
+      "stats": {
+        "collected": 1,
+        "digs": 1,
+        "traps": 0,
+        "steps": 25
+      },
+      "events": [
+        {
+          "time": 1.96,
+          "text": "取回星核 1/3。"
+        },
+        {
+          "time": 3.34,
+          "text": "开洞：15,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 4.42,
+      "stats": {
+        "collected": 2,
+        "digs": 1,
+        "traps": 1,
+        "steps": 33
+      },
+      "events": [
+        {
+          "time": 1.96,
+          "text": "取回星核 1/3。"
+        },
+        {
+          "time": 3.34,
+          "text": "开洞：15,8，5.5秒后回填。"
+        },
+        {
+          "time": 3.62,
+          "text": "取回星核 2/3。"
+        },
+        {
+          "time": 4.38,
+          "text": "巡守1落入临时洞；回填后会回岗。"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "time": 6.62,
+      "stats": {
+        "collected": 2,
+        "digs": 2,
+        "traps": 1,
+        "steps": 49
+      },
+      "events": [
+        {
+          "time": 3.34,
+          "text": "开洞：15,8，5.5秒后回填。"
+        },
+        {
+          "time": 3.62,
+          "text": "取回星核 2/3。"
+        },
+        {
+          "time": 4.38,
+          "text": "巡守1落入临时洞；回填后会回岗。"
+        },
+        {
+          "time": 6.56,
+          "text": "开洞：5,8，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 0.36,
+      "stats": {
+        "collected": 0,
+        "digs": 1,
+        "traps": 0,
+        "steps": 2
+      },
+      "events": [
+        {
+          "time": 0.3,
+          "text": "开洞：14,4，5.5秒后回填。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 5.68,
+      "stats": {
+        "collected": 3,
+        "digs": 1,
+        "traps": 0,
+        "steps": 42
+      },
+      "events": [
+        {
+          "time": 0.98,
+          "text": "取回星核 1/4。"
+        },
+        {
+          "time": 1.64,
+          "text": "取回星核 2/4。"
+        },
+        {
+          "time": 3.08,
+          "text": "取回星核 3/4。"
+        },
+        {
+          "time": 5.62,
+          "text": "开洞：14,4，5.5秒后回填。"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "actualFirstEditionPresent": true,
+  "activeHoleRefreshPaused": true,
+  "betweenRefresh": true,
+  "naturalFailure": {
+    "level": 3,
+    "variant": "main",
+    "time": 2.3,
+    "wallSeconds": 2.281,
+    "pausedWallSeconds": 0,
+    "stats": {
+      "collected": 2,
+      "digs": 1,
+      "traps": 0,
+      "steps": 19
+    },
+    "reason": "被巡守截住了；重试当前站，先观察梯口或用软砖洞改变追逐路线。",
+    "collectionOrder": [
+      "gate",
+      "lower"
+    ]
+  },
+  "failureRetryKeepsEarlier": true,
+  "actualCompleteRefresh": true,
+  "resultCanReopen": true,
+  "newCancelKeepsActualEnd": true,
+  "touchHoldRelease": true,
+  "touchCancelClears": true,
+  "touchDigPause": true,
+  "touchClimbToSoftAnchor": true,
+  "touchEvents": [
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    },
+    {
+      "type": "touch",
+      "trusted": true
+    }
+  ],
+  "firstEditionBytesUnchanged": true,
+  "returnLink": true,
+  "initialTouchAdapterCorrection": "Initial upper hard-steel dig was correctly rejected. Reused actual stage2-ready profile, climbed actual ladder to4,7, then native touch dig/pause passed; controller/rules unchanged. Original failed assertion retained privately.",
+  "passed": true
+}

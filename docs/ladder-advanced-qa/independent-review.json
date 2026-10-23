@@ -1,0 +1,121 @@
+{
+  "scope": "Independent bounded model-only review, no ordinary-UI or human-fun claim; no runtime edits.",
+  "status": "Bounded independent review complete before publication; remaining author matrix and ordinary UI owned by model/root.",
+  "timing": "Native .02-second substeps; blind decision cadence .05 seconds, revised L2 also .1 seconds. Reported duration is simulated, not wall-clock.",
+  "v1": "Map2 and map3 all cores statically no-dig reachable; existing proof includes zero-dig wins. Repeated full floors/long ladders provide shortcuts.",
+  "advancedNoDig": {
+    "allThreeRequireDig": true,
+    "unreachableCores": {
+      "1": [
+        "inner"
+      ],
+      "2": [
+        "left",
+        "right"
+      ],
+      "3": [
+        "gate"
+      ]
+    },
+    "method": "BFS through unchanged native neighbors on initial topology; directed gravity edges included; no enemy or timer inference."
+  },
+  "blindPlanner": "Nearest target by native physical shortest route plus up to three legal diagonal dig openings, with no enemy fields or positions read for decisions. Planning treats openings as persistent; native simulation applies actual 5.5s expiry, gravity, guards and collision.",
+  "firstDraft": [
+    {
+      "level": 1,
+      "state": "won",
+      "time": 7.54,
+      "digs": 2,
+      "traps": 0,
+      "minGuardDistance": 1,
+      "interpretation": "Mandatory two-stage dig and one-way descent occur, but the fast route does not require trapping a guard."
+    },
+    {
+      "level": 2,
+      "state": "won",
+      "time": 5.54,
+      "digs": 2,
+      "traps": 0,
+      "minGuardDistance": 4,
+      "interpretation": "Initial guard stayed too far from the upper core loop; this contradicted a strong luring requirement."
+    },
+    {
+      "level": 3,
+      "state": "lost",
+      "time": 2.28,
+      "collected": 2,
+      "digs": 1,
+      "traps": 0,
+      "collision": {
+        "x": 6,
+        "y": 11,
+        "guard": 1
+      },
+      "interpretation": "Shortest blind bottom-loop route actually meets a guard."
+    }
+  ],
+  "revisedL2": {
+    "onlyChange": "guard initial position 9,11 to 14,7; unchanged map, cores, speed, warning, limits",
+    "runs": [
+      {
+        "cadence": 0.05,
+        "time": 1.82
+      },
+      {
+        "cadence": 0.1,
+        "time": 1.86
+      }
+    ],
+    "state": "lost",
+    "collision": {
+      "x": 11,
+      "y": 7,
+      "guard": 1
+    },
+    "collected": 1,
+    "digs": 1,
+    "traps": 0,
+    "interpretation": "Original blind shortest line now has a real opposing guard. This does not prove every blind alternative must fail or establish human difficulty."
+  },
+  "heldDirections": {
+    "maps": 3,
+    "directionsPerMap": 4,
+    "won": 0,
+    "allNaturalCaught": true,
+    "rangeSeconds": [
+      2.5,
+      8.96
+    ],
+    "maxCollected": 1,
+    "revisionBoundary": "Measured first draft before L2 guard initial-position revision; no final-revision blanket claim."
+  },
+  "limits": [
+    "No ordinary UI, true device, touch or human-fun test.",
+    "Bounded <=3-opening planner is a counterexample policy, not an exhaustive solver or proof of impossibility.",
+    "A blind win is not by itself invalid content; cost and risk are reported.",
+    "Blind planner opens topology only for unreachable targets and does not optimize dig shortcuts to an already-reachable core; nearest-core order is bounded, not globally optimal.",
+    "Ordinary UI and remaining success matrix belong to root/model author; independent reviewer did not repeat these."
+  ],
+  "policySource": {
+    "reviewed": true,
+    "file": ".local/ladder-advanced-model-candidate/policy.mjs",
+    "sha256": "0560b37bfa7f98ac5dcdfceb4bb3512bbb2bf774da45f7a19e169216e7cbef0e",
+    "findings": [
+      "Fixed main/alternate core orders plus current guard-distance-weighted physical paths.",
+      "Excavation side chosen using current guard proximity; same-row 2–4-cell threat can trigger a legal dig.",
+      "L3 alternate also has a fixed far-side return waypoint; hybrid reactive/path design, not anticipatory strategy."
+    ],
+    "decisionFixture": "Guard at (4,7) selects opposite dig stand (6,7); guard at (6,7) selects (4,7). Both leave input snapshot unchanged. These are deliberate source-sensitivity fixtures, not naturally reached gameplay."
+  },
+  "authorReportedSuccessNotIndependentReplay": {
+    "L2 revised": [
+      "main50ms 6.52s/2dig/1trap",
+      "alternate50ms 6.14s/2dig/1trap"
+    ],
+    "L3": [
+      "main50ms 7.06s",
+      "alternate50ms 6.94s"
+    ],
+    "boundary": "Author report only; independent review did not duplicate its completion matrix."
+  }
+}

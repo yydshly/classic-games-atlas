@@ -1986,6 +1986,23 @@
         "无辅助趣味与难度",
         "真机触控性能",
         "审美；本作无音频"
+      ],
+      "additionalModes": [
+        {
+          "version": "v2",
+          "name": "借隙回港 · 独立进阶篇",
+          "playUrl": "./versions/v2/preview/ladder/",
+          "coverage": {
+            "startup": "verified",
+            "coreGoal": "verified",
+            "failureRetry": "verified",
+            "endingNext": "verified"
+          },
+          "evidence": [
+            "docs/ladder-advanced-qa/"
+          ],
+          "boundary": "两种策略模型、独立无挖/盲路线反例与普通UI辅助三关分列；第一图允许专注几何挖掘，第二/三图被测盲路线会被截，但不是穷尽所有路线。实际失利重试、开放洞/关间/实际完成档刷新与390CSS触控模拟已验；真人无辅助趣味、长期深度、真机与审美仍未验。"
+        }
       ]
     }
   ],
@@ -3689,6 +3706,13 @@
     "report": "docs/ladder-qa/",
     "catalog": 45,
     "oldEntriesPreserved": 44,
+    "classicReferences": 72
+  },
+  "ladderAdvancedReview": {
+    "report": "docs/ladder-advanced-qa/",
+    "catalogue": 45,
+    "oldOtherEntries": 44,
+    "originalV1Preserved": true,
     "classicReferences": 72
   }
 }

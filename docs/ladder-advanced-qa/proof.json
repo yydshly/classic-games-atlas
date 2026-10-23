@@ -1,0 +1,655 @@
+{
+  "kind": "bounded-model-content-proof-not-ui",
+  "version": 2,
+  "physics": "Exactly the original v1 engine except create/restore schema literals; .14/.38/.12 and hole5.5 unchanged.",
+  "staticChecks": [
+    {
+      "level": 1,
+      "missingWithoutDig": [
+        "inner"
+      ],
+      "exitReachable": true
+    },
+    {
+      "level": 2,
+      "missingWithoutDig": [
+        "left",
+        "right"
+      ],
+      "exitReachable": true
+    },
+    {
+      "level": 3,
+      "missingWithoutDig": [
+        "gate"
+      ],
+      "exitReachable": true
+    }
+  ],
+  "singleOpeningInnerCoreReachable": false,
+  "matrix": [
+    {
+      "level": 1,
+      "variant": "main",
+      "period": 0.05,
+      "time": 7.52,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 57
+      },
+      "collectionOrder": [
+        {
+          "id": "inner",
+          "time": 1.4
+        },
+        {
+          "id": "low",
+          "time": 2.3
+        },
+        {
+          "id": "high",
+          "time": 4.14
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.05,
+      "time": 6.52,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 51
+      },
+      "collectionOrder": [
+        {
+          "id": "left",
+          "time": 1
+        },
+        {
+          "id": "right",
+          "time": 3.5
+        },
+        {
+          "id": "high",
+          "time": 4.64
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.05,
+      "time": 7.06,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 54
+      },
+      "collectionOrder": [
+        {
+          "id": "upperLeft",
+          "time": 1
+        },
+        {
+          "id": "middleLeft",
+          "time": 1.64
+        },
+        {
+          "id": "lower",
+          "time": 3.04
+        },
+        {
+          "id": "gate",
+          "time": 5.84
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 6.44,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 49
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2.54
+        },
+        {
+          "id": "inner",
+          "time": 3.84
+        },
+        {
+          "id": "low",
+          "time": 4.8
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 7.7,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 59
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2
+        },
+        {
+          "id": "right",
+          "time": 3.64
+        },
+        {
+          "id": "left",
+          "time": 6.84
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.05,
+      "time": 6.94,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 52
+      },
+      "collectionOrder": [
+        {
+          "id": "gate",
+          "time": 0.54
+        },
+        {
+          "id": "lower",
+          "time": 1.64
+        },
+        {
+          "id": "middleLeft",
+          "time": 5.3
+        },
+        {
+          "id": "upperLeft",
+          "time": 6
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "main",
+      "period": 0.1,
+      "time": 7.68,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 57
+      },
+      "collectionOrder": [
+        {
+          "id": "inner",
+          "time": 1.6
+        },
+        {
+          "id": "low",
+          "time": 2.5
+        },
+        {
+          "id": "high",
+          "time": 4.3
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.1,
+      "time": 6.68,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 51
+      },
+      "collectionOrder": [
+        {
+          "id": "left",
+          "time": 1
+        },
+        {
+          "id": "right",
+          "time": 3.6
+        },
+        {
+          "id": "high",
+          "time": 4.8
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.1,
+      "time": 7.16,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 54
+      },
+      "collectionOrder": [
+        {
+          "id": "upperLeft",
+          "time": 1
+        },
+        {
+          "id": "middleLeft",
+          "time": 1.7
+        },
+        {
+          "id": "lower",
+          "time": 3.2
+        },
+        {
+          "id": "gate",
+          "time": 6
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "alternate",
+      "period": 0.1,
+      "time": 6.64,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 49
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2.6
+        },
+        {
+          "id": "inner",
+          "time": 4.1
+        },
+        {
+          "id": "low",
+          "time": 5
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.1,
+      "time": 7.9,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 59
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2
+        },
+        {
+          "id": "right",
+          "time": 3.7
+        },
+        {
+          "id": "left",
+          "time": 7
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.1,
+      "time": 6.94,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 52
+      },
+      "collectionOrder": [
+        {
+          "id": "gate",
+          "time": 0.6
+        },
+        {
+          "id": "lower",
+          "time": 1.7
+        },
+        {
+          "id": "middleLeft",
+          "time": 5.3
+        },
+        {
+          "id": "upperLeft",
+          "time": 6
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "main",
+      "period": 0.2,
+      "time": 8.6,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 61
+      },
+      "collectionOrder": [
+        {
+          "id": "inner",
+          "time": 2.4
+        },
+        {
+          "id": "low",
+          "time": 3.4
+        },
+        {
+          "id": "high",
+          "time": 5.2
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "main",
+      "period": 0.2,
+      "time": 8.98,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 63
+      },
+      "collectionOrder": [
+        {
+          "id": "left",
+          "time": 1.2
+        },
+        {
+          "id": "right",
+          "time": 4.4
+        },
+        {
+          "id": "high",
+          "time": 6.8
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "main",
+      "period": 0.2,
+      "time": 7.86,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 56
+      },
+      "collectionOrder": [
+        {
+          "id": "upperLeft",
+          "time": 1
+        },
+        {
+          "id": "middleLeft",
+          "time": 1.8
+        },
+        {
+          "id": "lower",
+          "time": 3.4
+        },
+        {
+          "id": "gate",
+          "time": 6.6
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "variant": "alternate",
+      "period": 0.2,
+      "time": 7.84,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 0,
+        "steps": 55
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 3
+        },
+        {
+          "id": "inner",
+          "time": 5.2
+        },
+        {
+          "id": "low",
+          "time": 6.2
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "variant": "alternate",
+      "period": 0.2,
+      "time": 8.1,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 57
+      },
+      "collectionOrder": [
+        {
+          "id": "high",
+          "time": 2
+        },
+        {
+          "id": "right",
+          "time": 4.6
+        },
+        {
+          "id": "left",
+          "time": 7.2
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "variant": "alternate",
+      "period": 0.2,
+      "time": 8.46,
+      "stats": {
+        "collected": 4,
+        "digs": 1,
+        "traps": 0,
+        "steps": 60
+      },
+      "collectionOrder": [
+        {
+          "id": "gate",
+          "time": 0.8
+        },
+        {
+          "id": "lower",
+          "time": 2.2
+        },
+        {
+          "id": "middleLeft",
+          "time": 6.4
+        },
+        {
+          "id": "upperLeft",
+          "time": 7.6
+        }
+      ]
+    }
+  ],
+  "recovery": [
+    {
+      "kind": "entry-refills-before-inner-excavation",
+      "entered": 1.12,
+      "afterRefill": {
+        "time": 6.34,
+        "player": {
+          "x": 10,
+          "y": 5
+        },
+        "collected": 0
+      },
+      "final": "won",
+      "time": 12.66,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 57
+      }
+    },
+    {
+      "kind": "early-vault-retreat-to-lower-loop",
+      "earlyDrop": {
+        "time": 1.38,
+        "player": {
+          "x": 6,
+          "y": 11
+        },
+        "collected": 1
+      },
+      "final": "won",
+      "time": 6.5,
+      "stats": {
+        "collected": 3,
+        "digs": 2,
+        "traps": 1,
+        "steps": 51
+      }
+    }
+  ],
+  "blindFailures": [
+    {
+      "level": 2,
+      "time": 1.86,
+      "state": "lost",
+      "lossKind": "caught",
+      "player": {
+        "x": 11,
+        "y": 7
+      },
+      "stats": {
+        "collected": 1,
+        "digs": 1,
+        "traps": 0,
+        "steps": 14
+      },
+      "events": [
+        {
+          "time": 0.7,
+          "text": "开洞：5,8，5.5秒后回填。"
+        },
+        {
+          "time": 0.96,
+          "text": "取回星核 1/3。"
+        },
+        {
+          "time": 1.86,
+          "text": "被巡守截住了；重试当前站，先观察梯口或用软砖洞改变追逐路线。"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "time": 2.32,
+      "state": "lost",
+      "lossKind": "caught",
+      "player": {
+        "x": 6,
+        "y": 11
+      },
+      "stats": {
+        "collected": 2,
+        "digs": 1,
+        "traps": 0,
+        "steps": 19
+      },
+      "events": [
+        {
+          "time": 0.3,
+          "text": "开洞：14,4，5.5秒后回填。"
+        },
+        {
+          "time": 0.54,
+          "text": "取回星核 1/4。"
+        },
+        {
+          "time": 1.62,
+          "text": "取回星核 2/4。"
+        },
+        {
+          "time": 2.32,
+          "text": "被巡守截住了；重试当前站，先观察梯口或用软砖洞改变追逐路线。"
+        }
+      ]
+    }
+  ],
+  "rushFailure": {
+    "input": "hold down then do nothing else",
+    "level": 3,
+    "time": 2.5,
+    "lossKind": "caught",
+    "stats": {
+      "collected": 0,
+      "digs": 0,
+      "traps": 0,
+      "steps": 4
+    }
+  },
+  "preservedDraftFailures": [
+    "Original map2 guard at9,11 was background: blind legal nearest-core route won5.54s at min distance4; moved same guard to14,7 without a speed/stat change.",
+    "First map3 alternate returned directly left along lower floor and was caught at2.32s; the alternative now pays the far outer-ladder loop.",
+    "Before the upper right refuge rope, main200ms could overshoot the upper ladder and fall into the middle guard; a short rope supplies a nonfatal visible landing, with no physics change."
+  ],
+  "limits": [
+    "No exhaustive solver or uniqueness claim.",
+    "Static one-hole checks are topology fixtures, not ordinary-input UI evidence.",
+    "The blind helper is the independently authored bounded <=3-opening nearest-core policy and intentionally ignores guard fields.",
+    "Main/alternate are hybrid authored collection orders plus guard-distance-aware routing, not general optimal AI.",
+    "Fast expert model wins do not prove human fun or depth."
+  ]
+}
