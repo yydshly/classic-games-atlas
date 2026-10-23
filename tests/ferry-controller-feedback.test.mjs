@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+import {COURSE} from '../experiments/kinetic/physics.mjs';
+import {dockFeedback} from '../experiments/kinetic/feedback.mjs';
+const elements=new Map(),element=s=>{if(!elements.has(s))elements.set(s,{textContent:''});return elements.get(s);};
+let now=100,s={player:{position:[0,.45,3]},completed:false,onBoat:false,plateBy:'crate',ferry:{phase:'dwellNear'},gate:{heldClosing:false}};
+const context=vm.createContext({document:{querySelector:element},performance:{now:()=>now},COURSE,dockFeedback});
+const source=readFileSync(new URL('../experiments/kinetic/game.mjs',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');
+vm.runInContext(source+'\n globalThis.fixture={set:s=>{sim={snapshot:()=>s};state="running";},sync,announce};',context);
+const api=context.fixture;
+api.set(s);api.sync();
+api.announce('渡台已离开，前方没有甲板托住你。回岸边等它靠稳再试。',5000,'near');
+now=5200;api.sync();assert.ok(!element('#status').textContent.includes('前方没有甲板'));
+// A place transition supersedes even an unexpired warning about the old place.
+api.announce('回岸边等它靠稳再试。',5000,'near');
+s={...s,onBoat:true,player:{position:[0,.45,-18]},ferry:{phase:'dwellFar'}};api.set(s);api.sync();
+assert.ok(element('#objective').textContent.includes('靠岸'));assert.ok(!element('#status').textContent.includes('回岸边'));
+s={...s,onBoat:false,dockStage:'arrival',player:{position:[0,.45,-20.6]}};api.set(s);api.sync();
+assert.ok(element('#objective').textContent.includes('已经上岸'));assert.ok(element('#status').textContent.includes('已到对岸'));
+s={...s,player:{position:[0,.45,3]}};api.set(s);api.sync();
+assert.ok(element('#objective').textContent.includes('来接你'));
+s={...s,completed:true};api.set(s);api.sync();assert.ok(element('#status').textContent.includes('接应灯为你亮起'));
+console.log(JSON.stringify({passed:true,method:'real controller sync with explicit DOM/time/snapshot fixtures',checks:['expired warning replaced without plate change','context change replaces stale warning','aboard to actual shore','old arrival flag does not latch near-shore guidance','terminal guidance']}));
