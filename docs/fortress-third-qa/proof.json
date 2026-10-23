@@ -1,0 +1,2867 @@
+{
+  "scope": "Bounded deterministic model simulation; no ordinary browser, physical-device or human-fun claim.",
+  "rules": "Original engine bytes; first two level source/objects retained. Decision intervals are held inputs with actual 1/60-second substeps, not one capped update per interval.",
+  "hashes": {
+    "engine.mjs": "a555a15067491830093cf4ad7d5178cc9d2228ebcae11e3acb276a708575bc24",
+    "levels.mjs": "6696e389412741a7b7177cbd4d30e022f444839692beb87c1dab611afb3a57e5",
+    "policy.mjs": "5af7a689bb08908d99148e0764aacd91a6a2920217bdd11a04c1629b70361a35"
+  },
+  "preserved": {
+    "oldEngineIdentical": true,
+    "oldLevelPrefix": true,
+    "oldLevelObjectSHA256": [
+      "a9060f12cb77d4f4d5927419c86a62dbdcdf86b007483c7b80107c6d8818d488",
+      "6b48f49925bab695ff19656bad333099663ff9c25b62082be60e469bac373725"
+    ],
+    "replay": [
+      {
+        "map": 1,
+        "frames": 2400,
+        "actualTime": 35.01666666666596,
+        "state": "lost",
+        "fullStateSHA256": "8a9b0b5ec19a7958f96b68e13e460d3271828f12c68e9c25adf4b4fdb857fd97"
+      },
+      {
+        "map": 2,
+        "frames": 2400,
+        "actualTime": 39.19999999999906,
+        "state": "lost",
+        "fullStateSHA256": "0e42cdc6be0a3dddaa6e85c1ed601459c142e5b1b0ba37ab1e2b494585c09114"
+      }
+    ]
+  },
+  "structureFixture": {
+    "kind": "Static copied-map comparison, not an input replay or UI evidence",
+    "lowerGate": {
+      "from": [
+        11,
+        19
+      ],
+      "to": [
+        11,
+        17
+      ],
+      "closedSteps": 10,
+      "openedSteps": 2
+    },
+    "upperGate": {
+      "from": [
+        11,
+        15
+      ],
+      "to": [
+        11,
+        13
+      ],
+      "closedSteps": 4,
+      "openedSteps": 2
+    },
+    "southRayFrom": [
+      11,
+      17
+    ],
+    "closedFirstBlockingTile": {
+      "x": 11,
+      "y": 18,
+      "type": "B"
+    },
+    "openedFirstBlockingTile": {
+      "x": 11,
+      "y": 22,
+      "type": "B"
+    },
+    "baseCoverStillIntact": true
+  },
+  "matrix": [
+    {
+      "strategy": "flank",
+      "interval": 0.05,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.65,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 59,
+      "score": 1860,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          17,
+          14
+        ]
+      ],
+      "centralRemaining": 9,
+      "baseRemaining": 5,
+      "centralGateVisits": [],
+      "distanceTiles": 108.38,
+      "visitedCells": 27,
+      "terrain": [
+        {
+          "time": 4.1,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 16.2,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        },
+        {
+          "time": 7.63,
+          "type": "power",
+          "powerType": "rapid",
+          "x": 379.3333333333338,
+          "y": 468,
+          "owner": "player-1"
+        },
+        {
+          "time": 18.98,
+          "type": "power",
+          "powerType": "shield",
+          "x": 420,
+          "y": 206.2666666666652,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 16.77,
+          "type": "drop",
+          "x": 420,
+          "y": 188.60000000000002,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.83,
+          "type": "drop",
+          "x": 420,
+          "y": 189.06666666666655,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.65,
+          "type": "drop",
+          "x": 420,
+          "y": 230.03333333333336,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "flank",
+      "interval": 0.1,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.7,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 59,
+      "score": 1860,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          17,
+          14
+        ]
+      ],
+      "centralRemaining": 9,
+      "baseRemaining": 5,
+      "centralGateVisits": [],
+      "distanceTiles": 219.28,
+      "visitedCells": 27,
+      "terrain": [
+        {
+          "time": 4.17,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 16.28,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        },
+        {
+          "time": 7.65,
+          "type": "power",
+          "powerType": "rapid",
+          "x": 379.3333333333338,
+          "y": 468,
+          "owner": "player-1"
+        },
+        {
+          "time": 19.1,
+          "type": "power",
+          "powerType": "shield",
+          "x": 420,
+          "y": 207.99999999999852,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 16.83,
+          "type": "drop",
+          "x": 420,
+          "y": 191.4666666666667,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.87,
+          "type": "drop",
+          "x": 420,
+          "y": 190.1333333333332,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.7,
+          "type": "drop",
+          "x": 420,
+          "y": 233.0833333333334,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "flank",
+      "interval": 0.2,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.75,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 127,
+      "score": 1860,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          17,
+          14
+        ]
+      ],
+      "centralRemaining": 9,
+      "baseRemaining": 5,
+      "centralGateVisits": [],
+      "distanceTiles": 261.52,
+      "visitedCells": 37,
+      "terrain": [
+        {
+          "time": 4.53,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 16.2,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        },
+        {
+          "time": 8.32,
+          "type": "power",
+          "powerType": "rapid",
+          "x": 379.3333333333338,
+          "y": 468,
+          "owner": "player-1"
+        },
+        {
+          "time": 18.97,
+          "type": "power",
+          "powerType": "shield",
+          "x": 420,
+          "y": 206.2666666666652,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 16.77,
+          "type": "drop",
+          "x": 420,
+          "y": 188.60000000000002,
+          "powerType": "shield"
+        },
+        {
+          "time": 51.47,
+          "type": "drop",
+          "x": 180,
+          "y": 132,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.75,
+          "type": "drop",
+          "x": 420,
+          "y": 236.13333333333344,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "flank",
+      "interval": [
+        0.1,
+        0.15,
+        0.2,
+        0.1
+      ],
+      "seed": 120567,
+      "state": "won",
+      "time": 64.65,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 60,
+      "score": 1860,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          17,
+          14
+        ]
+      ],
+      "centralRemaining": 9,
+      "baseRemaining": 5,
+      "centralGateVisits": [],
+      "distanceTiles": 117.77,
+      "visitedCells": 27,
+      "terrain": [
+        {
+          "time": 4.15,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 16.2,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        },
+        {
+          "time": 7.87,
+          "type": "power",
+          "powerType": "rapid",
+          "x": 379.3333333333338,
+          "y": 468,
+          "owner": "player-1"
+        },
+        {
+          "time": 19.12,
+          "type": "power",
+          "powerType": "shield",
+          "x": 420,
+          "y": 206.2666666666652,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 16.77,
+          "type": "drop",
+          "x": 420,
+          "y": 188.60000000000002,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.78,
+          "type": "drop",
+          "x": 420,
+          "y": 187.46666666666655,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.65,
+          "type": "drop",
+          "x": 420,
+          "y": 230.03333333333336,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "breach",
+      "interval": 0.05,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.62,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 57,
+      "score": 1760,
+      "removed": [
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "centralRemaining": 8,
+      "baseRemaining": 5,
+      "centralGateVisits": [
+        "11,18"
+      ],
+      "distanceTiles": 95.47,
+      "visitedCells": 25,
+      "terrain": [
+        {
+          "time": 1.42,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.25,
+          "x": 11,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 17.05,
+          "type": "drop",
+          "x": 420,
+          "y": 176.43333333333345,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.78,
+          "type": "drop",
+          "x": 420,
+          "y": 162.93333333333297,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.62,
+          "type": "drop",
+          "x": 420,
+          "y": 200.73333333333392,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "breach",
+      "interval": 0.1,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.65,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 57,
+      "score": 1760,
+      "removed": [
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "centralRemaining": 8,
+      "baseRemaining": 5,
+      "centralGateVisits": [
+        "11,18"
+      ],
+      "distanceTiles": 254.74,
+      "visitedCells": 31,
+      "terrain": [
+        {
+          "time": 1.47,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.3,
+          "x": 11,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 17.07,
+          "type": "drop",
+          "x": 420,
+          "y": 177.15000000000012,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.82,
+          "type": "drop",
+          "x": 420,
+          "y": 163.99999999999963,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.65,
+          "type": "drop",
+          "x": 420,
+          "y": 202.36666666666696,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "breach",
+      "interval": 0.2,
+      "seed": 120567,
+      "state": "won",
+      "time": 64.98,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 139,
+      "score": 1760,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          22
+        ]
+      ],
+      "centralRemaining": 7,
+      "baseRemaining": 4,
+      "centralGateVisits": [
+        "11,18",
+        "12,18"
+      ],
+      "distanceTiles": 267.15,
+      "visitedCells": 50,
+      "terrain": [
+        {
+          "time": 1.57,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.4,
+          "x": 11,
+          "y": 14
+        },
+        {
+          "time": 32.18,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 37.53,
+          "x": 12,
+          "y": 18
+        },
+        {
+          "time": 38.32,
+          "x": 12,
+          "y": 22
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 35.62,
+          "type": "drop",
+          "x": 420,
+          "y": 271.3666666666662,
+          "powerType": "shield"
+        },
+        {
+          "time": 44.13,
+          "type": "drop",
+          "x": 420,
+          "y": 239.19999999999996,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.98,
+          "type": "drop",
+          "x": 420,
+          "y": 222.70000000000056,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    },
+    {
+      "strategy": "breach",
+      "interval": [
+        0.1,
+        0.15,
+        0.2,
+        0.1
+      ],
+      "seed": 120567,
+      "state": "won",
+      "time": 64.87,
+      "kills": 6,
+      "base": 3,
+      "lives": 3,
+      "shots": 59,
+      "score": 1760,
+      "removed": [
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "centralRemaining": 8,
+      "baseRemaining": 5,
+      "centralGateVisits": [
+        "11,18"
+      ],
+      "distanceTiles": 116.77,
+      "visitedCells": 39,
+      "terrain": [
+        {
+          "time": 1.57,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.48,
+          "x": 11,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [
+        {
+          "time": 17.03,
+          "type": "drop",
+          "x": 420,
+          "y": 175.71666666666678,
+          "powerType": "shield"
+        },
+        {
+          "time": 41.73,
+          "type": "drop",
+          "x": 420,
+          "y": 161.33333333333297,
+          "powerType": "repair"
+        },
+        {
+          "time": 64.87,
+          "type": "drop",
+          "x": 420,
+          "y": 215.18333333333348,
+          "powerType": "rapid"
+        }
+      ],
+      "baseHits": []
+    }
+  ],
+  "traces": [
+    {
+      "strategy": "flank",
+      "routeEverySecond": [
+        {
+          "time": 0,
+          "x": 8.5,
+          "y": 21.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 1,
+          "x": 11.1,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 2,
+          "x": 14.49,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 3,
+          "x": 10.16,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 4,
+          "x": 7.5,
+          "y": 17.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 5,
+          "x": 7.5,
+          "y": 16.9,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 6,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 7,
+          "x": 13.06,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 8,
+          "x": 14.65,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 9,
+          "x": 10.39,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 10,
+          "x": 8.66,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 11,
+          "x": 8.66,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 12,
+          "x": 8.66,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 13,
+          "x": 8.66,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 14,
+          "x": 8.66,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 15,
+          "x": 12.99,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 16,
+          "x": 17.32,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 17,
+          "x": 17.5,
+          "y": 17.77,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 18,
+          "x": 17.5,
+          "y": 13.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 19,
+          "x": 17.5,
+          "y": 9.1,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 20,
+          "x": 17.5,
+          "y": 12.57,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 21,
+          "x": 17.5,
+          "y": 16.9,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 22,
+          "x": 15.48,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 23,
+          "x": 11.07,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 24,
+          "x": 8.54,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 25,
+          "x": 8.54,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 26,
+          "x": 8.04,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 27,
+          "x": 7.5,
+          "y": 19.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 28,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 29,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 30,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 31,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 32,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 33,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 34,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 35,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 36,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 37,
+          "x": 8.44,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 38,
+          "x": 9.31,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 39,
+          "x": 13.64,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 40,
+          "x": 17.5,
+          "y": 19.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 41,
+          "x": 17.5,
+          "y": 19.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 42,
+          "x": 17.5,
+          "y": 18.57,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 43,
+          "x": 13.96,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 44,
+          "x": 9.63,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 45,
+          "x": 8.4,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 46,
+          "x": 8.4,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 47,
+          "x": 8.4,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 48,
+          "x": 8.4,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 49,
+          "x": 8.4,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 50,
+          "x": 7.89,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 51,
+          "x": 7.5,
+          "y": 19.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 52,
+          "x": 8.01,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 53,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 54,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 55,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 56,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 57,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 58,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 59,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 60,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 61,
+          "x": 8.73,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 62,
+          "x": 8.87,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 63,
+          "x": 13.21,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 64,
+          "x": 17.5,
+          "y": 19.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        }
+      ],
+      "decisionSamples": [
+        {
+          "time": 0,
+          "x": 204,
+          "y": 516,
+          "dir": 0,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 2,
+          "x": 349.6,
+          "y": 468,
+          "dir": 3,
+          "fire": true,
+          "target": "enemy-1"
+        },
+        {
+          "time": 4,
+          "x": 180,
+          "y": 426.4,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-1"
+        },
+        {
+          "time": 6,
+          "x": 207.7,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 8,
+          "x": 353.3,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 10,
+          "x": 207.7,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 12,
+          "x": 207.7,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 14,
+          "x": 207.7,
+          "y": 468,
+          "dir": 1,
+          "fire": true,
+          "target": "enemy-2"
+        },
+        {
+          "time": 16,
+          "x": 415.7,
+          "y": 468,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-2"
+        },
+        {
+          "time": 18,
+          "x": 420,
+          "y": 322.4,
+          "dir": 0,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 20,
+          "x": 420,
+          "y": 301.6,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 22,
+          "x": 371.5,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 24,
+          "x": 205.1,
+          "y": 468,
+          "dir": null,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 26,
+          "x": 194.7,
+          "y": 468,
+          "dir": 3,
+          "fire": true,
+          "target": "enemy-3"
+        },
+        {
+          "time": 28,
+          "x": 200.8,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 30,
+          "x": 200.8,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 32,
+          "x": 200.8,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 34,
+          "x": 200.8,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 36,
+          "x": 200.8,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 38,
+          "x": 221.6,
+          "y": 468,
+          "dir": 1,
+          "fire": true,
+          "target": "enemy-4"
+        },
+        {
+          "time": 40,
+          "x": 420,
+          "y": 457.6,
+          "dir": null,
+          "fire": true,
+          "aim": "enemy-4"
+        },
+        {
+          "time": 42,
+          "x": 418.3,
+          "y": 444,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 44,
+          "x": 232.8,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 46,
+          "x": 201.6,
+          "y": 468,
+          "dir": null,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 48,
+          "x": 201.6,
+          "y": 468,
+          "dir": null,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 50,
+          "x": 191.2,
+          "y": 468,
+          "dir": 3,
+          "fire": true,
+          "target": "enemy-5"
+        },
+        {
+          "time": 52,
+          "x": 190.4,
+          "y": 468,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 54,
+          "x": 211.2,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 56,
+          "x": 211.2,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 58,
+          "x": 211.2,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 60,
+          "x": 211.2,
+          "y": 468,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 62,
+          "x": 211.2,
+          "y": 468,
+          "dir": 1,
+          "fire": true,
+          "target": "enemy-6"
+        },
+        {
+          "time": 64,
+          "x": 419.2,
+          "y": 468,
+          "dir": 0,
+          "fire": true,
+          "aim": "enemy-6"
+        }
+      ],
+      "terrain": [
+        {
+          "time": 4.17,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 16.28,
+          "x": 17,
+          "y": 14
+        }
+      ]
+    },
+    {
+      "strategy": "breach",
+      "routeEverySecond": [
+        {
+          "time": 0,
+          "x": 8.5,
+          "y": 21.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 1,
+          "x": 11.1,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 2,
+          "x": 11.5,
+          "y": 17.19,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 3,
+          "x": 10.63,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 4,
+          "x": 7.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 5,
+          "x": 8.58,
+          "y": 12.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 6,
+          "x": 11.5,
+          "y": 14.16,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 7,
+          "x": 11.5,
+          "y": 16.62,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 8,
+          "x": 11.5,
+          "y": 16.62,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 9,
+          "x": 11.5,
+          "y": 16.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 10,
+          "x": 11.5,
+          "y": 16.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 11,
+          "x": 11.5,
+          "y": 16.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 12,
+          "x": 11.5,
+          "y": 16.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 13,
+          "x": 11.5,
+          "y": 16.69,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 14,
+          "x": 11.5,
+          "y": 15.82,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 15,
+          "x": 13.67,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 16,
+          "x": 17.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 17,
+          "x": 17.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 1
+        },
+        {
+          "time": 18,
+          "x": 14.9,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 19,
+          "x": 12.5,
+          "y": 15.67,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 20,
+          "x": 11.34,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 21,
+          "x": 11.34,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 22,
+          "x": 11.34,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 23,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 24,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 25,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 26,
+          "x": 11.5,
+          "y": 15.99,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 27,
+          "x": 9.41,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 28,
+          "x": 7.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 2
+        },
+        {
+          "time": 29,
+          "x": 9.88,
+          "y": 12.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 30,
+          "x": 11.5,
+          "y": 15.46,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 31,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 32,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 33,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 34,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 35,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 36,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 37,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 38,
+          "x": 11.5,
+          "y": 16.18,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 39,
+          "x": 13.31,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 40,
+          "x": 17.5,
+          "y": 13.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 41,
+          "x": 17.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 3
+        },
+        {
+          "time": 42,
+          "x": 17.5,
+          "y": 12.57,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 43,
+          "x": 13.96,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 44,
+          "x": 12.14,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 45,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 46,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 47,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 48,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 49,
+          "x": 11.42,
+          "y": 16.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 50,
+          "x": 11.5,
+          "y": 15.99,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 51,
+          "x": 9.41,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 52,
+          "x": 7.5,
+          "y": 13.07,
+          "base": 3,
+          "lives": 3,
+          "kills": 4
+        },
+        {
+          "time": 53,
+          "x": 8.15,
+          "y": 12.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 54,
+          "x": 11.5,
+          "y": 13.73,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 55,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 56,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 57,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 58,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 59,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 60,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 61,
+          "x": 11.5,
+          "y": 16.33,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 62,
+          "x": 11.5,
+          "y": 16.18,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 63,
+          "x": 13.31,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        },
+        {
+          "time": 64,
+          "x": 17.5,
+          "y": 13.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 5
+        }
+      ],
+      "decisionSamples": [
+        {
+          "time": 0,
+          "x": 204,
+          "y": 516,
+          "dir": 0,
+          "fire": false,
+          "target": "central breach approach"
+        },
+        {
+          "time": 2,
+          "x": 276,
+          "y": 414.3,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-1"
+        },
+        {
+          "time": 4,
+          "x": 180,
+          "y": 313.6,
+          "dir": null,
+          "fire": true,
+          "aim": "enemy-1"
+        },
+        {
+          "time": 6,
+          "x": 276,
+          "y": 338.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 8,
+          "x": 276,
+          "y": 400.5,
+          "dir": 0,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 10,
+          "x": 276,
+          "y": 400.5,
+          "dir": 0,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 12,
+          "x": 276,
+          "y": 400.5,
+          "dir": 0,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 14,
+          "x": 276,
+          "y": 379.7,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-2"
+        },
+        {
+          "time": 16,
+          "x": 420,
+          "y": 313.6,
+          "dir": null,
+          "fire": true,
+          "aim": "enemy-2"
+        },
+        {
+          "time": 18,
+          "x": 357.6,
+          "y": 324,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 20,
+          "x": 272.3,
+          "y": 396,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 22,
+          "x": 272.3,
+          "y": 396,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 24,
+          "x": 272.3,
+          "y": 396,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 26,
+          "x": 276,
+          "y": 385.6,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-3"
+        },
+        {
+          "time": 28,
+          "x": 180,
+          "y": 313.6,
+          "dir": null,
+          "fire": true,
+          "aim": "enemy-3"
+        },
+        {
+          "time": 30,
+          "x": 276,
+          "y": 369.3,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 32,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 34,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 36,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 38,
+          "x": 276,
+          "y": 390.1,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-4"
+        },
+        {
+          "time": 40,
+          "x": 421.6,
+          "y": 324,
+          "dir": 0,
+          "fire": true,
+          "aim": "enemy-4"
+        },
+        {
+          "time": 42,
+          "x": 416.5,
+          "y": 300,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 44,
+          "x": 293.1,
+          "y": 396,
+          "dir": 3,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 46,
+          "x": 272.3,
+          "y": 396,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 48,
+          "x": 272.3,
+          "y": 396,
+          "dir": 1,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 50,
+          "x": 276,
+          "y": 385.6,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-5"
+        },
+        {
+          "time": 52,
+          "x": 180,
+          "y": 313.6,
+          "dir": null,
+          "fire": true,
+          "aim": "enemy-5"
+        },
+        {
+          "time": 54,
+          "x": 276,
+          "y": 327.7,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 56,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 58,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 60,
+          "x": 276,
+          "y": 390.1,
+          "dir": 2,
+          "fire": false,
+          "target": "staging"
+        },
+        {
+          "time": 62,
+          "x": 276,
+          "y": 390.1,
+          "dir": 0,
+          "fire": true,
+          "target": "enemy-6"
+        },
+        {
+          "time": 64,
+          "x": 421.6,
+          "y": 324,
+          "dir": 0,
+          "fire": true,
+          "aim": "enemy-6"
+        }
+      ],
+      "terrain": [
+        {
+          "time": 1.47,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.3,
+          "x": 11,
+          "y": 14
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "strategy": "overextend",
+      "interval": 0.1,
+      "seed": 120567,
+      "state": "lost",
+      "time": 22.02,
+      "kills": 0,
+      "base": 0,
+      "lives": 3,
+      "shots": 6,
+      "score": 50,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          17,
+          14
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "centralRemaining": 8,
+      "baseRemaining": 4,
+      "centralGateVisits": [
+        "11,18"
+      ],
+      "distanceTiles": 94.37,
+      "visitedCells": 26,
+      "terrain": [
+        {
+          "time": 1.47,
+          "x": 11,
+          "y": 18
+        },
+        {
+          "time": 2.3,
+          "x": 11,
+          "y": 14
+        },
+        {
+          "time": 8.38,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 15.52,
+          "x": 11,
+          "y": 23
+        },
+        {
+          "time": 21.07,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [
+        {
+          "time": 0.3,
+          "type": "power",
+          "powerType": "shield",
+          "x": 204,
+          "y": 484.7999999999997,
+          "owner": "player-1"
+        }
+      ],
+      "drops": [],
+      "baseHits": [
+        {
+          "time": 17.68,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 2,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 19.85,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 1,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 22.02,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 0,
+          "shield": 1.5,
+          "flash": 0.5
+        }
+      ],
+      "terminalReason": "信标熄灭：基地耐久已经耗尽。",
+      "routeEverySecond": [
+        {
+          "time": 0,
+          "x": 8.5,
+          "y": 21.43,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 1,
+          "x": 11.1,
+          "y": 19.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 2,
+          "x": 11.5,
+          "y": 17.19,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 3,
+          "x": 10.63,
+          "y": 13.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 4,
+          "x": 10.5,
+          "y": 9.53,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 5,
+          "x": 10.5,
+          "y": 5.19,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 6,
+          "x": 7.61,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 7,
+          "x": 7.61,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 8,
+          "x": 7.61,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 9,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 10,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 11,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 12,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 13,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 14,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 15,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 16,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 17,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 3,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 18,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 2,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 19,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 2,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 20,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 1,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 21,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 1,
+          "lives": 3,
+          "kills": 0
+        },
+        {
+          "time": 22,
+          "x": 7.68,
+          "y": 3.5,
+          "base": 1,
+          "lives": 3,
+          "kills": 0
+        }
+      ]
+    },
+    {
+      "strategy": "idle",
+      "interval": 0.1,
+      "seed": 120567,
+      "state": "lost",
+      "time": 22.48,
+      "kills": 0,
+      "base": 0,
+      "lives": 2,
+      "shots": 0,
+      "score": 0,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          17,
+          14
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "centralRemaining": 9,
+      "baseRemaining": 4,
+      "centralGateVisits": [],
+      "distanceTiles": 0,
+      "visitedCells": 1,
+      "terrain": [
+        {
+          "time": 8.18,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 15.98,
+          "x": 11,
+          "y": 23
+        },
+        {
+          "time": 21.07,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [],
+      "drops": [],
+      "baseHits": [
+        {
+          "time": 18.15,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 2,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 20.32,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 1,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 22.48,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 0,
+          "shield": 1.5,
+          "flash": 0.5
+        }
+      ],
+      "terminalReason": "信标熄灭：基地耐久已经耗尽。"
+    },
+    {
+      "strategy": "fixed-north",
+      "interval": 0.1,
+      "seed": 120567,
+      "state": "lost",
+      "time": 22.48,
+      "kills": 0,
+      "base": 0,
+      "lives": 2,
+      "shots": 65,
+      "score": 0,
+      "removed": [
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          17,
+          14
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "centralRemaining": 8,
+      "baseRemaining": 4,
+      "centralGateVisits": [],
+      "distanceTiles": 0,
+      "visitedCells": 1,
+      "terrain": [
+        {
+          "time": 0.52,
+          "x": 8,
+          "y": 18
+        },
+        {
+          "time": 1.53,
+          "x": 8,
+          "y": 14
+        },
+        {
+          "time": 8.18,
+          "x": 7,
+          "y": 14
+        },
+        {
+          "time": 15.98,
+          "x": 11,
+          "y": 23
+        },
+        {
+          "time": 21.07,
+          "x": 17,
+          "y": 14
+        }
+      ],
+      "pickups": [],
+      "drops": [],
+      "baseHits": [
+        {
+          "time": 18.15,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 2,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 20.32,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 1,
+          "shield": 1.5,
+          "flash": 0.5
+        },
+        {
+          "time": 22.48,
+          "type": "base-hit",
+          "x": 300,
+          "y": 564,
+          "hp": 0,
+          "shield": 1.5,
+          "flash": 0.5
+        }
+      ],
+      "terminalReason": "信标熄灭：基地耐久已经耗尽。"
+    }
+  ],
+  "limits": [
+    "Default deterministic third-map seed only; no claim about all seeds or optimal play.",
+    "Eight successful third-map simulations prove legal strategies, not depth, balance, cooperation or aesthetic quality.",
+    "The lower breach removes a rear-field screen, not all protection of the base. Five base bricks remain in the 50/100ms examples.",
+    "200ms breach can remove extra base cover while still winning; it is recorded rather than presented as identical to 100ms.",
+    "Damage events cannot attribute every removed brick to a bullet owner; removed tiles are world changes, while central gate entry and explicit breach actions show actual route use."
+  ],
+  "workingCopyHashes": {
+    "engine.mjs": "a555a15067491830093cf4ad7d5178cc9d2228ebcae11e3acb276a708575bc24",
+    "levels.mjs": "0430ef7b55bb8eed19f5a0df72d0365fa279e7f207b927bbfd9dd7f7425d4f10",
+    "policy.mjs": "051be07265714959c8a2ceff3cf02a70db7318c850577c7dbedeb33d393ad0a8"
+  },
+  "hashBoundary": "hashes bind normalized Git/published blobs; workingCopyHashes preserve the exact Windows candidate files tested. Differences are CRLF normalization only; parsed levels and unchanged engine rules are identical."
+}

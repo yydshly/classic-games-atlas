@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101e24"><title>堡垒防线 · 三图战役 v4</title>
+<link rel="icon" href="../../../../assets/favicon.svg">
+<link rel="stylesheet" href="../../../v2/games/fortress/fortress.css?base-feedback-r1">
+<link rel="stylesheet" href="campaign.css?v=campaign-v4-r1">
+<script type="module" src="game.mjs?v=campaign-v4-r1"></script></head><body><main>
+<div class="campaign-shell">
+<header><a id="lobby" href="../../../../#selected-play">← 精选试玩大厅</a><a id="free-mode" href="../../../v2/games/fortress/">自由选图 v2 ↗</a><button id="pause" disabled>暂停 P</button></header>
+<p id="save-note" class="save-note" role="status" aria-live="polite"></p>
+<p class="legacy-note">这是独立的三图新旅程；<a id="legacy-mode" href="../../../v3/games/fortress/">原两图战役 v3 与记录保留 ↗</a></p>
+<section id="battle-view" class="play-area">
+ <div class="journey-strip" aria-label="三场目标"><ol><li id="step-0">01 双翼哨口</li><li id="step-1">02 交汇换防</li><li id="step-2">03 折堤回防</li></ol><p id="mission-goal">守住基地，清除本图六台来敌。</p></div>
+ <section class="title"><div><p class="eyebrow">FORTRESS / A SHARED JOURNEY · V4</p><h1>堡垒防线<span>三图战役</span></h1></div><p>可以单车出发，也可以同键双车。<br>两处旧防线，一段新的折堤回防。</p></section>
+ <section class="operation"><label>出发编组 <select id="mode"><option value="1">单车 · 键盘 / 触控</option><option value="2">同键双车 · 两人共用键盘</option></select></label><span id="mode-note">没有 AI 队友；触控仅操作1P。</span></section>
+ <section class="command">
+  <div class="field-slot"><div class="arena"><canvas id="battlefield" tabindex="0" width="600" height="600" aria-label="堡垒战场。1P WASD移动、J开火；2P方向键、Enter开火；P或Esc暂停。"></canvas><div id="overlay"><p class="eyebrow" id="state-label"></p><h2 id="result-title"></h2><p id="result-copy"></p><button id="primary">开始第一行动</button><button id="retry">重新整备本行动</button></div></div></div>
+  <aside>
+   <div class="status-top"><span class="eyebrow" id="stage-label">行动 01 / 03</span><strong id="clock">00:00</strong></div>
+   <div class="base-card" id="base-card"><span id="base-label">共享信标</span><strong id="base">◆ ◆ ◆</strong><small>基地毁坏，全队失败</small></div>
+   <div class="pilot p1"><b>01 / 金色装甲</b><strong id="p1"></strong><small>W A S D 移动 · J 开火</small><em id="power1"></em></div>
+   <div class="pilot p2"><b>02 / 蓝色装甲</b><strong id="p2"></strong><small>方向键移动 · Enter 开火</small><em id="power2"></em></div>
+   <div class="wave"><span>清除来敌</span><strong id="wave">0 / 6</strong><small id="score">本行动得分 0</small></div>
+   <p id="tip"></p><p class="small">三图各自重新整备。基地三点耐久、每车三次出击；前两图初态及既有战斗规则保留。</p>
+  </aside>
+ </section>
+ <section class="bottom"><p id="status" role="status" aria-live="polite"></p><p>刷新回到本行动整备</p></section>
+ <div class="touch" aria-label="1P触控"><button data-key="KeyA" aria-label="向左">←</button><button data-key="KeyW" aria-label="向上">↑</button><button data-key="KeyS" aria-label="向下">↓</button><button data-key="KeyD" aria-label="向右">→</button><button data-key="KeyJ">开火</button></div>
+</section>
+</div>
+<section id="phase-view" class="phase-view" hidden aria-labelledby="phase-title">
+ <p class="eyebrow" id="phase-label"></p><h1 id="phase-title" tabindex="-1"></h1><p class="phase-lead" id="phase-copy"></p>
+ <div id="results" class="result-grid"></div><p id="journey-total" class="journey-total"></p>
+ <div class="phase-actions"><button id="phase-primary"></button><a href="../../../../#selected-play">返回精选试玩</a><a href="../../../v2/games/fortress/">自由选图 v2 ↗</a><a href="../../../v3/games/fortress/">原两图战役 v3 ↗</a></div>
+</section>
+<p id="restore-note" class="restore-note" hidden>上次离开时行动尚未完成，已回到当前行动整备；此前完成的行动仍保留。</p>
+<div class="campaign-footer"><button id="new-campaign">重新开始短战役</button><details><summary>怎么玩与保存边界</summary>
+ <p>三行动依序进行，各清六台来敌且守住基地。每场完成后先看真实结果，再整备下一场；失败只重试当前行动，此前已完成的成果保留。每图重新整备，不继承残血、临时补给或场内位置。</p>
+ <p>1P：WASD + J；2P：方向键 + Enter。P / Esc暂停，失焦或切出标签自动暂停。触控只提供1P；双车没有AI队友，需要两人共用键盘。单车同样可以完成全程。</p>
+ <p>只保存编组、当前行动及已结束行动的结果。战斗刷新回本行动整备；关间、失利和最终总结可重读。使用独立v4存档；不读取、迁移或写入v1/v2/v3选择、最好分或战役记录。不是联网、排行榜或完整《Battle City》复刻。</p>
+ <p>保留原有两图，加入原创第三图“折堤回防”，复用现有绘制。<a href="../../../v2/games/fortress/NOTES.md">经典启发及差异</a> · <a href="NOTES.md">v4范围与保存说明</a>。仍待真人合作、真机与整体品质验收，不保证固定通关时长。</p>
+</details></div>
+<dialog id="restart-dialog" aria-labelledby="restart-title"><h2 id="restart-title">重新出发？</h2><p id="restart-copy">这会重开这份三图战役。原两图战役v3、自由选图v2与更早记录不会改变。</p><div><button id="restart-confirm">确认重开</button><button id="restart-cancel">保留进度</button></div></dialog>
+</main></body></html>

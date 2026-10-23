@@ -1,0 +1,20 @@
+{
+  "scope": "Bounded candidate development history, not browser evidence",
+  "trials": [
+    {
+      "id": "weight-only",
+      "result": "Both 100ms strategies won but removed the same three brick cells; aggression weights alone did not establish a meaningful route distinction.",
+      "decision": "Rejected as strategy evidence. Added an explicit legal central breach/crossing branch and kept a side-route policy which preserves the central screen. No engine or map numeric changes."
+    },
+    {
+      "id": "precise-alignment-policy",
+      "result": "100ms won, but at 200ms the policy alternated corrective left/right near an exact stopping point. One bounded run lost at25.05s and another was still playing at150s.",
+      "decision": "Policy failure, not a game defect. Delegate lane-aligned turns to the unchanged engine and use the three-column central approach. Frozen final policy wins 50/100/200ms plus a jitter sequence."
+    },
+    {
+      "id": "final-limit",
+      "result": "Final200ms breach wins but removes an extra base-cover brick; retained in proof. Both strategies can win without losing health on this seed.",
+      "decision": "Do not claim compulsory damage, compulsory pickup, perfect coarse control or proven human depth. No balancing/stat changes made to force such outcomes."
+    }
+  ]
+}

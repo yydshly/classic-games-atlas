@@ -8,6 +8,7 @@ function gameSlug(value, base) {
     if (url.origin !== root.origin || !url.pathname.startsWith(root.pathname)) return null;
     const path=url.pathname.slice(root.pathname.length);
     if (/^versions\/v3\/games\/post\/cup\/(?:index\.html)?$/.test(path)) return 'post';
+    if (/^versions\/v4\/games\/fortress\/(?:index\.html)?$/.test(path)) return 'fortress';
     return path.match(/^(?:versions\/v[23]\/)?(?:games|preview)\/([a-z0-9-]+)\/(?:index\.html)?$/)?.[1] || null;
   } catch { return null; }
 }

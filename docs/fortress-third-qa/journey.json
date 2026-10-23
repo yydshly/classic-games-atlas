@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "groups": 10,
+  "results": [
+    "Three sequential wins require two distinct intermissions; final cannot advance or settle twice",
+    "Loss and retry on each map preserve earlier wins and keep the same map",
+    "Active refresh returns to current briefing for every map, retaining only ended results",
+    "Two-player participation and mode lock survive all three maps",
+    "Malformed stage/result/schema and incomplete wins cannot masquerade as a finished journey",
+    "V4 reads/writes only its key; valid and corrupt v3 raw bytes are never inspected or changed",
+    "Corrupt/unknown v4 record is preserved byte-for-byte and blocks writes even for explicit fresh journey",
+    "Quota/write failures preserve last valid record and later success clears warning",
+    "Read denial protects unknown bytes and allows a truthful temporary fresh journey",
+    "HTML integration has all three unique steps and a persistent original-v3 route"
+  ],
+  "method": "Journey/storage state transitions using explicit result-shaped fixtures, storage-error fixtures and static HTML integration checks. No engine win, browser, touch, visual-layout or human-cooperation claim."
+}
