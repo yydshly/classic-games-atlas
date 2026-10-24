@@ -92,12 +92,17 @@ export function previewThreat(g,dir){
  if(!d||!['ready','playing','paused'].includes(g.state))return base;
  const cells=[];let to=null;for(let n=1;n<=WIDTH+HEIGHT;n++){const p={x:from.x+d.x*n,y:from.y+d.y*n};if(!inside(p.x,p.y))break;if(isClaimed(g,p.x,p.y)){if(cells.length||g.trail.length)to=p;break;}cells.push(p);}
  if(!to)return {...base,reason:'此方向没有直接可达的下一处安全落脚点；先沿岸移动。'};
- const closeIn=Math.max(0,PLAYER_STEP-g.player.clock)+(cells.length)*PLAYER_STEP;
+ // Even a fully charged movement clock executes on the next simulation tick, not now.
+ const firstMoveTicks=Math.max(1,Math.ceil((PLAYER_STEP-g.player.clock-1e-8)/STEP));
+ const closeIn=Math.round((firstMoveTicks*STEP+cells.length*PLAYER_STEP)*100)/100;
  const full=[...g.trail,...cells],enemies=g.enemies.map(e=>{const n=nearestLine(g,e,full);return n?{id:e.id,from:{x:e.x,y:e.y},target:n.target,distance:n.distance,path:n.path,hitIn:null}:null;}).filter(Boolean);
  const sim=clone(g),losses=sim.stats.losses,cuts=sim.stats.cuts,at=sim.time;if(sim.state!=='playing')start(sim);if(!sim.trail.length&&!sim.drawArmed)toggleDraw(sim);
  let hitIn=null;for(let i=0;i<Math.ceil((closeIn+.25)/STEP)&&sim.state==='playing'&&sim.stats.cuts===cuts&&sim.stats.losses===losses;i++)update(sim,STEP,{dir});
  if(sim.stats.losses>losses)hitIn=sim.time-at;
- const risk=hitIn===null?'safe':'danger',margin=hitIn===null?null:hitIn-closeIn;
+ const closed=sim.stats.cuts>cuts,timedOut=sim.state==='lost'&&sim.time>=sim.limit;
+ const risk=hitIn!==null?'danger':timedOut?'timeout':closed?'safe':'incomplete',margin=hitIn===null?null:hitIn-closeIn;
+ const remaining=Math.max(0,g.limit-g.time);
+ const reason=risk==='timeout'?(closed?'预计能连回汀地，但同时潮时已到，整湾目标仍未达成。':'潮时仅余'+remaining.toFixed(2)+'秒，预计在闭合前耗尽；这条直线来不及完成。'):risk==='incomplete'?'本次推演未确认闭合，请重新选落脚点。':hitIn===null?'按当前可见状态持续直行，预计'+closeIn.toFixed(2)+'秒闭合；途中改变方向会改变预测。':'按当前可见状态持续直行，预计'+hitIn.toFixed(2)+'秒发生碰撞，早于'+closeIn.toFixed(2)+'秒闭合；请换落脚点或方向。';
  if(hitIn!==null){const source=sim.events.slice().reverse().find(e=>e.time>at&&/潮影\d/.test(e.text))?.text||sim.reason,m=source.match(/潮影(\d+)/);if(m){const e=enemies.find(e=>e.id===Number(m[1]));if(e)e.hitIn=hitIn;}}
- return {ok:true,from,to,cells,closeIn,hitIn,margin,risk,enemies,reason:hitIn===null?'按当前可见状态持续直行，预计'+closeIn.toFixed(2)+'秒闭合；途中改变方向会改变预测。':'按当前可见状态持续直行，预计'+hitIn.toFixed(2)+'秒发生碰撞，早于'+closeIn.toFixed(2)+'秒闭合；请换落脚点或方向。'};
+ return {ok:true,from,to,cells,closeIn,hitIn,margin,risk,enemies,closed,timedOut,reason};
 }

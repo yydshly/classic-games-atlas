@@ -95,7 +95,8 @@ function basins(c,l,g){
 function drawThreatPreview(c,l,g,dir){
  if(!dir)return;const inspection=previewThreat(g,dir);if(!inspection?.ok)return;
  const points=[inspection.from,...(inspection.cells||[]),inspection.to].filter(Boolean).filter((p,i,a)=>!i||p.x!==a[i-1].x||p.y!==a[i-1].y);
- c.save();c.setLineDash([6,7]);c.strokeStyle='#c0dfd6a3';c.lineWidth=1.5;
+ const unconfirmed=inspection.risk!=='safe';
+ c.save();c.setLineDash([6,7]);c.strokeStyle=unconfirmed?'#dfab79cc':'#c0dfd6a3';c.lineWidth=1.5;
  c.beginPath();points.forEach((p,i)=>{const q=l.point(p.x,p.y);i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y);});c.stroke();
  for(const enemy of inspection.enemies||[]){
   if(!Array.isArray(enemy.path)||!enemy.path.length)continue;
@@ -104,7 +105,7 @@ function drawThreatPreview(c,l,g,dir){
   if(enemy.target){const p=l.point(enemy.target.x,enemy.target.y);ell(c,p.x,p.y,6,6,null,'#b2d4d077',1);}
  }
  c.setLineDash([]);
- if(inspection.to){const p=l.point(inspection.to.x,inspection.to.y);rr(c,p.x-11,p.y-11,22,22,4,'#dce9cbcc','#5f9187',1);c.fillStyle='#3f716a';c.font='650 11px system-ui,sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText('估',p.x,p.y+.5);}
+ if(inspection.to){const p=l.point(inspection.to.x,inspection.to.y);rr(c,p.x-11,p.y-11,22,22,4,unconfirmed?'#eddbc9cc':'#dce9cbcc',unconfirmed?'#ac7954':'#5f9187',1);c.fillStyle=unconfirmed?'#865333':'#3f716a';c.font='650 11px system-ui,sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText('估',p.x,p.y+.5);}
  c.restore();
 }
 
