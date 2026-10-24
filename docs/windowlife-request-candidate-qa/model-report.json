@@ -33,7 +33,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 0
+              }
             },
             "share": {
               "progress": 0,
@@ -71,7 +75,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 0
+              }
             },
             "share": {
               "progress": 0,
@@ -110,7 +118,11 @@
               "contributors": [
                 "b",
                 "a"
-              ]
+              ],
+              "inkProgress": {
+                "a": 6,
+                "b": 6
+              }
             },
             "share": {
               "progress": 0,
@@ -149,7 +161,11 @@
               "contributors": [
                 "b",
                 "a"
-              ]
+              ],
+              "inkProgress": {
+                "a": 6,
+                "b": 6
+              }
             },
             "share": {
               "progress": 0,
@@ -183,7 +199,11 @@
           "contributors": [
             "b",
             "a"
-          ]
+          ],
+          "inkProgress": {
+            "a": 6,
+            "b": 6
+          }
         },
         "share": {
           "progress": 0,
@@ -226,7 +246,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 0
+              }
             },
             "share": {
               "progress": 0,
@@ -264,7 +288,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 6
+              }
             },
             "share": {
               "progress": 0,
@@ -302,7 +330,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 6
+              }
             },
             "share": {
               "progress": 0,
@@ -335,7 +367,11 @@
           "location": "bench",
           "contributors": [
             "b"
-          ]
+          ],
+          "inkProgress": {
+            "a": 0,
+            "b": 6
+          }
         },
         "share": {
           "progress": 6,
@@ -378,7 +414,11 @@
               "location": "bench",
               "contributors": [
                 "b"
-              ]
+              ],
+              "inkProgress": {
+                "a": 0,
+                "b": 0
+              }
             },
             "share": {
               "progress": 0,
@@ -411,7 +451,11 @@
           "location": "bench",
           "contributors": [
             "b"
-          ]
+          ],
+          "inkProgress": {
+            "a": 0,
+            "b": 6
+          }
         },
         "share": {
           "progress": 0,
@@ -423,13 +467,55 @@
       "modelSecondsNote": "Not a human completion time or measure of fun."
     }
   ],
-  "restorationSnapshots": 307,
+  "restorationSnapshots": 310,
   "offscreenImages": [
     "offscreen-offered.png",
     "offscreen-now-active.png",
     "offscreen-now-settled.png",
     "offscreen-later-active.png",
     "offscreen-later-settled.png",
-    "offscreen-alone-settled.png"
-  ]
+    "offscreen-alone-settled.png",
+    "offscreen-cancel-before.png",
+    "offscreen-cancel-settled.png"
+  ],
+  "oneTickCancellation": {
+    "before": {
+      "progress": 0.1,
+      "total": 6,
+      "mode": "unfinished",
+      "location": "bench",
+      "contributors": [
+        "b",
+        "a"
+      ],
+      "inkProgress": {
+        "a": 0.1,
+        "b": 0.1
+      }
+    },
+    "after": {
+      "progress": 6,
+      "total": 6,
+      "mode": "mixed",
+      "location": "bench",
+      "contributors": [
+        "b",
+        "a"
+      ],
+      "inkProgress": {
+        "a": 0.1,
+        "b": 6
+      }
+    },
+    "outcome": {
+      "outcome": "kept-mark",
+      "noteFinished": true,
+      "sketchFinished": true,
+      "sharedDrawingFinished": false,
+      "exchangeFinished": false,
+      "cancelled": true,
+      "state": "settled"
+    },
+    "note": "Only a real 0.1-second shared drawing tick; later solo progress cannot increase a inkProgress. Canvas-path regression independently compares all 59 partial-cancellation times."
+  }
 }

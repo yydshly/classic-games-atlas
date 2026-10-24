@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createScene, command, update, checkpoint, restore, snapshot, summary, canCancel } from '../experiments/windowlife-request/scene.mjs';
+import { createScene, command, update, checkpoint, restore, snapshot, summary, canCancel, canResume } from '../experiments/windowlife-request/scene.mjs';
 import { KEY, readSave, writeSave } from '../experiments/windowlife-request/storage.mjs';
 import { LEVELS } from '../preview/windowlife/levels.mjs';
 
@@ -53,6 +53,25 @@ test('cancel during drawing retains an actual mark but never labels it fully co-
   command(g, 'resume'); finish(g); assert.equal(g.art.sketch.mode, 'mixed'); assert.equal(summary(g).sharedDrawingFinished, false);
   assert.equal(summary(g).outcome, 'kept-mark'); assert.equal(g.art.note.finished, true);
 });
+test('each artist advances only while drawing; cancelled ink stays frozen through replay and solo completion', () => {
+  for (let sharedTicks = 0; sharedTicks < 60; sharedTicks++) {
+    const g = choose('now'); until(g, s => s.phase === 'co-creating');
+    for (let i = 0; i < sharedTicks; i++) update(g, .1);
+    const drawn = sharedTicks / 10;
+    assert.deepEqual(g.art.sketch.inkProgress, { a: drawn, b: drawn });
+    command(g, 'cancel');
+    while (g.state === 'playing') {
+      assert.equal(g.art.sketch.inkProgress.a, drawn);
+      assert.equal(g.art.sketch.inkProgress.b, g.art.sketch.progress);
+      const replayed = restore(checkpoint(g)); assert.ok(replayed);
+      assert.deepEqual(replayed.art.sketch, g.art.sketch);
+      update(g, .1);
+    }
+    assert.deepEqual(g.art.sketch.inkProgress, { a: drawn, b: 6 });
+  }
+  assert.deepEqual(finish(choose('now')).art.sketch.inkProgress, { a: 6, b: 6 });
+  for (const choice of ['later', 'alone']) assert.deepEqual(finish(choose(choice)).art.sketch.inkProgress, { a: 0, b: 6 });
+});
 test('cancel deferred before meeting, during travel, and during sharing releases only this arrangement', () => {
   for (const target of ['separate', 'meeting-later', 'sharing']) {
     const g = choose('later'); until(g, s => s.phase === target); if (target === 'sharing') update(g, .5);
@@ -94,6 +113,24 @@ test('invalid command histories, time jumps and forged completion payloads are r
   assert.equal(restore({ ...cp, commands: [{ tick: 0, type: 'start', win: true }] }), null);
   assert.equal(restore({ ...cp, accumulator: -1 }), null);
   assert.equal(restore({ ...cp, art: { note: { finished: true } } }).art.note.finished, false);
+});
+test('the accepted history limit retains a safety pause and every saved limit state restores', () => {
+  const g = choose('alone'); update(g, .3);
+  for (let i = 0; i < 2047; i++) {
+    assert.equal(command(g, 'pause').ok, true);
+    assert.equal(command(g, 'resume').ok, true);
+  }
+  assert.equal(g.history.length, 4096); assert.equal(g.state, 'playing');
+  const activeSave = checkpoint(g), recovered = restore(activeSave);
+  assert.ok(recovered); assert.equal(recovered.state, 'paused'); assert.deepEqual(core(recovered), core(g));
+  assert.equal(recovered.history.length, 4097); assert.equal(canResume(recovered), false);
+  assert.equal(command(recovered, 'resume').ok, false);
+  assert.ok(restore(checkpoint(recovered)));
+  const completed = finish(snapshot(g));
+  assert.equal(command(completed, 'close').ok, true);
+  assert.equal(restore(checkpoint(completed)).state, 'closed');
+  assert.equal(command(g, 'pause').ok, true); assert.ok(restore(checkpoint(g)));
+  assert.equal(restore({ ...activeSave, commands: [...activeSave.commands, { tick: g.ticks, type: 'resume' }] }), null);
 });
 test('candidate storage accesses one new key only; bad saves and read denial remain protected', () => {
   const old = 'original-three-days-untouched', data = new Map([['classic-atlas.windowlife.v1', old]]), reads = [], writes = [];

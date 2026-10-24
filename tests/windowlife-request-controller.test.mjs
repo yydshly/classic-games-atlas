@@ -1,15 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mount } from '../experiments/windowlife-request/controller.mjs';
-import { KEY } from '../experiments/windowlife-request/storage.mjs';
+import { KEY, readSave } from '../experiments/windowlife-request/storage.mjs';
+import { createScene, command, checkpoint } from '../experiments/windowlife-request/scene.mjs';
 
 // Deliberately a DOM/event fixture, not a browser or native input test.
 function fixture(data = new Map()) {
-  let frame, stamp = 0, confirmResult = true;
+  let frame, stamp = 0, confirmResult = true, writesDenied = false;
   const docEvents = {}, winEvents = {}, nodes = new Map();
   const document = { hidden: false, activeElement: null, addEventListener(t,f) { docEvents[t] = f; }, getElementById(id) { if (!nodes.has(id)) nodes.set(id, node(id)); return nodes.get(id); }, createElement(tag) { return node(tag); } };
   function node(id) { return { id, hidden: false, textContent: '', dataset: {}, children: [], listeners: {}, addEventListener(t,f) { this.listeners[t] = f; }, replaceChildren(...children) { this.children = children; }, focus() { document.activeElement = this; }, closest() { return null; } }; }
-  const reads = [], writes = [], storage = { getItem(k) { reads.push(k); return data.get(k) ?? null; }, setItem(k,v) { writes.push(k); data.set(k,v); } };
+  const reads = [], writes = [], storage = { getItem(k) { reads.push(k); return data.get(k) ?? null; }, setItem(k,v) { writes.push(k); if (writesDenied) throw Error('temporary write failure'); data.set(k,v); } };
   const window = { addEventListener(t,f) { winEvents[t] = f; }, confirm() { return confirmResult; } };
   let drawings = 0;
   class Renderer { draw() { drawings++; } }
@@ -18,7 +19,7 @@ function fixture(data = new Map()) {
   const click = id => get(id).listeners.click({ target: get(id) });
   const step = (ms = 100) => { stamp += ms; frame(stamp); };
   function finish() { for (let n=0;n<1000&&api.snapshot().state==='playing';n++) step(); assert.equal(api.snapshot().state,'settled'); }
-  return { api, get, click, step, finish, data, reads, writes, document, docEvents, winEvents, confirm(value) { confirmResult = value; }, drawings: () => drawings };
+  return { api, get, click, step, finish, data, reads, writes, document, docEvents, winEvents, confirm(value) { confirmResult = value; }, denyWrites(value) { writesDenied = value; }, saved: () => readSave(storage).game, drawings: () => drawings };
 }
 
 test('all three visible choices lead to distinct genuine outcomes and explicit close', () => {
@@ -65,5 +66,42 @@ test('P does not steal modified keys or native interactive targets', () => {
   key();assert.equal(f.api.snapshot().state,'paused');assert.equal(prevented,1);key();assert.equal(f.api.snapshot().state,'playing');
 });
 test('invalid candidate save remains byte-for-byte protected during play and retry', () => {
-  const f=fixture(new Map([[KEY,'{invalid']]));assert.equal(f.get('storage-warning').hidden,false);f.click('toggle');f.click('choose-alone');f.finish();f.click('retry');assert.equal(f.data.get(KEY),'{invalid');assert.equal(f.writes.length,0);
+  const f=fixture(new Map([[KEY,'{invalid']]));assert.equal(f.get('storage-warning').hidden,false);f.click('toggle');f.click('choose-alone');f.finish();f.click('close');f.step(2000);f.click('retry');f.step(2000);assert.equal(f.data.get(KEY),'{invalid');assert.equal(f.writes.length,0);
+});
+test('failed writes stay visibly temporary and retry without advancing paused, settled, closed or reset scenes', () => {
+  for (const target of ['paused', 'settled', 'closed', 'ready']) {
+    const f = fixture(); f.click('toggle'); f.click('choose-alone');
+    while (f.api.snapshot().ticks < 54) f.step();
+    const oldBytes = f.data.get(KEY); f.denyWrites(true);
+    if (target === 'paused') f.click('toggle');
+    else if (target === 'ready') f.click('retry');
+    else { f.finish(); if (target === 'closed') f.click('close'); }
+    f.step(); f.step(1100);
+    assert.equal(f.api.snapshot().state, target);
+    assert.equal(f.data.get(KEY), oldBytes);
+    assert.equal(f.get('storage-warning').hidden, false);
+    assert.match(f.get('save-status').textContent, /临时进度/);
+    const before = f.api.snapshot(), attempts = f.writes.length;
+    f.denyWrites(false); f.step(1100);
+    assert.equal(f.writes.length, attempts + 1, `no retry for ${target}`);
+    assert.equal(f.saved().state, target);
+    assert.deepEqual(f.saved().art, before.art);
+    assert.deepEqual(f.api.snapshot(), before);
+    assert.equal(f.get('storage-warning').hidden, true);
+    assert.doesNotMatch(f.get('save-status').textContent, /临时/);
+    f.step(1100); f.step(1100);
+    assert.equal(f.writes.length, attempts + 1, 'successful idle save does not retry forever');
+  }
+});
+test('a full accepted command history restores paused, explains its limit, and can reset only the candidate', () => {
+  const g = createScene(); command(g, 'start'); command(g, 'alone');
+  for (let i = 0; i < 2047; i++) { command(g, 'pause'); command(g, 'resume'); }
+  const f = fixture(new Map([[KEY, JSON.stringify(checkpoint(g))], ['classic-atlas.windowlife.v1', 'OLD']]));
+  assert.equal(f.api.snapshot().state, 'paused');
+  assert.equal(f.get('toggle').disabled, true);
+  assert.match(f.get('feedback').textContent, /操作记录已满/);
+  f.step(2000); assert.equal(f.api.snapshot().ticks, 0);
+  f.click('retry'); assert.equal(f.api.snapshot().state, 'ready');
+  assert.equal(f.get('toggle').disabled, false);
+  assert.equal(f.data.get('classic-atlas.windowlife.v1'), 'OLD');
 });

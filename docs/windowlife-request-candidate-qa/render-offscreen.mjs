@@ -30,4 +30,10 @@ for (const choice of ['now', 'later', 'alone']) {
   if (g.state !== 'settled') throw new Error('Scene did not settle');
   render('offscreen-' + choice + '-settled', g);
 }
-console.log('Six code-native offscreen images generated. Not browser/UI screenshots. Typography uses a local font approximation.');
+const cancelled = createScene(); command(cancelled, 'start'); command(cancelled, 'now');
+while (cancelled.phase !== 'co-creating') update(cancelled, .1);
+update(cancelled, .1); render('offscreen-cancel-before', cancelled);
+command(cancelled, 'cancel');
+while (cancelled.state === 'playing') update(cancelled, .1);
+render('offscreen-cancel-settled', cancelled);
+console.log('Eight code-native offscreen images generated, including one-tick cancellation before/after. Not browser/UI screenshots. Typography uses a local font approximation.');

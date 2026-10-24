@@ -1,7 +1,7 @@
 import { LEVELS } from '../../preview/windowlife/levels.mjs';
 
 // A deliberately small, authored afternoon. No original day or save is mutated.
-const STEP = .1, WALK = .3;
+const STEP = .1, WALK = .3, MAX_COMMANDS = 4096;
 const clone = value => JSON.parse(JSON.stringify(value));
 const NOTE = { x: 7, y: 4 }, TOGETHER = { x: 6, y: 6 }, SKETCH = { x: 7, y: 7 };
 const KINDS = new Set(['start', 'now', 'later', 'alone', 'pause', 'resume', 'cancel', 'close']);
@@ -21,7 +21,7 @@ export function createScene() {
     request: { status: 'pending', offered: false, cancelledDuring: null },
     art: {
       note: { remaining: 4, total: 8, location: 'desk', finished: false },
-      sketch: { progress: 0, total: 6, mode: 'unfinished', location: 'bench', contributors: ['b'] },
+      sketch: { progress: 0, total: 6, mode: 'unfinished', location: 'bench', contributors: ['b'], inkProgress: { a: 0, b: 0 } },
       share: { progress: 0, total: 6, completed: false }
     },
     message: '下午尾声。禾禾还有半页手记，阿沐的速写也差最后几笔。',
@@ -85,11 +85,15 @@ function workNote(g) {
 function sketch(g, together) {
   if (g.art.sketch.progress >= 6) return;
   g.art.sketch.progress = Math.min(6, round(g.art.sketch.progress + STEP));
+  // These are concurrent drawing tracks, not a score or shares of a total.
+  // Only the artist actually drawing may unlock more of their colored marks.
+  g.art.sketch.inkProgress.b = g.art.sketch.progress;
+  if (together) g.art.sketch.inkProgress.a = Math.min(6, round(g.art.sketch.inkProgress.a + STEP));
   if (together && !g.art.sketch.contributors.includes('a')) g.art.sketch.contributors.push('a');
   if (g.art.sketch.progress >= 6) {
     g.art.sketch.mode = together ? 'together' : g.art.sketch.contributors.includes('a') ? 'mixed' : 'solo';
     occupy(g, 'bench', null);
-    event(g, together ? '两种笔色汇在同一张速写上：这一笔，是一起画的。' : g.art.sketch.mode === 'mixed' ? '阿沐独自收完最后几笔，纸上留着禾禾先前画的一笔。' : '阿沐独自画完了速写，把笔放在纸边。');
+    event(g, together ? '两种笔色汇在同一张速写上：这一笔，是一起画的。' : g.art.sketch.mode === 'mixed' ? '阿沐独自收完最后几笔，纸上留着禾禾先前留下的笔迹。' : '阿沐独自画完了速写，把笔放在纸边。');
   }
 }
 function returnToDesk(g) {
@@ -110,15 +114,23 @@ function settle(g) {
   g.state = 'settled'; g.phase = 'settled'; g.accumulator = 0;
   for (const o of g.objects) o.busyBy = null;
   for (const a of g.actors) { a.route = []; a.walkClock = 0; a.current = job('relax', 'working', 0, 1, a.id === 'a' && g.art.note.location === 'desk' ? 'desk' : 'bench'); }
-  event(g, g.art.share.completed ? '一份手记，一张速写。你们把完成的小事讲给对方听。' : g.art.sketch.mode === 'together' ? '手记写完了，共同的速写也留在长座边。' : g.art.sketch.mode === 'mixed' ? '各自把手上的小事做完；那一笔仍留在速写上。' : '手记和速写都完成了。两个人安静地待在同一间小屋里。');
+  event(g, g.art.share.completed ? '一份手记，一张速写。你们把完成的小事讲给对方听。' : g.art.sketch.mode === 'together' ? '手记写完了，共同的速写也留在长座边。' : g.art.sketch.mode === 'mixed' ? '各自把手上的小事做完；先前的笔迹仍留在速写上。' : '手记和速写都完成了。两个人安静地待在同一间小屋里。');
 }
 export function canCancel(g) {
   return !terminal(g) && g.request.status !== 'cancelled' &&
     (jointPhases.has(g.phase) || (g.choice === 'later' && g.phase === 'separate'));
 }
+export function canResume(g) {
+  return g.state === 'paused' && g.phase !== 'offered' && g.history.length < MAX_COMMANDS;
+}
 export function command(g, type) {
   if (!KINDS.has(type)) return { ok: false, message: '这项安排不存在。' };
-  if (g.history.length >= 4096) return { ok: false, message: '本次操作记录已满，请收起或重新开始这个片段。' };
+  // One final safety-only slot preserves pause/close at the normal budget.
+  // It cannot resume activity or reopen a completed scene.
+  if (g.history.length >= MAX_COMMANDS &&
+      !(g.history.length === MAX_COMMANDS && ['pause', 'close'].includes(type))) {
+    return { ok: false, message: '本次操作记录已满，进度会保留；继续安排需重新开始这个片段。' };
+  }
   let ok = true;
   if (type === 'start' && g.state === 'ready') {
     g.state = 'paused'; g.phase = 'offered'; g.request.offered = true; g.request.status = 'offered';
@@ -128,8 +140,8 @@ export function command(g, type) {
     if (type === 'now') { meet(g, false); event(g, '禾禾把笔搁下，留下半页手记，走向阿沐。未写完的部分会保留。'); }
     else { g.phase = 'separate'; ownActivities(g); event(g, type === 'later' ? '先各自完成，再交换成品。阿沐继续画，禾禾继续写。' : '这次先各忙各的。不用解释，也没有谁失望地等着。'); }
   } else if (type === 'pause' && g.state === 'playing') {
-    g.state = 'paused'; event(g, '已暂停，走动和纸面进度都停在这里。');
-  } else if (type === 'resume' && g.state === 'paused' && g.phase !== 'offered') {
+    g.state = 'paused'; event(g, g.history.length >= MAX_COMMANDS ? '已暂停，走动和纸面进度都停在这里。操作记录已满，继续需重新开始这个片段。' : '已暂停，走动和纸面进度都停在这里。');
+  } else if (type === 'resume' && canResume(g)) {
     g.state = 'playing'; event(g, '继续这段下午。');
   } else if (type === 'cancel' && canCancel(g)) {
     g.request.cancelledDuring = g.phase; g.request.status = 'cancelled';
@@ -203,7 +215,7 @@ export function restore(cp) {
     if (cp?.format !== 'windowlife-request-checkpoint' || cp.version !== 1 ||
         !Number.isInteger(cp.ticks) || cp.ticks < 0 || cp.ticks > 100000 ||
         !Number.isFinite(cp.accumulator) || cp.accumulator < 0 || cp.accumulator >= STEP + 1e-8 ||
-        !Array.isArray(cp.commands) || cp.commands.length > 4096) return null;
+        !Array.isArray(cp.commands) || cp.commands.length > MAX_COMMANDS + 1) return null;
     const g = createScene();
     for (const c of cp.commands) {
       if (!c || Object.keys(c).sort().join(',') !== 'tick,type' || !Number.isInteger(c.tick) || c.tick < g.ticks || c.tick > cp.ticks || !KINDS.has(c.type)) return null;

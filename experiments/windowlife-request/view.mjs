@@ -381,7 +381,7 @@ function notePaper(c, x, y, w, h, note = {}) {
 
 function sketchPaper(c, x, y, w, h, sketch = {}) {
   const progress = clamp(Number(sketch.progress || 0) / Math.max(1, Number(sketch.total || 6)), 0, 1);
-  const hasWarmMark = Array.isArray(sketch.contributors) && sketch.contributors.includes('a');
+  const warmProgress = clamp(Number(sketch.inkProgress?.a || 0) / Math.max(1, Number(sketch.total || 6)), 0, 1);
   c.save(); c.translate(x, y);
   rr(c, 0, 0, w, h, 1.8, '#fff9e7', '#9f8863', Math.max(.8, w / 60));
   // An unfinished window composition is present from the authored opening.
@@ -390,22 +390,22 @@ function sketchPaper(c, x, y, w, h, sketch = {}) {
   line(c, [[w * .16, h * .43], [w * .76, h * .43]], '#527f75', Math.max(.8, w / 40));
   if (progress > .05) line(c, [[w * .19, h * .65], [w * .31, h * .49], [w * .42, h * .62], [w * .57, h * .42], [w * .73, h * .63]], '#527f75', Math.max(1, w / 40));
   if (progress > .25) {
-    ellipse(c, w * .64, h * .29, w * .045, h * .055, hasWarmMark ? '#c47746' : '#527f75');
+    ellipse(c, w * .64, h * .29, w * .045, h * .055, warmProgress > .25 ? '#c47746' : '#527f75');
     line(c, [[w * .15, h * .81], [w * .77, h * .81]], '#527f75', Math.max(1, w / 35));
   }
-  if (hasWarmMark && progress > 0) {
+  if (warmProgress > 0) {
     // This mark remains visible after a cancelled shared session: not erased,
     // and not falsely labelled a completed joint drawing.
     line(c, [[w * .25, h * .75], [w * .29, h * .58], [w * .34, h * .76]], '#c47746', Math.max(1.2, w / 28));
   }
   if (progress > .6) {
-    const ink = hasWarmMark ? '#c47746' : '#527f75';
+    const ink = warmProgress > .6 ? '#c47746' : '#527f75';
     line(c, [[w * .09, h * .12], [w * .09, h * .76]], ink, Math.max(.8, w / 40));
     line(c, [[w * .84, h * .12], [w * .84, h * .76]], ink, Math.max(.8, w / 40));
   }
   if (progress >= 1) {
     ellipse(c, w * .72, h * .9, w * .015, h * .015, '#527f75');
-    if (sketch.mode === 'together') ellipse(c, w * .8, h * .9, w * .015, h * .015, '#c47746');
+    if (warmProgress >= 1) ellipse(c, w * .8, h * .9, w * .015, h * .015, '#c47746');
   }
   c.restore();
 }
