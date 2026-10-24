@@ -1,0 +1,1393 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1d5260"><title>汀光织界 v3 · 独立网页试玩候选（尚未浏览器验收）</title><style>
+@charset "UTF-8";
+:root{--ink:#24474c;--muted:#7a9290;--paper:#f2f2e8;--line:#cdd9cf;--blue:#225b65;--gold:#b38f57;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color-scheme:light}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 100% 0,#dce9df 0,transparent 45%),var(--paper)}button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button{font:inherit;font-size:12px;color:var(--ink);min-height:44px;padding:10px 16px;background:#fafbf3;border:1px solid #b7c9bf;border-radius:7px;font-weight:650;cursor:pointer}button:hover:not(:disabled){background:#e5eee4;border-color:#7faaa0}button:active:not(:disabled){transform:translateY(1px)}button:disabled{opacity:.45;cursor:default}button.primary{color:#fbf4da;background:#235d64;border-color:#235d64}button.primary:hover:not(:disabled){background:#173f48;border-color:#173f48}button.quiet{background:none;border-color:transparent}button:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid #c28f4d;outline-offset:4px}.shell{max-width:1380px;margin:auto;padding:23px 39px}.masthead{display:flex;align-items:center;gap:37px;border-bottom:1px solid var(--line);padding-bottom:20px;position:relative}.back-link{display:inline-flex;align-items:center;min-height:44px;font-size:11px;text-decoration:none;color:#61827a}.back-link:hover{text-decoration:underline}.brand{display:flex;align-items:center;gap:14px}.brand-mark{font-size:47px;font-weight:300;color:#b7a379;line-height:1}.eyebrow{font-size:9px;letter-spacing:.14em;font-weight:700;color:#809992;margin:0 0 8px}h1{font-size:31px;line-height:1.1;letter-spacing:.08em;margin:0;font-weight:750}.help-button{margin-left:auto;font-size:11px;background:transparent}.help-button span{display:inline-grid;place-items:center;width:17px;height:17px;font-size:10px;margin-left:5px;border:1px solid #99b2a3;border-radius:50%}.journey{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:15px 0;margin-bottom:24px}.journey ol{display:flex;list-style:none;padding:0;margin:0;gap:41px}.journey li{display:flex;align-items:center;gap:8px;font-size:11px;color:#8a9d94}.journey li span{font-size:10px;color:#8ca295;width:23px;height:23px;display:grid;place-items:center;border:1px solid #c7d5c7;border-radius:50%}.journey li.current{font-weight:700;color:#24595a}.journey li.current span{background:#2b6467;border-color:#2b6467;color:#e7ead3}.journey li.complete span{background:#dce9d9;color:#507e71;border-color:#9fbdac}#level-index{font-size:10px;color:#80968c}.play-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px}.board-column{min-width:0}.chart-heading{display:flex;justify-content:space-between;gap:20px;margin-bottom:16px}.chart-heading h2{font-size:23px;font-weight:700;margin:0 0 8px}.chart-heading p:last-child{font-size:11px;line-height:1.75;color:#81958c;max-width:620px;margin:0}.chart-stamp{font-size:15px;line-height:1.3;text-align:center;display:grid;place-items:center;color:#b3aa85;min-width:36px;margin-right:12px}.telemetry{display:grid;grid-template-columns:minmax(0,1fr) 88px 110px;gap:20px;align-items:center;border-top:1px solid #d6dfd2;border-bottom:1px solid #d6dfd2;padding:11px 2px 12px;margin-bottom:14px}.capture-metric{display:grid;grid-template-columns:1fr auto;gap:5px 15px;font-size:10px;color:#78948a}.capture-metric span{grid-row:1;font-size:11px}.capture-metric span b{font-size:24px;color:#275e5c;margin-left:15px;font-variant-numeric:tabular-nums}.capture-metric small{font-size:9px}.capture-metric>small{grid-column:2;grid-row:1;align-self:end;padding-bottom:3px}.capture-metric b{font-weight:700}.capture-metric progress{grid-row:2;grid-column:1/-1;width:100%;height:5px;border:0;border-radius:5px;overflow:hidden;background:#dbe4d5;accent-color:#82a792}.capture-metric progress::-webkit-progress-bar{background:#dbe4d5}.capture-metric progress::-webkit-progress-value{background:#7da28e;border-radius:5px}.metric{border-left:1px solid #d2ddcf;padding-left:17px;display:flex;flex-direction:column;gap:4px}.metric span{font-size:9px;color:#8da091}.metric strong{font-size:18px;color:#416c62;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}.board-frame{position:relative;background:#d4dfd4;border:1px solid #9ab5ac;border-radius:6px;padding:6px;box-shadow:0 10px 35px #2959530a}#battlefield{width:100%;height:auto;aspect-ratio:11/8;display:block;background:#33666c;border-radius:3px;touch-action:pan-y}.corner{position:absolute;width:14px;height:14px;border-color:#b7a675;pointer-events:none;z-index:1}.corner.tl{left:-3px;top:-3px;border-left:3px solid;border-top:3px solid}.corner.br{right:-3px;bottom:-3px;border-right:3px solid;border-bottom:3px solid}.chart-legend{display:flex;justify-content:space-between;gap:10px;color:#8a9c8e;font-size:9px;margin:10px 3px 17px}.chart-legend span{white-space:nowrap}.chart-legend i{width:12px;height:4px;display:inline-block;vertical-align:middle;margin-right:5px}.legend-safe{background:#bcc9a0}.legend-trail{background:#dcbd76}.legend-current{background:#59788a}.control-deck{display:grid;grid-template-columns:minmax(0,1fr) 161px;gap:28px;border:1px solid #c8d8ce;border-radius:10px;padding:17px;background:#fafaf0;align-items:center}.draw-console{min-width:0}.draw-toggle{width:100%;display:flex;align-items:center;gap:13px;padding:11px 14px;text-align:left;background:#f0f3e6;border:1px solid #b7cbb8;border-radius:7px}.draw-toggle .needle-mark{font-size:31px;color:#a6a675;font-weight:400;line-height:1}.draw-toggle strong{display:block;font-size:13px;letter-spacing:.04em}.draw-toggle small{display:block;font-size:10px;font-weight:400;color:#819a84;margin-top:5px}.toggle-light{width:10px;height:10px;border-radius:50%;border:1px solid #a8bca4;background:#d9e2ca;margin-left:auto}.draw-toggle[aria-pressed=true]{background:#deebd5;border-color:#7caa8f}.draw-toggle[aria-pressed=true] .toggle-light{background:#bda164;border-color:#bb9b5a;box-shadow:0 0 0 4px #cbb78120}.action-feedback{font-size:11px;color:#84967f;line-height:1.7;margin:10px 0;min-height:20px}.action-feedback.error{color:#9e7249}.run-controls{display:flex;gap:7px;flex-wrap:wrap}.run-controls button{min-height:44px;font-size:11px;padding:8px 17px}.direction-console{text-align:center;border-left:1px solid #d3decf;padding-left:20px}.compass-label{font-size:7px;font-weight:700;letter-spacing:.12em;color:#8b9d88;display:block;margin-bottom:8px}.dpad{display:grid;grid-template-columns:44px 44px 44px;grid-template-rows:44px 44px 44px;gap:3px;justify-content:center}.dpad button{padding:0;min-width:44px;min-height:44px;font-size:23px;line-height:1;font-weight:400;border-color:#c5d4c4;background:#f1f5e8;touch-action:none;user-select:none;-webkit-user-select:none}.dpad button.held,.dpad button:active{background:#cfe1cc;border-color:#659783;color:#1f5d55;transform:none}.dpad [data-dir=U]{grid-area:1/2}.dpad [data-dir=L]{grid-area:2/1}.dpad [data-dir=R]{grid-area:2/3}.dpad [data-dir=D]{grid-area:3/2}.compass-center{grid-area:2/2;display:grid;place-items:center;font-size:25px;color:#b5a877}.field-notes{padding:15px 0 0 22px;border-left:1px solid #d1dbce}.note-heading{display:flex;gap:15px;align-items:flex-start;margin-bottom:28px}.note-heading>span{font-size:39px;color:#c3cfbb;font-weight:350;line-height:1}.note-heading .eyebrow{font-size:8px;margin-top:3px}.note-heading h2{font-size:17px;line-height:1.6;font-weight:650;margin:0;max-width:175px}.instructions{margin:0;padding:0;list-style:none}.instructions li{display:flex;gap:11px;padding:16px 0;border-top:1px solid #dce2d6}.instructions li>span{font-size:10px;color:#b3a67c;line-height:20px}.instructions strong{font-size:12px;font-weight:650}.instructions p{font-size:11px;line-height:1.85;color:#8c9c87;margin:7px 0 0}.risk-note{display:flex;gap:10px;background:#e7eddd;border-radius:6px;padding:12px;margin:17px 0 22px}.risk-note>span{font-size:18px;color:#aaa16c;font-weight:650}.risk-note p{font-size:10px;color:#82957c;line-height:1.8;margin:0}.keyboard-note p:last-child{font-size:10px;line-height:1.85;color:#90a08a;margin:0}.journey-record{margin-top:30px;padding-top:21px;border-top:1px solid #d5dfd0}.journey-record h2{font-size:17px;margin:0 0 11px;font-weight:650}.journey-record div{font-size:11px;line-height:1.8;color:#889b81}.journey-record button{font-size:11px;width:100%;margin-top:15px;background:transparent;min-height:44px}.result-card{position:absolute;inset:6px;display:grid;place-items:center;background:#16444dd1;backdrop-filter:blur(3px);padding:24px}.result-panel{width:min(100%,430px);padding:27px;border-radius:11px;border:1px solid #becdb8;background:#f1f1e2;box-shadow:0 15px 40px #0c2c3b55;text-align:center}.result-panel h2{font-size:25px;line-height:1.4;margin:11px 0 13px}.result-panel p{font-size:12px;line-height:1.8;color:#789077}.result-panel #result-details{font-size:12px;color:#6f8c78;line-height:1.8;margin-bottom:16px}.result-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}.result-actions button{font-size:11px}.save-warning{background:#f2e7ce;border:1px solid #d7c18a;padding:12px;border-radius:7px;font-size:12px;line-height:1.8;color:#8c744e}.page-foot{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);margin-top:27px;padding-top:12px;font-size:9px;color:#93a18c}.page-foot p{margin:0}dialog{width:calc(100% - 32px);max-width:490px;border:1px solid #adc3b7;border-radius:12px;background:#f4f3e6;color:#315750;padding:0;box-shadow:0 25px 70px #0b394255}dialog::backdrop{background:#163e48c9;backdrop-filter:blur(3px)}.dialog-content{padding:29px}.dialog-content h2{font-size:24px;line-height:1.5;margin:10px 0 17px}.dialog-content p:not(.eyebrow){font-size:12px;line-height:1.85;color:#7b947d}.dialog-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.dialog-content button{font-size:12px}[hidden]{display:none!important}.skip-link{position:absolute;left:15px;top:-70px;background:#fff1c5;padding:12px;color:#194c50;z-index:10}.skip-link:focus{top:12px}
+@media(max-width:1120px){.shell{padding:20px 25px}.play-layout{grid-template-columns:minmax(0,1fr) 235px;gap:23px}.field-notes{padding-left:18px}.masthead{gap:25px}.control-deck{gap:16px;padding:14px;grid-template-columns:minmax(0,1fr) 149px}.direction-console{padding-left:13px}.draw-toggle{gap:9px;padding:10px}.run-controls button{padding:8px 13px}.chart-heading p:last-child{font-size:10px}.instructions p{font-size:10px}.note-heading h2{font-size:16px}.note-heading{gap:10px}}
+@media(max-width:790px){.play-layout{grid-template-columns:1fr}.field-notes{border-left:0;border-top:1px solid #cddacd;padding:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}.field-notes .note-heading{grid-column:1/-1;margin:0}.note-heading h2{max-width:none}.instructions{grid-row:2/5}.instructions li:first-child{border-top:0;padding-top:0}.risk-note{margin:0}.journey-record{margin:0;padding-top:15px}.keyboard-note{padding-top:0}.masthead{gap:21px}.brand-mark{font-size:41px}.journey ol{gap:29px}}
+@media(max-width:480px){.shell{padding:12px 13px 17px}.masthead{padding:0 0 14px;gap:11px;flex-wrap:wrap}.back-link{font-size:10px;min-height:32px;width:100%;margin-bottom:0}.brand{gap:8px}.brand-mark{font-size:30px}.brand .eyebrow{font-size:7px;letter-spacing:.1em;margin-bottom:5px}h1{font-size:26px}.help-button{font-size:10px;min-height:44px;padding:9px 10px;position:absolute;right:0;bottom:14px}.help-button span{width:15px;height:15px;font-size:9px;margin-left:3px}.journey{padding:11px 0;margin-bottom:14px}.journey ol{gap:15px;justify-content:space-between;width:100%}.journey li{font-size:9px;gap:5px}.journey li span{width:18px;height:18px;font-size:8px}#level-index{display:none}.chart-heading{margin-bottom:10px;gap:10px}.chart-heading .eyebrow{font-size:7px;margin-bottom:6px}.chart-heading h2{font-size:20px;margin-bottom:6px}.chart-heading p:last-child{font-size:10px;line-height:1.6}.chart-stamp{font-size:11px;min-width:18px;margin-right:4px}.telemetry{grid-template-columns:minmax(0,1fr) 48px 72px;gap:10px;padding:7px 0 8px;margin-bottom:10px}.capture-metric{gap:4px 7px}.capture-metric span{font-size:9px}.capture-metric span b{font-size:21px;margin-left:7px}.capture-metric small{font-size:8px}.metric{padding-left:10px;gap:3px}.metric span{font-size:8px}.metric strong{font-size:15px}.board-frame{padding:4px;margin:0 -3px;border-radius:5px}#battlefield{border-radius:2px}.chart-legend{font-size:8px;gap:6px;margin:9px 0 11px}.chart-legend i{width:9px;height:3px;margin-right:4px}.control-deck{grid-template-columns:minmax(0,1fr) 138px;gap:11px;padding:11px 10px;border-radius:8px}.direction-console{padding-left:9px}.compass-label{display:none}.dpad{gap:2px;grid-template-columns:42px 42px 42px;grid-template-rows:44px 44px 44px}.dpad button{min-width:42px;min-height:44px;font-size:22px}.compass-center{font-size:20px}.draw-toggle{gap:6px;padding:9px 8px;min-height:58px}.draw-toggle .needle-mark{font-size:24px}.draw-toggle strong{font-size:11px;letter-spacing:0}.draw-toggle small{font-size:8px;line-height:1.6;margin-top:3px}.toggle-light{width:7px;height:7px;flex:none}.action-feedback{font-size:9px;line-height:1.65;margin:7px 0;min-height:28px}.run-controls{gap:5px}.run-controls button{font-size:10px;padding:8px 8px;min-height:44px;flex:1}.run-controls #show-result{flex-basis:100%}.field-notes{gap:18px;display:block;padding-top:20px}.field-notes .note-heading{margin-bottom:14px}.note-heading>span{font-size:31px}.note-heading .eyebrow{font-size:8px}.note-heading h2{font-size:16px}.instructions{display:none}.risk-note{padding:11px;margin:0 0 17px}.risk-note p{font-size:10px}.keyboard-note{display:none}.journey-record{padding-top:17px}.journey-record h2{font-size:16px}.journey-record div{font-size:11px}.journey-record button{max-width:230px;margin-top:12px}.page-foot{display:block;font-size:8px;line-height:1.8;margin-top:22px}.page-foot p+p{margin-top:3px}.result-card{inset:4px;padding:10px}.result-panel{padding:17px;max-height:100%;overflow:auto}.result-panel .eyebrow{font-size:8px}.result-panel h2{font-size:20px;margin:7px 0 9px}.result-panel p,.result-panel #result-details{font-size:11px}.result-actions{gap:5px}.result-actions button{padding:8px 10px;font-size:10px;min-height:44px}.dialog-content{padding:23px}.dialog-content h2{font-size:22px}.dialog-content p:not(.eyebrow){font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media(max-width:480px){.control-deck{grid-template-columns:minmax(0,1fr) 148px}.dpad{grid-template-columns:44px 44px 44px}.dpad button{min-width:44px}}
+
+.phase-label{font-size:11px;grid-column:1/-1;color:#46636a;align-self:center}.summary-back{display:inline-flex;align-items:center;min-height:44px;margin-top:9px;color:inherit;text-underline-offset:4px}#record-title:focus-visible{outline:3px solid #ab774a;outline-offset:4px}.page-foot a{color:inherit;text-underline-offset:3px}
+
+/* Append only this local fragment to the existing Inlet stylesheet. */
+.basin-objectives{margin:0 0 12px;padding:0}.basin-objectives h3{font-size:11px;font-weight:650;letter-spacing:.04em;margin:0 0 7px;color:#5f8078;display:flex;justify-content:space-between;align-items:center}.basin-objectives h3 span{font-size:9px;color:#8b9c8b;font-weight:400;letter-spacing:0}.basin-objective-list{display:flex;gap:8px;padding:0;margin:0;list-style:none}.basin-objective{display:flex;align-items:center;gap:9px;flex:1;min-width:0;position:relative;background:#eaf0e1;border:1px solid #bacdb8;border-radius:6px;padding:8px 10px;min-height:49px}.basin-number{display:grid;place-items:center;flex:none;width:25px;height:25px;border:1px solid #8ba899;border-radius:50%;color:#3f6c63;font-size:13px;font-weight:700;background:#f7f7e9}.basin-copy{display:flex;gap:11px;align-items:baseline;min-width:0;flex:1;justify-content:space-between}.basin-name{font-size:12px;font-weight:650;color:#406a62;white-space:nowrap}.basin-progress{font-size:11px;color:#8b9b7e;font-variant-numeric:tabular-nums;white-space:nowrap}.basin-progress b{color:#547b66;font-weight:700}.basin-status{flex:none;font-size:10px;color:#9a895c;border-left:1px solid #ccd6c1;padding-left:8px;white-space:nowrap}.basin-objective[data-complete=true]{background:#e4edda;border-color:#99b292}.basin-objective[data-complete=true] .basin-number{border-radius:5px;background:#6f9279;border-color:#6f9279;color:#f5f1d8}.basin-objective[data-complete=true] .basin-status{color:#467c60;font-size:15px;font-weight:750}
+@media(max-width:1120px){.basin-copy{display:block}.basin-name{display:block;font-size:11px;margin-bottom:3px}.basin-objective{gap:7px;padding:7px 9px}.basin-status{padding-left:6px}}
+/* The numeric objective is readable at phone size, independent of its colour. */
+@media(max-width:480px){.basin-name{font-size:11px}.basin-progress{font-size:11px}.basin-progress b{font-size:12px}.basin-status{font-size:10px}}
+@media(max-width:480px){.basin-objectives{margin:0 0 9px}.basin-objectives h3{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.basin-objective-list{gap:5px}.basin-objective{min-height:43px;gap:5px;padding:5px 6px}.basin-number{width:19px;height:19px;font-size:11px}.basin-copy{display:block}.basin-name{font-size:11px;line-height:1.2;margin-bottom:3px}.basin-progress{font-size:11px;line-height:1.2}.basin-progress b{font-size:12px}.basin-status{font-size:10px;padding-left:0;border-left:0;position:absolute;right:5px;top:5px}.basin-objective[data-complete=true] .basin-status{font-size:11px}.telemetry{margin-bottom:8px}.chart-heading{margin-bottom:8px}.chart-legend{margin-top:8px;margin-bottom:9px}.control-deck{padding-top:10px;padding-bottom:10px}.journey{margin-bottom:12px}}
+
+.threat-preview{margin-top:12px;padding:13px 14px 10px;border:1px solid #bdcec3;border-radius:8px;background:#edf1e5}.threat-heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px}.threat-heading h3{font-size:12px;font-weight:650;color:#38665d;margin:0}.threat-live-status{font-size:11px;font-variant-numeric:tabular-nums;color:#8e7757}.preview-directions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.preview-directions button{min-height:50px;display:flex;gap:8px;align-items:center;padding:9px 10px;border-color:#c4d2be;background:#f8f9ee;text-align:left;touch-action:manipulation}.preview-directions button[aria-pressed=true]{background:#dfebd8;border-color:#769e88;box-shadow:inset 0 0 0 1px #769e88}.preview-arrow{font-size:23px;font-weight:400;color:#698c7a;flex:none}.preview-copy{min-width:0}.preview-risk{display:block;font-size:11px;font-weight:650;color:#416a5e}.preview-landing{display:block;font-size:9px;line-height:1.6;color:#85977e;font-weight:400;margin-top:3px}.preview-directions button[data-risk=danger] .preview-risk{color:#a56d48}.preview-directions button[data-risk=tight] .preview-risk{color:#9b814a}.preview-detail{font-size:11px;line-height:1.7;color:#718b77;margin:9px 0 0}.threat-key{display:flex;gap:16px;flex-wrap:wrap;margin:7px 0 0;font-size:9px;color:#90a18b}.threat-key span{white-space:nowrap}.threat-key i{display:inline-block;width:16px;height:0;vertical-align:middle;margin-right:5px}.actual-link{border-top:2px solid #d7a16c}.forecast-link{border-top:1px dashed #79a4ad}
+@media(max-width:1120px){.preview-directions{grid-template-columns:repeat(2,minmax(0,1fr))}.preview-landing{font-size:10px}}
+@media(max-width:480px){.threat-preview{margin-top:10px;padding:11px 10px 9px}.threat-heading{gap:7px;align-items:center}.threat-heading h3{font-size:12px}.threat-live-status{font-size:10px}.preview-directions{gap:6px}.preview-directions button{min-height:53px;padding:8px 10px;gap:9px}.preview-risk{font-size:12px}.preview-arrow{font-size:23px}.preview-landing{font-size:10px;line-height:1.6}.preview-detail{font-size:11px}.threat-key{font-size:9px;gap:8px}}
+
+.threat-live-status{max-width:55%;line-height:1.5;text-align:right;overflow-wrap:anywhere}
+@media(max-width:480px){.threat-live-status{font-size:11px}}
+
+.preview-directions button[data-risk=timeout],.preview-directions button[data-risk=incomplete]{background:#f3e7d8;border-color:#b88a65;box-shadow:none}.preview-directions button[data-risk=timeout] .preview-risk,.preview-directions button[data-risk=incomplete] .preview-risk{color:#8c5333}
+
+</style><meta name="description" content="汀光织界：原创三湾闭合路径圈地小游戏。沿岸选路，拉出风险线，闭合后织回无潮影水域。方向键与触控方向按钮均可操作，独立保存。"></head>
+<body><a class="skip-link" href="#controls">跳到航向操作</a><main class="shell">
+<header class="masthead"><a id="back-link" href="../../index.html#play" class="back-link">← 游戏大厅</a><div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><div><p class="eyebrow">INLET WEAVER v3 / 观潮择路</p><h1>汀光织界</h1></div></div><button id="help" class="help-button" aria-haspopup="dialog" type="button">航行手册 <span aria-hidden="true">?</span></button></header>
+<section id="preview-note" class="save-warning" aria-label="网页试玩边界"><strong>独立网页试玩候选 · 未完成真实 UI 验收</strong><br>直接在本页启航，无须下载或安装工具。包含正常三湾旅程，以及“潮时不足”预览修复；不是预置的边界测试状态。<br>本页使用隔离的试玩存档，不读取或覆盖正式游戏与旧版进度；“新旅程”也只重置本试玩。仍待真实浏览器操作、布局及玩家体验验收。</section><noscript><p class="save-warning">此试玩需要浏览器启用 JavaScript。</p></noscript><nav class="journey" aria-label="三湾旅程"><ol id="journey-list"><li class="current" aria-current="step"><span>Ⅰ</span> 初汀试线</li><li><span>Ⅱ</span> 玻璃环湾</li><li><span>Ⅲ</span> 双礁织潮</li></ol><span id="level-index">第 1 / 3 湾</span></nav>
+<section class="play-layout"><div class="board-column">
+ <div class="chart-heading"><div><p class="eyebrow">眼前海图 / CURRENT CHART</p><h2 id="level-title">初汀试线</h2><p id="level-brief">从安全岸线出发，织出一条回到岸边的线，让更多水域成为汀地。</p></div><span class="chart-stamp" aria-hidden="true">N<br>↑</span></div>
+ <div class="telemetry" aria-label="当前航行数据"><div class="capture-metric"><span>已织汀地 <b id="capture-value">0</b><small>%</small></span><progress id="capture-progress" max="100" value="0" aria-label="已织汀地百分比"></progress><small>本湾目标 <b id="capture-target">0</b>%</small></div><div class="metric"><span>余灯</span><strong id="lives-value">—</strong></div><div class="metric"><span>余时</span><strong id="time-left">—</strong></div></div>
+ <section id="basin-objectives" class="basin-objectives" aria-labelledby="basin-objectives-title" hidden>
+ <h3 id="basin-objectives-title">分区灯标 <span>与海图编号对应</span></h3>
+ <ol id="basin-objective-list" class="basin-objective-list"></ol>
+</section>
+ <div class="board-frame"><span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span><canvas id="battlefield" width="880" height="640" tabindex="0" aria-label="汀光织界海图。用方向按钮或方向键移动，用织线按钮切换出发意图。"></canvas><div id="result-card" class="result-card" hidden><div class="result-panel"><p class="eyebrow">本湾回执</p><h2 id="result-title" tabindex="-1">汀光已连成一片</h2><p id="result-reason"></p><div id="result-details"></div><div class="result-actions"><button id="result-next" class="primary" type="button">驶向下一湾 →</button><button id="result-retry" type="button">重试本湾</button><button id="result-view" class="quiet" type="button">查看海图</button></div></div></div></div>
+ <div class="chart-legend"><span><i class="legend-safe"></i>织成的汀地</span><span><i class="legend-trail"></i>尚未闭合的线</span><span><i class="legend-current"></i>游动潮影</span></div>
+ <section class="control-deck" id="controls" aria-label="航向与织线操作"><div class="draw-console"><button id="draw-toggle" class="draw-toggle" type="button" aria-pressed="false"><span class="needle-mark" aria-hidden="true">⌁</span><span><strong id="draw-label">织线出航</strong><small id="draw-state">未准备 · 沿岸移动</small></span><span class="toggle-light" aria-hidden="true"></span></button><p id="action-feedback" class="action-feedback" role="status" aria-live="polite">先观察潮影，再选择合适的岸边出发。</p><div class="run-controls"><span id="phase-label" class="phase-label">准备出发</span><button id="start" class="primary" type="button">启航</button><button id="pause" type="button">暂停</button><button id="retry" type="button">重试</button><button id="show-result" type="button" hidden>重读回执</button></div></div><div class="direction-console"><span class="compass-label">航向 / DIRECTION</span><div class="dpad" role="group" aria-label="按住方向移动"><button id="move-up" data-dir="U" type="button" aria-label="向上移动">↑</button><button id="move-left" data-dir="L" type="button" aria-label="向左移动">←</button><span class="compass-center" aria-hidden="true">✦</span><button id="move-right" data-dir="R" type="button" aria-label="向右移动">→</button><button id="move-down" data-dir="D" type="button" aria-label="向下移动">↓</button></div></div></section>
+<section id="threat-preview" class="threat-preview" aria-labelledby="threat-preview-title">
+ <div class="threat-heading"><h3 id="threat-preview-title">出发前，看一眼追向</h3><span id="threat-live-status" class="threat-live-status" aria-live="off">潮影巡游中</span></div>
+ <div class="preview-directions" role="group" aria-label="只看方向预览，不会移动织灯">
+  <button id="preview-up" data-preview-dir="U" type="button" aria-pressed="false"><span class="preview-arrow" aria-hidden="true">↑</span><span class="preview-copy"><strong class="preview-risk">上方待看</strong><small class="preview-landing">点选预览 · 不会移动</small></span></button>
+  <button id="preview-right" data-preview-dir="R" type="button" aria-pressed="false"><span class="preview-arrow" aria-hidden="true">→</span><span class="preview-copy"><strong class="preview-risk">右方待看</strong><small class="preview-landing">点选预览 · 不会移动</small></span></button>
+  <button id="preview-down" data-preview-dir="D" type="button" aria-pressed="false"><span class="preview-arrow" aria-hidden="true">↓</span><span class="preview-copy"><strong class="preview-risk">下方待看</strong><small class="preview-landing">点选预览 · 不会移动</small></span></button>
+  <button id="preview-left" data-preview-dir="L" type="button" aria-pressed="false"><span class="preview-arrow" aria-hidden="true">←</span><span class="preview-copy"><strong class="preview-risk">左方待看</strong><small class="preview-landing">点选预览 · 不会移动</small></span></button>
+ </div>
+ <p id="preview-detail" class="preview-detail" aria-live="off">点选只查看：淡虚线是当前局势的预估，不保证安全；真正出发仍用方向操作。</p>
+ <p class="threat-key"><span><i class="actual-link"></i>锁定线点 / 实际预警</span><span><i class="forecast-link"></i>预估路径</span><span>可暂停观察</span></p>
+</section>
+ <p id="save-warning" class="save-warning" role="status" hidden></p>
+</div><aside class="field-notes"><div class="note-heading"><span aria-hidden="true">03</span><div><p class="eyebrow">A SMALL GUIDE</p><h2>把一程潮水，织成岸。</h2></div></div><ol class="instructions"><li><span>01</span><div><strong>在岸上选起点</strong><p>汀地隔开水域潮影，但外岸巡游者仍会伤灯。先观察两类危险，再选择出航位置。</p></div></li><li><span>02</span><div><strong>准备织线，踏入水域</strong><p>打开织线意图后，用方向移动拉出新线。临时线还不是安全陆地。</p></div></li><li><span>03</span><div><strong>回到汀地，完成围合</strong><p>连回汀地时，新线与不含任何潮影的水区会织成陆地；总体及各编号分区都达标，才能前往下一湾。</p></div></li></ol><div class="risk-note"><span aria-hidden="true">!</span><p>开放线不能取消。回踩自己的线、碰到潮影或被潮影碰线都会熄一灯；三灯用尽或超时，本湾失利。</p></div><div class="keyboard-note"><p class="eyebrow">键盘也能掌舵</p><p>方向键或 WASD 移动<br>按钮可用 Tab 聚焦并激活<br>具体快捷键见航行手册</p></div><section id="journey-record" class="journey-record"><p class="eyebrow">THE SHORE LOG</p><h2 id="record-title" tabindex="-1">三湾航记</h2><div id="record-body">海图从这里开始，已完成的海湾会留在航记里。</div><button id="new-journey" type="button">重新开启旅程</button><a class="summary-back" href="../../index.html#play">返回游戏大厅 →</a></section></aside></section>
+<footer class="page-foot"><p>经典围合占地机制启发 · 原创海图、角色与视觉。独立三湾网页试玩，不是官方 QIX 复刻。</p><p>源版本 970a268（对应远端 01dd7d4）。不写最近游玩记录，不改正式存档。如另存为本地文件，保存支持取决于浏览器。</p></footer>
+</main><dialog id="help-dialog"><div class="dialog-content"><p class="eyebrow">INLET FIELD MANUAL</p><h2>从汀地出发，再回到汀地。</h2><p>金色织针从汀地出发。按“准备织线”（空格 / X）后，用方向键 / WASD 或按住方向按钮踏入水域。连回汀地才闭合；新线及所有不含潮影的分区会填为陆地。百分比仅计算本湾最初可织的水域，初始岸线与浮岛不计入。除总体目标外，编号分区也须各达目标；第二湾两区、第三湾三区各40%。安全堤既是落脚点，也使风险线立刻闭合，不能一条风险线横跨多个分区。</p><p>开放线不能关掉或原路退回：回踩线、针碰潮影、潮影碰线均损一灯并回起点，已织陆地保留。外岸巡游者也会伤灯；起点的青色短保护环只挡岸巡，不挡潮影和回踩。三灯用尽或余时归零则失利。</p><p>每湾显示独立目标与余时，潮影保留的分区不会被填走。P / Esc 暂停或继续，R 请求重试当前湾（需确认），前湾航记保留。刷新活动局先暂停且保留开放线，返回后须明确继续；按钮支持 Tab / Enter，画布获焦后可用游戏快捷键。</p><p>第二、三湾：开放线会令同水域潮影原地蓄势0.5秒，再按原步速追最近风险线。蓄势不是无敌，主动撞进潮影仍伤灯。出发前可点四向预览，只查看、不会移动；这是此刻状态下持续直行到下一汀地的推演，改变方向或拖延后结果会变化。先看提示换岸长切，或借浮岛/堤短线闭合。可暂停观察。<br>三湾结束可重读回执及航记。此网页试玩以专用键另存，不读取或覆盖正式v3、v1/v2进度。确认“新旅程”只清空本试玩三湾进度；正式网站与其他游戏不受影响。存储失败会提示，坏档原字节保全，未解决时刷新可能丢当前进度。</p><button id="close-help" class="primary" type="button">回到海图</button></div></dialog><dialog id="confirm-new"><div class="dialog-content"><p class="eyebrow">重新铺开海图</p><h2>开始新的三湾旅程？</h2><p>会重置本作当前旅程与航记。其它游戏不受影响。</p><div class="dialog-actions"><button id="confirm-new-no" type="button">保留当前旅程</button><button id="confirm-new-yes" class="primary" type="button">确认新旅程</button></div></div></dialog><dialog id="retry-dialog" aria-labelledby="retry-title"><div class="dialog-content"><h2 id="retry-title">重试当前海湾？</h2><p>只重置本湾地形、机会和计时，前湾航记保留。</p><div class="dialog-actions"><button id="retry-no" type="button">保留当前进度</button><button id="retry-yes" class="primary" type="button">确认重试本湾</button></div></div></dialog><script>
+var InletPreview = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name2 in all)
+      __defProp(target, name2, { get: all[name2], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key2 of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key2) && key2 !== except)
+          __defProp(to, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc(from, key2)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // versions/v3/preview/inlet/game.mjs
+  var game_exports = {};
+  __export(game_exports, {
+    diagnostics: () => diagnostics
+  });
+
+  // versions/v3/preview/inlet/levels.mjs
+  var WIDTH = 22;
+  var HEIGHT = 16;
+  var v = (x, a, b) => Array.from({ length: b - a + 1 }, (_, i) => ({ x, y: a + i }));
+  var h = (y, a, b) => Array.from({ length: b - a + 1 }, (_, i) => ({ x: a + i, y }));
+  var unique = (ps) => [...new Map(ps.map((p) => [p.y * WIDTH + p.x, p])).values()];
+  var LEVELS = [
+    {
+      id: 1,
+      name: "第一湾 · 岸线初织",
+      brief: "练习一条安全落脚的织线。总体目标50%，从水域离开后必须连回岸线；风险线回踩会失去一盏灯。",
+      target: 50,
+      limit: 75,
+      start: { x: 1, y: 0 },
+      safe: [],
+      enemies: [{ x: 18, y: 8, dir: 0 }],
+      patrollerIndex: 36,
+      objectives: [{ id: "bay", label: "初织湾", target: 40, seed: { x: 10, y: 8 }, labelAt: { x: 10, y: 9 } }]
+    },
+    {
+      id: 2,
+      name: "第二湾 · 折堤双汀",
+      brief: "折堤隔开两片水域，每片40%、总体60%。离岸后同湾潮影原地预警半秒，再按原步速追最近风险线。先看方向预测，选择远岸长线或借岛短线；触堤立即闭合。",
+      target: 60,
+      limit: 85,
+      start: { x: 1, y: 0 },
+      safe: unique([...v(8, 1, 5), ...h(6, 8, 11), ...v(11, 7, 14), { x: 16, y: 3 }, { x: 17, y: 3 }, { x: 16, y: 4 }, { x: 17, y: 4 }]),
+      enemies: [{ x: 7, y: 1, dir: 3 }, { x: 12, y: 14, dir: 1 }],
+      patrollerIndex: 36,
+      objectives: [{ id: "reed", label: "苇汀", target: 40, seed: { x: 3, y: 8 }, labelAt: { x: 3, y: 8 } }, { id: "islet", label: "岛汀", target: 40, seed: { x: 18, y: 10 }, labelAt: { x: 18, y: 10 } }]
+    },
+    {
+      id: 3,
+      name: "第三湾 · 阶堤三湾",
+      brief: "三湾各40%、总体65%。潮影会在半秒预警后同速追线；离它远时长线收益高，靠岛堤分段可缩短每次暴露。红色方向预测表示按当前状态直行会碰线，出发前可以换落脚点。",
+      target: 65,
+      limit: 90,
+      start: { x: 1, y: 0 },
+      safe: unique([...v(6, 1, 4), ...h(5, 6, 9), ...v(9, 6, 9), ...h(10, 7, 9), ...v(7, 11, 14), ...v(15, 1, 6), ...h(7, 13, 15), ...v(13, 8, 11), ...h(12, 13, 16), ...v(16, 13, 14), { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 18, y: 9 }, { x: 19, y: 9 }, { x: 18, y: 10 }, { x: 19, y: 10 }]),
+      enemies: [{ x: 5, y: 1, dir: 3 }, { x: 12, y: 14, dir: 1 }, { x: 20, y: 1, dir: 3 }],
+      patrollerIndex: 36,
+      objectives: [{ id: "fern", label: "蕨湾", target: 40, seed: { x: 3, y: 8 }, labelAt: { x: 3, y: 8 } }, { id: "lantern", label: "灯湾", target: 40, seed: { x: 11, y: 8 }, labelAt: { x: 11, y: 8 } }, { id: "tide", label: "潮湾", target: 40, seed: { x: 18, y: 8 }, labelAt: { x: 18, y: 8 } }]
+    }
+  ];
+  var DIRECTIONS = { U: { x: 0, y: -1, index: 0 }, R: { x: 1, y: 0, index: 1 }, D: { x: 0, y: 1, index: 2 }, L: { x: -1, y: 0, index: 3 } };
+
+  // versions/v3/preview/inlet/engine.mjs
+  var STEP = 0.02;
+  var PLAYER_STEP = 0.12;
+  var ENEMY_STEP = 0.32;
+  var PATROL_STEP = 0.38;
+  var WARNING_TIME = 0.5;
+  var clone = (v2) => JSON.parse(JSON.stringify(v2));
+  var key = (x, y) => y * WIDTH + x;
+  var inside = (x, y) => x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT;
+  var dirs = Object.values(DIRECTIONS);
+  var same = (a, b) => a.x === b.x && a.y === b.y;
+  var event = (g2, text2) => {
+    g2.events.push({ time: g2.time, text: text2 });
+    if (g2.events.length > 12) g2.events.shift();
+  };
+  var perimeter = () => [...Array.from({ length: WIDTH }, (_, x) => ({ x, y: 0 })), ...Array.from({ length: HEIGHT - 1 }, (_, i) => ({ x: WIDTH - 1, y: i + 1 })), ...Array.from({ length: WIDTH - 1 }, (_, i) => ({ x: WIDTH - 2 - i, y: HEIGHT - 1 })), ...Array.from({ length: HEIGHT - 2 }, (_, i) => ({ x: 0, y: HEIGHT - 2 - i }))];
+  var isClaimed = (g2, x, y) => inside(x, y) && g2.grid.claimed[key(x, y)];
+  function createGame(index = 0) {
+    if (!Number.isInteger(index) || !LEVELS[index]) throw new RangeError("不存在这一湾");
+    const l = LEVELS[index], initialSafe = Array(WIDTH * HEIGHT).fill(false);
+    for (let y = 0; y < HEIGHT; y++) for (let x = 0; x < WIDTH; x++) if (!x || !y || x === WIDTH - 1 || y === HEIGHT - 1) initialSafe[key(x, y)] = true;
+    for (const p of l.safe) initialSafe[key(p.x, p.y)] = true;
+    const coast = perimeter(), g2 = { version: 3, level: l.id, title: l.name, brief: l.brief, state: "ready", time: 0, ticks: 0, accumulator: 0, limit: l.limit, target: l.target, grid: { width: WIDTH, height: HEIGHT, claimed: [...initialSafe] }, initialSafe, initialClaimable: initialSafe.map((v2) => !v2), totalClaimable: initialSafe.filter((v2) => !v2).length, claimedCount: 0, percent: 0, player: { ...l.start, clock: 0, dir: null, invulnerable: 1 }, start: { ...l.start }, trail: [], trailStart: null, drawArmed: false, enemies: l.enemies.map((e, i) => ({ ...e, id: i + 1, type: "current", clock: 0, behavior: "patrol", tellTimer: 0, target: null })), patroller: { ...coast[l.patrollerIndex], index: l.patrollerIndex, dir: 1, clock: 0 }, lives: 3, stats: { cuts: 0, losses: 0, filled: 0, steps: 0 }, effects: [], lastCapture: null, events: [], reason: "在安全区选择织线，再按方向进入水域。" };
+    g2.objectives = makeObjectives(g2, l);
+    return g2;
+  }
+  function start(g2) {
+    if (g2.state === "ready" || g2.state === "paused") {
+      g2.state = "playing";
+      g2.reason = "织线中不能撤销；连回安全区才算闭合。";
+      return true;
+    }
+    return false;
+  }
+  function pause(g2) {
+    if (g2.state === "playing") {
+      g2.state = "paused";
+      return true;
+    }
+    if (g2.state === "paused") return start(g2);
+    return false;
+  }
+  function inspectDraw(g2) {
+    if (!["playing", "paused"].includes(g2.state)) return { ok: false, reason: "开始或继续这一湾后才能准备织线。" };
+    if (g2.trail.length) return { ok: false, reason: "风险线尚未闭合，不能中途收线或抹去。" };
+    return { ok: true, reason: g2.drawArmed ? "可取消准备，继续沿安全区移动。" : "准备后可离岸；进入水域即留下风险线。" };
+  }
+  function toggleDraw(g2) {
+    const r = inspectDraw(g2);
+    if (!r.ok) return r;
+    g2.drawArmed = !g2.drawArmed;
+    g2.reason = g2.drawArmed ? "已准备织线；进入水域后须连回安全区。" : "已收起织线，只能在安全区移动。";
+    return { ok: true, reason: g2.reason };
+  }
+  function loseLife(g2, why, force = false) {
+    if (g2.state !== "playing" || !force && g2.player.invulnerable > 0) return false;
+    g2.lives--;
+    g2.stats.losses++;
+    g2.trail = [];
+    g2.trailStart = null;
+    g2.drawArmed = false;
+    Object.assign(g2.player, g2.start, { clock: 0, dir: null, invulnerable: 1 });
+    resetThreats(g2);
+    g2.reason = why + "，风险线已清除，已织岸线保留。";
+    event(g2, g2.reason);
+    if (g2.lives === 0) {
+      g2.state = "lost";
+      g2.reason = "三盏织灯已熄，重试这一湾可以重新规划。";
+      event(g2, g2.reason);
+    }
+    return true;
+  }
+  function previewCapture(g2, trail2) {
+    const blocked = new Set(trail2.map((p) => key(p.x, p.y))), reachable = /* @__PURE__ */ new Set(), queue = [];
+    for (const e of g2.enemies) {
+      const k = key(e.x, e.y);
+      if (!g2.grid.claimed[k] && !blocked.has(k) && !reachable.has(k)) {
+        reachable.add(k);
+        queue.push(e);
+      }
+    }
+    for (let n = 0; n < queue.length; n++) for (const d of dirs) {
+      const x = queue[n].x + d.x, y = queue[n].y + d.y, k = key(x, y);
+      if (inside(x, y) && !g2.grid.claimed[k] && !blocked.has(k) && !reachable.has(k)) {
+        reachable.add(k);
+        queue.push({ x, y });
+      }
+    }
+    const cells = [];
+    for (let y = 0; y < HEIGHT; y++) for (let x = 0; x < WIDTH; x++) {
+      const k = key(x, y);
+      if (!g2.grid.claimed[k] && !reachable.has(k)) cells.push({ x, y });
+    }
+    return cells;
+  }
+  function closeTrail(g2) {
+    const source = clone(g2.trailStart), end = { x: g2.player.x, y: g2.player.y };
+    const cells = previewCapture(g2, g2.trail);
+    for (const p of cells) g2.grid.claimed[key(p.x, p.y)] = true;
+    g2.claimedCount = g2.initialClaimable.reduce((n, v2, i) => n + (v2 && g2.grid.claimed[i] ? 1 : 0), 0);
+    g2.percent = g2.claimedCount / g2.totalClaimable * 100;
+    g2.stats.cuts++;
+    g2.stats.filled = g2.claimedCount;
+    refreshObjectives(g2);
+    g2.effects.push({ kind: "capture", cells: clone(cells), ttl: 0.8, duration: 0.8 });
+    g2.lastCapture = { added: cells.length, percent: g2.percent, time: g2.time, start: source, end, steps: g2.stats.steps, objectives: g2.objectives.map(({ id, percent, complete }) => ({ id, percent, complete })) };
+    g2.reason = goalReason(g2);
+    g2.trail = [];
+    g2.trailStart = null;
+    g2.drawArmed = false;
+    resetThreats(g2);
+    event(g2, "闭合成功，新增" + cells.length + "格，已织" + g2.percent.toFixed(1) + "%。");
+  }
+  function enemyStep(g2, e) {
+    const chase = e.behavior === "chasing" ? nearestLine(g2, e, g2.trail) : null;
+    if (chase?.path.length) {
+      const next = chase.path[0];
+      e.dir = dirs.findIndex((d) => d.x === next.x - e.x && d.y === next.y - e.y);
+      Object.assign(e, next);
+    } else {
+      const order = [e.dir, (e.dir + 1) % 4, (e.dir + 3) % 4, (e.dir + 2) % 4];
+      for (const dir of order) {
+        const d = dirs[dir], x = e.x + d.x, y = e.y + d.y;
+        if (inside(x, y) && !isClaimed(g2, x, y)) {
+          e.x = x;
+          e.y = y;
+          e.dir = dir;
+          break;
+        }
+      }
+    }
+    if (g2.trail.some((p) => same(p, e)) || g2.trail.length && same(g2.player, e)) return loseLife(g2, "潮影" + e.id + "碰到了风险线", true);
+    return false;
+  }
+  function playerStep(g2, dir) {
+    const d = DIRECTIONS[dir];
+    if (!d) return;
+    const next = { x: g2.player.x + d.x, y: g2.player.y + d.y };
+    if (!inside(next.x, next.y)) return;
+    if (same(next, g2.patroller) && g2.player.invulnerable <= 0) {
+      loseLife(g2, "岸巡迎面碰撞");
+      return;
+    }
+    if (g2.trail.length === 1 && same(next, g2.trailStart)) {
+      loseLife(g2, "织线回踩或交叉", true);
+      return;
+    }
+    if (isClaimed(g2, next.x, next.y)) {
+      Object.assign(g2.player, next, { dir });
+      g2.stats.steps++;
+      if (g2.trail.length) closeTrail(g2);
+      return;
+    }
+    if (!g2.drawArmed) {
+      g2.reason = "这里仍是水域，先在安全区准备织线。";
+      return;
+    }
+    if (g2.trail.some((p) => same(p, next))) {
+      loseLife(g2, "织线回踩或交叉", true);
+      return;
+    }
+    if (g2.enemies.some((e) => same(e, next))) {
+      loseLife(g2, "与水域游光相撞", true);
+      return;
+    }
+    if (!g2.trail.length) g2.trailStart = { x: g2.player.x, y: g2.player.y };
+    Object.assign(g2.player, next, { dir });
+    g2.trail.push(next);
+    g2.stats.steps++;
+    syncThreats(g2);
+  }
+  function tick(g2, input2) {
+    g2.ticks++;
+    g2.time = Math.round(g2.ticks * STEP * 100) / 100;
+    const before = g2.stats.losses;
+    g2.player.invulnerable = Math.max(0, g2.player.invulnerable - STEP);
+    for (const f of g2.effects) f.ttl -= STEP;
+    g2.effects = g2.effects.filter((f) => f.ttl > 0);
+    for (const e of g2.enemies) {
+      if (e.behavior === "warning") {
+        e.tellTimer = Math.max(0, e.tellTimer - STEP);
+        if (e.tellTimer <= 1e-8) {
+          e.tellTimer = 0;
+          e.behavior = "chasing";
+        }
+      }
+      if (e.behavior !== "patrol") {
+        const target = nearestLine(g2, e, g2.trail);
+        e.target = target ? { ...target.target } : null;
+      }
+      if (e.behavior !== "warning") e.clock += STEP;
+      if (e.clock + 1e-8 >= ENEMY_STEP) {
+        e.clock -= ENEMY_STEP;
+        enemyStep(g2, e);
+      }
+      if (g2.state === "lost") return;
+    }
+    syncThreats(g2);
+    const coast = perimeter();
+    g2.patroller.clock += STEP;
+    if (g2.patroller.clock + 1e-8 >= PATROL_STEP) {
+      g2.patroller.clock -= PATROL_STEP;
+      g2.patroller.index = (g2.patroller.index + g2.patroller.dir + coast.length) % coast.length;
+      Object.assign(g2.patroller, coast[g2.patroller.index]);
+    }
+    if (same(g2.patroller, g2.player) && g2.player.invulnerable <= 0) loseLife(g2, "岸巡碰到了织灯");
+    if (g2.state === "lost") return;
+    if (g2.stats.losses === before) {
+      g2.player.clock = Math.min(PLAYER_STEP, g2.player.clock + STEP);
+      if (DIRECTIONS[input2.dir] && g2.player.clock + 1e-8 >= PLAYER_STEP) {
+        g2.player.clock -= PLAYER_STEP;
+        playerStep(g2, input2.dir);
+      }
+    }
+    if (g2.state === "playing" && g2.stats.losses === before && g2.percent + 1e-8 >= g2.target && g2.objectives.every((o) => o.complete)) {
+      g2.state = "won";
+      g2.reason = "这一湾已织成" + g2.percent.toFixed(1) + "%，可以继续归岸。";
+      event(g2, g2.reason);
+    } else if (g2.state === "playing" && g2.time >= g2.limit) {
+      g2.state = "lost";
+      g2.reason = "潮时已过，还未织到目标；重试这一湾重新规划。";
+      event(g2, g2.reason);
+    }
+  }
+  function update(g2, dt, input2 = {}) {
+    if (g2.state !== "playing" || !Number.isFinite(dt) || dt <= 0) return;
+    g2.accumulator += Math.min(dt, 0.1);
+    while (g2.accumulator + 1e-9 >= STEP && g2.state === "playing") {
+      g2.accumulator -= STEP;
+      tick(g2, input2);
+    }
+    g2.accumulator = Math.max(0, g2.accumulator);
+  }
+  var snapshot = (g2) => {
+    const s = clone(g2);
+    refreshObjectives(s);
+    return s;
+  };
+  var checkpoint = (g2) => snapshot(g2);
+  function restore(raw) {
+    try {
+      const g2 = clone(raw), finite = (v2) => typeof v2 === "number" && Number.isFinite(v2), integer = (v2) => Number.isInteger(v2), pos = (p2) => p2 && integer(p2.x) && integer(p2.y) && inside(p2.x, p2.y), between = (v2, a, b2) => finite(v2) && v2 >= a - 1e-8 && v2 <= b2 + 1e-8;
+      if (!g2 || g2.version !== 3 || !integer(g2.level) || !LEVELS[g2.level - 1] || !["ready", "playing", "paused", "won", "lost"].includes(g2.state)) return null;
+      const b = createGame(g2.level - 1), eq = (x, y) => JSON.stringify(x) === JSON.stringify(y);
+      if (g2.title !== b.title || g2.brief !== b.brief || g2.limit !== b.limit || g2.target !== b.target || !eq(g2.start, b.start) || !eq(g2.initialSafe, b.initialSafe) || !eq(g2.initialClaimable, b.initialClaimable) || g2.totalClaimable !== b.totalClaimable) return null;
+      if (!g2.grid || g2.grid.width !== WIDTH || g2.grid.height !== HEIGHT || !Array.isArray(g2.grid.claimed) || g2.grid.claimed.length !== WIDTH * HEIGHT || g2.grid.claimed.some((v2) => typeof v2 !== "boolean") || g2.initialSafe.some((v2, i) => v2 && !g2.grid.claimed[i])) return null;
+      if (!eq(g2.objectives, makeObjectives(g2, LEVELS[g2.level - 1]))) return null;
+      const count = g2.initialClaimable.reduce((n, v2, i) => n + (v2 && g2.grid.claimed[i] ? 1 : 0), 0);
+      if (g2.claimedCount !== count || !between(g2.percent, 0, 100) || Math.abs(g2.percent - count / g2.totalClaimable * 100) > 1e-8 || !integer(g2.ticks) || g2.ticks < 0 || !between(g2.time, 0, g2.limit) || Math.abs(g2.time - g2.ticks * STEP) > 1e-8 || !between(g2.accumulator, 0, 0.1)) return null;
+      if (!integer(g2.lives) || g2.lives < 0 || g2.lives > 3 || !g2.stats || ["cuts", "losses", "filled", "steps"].some((k) => !integer(g2.stats[k]) || g2.stats[k] < 0) || g2.stats.losses !== 3 - g2.lives || g2.stats.filled !== count || typeof g2.reason !== "string" || typeof g2.drawArmed !== "boolean") return null;
+      if (!pos(g2.player) || !between(g2.player.clock, 0, PLAYER_STEP) || !between(g2.player.invulnerable, 0, 1) || !(g2.player.dir === null || DIRECTIONS[g2.player.dir])) return null;
+      if (!Array.isArray(g2.trail) || g2.trail.length > g2.totalClaimable || new Set(g2.trail.map((p2) => pos(p2) ? key(p2.x, p2.y) : -1)).size !== g2.trail.length || g2.trail.some((p2) => !pos(p2) || isClaimed(g2, p2.x, p2.y))) return null;
+      if (g2.trail.length) {
+        if (!pos(g2.trailStart) || !isClaimed(g2, g2.trailStart.x, g2.trailStart.y) || !g2.drawArmed || !same(g2.player, g2.trail.at(-1))) return null;
+        let previous = g2.trailStart;
+        for (const p2 of g2.trail) {
+          if (Math.abs(p2.x - previous.x) + Math.abs(p2.y - previous.y) !== 1) return null;
+          previous = p2;
+        }
+      } else if (g2.trailStart !== null || !isClaimed(g2, g2.player.x, g2.player.y)) return null;
+      if (!Array.isArray(g2.enemies) || g2.enemies.length !== b.enemies.length || g2.enemies.some((e, i) => !pos(e) || e.id !== i + 1 || e.type !== "current" || !integer(e.dir) || e.dir < 0 || e.dir > 3 || !between(e.clock, 0, ENEMY_STEP) || isClaimed(g2, e.x, e.y) || g2.trail.some((p2) => same(e, p2)) || !["patrol", "warning", "chasing"].includes(e.behavior) || !between(e.tellTimer, 0, WARNING_TIME) || !(e.target === null || pos(e.target)))) return null;
+      for (const e of g2.enemies) {
+        const t = nearestLine(g2, e, g2.trail);
+        if (e.behavior === "patrol") {
+          if (e.tellTimer !== 0 || e.target !== null || g2.level > 1 && t) return null;
+        } else {
+          if (g2.level === 1 || !g2.trail.length || !t || !e.target || !same(e.target, t.target) || e.behavior === "warning" && e.tellTimer <= 0 || e.behavior === "chasing" && e.tellTimer !== 0) return null;
+        }
+      }
+      const coast = perimeter(), p = g2.patroller;
+      if (!p || !integer(p.index) || p.index < 0 || p.index >= coast.length || ![1, -1].includes(p.dir) || !between(p.clock, 0, PATROL_STEP) || !same(p, coast[p.index])) return null;
+      if (!Array.isArray(g2.effects) || g2.effects.length > 50 || g2.effects.some((f) => !f || f.kind !== "capture" || f.duration !== 0.8 || !between(f.ttl, 0, 0.8) || f.ttl <= 0 || !Array.isArray(f.cells) || f.cells.some((p2) => !pos(p2) || !isClaimed(g2, p2.x, p2.y)))) return null;
+      if (!Array.isArray(g2.events) || g2.events.length > 12 || g2.events.some((e) => !e || !between(e.time, 0, g2.time) || typeof e.text !== "string")) return null;
+      if (g2.lastCapture !== null) {
+        const c = g2.lastCapture;
+        if (!c || !integer(c.added) || c.added < 0 || !between(c.percent, 0, g2.percent) || !between(c.time, 0, g2.time) || !pos(c.start) || !pos(c.end) || !isClaimed(g2, c.start.x, c.start.y) || !isClaimed(g2, c.end.x, c.end.y) || !integer(c.steps) || c.steps < 0 || c.steps > g2.stats.steps || !Array.isArray(c.objectives) || c.objectives.length !== g2.objectives.length || c.objectives.some((o, i) => !o || o.id !== g2.objectives[i].id || !between(o.percent, 0, g2.objectives[i].percent) || typeof o.complete !== "boolean" || o.complete !== o.percent + 1e-8 >= g2.objectives[i].target)) return null;
+      }
+      if (g2.state === "won" && (g2.lives === 0 || g2.percent + 1e-8 < g2.target || !g2.objectives.every((o) => o.complete) || g2.trail.length)) return null;
+      if (g2.state === "lost" && g2.lives > 0 && g2.time < g2.limit) return null;
+      if (["ready", "playing", "paused"].includes(g2.state) && (g2.lives === 0 || g2.time >= g2.limit || g2.percent + 1e-8 >= g2.target && g2.objectives.every((o) => o.complete))) return null;
+      if (g2.state === "ready" && (g2.time !== 0 || g2.stats.steps || g2.stats.losses || g2.claimedCount || g2.trail.length)) return null;
+      if (g2.state === "playing") g2.state = "paused";
+      return g2;
+    } catch {
+      return null;
+    }
+  }
+  function makeObjectives(g2, level) {
+    return level.objectives.map((o) => {
+      const queue = [o.seed], seen = /* @__PURE__ */ new Set([key(o.seed.x, o.seed.y)]);
+      for (let i = 0; i < queue.length; i++) for (const d of dirs) {
+        const x = queue[i].x + d.x, y = queue[i].y + d.y, k = key(x, y);
+        if (inside(x, y) && !g2.initialSafe[k] && !seen.has(k)) {
+          seen.add(k);
+          queue.push({ x, y });
+        }
+      }
+      const cells = queue.map((p) => ({ ...p })), claimed2 = cells.filter((p) => isClaimed(g2, p.x, p.y)).length, total = cells.length, percent = claimed2 / total * 100;
+      return { id: o.id, label: o.label, target: o.target, cells, total, claimed: claimed2, percent, complete: percent + 1e-8 >= o.target, labelAt: { ...o.labelAt } };
+    });
+  }
+  function refreshObjectives(g2) {
+    g2.objectives = makeObjectives(g2, LEVELS[g2.level - 1]);
+  }
+  function goalReason(g2) {
+    const missing = g2.objectives.filter((o) => !o.complete);
+    if (missing.length) return (g2.percent + 1e-8 >= g2.target ? "总体已达标；" : "") + "还需织成" + missing.map((o) => o.label + " " + o.percent.toFixed(1) + "%/" + o.target + "%").join("、") + "。";
+    return "各湾已达标；总体" + g2.percent.toFixed(1) + "%/" + g2.target + "%。";
+  }
+  function nearestLine(g2, e, trail2) {
+    if (!trail2.length) return null;
+    const targets = new Set(trail2.map((p) => key(p.x, p.y))), q = [{ x: e.x, y: e.y, path: [] }], seen = /* @__PURE__ */ new Set([key(e.x, e.y)]);
+    for (let n = 0; n < q.length; n++) {
+      const p = q[n];
+      if (targets.has(key(p.x, p.y))) return { target: { x: p.x, y: p.y }, path: p.path, distance: p.path.length };
+      for (const d of dirs) {
+        const x = p.x + d.x, y = p.y + d.y, k = key(x, y);
+        if (inside(x, y) && !isClaimed(g2, x, y) && !seen.has(k)) {
+          seen.add(k);
+          q.push({ x, y, path: [...p.path, { x, y }] });
+        }
+      }
+    }
+    return null;
+  }
+  function resetThreats(g2) {
+    for (const e of g2.enemies) {
+      e.behavior = "patrol";
+      e.tellTimer = 0;
+      e.target = null;
+    }
+  }
+  function syncThreats(g2) {
+    if (g2.level === 1) return;
+    for (const e of g2.enemies) {
+      const target = nearestLine(g2, e, g2.trail);
+      if (target) {
+        if (e.behavior === "patrol") {
+          e.behavior = "warning";
+          e.tellTimer = WARNING_TIME;
+        }
+        e.target = { ...target.target };
+      } else {
+        e.behavior = "patrol";
+        e.tellTimer = 0;
+        e.target = null;
+      }
+    }
+  }
+  function previewThreat(g2, dir) {
+    const d = DIRECTIONS[dir], from = { x: g2.player.x, y: g2.player.y }, base = { ok: false, reason: "请选择一个通向水域的方向。", from, to: null, cells: [], closeIn: null, hitIn: null, risk: "blocked", margin: null, enemies: [] };
+    if (!d || !["ready", "playing", "paused"].includes(g2.state)) return base;
+    const cells = [];
+    let to = null;
+    for (let n = 1; n <= WIDTH + HEIGHT; n++) {
+      const p = { x: from.x + d.x * n, y: from.y + d.y * n };
+      if (!inside(p.x, p.y)) break;
+      if (isClaimed(g2, p.x, p.y)) {
+        if (cells.length || g2.trail.length) to = p;
+        break;
+      }
+      cells.push(p);
+    }
+    if (!to) return { ...base, reason: "此方向没有直接可达的下一处安全落脚点；先沿岸移动。" };
+    const firstMoveTicks = Math.max(1, Math.ceil((PLAYER_STEP - g2.player.clock - 1e-8) / STEP));
+    const closeIn = Math.round((firstMoveTicks * STEP + cells.length * PLAYER_STEP) * 100) / 100;
+    const full = [...g2.trail, ...cells], enemies = g2.enemies.map((e) => {
+      const n = nearestLine(g2, e, full);
+      return n ? { id: e.id, from: { x: e.x, y: e.y }, target: n.target, distance: n.distance, path: n.path, hitIn: null } : null;
+    }).filter(Boolean);
+    const sim = clone(g2), losses = sim.stats.losses, cuts = sim.stats.cuts, at = sim.time;
+    if (sim.state !== "playing") start(sim);
+    if (!sim.trail.length && !sim.drawArmed) toggleDraw(sim);
+    let hitIn = null;
+    for (let i = 0; i < Math.ceil((closeIn + 0.25) / STEP) && sim.state === "playing" && sim.stats.cuts === cuts && sim.stats.losses === losses; i++) update(sim, STEP, { dir });
+    if (sim.stats.losses > losses) hitIn = sim.time - at;
+    const closed = sim.stats.cuts > cuts, timedOut = sim.state === "lost" && sim.time >= sim.limit;
+    const risk = hitIn !== null ? "danger" : timedOut ? "timeout" : closed ? "safe" : "incomplete", margin = hitIn === null ? null : hitIn - closeIn;
+    const remaining = Math.max(0, g2.limit - g2.time);
+    const reason = risk === "timeout" ? closed ? "预计能连回汀地，但同时潮时已到，整湾目标仍未达成。" : "潮时仅余" + remaining.toFixed(2) + "秒，预计在闭合前耗尽；这条直线来不及完成。" : risk === "incomplete" ? "本次推演未确认闭合，请重新选落脚点。" : hitIn === null ? "按当前可见状态持续直行，预计" + closeIn.toFixed(2) + "秒闭合；途中改变方向会改变预测。" : "按当前可见状态持续直行，预计" + hitIn.toFixed(2) + "秒发生碰撞，早于" + closeIn.toFixed(2) + "秒闭合；请换落脚点或方向。";
+    if (hitIn !== null) {
+      const source = sim.events.slice().reverse().find((e) => e.time > at && /潮影\d/.test(e.text))?.text || sim.reason, m = source.match(/潮影(\d+)/);
+      if (m) {
+        const e = enemies.find((e2) => e2.id === Number(m[1]));
+        if (e) e.hitIn = hitIn;
+      }
+    }
+    return { ok: true, from, to, cells, closeIn, hitIn, margin, risk, enemies, closed, timedOut, reason };
+  }
+
+  // versions/v3/preview/inlet/renderer.mjs
+  var clamp = (v2, a, b) => Math.max(a, Math.min(b, v2));
+  var fract = (n) => n - Math.floor(n);
+  var noise = (x, y) => fract(Math.sin(x * 127.1 + y * 311.7) * 43758.5453);
+  var ell = (c, x, y, rx, ry, fill, stroke, w = 1) => {
+    c.beginPath();
+    c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = w;
+      c.stroke();
+    }
+  };
+  var line = (c, points, color, w = 1) => {
+    c.beginPath();
+    points.forEach((p, i) => i ? c.lineTo(...p) : c.moveTo(...p));
+    c.strokeStyle = color;
+    c.lineWidth = w;
+    c.stroke();
+  };
+  var poly = (c, points, fill, stroke, w = 1) => {
+    c.beginPath();
+    points.forEach((p, i) => i ? c.lineTo(...p) : c.moveTo(...p));
+    c.closePath();
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = w;
+      c.stroke();
+    }
+  };
+  var rr = (c, x, y, w, h2, r, fill, stroke, lw = 1) => {
+    c.beginPath();
+    c.roundRect(x, y, w, h2, r);
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = lw;
+      c.stroke();
+    }
+  };
+  function gridOf(g2) {
+    const w = g2.grid?.width || 22, h2 = g2.grid?.height || 16;
+    return { width: w, height: h2, claimed: g2.grid?.claimed || [] };
+  }
+  function layout(g2) {
+    const grid = gridOf(g2), tile = Math.min(880 / grid.width, 640 / grid.height), left = (880 - grid.width * tile) / 2, top = (640 - grid.height * tile) / 2;
+    return { width: 880, height: 640, tile, left, top, gridWidth: grid.width, gridHeight: grid.height, point(x, y) {
+      return { x: left + (x + 0.5) * tile, y: top + (y + 0.5) * tile };
+    } };
+  }
+  var Renderer = class {
+    constructor(canvas) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext("2d");
+      canvas.width = 880;
+      canvas.height = 640;
+      this.paper = null;
+    }
+    layout(g2) {
+      return layout(g2);
+    }
+    draw(g2, { previewDir: previewDir2 = null } = {}) {
+      const c = this.ctx, l = layout(g2), grid = gridOf(g2), time = Number(g2.time) || 0;
+      c.clearRect(0, 0, 880, 640);
+      c.lineJoin = "round";
+      c.lineCap = "round";
+      water(c, l, time);
+      claimed(c, l, grid, g2);
+      capture(c, l, g2);
+      basins(c, l, g2);
+      drawThreatPreview(c, l, g2, previewDir2);
+      drawTargetLinks(c, l, g2);
+      trail(c, l, g2, time);
+      for (let i = 0; i < (g2.enemies || []).length; i++) {
+        const e = g2.enemies[i], p = l.point(e.x, e.y);
+        c.save();
+        c.translate(p.x, p.y);
+        c.scale(l.tile / 40, l.tile / 40);
+        current(c, e, i, time, g2.state === "playing");
+        enemyCue(c, e);
+        c.restore();
+      }
+      if (g2.patroller) {
+        const p = l.point(g2.patroller.x, g2.patroller.y);
+        c.save();
+        c.translate(p.x, p.y);
+        c.scale(l.tile / 40, l.tile / 40);
+        shoreWalker(c, g2.patroller, time, g2.state === "playing");
+        c.restore();
+      }
+      if (g2.player) {
+        const p = l.point(g2.player.x, g2.player.y);
+        c.save();
+        c.translate(p.x, p.y);
+        c.scale(l.tile / 40, l.tile / 40);
+        needle(c, Boolean(g2.drawArmed), Number(g2.player.invulnerable) || 0);
+        c.restore();
+      }
+      chartEdge(c, l);
+    }
+  };
+  function water(c, l, time) {
+    const sea = c.createLinearGradient(0, 0, 880, 640);
+    sea.addColorStop(0, "#2d6572");
+    sea.addColorStop(0.45, "#347c83");
+    sea.addColorStop(1, "#225365");
+    c.fillStyle = sea;
+    c.fillRect(0, 0, 880, 640);
+    c.save();
+    c.strokeStyle = "#a9d0be0c";
+    c.lineWidth = 1;
+    for (let j = 0; j < 11; j++) {
+      const y = 35 + j * 58;
+      c.beginPath();
+      c.moveTo(-20, y);
+      for (let x = -20; x < 930; x += 90) c.bezierCurveTo(x + 22, y - 25, x + 63, y + 25, x + 90, y + Math.sin(j + x / 190) * 11);
+      c.stroke();
+    }
+    for (let i = 0; i < 50; i++) {
+      const x = noise(i, 13) * 880, y = noise(i, 29) * 640, s = 5 + noise(i, 33) * 9;
+      c.save();
+      c.translate(x, y);
+      c.rotate(noise(i, 3) * Math.PI);
+      if (i % 3 === 0) {
+        line(c, [[0, s], [0, -s], [s * 0.55, -s * 1.6]], "#b9ccab0c", 1.5);
+        line(c, [[0, 0], [-s * 0.7, -s * 0.7], [-s * 0.7, -s * 1.3]], "#b9ccab0c", 1.3);
+        line(c, [[0, -s * 0.6], [s * 0.5, -s * 0.2], [s * 0.9, -s * 0.5]], "#b9ccab0c", 1.3);
+      } else ell(c, 0, 0, s, s * 0.3, null, "#b6d4bd0b", 1);
+      c.restore();
+    }
+    for (let i = 0; i < 75; i++) {
+      const x = noise(i, 41) * 880, y = noise(i, 47) * 640, phase = time * 0.6 + i * 0.8, w = 8 + noise(i, 19) * 20;
+      const shift = Math.sin(phase) * 3;
+      c.strokeStyle = i % 4 ? "#c5e2cf12" : "#d1ddbb1c";
+      c.lineWidth = 0.7;
+      c.beginPath();
+      c.moveTo(x - w / 2, y + shift);
+      c.quadraticCurveTo(x, y - 2 + shift, x + w / 2, y + shift);
+      c.stroke();
+    }
+    for (let i = 0; i < 450; i++) {
+      c.fillStyle = i % 2 ? "#d1e9d208" : "#163b4a0c";
+      c.fillRect(noise(i, 51) * 880, noise(i, 71) * 640, 1.3, 0.6);
+    }
+    c.restore();
+  }
+  function claimed(c, l, grid, g2) {
+    const t = l.tile, w = grid.width, h2 = grid.height, isSafe = (x, y) => x >= 0 && y >= 0 && x < w && y < h2 && Boolean(grid.claimed[y * w + x]);
+    for (let y = 0; y < h2; y++) for (let x = 0; x < w; x++) {
+      if (!isSafe(x, y)) continue;
+      const px = l.left + x * t, py = l.top + y * t, n = noise(x + 5, y + 7), initial = Array.isArray(g2.initialSafe) ? Boolean(g2.initialSafe[y * w + x]) : true;
+      c.fillStyle = initial ? "#aebfa5" : "#c5cfa9";
+      c.fillRect(px - 0.15, py - 0.15, t + 0.3, t + 0.3);
+      c.save();
+      c.beginPath();
+      c.rect(px, py, t, t);
+      c.clip();
+      for (let k = 0; k < 5; k++) {
+        line(c, [[px, py + 4 + k * t / 5], [px + t, py + 4 + k * t / 5]], initial ? "#7d9e8b1a" : "#97aa7b27", 0.8);
+        line(c, [[px + 3 + k * t / 5, py], [px + 3 + k * t / 5, py + t]], "#ece9c32b", 0.7);
+      }
+      if (n > 0.82) {
+        poly(c, [[px + t * 0.25, py + t * 0.24], [px + t * 0.44, py + t * 0.31], [px + t * 0.43, py + t * 0.47], [px + t * 0.21, py + t * 0.43]], initial ? "#8ca68f22" : "#b1ba8f44");
+      }
+      c.restore();
+      const edges = [{ safe: isSafe(x, y - 1), a: [px, py + 1], b: [px + t, py + 1], shadow: [0, 3] }, { safe: isSafe(x + 1, y), a: [px + t - 1, py], b: [px + t - 1, py + t], shadow: [-3, 0] }, { safe: isSafe(x, y + 1), a: [px, py + t - 1], b: [px + t, py + t - 1], shadow: [0, -3] }, { safe: isSafe(x - 1, y), a: [px + 1, py], b: [px + 1, py + t], shadow: [3, 0] }];
+      for (const edge of edges) {
+        if (edge.safe) continue;
+        line(c, [[edge.a[0] + edge.shadow[0], edge.a[1] + edge.shadow[1]], [edge.b[0] + edge.shadow[0], edge.b[1] + edge.shadow[1]]], "#6b968846", 4);
+        line(c, [edge.a, edge.b], "#e3ddaf", 2.3);
+      }
+      if (initial && n > 0.87) {
+        const xx = px + t * 0.5, yy = py + t * 0.5;
+        line(c, [[xx - 3, yy], [xx + 3, yy]], "#77958855", 1);
+        line(c, [[xx, yy - 3], [xx, yy + 3]], "#77958855", 1);
+      }
+    }
+  }
+  function capture(c, l, g2) {
+    for (const e of g2.effects || []) {
+      if (e.kind !== "capture" || !Array.isArray(e.cells)) continue;
+      const alpha = clamp(Number(e.ttl) / Math.max(1e-3, Number(e.duration) || 1), 0, 1);
+      c.save();
+      c.globalAlpha = alpha * 0.7;
+      for (const cell of e.cells) {
+        const p = l.point(cell.x, cell.y);
+        rr(c, p.x - l.tile / 2 + 2, p.y - l.tile / 2 + 2, l.tile - 4, l.tile - 4, 3, "#f6df9d44", "#f5ddb0", 1.2);
+      }
+      c.restore();
+    }
+  }
+  function trail(c, l, g2, time) {
+    if (!Array.isArray(g2.trail) || !g2.trail.length) return;
+    const points = g2.trail.map((p) => l.point(p.x, p.y));
+    const start2 = g2.trailStart || g2.trailAnchor;
+    if (start2) points.unshift(l.point(start2.x, start2.y));
+    c.save();
+    c.beginPath();
+    points.forEach((p, i) => i ? c.lineTo(p.x, p.y) : c.moveTo(p.x, p.y));
+    c.strokeStyle = "#163d4f88";
+    c.lineWidth = 9;
+    c.stroke();
+    c.beginPath();
+    points.forEach((p, i) => i ? c.lineTo(p.x, p.y) : c.moveTo(p.x, p.y));
+    c.strokeStyle = "#e5c37f";
+    c.lineWidth = 3.4;
+    c.stroke();
+    c.setLineDash([3, 7]);
+    c.lineDashOffset = -time * 8;
+    c.strokeStyle = "#fff1b9";
+    c.lineWidth = 1.4;
+    c.stroke();
+    c.setLineDash([]);
+    for (const p of points) {
+      ell(c, p.x, p.y, 2.2, 2.2, "#f3e6af");
+    }
+    c.restore();
+  }
+  function current(c, e, index, time, animate) {
+    const moving = animate ? Math.sin(time * 3 + (index + 1) * 1.4) : 0, col = index % 2 ? "#b3a0c1" : "#c9a1a7", dark = index % 2 ? "#5c657e" : "#826177";
+    ell(c, 0, 3, 17, 9, "#153f4a44");
+    c.save();
+    if (Number.isFinite(e.dx) && Number.isFinite(e.dy)) c.rotate(Math.atan2(e.dy, e.dx));
+    else if (typeof e.dir === "object" && e.dir) c.rotate(Math.atan2(e.dir.y, e.dir.x));
+    else if (Number.isInteger(e.dir)) c.rotate([-Math.PI / 2, 0, Math.PI / 2, Math.PI][e.dir] || 0);
+    for (let i = 0; i < 6; i++) {
+      const a = i * Math.PI / 3, r = 15 + i % 2 * 2;
+      line(c, [[Math.cos(a) * 6, Math.sin(a) * 6], [Math.cos(a) * r, Math.sin(a) * r + moving]], col, 1.5);
+      ell(c, Math.cos(a) * r, Math.sin(a) * r + moving, 1.5, 1.5, "#d0b7bd");
+    }
+    poly(c, [[-11, 0], [-5, -8], [4, -10], [11, -1], [8, 7], [-2, 10]], dark, col, 1.3);
+    poly(c, [[-5, -1], [0, -6], [6, 0], [0, 6]], col, "#dfc0c3", 0.5);
+    ell(c, 1, -1, 1.8, 1.8, "#f2ddce");
+    c.restore();
+  }
+  function shoreWalker(c, e, time, animate) {
+    const moving = animate ? Math.sin(time * 7) * 1.5 : 0;
+    ell(c, 0, 4, 15, 7, "#647d6c22");
+    for (const side of [-1, 1]) {
+      line(c, [[side * 7, -3], [side * 14, -7 - moving], [side * 18, -4]], "#98734c", 2);
+      line(c, [[side * 7, 3], [side * 15, 7 + moving], [side * 17, 10]], "#98734c", 2);
+    }
+    poly(c, [[-12, 0], [-7, -10], [5, -12], [13, -3], [10, 9], [-3, 11]], "#bb8e62", "#e8c58c", 1);
+    poly(c, [[-5, -6], [3, -8], [8, -2], [2, 3], [-5, 1]], "#d4ae79");
+    line(c, [[-4, 4], [5, 3]], "#7b7056", 1);
+    ell(c, -4, -3, 1, 1, "#7c684c");
+    ell(c, 5, -4, 1, 1, "#7c684c");
+  }
+  function needle(c, armed, invulnerable = 0) {
+    if (invulnerable > 0) {
+      c.save();
+      c.setLineDash([3, 4]);
+      ell(c, 0, 0, 23, 23, null, "#d0eee5", 2);
+      c.restore();
+    }
+    const glow = c.createRadialGradient(0, 0, 0, 0, 0, 26);
+    glow.addColorStop(0, "#f6e2a13b");
+    glow.addColorStop(1, "#f6e2a100");
+    c.fillStyle = glow;
+    c.fillRect(-27, -27, 54, 54);
+    ell(c, 0, 2, 15, 12, "#123e4a55");
+    if (armed) ell(c, 0, 0, 19, 19, null, "#f0cf8c99", 1.5);
+    poly(c, [[0, -18], [10, -4], [7, 12], [0, 18], [-7, 12], [-10, -4]], "#e6c58b", "#fff0bc", 1.6);
+    poly(c, [[0, -14], [0, 14], [-6, 9], [-8, -3]], "#ba9766");
+    poly(c, [[0, -14], [7, -3], [5, 9], [0, 14]], "#f3e1b3");
+    line(c, [[0, -9], [0, 8]], "#416a66", 1.4);
+    ell(c, 0, -3, 2.3, 3, "#3c7474");
+    ell(c, 0, -3, 1, 1.5, "#abd1bb");
+  }
+  function chartEdge(c, l) {
+    c.save();
+    c.strokeStyle = "#e0d6a452";
+    c.lineWidth = 1;
+    c.strokeRect(l.left + 0.5, l.top + 0.5, l.gridWidth * l.tile - 1, l.gridHeight * l.tile - 1);
+    for (let x = 1; x < l.gridWidth; x++) {
+      const px = l.left + x * l.tile;
+      line(c, [[px, l.top + 1], [px, l.top + 5]], "#456e6177", 1);
+      line(c, [[px, l.top + l.gridHeight * l.tile - 5], [px, l.top + l.gridHeight * l.tile - 1]], "#456e6177", 1);
+    }
+    for (let y = 1; y < l.gridHeight; y++) {
+      const py = l.top + y * l.tile;
+      line(c, [[l.left + 1, py], [l.left + 5, py]], "#456e6177", 1);
+      line(c, [[l.left + l.gridWidth * l.tile - 5, py], [l.left + l.gridWidth * l.tile - 1, py]], "#456e6177", 1);
+    }
+    c.restore();
+  }
+  function basins(c, l, g2) {
+    if (!Array.isArray(g2.objectives)) return;
+    g2.objectives.forEach((objective, index) => {
+      if (!Array.isArray(objective.cells) || !objective.cells.length) return;
+      const cells = new Set(objective.cells.map((p) => p.x + "," + p.y)), t = l.tile;
+      c.save();
+      c.lineWidth = 1;
+      c.strokeStyle = objective.complete ? "#dbe8c22a" : "#f1dba331";
+      c.setLineDash([4, 8]);
+      c.beginPath();
+      for (const p of objective.cells) {
+        const x = l.left + p.x * t, y = l.top + p.y * t;
+        if (!cells.has(p.x + "," + (p.y - 1))) {
+          c.moveTo(x, y + 2);
+          c.lineTo(x + t, y + 2);
+        }
+        if (!cells.has(p.x + 1 + "," + p.y)) {
+          c.moveTo(x + t - 2, y);
+          c.lineTo(x + t - 2, y + t);
+        }
+        if (!cells.has(p.x + "," + (p.y + 1))) {
+          c.moveTo(x, y + t - 2);
+          c.lineTo(x + t, y + t - 2);
+        }
+        if (!cells.has(p.x - 1 + "," + p.y)) {
+          c.moveTo(x + 2, y);
+          c.lineTo(x + 2, y + t);
+        }
+      }
+      c.stroke();
+      c.setLineDash([]);
+      if (objective.labelAt && Number.isFinite(objective.labelAt.x) && Number.isFinite(objective.labelAt.y)) {
+        const p = l.point(objective.labelAt.x, objective.labelAt.y);
+        c.translate(p.x, p.y);
+        c.scale(t / 40, t / 40);
+        if (objective.complete) {
+          rr(c, -14, -14, 28, 28, 6, "#bacdaaee", "#e6e5bc", 1.2);
+        } else ell(c, 0, 0, 15, 15, "#244f59d9", "#dbd7a7bb", 1.2);
+        c.fillStyle = objective.complete ? "#315c50" : "#e4e4c1";
+        c.font = "700 15px system-ui,sans-serif";
+        c.textAlign = "center";
+        c.textBaseline = "middle";
+        if (objective.complete) {
+          c.fillText(String(index + 1), 0, -5);
+          c.fillStyle = "#30594d";
+          c.font = "700 8px system-ui,sans-serif";
+          c.fillText("✓", 0, 7);
+        } else c.fillText(String(index + 1), 0, 0.5);
+      }
+      c.restore();
+    });
+  }
+  function drawThreatPreview(c, l, g2, dir) {
+    if (!dir) return;
+    const inspection = previewThreat(g2, dir);
+    if (!inspection?.ok) return;
+    const points = [inspection.from, ...inspection.cells || [], inspection.to].filter(Boolean).filter((p, i, a) => !i || p.x !== a[i - 1].x || p.y !== a[i - 1].y);
+    const unconfirmed = inspection.risk !== "safe";
+    c.save();
+    c.setLineDash([6, 7]);
+    c.strokeStyle = unconfirmed ? "#dfab79cc" : "#c0dfd6a3";
+    c.lineWidth = 1.5;
+    c.beginPath();
+    points.forEach((p, i) => {
+      const q = l.point(p.x, p.y);
+      i ? c.lineTo(q.x, q.y) : c.moveTo(q.x, q.y);
+    });
+    c.stroke();
+    for (const enemy of inspection.enemies || []) {
+      if (!Array.isArray(enemy.path) || !enemy.path.length) continue;
+      const path = [enemy.from, ...enemy.path].filter(Boolean).filter((p, i, a) => !i || p.x !== a[i - 1].x || p.y !== a[i - 1].y);
+      c.strokeStyle = "#adcdd572";
+      c.lineWidth = 1.2;
+      c.setLineDash([3, 8]);
+      c.beginPath();
+      path.forEach((p, i) => {
+        const q = l.point(p.x, p.y);
+        i ? c.lineTo(q.x, q.y) : c.moveTo(q.x, q.y);
+      });
+      c.stroke();
+      if (enemy.target) {
+        const p = l.point(enemy.target.x, enemy.target.y);
+        ell(c, p.x, p.y, 6, 6, null, "#b2d4d077", 1);
+      }
+    }
+    c.setLineDash([]);
+    if (inspection.to) {
+      const p = l.point(inspection.to.x, inspection.to.y);
+      rr(c, p.x - 11, p.y - 11, 22, 22, 4, unconfirmed ? "#eddbc9cc" : "#dce9cbcc", unconfirmed ? "#ac7954" : "#5f9187", 1);
+      c.fillStyle = unconfirmed ? "#865333" : "#3f716a";
+      c.font = "650 11px system-ui,sans-serif";
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      c.fillText("估", p.x, p.y + 0.5);
+    }
+    c.restore();
+  }
+  function drawTargetLinks(c, l, g2) {
+    c.save();
+    for (const enemy of g2.enemies || []) {
+      if (!["warning", "chasing"].includes(enemy.behavior) || !enemy.target) continue;
+      const from = l.point(enemy.x, enemy.y), to = l.point(enemy.target.x, enemy.target.y);
+      c.setLineDash([]);
+      c.lineWidth = 1.5;
+      c.strokeStyle = enemy.behavior === "warning" ? "#efd09a93" : "#e4ac7da3";
+      c.beginPath();
+      c.moveTo(from.x, from.y);
+      c.lineTo(to.x, to.y);
+      c.stroke();
+      c.setLineDash([]);
+      const r = 9;
+      c.strokeStyle = "#e5bc86";
+      c.lineWidth = 1.5;
+      line(c, [[to.x - r, to.y - 3], [to.x - r, to.y - r], [to.x - 3, to.y - r]], "#e5bc86", 1.5);
+      line(c, [[to.x + 3, to.y + r], [to.x + r, to.y + r], [to.x + r, to.y + 3]], "#e5bc86", 1.5);
+    }
+    c.restore();
+  }
+  function enemyCue(c, enemy) {
+    if (enemy.behavior === "warning") {
+      const remaining = Math.max(0, Number(enemy.tellTimer) || 0), fraction = clamp(remaining / Math.max(1e-3, WARNING_TIME), 0, 1);
+      ell(c, 0, 0, 23, 23, null, "#e7c38955", 1.2);
+      c.beginPath();
+      c.arc(0, 0, 23, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * fraction);
+      c.strokeStyle = "#f1d4a0";
+      c.lineWidth = 2.5;
+      c.stroke();
+      rr(c, -20, -43, 40, 16, 5, "#244d55e8", "#d5b983", 0.8);
+      c.fillStyle = "#f0d7a2";
+      c.font = "700 11px system-ui,sans-serif";
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      c.fillText("! " + remaining.toFixed(1) + "s", 0, -35);
+    } else if (enemy.behavior === "chasing") {
+      const angle = [-Math.PI / 2, 0, Math.PI / 2, Math.PI][enemy.dir] ?? 0;
+      c.save();
+      c.rotate(angle);
+      line(c, [[18, -5], [24, 0], [18, 5]], "#f0c28d", 2);
+      line(c, [[24, -5], [30, 0], [24, 5]], "#f0c28d99", 1.5);
+      c.restore();
+    }
+  }
+
+  // versions/v3/preview/inlet/journey.mjs
+  var KEY = "classic-atlas.preview.inlet-v3-deadline.970a268.v1";
+  var fresh = () => ({ schema: 3, last: 1, phase: "playing", results: [], current: checkpoint(createGame(0)) });
+  function finish(p, g2) {
+    if (g2.state !== "won" || p.phase !== "playing" || g2.level !== p.last) return false;
+    p.results.push({ level: g2.level, time: g2.time, percent: g2.percent, lives: g2.lives, claimedCount: g2.claimedCount, totalClaimable: g2.totalClaimable, cuts: g2.stats.cuts, steps: g2.stats.steps, objectives: g2.objectives.map((o) => ({ id: o.id, percent: o.percent, claimed: o.claimed, total: o.total })) });
+    p.phase = g2.level === LEVELS.length ? "complete" : "between";
+    p.current = checkpoint(g2);
+    return true;
+  }
+  function valid(p) {
+    try {
+      if (!p || p.schema !== 3 || !Number.isInteger(p.last) || !LEVELS[p.last - 1] || !["playing", "between", "complete"].includes(p.phase) || !Array.isArray(p.results) || p.results.length !== (p.phase === "playing" ? p.last - 1 : p.last) || p.phase === "complete" && p.last !== LEVELS.length || p.phase === "between" && p.last === LEVELS.length) return false;
+      for (let i = 0; i < p.results.length; i++) {
+        const r = p.results[i], g3 = createGame(i);
+        if (r.level !== i + 1 || !Number.isFinite(r.time) || r.time < 0 || r.time > g3.limit || !Number.isFinite(r.percent) || r.percent < g3.target || r.percent > 100 || !Number.isInteger(r.lives) || r.lives < 1 || r.lives > 3 || !Number.isInteger(r.claimedCount) || r.claimedCount < 1 || r.claimedCount > r.totalClaimable || r.totalClaimable !== g3.totalClaimable || Math.abs(r.percent - r.claimedCount / r.totalClaimable * 100) > 1e-5) return false;
+      }
+      for (let i = 0; i < p.results.length; i++) {
+        const r = p.results[i], b = createGame(i);
+        if (!Number.isInteger(r.cuts) || r.cuts < 1 || !Number.isInteger(r.steps) || r.steps < 1 || !Array.isArray(r.objectives) || r.objectives.length !== b.objectives.length || r.objectives.some((o, j) => o.id !== b.objectives[j].id || o.total !== b.objectives[j].total || !Number.isInteger(o.claimed) || o.claimed < 0 || o.claimed > o.total || !Number.isFinite(o.percent) || Math.abs(o.percent - o.claimed / o.total * 100) > 1e-5 || o.percent + 1e-8 < b.objectives[j].target)) return false;
+      }
+      const g2 = restore(p.current);
+      return !!g2 && g2.level === p.last && (p.phase === "playing" ? g2.state !== "won" : g2.state === "won");
+    } catch {
+      return false;
+    }
+  }
+  var JourneyStore = class {
+    constructor(storage) {
+      this.storage = storage;
+      this.data = fresh();
+      this.reason = "";
+      this.blocked = false;
+      let raw;
+      try {
+        if (!storage) throw Error();
+        raw = storage.getItem(KEY);
+      } catch {
+        this.blocked = true;
+        this.reason = "read";
+        return;
+      }
+      if (raw === null) return;
+      try {
+        const p = JSON.parse(raw);
+        if (!valid(p)) throw Error();
+        this.data = p;
+      } catch {
+        this.blocked = true;
+        this.reason = "corrupt";
+      }
+    }
+    save(p) {
+      if (this.blocked) return false;
+      if (!valid(p)) throw Error("Invalid inlet journey");
+      try {
+        this.storage.setItem(KEY, JSON.stringify(p));
+        this.reason = "";
+        return true;
+      } catch {
+        this.reason = "write";
+        return false;
+      }
+    }
+  };
+
+  // versions/v3/preview/inlet/game.mjs
+  var previewDir = "D";
+  var previewCache = null;
+  var lastThreatPhase = "";
+  var $ = (s) => document.querySelector(s);
+  var text = (s, v2) => {
+    if ($(s).textContent !== String(v2)) $(s).textContent = v2;
+  };
+  var local;
+  try {
+    local = localStorage;
+  } catch {
+  }
+  var store = new JourneyStore(local);
+  var progress = store.data;
+  var g = restore(progress.current) || createGame(progress.last - 1);
+  var last = 0;
+  var lastHud = 0;
+  var lastSave = 0;
+  var lastState = "";
+  var lastReason = "";
+  var lastLives = g.lives;
+  var resultDismissed = false;
+  var renderer = new Renderer($("#battlefield"));
+  var keys = /* @__PURE__ */ new Map();
+  var touches = /* @__PURE__ */ new Map();
+  var pulses = /* @__PURE__ */ new Map();
+  var name = (l) => l.name || l.title;
+  var terminal = () => ["won", "lost"].includes(g.state);
+  function announce(v2) {
+    text("#action-feedback", v2);
+  }
+  function clearInput() {
+    keys.clear();
+    touches.clear();
+    pulses.clear();
+    document.querySelectorAll("[data-dir]").forEach((b) => b.classList.remove("held"));
+  }
+  function input() {
+    const held = [...touches.values()];
+    if (held.length) return { dir: held.at(-1).dir };
+    if (keys.size) return { dir: [...keys.values()].at(-1) };
+    const active = [...pulses].filter(([, until]) => until > performance.now());
+    return { dir: active.at(-1)?.[0] ?? null };
+  }
+  function save() {
+    if (g.state === "won") finish(progress, g);
+    progress.current = checkpoint(g);
+    store.save(progress);
+    const r = store.reason;
+    $("#save-warning").hidden = !r;
+    text("#save-warning", r === "corrupt" ? "本作旧档无法识别，已保全原字节并停止覆盖。可临时游玩，刷新可能丢失当前进度。" : r === "read" ? "无法读取存储，已停止覆盖。当前可游玩，刷新可能丢失进度。" : r === "write" ? "本次保存未成功，旧有效存档未删除。可继续游玩，刷新可能丢失当前进度；后续操作将再试。" : "");
+  }
+  function toggle() {
+    if (progress.phase !== "playing") return;
+    clearInput();
+    if (g.state === "ready") start(g);
+    else if (["playing", "paused"].includes(g.state)) pause(g);
+    else return;
+    last = 0;
+    save();
+    render();
+    if (g.state === "playing") $("#battlefield").focus({ preventScroll: true });
+  }
+  function draw() {
+    const r = toggleDraw(g);
+    announce(r?.reason || g.reason);
+    if (r !== false && r?.ok !== false) save();
+    render();
+  }
+  function interrupt() {
+    clearInput();
+    if (g.state === "playing") {
+      pause(g);
+      save();
+      render();
+      announce("已暂停，返回后明确继续；方向输入已释放。");
+    }
+    last = 0;
+  }
+  function load(i) {
+    clearInput();
+    g = createGame(i);
+    progress.last = g.level;
+    progress.phase = "playing";
+    lastState = "";
+    lastReason = "";
+    lastLives = g.lives;
+    resultDismissed = false;
+    last = 0;
+    save();
+    render();
+    $("#start").focus({ preventScroll: true });
+  }
+  function retry() {
+    if (progress.phase !== "playing") return;
+    interrupt();
+    $("#retry-dialog").showModal();
+    $("#retry-no").focus();
+  }
+  function recap() {
+    $("#record-title").focus();
+    $("#journey-record").scrollIntoView({ block: "start" });
+  }
+  function renderThreat() {
+    const section = $("#threat-preview");
+    section.hidden = g.level === 1 || terminal();
+    if (section.hidden) {
+      previewCache = null;
+      lastThreatPhase = "";
+      return;
+    }
+    const active = g.enemies.filter((e) => e.behavior !== "patrol"), phase = active.map((e) => e.id + ":" + e.behavior).join("|");
+    text("#threat-live-status", active.length ? active.map((e) => e.behavior === "warning" ? `潮影${e.id}蓄势 ${(Math.ceil(e.tellTimer * 10) / 10).toFixed(1)}s` : `潮影${e.id}正在追线`).join(" · ") : "潮影巡游中");
+    if (phase && phase !== lastThreatPhase) announce(active.some((e) => e.behavior === "warning") ? "潮影开始蓄势；请看锁定线点，选择就近落脚或尽快闭合。" : "潮影开始追线，请尽快连回汀地。");
+    lastThreatPhase = phase;
+    previewCache = null;
+    for (const b of document.querySelectorAll("[data-preview-dir]")) {
+      const f = previewThreat(g, b.dataset.previewDir);
+      b.setAttribute("aria-pressed", String(b.dataset.previewDir === previewDir));
+      b.dataset.risk = f.risk;
+      b.disabled = !!g.trail.length;
+      const risk = b.querySelector(".preview-risk"), landing = b.querySelector(".preview-landing");
+      risk.textContent = g.trail.length ? "当前线未闭合" : { safe: "预估可闭合", danger: "碰撞早于闭合", tight: "余量很小", timeout: "潮时不足", incomplete: "未确认闭合", blocked: "沿岸再选" }[f.risk] || "先观察";
+      landing.textContent = f.risk === "timeout" ? f.closed ? "闭合时整湾仍将超时" : "剩余潮时不足以闭合" : f.risk === "incomplete" ? "请重新选落脚点" : f.ok ? `${f.cells.length}格线 · ${f.closeIn.toFixed(1)}s至汀地` : "此处先沿岸选点";
+      b.setAttribute("aria-label", `${{ U: "向上", R: "向右", D: "向下", L: "向左" }[b.dataset.previewDir]}只读预览，${risk.textContent}，${landing.textContent}`);
+      if (b.dataset.previewDir === previewDir) previewCache = { dir: previewDir, ok: f.ok, risk: f.risk, reason: f.reason, closeIn: f.closeIn, hitIn: f.hitIn, to: f.to };
+    }
+    text("#preview-detail", g.trail.length ? "开放线已出发，实线标出潮影当前锁定点；先就近闭合。预览只推演直行，改变方向后会变化。" : previewCache?.reason || "先沿岸选一个面向水域的位置；点预览不移动。");
+  }
+  function renderObjectives() {
+    const list = $("#basin-objective-list");
+    $("#basin-objectives").hidden = !g.objectives.length;
+    const signature = g.objectives.map((o) => `${o.id}:${o.percent.toFixed(1)}:${o.complete}`).join("|");
+    if (list.dataset.signature === signature) return;
+    list.dataset.signature = signature;
+    list.replaceChildren(...g.objectives.map((o, i) => {
+      const li = document.createElement("li");
+      li.className = "basin-objective";
+      li.dataset.complete = String(o.complete);
+      li.setAttribute("aria-label", `${i + 1}号${o.label}，${o.percent.toFixed(1)}%，目标${o.target}%，${o.complete ? "已达标" : "未达标"}`);
+      const n = document.createElement("span");
+      n.className = "basin-number";
+      n.textContent = i + 1;
+      const copy = document.createElement("span");
+      copy.className = "basin-copy";
+      const name2 = document.createElement("strong");
+      name2.className = "basin-name";
+      name2.textContent = o.label;
+      const p = document.createElement("span");
+      p.className = "basin-progress";
+      const v2 = document.createElement("b");
+      v2.textContent = o.percent.toFixed(1) + "%";
+      p.append(v2, ` / ${o.target}%`);
+      copy.append(name2, p);
+      const state = document.createElement("span");
+      state.className = "basin-status";
+      state.textContent = o.complete ? "✓" : "未达";
+      li.append(n, copy, state);
+      return li;
+    }));
+  }
+  function render() {
+    const l = LEVELS[g.level - 1];
+    text("#level-title", name(l));
+    text("#level-brief", l.brief || l.tip || g.reason);
+    text("#level-index", `第 ${g.level} / ${LEVELS.length} 湾`);
+    text("#capture-value", g.percent.toFixed(1));
+    text("#capture-target", g.target);
+    $("#capture-progress").value = g.percent;
+    text("#lives-value", g.lives + "/3");
+    text("#time-left", Math.max(0, g.limit - g.time).toFixed(2) + "s");
+    renderObjectives();
+    renderThreat();
+    text("#draw-state", g.trail.length ? `未闭合 · ${g.trail.length}格风险线` : g.drawArmed ? "出线已准备 · 离岸即描线" : "安全行走 · 准备后才能离岸");
+    $("#draw-toggle").setAttribute("aria-pressed", String(g.drawArmed));
+    const check = inspectDraw(g);
+    $("#draw-toggle").disabled = check?.ok === false;
+    text("#draw-label", g.trail.length ? "先闭合当前路径" : g.drawArmed ? "收起出线准备" : "准备出线");
+    $("#draw-toggle").title = check?.reason || "";
+    $("#start").disabled = g.state !== "ready";
+    $("#pause").disabled = !["playing", "paused"].includes(g.state);
+    text("#pause", g.state === "paused" ? "继续织界" : "暂停观察");
+    $("#retry").disabled = progress.phase !== "playing";
+    for (const b of document.querySelectorAll("[data-dir]")) b.disabled = g.state !== "playing";
+    text("#phase-label", { ready: "准备出发", playing: "织界进行中", paused: "已暂停", won: "本湾完成", lost: "本湾失利" }[g.state]);
+    const journey = LEVELS.map((l2, i) => `<li class="${g.level === i + 1 ? "current" : ""}" ${g.level === i + 1 ? 'aria-current="step"' : ""}><span>${i < progress.results.length ? "✓" : String(i + 1).padStart(2, "0")}</span>${name(l2)}</li>`).join("");
+    if ($("#journey-list").innerHTML !== journey) $("#journey-list").innerHTML = journey;
+    text("#record-title", progress.phase === "complete" ? "三座海湾，已织成归岸" : "本次织界记录");
+    $("#record-body").replaceChildren(...progress.results.map((r) => {
+      const p = document.createElement("p");
+      p.textContent = `${name(LEVELS[r.level - 1])}：织回${r.percent.toFixed(1)}% · 余${r.lives}次机会 · ${r.cuts}次闭合 / ${r.steps}步 · ${r.time.toFixed(1)}秒`;
+      return p;
+    }));
+    $("#result-card").hidden = !terminal() || resultDismissed;
+    $("#show-result").hidden = !terminal() || !resultDismissed;
+    if (terminal()) {
+      const won = g.state === "won", complete = progress.phase === "complete";
+      text("#result-title", complete ? "汀光相接，三湾已织成。" : won ? "这座湾，已成为归岸。" : "潮线散开，再试一条路线。");
+      text("#result-reason", g.reason);
+      text("#result-details", `${g.percent.toFixed(1)}% / 目标${g.target}% · 余${g.lives}次 · ${g.time.toFixed(1)}秒`);
+      $("#result-next").hidden = !won;
+      text("#result-next", complete ? "查看三湾回顾 →" : "前往下一湾 →");
+      $("#result-retry").hidden = won;
+    }
+    renderer.draw(g, { previewDir: g.level > 1 ? previewDir : null });
+  }
+  for (const b of document.querySelectorAll("[data-preview-dir]")) b.onclick = () => {
+    previewDir = b.dataset.previewDir;
+    renderThreat();
+    announce("方向预览：" + (previewCache?.reason || "先沿岸再选。"));
+    renderer.draw(g, { previewDir });
+  };
+  $("#start").onclick = toggle;
+  $("#pause").onclick = toggle;
+  $("#draw-toggle").onclick = draw;
+  $("#retry").onclick = retry;
+  $("#result-retry").onclick = retry;
+  $("#result-next").onclick = () => {
+    if (g.state === "won" && progress.phase === "between") load(g.level);
+    else if (progress.phase === "complete") recap();
+  };
+  $("#result-view").onclick = () => {
+    resultDismissed = true;
+    render();
+    $("#show-result").focus({ preventScroll: true });
+  };
+  $("#show-result").onclick = () => {
+    resultDismissed = false;
+    render();
+    $("#result-title").focus({ preventScroll: true });
+  };
+  $("#help").onclick = () => {
+    interrupt();
+    $("#help-dialog").showModal();
+    $("#close-help").focus();
+  };
+  $("#close-help").onclick = () => {
+    $("#help-dialog").close();
+    $("#help").focus({ preventScroll: true });
+  };
+  $("#new-journey").onclick = () => {
+    interrupt();
+    $("#confirm-new").showModal();
+    $("#confirm-new-no").focus();
+  };
+  $("#confirm-new-no").onclick = () => {
+    $("#confirm-new").close();
+    $("#new-journey").focus({ preventScroll: true });
+  };
+  $("#confirm-new-yes").onclick = () => {
+    $("#confirm-new").close();
+    progress = fresh();
+    load(0);
+    announce("新旅程从第一湾重新开始，只重置本作进度。");
+  };
+  $("#retry-no").onclick = () => {
+    $("#retry-dialog").close();
+    $("#retry").focus({ preventScroll: true });
+  };
+  $("#retry-yes").onclick = () => {
+    $("#retry-dialog").close();
+    load(g.level - 1);
+    announce("本湾已重置，前湾成果保留。");
+  };
+  var directionCodes = { ArrowUp: "U", KeyW: "U", ArrowRight: "R", KeyD: "R", ArrowDown: "D", KeyS: "D", ArrowLeft: "L", KeyA: "L" };
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.target.closest("a,button,input,select,textarea,summary,[contenteditable]") || document.querySelector("dialog[open]")) return;
+    const dir = directionCodes[e.code];
+    if (dir) {
+      e.preventDefault();
+      if (g.state === "playing") {
+        keys.delete(e.code);
+        keys.set(e.code, dir);
+      }
+      return;
+    }
+    if (e.repeat) return;
+    if (["Space", "KeyX"].includes(e.code)) {
+      e.preventDefault();
+      draw();
+    } else if (["KeyP", "Escape"].includes(e.code)) {
+      e.preventDefault();
+      toggle();
+    } else if (e.code === "Enter" && ["ready", "paused"].includes(g.state)) {
+      e.preventDefault();
+      toggle();
+    } else if (e.code === "KeyR") {
+      e.preventDefault();
+      retry();
+    }
+  });
+  document.addEventListener("keyup", (e) => keys.delete(e.code));
+  function release(id, cancel = false) {
+    const h2 = touches.get(id);
+    if (!h2) return;
+    touches.delete(id);
+    if (!cancel && performance.now() - h2.at < 130) pulses.set(h2.dir, performance.now() + Math.max(0, 130 - (performance.now() - h2.at)));
+    for (const b of document.querySelectorAll("[data-dir]")) b.classList.toggle("held", [...touches.values()].some((h3) => h3.dir === b.dataset.dir));
+  }
+  for (const b of document.querySelectorAll("[data-dir]")) {
+    b.addEventListener("click", (e) => {
+      if (e.detail === 0 && g.state === "playing") pulses.set(b.dataset.dir, performance.now() + 140);
+    });
+    b.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      if (g.state !== "playing") return;
+      b.setPointerCapture(e.pointerId);
+      touches.set(e.pointerId, { dir: b.dataset.dir, at: performance.now() });
+      b.classList.add("held");
+    });
+    b.addEventListener("pointermove", (e) => {
+      if (!touches.has(e.pointerId)) return;
+      const r = b.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) release(e.pointerId, true);
+    });
+    for (const type of ["pointerup", "pointercancel", "lostpointercapture"]) b.addEventListener(type, (e) => release(e.pointerId, type !== "pointerup"));
+  }
+  window.addEventListener("blur", interrupt);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) interrupt();
+  });
+  window.addEventListener("pagehide", () => {
+    clearInput();
+    if (g.state === "playing") pause(g);
+    save();
+  });
+  function diagnostics() {
+    return { ...snapshot(g), journeyPhase: progress.phase, results: JSON.parse(JSON.stringify(progress.results)), storageReason: store.reason, forecast: previewCache ? JSON.parse(JSON.stringify(previewCache)) : null, input: { ...input(), keys: [...keys.keys()], touches: touches.size, pulses: [...pulses].filter(([, t]) => t > performance.now()).length } };
+  }
+  function frame(t) {
+    const dt = last ? Math.min(0.1, (t - last) / 1e3) : 0;
+    last = t;
+    update(g, dt, input());
+    if (g.lives !== lastLives) {
+      lastLives = g.lives;
+      clearInput();
+      announce(g.reason);
+    }
+    if (g.state !== lastState) {
+      lastState = g.state;
+      clearInput();
+      if (g.state === "won") finish(progress, g);
+      save();
+      render();
+      if (terminal()) $("#result-title").focus({ preventScroll: true });
+    } else if (t - lastHud > 90) {
+      render();
+      lastHud = t;
+    }
+    if (g.reason !== lastReason) {
+      lastReason = g.reason;
+      announce(g.reason);
+    }
+    if (g.state === "playing" && t - lastSave > 1e3) {
+      save();
+      lastSave = t;
+    }
+    renderer.draw(g, { previewDir: g.level > 1 ? previewDir : null });
+    requestAnimationFrame(frame);
+  }
+  save();
+  render();
+  requestAnimationFrame(frame);
+  return __toCommonJS(game_exports);
+})();
+
+</script></body></html>
