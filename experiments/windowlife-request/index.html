@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>栖窗日常 · 先听你说，还是先写完｜未发布候选</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <header><a href="../../preview/windowlife/">← 原来的三日日常</a><span class="candidate">独立候选 · 尚待实际 UI 验收</span>
+      <p class="eyebrow">栖窗日常 / 第二日的下午尾声</p><h1>先听你说，还是先写完</h1>
+      <p class="intro">禾禾还有半页手记。阿沐的窗边速写，也差最后几笔。<br>这一小段，没有倒计时，也不评判哪种相处更好。</p>
+    </header>
+    <p id="load-status">正在打开小屋……</p>
+    <section id="app" hidden>
+      <div class="scene-shell"><canvas id="room" width="900" height="650" role="img" aria-label="两位住户的小屋，人物位置和纸上笔迹会随实际安排变化。" aria-describedby="scene-description"></canvas>
+        <p id="scene-description" class="scene-description"></p></div>
+      <div class="scene-controls"><button id="toggle" type="button">走进这段下午</button><button id="cancel" type="button" hidden>取消这次共同安排</button><button id="retry" class="quiet" type="button">重新安排这一段</button><span id="phase" class="phase"></span></div>
+      <section id="request" class="request" aria-labelledby="request-title" hidden>
+        <div class="request-heading"><div><p class="eyebrow">阿沐举起速写</p><h2 id="request-title" tabindex="-1">“想一起添最后一笔吗？”</h2></div><button id="dismiss" class="quiet dismiss" type="button" aria-label="不回应这次邀请，继续各自安排">先不回应 ×</button></div>
+        <p>时间已暂停。可以慢慢想，不用抢在谁前面。</p>
+        <div class="choices">
+          <button id="choose-now" type="button"><strong>现在一起</strong><span>先搁笔，到长座一起画。半页手记保留，回来接着写。</span></button>
+          <button id="choose-later" type="button"><strong>我先写完</strong><span>各自把手上的事做完，再交换手记和速写。</span></button>
+          <button id="choose-alone" type="button"><strong>先各忙各的</strong><span>在同一间小屋里各自完成，不需要解释。</span></button>
+        </div>
+      </section>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div class="works" aria-label="两份作品的实际状态"><article><span class="eyebrow">禾禾的手记</span><p id="note-status"></p></article><article><span class="eyebrow">阿沐的速写</span><p id="sketch-status"></p></article></div>
+      <section id="result" class="result" aria-labelledby="result-title" hidden tabindex="-1"><p class="eyebrow">这一段下午</p><h2 id="result-title"></h2><p id="result-copy"></p><button id="close" type="button">收起今天</button><p id="closed-note" hidden>这一段已经收好。可以再试另一种安排，也可以回到原来的三日。</p></section>
+      <p id="save-status" class="save-status"></p><p id="storage-warning" class="warning" role="status" hidden></p>
+      <details><summary>刚才发生的小事</summary><ol id="events"></ol></details>
+    </section>
+    <footer><p>这是单独设定的第二日下午切片，不续写或更改你原来的三日存档。走动、搁笔、画出的笔迹与完成状态来自实际场景逻辑；不是概念动画。</p><p>键盘 Tab / Enter 选择，非按钮区域按 P 暂停或继续。切出页面自动暂停，回来后手动继续。尚未完成真实浏览器与玩家体验验收。</p><a href="./README.md">范围与验证边界</a></footer>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

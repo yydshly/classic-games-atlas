@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: all three visible choices lead to distinct genuine outcomes and explicit close
+ok 1 - all three visible choices lead to distinct genuine outcomes and explicit close
+  ---
+  duration_ms: 15.37616
+  type: 'test'
+  ...
+# Subtest: repeated decisions cannot re-trigger the request; dismiss chooses independent work
+ok 2 - repeated decisions cannot re-trigger the request; dismiss chooses independent work
+  ---
+  duration_ms: 3.035099
+  type: 'test'
+  ...
+# Subtest: blur, hidden and a long foreground gap pause instead of advancing offscreen
+ok 3 - blur, hidden and a long foreground gap pause instead of advancing offscreen
+  ---
+  duration_ms: 12.546325
+  type: 'test'
+  ...
+# Subtest: retry cancellation retains a paused exact scene; confirmation resets only the candidate
+ok 4 - retry cancellation retains a paused exact scene; confirmation resets only the candidate
+  ---
+  duration_ms: 1.254785
+  type: 'test'
+  ...
+# Subtest: pagehide saves a real in-progress scene; next mount restores paused and resumes
+ok 5 - pagehide saves a real in-progress scene; next mount restores paused and resumes
+  ---
+  duration_ms: 3.221261
+  type: 'test'
+  ...
+# Subtest: cancel button returns focus to visible controls and preserves a partial contribution
+ok 6 - cancel button returns focus to visible controls and preserves a partial contribution
+  ---
+  duration_ms: 1.970822
+  type: 'test'
+  ...
+# Subtest: P does not steal modified keys or native interactive targets
+ok 7 - P does not steal modified keys or native interactive targets
+  ---
+  duration_ms: 0.553963
+  type: 'test'
+  ...
+# Subtest: invalid candidate save remains byte-for-byte protected during play and retry
+ok 8 - invalid candidate save remains byte-for-byte protected during play and retry
+  ---
+  duration_ms: 2.226322
+  type: 'test'
+  ...
+# Subtest: opening is an authored half-page, offered once and frozen for deliberation
+ok 9 - opening is an authored half-page, offered once and frozen for deliberation
+  ---
+  duration_ms: 2.096346
+  type: 'test'
+  ...
+# Subtest: immediate choice physically walks, co-creates, returns and resumes rather than losing the note
+ok 10 - immediate choice physically walks, co-creates, returns and resumes rather than losing the note
+  ---
+  duration_ms: 1.492883
+  type: 'test'
+  ...
+# Subtest: later finishes two separate objects, carries the note and genuinely completes sharing
+ok 11 - later finishes two separate objects, carries the note and genuinely completes sharing
+  ---
+  duration_ms: 0.606785
+  type: 'test'
+  ...
+# Subtest: alone is a normal complete ending, with no joint lock or moral/relationship metric
+ok 12 - alone is a normal complete ending, with no joint lock or moral/relationship metric
+  ---
+  duration_ms: 0.325153
+  type: 'test'
+  ...
+# Subtest: cancel on the way backtracks from actual coordinates and creates no false contribution
+ok 13 - cancel on the way backtracks from actual coordinates and creates no false contribution
+  ---
+  duration_ms: 1.382943
+  type: 'test'
+  ...
+# Subtest: cancel during drawing retains an actual mark but never labels it fully co-created
+ok 14 - cancel during drawing retains an actual mark but never labels it fully co-created
+  ---
+  duration_ms: 0.449221
+  type: 'test'
+  ...
+# Subtest: cancel deferred before meeting, during travel, and during sharing releases only this arrangement
+ok 15 - cancel deferred before meeting, during travel, and during sharing releases only this arrangement
+  ---
+  duration_ms: 0.845928
+  type: 'test'
+  ...
+# Subtest: every tick of all three arrangements restores exact artwork, positions, locks and phase
+ok 16 - every tick of all three arrangements restores exact artwork, positions, locks and phase
+  ---
+  duration_ms: 26.738187
+  type: 'test'
+  ...
+# Subtest: fractional progress freezes through pause/restore and resumes without lost time
+ok 17 - fractional progress freezes through pause/restore and resumes without lost time
+  ---
+  duration_ms: 0.626242
+  type: 'test'
+  ...
+# Subtest: cancellation snapshots replay without reoffering or inventing completed work
+ok 18 - cancellation snapshots replay without reoffering or inventing completed work
+  ---
+  duration_ms: 5.792135
+  type: 'test'
+  ...
+# Subtest: invalid command histories, time jumps and forged completion payloads are rejected or ignored
+ok 19 - invalid command histories, time jumps and forged completion payloads are rejected or ignored
+  ---
+  duration_ms: 0.333644
+  type: 'test'
+  ...
+# Subtest: candidate storage accesses one new key only; bad saves and read denial remain protected
+ok 20 - candidate storage accesses one new key only; bad saves and read denial remain protected
+  ---
+  duration_ms: 0.524303
+  type: 'test'
+  ...
+# Subtest: write failure preserves last valid candidate bytes and can safely recover
+ok 21 - write failure preserves last valid candidate bytes and can safely recover
+  ---
+  duration_ms: 0.240644
+  type: 'test'
+  ...
+# Subtest: original level data is deep-copied and reset only resets this scene
+ok 22 - original level data is deep-copied and reset only resets this scene
+  ---
+  duration_ms: 0.389676
+  type: 'test'
+  ...
+# Subtest: actual model states draw without mutation or non-finite coordinates (non-browser canvas fixture)
+ok 23 - actual model states draw without mutation or non-finite coordinates (non-browser canvas fixture)
+  ---
+  duration_ms: 59.697372
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 156.977359
