@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "scope": "Node legal-control physics, actual Three scene objects, DOM/render fixtures; not browser pixels or human play",
+  "checks": [
+    "physics, ROOM and every collision/threshold byte-identical to published preview",
+    "both unchanged routes finish under legal control at three frame intervals",
+    "real quaternion drives shell only; face self-levelled; support and all six tool bodies match physical bounds",
+    "camera projection retains real support at 1280, 390 and 320 widths (geometry only, not layout acceptance)",
+    "legal too-fast approach remains unconnected; only charged connects contacts and triggers settling nod",
+    "real impact latches once, decays without repeated contact animation; pause freezes; retry clears; real wake raises head and hand",
+    "composition: arm stays attached at shoulder during wake; lamp remains outside foreground corridor",
+    "actual controller passes brake metadata, freezes simulation/presentation on pause, manual preserves pause, retry clears, terminal keeps scene unobscured"
+  ],
+  "routes": [
+    {
+      "name": "metal",
+      "dt": 0.008333333333333333,
+      "time": 9.033333333333461,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.008333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.03333333333333333,
+      "time": 9.008333333333463,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.03333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.1,
+      "time": 8.975000000000131,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.1,
+      "time": 12.93333333333324,
+      "noise": 0
+    }
+  ]
+}
+✔ tests/quiet-gentle-home.test.mjs (395.857683ms)
+{
+  "passed": true,
+  "scope": "legal Cannon controls and exact triangle distance, not browser collision pixels or performance",
+  "runs": [
+    {
+      "dt": 0.008333333333333333,
+      "position": [
+        3.6396152738152314,
+        0.3399961631754459,
+        3.9151730711569166
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.18127243314154706,
+      "newClearance": 5.203825059862124
+    },
+    {
+      "dt": 0.03333333333333333,
+      "position": [
+        3.6396167445821486,
+        0.3399961631754459,
+        3.9152133924752994
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.1812700360142795,
+      "newClearance": 5.203860389891393
+    },
+    {
+      "dt": 0.1,
+      "position": [
+        3.63964350277162,
+        0.3399961631754459,
+        3.9167433346841904
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.18114267989386115,
+      "newClearance": 5.205213093831893
+    }
+  ],
+  "entireLampMinX": 5.699999809265137,
+  "conservativeEnvelopeMaxX": 4.4799999999999995,
+  "casters": 12
+}
+✔ tests/quiet-lamp-envelope.test.mjs (268.528639ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 405.099768

@@ -1,0 +1,174 @@
+{
+  "base": "71e8c6757c73c1cfbe42730781588f877d8458e6",
+  "renderCost": {
+    "legacy": {
+      "uniqueGeometryBytes": 20816,
+      "meshes": 80,
+      "drawGroups": 100,
+      "triangles": 4020,
+      "shadowCasters": 0,
+      "shadowReceivers": 0,
+      "mergedSourceMeshes": 0,
+      "unsupportedMaterials": []
+    },
+    "before": {
+      "uniqueGeometryBytes": 103496,
+      "meshes": 281,
+      "drawGroups": 281,
+      "triangles": 12136,
+      "shadowCasters": 270,
+      "shadowReceivers": 270,
+      "mergedSourceMeshes": 0,
+      "unsupportedMaterials": []
+    },
+    "after": {
+      "uniqueGeometryBytes": 578888,
+      "meshes": 97,
+      "drawGroups": 97,
+      "triangles": 13260,
+      "shadowCasters": 12,
+      "shadowReceivers": 13,
+      "mergedSourceMeshes": 195,
+      "unsupportedMaterials": []
+    },
+    "dprCap": {
+      "legacy": 1.25,
+      "before": 1.5,
+      "after": 1.25
+    },
+    "shadowMap": {
+      "legacy": "disabled",
+      "before": 1024,
+      "after": 512
+    },
+    "scope": "Conservative scene counts before GPU/frustum/shadow-pass culling, not measured frame rate or exact draw calls"
+  },
+  "width": 1280,
+  "height": 800,
+  "identicalReadySnapshot": true,
+  "readySnapshot": {
+    "player": {
+      "position": [
+        0,
+        0.3399913052269703,
+        3.7
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "velocity": [
+        0,
+        0.0003119879057119357,
+        0
+      ]
+    },
+    "noise": 0,
+    "state": "playing",
+    "grounded": true,
+    "time": 0.24999999999999997,
+    "lastImpact": null,
+    "lastSupport": {
+      "id": "metal-table",
+      "material": "metal"
+    },
+    "fallFrom": null,
+    "lastSupportPoint": [
+      0,
+      0,
+      3.7
+    ],
+    "fallPoint": null,
+    "resets": 0
+  },
+  "identicalPresentation": true,
+  "presentation": {
+    "clock": 0.7,
+    "speed": 0,
+    "dock": "distant",
+    "connected": false,
+    "dockPulse": 0.32460838615519005,
+    "brake": false,
+    "faceYaw": 0,
+    "facePitch": 0,
+    "impact": 1.5046704524469207e-42,
+    "impactTool": null,
+    "impactStrength": 0,
+    "handLift": 0,
+    "headLift": 0,
+    "headTurn": 0,
+    "brow": 0,
+    "awake": false,
+    "breath": 0.016466309269727652,
+    "charge": 0,
+    "fall": false,
+    "endAge": 0
+  },
+  "camera": {
+    "position": [
+      5.5,
+      13,
+      17
+    ],
+    "quaternion": [
+      -0.30722763786352353,
+      0.14638639155780045,
+      0.047891022543570444,
+      0.9390892677798088
+    ],
+    "left": -7.497883777225823,
+    "right": 8.528503140309677,
+    "top": 5.4057662577300345,
+    "bottom": -4.610725565729654,
+    "near": 0.1,
+    "far": 100
+  },
+  "beforeCameraIdentical": true,
+  "beforeProjectionMatrix": [
+    0.12479419162229706,
+    0,
+    0,
+    0,
+    0,
+    0.1996707065956753,
+    0,
+    0,
+    0,
+    0,
+    -0.02002002002002002,
+    0,
+    -0.06430765514316814,
+    -0.07937316837201533,
+    -1.002002002002002,
+    1
+  ],
+  "afterProjectionMatrix": [
+    0.12479419162229706,
+    0,
+    0,
+    0,
+    0,
+    0.1996707065956753,
+    0,
+    0,
+    0,
+    0,
+    -0.02002002002002002,
+    0,
+    -0.06430765514316814,
+    -0.07937316837201533,
+    -1.002002002002002,
+    1
+  ],
+  "snapshotSha256": "40d079dec66dcc98c6e6c52073efeac4b2482a36df54f84f506bf060e9d4e2b2",
+  "method": "Real scene meshes and materials read in Node; CPU depth buffer; no browser or WebGL",
+  "limits": [
+    "Flat per-triangle directional shading, not the Three shader model.",
+    "Metalness, roughness, lights, shadows, tone mapping and browser antialiasing are not reproduced.",
+    "No DOM, runtime motion or input feel is shown.",
+    "Opaque triangle depth and conservative frustum exclusion only; no general near-plane polygon clipping or transparent material sorting.",
+    "Old original before.png/ready.png remain unchanged; this pair uses the final candidate camera for both versions."
+  ]
+}

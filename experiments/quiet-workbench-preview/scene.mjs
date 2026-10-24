@@ -1,0 +1,208 @@
+import * as T from '../kinetic/vendor/three.module.min.js';
+import {fallMarker} from './feedback.mjs';
+import {batchStatic} from './batch.mjs';
+
+// All support and obstacle meshes are built from ROOM, never invented here.
+export function buildWorkshop(room){
+  const scene=new T.Scene();scene.background=new T.Color('#263b43');
+  const camera=new T.OrthographicCamera(-8,8,7,-7,.1,100);
+  camera.position.set(5.5,13,17);camera.lookAt(.1,0,.1);
+  scene.add(new T.HemisphereLight('#f5e4c8','#344d59',2.1));
+  const key=new T.DirectionalLight('#ffe2ad',3.1);key.position.set(-3,10,6);key.castShadow=true;
+  key.shadow.mapSize.set(512,512);Object.assign(key.shadow.camera,{left:-9,right:9,top:9,bottom:-9,near:.1,far:35});key.shadow.bias=-.0007;scene.add(key);
+  key.shadow.camera.updateProjectionMatrix();
+  const rim=new T.DirectionalLight('#9bc5ce',1.1);rim.position.set(5,6,-8);scene.add(rim);
+  const mat=(color,roughness=.8,metalness=0)=>new T.MeshStandardMaterial({color,roughness,metalness});
+  const M={wood:mat('#9e7047'),edge:mat('#65472f'),grain:mat('#b38454'),metal:mat('#a4adb0',.45,.45),steel:mat('#52616b',.5,.4),iron:mat('#2a3c44'),soft:mat('#3d7770'),seam:mat('#b1bf9d'),foam:mat('#a8a482'),cream:mat('#ead9ac'),paper:mat('#e6d9b6'),ink:mat('#59645a'),skin:mat('#c69b79'),hair:mat('#5a4940'),shirt:mat('#b56e45'),apron:mat('#38545b'),rubber:mat('#303f42'),copper:mat('#b7774b',.5,.35)};
+  const lamp=new T.MeshBasicMaterial({color:'#ffe2a3'}),eyeLight=new T.MeshBasicMaterial({color:'#f5cf7b'}),contactLight=new T.MeshBasicMaterial({color:'#5b6963'});
+  const contactMetal=mat('#e1b773',.7,.1);
+  const cube=new T.BoxGeometry(1,1,1),sphere=new T.SphereGeometry(1,14,10),cylinder=new T.CylinderGeometry(1,1,1,16);
+  function mesh(g,m,p,scale,parent=scene,name=''){const o=new T.Mesh(g,m);o.position.set(...p);o.scale.set(...scale);o.name=name;o.castShadow=false;o.receiveShadow=false;parent.add(o);return o;}
+  const box=(p,size,m,parent=scene,name='')=>mesh(cube,m,p,size,parent,name);
+  const ball=(p,size,m,parent=scene,name='')=>mesh(sphere,m,p,size,parent,name);
+  const cyl=(p,size,m,parent=scene)=>mesh(cylinder,m,p,size,parent);
+  const group=(name,p=[0,0,0],parent=scene)=>{const g=new T.Group();g.name=name;g.position.set(...p);parent.add(g);return g;};
+  function rod(a,b,r,m,parent=scene){const d=new T.Vector3(...b).sub(new T.Vector3(...a)),o=cyl(new T.Vector3(...a).add(new T.Vector3(...b)).multiplyScalar(.5).toArray(),[r,d.length(),r],m,parent);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());return o;}
+  function ring(p,r,t,m,parent=scene){const o=new T.Mesh(new T.TorusGeometry(r,t,5,32),m);o.position.set(...p);o.rotation.x=-Math.PI/2;parent.add(o);return o;}
+  function screw(x,y,z,parent=scene,r=.045){cyl([x,y,z],[r,.018,r],M.iron,parent);box([x,y+.011,z],[r*1.3,.007,.009],M.metal,parent);}
+  function joinedParts(name,parent,build){const g=group(name,[0,0,0],parent);build(g);batchStatic(g,g.children.filter(o=>o.isMesh));return g;}
+  function shellPlate(u0,u1,v0,v1,radius){
+    // Tangent coordinates keep the two repair staples parallel. The vertices
+    // conform to the real shell and still rotate with its physics quaternion.
+    const n=new T.Vector3(.20,.86,.47).normalize(),u=new T.Vector3(.953,0,-.304);u.addScaledVector(n,-u.dot(n)).normalize();
+    const v=n.clone().cross(u).normalize(),positions=[],normals=[],uv=[],indices=[];
+    for(let j=0;j<=4;j++)for(let i=0;i<=6;i++){
+      const p=n.clone().multiplyScalar(room.radius).addScaledVector(u,u0+(u1-u0)*i/6).addScaledVector(v,v0+(v1-v0)*j/4).normalize();
+      normals.push(...p.toArray());positions.push(...p.multiplyScalar(radius).toArray());uv.push(i/6,j/4);
+      if(i<6&&j<4){const a=j*7+i;indices.push(a,a+1,a+7,a+1,a+8,a+7);}
+    }
+    const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(positions,3));g.setAttribute('normal',new T.Float32BufferAttribute(normals,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(indices);return g;
+  }
+  box([0,-7,0],[60,.15,60],mat('#24383e'));
+  // The backdrop stays quiet: the real tabletop edge and goal own the frame.
+  const supports=[];
+  for(const s of room.surfaces){
+    const [x,y,z]=s.position,[w,h,d]=s.size;
+    const o=box(s.position,s.size,s.material==='metal'?M.wood:M.soft,scene,`support:${s.id}`);o.receiveShadow=true;supports.push(o);
+    if(s.material==='metal'){
+      for(let i=1;i<6;i++)box([x-w/2+w*i/6,y+h/2+.004,z],[.014,.008,d-.05],M.edge);
+      for(const xx of [x-w/2+.14,x+w/2-.14])for(const zz of [z-d/2+.14,z+d/2-.14])screw(xx,.011,zz);
+      for(const xx of [-1.8,2.8])for(const zz of [-3.5,3.6])box([xx,-1.2,zz],[.24,1.8,.24],M.edge);
+      for(let i=0;i<7;i++){const scratch=box([1.4+i*.14,.008,2.5-i*.025],[.08,.004,.012],M.grain);scratch.rotation.y=.45;}
+    }else{
+      // Coplanar physics supports overlap at the entry and return. A thin
+      // textile finish makes their actual soft covering unambiguous, without
+      // changing support extents or filling the open gap.
+      const cover=box([x,.018,z],[w,.012,d],M.soft);cover.name=`textile-finish:${s.id}`;cover.receiveShadow=true;
+      const horizontal=w>d;
+      for(let t=-(horizontal?w:d)/2+.18;t<(horizontal?w:d)/2-.1;t+=.29)
+        for(const side of [-1,1])box([x+(horizontal?t:side*(w/2-.09)),.032,z+(horizontal?side*(d/2-.09):t)],horizontal?[.10,.012,.018]:[.018,.012,.10],M.seam);
+    }
+  }
+  // Opaque bodies preserve each existing collider's entire silhouette.
+  const tools=new Map();
+  for(const t of room.tools){
+    const g=group(`obstacle:${t.id}`,t.position),[w,h,d]=t.size,soft=t.material==='soft';
+    const body=box([0,0,0],[w,h,d],soft?M.foam:M.steel,g,'collider-body');
+    body.castShadow=true;body.receiveShadow=true;
+    body.userData.collider={id:t.id,size:[...t.size],position:[...t.position]};
+    const lid=group('tool-detail',[0,h/2+.012,0],g);
+    box([0,0,0],[w*.91,.018,d*.84],soft?M.soft:M.iron,lid);
+    if(soft){for(let i=-1;i<=1;i++)box([i*w*.26,.014,0],[.025,.012,d*.82],M.seam,lid);}
+    else{
+      const longX=w>d,length=Math.max(w,d)*.72;
+      const tool=group('recognisable-tool',[0,.035,0],lid);if(!longX)tool.rotation.y=Math.PI/2;
+      if(t.id==='socket-tray'){
+        for(let i=-2;i<=2;i++){const p=[i*w*.16,.025,0];cyl(p,[.10,.075,.10],M.metal,tool);cyl([p[0],.067,0],[.053,.013,.053],M.iron,tool);}
+      }else if(t.id==='screwdriver-tray'){
+        rod([-length/2,.03,0],[length*.12,.03,0],.027,M.metal,tool);
+        const handle=box([length*.30,.03,0],[length*.36,.09,.13],M.shirt,tool);
+        for(let i=-1;i<=1;i++)box([handle.position.x+i*.08,.079,0],[.018,.012,.115],M.edge,tool);
+      }else{
+        box([0,.025,0],[length*.66,.055,.075],M.metal,tool);
+        for(const sign of [-1,1]){const head=ring([sign*length*.37,.029,0],Math.min(.115,d*.25),.035,M.metal,tool);head.scale.x=1.1;}
+      }
+      for(const xx of [-w*.41,w*.41])screw(xx,h/2+.02,d*.32,g,.025);
+    }
+    tools.set(t.id,{group:g,lid,soft});
+  }
+  // Maintenance tray is a flush silhouette, not an extra obstacle.
+  const tray=group('repair-tray',[0,.012,3.7]);
+  for(const x of [-.69,.69])box([x,0,0],[.035,.018,1.02],M.cream,tray);
+  box([0,0,.49],[1.4,.018,.035],M.cream,tray);
+  const repairTag=box([.80,0,.29],[.36,.012,.55],M.paper,tray);repairTag.rotation.y=-.22;
+  for(let i=0;i<3;i++)box([.80,.012,.16+i*.10],[.23,.006,.014],M.ink,tray);
+  // Ball shell follows Cannon. Its face is a separate self-levelled assembly.
+  const robot=group('robot'),shell=group('rolling-shell',[0,0,0],robot);
+  ball([0,0,0],[room.radius,room.radius,room.radius],M.cream,shell).castShadow=true;
+  for(const angle of [0,Math.PI/2]){const seam=ring([0,0,0],room.radius+.002,.009,M.edge,shell);seam.rotation.z=angle;}
+  // A conformal repair plate stays inside the existing seam silhouette. Its
+  // two bridged staples repeat the charging nest's actual contact language.
+  mesh(shellPlate(-.19,.19,-.135,.135,room.radius+.006),M.iron,[0,0,0],[1,1,1],shell,'repair-patch');
+  joinedParts('repair-contacts',shell,g=>{
+    for(const x of [-.10,.10])mesh(shellPlate(x-.018,x+.018,-.095,.095,room.radius+.009),contactMetal,[0,0,0],[1,1,1],g);
+    mesh(shellPlate(-.082,.082,-.018,.018,room.radius+.009),contactMetal,[0,0,0],[1,1,1],g);
+  });
+  const face=group('stable-face',[0,0,0],robot);
+  ball([0,.07,.255],[.236,.142,.075],M.iron,face);
+  const eyes=[];for(const x of [-.085,.085])eyes.push(ball([x,.08,.323],[.030,.046,.012],eyeLight,face));
+  const brow=box([0,.165,.282],[.30,.025,.025],M.cream,face);
+  const brakeLamp=box([0,-.10,.30],[.13,.023,.018],lamp,face);brakeLamp.visible=false;
+  // Inlaid charging nest follows the original goal; no new walls or rails.
+  const dock=group('charging-nest',[room.goal[0],0,room.goal[2]]);
+  cyl([0,.006,0],[room.goalRadius,.012,room.goalRadius],M.edge,dock);
+  cyl([0,.014,0],[room.goalRadius-.05,.012,room.goalRadius-.05],M.soft,dock);
+  ring([0,.026,0],room.goalRadius-.08,.018,M.seam,dock);
+  // Flush broken rails, entirely inside the unchanged goal footprint. Only
+  // charged fills the gaps and bridges both rails into the matching H form.
+  joinedParts('dock-open-contacts',dock,g=>{
+    for(const x of [-.20,.20])for(const z of [-.175,.175])box([x,.027,z],[.13,.018,.20],contactMetal,g);
+  });
+  const closed=joinedParts('dock-closed-contacts',dock,g=>{
+    for(const x of [-.20,.20])box([x,.027,0],[.13,.018,.15],contactLight,g);
+    box([0,.027,0],[.40,.018,.07],contactLight,g);
+  });
+  const connectedContacts=[closed];
+  box([0,.15,-.61],[.66,.30,.14],M.edge,dock);box([0,.28,-.525],[.44,.055,.025],M.iron,dock);
+  const approach=group('dock-approach',[0,.016,.91],dock);
+  const fastMark=joinedParts('dock-too-fast',dock,g=>{
+    // Larger dual bars are inlaid beside the contacts, not raised obstacles.
+    for(const x of [-.43,-.27,.27,.43])box([x,.030,.13],[.075,.018,.28],lamp,g);
+  });fastMark.visible=false;
+  rod([0,.08,-4.34],[.35,-.55,-4.65],.025,M.iron);rod([.35,-.55,-4.65],[1.6,-.75,-4.75],.025,M.iron);
+  // Repairer and shelf are visibly below and beside all playable support.
+  box([5.35,-1.35,-.7],[1.45,.18,1.4],M.edge);
+  for(const x of [4.8,5.9])for(const z of [-1.2,-.2])box([x,-2.05,z],[.11,1.4,.11],M.iron);
+  const person=group('repairer',[5.25,-.65,-.8]);
+  const chest=group('breathing-chest',[0,.43,0],person);
+  ball([0,0,0],[.65,.76,.50],M.shirt,chest).castShadow=true;ball([-.1,-.05,.34],[.52,.61,.20],M.apron,chest);
+  box([-.1,-.02,.53],[.52,.29,.025],M.edge,chest);for(const x of [-.25,.06])box([x,.13,.56],[.035,.24,.025],M.metal,chest);
+  const head=group('head',[-.26,1.37,.04],person);
+  ball([0,0,0],[.43,.48,.40],M.skin,head).castShadow=true;ball([.02,.28,-.02],[.45,.26,.39],M.hair,head);
+  const cap=ball([.03,.40,-.08],[.49,.20,.42],M.apron,head);cap.rotation.z=-.12;
+  box([-.01,.33,.35],[.65,.07,.24],M.apron,head);ball([-.03,-.03,.39],[.10,.12,.10],M.skin,head);
+  const eyelids=[],openEyes=[];
+  for(const x of [-.20,.14]){
+    const closed=box([x,.04,.37],[.13,.027,.04],M.hair,head);closed.rotation.z=x<0?-.13:.13;eyelids.push(closed);
+    const eye=ball([x,.03,.39],[.055,.075,.028],M.iron,head);eye.visible=false;openEyes.push(eye);
+  }
+  const brows=[];for(const x of [-.20,.14])brows.push(box([x,.18,.36],[.15,.035,.04],M.hair,head));
+  // One shoulder pivot keeps sleeve, elbow, cuff and palm joined throughout
+  // the wake reaction; no independently floating hand or static sleeve bar.
+  const forearm=group('resting-hand',[-.24,.76,.02],person);
+  const elbow=[-.10,-.30,.23],wrist=[-.15,-.20,.60];
+  ball([0,0,0],[.20,.20,.20],M.shirt,forearm);
+  rod([0,0,0],elbow,.18,M.shirt,forearm).castShadow=true;ball(elbow,[.18,.18,.18],M.shirt,forearm);
+  rod(elbow,wrist,.145,M.shirt,forearm).castShadow=true;ball(wrist,[.15,.135,.15],M.apron,forearm);
+  ball([-.23,-.20,.82],[.16,.105,.14],M.skin,forearm).castShadow=true;
+  for(let i=0;i<3;i++)ball([-.35,-.195,.72+i*.075],[.065,.07,.035],M.skin,forearm);
+  box([6.45,-.85,.75],[1.4,.10,1.25],M.edge);
+  cyl([6.35,-.56,.76],[.19,.48,.19],M.cream);cyl([6.35,-.31,.76],[.15,.012,.15],M.edge);
+  const handle=ring([6.58,-.57,.76],.12,.035,M.cream);handle.rotation.x=0;handle.rotation.y=Math.PI/2;
+  for(const x of [6.0,6.33]){const lens=ring([x,-.78,.20],.13,.018,M.iron);lens.rotation.z=.1;}
+  rod([6.13,-.78,.20],[6.2,-.78,.20],.015,M.iron);
+  // The same lamp is mounted on the outer chair corner, entirely beyond the
+  // player envelope. Its base has a visible support rather than floating.
+  const deskLamp=group('desk-lamp');
+  cyl([5.9,-1.22,-1.2],[.20,.08,.20],M.iron,deskLamp);
+  rod([5.9,-1.18,-1.2],[5.9,1.22,-1.2],.045,M.iron,deskLamp);
+  rod([5.9,1.22,-1.2],[6.1,1.60,-1.35],.045,M.iron,deskLamp);
+  const shade=mesh(new T.ConeGeometry(.34,.34,20,1,true),M.apron,[6.1,1.46,-1.35],[1,1,1],deskLamp);shade.rotation.z=-.3;
+  const bulb=ball([6.05,1.32,-1.35],[.20,.03,.20],lamp,deskLamp);bulb.rotation.z=-.3;
+  const fallCross=group('last-support-marker');fallCross.visible=false;
+  const fallMat=new T.MeshBasicMaterial({color:'#efbd82'});
+  for(const angle of [-Math.PI/4,Math.PI/4]){const stroke=box([0,0,0],[.52,.022,.055],fallMat,fallCross);stroke.rotation.y=angle;}
+  function fit(width,height){
+    const aspect=width/height;camera.updateMatrixWorld(true);
+    const bounds={minX:Infinity,maxX:-Infinity,minY:Infinity,maxY:-Infinity};
+    for(const x of [-5.65,6.9])for(const y of [-.75,1.9])for(const z of [-4.6,4.7]){const p=new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse);bounds.minX=Math.min(bounds.minX,p.x);bounds.maxX=Math.max(bounds.maxX,p.x);bounds.minY=Math.min(bounds.minY,p.y);bounds.maxY=Math.max(bounds.maxY,p.y);}
+    const cx=(bounds.minX+bounds.maxX)/2,cy=(bounds.minY+bounds.maxY)/2;
+    let halfH=(bounds.maxY-bounds.minY)/2*1.04,halfW=(bounds.maxX-bounds.minX)/2*1.04;
+    halfH=Math.max(halfH,halfW/aspect);halfW=halfH*aspect;
+    Object.assign(camera,{left:cx-halfW,right:cx+halfW,top:cy+halfH,bottom:cy-halfH});camera.updateProjectionMatrix();
+  }
+  function pose(s,p){
+    robot.position.set(...s.player.position);shell.quaternion.set(...s.player.quaternion);
+    const flinch=p.impact*p.impactStrength;
+    face.rotation.set(p.facePitch-flinch*.10,p.faceYaw,0);brakeLamp.visible=p.brake;
+    eyeLight.color.set(p.connected?'#c3ebc7':'#f5cf7b');for(const e of eyes)e.scale.y=p.connected?.040:.046*(1-flinch*.6);
+    brow.rotation.z=p.brake?-.05:-flinch*.12;
+    chest.scale.y=1+p.breath;head.position.y=1.37+p.headLift;head.rotation.set(0,p.headTurn,-.16+p.headLift*.24);
+    forearm.rotation.x=-p.handLift;forearm.rotation.z=0;
+    eyelids.forEach(e=>e.visible=!p.awake);openEyes.forEach(e=>{e.visible=p.awake;e.scale.y=.035+.04*Math.min(1,p.endAge/.35);});
+    brows.forEach((b,i)=>b.rotation.z=(i?1:-1)*p.brow*.28);
+    for(const [id,t] of tools){const hit=id===p.impactTool?p.impact*p.impactStrength:0;t.lid.rotation.z=Math.sin(p.clock*45)*hit*.045;t.lid.position.y=room.tools.find(r=>r.id===id).size[1]/2+.012+hit*.025;}
+    contactLight.color.set(p.connected?'#a5e3bf':'#5b6963');connectedContacts.forEach(o=>o.visible=p.connected);
+    approach.visible=p.dock==='approach'||p.dock==='too-fast';fastMark.visible=p.dock==='too-fast';fastMark.scale.y=1;
+    const marker=fallMarker(s);fallCross.visible=!!marker;if(marker)fallCross.position.set(...marker);
+    if(p.connected)face.rotation.x=p.chargePitch;
+  }
+  // Merge repeated static stitches/fasteners and each tool's static lid parts.
+  // The lid still moves as one unit; collider bodies remain independently named.
+  batchStatic(scene,scene.children.filter(o=>o.isMesh&&!o.name&&!o.castShadow));
+  for(const root of [tray,deskLamp,...[...tools.values()].map(t=>t.lid)]){
+    const parts=[];root.traverse(o=>{if(o.isMesh)parts.push(o);});batchStatic(root,parts);
+  }
+  fit(1280,800);
+  return{scene,camera,fit,pose,rig:{robot,shell,face,head,forearm,chest,eyes,tools,dock,approach,fastMark,connectedContacts,fallCross,supports,deskLamp}};
+}

@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "scope": "Node legal-control physics, actual Three scene objects, DOM/render fixtures; not browser pixels or human play",
+  "checks": [
+    "physics, ROOM and every collision/threshold byte-identical to published preview",
+    "both unchanged routes finish under legal control at three frame intervals",
+    "real quaternion drives shell only; face self-levelled; support and all six tool bodies match physical bounds",
+    "camera projection retains real support at 1280, 390 and 320 widths (geometry only, not layout acceptance)",
+    "legal too-fast approach remains unconnected; only charged connects contacts and triggers settling nod",
+    "real impact latches once, decays without repeated contact animation; pause freezes; retry clears; real wake raises head and hand",
+    "actual controller passes brake metadata, freezes simulation/presentation on pause, manual preserves pause, retry clears, terminal keeps scene unobscured"
+  ],
+  "routes": [
+    {
+      "name": "metal",
+      "dt": 0.008333333333333333,
+      "time": 9.033333333333461,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.008333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.03333333333333333,
+      "time": 9.008333333333463,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.03333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.1,
+      "time": 8.975000000000131,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.1,
+      "time": 12.93333333333324,
+      "noise": 0
+    }
+  ]
+}
+✔ tests/quiet-gentle-home.test.mjs (517.652953ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 526.661668

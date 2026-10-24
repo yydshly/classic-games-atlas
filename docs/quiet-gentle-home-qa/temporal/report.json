@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "base": "8d1b634b43ac65332ab2b6a24bc86eb5af477709",
+  "method": "60Hz real Cannon binary-control stream; real Three rig matrices; no browser, frame-rate or player-quality acceptance",
+  "frames": {
+    "rolling-brake": 105,
+    "light-recovery": 420,
+    "two-tools": 309,
+    "dock": 934,
+    "fall": 210,
+    "wake": 169
+  },
+  "totalFrames": 2147,
+  "physicalStreamSha256": "0706207263aef4b140d095049a9c6e6eeb7025182238021cdc68df10cfc1ac76",
+  "physicsByteIdentical": true,
+  "checks": [
+    "binary inputs only; exact physical stream preserved; real rolling quaternion reaches shell; self-levelled face; brake press/release continuity",
+    "real non-terminal impact naturally decays through 0.55 without the archived head/hand step",
+    "two real tools hit 0.983s apart; latest tool reacts once and noise reaches a genuine wake terminal",
+    "actual fast approach remains unconnected; binary brake reaches charged; no connection pose snap; nod settles to zero",
+    "genuine fall/wake/charged freeze world time, position and quaternion; existing wake/nod finish; commanded retry clears reaction history"
+  ],
+  "before": {
+    "rolling-brake": {
+      "frames": 105,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0.1702553963846243,
+        "frame": 39
+      },
+      "release": {
+        "pitchStep": 0.13747669328800874,
+        "frame": 45
+      },
+      "chargedFrame": -1
+    },
+    "light-recovery": {
+      "frames": 420,
+      "recovery": {
+        "headStep": 0.08927760503539073,
+        "frame": 162,
+        "beforeNoise": 0.5512840962650264,
+        "afterNoise": 0.5482840962650265,
+        "beforeHead": 1.4700000000000002,
+        "afterHead": 1.3807223949646095
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "two-tools": {
+      "frames": 309,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "dock": {
+      "frames": 934,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": 821,
+      "connection": {
+        "pitchStep": 0.12,
+        "before": -0.12,
+        "after": 0
+      }
+    },
+    "fall": {
+      "frames": 210,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "wake": {
+      "frames": 169,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    }
+  },
+  "after": {
+    "rolling-brake": {
+      "frames": 105,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0.042674391639981095,
+        "frame": 39
+      },
+      "release": {
+        "pitchStep": 0.0285774244875584,
+        "frame": 45
+      },
+      "chargedFrame": -1
+    },
+    "light-recovery": {
+      "frames": 420,
+      "recovery": {
+        "headStep": 0.0007618369759379018,
+        "frame": 175,
+        "beforeNoise": 0.5122840962650278,
+        "afterNoise": 0.5092840962650279,
+        "beforeHead": 1.460738143232569,
+        "afterHead": 1.459976306256631
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "two-tools": {
+      "frames": 309,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "dock": {
+      "frames": 934,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": 821,
+      "connection": {
+        "pitchStep": 0,
+        "before": -0.10538090099535505,
+        "after": -0.10538090099535505
+      }
+    },
+    "fall": {
+      "frames": 210,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "wake": {
+      "frames": 169,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    }
+  },
+  "twoToolSeconds": 0.9833333333333298,
+  "terminalScope": "World freezes. Existing bounded wake/nod and ambient breathing have separate presentation time; no claim that every decorative animation freezes."
+}
