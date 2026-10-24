@@ -1,6 +1,6 @@
 import * as T from '../kinetic/vendor/three.module.min.js';
-import {fallMarker} from './feedback.mjs';
-import {batchStatic} from './batch.mjs';
+import {fallMarker} from './feedback.mjs?v=gentle-home-9bcd0fc-r1';
+import {batchStatic} from './batch.mjs?v=gentle-home-9bcd0fc-r1';
 
 // All support and obstacle meshes are built from ROOM, never invented here.
 export function buildWorkshop(room){

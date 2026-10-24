@@ -1,6 +1,6 @@
 # 轻轻回窝 · Quiet 独立体验候选
 
-同一款《别吵醒修理师》的单场景体验切片，仍是小机器人自己回充电窝，没有搬运系统。本轮只在独立本地分支改变既有预览路径；未改 main、正式实验或目录入口，未发布。
+同一款《别吵醒修理师》的单场景体验切片，仍是小机器人自己回充电窝，没有搬运系统。候选只改变既有独立预览路径；原正式实验、首页与目录计数保持不变。候选代码及验证材料已在统一质量分支公开，尚未完成真实 UI 验收。
 
 刚修好的机器人从维修托盘出发，沿较宽的工具区或较窄的软垫边回窝。方向键 / WASD 滚动，Shift 制动，P / Esc 暂停。完整说明在“操作说明”中；明确开始后才推进物理。
 
@@ -12,8 +12,10 @@
 
 `physics.mjs` 与 main `7e58eb5778e13534147f712f3da593130224625a` 中该文件逐字节相同：全部承托、六个工具体、初始位置、两路线、速度、噪声阈值和胜负条件未改。没有存档、音频权限、新外部依赖或付费素材。
 
-[本轮构图修正与限制](../../docs/quiet-gentle-home-qa/composition/README.md)。有 Node 模型、Three 场景对象、控制器 DOM 夹具和 CPU 静态几何投影；**无本轮浏览器截图或真实输入验收**。静态投影不含 WebGL 着色、阴影或页面 UI；不能把它当实际效果或乐趣达标证明。浏览器受阻未重试，须根独立审查后决定下一步。
+[本轮构图修正与限制](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/composition/README.md)。有 Node 模型、Three 场景对象、控制器 DOM 夹具和 CPU 静态几何投影；**无本轮浏览器截图或真实输入验收**。静态投影不含 WebGL 着色、阴影或页面 UI；不能把它当实际效果或乐趣达标证明。浏览器受阻未重试。
 
-[连续动作与回充时序审查](../../docs/quiet-gentle-home-qa/temporal/README.md) 记录制动姿态、轻碰恢复和接通收尾的最小衔接修复；物理与原有胜负规则保持不变。
+[连续动作与回充时序审查](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/temporal/README.md) 记录制动姿态、轻碰恢复和接通收尾的最小衔接修复；物理与原有胜负规则保持不变。
 
-[修补片与充电触点可读性](../../docs/quiet-gentle-home-qa/readability/README.md)：更清楚的配对形状、开路/接通几何与双侧平贴制动提示；原物理、相机和既有表现时序不变，玩家理解仍待验收。
+[修补片与充电触点可读性](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/readability/README.md)：更清楚的配对形状、开路/接通几何与双侧平贴制动提示；原物理、相机和既有表现时序不变，玩家理解仍待验收。
+
+本次运行资源统一使用 `gentle-home-9bcd0fc-r1` 版本引用，覆盖入口脚本、内部模块链与样式。共享的 Cannon/Three 供应文件保持原字节与原 URL，不修改其它游戏的依赖。以上 QA 链接固定到已核验提交，不要求将图片、动画或轨迹合入主站。

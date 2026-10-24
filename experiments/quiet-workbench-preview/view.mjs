@@ -1,6 +1,6 @@
 import * as T from '../kinetic/vendor/three.module.min.js';
-import {buildWorkshop} from './scene.mjs';
-import {QuietPresentation} from './presentation.mjs';
+import {buildWorkshop} from './scene.mjs?v=gentle-home-9bcd0fc-r1';
+import {QuietPresentation} from './presentation.mjs?v=gentle-home-9bcd0fc-r1';
 
 export function createView(canvas,room){
   const context=canvas.getContext('webgl2',{alpha:false,antialias:false});

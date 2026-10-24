@@ -1,6 +1,6 @@
-import {QuietWorld,ROOM} from './physics.mjs';
-import {createView} from './view.mjs';
-import {feedback} from './feedback.mjs';
+import {QuietWorld,ROOM} from './physics.mjs?v=gentle-home-9bcd0fc-r1';
+import {createView} from './view.mjs?v=gentle-home-9bcd0fc-r1';
+import {feedback} from './feedback.mjs?v=gentle-home-9bcd0fc-r1';
 
 const $=s=>document.querySelector(s),keys=new Set(),touch=new Map();
 let world=new QuietWorld(),view,last=0,mode='ready',failed=false,terminalShown=false;
