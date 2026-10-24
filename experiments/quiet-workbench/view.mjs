@@ -1,4 +1,5 @@
 import * as T from '../kinetic/vendor/three.module.min.js';
+import {fallMarker} from './feedback.mjs';
 export function createView(canvas,room){
  const context=canvas.getContext('webgl2',{alpha:false,antialias:false});if(!context)throw Error('WebGL2 unavailable');
  const renderer=new T.WebGLRenderer({canvas,context,antialias:false});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.25));renderer.outputColorSpace=T.SRGBColorSpace;
@@ -29,8 +30,13 @@ export function createView(canvas,room){
  const head=mesh(sphere,materials.skin,[-.26,1.38,.02],[.48,.52,.45],sleeper);head.rotation.z=-.25;
  const eyes=[];for(const x of [-.4,-.12])eyes.push(mesh(sphere,materials.dark,[x,1.4,.43],[.075,.025,.025],sleeper));
  box([4.3,.05,-.8],[.9,.18,.25],materials.cloth);
+ // Open cross, distinct from the circular charging dock; no collider or occluding panel.
+ const fallCross=new T.Group();scene.add(fallCross);const mark=new T.MeshBasicMaterial({color:'#ffb579'});
+ for(const angle of [-Math.PI/4,Math.PI/4]){const stroke=box([0,0,0],[.55,.025,.065],mark,fallCross);stroke.rotation.y=angle;}
+ fallCross.visible=false;
  let w=0,h=0;
  function draw(s){const rect=canvas.getBoundingClientRect();if(w!==Math.round(rect.width)||h!==Math.round(rect.height)){w=Math.max(1,Math.round(rect.width));h=Math.max(1,Math.round(rect.height));renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();const distance=Math.max(16,15/camera.aspect);camera.position.set(.5,distance*.85,distance*.72);camera.lookAt(.5,0,0);}
+  const marker=fallMarker(s);fallCross.visible=!!marker;if(marker)fallCross.position.set(...marker);
   robot.position.set(...s.player.position);const awake=s.state==='woke';torso.scale.y=.85+(awake?0:Math.sin(s.time*1.6)*.018);head.position.y=awake?1.57:1.38+s.noise*.09;torso.rotation.z=-.2+Math.min(1,s.noise)*.08;for(const eye of eyes)eye.scale.y=awake?.08:.025-Math.min(1,s.noise)*.009;
   for(const t of room.tools){const m=toolMeshes.get(t.id).material;const hit=s.lastImpact?.tool===t.id&&s.time-s.lastImpact.time<.5;m.color.set(hit?(t.material==='soft'?'#ded69a':'#e99755'):(t.material==='soft'?'#b4b17c':'#64737b'));}
   materials.glow.color.set(s.state==='charged'?'#8bd6ae':'#f6d780');renderer.render(scene,camera);
