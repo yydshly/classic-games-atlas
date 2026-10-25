@@ -12,6 +12,7 @@ async function fixture(action) {
     const names = new Set(['tools/preview-bundles/sources.json', ...manifest.imports.map(r => r.target)]);
     for (const config of configs) {
       names.add(`experiments/${config.id}-preview/index.html`);
+      for (const module of config.modules) names.add(`experiments/${config.id}-preview/source/${module.name}`);
       for (const name of config.styles) names.add(`experiments/${config.id}-preview/source/${name}`);
     }
     for (const name of names) {

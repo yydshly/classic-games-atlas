@@ -1,7 +1,8 @@
+// v1 compatibility suite: historical automatic behavior is intentionally preserved.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Renderer } from '../experiments/windowlife-request-preview/source/view.mjs';
-import { createScene, command, update, snapshot } from '../experiments/windowlife-request-preview/source/scene.mjs';
+import { createScene, command, update, snapshot } from '../experiments/windowlife-request-preview/source/legacy-scene.mjs';
 
 // Record real renderer output in the fixed sketch close-up, not inferred colors
 // from the model. This is still a Canvas command fixture, not browser UI QA.

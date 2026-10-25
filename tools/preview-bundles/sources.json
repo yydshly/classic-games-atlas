@@ -269,5 +269,29 @@
     "fromRuntimeCommit": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
     "sha256": "763ac0cdd1d53e8b2acb568d67907266a3df993ac71a50c98e71eaa5b3bb1d50",
     "scope": "Exact current inline suffix after the unchanged original style.css, including normal-flow telemetry and compact desktop header."
+  },
+  "createdSources": [
+    {
+      "path": "experiments/windowlife-request-preview/source/marks.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "player-defined paper geometry and deterministic NPC branch"
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/paper-controller.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "pointer and keyboard drafts, commit-only saved input"
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/legacy-scene.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "v1 compatibility: original scene body retained, shared functions exported"
+    }
+  ],
+  "legacySceneBaseline": {
+    "previousPath": "experiments/windowlife-request-preview/source/scene.mjs",
+    "candidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+    "originalBodySha256": "a339903b59d6681e6602852e82f63289b5c6cb8fadfca8c7191e39f975ded021",
+    "preservedAs": "experiments/windowlife-request-preview/source/legacy-scene.mjs",
+    "onlyAppend": "shared movement/work function exports"
   }
 }

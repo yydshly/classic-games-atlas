@@ -1,15 +1,18 @@
+// v1 compatibility suite: historical automatic behavior is intentionally preserved.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mount } from '../experiments/windowlife-request-preview/source/controller.mjs';
 import { KEY, readSave } from '../experiments/windowlife-request-preview/source/storage.mjs';
-import { createScene, command, checkpoint } from '../experiments/windowlife-request-preview/source/scene.mjs';
+import { createScene, command, checkpoint } from '../experiments/windowlife-request-preview/source/legacy-scene.mjs';
 
 // Deliberately a DOM/event fixture, not a browser or native input test.
 function fixture(data = new Map()) {
+  // Explicit v1 compatibility fixture; new interactive behavior has its own tests.
+  if (!data.has(KEY)) data.set(KEY, JSON.stringify(checkpoint(createScene())));
   let frame, stamp = 0, confirmResult = true, writesDenied = false;
   const docEvents = {}, winEvents = {}, nodes = new Map();
   const document = { hidden: false, activeElement: null, addEventListener(t,f) { docEvents[t] = f; }, getElementById(id) { if (!nodes.has(id)) nodes.set(id, node(id)); return nodes.get(id); }, createElement(tag) { return node(tag); } };
-  function node(id) { return { id, hidden: false, textContent: '', dataset: {}, children: [], listeners: {}, addEventListener(t,f) { this.listeners[t] = f; }, replaceChildren(...children) { this.children = children; }, focus() { document.activeElement = this; }, closest() { return null; } }; }
+  function node(id) { return { id, hidden: false, textContent: '', dataset: {},style:{}, children: [], listeners: {}, addEventListener(t,f) { this.listeners[t] = f; },setAttribute(){}, replaceChildren(...children) { this.children = children; }, focus() { document.activeElement = this; }, closest() { return null; } }; }
   const reads = [], writes = [], storage = { getItem(k) { reads.push(k); return data.get(k) ?? null; }, setItem(k,v) { writes.push(k); if (writesDenied) throw Error('temporary write failure'); data.set(k,v); } };
   const window = { addEventListener(t,f) { winEvents[t] = f; }, confirm() { return confirmResult; } };
   let drawings = 0;
@@ -18,7 +21,13 @@ function fixture(data = new Map()) {
   const get = id => document.getElementById(id);
   const click = id => get(id).listeners.click({ target: get(id) });
   const step = (ms = 100) => { stamp += ms; frame(stamp); };
-  function finish() { for (let n=0;n<1000&&api.snapshot().state==='playing';n++) step(); assert.equal(api.snapshot().state,'settled'); }
+  function finish() { for (let n=0;n<1000&&api.snapshot().state==='playing';n++) {
+    if(api.snapshot().version===2&&!get('paper-tools').hidden){
+      if(get('paper-finish').disabled){const e={key:'Enter',target:get('paper-input'),preventDefault(){}};get('paper-input').listeners.keydown(e);get('paper-input').listeners.keydown(e);}
+      click('paper-finish');
+    }
+    step();
+  }assert.equal(api.snapshot().state,'settled'); }
   return { api, get, click, step, finish, data, reads, writes, document, docEvents, winEvents, confirm(value) { confirmResult = value; }, denyWrites(value) { writesDenied = value; }, saved: () => readSave(storage).game, drawings: () => drawings };
 }
 

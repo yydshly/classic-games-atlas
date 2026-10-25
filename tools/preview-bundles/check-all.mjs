@@ -9,6 +9,9 @@ const commands = [
     'tests/windowlife-request-scene.test.mjs',
     'tests/windowlife-request-controller.test.mjs',
     'tests/windowlife-request-view.test.mjs',
+    'tests/windowlife-leaf-scene.test.mjs',
+    'tests/windowlife-leaf-controller.test.mjs',
+    'tests/windowlife-leaf-view.test.mjs',
     'tests/quiet-workbench-fall-marker.test.mjs',
     'tests/quiet-viewport-layout.test.mjs']
 ];

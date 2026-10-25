@@ -1,5 +1,6 @@
 // Candidate-only scene art, adapted from the original 栖窗日常 renderer.
 // No external assets. Drawing reads model positions and artwork state; it never changes them.
+import {leaf,response} from './marks.mjs';
 export const SCENE_WIDTH = 900;
 export const SCENE_HEIGHT = 650;
 const INK = '#504535';
@@ -77,7 +78,7 @@ export class Renderer {
       } else {
         const a = e.a, p = actorPoint(g, a, l);
         c.save(); c.translate(p.x, p.y); c.scale(t / 64, t / 64);
-        resident(c, a, g, clock, options.selectedActor === a.id);
+        resident(c, a, g, clock, options.selectedActor === a.id, !!options.drawing);
         c.restore();
       }
     }
@@ -244,8 +245,10 @@ function furniture(c, o, g, clock, selected) {
   }
 }
 
-function resident(c, a, g, clock, selected) {
-  const cur = a.current, kind = cur?.kind, working = cur?.phase === 'working';
+function resident(c, a, g, clock, selected, drawing=false) {
+  const cur = a.current, kind = cur?.kind;
+  const responseActive=g.art?.sketch?.responses?.some(p=>p<1);
+  const working = cur?.phase === 'working' && (g.version!==2 || g.phase!=='co-creating' || (a.id==='a'?drawing:responseActive));
   const moving = cur?.phase === 'walking' && g.state === 'playing';
   const waiting = cur?.phase === 'waiting';
   const b = a.id === 'b';
@@ -300,7 +303,7 @@ function resident(c, a, g, clock, selected) {
     const side = target && target.x < a.x ? -1 : 1;
     const below = target && target.y < a.y;
     const hand = below ? [-6, -42 + idle] : [side * 35, -13 + idle];
-    const nib = below ? [1, -62 + idle] : [side * 53, -13 + idle];
+    const nib = below ? [1, -62 + idle] : [side * 53, (g.version===2?-3:-13) + idle];
     line(c, [[side * 10, -12], hand], shirt, 6);
     ellipse(c, hand[0], hand[1], 3, 3, '#edc4a0');
     line(c, [hand, nib], b ? '#52786f' : '#c2764d', 2.5);
@@ -335,14 +338,15 @@ function actorLabel(c, a, g, selected) {
   c.save();
   if (a.id === 'b' && ['co-creating', 'sharing'].includes(g.phase)) c.translate(78, 0);
   let title = cur.phase === 'walking' ? '前往' + (ACTIONS[cur.kind] || '目的地') : cur.phase === 'waiting' ? '等待' : ACTIONS[cur.kind] || '行动中';
-  if (cur.phase === 'working' && g.phase === 'co-creating') title = '一起添笔';
+  if (cur.phase === 'working' && g.phase === 'co-creating') title = g.version===2?(a.id==='b'&&g.art.sketch.responses.some(p=>p<1)?'顺着叶影接枝':'纸在这里，慢慢画'):'一起添笔';
   if (cur.phase === 'working' && g.phase === 'sharing') title = '交换作品';
+  if(g.version===2&&a.id==='a'&&g.phase==='separate'&&!g.paper.note.done&&(g.choice!=='now'||g.request.status==='cancelled'))title='这页，由你安排';
   const width = Math.max(48, title.length * 10 + 18);
   const fill = cur.phase === 'waiting' ? '#faf1d7' : cur.phase === 'working' ? '#f4f6e9' : '#f8f3e5';
   rr(c, -width / 2, -68, width, 21, 7, fill, cur.phase === 'waiting' ? '#c6a878' : '#bcc5aa');
   poly(c, [[-4, -47], [4, -47], [0, -42]], fill);
   text(c, title, 0, -58, 10, cur.phase === 'waiting' ? '#9b7648' : '#687b62', '650');
-  if (cur.phase === 'working') {
+  if (cur.phase === 'working' && !(g.version===2&&(g.phase==='co-creating'||(a.id==='a'&&g.phase==='separate'&&!g.paper.note.done&&(g.choice!=='now'||g.request.status==='cancelled'))))) {
     const p = clamp(1 - (Number(cur.remaining) || 0) / Math.max(1, Number(cur.duration) || 1), 0, 1);
     rr(c, -19, -43, 38, 3, 2, '#d5ddca'); if (p > 0) rr(c, -19, -43, 38 * p, 3, 2, '#7e9b71');
   } else if (cur.phase === 'waiting') {
@@ -364,50 +368,85 @@ function foreground(c, l, g) {
 function notePaper(c, x, y, w, h, note = {}) {
   const progress = clamp(1 - (Number(note.remaining ?? 4) / Math.max(1, Number(note.total ?? 8))), 0, 1);
   c.save(); c.translate(x, y);
-  rr(c, 0, 0, w, h, 1.6, '#fff8df', '#9f8863', Math.max(.8, w / 60));
+  rr(c, 0, 0, w, h, 1.6, '#fff8df', '#9f8863', Math.max(.8, Math.min(2,w / 60)));
   c.fillStyle = '#eadab5'; c.fillRect(w * .1, h * .12, w * .8, h * .13);
-  const lines = Math.round(progress * 6);
+  const lines = Math.round(progress * 6),manual=Array.isArray(note.marks);
   for (let i = 0; i < lines; i++) {
-    const inset = i % 2 ? .2 : .13, end = i === 5 ? .59 : .86;
-    line(c, [[w * inset, h * (.34 + i * .09)], [w * end, h * (.34 + i * .09)]], '#a36543', Math.max(.9, w / 36));
+    const inset = manual ? .13 : i % 2 ? .2 : .13, end = manual ? [.44,.40,.46,.36,.43,.38][i] : i === 5 ? .59 : .86;
+    line(c, [[w * inset, h * ((Array.isArray(note.marks) ? .14 : .34) + i * .09)], [w * end, h * ((Array.isArray(note.marks) ? .14 : .34) + i * .09)]], '#a36543', Math.max(.9, Math.min(2,w / 36)));
   }
-  if (!note.finished) {
+  if (!note.finished || (Array.isArray(note.marks)&&!note.creationComplete)) {
     line(c, [[w * .18, h * .91], [w * .8, h * .91]], '#c9b995', .7);
   } else {
-    line(c, [[w * .66, h * .88], [w * .75, h * .86], [w * .79, h * .91], [w * .85, h * .87]], '#a36543', Math.max(.8, w / 48));
+    line(c, [[w * .66, h * .88], [w * .75, h * .86], [w * .79, h * .91], [w * .85, h * .87]], '#a36543', Math.max(.8, Math.min(2,w / 48)));
   }
+  if(note.marks)drawMarks(c,w,h,note.marks);
   c.restore();
 }
 
 function sketchPaper(c, x, y, w, h, sketch = {}) {
   const progress = clamp(Number(sketch.progress || 0) / Math.max(1, Number(sketch.total || 6)), 0, 1);
-  const warmProgress = clamp(Number(sketch.inkProgress?.a || 0) / Math.max(1, Number(sketch.total || 6)), 0, 1);
+  const manual=Array.isArray(sketch.marks),authored=!sketch.inputDriven||['solo','mixed'].includes(sketch.mode);
+  const warmProgress = manual?0:clamp(Number(sketch.inkProgress?.a || 0) / Math.max(1, Number(sketch.total || 6)), 0, 1);
   c.save(); c.translate(x, y);
-  rr(c, 0, 0, w, h, 1.8, '#fff9e7', '#9f8863', Math.max(.8, w / 60));
+  rr(c, 0, 0, w, h, 1.8, '#fff9e7', '#9f8863', Math.max(.8, Math.min(2,w / 60)));
   // An unfinished window composition is present from the authored opening.
-  rr(c, w * .16, h * .18, w * .6, h * .55, 0, null, '#527f75', Math.max(.8, w / 40));
-  line(c, [[w * .46, h * .18], [w * .46, h * .73]], '#527f75', Math.max(.8, w / 40));
-  line(c, [[w * .16, h * .43], [w * .76, h * .43]], '#527f75', Math.max(.8, w / 40));
-  if (progress > .05) line(c, [[w * .19, h * .65], [w * .31, h * .49], [w * .42, h * .62], [w * .57, h * .42], [w * .73, h * .63]], '#527f75', Math.max(1, w / 40));
-  if (progress > .25) {
+  rr(c, w * .16, h * .18, w * .6, h * .55, 0, null, '#527f75', Math.max(.8, Math.min(3,w / 40)));
+  line(c, [[w * .46, h * .18], [w * .46, h * .73]], '#527f75', Math.max(.8, Math.min(3,w / 40)));
+  line(c, [[w * .16, h * .43], [w * .76, h * .43]], '#527f75', Math.max(.8, Math.min(3,w / 40)));
+  if (authored&&progress > .05) line(c, [[w * .19, h * .65], [w * .31, h * .49], [w * .42, h * .62], [w * .57, h * .42], [w * .73, h * .63]], '#527f75', Math.max(1, Math.min(3,w / 40)));
+  if (authored&&progress > .25) {
     ellipse(c, w * .64, h * .29, w * .045, h * .055, warmProgress > .25 ? '#c47746' : '#527f75');
-    line(c, [[w * .15, h * .81], [w * .77, h * .81]], '#527f75', Math.max(1, w / 35));
+    line(c, [[w * .15, h * .81], [w * .77, h * .81]], '#527f75', Math.max(1, Math.min(3,w / 35)));
   }
   if (warmProgress > 0) {
     // This mark remains visible after a cancelled shared session: not erased,
     // and not falsely labelled a completed joint drawing.
     line(c, [[w * .25, h * .75], [w * .29, h * .58], [w * .34, h * .76]], '#c47746', Math.max(1.2, w / 28));
   }
-  if (progress > .6) {
+  if (authored&&progress > .6) {
     const ink = warmProgress > .6 ? '#c47746' : '#527f75';
-    line(c, [[w * .09, h * .12], [w * .09, h * .76]], ink, Math.max(.8, w / 40));
-    line(c, [[w * .84, h * .12], [w * .84, h * .76]], ink, Math.max(.8, w / 40));
+    line(c, [[w * .09, h * .12], [w * .09, h * .76]], ink, Math.max(.8, Math.min(3,w / 40)));
+    line(c, [[w * .84, h * .12], [w * .84, h * .76]], ink, Math.max(.8, Math.min(3,w / 40)));
   }
   if (progress >= 1) {
     ellipse(c, w * .72, h * .9, w * .015, h * .015, '#527f75');
     if (warmProgress >= 1) ellipse(c, w * .8, h * .9, w * .015, h * .015, '#c47746');
+    if(manual&&sketch.mode==='together')ellipse(c,w*.8,h*.9,w*.015,h*.015,'#c47746');
   }
+  if(manual&&sketch.inputDriven) {
+    poly(c,[[w*.40,h*.80],[w*.52,h*.80],[w*.50,h*.91],[w*.42,h*.91]],'#d9be96','#8e8467',1);
+    line(c,[[w*.39,h*.80],[w*.53,h*.80]],'#8e8467',Math.max(.8,Math.min(2,w/90)));
+  }
+  if(manual)drawMarks(c,w,h,sketch.marks,sketch.responses);
   c.restore();
+}
+
+function drawMarks(c,w,h,marks,responses=[]) {
+  for(let i=0;i<marks.length;i++) {
+    const r=response(marks[i],i),p=responses[i]||0,points=[];
+    for(let n=0;n<=20;n++){const t=p*n/20;points.push([w*((1-t)**2*r.from.x+2*(1-t)*t*r.bend.x+t*t*r.to.x),h*((1-t)**2*r.from.y+2*(1-t)*t*r.bend.y+t*t*r.to.y)]);}
+    if(p)line(c,points,'#527f75',Math.max(1,Math.min(2.6,w/90)));
+    const l=leaf(marks[i]);
+    c.beginPath();c.moveTo(l.a.x*w,l.a.y*h);c.quadraticCurveTo(l.left.x*w,l.left.y*h,l.b.x*w,l.b.y*h);c.quadraticCurveTo(l.right.x*w,l.right.y*h,l.a.x*w,l.a.y*h);
+    c.fillStyle='#d38b5648';c.fill();c.strokeStyle='#ad5f36';c.lineWidth=Math.max(1,Math.min(2.8,w/110));c.stroke();
+    line(c,[[l.a.x*w,l.a.y*h],[l.b.x*w,l.b.y*h]],'#b96e42',Math.max(.8,Math.min(1.5,w/180)));
+  }
+}
+
+export const PAPER={width:600,height:480,x:24,y:24,w:552,h:432};
+export class PaperRenderer {
+  constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');canvas.width=PAPER.width;canvas.height=PAPER.height;}
+  draw(g,target,draft=null){
+    const c=this.ctx;c.clearRect(0,0,PAPER.width,PAPER.height);c.lineCap='round';c.lineJoin='round';
+    if(['settled','closed'].includes(g.state)) {
+      text(c,'你的手记',150,35,22,'#765e42','650');text(c,'窗边的速写',450,35,22,'#527f75','650');
+      notePaper(c,24,64,252,352,g.art.note);sketchPaper(c,324,64,252,352,g.art.sketch);return;
+    }
+    const art=g.art[target];
+    if(target==='note')notePaper(c,PAPER.x,PAPER.y,PAPER.w,PAPER.h,art);else sketchPaper(c,PAPER.x,PAPER.y,PAPER.w,PAPER.h,art);
+    if(draft){c.save();c.translate(PAPER.x,PAPER.y);c.globalAlpha=.5;drawMarks(c,PAPER.w,PAPER.h,[draft]);c.restore();}
+  }
 }
 
 function artworkDetails(c, g) {

@@ -2,6 +2,8 @@
 
 从同一 `cloud/quiet-gentle-home` 分支开发三个已有预览，无须切回旧分支找源模块。此工具仅用于开发与检查，不部署，不启动浏览器，不改 main。已有 `index.html` 是页面标记的源文件；它的 CSS 和脚本由同目录 `source/` 重建，不另建网页模板或入口。
 
+当前本地另有尚未上传/发布的Windowlife手动叶影切片，见 [原型说明](../../docs/windowlife-leaf-qa/README.md)。`paper-controller.mjs`处理绘图输入，`marks.mjs`提供确定性几何；scene.mjs为v2，legacy-scene.mjs保留v1旧档语义。原三份Windowlife测试明确验证v1兼容，新版模型/输入/画面测试另外运行，未把旧断言删掉来取得通过。
+
 ## 运行
 
 使用 Node 18 或更新版本，在仓库根目录：
@@ -20,7 +22,7 @@ npm test --prefix tools/preview-bundles
 | 当前预览 | 从本分支编辑的源文件 | 固定历史来源 |
 | --- | --- | --- |
 | `experiments/inlet-deadline-preview/index.html` | `source/{game,engine,renderer,journey,levels}.mjs`、`source/style.css`、`source/preview-layout.css`，页面标记仍在现有 index.html | `01dd7d48430a740a13170be703232567a4ba9e10`；当前布局附加 CSS 取自 main `efc55fa253cbc0bc1435a4b69537bcc55d23a95b` |
-| `experiments/windowlife-request-preview/index.html` | `source/{main,controller,scene,storage,view,levels}.mjs`、`source/style.css`，页面标记仍在现有 index.html | `c416a7e25b0117e2a80c287181a02c8e22e2b86c`；levels 从该提交的 `preview/windowlife/levels.mjs` 固定复制 |
+| `experiments/windowlife-request-preview/index.html` | `source/{main,controller,paper-controller,scene,legacy-scene,marks,storage,view,levels}.mjs`、`source/style.css`，页面标记仍在现有 index.html | 原片段源自`c416a7e25b0117e2a80c287181a02c8e22e2b86c`；本地手动切片新增输入与几何，v1代码保留在legacy-scene |
 | `experiments/quiet-workbench-preview/` | 现有运行模块直接就是源码，继续保留 r3；没有再复制一套 | 落点机制源自 `dcd3f4e2cffe2dab467af9b4082f46f6817043bc`；当前表现与 r3 来自统一候选 |
 
 `sources.json` 逐文件记录来源提交/路径/blob/SHA256、导入时 SHA256 与精确适配替换。导入时的反向替换可重构原 blob；后续有意修改保留于 Git，记录中的 importedSha256 和 runtimeAtImport 是历史基线，不能伪改为新的历史来源。检查会标注 unchangedSinceImport；源码一旦修改，仍必须与当前运行包逐字节一致，不能把过时 bundle 当作新源码的产物。
@@ -33,7 +35,7 @@ npm test --prefix tools/preview-bundles
 node tools/preview-bundles/build.mjs --out-dir /tmp/atlas-previews
 ```
 
-生成器在临时目录使用历史模块路径作为 esbuild 的规范化输入路径，以保留已发布包中的注释和字节；实际输入全部读取当前分支的 source，不读取旧分支或正式 v3。唯一的 staging import 改写恢复 Windowlife 的规范化 levels 路径，运行依赖图仍严格限定为本分支复制的六个模块。版本、编码、target、IIFE 名与换行也固定。
+生成器在临时目录使用历史模块路径作为 esbuild 的规范化输入路径；实际输入全部读取当前分支 source，不读取旧分支或正式v3。staging import改写恢复Windowlife的规范化levels路径（当前导入位于legacy-scene），依赖图严格限定为声明的模块集合。版本、编码、target、IIFE名与换行固定；有意修改源码后应生成并审查新的bundle，不能继续冒称与旧包相同。
 
 生成文件仅写到指定的仓库外目录。检查默认只比较，不自动改运行 HTML；审查生成差异后再替换对应生成区。独立重建的是 JS/CSS；完整 HTML 比较借用当前 index.html 标记外壳重新注入两者，不能独立验证页面标记或设计。页面标记直接在既有 index.html 修改，无第二份模板；不得用旧分支的页面、CSS 或整棵树覆盖。
 

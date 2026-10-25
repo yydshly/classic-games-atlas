@@ -21,7 +21,7 @@ export const configs = [
     id: 'windowlife-request', globalName: 'WindowlifeRequestPreview',
     entry: 'experiments/windowlife-request/main.mjs',
     modules: [
-      ...['main.mjs', 'controller.mjs', 'scene.mjs', 'storage.mjs', 'view.mjs']
+      ...['main.mjs', 'controller.mjs', 'paper-controller.mjs', 'scene.mjs', 'legacy-scene.mjs', 'marks.mjs', 'storage.mjs', 'view.mjs']
         .map(name => ({name, canonical: `experiments/windowlife-request/${name}`})),
       {name: 'levels.mjs', canonical: 'preview/windowlife/levels.mjs'}
     ],
@@ -76,7 +76,7 @@ export async function rebuild(root = repositoryRoot) {
         let contents = await read(root, `${directory}/source/${module.name}`);
         // Stable canonical staging paths keep esbuild's existing source comments
         // and the published bundle bytes. All inputs come from this branch.
-        if (config.id === 'windowlife-request' && module.name === 'scene.mjs') {
+        if (config.id === 'windowlife-request' && contents.includes("'./levels.mjs'")) {
           assert.equal(contents.split("'./levels.mjs'").length, 2, 'expected one local levels import');
           contents = contents.replace("'./levels.mjs'", "'../../preview/windowlife/levels.mjs'");
         }

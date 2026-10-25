@@ -1,6 +1,7 @@
+// v1 compatibility suite: historical automatic behavior is intentionally preserved.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createScene, command, update, checkpoint, restore, snapshot, summary, canCancel, canResume } from '../experiments/windowlife-request-preview/source/scene.mjs';
+import { createScene, command, update, checkpoint, restore, snapshot, summary, canCancel, canResume } from '../experiments/windowlife-request-preview/source/legacy-scene.mjs';
 import { KEY, readSave, writeSave } from '../experiments/windowlife-request-preview/source/storage.mjs';
 import { LEVELS } from '../experiments/windowlife-request-preview/source/levels.mjs';
 
