@@ -14,6 +14,7 @@ const commands = [
     'tests/windowlife-leaf-view.test.mjs',
     'tests/windowlife-leaf-save-duration.test.mjs',
     'tests/windowlife-leaf-dom.test.mjs',
+    'tests/moss-feedback.test.mjs',
     'tests/quiet-workbench-fall-marker.test.mjs',
     'tests/quiet-viewport-layout.test.mjs']
 ];

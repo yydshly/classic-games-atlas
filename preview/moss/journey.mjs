@@ -1,4 +1,4 @@
-import {createGame,checkpoint,restore,LEVELS} from './engine.mjs';
+import {createGame,checkpoint,restore,LEVELS} from './engine.mjs?v=moss-feedback-r1';
 export const KEY='classic-atlas.moss.v1';
 export const fresh=()=>({schema:1,last:1,phase:'playing',results:[],helpSeen:false,current:checkpoint(createGame(0))});
 export function finish(p,g){if(g.state!=='won'||p.phase!=='playing'||g.level!==p.last)return false;p.results.push({level:g.level,time:g.time,rescued:g.rescued,lost:g.lost,total:g.total,quota:g.quota,remaining:{...g.resources}});p.phase=g.level===LEVELS.length?'complete':'between';p.current=checkpoint(g);return true;}

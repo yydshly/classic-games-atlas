@@ -3,10 +3,12 @@
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {readFileSync} from 'node:fs';
+import path from 'node:path';
 import {repositoryRoot} from './build.mjs';
 
-const scope=JSON.parse(readFileSync(new URL('./integration-scope.json',import.meta.url),'utf8'));
-const args=process.argv.slice(2),at=args.indexOf('--head'),head=at<0?'HEAD':args[at+1];
+const args=process.argv.slice(2),at=args.indexOf('--head'),head=at<0?'HEAD':args[at+1],scopeAt=args.indexOf('--scope');
+if(scopeAt>=0)assert(args[scopeAt+1]&&!args[scopeAt+1].startsWith('-'),'--scope needs a repository-relative JSON path');
+const scope=JSON.parse(readFileSync(scopeAt<0?new URL('./integration-scope.json',import.meta.url):path.resolve(repositoryRoot,args[scopeAt+1]),'utf8'));
 assert(head&&!head.startsWith('-'),'--head needs a local commit/tree');
 const git=(...args)=>execFileSync('git',args,{cwd:repositoryRoot,encoding:'utf8',maxBuffer:8*1024*1024});
 const entries=ref=>new Map(git('ls-tree','-r',ref).trim().split('\n').map(line=>{const [meta,path]=line.split('\t');return[path,meta];}));
@@ -23,7 +25,7 @@ assert(registry,'registry cannot be parsed without executing site code');
 const plays=JSON.parse(registry[1]),slugs=new Set(plays.map(e=>e.slug));
 assert.equal(plays.length,99);assert.equal(slugs.size,45);
 assert.equal(new Set(plays.map(e=>e.path)).size,99);
-for(const play of plays){const path=play.path+'index.html';assert(before.has(path),`baseline entry missing: ${path}`);assert.equal(after.get(path),before.get(path),`registered game changed: ${path}`);}
+for(const play of plays){const path=play.path+'index.html';assert(before.has(path),`baseline entry missing: ${path}`);assert(after.has(path),`registered entry deleted: ${path}`);if(!allowed.has(path))assert.equal(after.get(path),before.get(path),`unreviewed registered game changed: ${path}`);}
 const catalogue=JSON.parse(git('show',`${head}:data/comparisons.json`));
 assert.deepEqual([...new Set(catalogue.items.map(e=>e.slug))].sort(),[...slugs].sort());
 const mutations=[];

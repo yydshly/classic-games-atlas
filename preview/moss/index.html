@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<script type="module" src="../../play-recent.mjs?v=recent-play-r1" data-recent-recorder></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173d3c"><meta name="description" content="原创三段群体救援。有限驻守、架桥与开土，安排自主行走的灯灵归队；独立保存，键盘与触控名册可用。"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><title>苔灯归途 · MOSS PARADE</title><link rel="stylesheet" href="./style.css"></head>
+<script type="module" src="../../play-recent.mjs?v=recent-play-r1" data-recent-recorder></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173d3c"><meta name="description" content="原创三段群体救援。有限驻守、架桥与开土，安排自主行走的灯灵归队；独立保存，键盘与触控名册可用。"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><title>苔灯归途 · MOSS PARADE</title><link rel="stylesheet" href="./style.css?v=moss-feedback-r1"></head>
 <body>
 <a class="skip-link" href="#game-controls">跳到操作区</a>
 <main class="shell">
@@ -11,6 +11,7 @@
   <div class="board-column">
    <div class="stage-heading"><div><p class="eyebrow">眼前这一段</p><h2 id="level-title">雾林初阶</h2><p id="level-brief">观察行进方向，选择灯灵，再安排一项合适的工作。</p></div><div class="goal-badge"><span>抵达灯塔</span><strong><b id="rescued-count">0</b><small> / <b id="quota-count">0</b></small></strong><span>本段共 <b id="total-count">0</b> 位 · 全员结算</span></div></div>
    <div class="board-frame"><canvas id="battlefield" width="960" height="480" tabindex="0" aria-label="苔灯归途场景。也可使用下方灯灵名册和工具按钮安排工作。"></canvas><div id="result-card" class="result-card" hidden><div class="result-panel"><p class="eyebrow">这一段的回响</p><h2 id="result-title" tabindex="-1">灯火已抵达</h2><p id="result-reason"></p><div id="result-details" class="result-details"></div><div class="result-actions"><button id="result-next" class="primary" type="button">前往下一段 →</button><button id="result-retry" type="button">重试本段</button><button id="result-view" class="quiet" type="button">查看林地</button></div></div></div></div>
+   <aside id="incident-feedback" class="incident-feedback" aria-label="最近一次失散，可在暂停时回看" hidden><strong>最近一次失散 · 叉号标记位置</strong><p id="incident-message" role="status" aria-live="polite" aria-atomic="true"></p><p id="incident-context"></p></aside>
    <div class="under-board"><p><span class="legend-dot amber"></span>灯塔是归处 <span class="legend-dot teal"></span>光环标记已选灯灵</p><p class="time-readout">余时 <strong id="time-left">—</strong></p></div>
    <div class="run-controls" id="game-controls"><button id="start" class="primary" type="button">点亮旅程 <span aria-hidden="true">→</span></button><button id="pause" type="button">暂停</button><button id="retry" type="button">重试本段</button><button id="show-result" type="button" hidden>重读本段结果</button><span class="control-note"><span id="phase-label">准备出发</span> · 暂停时可观察与安排。</span></div>
    <p id="save-warning" class="save-warning" role="status" hidden></p>
@@ -25,5 +26,5 @@
 </main>
 <dialog id="help-dialog"><div class="dialog-content"><p class="eyebrow">一点点安排，一起抵达</p><h2>灯灵会走，路线由你照看</h2><p>观察本段目标与地形，从名册选一位灯灵，再选择工作并按“确认安排”。驻守可引导同伴转向，搭桥跨越断口，开土只挖前方软土墙，不挖脚下地板；放行让驻守的灯灵重新前进。</p><p>施工每格0.7秒，完成后整段桥或通道才开放；其他灯灵仍会行走，先用驻守安排人流。不必点击移动的小目标。画布获焦时，左右键切换灯灵，1/2/3/4选择工作，Enter确认，P暂停/继续。暂停时也可安排，时间停止。Tab 可依次访问名册与工具，Enter 或空格激活按钮。具体操作是否可用，以界面给出的原因与剩余工具为准。</p><p>石层不能当作松土挖掘，险地也不是安全落脚处。救回人数达到目标，且全部同伴已经归队或失散后才结算。仍有驻守灯灵时记得免费放行；余时耗尽尚未结算则失败。落差超过2.2格或落入险地会失散。</p><button id="close-help" class="primary" type="button">明白了，回到林地</button></div></dialog>
 <dialog id="confirm-new"><div class="dialog-content"><p class="eyebrow">重新点灯</p><h2>开启一趟新的三段旅程？</h2><p>此操作将重置本作的当前旅程与回顾记录。其它游戏不受影响。</p><div class="dialog-actions"><button id="confirm-new-no" type="button">保留这趟旅程</button><button id="confirm-new-yes" class="primary" type="button">确认开启新旅程</button></div></div></dialog>
-<script type="module" src="./game.mjs"></script>
+<script type="module" src="./game.mjs?v=moss-feedback-r1"></script>
 <dialog id="retry-dialog" aria-labelledby="retry-title"><div class="dialog-content"><h2 id="retry-title">重试当前这一段？</h2><p>只重置本关人物、地形、工具和计时，前关救援记录保留。</p><div class="dialog-actions"><button id="retry-no" type="button">保留当前进度</button><button id="retry-yes" class="primary" type="button">确认重试本关</button></div></div></dialog></body></html>

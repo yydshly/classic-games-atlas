@@ -43,7 +43,7 @@ node tools/preview-bundles/build.mjs --out-dir /tmp/atlas-previews
 
 ## 独立审计与报告副作用
 
-- `npm run audit:integration --prefix tools/preview-bundles -- --head <拟合入commit或tree>` 只读比较本次已审范围与固定main基线，保护全部既有文件、45款/99登记入口，并用5种内存变异确认防丢检查会失败。它是本次发布范围审计，独立于默认可持续回归；后续合法整合须重新评审integration-scope.json，不把旧tree锁用于阻止正常源码演进。
+- `npm run audit:integration --prefix tools/preview-bundles -- --head <拟合入commit或tree>` 默认复核首次主干整合的历史范围。后续改动传入单独已审范围，例如 `--scope docs/moss-feedback-qa/scope.json`（路径相对仓库根），不改写历史integration-scope.json。检查只读保护全部既有文件、45款/99登记入口和未批准修改的游戏；只有明确列出的同游戏文件可更新，入口不能删除。它独立于默认可持续回归，不把旧tree锁用于阻止正常源码演进。
 - `npm run audit:forecast --prefix tools/preview-bundles` 默认只读输出并断言安全预测实际闭合；加 `-- --write` 写新 forecast-current.json，不覆盖历史 forecast-audit.json。旧字段 collision:326 是所有非 safe 分类，当前称 nonSafe，不能说326次真实碰撞。
 - `npm run audit:routes --prefix tools/preview-bundles` 默认只读重放；加 `-- --write` 明确更新关卡 report.json。
 - `npm run audit:layout-historical --prefix tools/preview-bundles` 复跑 efc55fa 布局修复的历史不变性审计，锁旧 SHA/属性/CSS且会重写其 report.json，已移出默认回归。未来合法开发改变 bundle 后，该历史审计失败是预期现象；旧 before-contract.json/report.json 原样保留。
