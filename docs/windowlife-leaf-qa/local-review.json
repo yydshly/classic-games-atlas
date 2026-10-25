@@ -1,0 +1,276 @@
+{
+  "status": "historical pre-save local review of 0505c048; 29 text files subsequently saved to unified candidate 3f45d0c582b1507ee30895a9ad9838758a5f03be; main and deployment unchanged",
+  "originalPrototype": "03078661fbf978bae9db7cd8a715a2671fa01972",
+  "independentModelReview": {
+    "tool": "codex review",
+    "status": "not run: initialization unavailable",
+    "error": "failed to initialize in-process app-server client: Read-only file system (os error 30)",
+    "configurationOrCredentialChanges": false,
+    "alternativeLaunchPathUsed": false
+  },
+  "method": "own source review, failing regressions, exact original-source versus updated-source controller replay, actual offline Canvas instruction PNG inspection",
+  "findings": [
+    {
+      "severity": "P2",
+      "problem": "short drag preview differs from committed leaf",
+      "before": {
+        "input": [
+          [
+            "down",
+            80,
+            180
+          ],
+          [
+            "move",
+            90,
+            175
+          ],
+          [
+            "up",
+            90,
+            175
+          ]
+        ],
+        "preview": {
+          "x1": 250,
+          "y1": 720,
+          "x2": 281,
+          "y2": 700
+        },
+        "committed": {
+          "x1": 250,
+          "y1": 720,
+          "x2": 380,
+          "y2": 520
+        },
+        "exactGeometry": false
+      },
+      "after": {
+        "input": [
+          [
+            "down",
+            80,
+            180
+          ],
+          [
+            "move",
+            90,
+            175
+          ],
+          [
+            "up",
+            90,
+            175
+          ]
+        ],
+        "preview": {
+          "x1": 250,
+          "y1": 720,
+          "x2": 455,
+          "y2": 588
+        },
+        "committed": {
+          "x1": 250,
+          "y1": 720,
+          "x2": 455,
+          "y2": 588
+        },
+        "exactGeometry": true
+      },
+      "fix": "same bounded normalization in preview and commit; short directions retained; minimum new draft length keeps 44px handles apart; existing v2 saved marks remain exact"
+    },
+    {
+      "severity": "P2",
+      "problem": "right mouse button commits unintended artwork and prevents the native action",
+      "before": {
+        "marks": [
+          {
+            "x1": 250,
+            "y1": 720,
+            "x2": 313,
+            "y2": 400
+          }
+        ],
+        "prevented": 1
+      },
+      "after": {
+        "marks": [],
+        "prevented": 0
+      },
+      "fix": "accept only primary pointer activation button"
+    },
+    {
+      "severity": "P2",
+      "problem": "first paused room render retains draft drawing pose, then changes pose at unchanged time",
+      "before": [
+        {
+          "state": "paused",
+          "phase": "co-creating",
+          "time": 0.9,
+          "drawing": true
+        },
+        {
+          "state": "paused",
+          "phase": "co-creating",
+          "time": 0.9,
+          "drawing": false
+        }
+      ],
+      "after": [
+        {
+          "state": "paused",
+          "phase": "co-creating",
+          "time": 0.9,
+          "drawing": false
+        },
+        {
+          "state": "paused",
+          "phase": "co-creating",
+          "time": 0.9,
+          "drawing": false
+        }
+      ],
+      "fix": "drop draft before the first pause/cancel render"
+    },
+    {
+      "severity": "P2 visual",
+      "problem": "v2 side pen tip is above the actual paper while drawing",
+      "before": {
+        "tips": [
+          {
+            "actor": "a",
+            "point": [
+              547.5,
+              438.1894832335282
+            ]
+          },
+          {
+            "actor": "b",
+            "point": [
+              557.5,
+              450.68948323352816
+            ]
+          }
+        ],
+        "paper": {
+          "left": 539.1666666666666,
+          "right": 574.1666666666666,
+          "top": 442,
+          "bottom": 467
+        }
+      },
+      "after": {
+        "tips": [
+          {
+            "actor": "a",
+            "point": [
+              547.5,
+              446.52281656686154
+            ]
+          },
+          {
+            "actor": "b",
+            "point": [
+              557.5,
+              450.68948323352816
+            ]
+          }
+        ],
+        "paper": {
+          "left": 539.1666666666666,
+          "right": 574.1666666666666,
+          "top": 442,
+          "bottom": 467
+        }
+      },
+      "fix": "move only the v2 side tip into the sheet; record actual transformed pen instructions across the action cycle"
+    }
+  ],
+  "tests": {
+    "passed": 94,
+    "failed": 0,
+    "QAJSONWritesByDefault": false,
+    "newBoundedGestureCases": 1400,
+    "originalHistoricalReportsPreserved": true
+  },
+  "rebuild": [
+    {
+      "id": "inlet-deadline",
+      "runtimePath": "experiments/inlet-deadline-preview/index.html",
+      "dependencies": [
+        "versions/v3/preview/inlet/levels.mjs",
+        "versions/v3/preview/inlet/engine.mjs",
+        "versions/v3/preview/inlet/renderer.mjs",
+        "versions/v3/preview/inlet/journey.mjs",
+        "versions/v3/preview/inlet/game.mjs"
+      ],
+      "hashes": {
+        "html": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+        "script": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+        "css": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+      }
+    },
+    {
+      "id": "windowlife-request",
+      "runtimePath": "experiments/windowlife-request-preview/index.html",
+      "dependencies": [
+        "preview/windowlife/levels.mjs",
+        "experiments/windowlife-request/legacy-scene.mjs",
+        "experiments/windowlife-request/marks.mjs",
+        "experiments/windowlife-request/scene.mjs",
+        "experiments/windowlife-request/storage.mjs",
+        "experiments/windowlife-request/paper-controller.mjs",
+        "experiments/windowlife-request/controller.mjs",
+        "experiments/windowlife-request/view.mjs",
+        "experiments/windowlife-request/main.mjs"
+      ],
+      "hashes": {
+        "html": "40c35add1d2962b6c58468ba78ed2ad36199205ad62583eb09362b4b70c8e24d",
+        "script": "e46f948684bdfebdce601fc62af6f8c2ecfe7d7856a7621e72710599c9de3782",
+        "css": "85b11879dc072e96d6a571363b9d919f0b778c77205d64cbb62df686c74f4790"
+      }
+    }
+  ],
+  "imagesViewed": {
+    "paperBefore": [
+      "joint-left",
+      "joint-right",
+      "joint-finished",
+      "quiet-finished",
+      "short-draft",
+      "short-committed"
+    ],
+    "paperAfter": [
+      "short-draft",
+      "short-committed"
+    ],
+    "roomOnly": [
+      "joint-working",
+      "later-sharing",
+      "quiet-settled",
+      "original drafting-room",
+      "fixed drafting-room"
+    ],
+    "scope": "offline rendering of real Canvas2D instructions, not browser screenshots; static font/antialias differ"
+  },
+  "visualAndPlayabilityFindings": [
+    "leaf placement changes both player geometry and NPC connecting branch",
+    "two complete artworks get equal-sized final presentation, with no solitude penalty",
+    "later performs the physical sharing stage while alone remains at separate work locations",
+    "normal paper SVGs are byte-identical across this review; no unrelated decoration or mechanics added",
+    "art is still simplified line work and bounded to one or two leaves; these checks do not establish mature game quality or perceived creative value"
+  ],
+  "evidenceDirectories": {
+    "original": "/workspace/scratch/windowlife-local-review-before",
+    "updated": "/workspace/scratch/windowlife-local-review-after"
+  },
+  "remaining": [
+    "native pointer/touch and scroll arbitration",
+    "actual webpage room/editor hierarchy and fonts",
+    "physical phone",
+    "human playability and creative value"
+  ],
+  "mainAndOtherGames": "not modified; review rebuild is limited to existing Windowlife preview",
+  "deliveryPolicy": "GitHub remains the existing workflow; no Library or replacement destination used",
+  "subsequentReview": "save-duration-review.json records the later independent-review save-duration and Escape-focus fixes; the 94-test count and image hashes below remain historical"
+}

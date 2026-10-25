@@ -1,0 +1,197 @@
+{
+  "status": "candidate-only fix after independent review; main and deployment unchanged",
+  "baselineRemoteCandidate": "3f45d0c582b1507ee30895a9ad9838758a5f03be",
+  "method": "normal start/choice/mark commands and fixed .1s model updates; no occupancy/art/state injection; not browser or human playtest",
+  "before": [
+    {
+      "ticks": 99999,
+      "seconds": 9999.9,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "markCount": 1,
+      "rawBytes": 219
+    },
+    {
+      "ticks": 100000,
+      "seconds": 10000,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "markCount": 1,
+      "rawBytes": 220
+    },
+    {
+      "ticks": 100001,
+      "seconds": 10000.1,
+      "wrote": true,
+      "readProtection": "invalid",
+      "readState": "ready",
+      "markCount": 0,
+      "rawBytes": 220
+    }
+  ],
+  "after": [
+    {
+      "choice": "now",
+      "ticks": 99999,
+      "seconds": 9999.9,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 217
+    },
+    {
+      "choice": "now",
+      "ticks": 100000,
+      "seconds": 10000,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 218
+    },
+    {
+      "choice": "now",
+      "ticks": 100001,
+      "seconds": 10000.1,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 218
+    },
+    {
+      "choice": "later",
+      "ticks": 99999,
+      "seconds": 9999.9,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 219
+    },
+    {
+      "choice": "later",
+      "ticks": 100000,
+      "seconds": 10000,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 220
+    },
+    {
+      "choice": "later",
+      "ticks": 100001,
+      "seconds": 10000.1,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 220
+    },
+    {
+      "choice": "alone",
+      "ticks": 99999,
+      "seconds": 9999.9,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 219
+    },
+    {
+      "choice": "alone",
+      "ticks": 100000,
+      "seconds": 10000,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 220
+    },
+    {
+      "choice": "alone",
+      "ticks": 100001,
+      "seconds": 10000.1,
+      "wrote": true,
+      "readProtection": null,
+      "readState": "paused",
+      "artEqual": true,
+      "actorsEqual": true,
+      "rawBytes": 220
+    }
+  ],
+  "originalOversizedV2RawRecovered": {
+    "ticks": 100001,
+    "protection": null,
+    "marks": 1,
+    "rawBytesPreserved": true
+  },
+  "implementation": {
+    "checkpointFormat": "unchanged v2; historical elapsed-tick meaning retained",
+    "idleSkip": "only proven stable co-creation/personal-paper waits; no authoring or NPC/movement progress is skipped",
+    "maxActualReplaySteps": 100000,
+    "maxCommands": 4096,
+    "safetySlots": 1,
+    "clockValidation": "nonnegative Number.isSafeInteger; invalid progression in ready/paused/terminal rejected",
+    "v1": "legacy-scene.mjs unchanged",
+    "timePressure": "none added; waiting never authors or finishes player art"
+  },
+  "focus": {
+    "method": "jsdom 26.1.0 parses actual checked-in HTML without running scripts/loading resources; actual HTMLElement focus and bubbling KeyboardEvent",
+    "regression": "Esc from both leaf handles clears draft, hides handles and returns document.activeElement to the editable paper; Enter then starts another draft",
+    "runtimeDependencyAdded": false,
+    "developmentDependencyAdded": "jsdom 26.1.0 pinned with package-lock"
+  },
+  "tests": {
+    "command": "npm test --prefix tools/preview-bundles",
+    "passed": 103,
+    "failed": 0,
+    "newTests": 9,
+    "priorTestsRetained": 94,
+    "scope": [
+      "three arrangements around old tick threshold",
+      "long waits with undo/response/cancel/fractional refresh",
+      "cancelled deferred arrangement actor-job normalization",
+      "near-full valid synthetic command history with near-max-safe-integer clocks, child timeout 5s (not played input evidence)",
+      "illegal time progression and unsafe clocks rejected",
+      "both focus handles use actual markup/event bubbling",
+      "existing v1 compatibility, save isolation and input/artifact semantics",
+      "independent JS/CSS rebuild matches existing HTML markup shell"
+    ]
+  },
+  "hashes": {
+    "experiments/windowlife-request-preview/index.html": "cb7a219131347f93fd6a583c4f0d25642ade5f626d19bbff24c93fe1320c5cb4",
+    "experiments/windowlife-request-preview/source/scene.mjs": "fef598ba21ad6ebbd5a99804773b381006cd777f31f9447914188a83edefb5b2",
+    "experiments/windowlife-request-preview/source/paper-controller.mjs": "abc4ed1564da7a4315f71f0b1e4bec17926bfdd9a35ab23d70fa28f80a00b007",
+    "experiments/windowlife-request-preview/source/legacy-scene.mjs": "feeee993415c46cae8a22518384c2b7edac557cc266885e5c602be40f80875f8",
+    "tests/windowlife-leaf-save-duration.test.mjs": "7dad96a6de8c303a97f1e983bdfa6be0a8e067b32db6fa356a835ebd553f3189",
+    "tests/windowlife-leaf-dom.test.mjs": "b22e554314c4218e9d42b9c78e97ee488d333255af0d11095495d65ac6c10a20"
+  },
+  "remaining": [
+    "native browser Tab/Escape",
+    "lostpointercapture",
+    "actual handle dragging",
+    "paper drawing/page scroll arbitration",
+    "physical phone",
+    "human playability and creative value"
+  ],
+  "excluded": [
+    "main update",
+    "deployment",
+    "Library transfer",
+    "offline PNG or binary upload",
+    "cloud browser or denied proxy retries"
+  ]
+}

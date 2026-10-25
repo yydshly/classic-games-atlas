@@ -1,0 +1,496 @@
+{
+  "scope": "commands only; discovered by read-only model planning, independently replayed from createGame/start with fixed STEP; no state snapshots are supplied as inputs",
+  "sourceCandidate": "0f777103083d6b19b248093e136ee3cbe27c7073",
+  "step": 0.02,
+  "routes": [
+    {
+      "id": "bay2-long",
+      "level": 2,
+      "kind": "long",
+      "input": [
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 42
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 36
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 18
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 59
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 66
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 90
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 89
+        }
+      ],
+      "expected": {
+        "state": "won",
+        "time": 8.64,
+        "lives": 3,
+        "percent": 62.54826254826254,
+        "stats": {
+          "cuts": 2,
+          "losses": 0,
+          "filled": 162,
+          "steps": 72
+        },
+        "objectives": [
+          {
+            "id": "reed",
+            "total": 122,
+            "claimed": 52,
+            "percent": 42.62295081967213,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "islet",
+            "total": 137,
+            "claimed": 110,
+            "percent": 80.2919708029197,
+            "target": 40,
+            "complete": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bay3-long",
+      "level": 3,
+      "kind": "long",
+      "input": [
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 6
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 12
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 35
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 12
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 24
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 89
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 90
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 60
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 89
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 90
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 24
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 71
+        }
+      ],
+      "expected": {
+        "state": "won",
+        "time": 12.12,
+        "lives": 3,
+        "percent": 75.84745762711864,
+        "stats": {
+          "cuts": 4,
+          "losses": 0,
+          "filled": 179,
+          "steps": 101
+        },
+        "objectives": [
+          {
+            "id": "fern",
+            "total": 87,
+            "claimed": 82,
+            "percent": 94.25287356321839,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "lantern",
+            "total": 78,
+            "claimed": 34,
+            "percent": 43.58974358974359,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "tide",
+            "total": 71,
+            "claimed": 63,
+            "percent": 88.73239436619718,
+            "target": 40,
+            "complete": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bay2-stepping",
+      "level": 2,
+      "kind": "stepping",
+      "input": [
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 90
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 17
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 18
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 24
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 23
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 24
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 102
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 36
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 47
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 36
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 48
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 24
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 47
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 12
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 53
+        }
+      ],
+      "expected": {
+        "state": "won",
+        "time": 12.72,
+        "lives": 3,
+        "percent": 85.71428571428571,
+        "stats": {
+          "cuts": 5,
+          "losses": 0,
+          "filled": 222,
+          "steps": 106
+        },
+        "objectives": [
+          {
+            "id": "reed",
+            "total": 122,
+            "claimed": 106,
+            "percent": 86.88524590163934,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "islet",
+            "total": 137,
+            "claimed": 116,
+            "percent": 84.67153284671532,
+            "target": 40,
+            "complete": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bay3-stepping",
+      "level": 3,
+      "kind": "stepping",
+      "input": [
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 18
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 23
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 12
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 18
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 18
+        },
+        {
+          "dir": "R",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": "U",
+          "toggle": false,
+          "ticks": 30
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 17
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 65
+        },
+        {
+          "dir": "D",
+          "toggle": false,
+          "ticks": 12
+        },
+        {
+          "dir": null,
+          "toggle": true,
+          "ticks": 1
+        },
+        {
+          "dir": "L",
+          "toggle": false,
+          "ticks": 41
+        }
+      ],
+      "expected": {
+        "state": "won",
+        "time": 7.56,
+        "lives": 3,
+        "percent": 75.84745762711864,
+        "stats": {
+          "cuts": 4,
+          "losses": 0,
+          "filled": 179,
+          "steps": 63
+        },
+        "objectives": [
+          {
+            "id": "fern",
+            "total": 87,
+            "claimed": 75,
+            "percent": 86.20689655172413,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "lantern",
+            "total": 78,
+            "claimed": 52,
+            "percent": 66.66666666666666,
+            "target": 40,
+            "complete": true
+          },
+          {
+            "id": "tide",
+            "total": 71,
+            "claimed": 52,
+            "percent": 73.23943661971832,
+            "target": 40,
+            "complete": true
+          }
+        ]
+      }
+    }
+  ]
+}

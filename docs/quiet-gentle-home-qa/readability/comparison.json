@@ -1,0 +1,700 @@
+{
+  "base": "b576b8e9b6c7a0765a3147ca17b8aaef3e919ef6",
+  "method": "actual fixed game camera, real physics snapshots, CPU colour/depth projection; not browser pixels",
+  "width": 1280,
+  "height": 800,
+  "cases": {
+    "ready": {
+      "snapshot": {
+        "player": {
+          "position": [
+            0,
+            0.42,
+            3.7
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ]
+        },
+        "noise": 0,
+        "state": "playing",
+        "grounded": false,
+        "time": 0,
+        "lastImpact": null,
+        "lastSupport": null,
+        "fallFrom": null,
+        "lastSupportPoint": null,
+        "fallPoint": null,
+        "resets": 0
+      },
+      "pose": {
+        "clock": 0,
+        "speed": 0,
+        "dock": "distant",
+        "connected": false,
+        "dockPulse": 0.5,
+        "brake": false,
+        "faceYaw": 0,
+        "facePitch": 0,
+        "impact": 8.194012623990515e-40,
+        "impactTool": null,
+        "impactStrength": 0,
+        "handLift": 0,
+        "headLift": 0,
+        "headTurn": 0,
+        "brow": 0,
+        "awake": false,
+        "breath": 0,
+        "charge": 0,
+        "chargePitch": 0,
+        "fall": false,
+        "endAge": 0
+      },
+      "source": "fresh real world before any step, corresponding to controller ready",
+      "snapshotSha256": "ca15db141847add9ec38e0551039599877a158adeb18171df394aa416326e6e5",
+      "variants": {
+        "before": {
+          "robotBox": {
+            "width": 55.87253818419299,
+            "height": 54.24207077505625,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 21.72390076451567,
+            "height": 12.649550777173202,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 97,
+          "groups": 97,
+          "triangles": 13260,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        },
+        "after": {
+          "robotBox": {
+            "width": 55.87253818419299,
+            "height": 54.24207077505625,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 26.930958878349944,
+            "height": 19.07434782504729,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 94,
+          "groups": 94,
+          "triangles": 12708,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        }
+      }
+    },
+    "near-too-fast": {
+      "snapshot": {
+        "player": {
+          "position": [
+            -0.29745260505963744,
+            0.3399961631754459,
+            -3.0866818191901957
+          ],
+          "quaternion": [
+            -0.1751654984614637,
+            0.49249036363520643,
+            -0.8471268842887321,
+            0.09563645638810567
+          ],
+          "velocity": [
+            9.07664749523038e-17,
+            2.220446049250313e-15,
+            -2.607942149682625
+          ]
+        },
+        "noise": 0,
+        "state": "playing",
+        "grounded": true,
+        "time": 13.549999999999871,
+        "lastImpact": null,
+        "lastSupport": {
+          "id": "metal-table",
+          "material": "metal"
+        },
+        "fallFrom": null,
+        "lastSupportPoint": [
+          -0.29745260505963744,
+          0,
+          -3.0649489679428403
+        ],
+        "fallPoint": null,
+        "resets": 0
+      },
+      "pose": {
+        "clock": 13.550000000000253,
+        "speed": 2.607942149682625,
+        "dock": "too-fast",
+        "connected": false,
+        "dockPulse": 0.01054679498940081,
+        "brake": false,
+        "faceYaw": 9.988256467862417e-18,
+        "facePitch": 0.04114890685426326,
+        "impact": 8.938909916266461e-93,
+        "impactTool": null,
+        "impactStrength": 0,
+        "handLift": 0,
+        "headLift": 0,
+        "headTurn": 0,
+        "brow": 0,
+        "awake": false,
+        "breath": -0.006447804591958363,
+        "charge": 0,
+        "chargePitch": 0,
+        "fall": false,
+        "endAge": 0
+      },
+      "source": "real binary-control approach before brake can connect",
+      "frame": 812,
+      "snapshotSha256": "228c7a6ef7f7dceef2d9f24f5b9f705eba20edf94799fca7fe711b320fff0599",
+      "variants": {
+        "before": {
+          "robotBox": {
+            "width": 54.16284779575524,
+            "height": 55.82326988797104,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 20.98404786443644,
+            "height": 19.245821810321793,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 102.67893742398653,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 101,
+          "groups": 101,
+          "triangles": 13308,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        },
+        "after": {
+          "robotBox": {
+            "width": 54.16284779575524,
+            "height": 55.82326988797104,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 28.092554272099598,
+            "height": 20.124874977591524,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 95,
+          "groups": 95,
+          "triangles": 12756,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        }
+      }
+    },
+    "charged": {
+      "snapshot": {
+        "player": {
+          "position": [
+            -0.29745260505963744,
+            0.3399961631754459,
+            -3.2752645065036514
+          ],
+          "quaternion": [
+            -0.1945698349221784,
+            0.24360107564044658,
+            -0.9491202412261003,
+            0.04440566382887768
+          ],
+          "velocity": [
+            7.228695221538682e-17,
+            2.220446049250313e-15,
+            -0.5407474481776054
+          ]
+        },
+        "noise": 0,
+        "state": "charged",
+        "grounded": true,
+        "time": 13.699999999999863,
+        "lastImpact": null,
+        "lastSupport": {
+          "id": "metal-table",
+          "material": "metal"
+        },
+        "fallFrom": null,
+        "lastSupportPoint": [
+          -0.29745260505963744,
+          0,
+          -3.270758277768838
+        ],
+        "fallPoint": null,
+        "resets": 0
+      },
+      "pose": {
+        "clock": 14.400000000000295,
+        "speed": 0.5407474481776054,
+        "dock": "connected",
+        "connected": true,
+        "dockPulse": 0.6269116813803034,
+        "brake": false,
+        "faceYaw": 2.751340460094653e-17,
+        "facePitch": 0.009733053123258438,
+        "impact": 4.255315585499506e-96,
+        "impactTool": null,
+        "impactStrength": 0,
+        "handLift": 0,
+        "headLift": 0,
+        "headTurn": 0,
+        "brow": 0,
+        "awake": false,
+        "breath": -0.017648120094128923,
+        "charge": 1,
+        "chargePitch": -2.4492935982947065e-17,
+        "fall": false,
+        "endAge": 0.7000000000000005
+      },
+      "source": "real charged snapshot after existing 0.7s presentation settling",
+      "frame": 863,
+      "snapshotSha256": "6f25bac078de205995a0ba5a05d525e303a640a3d37181f3ce424901052e52ff",
+      "variants": {
+        "before": {
+          "robotBox": {
+            "width": 55.4198381780866,
+            "height": 53.78389926882701,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 21.971895230098745,
+            "height": 17.487409283675603,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 102,
+          "groups": 102,
+          "triangles": 13320,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        },
+        "after": {
+          "robotBox": {
+            "width": 55.4198381780866,
+            "height": 53.92990466810592,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 28.85082456755135,
+            "height": 15.00632216085629,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 95,
+          "groups": 95,
+          "triangles": 12744,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        }
+      }
+    },
+    "opposite-too-fast": {
+      "snapshot": {
+        "player": {
+          "position": [
+            0.2974733029303022,
+            0.3399961631754459,
+            -3.0866357100912616
+          ],
+          "quaternion": [
+            -0.05604129322222464,
+            -0.9584029776108034,
+            0.09683970950240764,
+            0.2625741354821828
+          ],
+          "velocity": [
+            0.00007135882273618436,
+            2.220446049250313e-15,
+            -2.607783182073202
+          ]
+        },
+        "noise": 0,
+        "state": "playing",
+        "grounded": true,
+        "time": 16.98333333333301,
+        "lastImpact": null,
+        "lastSupport": {
+          "id": "metal-table",
+          "material": "metal"
+        },
+        "fallFrom": null,
+        "lastSupportPoint": [
+          0.2974727082734461,
+          0,
+          -3.0649041835739848
+        ],
+        "fallPoint": null,
+        "resets": 0
+      },
+      "pose": {
+        "clock": 16.98333333333365,
+        "speed": 2.6077831830495253,
+        "dock": "too-fast",
+        "connected": false,
+        "dockPulse": 0.45323593809181156,
+        "brake": false,
+        "faceYaw": 0.000007853000666862332,
+        "facePitch": 0.04114598710204425,
+        "impact": 3.4008311491218293e-106,
+        "impactTool": null,
+        "impactStrength": 0,
+        "handLift": 0,
+        "headLift": 0,
+        "headTurn": 0,
+        "brow": 0,
+        "awake": false,
+        "breath": 0.004485247444464033,
+        "charge": 0,
+        "chargePitch": 0,
+        "fall": false,
+        "endAge": 0
+      },
+      "source": "real binary-control route around the right side of the existing tools",
+      "frame": 1019,
+      "snapshotSha256": "2f4a2fcf25408c878c54a7d4834ce05992b63ec184ec4f1ce6023930b302ea7e",
+      "variants": {
+        "before": {
+          "robotBox": {
+            "width": 55.62096357876059,
+            "height": 53.586893250691325,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 21.582843590550453,
+            "height": 10.481141635806246,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 102.67893742398653,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 101,
+          "groups": 101,
+          "triangles": 13308,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        },
+        "after": {
+          "robotBox": {
+            "width": 55.62096357876059,
+            "height": 54.63824272089028,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "repairPatchBox": {
+            "width": 30.5285712231875,
+            "height": 8.281659857585977,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "dockBox": {
+            "width": 103.46765863514275,
+            "height": 85.22321968943447,
+            "scope": "projected visible-mesh vertex envelope, includes hidden surfaces; not visible pixel area"
+          },
+          "meshes": 95,
+          "groups": 95,
+          "triangles": 12756,
+          "camera": [
+            0.12479419162229706,
+            0,
+            0,
+            0,
+            0,
+            0.1996707065956753,
+            0,
+            0,
+            0,
+            0,
+            -0.02002002002002002,
+            0,
+            -0.06430765514316814,
+            -0.07937316837201533,
+            -1.002002002002002,
+            1,
+            0.9525549486528351,
+            1.3877787807814457e-17,
+            -0.30436666998374623,
+            0,
+            -0.17989578117467153,
+            0.8066352569850618,
+            -0.5630071670096201,
+            0,
+            0.24551288706002664,
+            0.5910495429222863,
+            0.7683644057989719,
+            0,
+            5.5,
+            13,
+            17,
+            1
+          ]
+        }
+      }
+    }
+  }
+}

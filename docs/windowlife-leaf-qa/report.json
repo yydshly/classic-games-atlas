@@ -1,0 +1,107 @@
+{
+  "status": "local complete interaction prototype; not uploaded, not deployed, actual UI/player acceptance pending",
+  "baseCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+  "mainUntouched": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+  "tests": {
+    "passed": 87,
+    "failed": 0,
+    "defaultQAJSONWrites": false
+  },
+  "rebuild": [
+    {
+      "id": "inlet-deadline",
+      "runtimePath": "experiments/inlet-deadline-preview/index.html",
+      "dependencies": [
+        "versions/v3/preview/inlet/levels.mjs",
+        "versions/v3/preview/inlet/engine.mjs",
+        "versions/v3/preview/inlet/renderer.mjs",
+        "versions/v3/preview/inlet/journey.mjs",
+        "versions/v3/preview/inlet/game.mjs"
+      ],
+      "hashes": {
+        "html": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+        "script": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+        "css": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+      }
+    },
+    {
+      "id": "windowlife-request",
+      "runtimePath": "experiments/windowlife-request-preview/index.html",
+      "dependencies": [
+        "preview/windowlife/levels.mjs",
+        "experiments/windowlife-request/legacy-scene.mjs",
+        "experiments/windowlife-request/marks.mjs",
+        "experiments/windowlife-request/scene.mjs",
+        "experiments/windowlife-request/storage.mjs",
+        "experiments/windowlife-request/paper-controller.mjs",
+        "experiments/windowlife-request/controller.mjs",
+        "experiments/windowlife-request/view.mjs",
+        "experiments/windowlife-request/main.mjs"
+      ],
+      "hashes": {
+        "html": "49c059a570946e762160044450d7e0fe8fa48222180ceb2f7988049b7fd7beb0",
+        "script": "74cc5a5a845c05c492a4059a0d2110cf6ac5d390ac5427a98a185c949d59ccff",
+        "css": "85b11879dc072e96d6a571363b9d919f0b778c77205d64cbb62df686c74f4790"
+      }
+    }
+  ],
+  "runtimeHTMLSha256": "49c059a570946e762160044450d7e0fe8fa48222180ceb2f7988049b7fd7beb0",
+  "legacyV1OriginalBodySHA256": "a339903b59d6681e6602852e82f63289b5c6cb8fadfca8c7191e39f975ded021",
+  "legacyBodyPreservedWithOnlySharedExportsAppended": true,
+  "modelVersions": {
+    "fresh": 2,
+    "restoredLegacy": 1,
+    "storageKeyUnchanged": "classic-atlas.windowlife.request-scene.v1"
+  },
+  "actualInputCoverage": "mouse/touch/keyboard event fixtures; not native browser or physical phone",
+  "verifiedBehavior": [
+    "no player marks or auto-finish during 60s idle",
+    "one or two leaves and explicit finish for each of three valid arrangements",
+    "NPC branch depends on saved player endpoints",
+    "undo removes dependent response, cancel retains committed ink",
+    "pause, fractional and per-tick replay, refresh, history limit",
+    "protected bad save and write retry in paused/settled/closed/ready states",
+    "original v1 scenario/controller/canvas compatibility tests retained",
+    "one NPC pen completes one branch before the next queued response"
+  ],
+  "mobileSizing": {
+    "viewport": 390,
+    "assumedMainPaddingEach": 12,
+    "assumedWorkspacePaddingEach": 10,
+    "workspaceBorderTotal": 2,
+    "stageWidth": 344,
+    "paperWidth": 316.48,
+    "paperHeight": 247.68,
+    "handleTarget": 44,
+    "scope": "CSS declaration arithmetic, not measured browser layout"
+  },
+  "offlinePaperEvidence": {
+    "exporter": "docs/windowlife-leaf-qa/export-paper.mjs",
+    "directory": "/workspace/scratch/windowlife-paper-review",
+    "statesSHA256": "8f973004969facba34873923bc6bbe81dc611aba0712f569b2fe3c8781f92474",
+    "pngSHA256": {
+      "joint-left.png": "822906006ac034ca1be669e3465702507e3926810bcb871d36debe9684ee8530",
+      "quiet-finished.png": "00f79889dbf6caf84b06de832450f6123caf6d01024e393c1528575164a1e300",
+      "joint-right.png": "d216b6b38f7b93c34fc752ae3f0b2b6a10f56ef3db97860a4bcaae8bc3ebb3bb",
+      "joint-finished.png": "c712b867290abe26928ccd43fed0f30037ee6a55c3178c507292aed166fc6163"
+    },
+    "scope": "real PaperRenderer instructions recorded to SVG, rasterized with normal Inkscape CLI; no DOM/browser/scroll/font equivalence claim",
+    "limitations": [
+      "default static font configuration",
+      "room composition and full webpage pixels not inspected"
+    ]
+  },
+  "notChanged": [
+    "Inlet runtime and sources",
+    "Quiet r3",
+    "formal games",
+    "home page/catalogue/game count",
+    "main or remote candidate refs"
+  ],
+  "remaining": [
+    "actual desktop pointer and keyboard playthrough",
+    "390x844 real viewport scroll and touch arbitration",
+    "physical phone",
+    "full scene/paper hierarchy and perceived creative value"
+  ]
+}

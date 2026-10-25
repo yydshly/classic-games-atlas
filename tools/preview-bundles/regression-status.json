@@ -1,0 +1,84 @@
+{
+  "sourceCandidateBeforeThisRound": "0f777103083d6b19b248093e136ee3cbe27c7073",
+  "runtimeMain": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+  "command": "npm test --prefix tools/preview-bundles",
+  "tests": {
+    "passed": 59,
+    "failed": 0
+  },
+  "defaultCheckReadOnly": true,
+  "qaJSONHashesUnchangedByDefaultCheck": {
+    "docs/inlet-deadline-layout-qa/report.json": "f82defda9fe2142ea6e2ccf25ea250fd8de8d5a23c3258238038460d63affd03",
+    "docs/inlet-deadline-layout-qa/forecast-audit.json": "4346d23651aa2a47eb1cc032b5fb745c49c6b11b99a6f6ae25b945cf0711b2b8",
+    "docs/inlet-playability-qa/report.json": "79aec3db6273e6421df6ab9ea517b24c1d296e46fcfb85b9f24bcc4241ede0df",
+    "tools/preview-bundles/verification.json": "fef7708c9899745bdc33d4851d26eb338048d68b845eebe31142b0d2025495d8"
+  },
+  "independentRebuild": "JS and CSS byte identity; full HTML comparison reuses the current markup shell",
+  "previews": [
+    {
+      "id": "inlet-deadline",
+      "runtimePath": "experiments/inlet-deadline-preview/index.html",
+      "dependencies": [
+        "versions/v3/preview/inlet/levels.mjs",
+        "versions/v3/preview/inlet/engine.mjs",
+        "versions/v3/preview/inlet/renderer.mjs",
+        "versions/v3/preview/inlet/journey.mjs",
+        "versions/v3/preview/inlet/game.mjs"
+      ],
+      "hashes": {
+        "html": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+        "script": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+        "css": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+      }
+    },
+    {
+      "id": "windowlife-request",
+      "runtimePath": "experiments/windowlife-request-preview/index.html",
+      "dependencies": [
+        "preview/windowlife/levels.mjs",
+        "experiments/windowlife-request/scene.mjs",
+        "experiments/windowlife-request/storage.mjs",
+        "experiments/windowlife-request/controller.mjs",
+        "experiments/windowlife-request/view.mjs",
+        "experiments/windowlife-request/main.mjs"
+      ],
+      "hashes": {
+        "html": "a6171cea124d0c9de3f32d1661c34997e46c3079ba516cd38f5fdb6201118751",
+        "script": "f237352f6e3822d66e8324b9fcd1f1729c4ea7e38f3f5a761d2ede33aca899a1",
+        "css": "f493c74d288a8505e1176a1876c283765366d870d5760049a9b9ed75eba5c61c"
+      }
+    }
+  ],
+  "sourceOriginStatus": {
+    "stillAtImportedBaseline": 19,
+    "intentionalLaterChanges": [
+      "forecast-audit.mjs: nonSafe naming, assert no false safe, explicit --write to new output only"
+    ]
+  },
+  "historicalLayoutAudit": "retained with original SHA and artifacts, excluded from default regression; explicit command rewrites its report",
+  "currentBehaviorChecks": [
+    "legal route replay with no state injection",
+    "current runtime DOM keyboard/pause/refresh/retry/storage fixture",
+    "source edit plus matching rebuilt bundle accepted",
+    "stale source/bundle/CSS and formal-key leakage rejected"
+  ],
+  "actualBrowserEvidence": {
+    "source": "parent supplied desktop browser result",
+    "runtimeCommit": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+    "passed": [
+      "390x844 all checked scroll positions unobscured",
+      "1280x720 initial full chart and main controls",
+      "820x740 disclosure and pause"
+    ],
+    "unverified": [
+      "second/third bay actual browser completion",
+      "physical phone controls",
+      "complete UI/player-experience acceptance"
+    ]
+  },
+  "modelPlayability": "docs/inlet-playability-qa/report.json; four zero-loss routes and late-deadline/failure tests",
+  "runtimeAndMainChanged": false,
+  "browserOrDeniedHTTPAttempted": false,
+  "recordType": "historical stable-preview baseline at 8cb045c08910d37a862e98277affb85cc6a2824f, before the local leaf prototype",
+  "localPrototypeRecord": "../../docs/windowlife-leaf-qa/report.json"
+}

@@ -1,0 +1,297 @@
+{
+  "schema": 1,
+  "esbuildVersion": "0.25.12",
+  "baselineMain": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+  "baselineCandidate": "1102b4ba7439ee1dbc8cba319752c3135bff0125",
+  "scope": "Imported baselines and explicit adaptations; runtime HTML remains unchanged by this maintenance task. Later source changes stay in Git and must rebuild to matching runtime bytes.",
+  "imports": [
+    {
+      "target": "experiments/inlet-deadline-preview/source/engine.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/engine.mjs",
+      "originBlob": "8bca68cb0e813f67ed4b9d8140436e2fdcb6ec37",
+      "adaptations": [],
+      "originSha256": "b594dbf6b7b236fa38912ac8a1fcba9571488b82aa7012bb8aa89650575897ec",
+      "importedSha256": "b594dbf6b7b236fa38912ac8a1fcba9571488b82aa7012bb8aa89650575897ec"
+    },
+    {
+      "target": "experiments/inlet-deadline-preview/source/game.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/game.mjs",
+      "originBlob": "625b0866cfdf58a7e8ad6730dd7dc50dbb0098a1",
+      "adaptations": [],
+      "originSha256": "dfa0b31c13a42cb805ca4d9ebe892a9bf5f1c85c1ae39c5f0e35baad78675280",
+      "importedSha256": "dfa0b31c13a42cb805ca4d9ebe892a9bf5f1c85c1ae39c5f0e35baad78675280"
+    },
+    {
+      "target": "experiments/inlet-deadline-preview/source/renderer.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/renderer.mjs",
+      "originBlob": "cf975e6aeb465478b66ac32df0e1090c921a4e1d",
+      "adaptations": [],
+      "originSha256": "1f79ea33545b1a3bcc979652d21207c684aaee9d706e5aca2273880d3c98e822",
+      "importedSha256": "1f79ea33545b1a3bcc979652d21207c684aaee9d706e5aca2273880d3c98e822"
+    },
+    {
+      "target": "experiments/inlet-deadline-preview/source/journey.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/journey.mjs",
+      "originBlob": "06fb1018ee42fdc5e62642fcd60beb5a010e739d",
+      "adaptations": [
+        {
+          "from": "classic-atlas.inlet.v3",
+          "to": "classic-atlas.preview.inlet-v3-deadline.970a268.v1",
+          "reason": "Preserve current isolated preview key; never write formal progress."
+        }
+      ],
+      "originSha256": "cf21438403c60c5d75d0afcf3969ce2814083cb2ba544f491aaf5d5271e2aeb2",
+      "importedSha256": "2020d162ecab9b9a160d96a2065bdab49a4d7566520902a3a43add93ce4c9eb5"
+    },
+    {
+      "target": "experiments/inlet-deadline-preview/source/levels.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/levels.mjs",
+      "originBlob": "d1a12c4de654d113c6c5586b1b8ebf7a0070ced6",
+      "adaptations": [],
+      "originSha256": "87fa1e3fa63a8b4843af4270f31fe262ed46cb170ad525a1c1c2e1167fdf01b5",
+      "importedSha256": "87fa1e3fa63a8b4843af4270f31fe262ed46cb170ad525a1c1c2e1167fdf01b5"
+    },
+    {
+      "target": "experiments/inlet-deadline-preview/source/style.css",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "versions/v3/preview/inlet/style.css",
+      "originBlob": "af6c3ef2a97bdec8d1d19f69b5b02ae567ddd0fb",
+      "adaptations": [],
+      "originSha256": "6706e0c2fb99a4a9a55dec097101b68920136af4e9617e4886ef7158f082b572",
+      "importedSha256": "6706e0c2fb99a4a9a55dec097101b68920136af4e9617e4886ef7158f082b572"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/main.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/main.mjs",
+      "originBlob": "21e53be1949116278da71f466ef547ba4fc708cb",
+      "adaptations": [],
+      "originSha256": "0ea252928600ce2f1087a489d9cc19b4ac2ea9a5d254b026885273ff9f9e4947",
+      "importedSha256": "0ea252928600ce2f1087a489d9cc19b4ac2ea9a5d254b026885273ff9f9e4947"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/controller.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/controller.mjs",
+      "originBlob": "1e6b280fb754c555658e66bb3c9ceb79a6e7e948",
+      "adaptations": [],
+      "originSha256": "e14208f94e234a081e9f3297045f17e4fcf165faab282f19b9df2d4878346678",
+      "importedSha256": "e14208f94e234a081e9f3297045f17e4fcf165faab282f19b9df2d4878346678"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/scene.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/scene.mjs",
+      "originBlob": "75e570d2cda0c5caa1a8db886327db8fb5e81ffb",
+      "adaptations": [
+        {
+          "from": "../../preview/windowlife/levels.mjs",
+          "to": "./levels.mjs",
+          "reason": "Use the copied identical levels module; no dependency on old branch or formal path."
+        }
+      ],
+      "originSha256": "8f0d313d038dcbe489df715a6eaf3a4486327343e996143956b9137e888e6481",
+      "importedSha256": "a339903b59d6681e6602852e82f63289b5c6cb8fadfca8c7191e39f975ded021"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/storage.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/storage.mjs",
+      "originBlob": "3af102718fa780af040d222b998142e8a67b934b",
+      "adaptations": [],
+      "originSha256": "393ae6cf073265749cf754c70a9df680f0e5b29641183029ca0848aa852126f4",
+      "importedSha256": "393ae6cf073265749cf754c70a9df680f0e5b29641183029ca0848aa852126f4"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/view.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/view.mjs",
+      "originBlob": "4bae3b465b5fea93f83ac37ae99e9018c2d21aab",
+      "adaptations": [],
+      "originSha256": "cc1b85ea755ebff930b7cdfd48a8e61d1900ae48e052d428d520039c17cb671f",
+      "importedSha256": "cc1b85ea755ebff930b7cdfd48a8e61d1900ae48e052d428d520039c17cb671f"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/style.css",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "experiments/windowlife-request/style.css",
+      "originBlob": "8f5c5faf6fdc72fb1c8b814546df5bc039436138",
+      "adaptations": [],
+      "originSha256": "8266ffe7b76acfaea8e65dc942e0e7298055b3d0c7867842646361156ffb3888",
+      "importedSha256": "8266ffe7b76acfaea8e65dc942e0e7298055b3d0c7867842646361156ffb3888"
+    },
+    {
+      "target": "experiments/windowlife-request-preview/source/levels.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "preview/windowlife/levels.mjs",
+      "originBlob": "50b6395afaed1f7051b3a6d7007135ed6947a656",
+      "adaptations": [],
+      "originSha256": "436cf0dd39022a46334ebee85a0857a2f94086052c1699aa233cd2d63dc84a1f",
+      "importedSha256": "436cf0dd39022a46334ebee85a0857a2f94086052c1699aa233cd2d63dc84a1f"
+    },
+    {
+      "target": "tests/inlet-v3-preview-deadline.test.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "tests/inlet-v3-preview-deadline.test.mjs",
+      "originBlob": "fa58db4cd9dde6aad4002f8f872098c7b6c629dd",
+      "adaptations": [
+        {
+          "from": "../versions/v3/preview/inlet/",
+          "to": "../experiments/inlet-deadline-preview/source/",
+          "reason": "Run original assertions against concentrated preview sources."
+        }
+      ],
+      "originSha256": "3fa877b4538fc62b8399e15ccd90dab01607c27be92a1434a9ff26d7da34b936",
+      "importedSha256": "408b8393553a53d46a26fe1535bb1192133c8bca262db00d88d2717e5baac420"
+    },
+    {
+      "target": "tests/windowlife-request-scene.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "tests/windowlife-request-scene.test.mjs",
+      "originBlob": "663fb027434579800b28420c9ae6ede6d5e747d7",
+      "adaptations": [
+        {
+          "from": "../experiments/windowlife-request/",
+          "to": "../experiments/windowlife-request-preview/source/",
+          "reason": "Retarget original source tests to current preview sources."
+        },
+        {
+          "from": "../preview/windowlife/levels.mjs",
+          "to": "../experiments/windowlife-request-preview/source/levels.mjs",
+          "reason": "Test the copied pinned levels module."
+        }
+      ],
+      "originSha256": "325f066ddc40e981fcbf16c86b734711d154bfdf2e49506bfe069368490dc59b",
+      "importedSha256": "1ece1837d9529574b4c6fa002bf74d6415a723744a27b9fd7b3b7f78056dffbd"
+    },
+    {
+      "target": "tests/windowlife-request-controller.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "tests/windowlife-request-controller.test.mjs",
+      "originBlob": "15724b05d60dff7048f81b573f4328e8a6f8fd88",
+      "adaptations": [
+        {
+          "from": "../experiments/windowlife-request/",
+          "to": "../experiments/windowlife-request-preview/source/",
+          "reason": "Retarget original source tests to current preview sources."
+        }
+      ],
+      "originSha256": "7859bebadbd8c3f789a0f4e654d64b945f732e2f9f7a39c9ffd2f73b7f550a26",
+      "importedSha256": "f178e51c6932ae68e5bd3e35a621ad1b74ad1b1d3aa6878521e47f9efef9a844"
+    },
+    {
+      "target": "tests/windowlife-request-view.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "originPath": "tests/windowlife-request-view.test.mjs",
+      "originBlob": "4bb0976ff3446ffd313a5dd4721c1e25752c65f7",
+      "adaptations": [
+        {
+          "from": "../experiments/windowlife-request/",
+          "to": "../experiments/windowlife-request-preview/source/",
+          "reason": "Retarget original source tests to current preview sources."
+        }
+      ],
+      "originSha256": "d0c11f62f00749724db7e57a0d3bbcaeac40781ea0e06f4ab3d44726b38a76e1",
+      "importedSha256": "00dffada2fe510da91ad62626b6d8a161a0bd263d533882812b0590bdd5ee6ef"
+    },
+    {
+      "target": "tests/quiet-workbench-fall-marker.test.mjs",
+      "originCommit": "dcd3f4e2cffe2dab467af9b4082f46f6817043bc",
+      "originPath": "tests/quiet-workbench-fall-marker.test.mjs",
+      "originBlob": "160a2a0b8b4e0e8dae6f0fc42816852a9f54f742",
+      "adaptations": [
+        {
+          "from": "../experiments/quiet-workbench/",
+          "to": "../experiments/quiet-workbench-preview/",
+          "reason": "Test current preview modules; never replace those modules with old ones."
+        }
+      ],
+      "originSha256": "289e5e7adf71bae9c0c0e26c40b96f48014b0ba4f5fd2f2cba6c5b15d6f2be5c",
+      "importedSha256": "2a34bc960933820ab3b09d9c61d92ff4b9d50419e5ea31711790de8bf34b794d"
+    },
+    {
+      "target": "docs/inlet-deadline-layout-qa/forecast-audit.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "docs/inlet-deadline-qa/forecast-audit.mjs",
+      "originBlob": "9374d84b27eb119f283030a1d04079f6f5183711",
+      "adaptations": [
+        {
+          "from": "../../versions/v3/preview/inlet/",
+          "to": "../../experiments/inlet-deadline-preview/source/",
+          "reason": "Audit concentrated deadline engine."
+        },
+        {
+          "from": "../inlet-v3-qa/policy.mjs",
+          "to": "./policy.mjs",
+          "reason": "Keep the audit policy on the same concentrated engine."
+        }
+      ],
+      "originSha256": "d0fd7feddf30f8ce3254bbfd2f0f33f58dcf03dae7aeb64f88f318912f0b90ea",
+      "importedSha256": "e85d4ff4177920a2a217ebc16b89027a20feca668640f187fad13eb6c243c9fc"
+    },
+    {
+      "target": "docs/inlet-deadline-layout-qa/policy.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "originPath": "docs/inlet-v3-qa/policy.mjs",
+      "originBlob": "4ec5217f944180c104dd1d821908c463b8499382",
+      "adaptations": [
+        {
+          "from": "from './engine.mjs'",
+          "to": "from '../../experiments/inlet-deadline-preview/source/engine.mjs'",
+          "reason": "Use the same concentrated engine as the audited simulation, rather than a historical QA engine."
+        }
+      ],
+      "originSha256": "5647e1d9b59fc4ab42e667476f5f2606c9a43aa74f0772f1f8d1d1da5759d5fa",
+      "importedSha256": "ccbf0e3d461d068e4c085cdedeeb5522eed836bb26b4652ea1526e495af689bd"
+    }
+  ],
+  "runtimeAtImport": {
+    "inlet-deadline": {
+      "path": "experiments/inlet-deadline-preview/index.html",
+      "htmlSha256": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+      "scriptSha256": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+      "cssSha256": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+    },
+    "windowlife-request": {
+      "path": "experiments/windowlife-request-preview/index.html",
+      "htmlSha256": "a6171cea124d0c9de3f32d1661c34997e46c3079ba516cd38f5fdb6201118751",
+      "scriptSha256": "f237352f6e3822d66e8324b9fcd1f1729c4ea7e38f3f5a761d2ede33aca899a1",
+      "cssSha256": "f493c74d288a8505e1176a1876c283765366d870d5760049a9b9ed75eba5c61c"
+    }
+  },
+  "layoutSource": {
+    "path": "experiments/inlet-deadline-preview/source/preview-layout.css",
+    "fromRuntimeCommit": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+    "sha256": "763ac0cdd1d53e8b2acb568d67907266a3df993ac71a50c98e71eaa5b3bb1d50",
+    "scope": "Exact current inline suffix after the unchanged original style.css, including normal-flow telemetry and compact desktop header."
+  },
+  "createdSources": [
+    {
+      "path": "experiments/windowlife-request-preview/source/marks.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "player-defined paper geometry and deterministic NPC branch"
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/paper-controller.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "pointer and keyboard drafts, commit-only saved input"
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/legacy-scene.mjs",
+      "introducedAfterCandidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+      "role": "v1 compatibility: original scene body retained, shared functions exported"
+    }
+  ],
+  "legacySceneBaseline": {
+    "previousPath": "experiments/windowlife-request-preview/source/scene.mjs",
+    "candidate": "8cb045c08910d37a862e98277affb85cc6a2824f",
+    "originalBodySha256": "a339903b59d6681e6602852e82f63289b5c6cb8fadfca8c7191e39f975ded021",
+    "preservedAs": "experiments/windowlife-request-preview/source/legacy-scene.mjs",
+    "onlyAppend": "shared movement/work function exports"
+  }
+}

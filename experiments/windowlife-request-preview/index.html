@@ -6,38 +6,53 @@
   <title>栖窗日常 · 相处安排表达实验（未完成真实 UI 验收）</title>
   <style>
 :root{color-scheme:light;--ink:#384b40;--muted:#6d7566;--paper:#f5f1e7;--line:#d6d9c7;--green:#315e4d;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;font-size:16px;background:#ecece0;color:var(--ink)}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:28px 32px 38px}a{color:#38644f;text-underline-offset:4px}header{padding:0 8px 18px}.candidate{float:right;color:var(--muted);font-size:.8rem}.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:#7d866b;text-transform:uppercase;margin:0 0 7px}header>.eyebrow{margin-top:30px}h1{font-family:Georgia,"Songti SC",serif;font-size:clamp(1.75rem,4vw,2.6rem);font-weight:500;letter-spacing:.04em;margin:0 0 14px}h2{font-size:1.25rem;font-weight:600;margin:0 0 10px}.intro{color:#6a7361;line-height:1.8;margin:0}button{font:inherit;cursor:pointer;border:1px solid var(--green);border-radius:8px;padding:11px 17px;background:var(--green);color:#fff;min-height:44px;line-height:1.45}button.quiet{background:transparent;color:var(--ink);border-color:#bec8b3}button:disabled{opacity:.55;cursor:default}button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #b16f35;outline-offset:4px}.scene-shell{border:1px solid #d0d3c0;border-radius:14px;background:#f0eddf;overflow:hidden}canvas{display:block;width:100%;height:auto;aspect-ratio:900/650}.scene-description{margin:0;padding:13px 20px;border-top:1px solid var(--line);line-height:1.65;font-size:.92rem;min-height:51px}.scene-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:17px 0}.phase{font-size:.83rem;color:var(--muted);margin-left:auto}.request{padding:22px;background:#fffbee;border:1px solid #cbb992;border-radius:12px;margin-top:20px}.request-heading{display:flex;align-items:start;justify-content:space-between;gap:16px}.request>p{color:var(--muted);font-size:.9rem}.dismiss{font-size:.8rem;padding:7px 11px;flex-shrink:0}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choices button{display:block;background:#f5f6e9;border-color:#bdc8ae;color:var(--ink);padding:18px;text-align:left}.choices button:hover{background:#edf1df}.choices strong{display:block;font-size:1rem;margin-bottom:9px}.choices span{display:block;font-size:.85rem;line-height:1.7;color:#6b735f}.feedback{min-height:27px;line-height:1.7;color:#58694e;font-size:.9rem;margin:14px 2px}.works{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.works article{padding:17px 20px;background:#f6f5e9;border:1px solid var(--line);border-radius:10px}.works p{margin:0;font-size:.9rem;line-height:1.7;min-height:48px}.result{background:#f7f5e9;border:1px solid #c6ceb6;border-radius:12px;padding:24px;margin-top:20px}.result>p{line-height:1.8}.save-status,.warning{font-size:.8rem;line-height:1.7}.save-status{color:var(--muted);margin:17px 3px}.warning{padding:14px;border:1px solid #c79558;background:#fff4dd;border-radius:8px}details{border-top:1px solid var(--line);padding:15px 3px;color:var(--muted);font-size:.85rem}summary{cursor:pointer;padding:6px 0;min-height:30px}ol{padding-left:24px;line-height:1.9}footer{margin-top:26px;padding:18px 8px 0;border-top:1px solid var(--line);font-size:.8rem;line-height:1.8;color:var(--muted)}[hidden]{display:none!important}@media(max-width:650px){main{padding:20px 14px}header{padding:0 3px 18px}.candidate{float:none;display:block;margin-top:12px}header>.eyebrow{margin-top:23px}.intro{font-size:.9rem}.choices{grid-template-columns:1fr}.choices button{padding:15px}.choices strong{margin-bottom:5px}.request{padding:18px 15px}.request-heading{gap:8px}.request-heading h2{font-size:1.1rem}.dismiss{font-size:.72rem;padding:6px 8px}.scene-description{padding:11px 14px;font-size:.85rem}.scene-controls{gap:8px}.scene-controls button{font-size:.83rem;padding:10px 12px}.phase{width:100%;margin-left:2px}.works{gap:10px}.works article{padding:14px 12px}.works p{font-size:.82rem}.result{padding:20px}footer{padding-inline:2px}}
+:root{--leaf:#ad5f36}.preview-boundary{border:1px solid #d1c7a9;border-radius:8px;padding:7px 12px;margin:0 0 18px;font-size:.78rem}.preview-boundary p{line-height:1.7;margin:8px 0}.studio{display:block}.studio.has-paper{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(336px,1fr);gap:16px;align-items:start}.paper-workspace{border:1px solid #c7cdb7;background:#eee8d9;border-radius:12px;padding:12px}.paper-workspace h2{font-size:1rem;margin-bottom:4px}.paper-workspace .eyebrow{font-size:.65rem;margin:0 0 5px}.paper-stage{position:relative;touch-action:pan-y}.paper-stage canvas{aspect-ratio:5/4;pointer-events:none}.paper-input{position:absolute;left:4%;top:5%;width:92%;height:90%;touch-action:none;cursor:crosshair;border-radius:2px}.paper-input[aria-disabled=true]{touch-action:pan-y;cursor:default}.paper-input:focus-visible{outline:3px solid #8d663e;outline-offset:3px}.paper-help{font-size:.8rem;line-height:1.6;min-height:2.8em;margin:5px 0 10px;color:#5f6653}.paper-tools{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}.paper-tools button{padding:8px 11px;font-size:.8rem;min-height:44px}.paper-keys{font-size:.75rem;padding:7px 0 0;margin:8px 0 0}.paper-keys summary{min-height:30px}.paper-keys p{line-height:1.6;margin:5px 0}.paper-handle{position:absolute;width:44px;height:44px;min-height:44px;min-width:44px;padding:0;transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent;touch-action:none}.paper-handle span{display:block;margin:auto;width:12px;height:12px;border:2px solid #99532b;background:#fff9df;border-radius:50%}.paper-handle:hover,.paper-handle:focus-visible{background:#b8782a25}.paper-handle:active{transform:translate(-50%,-50%)}
+@media(max-width:800px){.studio.has-paper{display:block}.paper-workspace{margin-top:14px}.scene-controls{margin-top:12px}}@media(max-width:650px){main{padding:14px 12px}.preview-boundary{margin-bottom:12px}header>.eyebrow{margin-top:14px}.intro{font-size:.85rem}.paper-workspace{padding:10px}.paper-workspace h2{font-size:.95rem}.paper-stage{min-width:0}.scene-description{min-height:0;font-size:.82rem;padding:9px 12px}.paper-help{min-height:0}.paper-tools{justify-content:flex-start}}
 
 </style>
 </head>
 <body>
   <main>
     <header><a href="../../index.html#play">← 返回游戏大厅</a><span class="candidate">表达实验 · 未完成真实 UI 验收</span>
-      <p class="eyebrow">栖窗日常 / 第二日的下午尾声</p><h1>先听你说，还是先写完</h1>
-      <p class="intro">禾禾还有半页手记。阿沐的窗边速写，也差最后几笔。<br>这一小段，没有倒计时，也不评判哪种相处更好。</p>
+      <p class="eyebrow">栖窗日常 / 第二日的下午尾声</p><h1>把叶影留到纸上</h1>
+      <p class="intro">禾禾的手记还留着半页空白。阿沐也想给窗景添一点叶影。<br>你来决定这一笔落在哪里，没有倒计时。</p>
     </header>
-    <p class="warning" role="note"><strong>独立网页表达实验 · 未完成真实 UI 验收</strong><br>可在本页直接尝试，不需要下载或安装。这是一次有限的相处安排：选择后观察走动与作品变化，也可暂停、取消共同安排或重新安排。尚未证实它是否有足够的参与感或情绪价值。<br>本实验未计入正式作品目录，不替换原来的三日日常。仅使用独立实验存档；无痕模式或存储限制可能使进度无法保留。若页面显示临时进度，请不要把它当作已经保存。</p>
+    <details class="preview-boundary"><summary>独立手动原型 · 未完成真实 UI 验收</summary><p>直接在纸面拖出叶影；松手落墨，一笔后可以收笔。人物与作品的变化来自实际安排。这一小段不计入正式目录，保留独立存档，不读取或覆盖原三日日常。旧版存档按原安排恢复，重新安排才进入手动片段。保存受限时会明确提示临时进度。</p></details>
     <noscript><p class="warning">此表达实验需要启用浏览器 JavaScript；加载后不依赖外部服务。</p></noscript>
     <p id="load-status">正在打开小屋……</p>
     <section id="app" hidden>
-      <div class="scene-shell"><canvas id="room" width="900" height="650" role="img" aria-label="两位住户的小屋，人物位置和纸上笔迹会随实际安排变化。" aria-describedby="scene-description"></canvas>
+      <div id="studio" class="studio"><div class="scene-shell"><canvas id="room" width="900" height="650" role="img" aria-label="两位住户的小屋，人物位置和纸上笔迹会随实际安排变化。" aria-describedby="scene-description"></canvas>
         <p id="scene-description" class="scene-description"></p></div>
+      <section id="paper-workspace" class="paper-workspace" aria-labelledby="paper-title" hidden>
+        <p class="eyebrow">这一笔，由你留下</p><h2 id="paper-title">把叶影留到纸上</h2>
+        <div class="paper-stage"><canvas id="paper" width="600" height="480" aria-hidden="true"></canvas>
+          <div id="paper-input" class="paper-input" tabindex="0" role="group" aria-label="叶影纸面。Enter起笔，方向键调整，Enter落墨" aria-describedby="paper-help paper-keyboard">
+            <button id="paper-handle-start" class="paper-handle" type="button" aria-label="叶柄握柄，方向键移动，Enter落墨" hidden><span></span></button>
+            <button id="paper-handle-end" class="paper-handle" type="button" aria-label="叶尖握柄，方向键移动，Enter落墨" hidden><span></span></button>
+          </div>
+        </div>
+        <p id="paper-help" class="paper-help"></p>
+        <div id="paper-tools" class="paper-tools"><button id="paper-undo" class="quiet" type="button">撤回最近一组</button><button id="paper-finish" type="button">收笔，留点空白</button></div>
+        <details class="paper-keys"><summary>用键盘落笔</summary><p id="paper-keyboard"></p></details>
+      </section></div>
       <div class="scene-controls"><button id="toggle" type="button">走进这段下午</button><button id="cancel" type="button" hidden>取消这次共同安排</button><button id="retry" class="quiet" type="button">重新安排这一段</button><span id="phase" class="phase"></span></div>
       <section id="request" class="request" aria-labelledby="request-title" hidden>
         <div class="request-heading"><div><p class="eyebrow">阿沐举起速写</p><h2 id="request-title" tabindex="-1">“想一起添最后一笔吗？”</h2></div><button id="dismiss" class="quiet dismiss" type="button" aria-label="不回应这次邀请，继续各自安排">先不回应 ×</button></div>
         <p>时间已暂停。可以慢慢想，不用抢在谁前面。</p>
         <div class="choices">
-          <button id="choose-now" type="button"><strong>现在一起</strong><span>先搁笔，到长座一起画。半页手记保留，回来接着写。</span></button>
-          <button id="choose-later" type="button"><strong>我先写完</strong><span>各自把手上的事做完，再交换手记和速写。</span></button>
-          <button id="choose-alone" type="button"><strong>先各忙各的</strong><span>在同一间小屋里各自完成，不需要解释。</span></button>
+          <button id="choose-now" type="button"><strong>现在一起</strong><span id="choice-now-copy">到长座亲手画叶影，阿沐顺着你的落点添枝线。半页手记保留。</span></button>
+          <button id="choose-later" type="button"><strong>我先写完</strong><span id="choice-later-copy">先在手记里画自己的叶影，再带着作品到长座分享。</span></button>
+          <button id="choose-alone" type="button"><strong>先各忙各的</strong><span id="choice-alone-copy">在手记上按自己的构图画好，安静收起，不必安排分享。</span></button>
         </div>
       </section>
+      <p id="legacy-note" class="save-status" hidden></p>
       <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
       <div class="works" aria-label="两份作品的实际状态"><article><span class="eyebrow">禾禾的手记</span><p id="note-status"></p></article><article><span class="eyebrow">阿沐的速写</span><p id="sketch-status"></p></article></div>
       <section id="result" class="result" aria-labelledby="result-title" hidden tabindex="-1"><p class="eyebrow">这一段下午</p><h2 id="result-title"></h2><p id="result-copy"></p><button id="close" type="button">收起今天</button><p id="closed-note" hidden>这一段已经收好。可以再试另一种安排，也可以<a href="../../index.html#play">返回游戏大厅</a>。</p></section>
       <p id="save-status" class="save-status"></p><p id="storage-warning" class="warning" role="status" hidden></p>
       <details><summary>刚才发生的小事</summary><ol id="events"></ol></details>
     </section>
-    <footer><p>这是单独设定的第二日下午切片，不续写或更改你原来的三日存档。人物走动、纸上笔迹与完成状态随安排变化；这不等于已验证真人参与感或可玩性。</p><p>键盘 Tab / Enter 选择，非按钮区域按 P 暂停或继续。切出页面自动暂停，回来后手动继续。尚未完成真实浏览器与玩家体验验收。</p><p>此页只包含当前独立表达实验，不计正式新增。原三日存档键不读取、不迁移、不写入；只使用独立实验存档键。源码：e6c8bae（与远端 c416a7e 完全同 tree）。若另存本地文件打开，保存能力取决于浏览器。</p></footer>
+    <footer><p>这是单独设定的第二日下午切片，不续写或更改你原来的三日存档。人物走动、纸上笔迹与完成状态随安排变化；这不等于已验证真人参与感或可玩性。</p><p>键盘 Tab / Enter 选择，非按钮区域按 P 暂停或继续。切出页面自动暂停，回来后手动继续。尚未完成真实浏览器与玩家体验验收。</p><p>此页只包含当前独立表达实验，不计正式新增。原三日存档键不读取、不迁移、不写入；只使用独立实验存档键。原场景源自 c416a7e；当前为本地手动创作原型，画面与操作仍需真实验收。若另存本地文件打开，保存能力取决于浏览器。</p></footer>
   </main>
   <script>
 var WindowlifeRequestPreview = (() => {
@@ -123,7 +138,7 @@ var WindowlifeRequestPreview = (() => {
     }
   ];
 
-  // experiments/windowlife-request/scene.mjs
+  // experiments/windowlife-request/legacy-scene.mjs
   var STEP = 0.1;
   var WALK = 0.3;
   var MAX_COMMANDS = 4096;
@@ -405,23 +420,232 @@ var WindowlifeRequestPreview = (() => {
     }
   }
 
+  // experiments/windowlife-request/marks.mjs
+  var LIMIT = 2;
+  var RESPONSE_TIME = 0.8;
+  var MIN_GESTURE = 240;
+  var clone2 = (value) => JSON.parse(JSON.stringify(value));
+  function validMark(mark) {
+    return !!mark && Object.keys(mark).sort().join(",") === "x1,x2,y1,y2" && Object.values(mark).every((n) => Number.isInteger(n) && n >= 80 && n <= 920) && Math.hypot(mark.x2 - mark.x1, mark.y2 - mark.y1) >= 60;
+  }
+  function leaf(mark) {
+    const a = { x: mark.x1 / 1e3, y: mark.y1 / 1e3 }, b = { x: mark.x2 / 1e3, y: mark.y2 / 1e3 };
+    const dx = b.x - a.x, dy = b.y - a.y, side = { x: -dy * 0.38, y: dx * 0.38 };
+    const bound = (n) => Math.max(0.04, Math.min(0.96, n));
+    return { a, b, left: { x: bound((a.x + b.x) / 2 + side.x), y: bound((a.y + b.y) / 2 + side.y) }, right: { x: bound((a.x + b.x) / 2 - side.x), y: bound((a.y + b.y) / 2 - side.y) } };
+  }
+  function response(mark, index = 0) {
+    const { a } = leaf(mark), from = { x: 0.46, y: 0.86 };
+    return { from, bend: { x: from.x + (a.x - from.x) * 0.15 + (index % 2 ? -0.025 : 0.025), y: Math.min(0.96, a.y + 0.13) }, to: { ...a } };
+  }
+  function normalizeGesture(a, b) {
+    const bound = (n) => Math.max(80, Math.min(920, Math.round(n)));
+    let mark = { x1: bound(a.x), y1: bound(a.y), x2: bound(b.x), y2: bound(b.y) };
+    let dx = mark.x2 - mark.x1, dy = mark.y2 - mark.y1, length = Math.hypot(dx, dy);
+    if (length < 1) {
+      mark.x2 = bound(mark.x1 + (mark.x1 > 700 ? -130 : 130));
+      mark.y2 = bound(mark.y1 + (mark.y1 > 700 ? -200 : -130));
+      dx = mark.x2 - mark.x1;
+      dy = mark.y2 - mark.y1;
+      length = Math.hypot(dx, dy);
+    }
+    if (length < MIN_GESTURE) {
+      const ux = dx / length, uy = dy / length;
+      mark.x2 = bound(mark.x1 + ux * (MIN_GESTURE + 4));
+      mark.y2 = bound(mark.y1 + uy * (MIN_GESTURE + 4));
+      if (Math.hypot(mark.x2 - mark.x1, mark.y2 - mark.y1) < MIN_GESTURE) {
+        mark.x1 = bound(mark.x2 - ux * (MIN_GESTURE + 4));
+        mark.y1 = bound(mark.y2 - uy * (MIN_GESTURE + 4));
+      }
+    }
+    return mark;
+  }
+
+  // experiments/windowlife-request/scene.mjs
+  var STEP2 = 0.1;
+  var MAX_COMMANDS2 = 4096;
+  var MAX_REPLAY_STEPS = 1e5;
+  function createScene2() {
+    const g = createScene();
+    g.version = 2;
+    g.art.note.marks = [];
+    g.art.sketch.marks = [];
+    g.art.sketch.responses = [];
+    g.paper = { note: { done: false }, sketch: { done: false } };
+    return g;
+  }
+  function activePaper(g) {
+    if (g.version !== 2 || g.state !== "playing" || g.history.length >= MAX_COMMANDS2) return null;
+    if (g.phase === "co-creating" && !g.paper.sketch.done) return "sketch";
+    if (g.phase === "separate" && !g.paper.note.done && (g.choice !== "now" || g.request.status === "cancelled")) return "note";
+    return null;
+  }
+  function command2(g, type, payload) {
+    if (g.version === 1) return command(g, type);
+    if (!["mark", "undo-mark", "finish-paper"].includes(type)) {
+      const result = command(g, type);
+      if (result.ok && type === "now") g.art.sketch.inputDriven = true;
+      return result;
+    }
+    const target = activePaper(g);
+    if (g.history.length >= MAX_COMMANDS2) return { ok: false, message: "本次操作记录已满，笔迹会保留；请暂停后重新安排这个片段。" };
+    if (!target) return { ok: false, message: "现在不能落墨；已落下的笔迹会保留。" };
+    const marks = g.art[target].marks;
+    if (type === "mark") {
+      if (!validMark(payload) || marks.length >= LIMIT) return { ok: false, message: "纸上最多留两笔；可以撤回最近一笔，或收笔留白。" };
+      marks.push(clone2(payload));
+      if (target === "sketch") {
+        g.art.sketch.responses.push(0);
+        g.art.sketch.inkProgress.a = marks.length * 3;
+        if (!g.art.sketch.contributors.includes("a")) g.art.sketch.contributors.push("a");
+      }
+      event(g, target === "sketch" ? "叶影落下了，阿沐顺着你的叶柄补一段枝线。" : "这枚叶影留在了手记上。可以再添一笔，也可以收笔留白。");
+    } else if (type === "undo-mark") {
+      if (!marks.length) return { ok: false, message: "纸上还没有需要撤回的笔。" };
+      marks.pop();
+      if (target === "sketch") {
+        g.art.sketch.responses.pop();
+        g.art.sketch.inkProgress.a = marks.length * 3;
+        if (!marks.length) g.art.sketch.contributors = ["b"];
+      }
+      event(g, "最近一组笔迹已撤回，留白也回来了。");
+    } else {
+      if (!marks.length) return { ok: false, message: "先亲手留下一笔，再收笔。没有时间限制。" };
+      g.paper[target].done = true;
+      if (target === "note") g.art.note.creationComplete = true;
+      event(g, target === "sketch" ? "你收起了笔，等这段枝线接好，再回去续写手记。" : "手记的小图已经收好。");
+    }
+    g.history.push({ tick: g.ticks, type, ...type === "mark" ? { mark: clone2(payload) } : {} });
+    return { ok: true, message: g.message };
+  }
+  var canCancel2 = canCancel;
+  var canResume2 = canResume;
+  function tick2(g) {
+    if (g.state !== "playing") return false;
+    g.ticks++;
+    g.time = round(g.ticks * STEP2);
+    if (["meeting-now", "meeting-later"].includes(g.phase)) {
+      if (walk(g.actors[0])) {
+        const later = g.phase === "meeting-later";
+        g.phase = later ? "sharing" : "co-creating";
+        if (later) g.art.note.location = "bench";
+        for (const a of g.actors) a.current = job("chat", "working", 6, 6, "bench");
+        event(g, later ? "两份作品放到一起，叶影还在你亲手安排的位置。" : "纸已经摊好。拖出你的叶影，阿沐会顺着它补画。");
+      }
+    } else if (g.phase === "co-creating") {
+      const next = g.art.sketch.responses.findIndex((p) => p < 1);
+      if (next >= 0) g.art.sketch.responses[next] = Math.min(1, Math.round((g.art.sketch.responses[next] + STEP2 / RESPONSE_TIME) * 1e3) / 1e3);
+      if (g.paper.sketch.done && g.art.sketch.responses.every((p) => p === 1)) {
+        g.art.sketch.mode = "together";
+        g.art.sketch.progress = 6;
+        g.art.sketch.inkProgress.b = 6;
+        occupy(g, "bench", null);
+        returnToDesk(g);
+      }
+    } else if (g.phase === "sharing") {
+      g.art.share.progress = Math.min(6, round(g.art.share.progress + STEP2));
+      for (const a of g.actors) a.current.remaining = 6 - g.art.share.progress;
+      if (g.art.share.progress >= 6) {
+        g.art.share.completed = true;
+        settle(g);
+      }
+    } else if (g.phase === "returning") {
+      sketch(g, false);
+      if (g.actors[1].current) g.actors[1].current.remaining = Math.max(0, 6 - g.art.sketch.progress);
+      if (walk(g.actors[0])) {
+        g.art.note.location = "desk";
+        g.phase = "separate";
+        ownActivities(g);
+      }
+    } else if (g.phase === "separate") {
+      workNote(g);
+      sketch(g, false);
+      const needsPersonal = g.choice !== "now" || g.request.status === "cancelled";
+      if (needsPersonal && !g.paper.note.done) g.actors[0].current = job("work", "working", 1, 1, "desk");
+      if (g.actors[1].current) g.actors[1].current.remaining = Math.max(0, 6 - g.art.sketch.progress);
+      if (g.art.note.finished && g.art.sketch.progress >= 6 && (!needsPersonal || g.paper.note.done)) {
+        g.art.note.creationComplete = true;
+        if (g.choice === "later" && g.request.status !== "cancelled") meet(g, true);
+        else settle(g);
+      }
+    }
+    return true;
+  }
+  function update2(g, dt) {
+    if (g.version === 1) return update(g, dt);
+    if (g.state !== "playing" || !Number.isFinite(dt) || dt <= 0) return;
+    g.accumulator += Math.min(0.5, dt);
+    while (g.accumulator + 1e-9 >= STEP2 && g.state === "playing") {
+      g.accumulator = Math.max(0, g.accumulator - STEP2);
+      tick2(g);
+    }
+    if (g.state !== "playing") g.accumulator = 0;
+  }
+  var snapshot2 = snapshot;
+  function summary2(g) {
+    const result = summary(g);
+    if (g.version === 2) result.noteFinished = result.noteFinished && !!g.art.note.creationComplete;
+    return result;
+  }
+  function checkpoint2(g) {
+    if (g.version === 1) return checkpoint(g);
+    return { format: "windowlife-request-checkpoint", version: 2, ticks: g.ticks, accumulator: g.accumulator, commands: clone2(g.history) };
+  }
+  function waitingForInk(g) {
+    if (g.phase === "co-creating") return !g.paper.sketch.done && g.art.sketch.responses.every((p) => p === 1);
+    const a = g.actors[0].current, b = g.actors[1].current;
+    return g.phase === "separate" && g.art.note.finished && g.art.sketch.progress >= 6 && (g.choice !== "now" || g.request.status === "cancelled") && !g.paper.note.done && a?.kind === "work" && a.phase === "working" && a.remaining === 1 && a.duration === 1 && a.target === "desk" && (!b || b.remaining === 0);
+  }
+  function replayTo(g, target, budget) {
+    while (g.ticks < target) {
+      if (g.state !== "playing") return false;
+      if (waitingForInk(g)) {
+        g.ticks = target;
+        g.time = round(target * STEP2);
+        return true;
+      }
+      if (budget.steps++ >= MAX_REPLAY_STEPS || !tick2(g)) return false;
+    }
+    return true;
+  }
+  function restore2(cp) {
+    if (cp?.version === 1) return restore(cp);
+    try {
+      if (cp?.format !== "windowlife-request-checkpoint" || cp.version !== 2 || !Number.isSafeInteger(cp.ticks) || cp.ticks < 0 || !Number.isFinite(cp.accumulator) || cp.accumulator < 0 || cp.accumulator >= STEP2 + 1e-8 || !Array.isArray(cp.commands) || cp.commands.length > MAX_COMMANDS2 + 1) return null;
+      const g = createScene2(), budget = { steps: 0 };
+      for (const c of cp.commands) {
+        const expected = c?.type === "mark" ? "mark,tick,type" : "tick,type";
+        if (!c || Object.keys(c).sort().join(",") !== expected || !Number.isInteger(c.tick) || c.tick < g.ticks || c.tick > cp.ticks) return null;
+        if (!replayTo(g, c.tick, budget)) return null;
+        if (!command2(g, c.type, c.mark).ok) return null;
+      }
+      if (!replayTo(g, cp.ticks, budget)) return null;
+      if (!["playing", "paused"].includes(g.state) && cp.accumulator !== 0) return null;
+      g.accumulator = cp.accumulator;
+      if (g.state === "playing" && !command2(g, "pause").ok) return null;
+      return g;
+    } catch {
+      return null;
+    }
+  }
+
   // experiments/windowlife-request/storage.mjs
   var KEY = "classic-atlas.windowlife.request-scene.v1";
   function readSave(storage2) {
     try {
       const raw = storage2.getItem(KEY);
-      if (raw === null) return { game: createScene(), protection: null };
-      if (raw.length > 5e5) return { game: createScene(), protection: "invalid" };
-      const game = restore(JSON.parse(raw));
-      return game ? { game, protection: null } : { game: createScene(), protection: "invalid" };
+      if (raw === null) return { game: createScene2(), protection: null };
+      if (raw.length > 5e5) return { game: createScene2(), protection: "invalid" };
+      const game = restore2(JSON.parse(raw));
+      return game ? { game, protection: null } : { game: createScene2(), protection: "invalid" };
     } catch (error) {
-      return { game: createScene(), protection: error instanceof SyntaxError ? "invalid" : "unavailable" };
+      return { game: createScene2(), protection: error instanceof SyntaxError ? "invalid" : "unavailable" };
     }
   }
   function writeSave(storage2, game, protection) {
     if (protection) return false;
     try {
-      storage2.setItem(KEY, JSON.stringify(checkpoint(game)));
+      storage2.setItem(KEY, JSON.stringify(checkpoint2(game)));
       return true;
     } catch {
       return false;
@@ -431,15 +655,175 @@ var WindowlifeRequestPreview = (() => {
     return protection === "invalid" ? "这段下午的存档无法识别，原字节已保留。本次可临时游玩，刷新会丢失新安排。原三日存档不受影响。" : protection ? "无法读取这段下午的存档，已停止写入。本次可临时游玩；原三日存档不受影响。" : "这次没有保存成功。仍可继续，刷新可能丢失新安排；之后会再次尝试保存。";
   }
 
+  // experiments/windowlife-request/paper-controller.mjs
+  function mountPaper({ document: document2, getScene, act, render, PaperRenderer: PaperRenderer2 }) {
+    const $ = (id) => document2.getElementById(id), surface = $("paper-input"), workspace = $("paper-workspace");
+    const renderer = PaperRenderer2 ? new PaperRenderer2($("paper")) : null;
+    let draft = null, pointer = null, anchor = null, handle = "end", lastTarget = null, lastEditable = null;
+    const live = () => activePaper(getScene());
+    const cancelDraft = () => {
+      draft = null;
+      pointer = null;
+      anchor = null;
+    };
+    const point = (e) => {
+      const r = surface.getBoundingClientRect();
+      return { x: (e.clientX - r.left) / r.width * 1e3, y: (e.clientY - r.top) / r.height * 1e3 };
+    };
+    const inside = (e) => {
+      const r = surface.getBoundingClientRect();
+      return e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    };
+    const updateEnd = (p, which = "end") => {
+      const bound = (n) => Math.max(80, Math.min(920, Math.round(n)));
+      if (which === "end" && anchor) {
+        draft.x1 = bound(anchor.x);
+        draft.y1 = bound(anchor.y);
+      }
+      if (which === "start") {
+        draft.x1 = bound(p.x);
+        draft.y1 = bound(p.y);
+      } else {
+        draft.x2 = bound(p.x);
+        draft.y2 = bound(p.y);
+      }
+      draft = normalizeGesture({ x: draft.x1, y: draft.y1 }, { x: draft.x2, y: draft.y2 });
+    };
+    const commit = () => {
+      if (!draft || !live()) return;
+      const mark = normalizeGesture({ x: draft.x1, y: draft.y1 }, { x: draft.x2, y: draft.y2 });
+      cancelDraft();
+      act("mark", mark);
+      surface.focus({ preventScroll: true });
+    };
+    surface.addEventListener("pointerdown", (e) => {
+      if (!live() || pointer !== null || e.isPrimary === false || e.button !== void 0 && e.button !== 0) return;
+      const id = e.target?.closest?.(".paper-handle")?.id || e.target?.id;
+      e.preventDefault();
+      pointer = e.pointerId;
+      surface.setPointerCapture?.(pointer);
+      if (draft && ["paper-handle-start", "paper-handle-end"].includes(id)) {
+        handle = id.endsWith("start") ? "start" : "end";
+        anchor = null;
+      } else {
+        anchor = point(e);
+        draft = normalizeGesture(anchor, anchor);
+        handle = "end";
+      }
+      render();
+    });
+    surface.addEventListener("pointermove", (e) => {
+      if (pointer !== e.pointerId || !draft || !live()) return;
+      e.preventDefault();
+      updateEnd(point(e), handle);
+      render();
+    });
+    surface.addEventListener("pointerup", (e) => {
+      if (pointer !== e.pointerId) return;
+      e.preventDefault();
+      if (inside(e)) {
+        if (draft) updateEnd(point(e), handle);
+        commit();
+      } else {
+        cancelDraft();
+        render();
+      }
+    });
+    for (const type of ["pointercancel", "lostpointercapture"]) surface.addEventListener(type, (e) => {
+      if (pointer === e.pointerId) {
+        cancelDraft();
+        render();
+      }
+    });
+    function keyboard(e) {
+      if (!live() || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (["Enter", " "].includes(e.key)) {
+        e.preventDefault();
+        if (e.repeat) return;
+        if (draft) commit();
+        else {
+          draft = { x1: 350, y1: 700, x2: 510, y2: 430 };
+          handle = "end";
+          render();
+        }
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        cancelDraft();
+        render();
+        surface.focus({ preventScroll: true });
+      } else if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) {
+        e.preventDefault();
+        if (!draft) draft = { x1: 350, y1: 700, x2: 510, y2: 430 };
+        const selected = e.target?.id === "paper-handle-start" ? "start" : e.target?.id === "paper-handle-end" ? "end" : handle;
+        const n = e.shiftKey ? 50 : 10, p = { x: selected === "start" ? draft.x1 : draft.x2, y: selected === "start" ? draft.y1 : draft.y2 };
+        p.x += e.key === "ArrowRight" ? n : e.key === "ArrowLeft" ? -n : 0;
+        p.y += e.key === "ArrowDown" ? n : e.key === "ArrowUp" ? -n : 0;
+        updateEnd(p, selected);
+        render();
+      }
+    }
+    surface.addEventListener("keydown", keyboard);
+    $("paper-undo").addEventListener("click", () => {
+      cancelDraft();
+      act("undo-mark");
+    });
+    $("paper-finish").addEventListener("click", () => {
+      cancelDraft();
+      act("finish-paper");
+    });
+    function sync(g) {
+      const shown = g.version === 2 && g.choice !== null;
+      workspace.hidden = !shown;
+      $("studio").classList?.toggle("has-paper", shown);
+      if (!shown) {
+        cancelDraft();
+        lastTarget = null;
+        lastEditable = null;
+        return;
+      }
+      const target = live() || (g.choice === "now" && g.request.status !== "cancelled" ? "sketch" : "note");
+      if (target !== lastTarget || g.state !== "playing") cancelDraft();
+      lastTarget = target;
+      const enabled = live() === target, marks = g.art[target].marks;
+      surface.setAttribute?.("aria-disabled", String(!enabled));
+      surface.tabIndex = enabled ? 0 : -1;
+      $("paper-title").textContent = ["settled", "closed"].includes(g.state) ? "两份作品，都已经收好" : target === "sketch" ? "把叶影留到同一张纸上" : "把窗边的小图留在手记里";
+      $("paper-help").textContent = enabled ? marks.length >= 2 ? "两笔已落墨。可以收笔，或撤回最近一组。" : "在纸上按下、拖动、松开。落点、方向和大小由你决定；一笔后就可以收笔。" : g.history.length >= 4096 && !["settled", "closed"].includes(g.state) ? "本次操作记录已满，笔迹保留；请暂停后重新安排这个片段。" : g.state === "paused" ? "纸面与人物都已暂停；继续后再落笔。" : ["settled", "closed"].includes(g.state) ? "这是你留下的构图，已经收好。" : g.phase === "meeting-now" ? "等人物在纸边坐好，就可以落笔。" : "让手里的动作慢慢收尾，纸上的笔迹都会保留。";
+      $("paper-keyboard").textContent = "键盘：聚焦纸面后 Enter 起笔，方向键移动叶尖，Tab 可选叶柄/叶尖，Enter 落墨，Esc 放下草稿。";
+      $("paper-undo").disabled = !enabled || !marks.length;
+      $("paper-finish").disabled = !enabled || !marks.length;
+      $("paper-tools").hidden = ["settled", "closed"].includes(g.state);
+      for (const [id, x, y] of [["paper-handle-start", draft?.x1, draft?.y1], ["paper-handle-end", draft?.x2, draft?.y2]]) {
+        const node = $(id);
+        node.hidden = !draft;
+        if (draft) {
+          node.style.left = x / 10 + "%";
+          node.style.top = y / 10 + "%";
+          node.setAttribute?.("aria-label", (id.endsWith("start") ? "叶柄" : "叶尖") + "位置，横向" + Math.round(x / 10) + "%，纵向" + Math.round(y / 10) + "%，方向键调整，Enter落墨");
+        }
+      }
+      renderer?.draw(g, target, draft);
+      if (enabled && lastEditable !== target) {
+        lastEditable = target;
+        surface.focus({ preventScroll: true });
+        workspace.scrollIntoView?.({ block: "nearest" });
+      }
+    }
+    return { sync, cancelDraft, get drawing() {
+      return !!draft;
+    }, diagnostics: () => ({ draft: draft ? { ...draft } : null, pointer, target: live() }) };
+  }
+
   // experiments/windowlife-request/controller.mjs
   var PHASE = { ready: "尚未开始", playing: "下午进行中", paused: "时间已暂停", settled: "各自的小事都完成了", closed: "这一段已收好" };
-  function mount({ document: document2, window: window2, storage: storage2, requestFrame, Renderer: Renderer2 }) {
+  function mount({ document: document2, window: window2, storage: storage2, requestFrame, Renderer: Renderer2, PaperRenderer: PaperRenderer2 }) {
     const $ = (id) => document2.getElementById(id), text2 = (id, s) => {
       if ($(id).textContent !== s) $(id).textContent = s;
     };
     const loaded = readSave(storage2);
     let g = loaded.game, protection = loaded.protection, lastStamp = null, lastSave = 0, previous = g.state, pendingSave = false;
     const renderer = new Renderer2($("room"));
+    let paper = null;
     const speak = (message) => text2("feedback", message);
     function save() {
       const ok = writeSave(storage2, g, protection);
@@ -457,27 +841,38 @@ var WindowlifeRequestPreview = (() => {
     }
     function render() {
       const offered = g.phase === "offered", done = ["settled", "closed"].includes(g.state);
-      const resumeBlocked = g.state === "paused" && !offered && !canResume(g);
+      const resumeBlocked = g.state === "paused" && !offered && !canResume2(g);
       $("request").hidden = !offered;
       $("toggle").hidden = offered || done;
       $("toggle").disabled = resumeBlocked;
       text2("toggle", resumeBlocked ? "已暂停 · 操作记录已满" : g.state === "ready" ? "走进这段下午" : g.state === "playing" ? "暂停一下" : "继续这段下午");
-      $("cancel").hidden = !canCancel(g);
+      $("cancel").hidden = !canCancel2(g);
       text2("phase", PHASE[g.state]);
+      $("legacy-note").hidden = g.version !== 1;
+      text2("legacy-note", "当前恢复的是旧版自动片段，按原安排继续。重新安排后才进入亲手画叶影的新片段。");
+      text2("choice-now-copy", g.version === 1 ? "按旧安排到长座一起完成速写，回来续写手记。" : "到长座亲手画叶影，阿沐顺着你的落点添枝线。半页手记保留。");
+      text2("choice-later-copy", g.version === 1 ? "按旧安排各自完成，再交换手记与速写。" : "先在手记里画自己的叶影，再带着作品到长座分享。");
+      text2("choice-alone-copy", g.version === 1 ? "按旧安排各自完成，不需要分享。" : "在手记上按自己的构图画好，安静收起，不必安排分享。");
       text2("scene-description", describe());
       const note = g.art.note, art = g.art.sketch;
       text2("note-status", note.finished ? note.location === "bench" ? "手记已完成，放在长座边分享。" : note.location === "carried" ? "手记已完成，禾禾正带着它走动。" : "最后一页已经写好。" : `还有半页没写完${g.choice === "now" && ["meeting-now", "co-creating", "returning"].includes(g.phase) ? "，暂时搁在书桌上，回来接着写" : ""}。`);
       text2("sketch-status", art.mode === "together" ? "两种笔色一起完成了这张速写。" : art.mode === "mixed" ? "阿沐独自收尾，纸上保留着禾禾先前的笔迹。" : art.mode === "solo" ? "阿沐独自完成了速写。" : art.contributors.includes("a") ? "两种笔色已经落在纸上，速写还没画完。" : "速写已有轮廓，最后几笔还没有收好。");
+      if (g.version === 2 && !g.paper.note.done && (g.choice !== "now" || g.request.status === "cancelled") && !done) text2("note-status", note.marks.length ? "叶影已经落在手记上，等你决定是否收笔。" : "手记里留了一处空白，等你亲手放一枚叶影。");
       $("result").hidden = !done;
       $("close").hidden = g.state === "closed";
       $("closed-note").hidden = g.state !== "closed";
       if (done) {
-        const result = summary(g), copies = {
+        const result = summary2(g), copies = {
           "shared-drawing": ["留在同一张纸上的两种笔色", "你先放下半页手记，和阿沐一起完成速写，再回到书桌继续。两件小事都完成了。"],
           exchanged: ["各自写好，再讲给你听", "禾禾先写完手记，阿沐先画完速写。你们带着两份成品坐到一起，轮流分享。"],
           "kept-mark": ["先前的笔迹还留在纸上", "共同安排中途停下了。阿沐独自收尾，速写留下禾禾已经画下的笔迹；手记也接着写完了。"],
           "separate-works": ["同一间小屋，各自的小事", result.cancelled ? "共同安排取消后，你们各自完成了手记与速写。这也是这段下午的一种安排。" : "禾禾写好了手记，阿沐画好了速写。没有一起完成的任务，也没有谁因此被扣分。"]
         };
+        if (g.version === 2) {
+          copies["shared-drawing"] = ["顺着你的叶影，接上一段枝线", "叶影的位置与朝向由你留下，阿沐的枝线顺着它长过来。手记也续写完成了。"];
+          copies.exchanged = ["先画好，再拿给你看", "手记里的叶影由你亲手安排。两份各自完成的作品，一起放到了长座边。"];
+          copies["separate-works"] = ["同一间小屋，各自留下的叶影", "你的手记与阿沐的窗景都已经完成，各自留在熟悉的位置。今天可以安静收好。"];
+        }
         text2("result-title", copies[result.outcome][0]);
         text2("result-copy", copies[result.outcome][1]);
       }
@@ -491,17 +886,20 @@ var WindowlifeRequestPreview = (() => {
         }));
         list.dataset.events = JSON.stringify(lines);
       }
-      renderer.draw(g, g.time);
+      renderer.draw(g, g.time, { drawing: paper?.drawing });
+      paper?.sync(g);
     }
-    function act(type) {
-      const result = command(g, type);
+    function act(type, payload) {
+      const result = command2(g, type, payload);
       speak(result.message);
+      if (result.ok && ["pause", "cancel"].includes(type)) paper?.cancelDraft();
       if (result.ok) {
         save();
-        lastStamp = null;
+        if (!["mark", "undo-mark", "finish-paper"].includes(type)) lastStamp = null;
         render();
         if (type === "start") $("request-title").focus({ preventScroll: true });
-        else if (["now", "later", "alone", "cancel"].includes(type)) $("toggle").focus({ preventScroll: true });
+        else if (["now", "later", "alone", "cancel"].includes(type)) $(g.version === 2 && activePaper(g) ? "paper-input" : "toggle").focus({ preventScroll: true });
+        else if (type === "finish-paper") $("toggle").focus({ preventScroll: true });
         else if (type === "close") $("result").focus({ preventScroll: true });
       }
       return result;
@@ -512,8 +910,9 @@ var WindowlifeRequestPreview = (() => {
     $("toggle").addEventListener("click", toggle);
     for (const [id, type] of [["choose-now", "now"], ["choose-later", "later"], ["choose-alone", "alone"], ["dismiss", "alone"], ["cancel", "cancel"], ["close", "close"]]) $(id).addEventListener("click", () => act(type));
     $("retry").addEventListener("click", () => {
+      paper?.cancelDraft();
       const wasPlaying = g.state === "playing";
-      if (wasPlaying) command(g, "pause");
+      if (wasPlaying) command2(g, "pause");
       save();
       render();
       lastStamp = null;
@@ -521,7 +920,7 @@ var WindowlifeRequestPreview = (() => {
         speak("保留当前安排，仍暂停在这里。");
         return;
       }
-      g = createScene();
+      g = createScene2();
       previous = g.state;
       save();
       render();
@@ -529,11 +928,12 @@ var WindowlifeRequestPreview = (() => {
       $("toggle").focus({ preventScroll: true });
     });
     const interrupt = () => {
+      paper?.cancelDraft();
       if (g.state === "playing") {
-        command(g, "pause");
+        command2(g, "pause");
         save();
         render();
-        speak(canResume(g) ? "已自动暂停。回来后点继续，才会继续走动和创作。" : g.message);
+        speak(canResume2(g) ? "已自动暂停。回来后点继续，才会继续走动和创作。" : g.message);
       } else if (pendingSave) save();
       lastStamp = null;
     };
@@ -553,7 +953,7 @@ var WindowlifeRequestPreview = (() => {
       const elapsed = lastStamp === null ? 0 : (stamp - lastStamp) / 1e3;
       lastStamp = stamp;
       if (elapsed > 1 && g.state === "playing") interrupt();
-      else update(g, Math.max(0, elapsed));
+      else update2(g, Math.max(0, elapsed));
       if (g.state !== previous) {
         previous = g.state;
         save();
@@ -570,6 +970,7 @@ var WindowlifeRequestPreview = (() => {
       render();
       requestFrame(frame);
     }
+    paper = mountPaper({ document: document2, getScene: () => g, act, render, PaperRenderer: PaperRenderer2 });
     $("load-status").hidden = true;
     $("app").hidden = false;
     render();
@@ -578,11 +979,11 @@ var WindowlifeRequestPreview = (() => {
       text2("storage-warning", warning(protection));
       text2("save-status", "原候选存档已保护 · 本次临时游玩");
     } else text2("save-status", g.state === "ready" ? "尚未开始 · 原三日存档不会读取或修改" : "已恢复这段下午 · 活动恢复后先暂停");
-    speak(g.state === "paused" && g.phase !== "offered" && canResume(g) ? "已恢复这段下午。当前暂停，继续后接着原来的安排。" : g.message);
+    speak(g.state === "paused" && g.phase !== "offered" && !canResume2(g) ? g.message : g.version === 1 ? "已恢复旧版片段，仍按原安排继续。点“重新安排”才会开始亲手留叶影的新片段。" : g.state === "paused" && g.phase !== "offered" && canResume2(g) ? "已恢复这段下午。当前暂停，继续后接着原来的安排。" : g.message);
     if (["settled", "closed"].includes(g.state)) $("result").focus({ preventScroll: true });
     else if (g.phase === "offered") $("request-title").focus({ preventScroll: true });
     requestFrame(frame);
-    return { snapshot: () => snapshot(g), summary: () => summary(g), storage: () => ({ protection }) };
+    return { snapshot: () => snapshot2(g), summary: () => summary2(g), storage: () => ({ protection }), paper: () => paper?.diagnostics() };
   }
 
   // experiments/windowlife-request/view.mjs
@@ -676,7 +1077,7 @@ var WindowlifeRequestPreview = (() => {
           c.save();
           c.translate(p.x, p.y);
           c.scale(t / 64, t / 64);
-          resident(c, a, g, clock, options.selectedActor === a.id);
+          resident(c, a, g, clock, options.selectedActor === a.id, !!options.drawing);
           c.restore();
         }
       }
@@ -935,8 +1336,10 @@ var WindowlifeRequestPreview = (() => {
       text(c, o.name || TYPES[o.type] || o.type, 0, 39, 10, "#876443", "650");
     }
   }
-  function resident(c, a, g, clock, selected) {
-    const cur = a.current, kind = cur?.kind, working = cur?.phase === "working";
+  function resident(c, a, g, clock, selected, drawing = false) {
+    const cur = a.current, kind = cur?.kind;
+    const responseActive = g.art?.sketch?.responses?.some((p) => p < 1);
+    const working = cur?.phase === "working" && (g.version !== 2 || g.phase !== "co-creating" || (a.id === "a" ? drawing : responseActive));
     const moving = cur?.phase === "walking" && g.state === "playing";
     const waiting = cur?.phase === "waiting";
     const b = a.id === "b";
@@ -1035,7 +1438,7 @@ var WindowlifeRequestPreview = (() => {
       const side = target && target.x < a.x ? -1 : 1;
       const below = target && target.y < a.y;
       const hand = below ? [-6, -42 + idle] : [side * 35, -13 + idle];
-      const nib = below ? [1, -62 + idle] : [side * 53, -13 + idle];
+      const nib = below ? [1, -62 + idle] : [side * 53, (g.version === 2 ? -3 : -13) + idle];
       line(c, [[side * 10, -12], hand], shirt, 6);
       ellipse(c, hand[0], hand[1], 3, 3, "#edc4a0");
       line(c, [hand, nib], b ? "#52786f" : "#c2764d", 2.5);
@@ -1077,14 +1480,15 @@ var WindowlifeRequestPreview = (() => {
     c.save();
     if (a.id === "b" && ["co-creating", "sharing"].includes(g.phase)) c.translate(78, 0);
     let title = cur.phase === "walking" ? "前往" + (ACTIONS2[cur.kind] || "目的地") : cur.phase === "waiting" ? "等待" : ACTIONS2[cur.kind] || "行动中";
-    if (cur.phase === "working" && g.phase === "co-creating") title = "一起添笔";
+    if (cur.phase === "working" && g.phase === "co-creating") title = g.version === 2 ? a.id === "b" && g.art.sketch.responses.some((p) => p < 1) ? "顺着叶影接枝" : "纸在这里，慢慢画" : "一起添笔";
     if (cur.phase === "working" && g.phase === "sharing") title = "交换作品";
+    if (g.version === 2 && a.id === "a" && g.phase === "separate" && !g.paper.note.done && (g.choice !== "now" || g.request.status === "cancelled")) title = "这页，由你安排";
     const width = Math.max(48, title.length * 10 + 18);
     const fill = cur.phase === "waiting" ? "#faf1d7" : cur.phase === "working" ? "#f4f6e9" : "#f8f3e5";
     rr(c, -width / 2, -68, width, 21, 7, fill, cur.phase === "waiting" ? "#c6a878" : "#bcc5aa");
     poly(c, [[-4, -47], [4, -47], [0, -42]], fill);
     text(c, title, 0, -58, 10, cur.phase === "waiting" ? "#9b7648" : "#687b62", "650");
-    if (cur.phase === "working") {
+    if (cur.phase === "working" && !(g.version === 2 && (g.phase === "co-creating" || a.id === "a" && g.phase === "separate" && !g.paper.note.done && (g.choice !== "now" || g.request.status === "cancelled")))) {
       const p = clamp(1 - (Number(cur.remaining) || 0) / Math.max(1, Number(cur.duration) || 1), 0, 1);
       rr(c, -19, -43, 38, 3, 2, "#d5ddca");
       if (p > 0) rr(c, -19, -43, 38 * p, 3, 2, "#7e9b71");
@@ -1104,49 +1508,110 @@ var WindowlifeRequestPreview = (() => {
     const progress = clamp(1 - Number(note.remaining ?? 4) / Math.max(1, Number(note.total ?? 8)), 0, 1);
     c.save();
     c.translate(x, y);
-    rr(c, 0, 0, w, h, 1.6, "#fff8df", "#9f8863", Math.max(0.8, w / 60));
+    rr(c, 0, 0, w, h, 1.6, "#fff8df", "#9f8863", Math.max(0.8, Math.min(2, w / 60)));
     c.fillStyle = "#eadab5";
     c.fillRect(w * 0.1, h * 0.12, w * 0.8, h * 0.13);
-    const lines = Math.round(progress * 6);
+    const lines = Math.round(progress * 6), manual = Array.isArray(note.marks);
     for (let i = 0; i < lines; i++) {
-      const inset = i % 2 ? 0.2 : 0.13, end = i === 5 ? 0.59 : 0.86;
-      line(c, [[w * inset, h * (0.34 + i * 0.09)], [w * end, h * (0.34 + i * 0.09)]], "#a36543", Math.max(0.9, w / 36));
+      const inset = manual ? 0.13 : i % 2 ? 0.2 : 0.13, end = manual ? [0.44, 0.4, 0.46, 0.36, 0.43, 0.38][i] : i === 5 ? 0.59 : 0.86;
+      line(c, [[w * inset, h * ((Array.isArray(note.marks) ? 0.14 : 0.34) + i * 0.09)], [w * end, h * ((Array.isArray(note.marks) ? 0.14 : 0.34) + i * 0.09)]], "#a36543", Math.max(0.9, Math.min(2, w / 36)));
     }
-    if (!note.finished) {
+    if (!note.finished || Array.isArray(note.marks) && !note.creationComplete) {
       line(c, [[w * 0.18, h * 0.91], [w * 0.8, h * 0.91]], "#c9b995", 0.7);
     } else {
-      line(c, [[w * 0.66, h * 0.88], [w * 0.75, h * 0.86], [w * 0.79, h * 0.91], [w * 0.85, h * 0.87]], "#a36543", Math.max(0.8, w / 48));
+      line(c, [[w * 0.66, h * 0.88], [w * 0.75, h * 0.86], [w * 0.79, h * 0.91], [w * 0.85, h * 0.87]], "#a36543", Math.max(0.8, Math.min(2, w / 48)));
     }
+    if (note.marks) drawMarks(c, w, h, note.marks);
     c.restore();
   }
   function sketchPaper(c, x, y, w, h, sketch2 = {}) {
     const progress = clamp(Number(sketch2.progress || 0) / Math.max(1, Number(sketch2.total || 6)), 0, 1);
-    const warmProgress = clamp(Number(sketch2.inkProgress?.a || 0) / Math.max(1, Number(sketch2.total || 6)), 0, 1);
+    const manual = Array.isArray(sketch2.marks), authored = !sketch2.inputDriven || ["solo", "mixed"].includes(sketch2.mode);
+    const warmProgress = manual ? 0 : clamp(Number(sketch2.inkProgress?.a || 0) / Math.max(1, Number(sketch2.total || 6)), 0, 1);
     c.save();
     c.translate(x, y);
-    rr(c, 0, 0, w, h, 1.8, "#fff9e7", "#9f8863", Math.max(0.8, w / 60));
-    rr(c, w * 0.16, h * 0.18, w * 0.6, h * 0.55, 0, null, "#527f75", Math.max(0.8, w / 40));
-    line(c, [[w * 0.46, h * 0.18], [w * 0.46, h * 0.73]], "#527f75", Math.max(0.8, w / 40));
-    line(c, [[w * 0.16, h * 0.43], [w * 0.76, h * 0.43]], "#527f75", Math.max(0.8, w / 40));
-    if (progress > 0.05) line(c, [[w * 0.19, h * 0.65], [w * 0.31, h * 0.49], [w * 0.42, h * 0.62], [w * 0.57, h * 0.42], [w * 0.73, h * 0.63]], "#527f75", Math.max(1, w / 40));
-    if (progress > 0.25) {
+    rr(c, 0, 0, w, h, 1.8, "#fff9e7", "#9f8863", Math.max(0.8, Math.min(2, w / 60)));
+    rr(c, w * 0.16, h * 0.18, w * 0.6, h * 0.55, 0, null, "#527f75", Math.max(0.8, Math.min(3, w / 40)));
+    line(c, [[w * 0.46, h * 0.18], [w * 0.46, h * 0.73]], "#527f75", Math.max(0.8, Math.min(3, w / 40)));
+    line(c, [[w * 0.16, h * 0.43], [w * 0.76, h * 0.43]], "#527f75", Math.max(0.8, Math.min(3, w / 40)));
+    if (authored && progress > 0.05) line(c, [[w * 0.19, h * 0.65], [w * 0.31, h * 0.49], [w * 0.42, h * 0.62], [w * 0.57, h * 0.42], [w * 0.73, h * 0.63]], "#527f75", Math.max(1, Math.min(3, w / 40)));
+    if (authored && progress > 0.25) {
       ellipse(c, w * 0.64, h * 0.29, w * 0.045, h * 0.055, warmProgress > 0.25 ? "#c47746" : "#527f75");
-      line(c, [[w * 0.15, h * 0.81], [w * 0.77, h * 0.81]], "#527f75", Math.max(1, w / 35));
+      line(c, [[w * 0.15, h * 0.81], [w * 0.77, h * 0.81]], "#527f75", Math.max(1, Math.min(3, w / 35)));
     }
     if (warmProgress > 0) {
       line(c, [[w * 0.25, h * 0.75], [w * 0.29, h * 0.58], [w * 0.34, h * 0.76]], "#c47746", Math.max(1.2, w / 28));
     }
-    if (progress > 0.6) {
+    if (authored && progress > 0.6) {
       const ink = warmProgress > 0.6 ? "#c47746" : "#527f75";
-      line(c, [[w * 0.09, h * 0.12], [w * 0.09, h * 0.76]], ink, Math.max(0.8, w / 40));
-      line(c, [[w * 0.84, h * 0.12], [w * 0.84, h * 0.76]], ink, Math.max(0.8, w / 40));
+      line(c, [[w * 0.09, h * 0.12], [w * 0.09, h * 0.76]], ink, Math.max(0.8, Math.min(3, w / 40)));
+      line(c, [[w * 0.84, h * 0.12], [w * 0.84, h * 0.76]], ink, Math.max(0.8, Math.min(3, w / 40)));
     }
     if (progress >= 1) {
       ellipse(c, w * 0.72, h * 0.9, w * 0.015, h * 0.015, "#527f75");
       if (warmProgress >= 1) ellipse(c, w * 0.8, h * 0.9, w * 0.015, h * 0.015, "#c47746");
+      if (manual && sketch2.mode === "together") ellipse(c, w * 0.8, h * 0.9, w * 0.015, h * 0.015, "#c47746");
     }
+    if (manual && sketch2.inputDriven) {
+      poly(c, [[w * 0.4, h * 0.8], [w * 0.52, h * 0.8], [w * 0.5, h * 0.91], [w * 0.42, h * 0.91]], "#d9be96", "#8e8467", 1);
+      line(c, [[w * 0.39, h * 0.8], [w * 0.53, h * 0.8]], "#8e8467", Math.max(0.8, Math.min(2, w / 90)));
+    }
+    if (manual) drawMarks(c, w, h, sketch2.marks, sketch2.responses);
     c.restore();
   }
+  function drawMarks(c, w, h, marks, responses = []) {
+    for (let i = 0; i < marks.length; i++) {
+      const r = response(marks[i], i), p = responses[i] || 0, points = [];
+      for (let n = 0; n <= 20; n++) {
+        const t = p * n / 20;
+        points.push([w * ((1 - t) ** 2 * r.from.x + 2 * (1 - t) * t * r.bend.x + t * t * r.to.x), h * ((1 - t) ** 2 * r.from.y + 2 * (1 - t) * t * r.bend.y + t * t * r.to.y)]);
+      }
+      if (p) line(c, points, "#527f75", Math.max(1, Math.min(2.6, w / 90)));
+      const l = leaf(marks[i]);
+      c.beginPath();
+      c.moveTo(l.a.x * w, l.a.y * h);
+      c.quadraticCurveTo(l.left.x * w, l.left.y * h, l.b.x * w, l.b.y * h);
+      c.quadraticCurveTo(l.right.x * w, l.right.y * h, l.a.x * w, l.a.y * h);
+      c.fillStyle = "#d38b5648";
+      c.fill();
+      c.strokeStyle = "#ad5f36";
+      c.lineWidth = Math.max(1, Math.min(2.8, w / 110));
+      c.stroke();
+      line(c, [[l.a.x * w, l.a.y * h], [l.b.x * w, l.b.y * h]], "#b96e42", Math.max(0.8, Math.min(1.5, w / 180)));
+    }
+  }
+  var PAPER = { width: 600, height: 480, x: 24, y: 24, w: 552, h: 432 };
+  var PaperRenderer = class {
+    constructor(canvas) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext("2d");
+      canvas.width = PAPER.width;
+      canvas.height = PAPER.height;
+    }
+    draw(g, target, draft = null) {
+      const c = this.ctx;
+      c.clearRect(0, 0, PAPER.width, PAPER.height);
+      c.lineCap = "round";
+      c.lineJoin = "round";
+      if (["settled", "closed"].includes(g.state)) {
+        text(c, "你的手记", 150, 35, 22, "#765e42", "650");
+        text(c, "窗边的速写", 450, 35, 22, "#527f75", "650");
+        notePaper(c, 24, 64, 252, 352, g.art.note);
+        sketchPaper(c, 324, 64, 252, 352, g.art.sketch);
+        return;
+      }
+      const art = g.art[target];
+      if (target === "note") notePaper(c, PAPER.x, PAPER.y, PAPER.w, PAPER.h, art);
+      else sketchPaper(c, PAPER.x, PAPER.y, PAPER.w, PAPER.h, art);
+      if (draft) {
+        c.save();
+        c.translate(PAPER.x, PAPER.y);
+        c.globalAlpha = 0.5;
+        drawMarks(c, PAPER.w, PAPER.h, [draft]);
+        c.restore();
+      }
+    }
+  };
   function artworkDetails(c, g) {
     const note = g.art?.note || {}, sketch2 = g.art?.sketch || {};
     rr(c, 23, 211, 106, 154, 8, "#f8f1dfdc", "#cbbd9e");
@@ -1176,7 +1641,7 @@ var WindowlifeRequestPreview = (() => {
       throw new Error("Storage unavailable");
     } };
   }
-  var diagnostics = mount({ document, window, storage, requestFrame: (callback) => requestAnimationFrame(callback), Renderer });
+  var diagnostics = mount({ document, window, storage, requestFrame: (callback) => requestAnimationFrame(callback), Renderer, PaperRenderer });
   return __toCommonJS(main_exports);
 })();
 

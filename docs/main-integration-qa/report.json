@@ -1,0 +1,178 @@
+{
+  "status": "local proposed main integration; not published or deployed",
+  "baseMain": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+  "baseTree": "6709d0807d98be31ad2164f5a7aa8a0addad552f",
+  "sourceCandidate": "cda0ee3a43224eb6eab432ed3b64fc4e784dcea3",
+  "scope": {
+    "modifiedRuntime": [
+      "experiments/windowlife-request-preview/index.html"
+    ],
+    "addedMaintenanceFiles": 90,
+    "addedByArea": {
+      "previewSource": 17,
+      "testsAndHelpers": 21,
+      "buildAndScopeTools": 13,
+      "textDocsAndFixtures": 39
+    },
+    "candidateArchiveFilesExcluded": 67,
+    "newGameEntrances": 0,
+    "gameCountChange": 0,
+    "storageKeyChange": false,
+    "homeChange": false
+  },
+  "tests": {
+    "defaultRegression": {
+      "command": "npm test --prefix tools/preview-bundles",
+      "passed": 103,
+      "failed": 0
+    },
+    "catalogue": {
+      "command": "node tests/play-recent.test.mjs",
+      "groupsPassed": 10,
+      "registryEntries": 99,
+      "works": 45
+    },
+    "quietExtra": {
+      "command": "node --test tests/quiet-gentle-home.test.mjs tests/quiet-lamp-envelope.test.mjs tests/quiet-portrait.test.mjs tests/quiet-readability.test.mjs tests/quiet-temporal.test.mjs",
+      "testFilesPassed": 5,
+      "failed": 0
+    },
+    "audits": {
+      "forecast": {
+        "command": "npm run audit:forecast --prefix tools/preview-bundles",
+        "exitCode": 0,
+        "states": 503,
+        "forecasts": 2012,
+        "blocked": 976,
+        "nonSafe": 326,
+        "safeClosed": 710,
+        "safeDidNotClose": 0
+      },
+      "routes": {
+        "command": "npm run audit:routes --prefix tools/preview-bundles",
+        "exitCode": 0
+      },
+      "layoutHistorical": {
+        "command": "npm run audit:layout-historical --prefix tools/preview-bundles",
+        "exitCode": 0,
+        "writesItsOwnHistoricalReport": true,
+        "originalReportBytesUnchangedByThisRun": true
+      }
+    }
+  },
+  "dependencyCommands": {
+    "pinnedNpmCI": "npm ci --prefix tools/preview-bundles --ignore-scripts",
+    "esbuild": "0.25.12",
+    "jsdom": "26.1.0",
+    "newRuntimeNetworkDependencies": 0,
+    "documentedPaperExport": 0,
+    "documentedRoomExport": 0,
+    "documentedBoundaryReplay": 0,
+    "outputsKeptOutsideRepository": true
+  },
+  "qualityScope": "model, local Git, synthetic input/DOM, Canvas instructions and reproducible build; not native browser or human acceptance",
+  "remaining": [
+    "real Windowlife keyboard/pointer/touch/scroll and creative-value acceptance",
+    "three existing experiments lack local HTML/Markdown navigation inlinks; homepage unchanged",
+    "explicit approval and exact expected-main check before any public main update/Pages deployment"
+  ],
+  "forbiddenOperationsNotPerformed": [
+    "main ref update",
+    "deployment",
+    "Library upload",
+    "cloud browser retry",
+    "denied proxy retry",
+    "CLI push/auth changes"
+  ],
+  "preservation": {
+    "baselineFiles": 8189,
+    "baselineFilesUnchanged": 8188,
+    "allowedChangedPaths": [
+      "experiments/windowlife-request-preview/index.html"
+    ],
+    "registeredWorks": 45,
+    "registeredEntries": 99,
+    "frozenV1FilesPreserved": 2693,
+    "fiveMutationChallenges": "5 passed on staged tree; final commit is rechecked with the same scope guard; head-specific output stays outside this report to avoid a self-referential hash",
+    "passed": true
+  },
+  "documentation": {
+    "newMarkdownFilesChecked": 7,
+    "localMarkdownLinksChecked": 16,
+    "missingLinks": [],
+    "npmScriptTargets": [
+      {
+        "script": "check",
+        "file": "tools/preview-bundles/check.mjs"
+      },
+      {
+        "script": "test",
+        "file": "tools/preview-bundles/check-all.mjs"
+      },
+      {
+        "script": "test:consistency",
+        "file": "tools/preview-bundles/check.test.mjs"
+      },
+      {
+        "script": "audit:integration",
+        "file": "tools/preview-bundles/preservation.mjs"
+      },
+      {
+        "script": "audit:forecast",
+        "file": "docs/inlet-deadline-layout-qa/forecast-audit.mjs"
+      },
+      {
+        "script": "audit:routes",
+        "file": "docs/inlet-playability-qa/replay.mjs"
+      },
+      {
+        "script": "audit:layout-historical",
+        "file": "docs/inlet-deadline-layout-qa/verify.mjs"
+      }
+    ]
+  },
+  "reproducibleBuild": {
+    "passed": true,
+    "independentTemporaryBuilds": 2,
+    "esbuild": "0.25.12",
+    "scope": "JS/CSS independently generated; full HTML comparison uses checked-in markup shell; no browser/layout claim",
+    "previews": [
+      {
+        "id": "inlet-deadline",
+        "path": "experiments/inlet-deadline-preview/index.html",
+        "hashes": {
+          "html": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+          "script": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+          "css": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+        },
+        "dependencies": [
+          "versions/v3/preview/inlet/levels.mjs",
+          "versions/v3/preview/inlet/engine.mjs",
+          "versions/v3/preview/inlet/renderer.mjs",
+          "versions/v3/preview/inlet/journey.mjs",
+          "versions/v3/preview/inlet/game.mjs"
+        ]
+      },
+      {
+        "id": "windowlife-request",
+        "path": "experiments/windowlife-request-preview/index.html",
+        "hashes": {
+          "html": "cb7a219131347f93fd6a583c4f0d25642ade5f626d19bbff24c93fe1320c5cb4",
+          "script": "8f861dd4a60f06b4848e142a23ad3dd2c8371f1cebde4e4e75181c5f3e784ffe",
+          "css": "85b11879dc072e96d6a571363b9d919f0b778c77205d64cbb62df686c74f4790"
+        },
+        "dependencies": [
+          "preview/windowlife/levels.mjs",
+          "experiments/windowlife-request/legacy-scene.mjs",
+          "experiments/windowlife-request/marks.mjs",
+          "experiments/windowlife-request/scene.mjs",
+          "experiments/windowlife-request/storage.mjs",
+          "experiments/windowlife-request/paper-controller.mjs",
+          "experiments/windowlife-request/controller.mjs",
+          "experiments/windowlife-request/view.mjs",
+          "experiments/windowlife-request/main.mjs"
+        ]
+      }
+    ]
+  }
+}
