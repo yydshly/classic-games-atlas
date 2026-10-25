@@ -1,0 +1,27 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createGame,command,step,LEVELS,hint,forecastThrow} from './engine.mjs';
+import {campaignLower,campaignUpper,combatRoute,withDecisionStride} from './routes.mjs';
+test('three authored chapters are finite and first geometry/parameters stay unchanged',()=>{assert.equal(LEVELS.length,3);assert.deepEqual(LEVELS[0].solids.filter(s=>s.material==='wood').map(s=>[s.x,s.w]),[[0,660],[770,680],[1580,860]]);assert.equal(LEVELS[0].goal,2290);assert.equal(LEVELS[1].goalY,248);assert.equal(LEVELS[2].goalY,440);assert(Object.isFrozen(LEVELS[0].solids[0]));});
+test('two legal complete journeys use different choices and arrive with all chapters recorded',()=>{const lower=campaignLower(),upper=campaignUpper();for(const r of [lower,upper]){assert.equal(r.game.phase,'won');assert.equal(r.game.stageIndex,2);assert.equal(r.game.journey.completed.length,3);assert(r.game.journey.completed.every(c=>c.hp===3));assert(!command(r.game,'next'));}assert.equal(lower.game.journey.completed[1].hits,3);assert.equal(upper.game.journey.completed[1].hits,2);assert.equal(upper.game.journey.completed[1].places,1);assert.equal(lower.game.journey.completed[2].hits,4);assert.equal(upper.game.journey.completed[2].hits,3);});
+test('whole journey replays from normal start using only buttons and allowed next/start commands',()=>{for(const route of [campaignLower,campaignUpper]){const r=route(),g=createGame();command(g,'start');for(const s of r.runs){if(s.command)assert(command(g,s.command));else for(let i=0;i<s.frames;i++)step(g,JSON.parse(s.keys));}assert.deepEqual(g,r.game);}});
+test('unearned transitions are rejected; arrival waits for the actual target height',()=>{const g=createGame();assert(!command(g,'next'));command(g,'start');assert(!command(g,'next'));const r=combatRoute();assert(command(r.game,'next'));assert.equal(r.game.stageIndex,1);assert.equal(r.game.phase,'ready');assert(!command(r.game,'next'));assert.equal(r.game.player.hp,3);assert.equal(r.game.tick,0);assert.equal(r.game.events.length,0);});
+test('normal pause/retry in later chapters retain prior completion without stale inputs or events',()=>{const g=combatRoute().game;command(g,'next');command(g,'start');for(let i=0;i<40;i++)step(g,{right:true});command(g,'pause');const frozen=structuredClone(g);for(let i=0;i<80;i++)step(g,{right:true,jump:true});assert.deepEqual(g,frozen);command(g,'retry');assert.equal(g.stageIndex,1);assert.equal(g.player.x,110);assert.equal(g.player.hp,3);assert.equal(g.events.length,0);assert.equal(g.journey.completed.length,1);assert.deepEqual(g.previous,{});});
+test('final restart is explicit, returns to ready and creates no fourth chapter',()=>{const g=campaignLower().game;assert(command(g,'restart'));assert.equal(g.stageIndex,0);assert.equal(g.phase,'ready');assert.equal(g.journey.completed.length,0);assert.deepEqual(g.journey.retries,[0,0,0]);});
+test('coarser two/four/six-tick input decisions can still complete both arrangements',()=>{for(const stride of [2,4,6])for(const route of [campaignLower,campaignUpper]){const r=withDecisionStride(stride,route);assert.equal(r.game.phase,'won');assert.equal(r.game.journey.completed.length,3);}});
+test('text route fixtures reproduce both complete journeys through buttons and real transitions',()=>{const fixture=JSON.parse(readFileSync(new URL('../../docs/crate-courier-qa/journey-inputs.json',import.meta.url),'utf8'));for(const r of Object.values(fixture.routes)){const g=createGame();command(g,'start');for(const s of r.input){if(s.command)assert(command(g,s.command));else for(let i=0;i<s.frames;i++)step(g,s.input);}assert.deepEqual(g.journey.completed,r.completed);assert.equal(g.phase,r.result.phase);assert.equal(g.stageIndex,2);}});
+test('missing the second chapter upper approach after throwing a box still allows a full return and arrival',()=>{
+  const route=campaignLower(),g=createGame();command(g,'start');let reached=false;
+  outer:for(const s of route.runs){if(s.command)command(g,s.command);else for(let i=0;i<s.frames;i++){step(g,JSON.parse(s.keys));if(g.stageIndex===1&&g.player.support==='exit-shelf'&&g.player.holding){reached=true;break outer;}}}
+  assert(reached);step(g,{action:true});for(let i=0;i<80;i++)step(g,{right:true});for(let i=0;i<180;i++)step(g,{});
+  assert.equal(g.player.y,440);assert.equal(g.player.holding,null);assert.match(hint(g),/左侧/);
+  for(let i=0;i<240&&g.player.x>2068;i++)step(g,{left:true,jump:false});assert(g.player.x<=2068);
+  step(g,{left:true,jump:true});for(let i=0;i<150&&(g.player.x>1940||!g.player.grounded);i++)step(g,{left:true});assert(g.player.x<=1940);
+  const until=(predicate,input={})=>{for(let i=0;i<2400&&!predicate();i++){assert.equal(g.phase,'playing');step(g,input);}assert(predicate());};
+  const hop=x=>{step(g,{right:true,jump:true});until(()=>g.player.x>=x,{right:true});until(()=>g.player.grounded);};
+  until(()=>g.player.x>=1920,{right:true});hop(2025);hop(2080);hop(2125);
+  assert.equal(g.player.y,248);step(g,{action:true});step(g,{});assert(g.player.holding);
+  until(()=>forecastThrow(g)?.outcome==='impact');step(g,{action:true});step(g,{});until(()=>!g.enemies[3].alive);
+  until(()=>g.phase==='won',{right:true});assert.equal(g.stageIndex,1);assert.equal(g.player.hp,3);assert.equal(g.journey.retries[1],0);assert.equal(g.journey.completed.length,2);
+});
