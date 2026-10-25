@@ -1,0 +1,479 @@
+{
+  "source_candidate": "de8f35df4c312a9dd5a999930e953b3e43b3fd4a",
+  "html_sha256": "2247121d22dc77d859c808475cb91ce8b03acea3b691e4b91e10ea916472a50e",
+  "script_sha256": [
+    "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5"
+  ],
+  "ids": {
+    "back-link": {
+      "tag": "a",
+      "attributes": {
+        "id": "back-link",
+        "href": "../../index.html#play",
+        "class": "back-link"
+      }
+    },
+    "help": {
+      "tag": "button",
+      "attributes": {
+        "id": "help",
+        "class": "help-button",
+        "aria-haspopup": "dialog",
+        "type": "button"
+      }
+    },
+    "preview-note": {
+      "tag": "section",
+      "attributes": {
+        "id": "preview-note",
+        "class": "save-warning",
+        "aria-label": "网页试玩边界"
+      }
+    },
+    "journey-list": {
+      "tag": "ol",
+      "attributes": {
+        "id": "journey-list"
+      }
+    },
+    "level-index": {
+      "tag": "span",
+      "attributes": {
+        "id": "level-index"
+      }
+    },
+    "level-title": {
+      "tag": "h2",
+      "attributes": {
+        "id": "level-title"
+      }
+    },
+    "level-brief": {
+      "tag": "p",
+      "attributes": {
+        "id": "level-brief"
+      }
+    },
+    "capture-value": {
+      "tag": "b",
+      "attributes": {
+        "id": "capture-value"
+      }
+    },
+    "capture-progress": {
+      "tag": "progress",
+      "attributes": {
+        "id": "capture-progress",
+        "max": "100",
+        "value": "0",
+        "aria-label": "已织汀地百分比"
+      }
+    },
+    "capture-target": {
+      "tag": "b",
+      "attributes": {
+        "id": "capture-target"
+      }
+    },
+    "lives-value": {
+      "tag": "strong",
+      "attributes": {
+        "id": "lives-value"
+      }
+    },
+    "time-left": {
+      "tag": "strong",
+      "attributes": {
+        "id": "time-left"
+      }
+    },
+    "basin-objectives": {
+      "tag": "section",
+      "attributes": {
+        "id": "basin-objectives",
+        "class": "basin-objectives",
+        "aria-labelledby": "basin-objectives-title",
+        "hidden": null
+      }
+    },
+    "basin-objectives-title": {
+      "tag": "h3",
+      "attributes": {
+        "id": "basin-objectives-title"
+      }
+    },
+    "basin-objective-list": {
+      "tag": "ol",
+      "attributes": {
+        "id": "basin-objective-list",
+        "class": "basin-objective-list"
+      }
+    },
+    "battlefield": {
+      "tag": "canvas",
+      "attributes": {
+        "id": "battlefield",
+        "width": "880",
+        "height": "640",
+        "tabindex": "0",
+        "aria-label": "汀光织界海图。用方向按钮或方向键移动，用织线按钮切换出发意图。"
+      }
+    },
+    "result-card": {
+      "tag": "div",
+      "attributes": {
+        "id": "result-card",
+        "class": "result-card",
+        "hidden": null
+      }
+    },
+    "result-title": {
+      "tag": "h2",
+      "attributes": {
+        "id": "result-title",
+        "tabindex": "-1"
+      }
+    },
+    "result-reason": {
+      "tag": "p",
+      "attributes": {
+        "id": "result-reason"
+      }
+    },
+    "result-details": {
+      "tag": "div",
+      "attributes": {
+        "id": "result-details"
+      }
+    },
+    "result-next": {
+      "tag": "button",
+      "attributes": {
+        "id": "result-next",
+        "class": "primary",
+        "type": "button"
+      }
+    },
+    "result-retry": {
+      "tag": "button",
+      "attributes": {
+        "id": "result-retry",
+        "type": "button"
+      }
+    },
+    "result-view": {
+      "tag": "button",
+      "attributes": {
+        "id": "result-view",
+        "class": "quiet",
+        "type": "button"
+      }
+    },
+    "controls": {
+      "tag": "section",
+      "attributes": {
+        "class": "control-deck",
+        "id": "controls",
+        "aria-label": "航向与织线操作"
+      }
+    },
+    "draw-toggle": {
+      "tag": "button",
+      "attributes": {
+        "id": "draw-toggle",
+        "class": "draw-toggle",
+        "type": "button",
+        "aria-pressed": "false"
+      }
+    },
+    "draw-label": {
+      "tag": "strong",
+      "attributes": {
+        "id": "draw-label"
+      }
+    },
+    "draw-state": {
+      "tag": "small",
+      "attributes": {
+        "id": "draw-state"
+      }
+    },
+    "action-feedback": {
+      "tag": "p",
+      "attributes": {
+        "id": "action-feedback",
+        "class": "action-feedback",
+        "role": "status",
+        "aria-live": "polite"
+      }
+    },
+    "phase-label": {
+      "tag": "span",
+      "attributes": {
+        "id": "phase-label",
+        "class": "phase-label"
+      }
+    },
+    "start": {
+      "tag": "button",
+      "attributes": {
+        "id": "start",
+        "class": "primary",
+        "type": "button"
+      }
+    },
+    "pause": {
+      "tag": "button",
+      "attributes": {
+        "id": "pause",
+        "type": "button"
+      }
+    },
+    "retry": {
+      "tag": "button",
+      "attributes": {
+        "id": "retry",
+        "type": "button"
+      }
+    },
+    "show-result": {
+      "tag": "button",
+      "attributes": {
+        "id": "show-result",
+        "type": "button",
+        "hidden": null
+      }
+    },
+    "move-up": {
+      "tag": "button",
+      "attributes": {
+        "id": "move-up",
+        "data-dir": "U",
+        "type": "button",
+        "aria-label": "向上移动"
+      }
+    },
+    "move-left": {
+      "tag": "button",
+      "attributes": {
+        "id": "move-left",
+        "data-dir": "L",
+        "type": "button",
+        "aria-label": "向左移动"
+      }
+    },
+    "move-right": {
+      "tag": "button",
+      "attributes": {
+        "id": "move-right",
+        "data-dir": "R",
+        "type": "button",
+        "aria-label": "向右移动"
+      }
+    },
+    "move-down": {
+      "tag": "button",
+      "attributes": {
+        "id": "move-down",
+        "data-dir": "D",
+        "type": "button",
+        "aria-label": "向下移动"
+      }
+    },
+    "threat-preview": {
+      "tag": "section",
+      "attributes": {
+        "id": "threat-preview",
+        "class": "threat-preview",
+        "aria-labelledby": "threat-preview-title"
+      }
+    },
+    "threat-preview-title": {
+      "tag": "h3",
+      "attributes": {
+        "id": "threat-preview-title"
+      }
+    },
+    "threat-live-status": {
+      "tag": "span",
+      "attributes": {
+        "id": "threat-live-status",
+        "class": "threat-live-status",
+        "aria-live": "off"
+      }
+    },
+    "preview-up": {
+      "tag": "button",
+      "attributes": {
+        "id": "preview-up",
+        "data-preview-dir": "U",
+        "type": "button",
+        "aria-pressed": "false"
+      }
+    },
+    "preview-right": {
+      "tag": "button",
+      "attributes": {
+        "id": "preview-right",
+        "data-preview-dir": "R",
+        "type": "button",
+        "aria-pressed": "false"
+      }
+    },
+    "preview-down": {
+      "tag": "button",
+      "attributes": {
+        "id": "preview-down",
+        "data-preview-dir": "D",
+        "type": "button",
+        "aria-pressed": "false"
+      }
+    },
+    "preview-left": {
+      "tag": "button",
+      "attributes": {
+        "id": "preview-left",
+        "data-preview-dir": "L",
+        "type": "button",
+        "aria-pressed": "false"
+      }
+    },
+    "preview-detail": {
+      "tag": "p",
+      "attributes": {
+        "id": "preview-detail",
+        "class": "preview-detail",
+        "aria-live": "off"
+      }
+    },
+    "save-warning": {
+      "tag": "p",
+      "attributes": {
+        "id": "save-warning",
+        "class": "save-warning",
+        "role": "status",
+        "hidden": null
+      }
+    },
+    "journey-record": {
+      "tag": "section",
+      "attributes": {
+        "id": "journey-record",
+        "class": "journey-record"
+      }
+    },
+    "record-title": {
+      "tag": "h2",
+      "attributes": {
+        "id": "record-title",
+        "tabindex": "-1"
+      }
+    },
+    "record-body": {
+      "tag": "div",
+      "attributes": {
+        "id": "record-body"
+      }
+    },
+    "new-journey": {
+      "tag": "button",
+      "attributes": {
+        "id": "new-journey",
+        "type": "button"
+      }
+    },
+    "help-dialog": {
+      "tag": "dialog",
+      "attributes": {
+        "id": "help-dialog"
+      }
+    },
+    "close-help": {
+      "tag": "button",
+      "attributes": {
+        "id": "close-help",
+        "class": "primary",
+        "type": "button"
+      }
+    },
+    "confirm-new": {
+      "tag": "dialog",
+      "attributes": {
+        "id": "confirm-new"
+      }
+    },
+    "confirm-new-no": {
+      "tag": "button",
+      "attributes": {
+        "id": "confirm-new-no",
+        "type": "button"
+      }
+    },
+    "confirm-new-yes": {
+      "tag": "button",
+      "attributes": {
+        "id": "confirm-new-yes",
+        "class": "primary",
+        "type": "button"
+      }
+    },
+    "retry-dialog": {
+      "tag": "dialog",
+      "attributes": {
+        "id": "retry-dialog",
+        "aria-labelledby": "retry-title"
+      }
+    },
+    "retry-title": {
+      "tag": "h2",
+      "attributes": {
+        "id": "retry-title"
+      }
+    },
+    "retry-no": {
+      "tag": "button",
+      "attributes": {
+        "id": "retry-no",
+        "type": "button"
+      }
+    },
+    "retry-yes": {
+      "tag": "button",
+      "attributes": {
+        "id": "retry-yes",
+        "class": "primary",
+        "type": "button"
+      }
+    }
+  },
+  "interactive_order": [
+    "back-link",
+    "help",
+    "battlefield",
+    "result-title",
+    "result-next",
+    "result-retry",
+    "result-view",
+    "draw-toggle",
+    "start",
+    "pause",
+    "retry",
+    "show-result",
+    "move-up",
+    "move-left",
+    "move-right",
+    "move-down",
+    "preview-up",
+    "preview-right",
+    "preview-down",
+    "preview-left",
+    "record-title",
+    "new-journey",
+    "close-help",
+    "confirm-new-no",
+    "confirm-new-yes",
+    "retry-no",
+    "retry-yes"
+  ],
+  "storage_key": "classic-atlas.preview.inlet-v3-deadline.970a268.v1"
+}
