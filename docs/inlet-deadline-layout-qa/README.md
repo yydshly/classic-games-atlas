@@ -1,5 +1,7 @@
 # Inlet 独立试玩：状态与操作布局候选
 
+后续真实复验发现窄屏状态条遮挡海图，修订见 [scroll-followup.md](scroll-followup.md)。当前修订将状态条改回普通流并压缩桌面首屏，地图尺寸公式不变；以下首轮记录按历史范围保留。
+
 状态：**仅候选，未更新 main，未进行本轮真实浏览器复验。**
 基线统一候选 de8f35df4c312a9dd5a999930e953b3e43b3fd4a（tree1355c5c02267f36175b972e860841efd17406071）。仅运行文件 experiments/inlet-deadline-preview/index.html；正式v3、规则、engine、关卡、存档、其它preview/Quiet与首页不改。
 

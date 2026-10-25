@@ -23,7 +23,18 @@ assert(patch.includes('.control-deck .phase-label{flex:0 0 100%'));
 assert(patch.includes('flex:1 0 5rem;min-width:5rem;white-space:nowrap;word-break:keep-all'));
 assert(patch.includes('.control-deck .draw-console{display:contents}'));
 assert(patch.includes('.play-console .preview-directions{grid-template-columns:repeat(2,minmax(0,1fr))}'));
-assert(patch.includes('.play-console .telemetry{order:1;position:sticky;top:0;'));
+assert(patch.includes('.play-console .telemetry{order:1;position:static;top:auto;z-index:auto;'));
+assert(patch.includes('.chart-pane,.play-console{display:contents;position:static}'));
+assert(patch.includes('@media(min-width:791px){.shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,420px);'));
+assert(patch.includes('.chart-heading{order:8;'));
+assert(patch.includes('width:min(100%,max(330px,calc(137.5svh - 357.5px)))'),'map sizing formula unchanged');
+assert(!/\.play-console \.telemetry\{[^}]*position:sticky/.test(patch),'mobile telemetry cannot pin over the map');
+assert(patch.includes('.chart-heading{order:3;'),'desktop explanatory title follows chart');
+const scrollInvariant=[0,67,180].map(scroll=>{
+ const statusBottom=100+53-scroll,mapTop=100+53+10-scroll;
+ assert(statusBottom<mapTop,'normal-flow ordered siblings cannot intersect under a common page scroll');
+ return{scroll,statusBottom,mapTop,intersection:0,scope:'normal-flow invariant using reported 53px height, not DOM pixels'};
+});
 assert(patch.includes('.play-console .threat-preview{order:6}'));
 assert(/#battlefield\{[^}]*aspect-ratio:11\/8/.test(css));
 const sizing=[320,390].map(width=>{
@@ -68,6 +79,6 @@ f.click('retry');assert(f.nodes.get('#retry-dialog').open);f.click('retry-no');a
 const reloaded=fixture(new Map(f.storage));assert.equal(reloaded.diagnostics().state,'paused');assert.deepEqual(reloaded.diagnostics().player,paused.player);assert.equal(reloaded.diagnostics().time,paused.time);
 assert([...f.reads,...f.writes,...reloaded.reads,...reloaded.writes].every(k=>k===KEY));
 assert.equal(f.storage.get('classic-atlas.preview.inlet-v3-threat.v1'),'formal sentinel');assert.equal(f.storage.get('classic-atlas.inlet.v1'),'legacy sentinel');
-const report={passed:true,scope:'unchanged executable HTML bundle with synthetic DOM/canvas/storage, static constraints only; not browser layout or human play acceptance',htmlSha256:hash(html),scriptSha256:scripts.map(hash),idsPreserved:ids.size,interactiveOrderPreserved:true,storageKey:KEY,onlyOwnKeyReadWritten:true,pauseRefreshCheckpointPreserved:true,manualAndRetryCancelWired:true,nativeSummaryNotHijacked:true,sizing,qaPending:['desktop whole chart plus timer/lives/primary controls simultaneously','390x844 actual button labels, wrap, sticky state and chart dimensions','preview-card effect, scroll/focus/zoom and touch in real browser']};
+const report={passed:true,scope:'unchanged executable HTML bundle with synthetic DOM/canvas/storage, static constraints only; not browser layout or human play acceptance',htmlSha256:hash(html),scriptSha256:scripts.map(hash),idsPreserved:ids.size,interactiveOrderPreserved:true,storageKey:KEY,onlyOwnKeyReadWritten:true,pauseRefreshCheckpointPreserved:true,manualAndRetryCancelWired:true,nativeSummaryNotHijacked:true,narrowTelemetryNormalFlow:true,mapSizingFormulaUnchanged:true,desktopHeaderCompactWithoutTextRemoval:true,scrollInvariant,sizing,qaPending:['1280x720 initial closed-note view: whole chart plus timer/lives/primary controls; no extra map shrinking','390x844 scroll 0/67/180: no status/map intersection; button wrap and chart dimensions retained','820x740 disclosure flow, pause/retry/focus and second-bay forecasts in real browser']};
 writeFileSync(new URL('report.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 

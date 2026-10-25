@@ -1,7 +1,7 @@
 {
   "passed": true,
   "scope": "unchanged executable HTML bundle with synthetic DOM/canvas/storage, static constraints only; not browser layout or human play acceptance",
-  "htmlSha256": "15a6af87651d004ec30e4788cfc779dd07d5d93a7c592540fc80d9575b54add3",
+  "htmlSha256": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
   "scriptSha256": [
     "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5"
   ],
@@ -12,6 +12,32 @@
   "pauseRefreshCheckpointPreserved": true,
   "manualAndRetryCancelWired": true,
   "nativeSummaryNotHijacked": true,
+  "narrowTelemetryNormalFlow": true,
+  "mapSizingFormulaUnchanged": true,
+  "desktopHeaderCompactWithoutTextRemoval": true,
+  "scrollInvariant": [
+    {
+      "scroll": 0,
+      "statusBottom": 153,
+      "mapTop": 163,
+      "intersection": 0,
+      "scope": "normal-flow invariant using reported 53px height, not DOM pixels"
+    },
+    {
+      "scroll": 67,
+      "statusBottom": 86,
+      "mapTop": 96,
+      "intersection": 0,
+      "scope": "normal-flow invariant using reported 53px height, not DOM pixels"
+    },
+    {
+      "scroll": 180,
+      "statusBottom": -27,
+      "mapTop": -17,
+      "intersection": 0,
+      "scope": "normal-flow invariant using reported 53px height, not DOM pixels"
+    }
+  ],
   "sizing": [
     {
       "viewport": 320,
@@ -27,8 +53,8 @@
     }
   ],
   "qaPending": [
-    "desktop whole chart plus timer/lives/primary controls simultaneously",
-    "390x844 actual button labels, wrap, sticky state and chart dimensions",
-    "preview-card effect, scroll/focus/zoom and touch in real browser"
+    "1280x720 initial closed-note view: whole chart plus timer/lives/primary controls; no extra map shrinking",
+    "390x844 scroll 0/67/180: no status/map intersection; button wrap and chart dimensions retained",
+    "820x740 disclosure flow, pause/retry/focus and second-bay forecasts in real browser"
   ]
 }
