@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>轻轻回窝 · 别吵醒修理师（独立候选，未 UI 验收）</title><link rel="stylesheet" href="style.css?v=gentle-home-9bcd0fc-r1">
+<title>轻轻回窝 · 别吵醒修理师（独立候选，未 UI 验收）</title><link rel="stylesheet" href="style.css?v=gentle-home-d9246fd-r2">
 </head>
 <body data-mode="ready">
 <header><a href="../../index.html#play">← 图鉴</a><div class="title"><span class="edition">别吵醒修理师 / 体验候选</span><b>轻轻回窝</b></div><div class="header-actions"><button id="help" aria-haspopup="dialog">操作说明</button><button id="pause" disabled>暂停</button></div></header>
@@ -14,12 +14,12 @@
 <div id="touch-controls" class="touch" aria-label="移动控件" hidden><button data-key="KeyA" aria-label="向左">←</button><button data-key="KeyW" aria-label="向前">↑</button><button data-key="KeyS" aria-label="向后">↓</button><button data-key="KeyD" aria-label="向右">→</button><button data-key="ShiftLeft">制动</button></div>
 </main>
 <section id="result" hidden aria-labelledby="result-title"><div><h2 id="result-title"></h2><p id="result-copy"></p></div><button id="result-retry" type="button">回入口再试</button></section>
-<footer><span>独立候选 · 场景与动作尚未浏览器验收 · <a href="NOTES.md?v=gentle-home-9bcd0fc-r1">范围说明</a></span><button id="retry">回维修盘</button></footer>
+<footer><span>独立候选 · 场景与动作尚未浏览器验收 · <a href="NOTES.md?v=gentle-home-d9246fd-r2">范围说明</a></span><button id="retry">回维修盘</button></footer>
 <dialog id="help-dialog" aria-labelledby="help-title"><h2 id="help-title">轻一点，再轻一点。</h2><p>方向键 / WASD 滚动，Shift 制动。P / Esc 暂停或继续。屏幕方向按钮支持按住操作；制动可与方向一起按。</p><p>工具区较宽，但碰撞金属工具会惊动修理师；软垫边较窄，急转前要刹住横向惯性。身体滚动和撞击来自真实物理，没有跳跃或倒计时。</p><p>到了充电窝还要慢下来：双竖线表示仍在滑行，触点真正接通才算完成。跌落小叉只标记最后真实承托位置。</p><p>静音也有完整场景和文字反馈。没有存档；重新加载从维修盘开始。触控和窄屏尚未真机验收。</p><button id="close-help" type="button">知道了</button></dialog>
 <script>
 const quietEntry={title:document.querySelector('#overlay-title').textContent,copy:document.querySelector('#overlay-copy').textContent};
 window.quietBootReady=()=>{document.querySelector('#overlay-title').textContent=quietEntry.title;document.querySelector('#overlay-copy').textContent=quietEntry.copy;document.querySelector('#start').hidden=false;document.querySelector('#reload').hidden=true;};
 window.quietBootError=()=>{document.body.dataset.mode='failed';document.querySelector('#overlay-title').textContent='工作台暂时没有打开。';document.querySelector('#overlay-copy').textContent='请重新加载。本实验需要可用的 WebGL2，当前设备图形支持可能受限。';document.querySelector('#start').hidden=true;const b=document.querySelector('#reload');b.hidden=false;b.onclick=()=>location.reload();};
 window.quietBootTimer=setTimeout(window.quietBootError,15000);
-</script><script type="module" src="boot.mjs?v=gentle-home-9bcd0fc-r1" onerror="window.quietBootError()"></script>
+</script><script type="module" src="boot.mjs?v=gentle-home-d9246fd-r2" onerror="window.quietBootError()"></script>
 </body></html>
