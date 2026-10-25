@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#244b53"><title>箱跃货栈 · 首关体验候选</title><link rel="stylesheet" href="style.css?v=crate-slice-1"></head>
+<body><main id="game">
+  <header><div><span class="eyebrow">举箱 · 投敌 · 跳跃闯关</span><h1>箱跃货栈 <small>首关候选</small></h1></div><a href="../../">返回图鉴</a></header>
+  <div class="status"><span id="health" aria-label="体力">体力 ● ● ●</span><span id="cargo">空手 · 靠近木箱可举起</span><button id="pause" disabled>暂停</button><button id="retry" disabled>重试</button></div>
+  <div class="stage" id="stage" tabindex="0" aria-label="货栈游戏区域：方向键移动，空格跳跃，J 举箱或投掷，P 暂停，R 重试">
+    <canvas id="canvas" role="img" aria-label="雨后木码头上，递送员从左侧出发，前方有木箱和巡逻机。">浏览器未支持 Canvas。请更换支持 Canvas2D 的浏览器后重试。</canvas>
+    <section id="intro" class="sheet" aria-labelledby="intro-title">
+      <span class="eyebrow">第一关 · 雨后货栈</span><h2 id="intro-title">抱起木箱，开出一条路。</h2>
+      <p>你是递送员阿禾。穿过巡逻机和水道，抵达右侧亮灯的<strong>收货站</strong>。</p>
+      <ol><li><strong>← → / A D</strong> 移动，<strong>空格 / K</strong> 跳过缺口。</li><li>靠近木箱按 <strong>J / E</strong> 举起，再按一次向面朝方向投掷。箱子能打坏巡逻机。</li><li><strong>↓＋J</strong> 轻放箱子，可用来垫脚。也能找时机跳过敌人。</li></ol>
+      <p class="rules">到站即成功；被撞三次或落水失败。失败可立即重试，无倒计时。本关不保存进度，刷新会重新开始。</p>
+      <button id="start" class="primary">进入货栈</button>
+    </section>
+    <section id="result" class="result" hidden aria-labelledby="result-title"><h2 id="result-title"></h2><p id="result-text"></p><button id="result-retry" class="primary">重试首关</button></section>
+    <p id="fatal" class="fatal" hidden role="alert"></p>
+  </div>
+  <p class="hint" id="hint" aria-live="polite">先读玩法，再进入货栈。场景中的浅色木箱可以举起。</p>
+  <div class="controls" aria-label="触屏操作"><div class="walk"><button data-control="left" aria-label="向左走">←</button><button data-control="right" aria-label="向右走">→</button></div><div class="actions"><button id="place" hidden>轻放</button><button data-control="jump">跳跃</button><button data-control="action" class="action" id="action">举箱</button></div></div>
+  <details><summary>玩法说明、参考与当前范围</summary><p>按 P 暂停，R 重试。举起后会显示短抛物线；这是当前箱子的运动预览，不会自动命中。触屏按住方向行走，点“跳跃”或“举箱／投掷”；持物时可点“轻放”。点击游戏画面后可使用键盘。</p><p>参考《松鼠大战》初代的举物投敌与横向跳跃闯关。角色、场景和素材为本项目原创；固定抛物线、补箱节奏和关卡为改编。本轮只有单人首关，尚未做原作的双人合作、完整关卡、Boss、藏箱及向上投掷。不是官方复刻，也未完成真实浏览器与玩家体验验收。</p><p>本页不读取或写入其他游戏的存档。无法开始时，请查看页面错误信息；无需登录或付费。</p></details>
+  <footer>首关可玩切片 · 未完成体验验收 <span>crate-slice-1</span></footer>
+  <noscript><p class="fatal">此游戏需要 JavaScript。请允许本站脚本后重新打开；其他游戏存档不受影响。</p></noscript>
+</main><script type="module">const error=document.querySelector('#fatal');function fail(e){error.hidden=false;error.textContent='游戏未能启动：'+(e.message||'运行资源加载失败')+'。请刷新重试；仍失败可返回图鉴。';document.querySelector('#start').disabled=true;}import('./main.mjs?v=crate-slice-1').catch(fail);</script></body></html>
