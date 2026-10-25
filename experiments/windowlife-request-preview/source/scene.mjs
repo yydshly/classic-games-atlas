@@ -1,6 +1,6 @@
 import * as Legacy from './legacy-scene.mjs';
 import {LIMIT,RESPONSE_TIME,validMark,clone} from './marks.mjs';
-const STEP=.1,MAX_COMMANDS=4096;
+const STEP=.1,MAX_COMMANDS=4096,MAX_REPLAY_STEPS=100000;
 export function createScene() {
   const g=Legacy.createScene();g.version=2;
   g.art.note.marks=[];g.art.sketch.marks=[];g.art.sketch.responses=[];
@@ -101,18 +101,37 @@ export function checkpoint(g) {
   if(g.version===1)return Legacy.checkpoint(g);
   return {format:'windowlife-request-checkpoint',version:2,ticks:g.ticks,accumulator:g.accumulator,commands:clone(g.history)};
 }
+// Only the clock changes in these two stable waits. Keep its existing v2
+// meaning (including event/animation time), but never replay every idle tick.
+function waitingForInk(g) {
+  if(g.phase==='co-creating')return !g.paper.sketch.done&&g.art.sketch.responses.every(p=>p===1);
+  const a=g.actors[0].current,b=g.actors[1].current;
+  return g.phase==='separate'&&g.art.note.finished&&g.art.sketch.progress>=6&&
+    (g.choice!=='now'||g.request.status==='cancelled')&&!g.paper.note.done&&
+    a?.kind==='work'&&a.phase==='working'&&a.remaining===1&&a.duration===1&&a.target==='desk'&&(!b||b.remaining===0);
+}
+function replayTo(g,target,budget) {
+  while(g.ticks<target) {
+    if(g.state!=='playing')return false;
+    if(waitingForInk(g)){g.ticks=target;g.time=Legacy.round(target*STEP);return true;}
+    // Independent of the elapsed clock: corrupted or future histories cannot
+    // turn a synchronous save read into an unbounded simulation loop.
+    if(budget.steps++>=MAX_REPLAY_STEPS||!tick(g))return false;
+  }
+  return true;
+}
 export function restore(cp) {
   if(cp?.version===1)return Legacy.restore(cp);
   try {
-    if(cp?.format!=='windowlife-request-checkpoint'||cp.version!==2||!Number.isInteger(cp.ticks)||cp.ticks<0||cp.ticks>100000||!Number.isFinite(cp.accumulator)||cp.accumulator<0||cp.accumulator>=STEP+1e-8||!Array.isArray(cp.commands)||cp.commands.length>MAX_COMMANDS+1)return null;
-    const g=createScene();
+    if(cp?.format!=='windowlife-request-checkpoint'||cp.version!==2||!Number.isSafeInteger(cp.ticks)||cp.ticks<0||!Number.isFinite(cp.accumulator)||cp.accumulator<0||cp.accumulator>=STEP+1e-8||!Array.isArray(cp.commands)||cp.commands.length>MAX_COMMANDS+1)return null;
+    const g=createScene(),budget={steps:0};
     for(const c of cp.commands) {
       const expected=c?.type==='mark'?'mark,tick,type':'tick,type';
       if(!c||Object.keys(c).sort().join(',')!==expected||!Number.isInteger(c.tick)||c.tick<g.ticks||c.tick>cp.ticks)return null;
-      while(g.ticks<c.tick)if(!tick(g))return null;
+      if(!replayTo(g,c.tick,budget))return null;
       if(!command(g,c.type,c.mark).ok)return null;
     }
-    while(g.ticks<cp.ticks)if(!tick(g))return null;
+    if(!replayTo(g,cp.ticks,budget))return null;
     if(!['playing','paused'].includes(g.state)&&cp.accumulator!==0)return null;
     g.accumulator=cp.accumulator;
     if(g.state==='playing'&&!command(g,'pause').ok)return null;

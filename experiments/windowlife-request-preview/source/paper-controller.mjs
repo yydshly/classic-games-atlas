@@ -32,7 +32,7 @@ export function mountPaper({document,getScene,act,render,PaperRenderer}) {
     if(['Enter',' '].includes(e.key)) {
       e.preventDefault();if(e.repeat)return;
       if(draft)commit();else{draft={x1:350,y1:700,x2:510,y2:430};handle='end';render();}
-    } else if(e.key==='Escape'){e.preventDefault();cancelDraft();render();}
+    } else if(e.key==='Escape'){e.preventDefault();cancelDraft();render();surface.focus({preventScroll:true});}
     else if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) {
       e.preventDefault();if(!draft)draft={x1:350,y1:700,x2:510,y2:430};
       const selected=e.target?.id==='paper-handle-start'?'start':e.target?.id==='paper-handle-end'?'end':handle;

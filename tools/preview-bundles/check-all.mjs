@@ -12,6 +12,8 @@ const commands = [
     'tests/windowlife-leaf-scene.test.mjs',
     'tests/windowlife-leaf-controller.test.mjs',
     'tests/windowlife-leaf-view.test.mjs',
+    'tests/windowlife-leaf-save-duration.test.mjs',
+    'tests/windowlife-leaf-dom.test.mjs',
     'tests/quiet-workbench-fall-marker.test.mjs',
     'tests/quiet-viewport-layout.test.mjs']
 ];

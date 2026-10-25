@@ -464,6 +464,7 @@ var WindowlifeRequestPreview = (() => {
   // experiments/windowlife-request/scene.mjs
   var STEP2 = 0.1;
   var MAX_COMMANDS2 = 4096;
+  var MAX_REPLAY_STEPS = 1e5;
   function createScene2() {
     const g = createScene();
     g.version = 2;
@@ -590,18 +591,35 @@ var WindowlifeRequestPreview = (() => {
     if (g.version === 1) return checkpoint(g);
     return { format: "windowlife-request-checkpoint", version: 2, ticks: g.ticks, accumulator: g.accumulator, commands: clone2(g.history) };
   }
+  function waitingForInk(g) {
+    if (g.phase === "co-creating") return !g.paper.sketch.done && g.art.sketch.responses.every((p) => p === 1);
+    const a = g.actors[0].current, b = g.actors[1].current;
+    return g.phase === "separate" && g.art.note.finished && g.art.sketch.progress >= 6 && (g.choice !== "now" || g.request.status === "cancelled") && !g.paper.note.done && a?.kind === "work" && a.phase === "working" && a.remaining === 1 && a.duration === 1 && a.target === "desk" && (!b || b.remaining === 0);
+  }
+  function replayTo(g, target, budget) {
+    while (g.ticks < target) {
+      if (g.state !== "playing") return false;
+      if (waitingForInk(g)) {
+        g.ticks = target;
+        g.time = round(target * STEP2);
+        return true;
+      }
+      if (budget.steps++ >= MAX_REPLAY_STEPS || !tick2(g)) return false;
+    }
+    return true;
+  }
   function restore2(cp) {
     if (cp?.version === 1) return restore(cp);
     try {
-      if (cp?.format !== "windowlife-request-checkpoint" || cp.version !== 2 || !Number.isInteger(cp.ticks) || cp.ticks < 0 || cp.ticks > 1e5 || !Number.isFinite(cp.accumulator) || cp.accumulator < 0 || cp.accumulator >= STEP2 + 1e-8 || !Array.isArray(cp.commands) || cp.commands.length > MAX_COMMANDS2 + 1) return null;
-      const g = createScene2();
+      if (cp?.format !== "windowlife-request-checkpoint" || cp.version !== 2 || !Number.isSafeInteger(cp.ticks) || cp.ticks < 0 || !Number.isFinite(cp.accumulator) || cp.accumulator < 0 || cp.accumulator >= STEP2 + 1e-8 || !Array.isArray(cp.commands) || cp.commands.length > MAX_COMMANDS2 + 1) return null;
+      const g = createScene2(), budget = { steps: 0 };
       for (const c of cp.commands) {
         const expected = c?.type === "mark" ? "mark,tick,type" : "tick,type";
         if (!c || Object.keys(c).sort().join(",") !== expected || !Number.isInteger(c.tick) || c.tick < g.ticks || c.tick > cp.ticks) return null;
-        while (g.ticks < c.tick) if (!tick2(g)) return null;
+        if (!replayTo(g, c.tick, budget)) return null;
         if (!command2(g, c.type, c.mark).ok) return null;
       }
-      while (g.ticks < cp.ticks) if (!tick2(g)) return null;
+      if (!replayTo(g, cp.ticks, budget)) return null;
       if (!["playing", "paused"].includes(g.state) && cp.accumulator !== 0) return null;
       g.accumulator = cp.accumulator;
       if (g.state === "playing" && !command2(g, "pause").ok) return null;
@@ -732,6 +750,7 @@ var WindowlifeRequestPreview = (() => {
         e.preventDefault();
         cancelDraft();
         render();
+        surface.focus({ preventScroll: true });
       } else if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) {
         e.preventDefault();
         if (!draft) draft = { x1: 350, y1: 700, x2: 510, y2: 430 };
