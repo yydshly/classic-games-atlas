@@ -1,6 +1,6 @@
-import {createGame,STEP} from './engine.mjs?v=crate-slice-1';
-import {Renderer} from './view.mjs?v=crate-slice-1';
-import {attachController} from './controller.mjs?v=crate-slice-1';
+import {createGame,STEP} from './engine.mjs?v=crate-slice-2';
+import {Renderer} from './view.mjs?v=crate-slice-2';
+import {attachController} from './controller.mjs?v=crate-slice-2';
 const root=document.querySelector('#game'),canvas=root.querySelector('#canvas'),g=createGame(),renderer=new Renderer(canvas);
 let last=0,accumulator=0,resize=true;
 const controller=attachController(root,g,{onChange(){last=0;accumulator=0;renderer.predictionTick=-10;resize=true;}});

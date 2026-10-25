@@ -1,20 +1,27 @@
-import {LEVEL,heldBox,pickupBox,forecastThrow} from './engine.mjs?v=crate-slice-1';
+import {LEVEL,heldBox,pickupBox,forecastThrow} from './engine.mjs?v=crate-slice-2';
 const C={ink:'#203b42',deep:'#244b53',teal:'#397d79',mint:'#98bfac',paper:'#f5e8cc',gold:'#eab96c',wood:'#b0784c',darkwood:'#654c3c',red:'#d27357'};
 function block(c,x,y,w,h,r,fill,stroke=null){c.fillStyle=fill;c.beginPath();c.roundRect(x,y,w,h,r);c.fill();if(stroke){c.strokeStyle=stroke;c.lineWidth=2;c.stroke();}}
 function line(c,points,color,width=2){c.strokeStyle=color;c.lineWidth=width;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
 function oval(c,x,y,rx,ry,fill){c.fillStyle=fill;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();}
 function label(c,text,x,y,color=C.ink,size=14,align='left'){c.fillStyle=color;c.font=`600 ${size}px sans-serif`;c.textAlign=align;c.fillText(text,x,y);}
 export class Renderer{
-  constructor(canvas){this.canvas=canvas;this.c=canvas.getContext('2d');if(!this.c)throw Error('Canvas2D 初始化失败');this.camera=0;this.width=960;this.height=560;this.scale=1;this.prediction=null;this.predictionTick=-10;}
-  resize(width,height,dpr=1){this.width=width;this.height=height;this.scale=height/560;this.canvas.width=Math.round(width*Math.min(1.5,dpr));this.canvas.height=Math.round(height*Math.min(1.5,dpr));}
+  constructor(canvas){this.canvas=canvas;this.c=canvas.getContext('2d');if(!this.c)throw Error('Canvas2D 初始化失败');this.camera=0;this.width=960;this.height=560;this.scale=1;this.needsCameraFit=true;this.prediction=null;this.predictionTick=-10;this.predictionFace=null;this.predictionBox=null;this.predictionPhase=null;}
+  resize(width,height,dpr=1){if(width!==this.width||height!==this.height)this.needsCameraFit=true;this.width=width;this.height=height;this.scale=height/560;this.canvas.width=Math.round(width*Math.min(1.5,dpr));this.canvas.height=Math.round(height*Math.min(1.5,dpr));}
   draw(g,{snapCamera=false}={}){const c=this.c,w=this.width/this.scale,p=g.player;
-    const desired=Math.max(0,Math.min(LEVEL.width-w,p.x-w*.33));this.camera=(snapCamera||g.tick===0)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;
+    const desired=Math.max(0,Math.min(LEVEL.width-w,p.x-w*.33));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
     c.setTransform(this.canvas.width/this.width,0,0,this.canvas.height/this.height,0,0);c.clearRect(0,0,this.width,this.height);c.scale(this.scale,this.scale);
     this.sky(c,w,g.tick/120);c.save();c.translate(-this.camera,0);this.docks(c);this.setting(c);this.supplies(c,g);
-    const focus=heldBox(g)||pickupBox(g);if(focus&&g.phase==='playing'){
+    const focus=heldBox(g)||pickupBox(g);if(focus&&['playing','paused'].includes(g.phase)){
       if(focus.mode==='held'){
-        if(g.tick-this.predictionTick>=6){this.prediction=forecastThrow(g);this.predictionTick=g.tick;}
-        if(this.prediction){for(const [i,pt]of this.prediction.points.entries())if(i%2===0)oval(c,pt.x,pt.y,2.4,2.4,'#f5e8ccbb');const end=this.prediction.points.at(-1);if(end){line(c,[[end.x-8,end.y+7],[end.x,end.y+10],[end.x+8,end.y+7]],C.gold,2);}}
+        if(!this.prediction||g.tick-this.predictionTick>=6||this.predictionFace!==p.face||this.predictionBox!==focus.id||this.predictionPhase!==g.phase){this.prediction=forecastThrow(g);this.predictionTick=g.tick;this.predictionFace=p.face;this.predictionBox=focus.id;this.predictionPhase=g.phase;}
+        if(this.prediction){const points=this.prediction.points;
+          for(let i=0;i<points.length-1;i+=2){const a=points[i],b=points[i+1];line(c,[[a.x,a.y],[b.x,b.y]],C.deep,4.5);line(c,[[a.x,a.y],[b.x,b.y]],C.paper,2.3);}
+          const end=points.at(-1);if(end){const x=end.x,y=end.y;
+            // An unfilled, crate-sized outline shows space, never a solid ledge or target lock.
+            for(const [sx,sy]of [[-1,-1],[1,-1],[-1,1],[1,1]]){const corner=[[x+sx*7,y+sy*15],[x+sx*15,y+sy*15],[x+sx*15,y+sy*7]];line(c,corner,C.deep,4.5);line(c,corner,C.paper,2.3);}
+            if(this.prediction.outcome==='ground'){line(c,[[x-19,y+15],[x+19,y+15]],C.deep,4.5);line(c,[[x-19,y+15],[x+19,y+15]],C.gold,2.3);}
+          }
+        }
       }else{this.prediction=null;line(c,[[focus.x-18,focus.y-37],[focus.x,focus.y-43],[focus.x+18,focus.y-37]],C.gold,3);}
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);

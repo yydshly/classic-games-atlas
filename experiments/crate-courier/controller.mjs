@@ -1,4 +1,4 @@
-import {command,step,STEP,hint,heldBox,pickupBox} from './engine.mjs?v=crate-slice-1';
+import {command,step,STEP,hint,heldBox,pickupBox} from './engine.mjs?v=crate-slice-2';
 export function attachController(root,g,{onChange=()=>{}}={}){
   const $=s=>root.querySelector(s),doc=root.ownerDocument,win=doc.defaultView,stage=$('#stage');
   const keyboard={},pointers=new Map(),pulses=new Map();let disposed=false,placeQueued=false;
