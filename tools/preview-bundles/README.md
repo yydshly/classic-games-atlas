@@ -1,6 +1,6 @@
 # 统一候选的源码与运行包检查
 
-从同一 `cloud/quiet-gentle-home` 分支开发三个已有预览，无须切回旧分支找源模块。此工具仅用于开发与检查，不部署，不启动浏览器，不改 main。已有 `index.html` 是页面标记的源文件；它的 CSS 和脚本由同目录 `source/` 重建，不另建网页模板或入口。
+运行能力、源码和维护检查应一起归入main；日常可用临时候选开发，但无需切回旧分支找源模块。此次发布前拟合入范围见 [主干整合记录](../../docs/main-integration-qa/README.md)。此工具仅用于开发与检查，不部署，不启动浏览器，不写Git引用。已有 `index.html` 是页面标记的源文件；它的 CSS 和脚本由同目录 `source/` 重建，不另建网页模板或入口。
 
 Windowlife手动叶影切片、源码、测试与文字审查记录已保存到同一统一候选，保存边界和Esc焦点修复见 [7ec39bd9](https://github.com/yydshly/classic-games-atlas/commit/7ec39bd9d83d899d17439681c443ccc1e246e1e7) 与 [原型说明](../../docs/windowlife-leaf-qa/README.md)。离线图片仍留云本地；发布状态以main对应提交和Pages记录为准，本工具不执行发布。`paper-controller.mjs`处理绘图输入，`marks.mjs`提供确定性几何；scene.mjs为v2，legacy-scene.mjs保留v1旧档语义。原三份Windowlife测试明确验证v1兼容，新版模型/输入/画面测试另外运行，未把旧断言删掉来取得通过。
 
@@ -43,10 +43,11 @@ node tools/preview-bundles/build.mjs --out-dir /tmp/atlas-previews
 
 ## 独立审计与报告副作用
 
+- `npm run audit:integration --prefix tools/preview-bundles -- --head <拟合入commit或tree>` 默认复核首次主干整合的历史范围。后续改动传入单独已审范围，例如 `--scope docs/moss-feedback-qa/scope.json`（路径相对仓库根），不改写历史integration-scope.json。检查只读保护全部既有文件、45款/99登记入口和未批准修改的游戏；只有明确列出的同游戏文件可更新，入口不能删除。它独立于默认可持续回归，不把旧tree锁用于阻止正常源码演进。
 - `npm run audit:forecast --prefix tools/preview-bundles` 默认只读输出并断言安全预测实际闭合；加 `-- --write` 写新 forecast-current.json，不覆盖历史 forecast-audit.json。旧字段 collision:326 是所有非 safe 分类，当前称 nonSafe，不能说326次真实碰撞。
 - `npm run audit:routes --prefix tools/preview-bundles` 默认只读重放；加 `-- --write` 明确更新关卡 report.json。
 - `npm run audit:layout-historical --prefix tools/preview-bundles` 复跑 efc55fa 布局修复的历史不变性审计，锁旧 SHA/属性/CSS且会重写其 report.json，已移出默认回归。未来合法开发改变 bundle 后，该历史审计失败是预期现象；旧 before-contract.json/report.json 原样保留。
 
 ## 仍留在历史分支的资料
 
-Windowlife 的离线图、render-offscreen.mjs、旧 model-report/测试日志，以及 Inlet 的原 boundaries.json/旧 forecast-audit.json 等旧版本档案没有复制；原分支和固定来源链接仍保留。本分支已有全部当前运行必需源码、专项测试、可运行审计及其新结果。Quiet 原 fall-marker 的旧 view/feedback 不重新导入，当前预览已有对应能力且继续改进。
+Windowlife 的离线图、render-offscreen.mjs、旧 model-report/测试日志，以及 Inlet 的原 boundaries.json/旧 forecast-audit.json 等旧版本档案没有复制；原分支和固定来源链接仍保留。主干拟合入树带齐当前运行所需源码、全部21份新增测试/辅助文件、构建工具、审计脚本与文字夹具。Quiet的历史对照只带测试所需源码片段与JSON，不带PNG/GIF/压缩轨迹/日志；完整公开档案保留在 [统一候选固定提交](https://github.com/yydshly/classic-games-atlas/tree/cda0ee3a43224eb6eab432ed3b64fc4e784dcea3/docs/quiet-gentle-home-qa)。Quiet 原 fall-marker 的旧 view/feedback 不重新导入，当前预览已有对应能力且继续改进。

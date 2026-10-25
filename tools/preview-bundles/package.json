@@ -6,6 +6,7 @@
     "check": "node check.mjs",
     "test": "node check-all.mjs",
     "test:consistency": "node --test check.test.mjs",
+    "audit:integration": "node preservation.mjs --self-test",
     "audit:forecast": "node ../../docs/inlet-deadline-layout-qa/forecast-audit.mjs",
     "audit:routes": "node ../../docs/inlet-playability-qa/replay.mjs",
     "audit:layout-historical": "node ../../docs/inlet-deadline-layout-qa/verify.mjs"

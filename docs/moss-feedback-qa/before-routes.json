@@ -1,0 +1,503 @@
+{
+  "baselineMain": "02eccbf34a210eea98fa5720c603c14b431e7e19",
+  "method": "normal initial games, recorded legal pause/assign/start commands, 0.05s updates; whole-state hash after every command and step; before feedback metadata existed",
+  "sourceSHA256": {
+    "README.md": "d122951d80864fa6379b69e662ea6203169236954b291294a85669c9c56382a6",
+    "levels.mjs": "056de3e8bd86a62a1eb5950562aedaf7047adbd5b2f58890b0b94a7f5e011700",
+    "engine.mjs": "e43c1ca8b64dace6b142630412608b707bc68399ffac1806a99a8c773b333334",
+    "journey.mjs": "8f15cc2722a92da422fa1788b8fc318e59d8ec525c5f8e75564285e5e44f0c44",
+    "game.mjs": "33e15e627bf9a87f5436f8af1b426a5f7bf1c8f0df335f3fb37ba84455a0adfa",
+    "renderer.mjs": "7a88d0ed1f3924686a21be5e8a6f030888e9b13437f49492109b23a7e37d7b41",
+    "index.html": "8d529ea5099a4a8709feadedb11b124355ed91a212387c4627d26a566ff52f3c",
+    "style.css": "25467250acdb6a347792ce5007818e671365ef67dd6c6ba1a074585ef8883a7c"
+  },
+  "scenarios": [
+    {
+      "name": "documented-default",
+      "level": 1,
+      "orders": [
+        {
+          "tick": 56,
+          "time": 2.8,
+          "actorId": 2,
+          "tool": "block"
+        },
+        {
+          "tick": 72,
+          "time": 3.6,
+          "actorId": 1,
+          "tool": "bridge"
+        },
+        {
+          "tick": 114,
+          "time": 5.7,
+          "actorId": 2,
+          "tool": "release"
+        }
+      ],
+      "traceSHA256": "717833b0b07a7552adb15b00686d483d0dcab009a1878c00ddd06a6beb58e11f",
+      "result": {
+        "state": "won",
+        "time": 22.95,
+        "rescued": 5,
+        "lost": 0,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 1
+        }
+      }
+    },
+    {
+      "name": "documented-default",
+      "level": 2,
+      "orders": [
+        {
+          "tick": 40,
+          "time": 2,
+          "actorId": 1,
+          "tool": "dig"
+        }
+      ],
+      "traceSHA256": "70168290a7bda1274a7f63b5dec7952f98d6def26f06cc8db38bec6357153bed",
+      "result": {
+        "state": "won",
+        "time": 30.15,
+        "rescued": 6,
+        "lost": 0,
+        "stats": {
+          "blocks": 0,
+          "bridges": 0,
+          "digs": 1,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "documented-bridge",
+      "level": 2,
+      "orders": [
+        {
+          "tick": 24,
+          "time": 1.2,
+          "actorId": 1,
+          "tool": "block"
+        },
+        {
+          "tick": 105,
+          "time": 5.25,
+          "actorId": 2,
+          "tool": "bridge"
+        },
+        {
+          "tick": 147,
+          "time": 7.35,
+          "actorId": 1,
+          "tool": "release"
+        }
+      ],
+      "traceSHA256": "fef5482cbbd0404835d8fc265b776d68e422eb671ead55235a2108c481c91336",
+      "result": {
+        "state": "won",
+        "time": 33.8,
+        "rescued": 6,
+        "lost": 0,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 1
+        }
+      }
+    },
+    {
+      "name": "documented-default",
+      "level": 3,
+      "orders": [
+        {
+          "tick": 40,
+          "time": 2,
+          "actorId": 1,
+          "tool": "dig"
+        },
+        {
+          "tick": 132,
+          "time": 6.6,
+          "actorId": 2,
+          "tool": "block"
+        },
+        {
+          "tick": 148,
+          "time": 7.4,
+          "actorId": 1,
+          "tool": "bridge"
+        },
+        {
+          "tick": 190,
+          "time": 9.5,
+          "actorId": 2,
+          "tool": "release"
+        }
+      ],
+      "traceSHA256": "65251c2693f20ee768c2a2f55189d2cc6026c8ea5a32a55f90dda5e49800b888",
+      "result": {
+        "state": "won",
+        "time": 35.35,
+        "rescued": 7,
+        "lost": 0,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 1,
+          "releases": 1
+        }
+      }
+    },
+    {
+      "name": "documented-regroup",
+      "level": 3,
+      "orders": [
+        {
+          "tick": 40,
+          "time": 2,
+          "actorId": 1,
+          "tool": "dig"
+        },
+        {
+          "tick": 148,
+          "time": 7.4,
+          "actorId": 1,
+          "tool": "block"
+        },
+        {
+          "tick": 376,
+          "time": 18.8,
+          "actorId": 1,
+          "tool": "release"
+        },
+        {
+          "tick": 376,
+          "time": 18.8,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "e6611c2018e4f721b856a49df1f5424e1ce07936c20ffcf20ed66f6084af698b",
+      "result": {
+        "state": "won",
+        "time": 44.85,
+        "rescued": 7,
+        "lost": 0,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 1,
+          "releases": 1
+        }
+      }
+    },
+    {
+      "name": "no-input",
+      "level": 1,
+      "orders": [],
+      "traceSHA256": "7a3f95e3b51878b2588712c049a89262d46516e6bd7df4e7c6715b69a6ddfb25",
+      "result": {
+        "state": "lost",
+        "time": 10,
+        "rescued": 0,
+        "lost": 5,
+        "stats": {
+          "blocks": 0,
+          "bridges": 0,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "no-input",
+      "level": 2,
+      "orders": [],
+      "traceSHA256": "fcbd1a1d5fca6c7edb842ee601723f984da506a70f4f48a335bec38ae77118bc",
+      "result": {
+        "state": "lost",
+        "time": 20.55,
+        "rescued": 0,
+        "lost": 6,
+        "stats": {
+          "blocks": 0,
+          "bridges": 0,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "no-input",
+      "level": 3,
+      "orders": [],
+      "traceSHA256": "e29a3c24ed54ce9afb8521968994afcb1f736f39052880495fb7aec8023c9a86",
+      "result": {
+        "state": "lost",
+        "time": 90,
+        "rescued": 0,
+        "lost": 0,
+        "stats": {
+          "blocks": 0,
+          "bridges": 0,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "bridge-only-minimum-quota",
+      "level": 1,
+      "orders": [
+        {
+          "tick": 72,
+          "time": 3.6,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "d01a20c91a96e770620f04c4142b9e95bac45febfd1d765213b86b11e555e60c",
+      "result": {
+        "state": "won",
+        "time": 19.8,
+        "rescued": 4,
+        "lost": 1,
+        "stats": {
+          "blocks": 0,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "natural-turn-left-bridge-only",
+      "level": 2,
+      "orders": [
+        {
+          "tick": 130,
+          "time": 6.5,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "0aeea933e5afd93dcebb1cf5ef8d93637568a73101292ecc2d664a3c1945c7b8",
+      "result": {
+        "state": "won",
+        "time": 33.8,
+        "rescued": 6,
+        "lost": 0,
+        "stats": {
+          "blocks": 0,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "same-four-second-prefix-then-left",
+      "level": 2,
+      "orders": [
+        {
+          "tick": 130,
+          "time": 6.5,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "0aeea933e5afd93dcebb1cf5ef8d93637568a73101292ecc2d664a3c1945c7b8",
+      "result": {
+        "state": "won",
+        "time": 33.8,
+        "rescued": 6,
+        "lost": 0,
+        "stats": {
+          "blocks": 0,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "same-four-second-prefix-then-later-digger",
+      "level": 2,
+      "orders": [
+        {
+          "tick": 89,
+          "time": 4.45,
+          "actorId": 2,
+          "tool": "dig"
+        }
+      ],
+      "traceSHA256": "ec30757059776d4a8f43a1d83a6719a3bd344436584e88dedbbdadc63a40a193",
+      "result": {
+        "state": "won",
+        "time": 30.15,
+        "rescued": 5,
+        "lost": 1,
+        "stats": {
+          "blocks": 0,
+          "bridges": 0,
+          "digs": 1,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "dig-and-bridge-no-block",
+      "level": 3,
+      "orders": [
+        {
+          "tick": 40,
+          "time": 2,
+          "actorId": 1,
+          "tool": "dig"
+        },
+        {
+          "tick": 148,
+          "time": 7.4,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "c8fa69cdb41a7eb37e9e593fabd5997558ac5b2c50cdb9a2949b449c99f0c55f",
+      "result": {
+        "state": "won",
+        "time": 31.65,
+        "rescued": 6,
+        "lost": 1,
+        "stats": {
+          "blocks": 0,
+          "bridges": 1,
+          "digs": 1,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "build-with-blocker-never-release",
+      "level": 1,
+      "orders": [
+        {
+          "tick": 56,
+          "time": 2.8,
+          "actorId": 2,
+          "tool": "block"
+        },
+        {
+          "tick": 72,
+          "time": 3.6,
+          "actorId": 1,
+          "tool": "bridge"
+        }
+      ],
+      "traceSHA256": "a9dd217faa178e7a3f28ce2d75422d69a1af2ebc5fff693eee9c91e383e8ea16",
+      "result": {
+        "state": "lost",
+        "time": 70,
+        "rescued": 1,
+        "lost": 0,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 0
+        }
+      }
+    },
+    {
+      "name": "quota-met-but-last-companion-left-blocking",
+      "level": 3,
+      "orders": [
+        {
+          "tick": 40,
+          "time": 2,
+          "actorId": 1,
+          "tool": "dig"
+        },
+        {
+          "tick": 132,
+          "time": 6.6,
+          "actorId": 2,
+          "tool": "block"
+        },
+        {
+          "tick": 148,
+          "time": 7.4,
+          "actorId": 1,
+          "tool": "bridge"
+        },
+        {
+          "tick": 190,
+          "time": 9.5,
+          "actorId": 2,
+          "tool": "release"
+        },
+        {
+          "tick": 633,
+          "time": 31.65,
+          "actorId": 3,
+          "tool": "block"
+        }
+      ],
+      "traceSHA256": "5ec029c1acc2f38e9e3f7e1b0176ae9cd3a285e08623fc1363868a1dbba6495f",
+      "result": {
+        "state": "lost",
+        "time": 90,
+        "rescued": 6,
+        "lost": 0,
+        "stats": {
+          "blocks": 2,
+          "bridges": 1,
+          "digs": 1,
+          "releases": 1
+        }
+      }
+    },
+    {
+      "name": "recover-after-one-real-loss",
+      "level": 1,
+      "orders": [
+        {
+          "tick": 101,
+          "time": 5.05,
+          "actorId": 3,
+          "tool": "block"
+        },
+        {
+          "tick": 101,
+          "time": 5.05,
+          "actorId": 2,
+          "tool": "bridge"
+        },
+        {
+          "tick": 143,
+          "time": 7.15,
+          "actorId": 3,
+          "tool": "release"
+        }
+      ],
+      "traceSHA256": "78f9cfda055d9c36072e6a873c80ac31ecc59e5c9a46582be363ce60ed0e55c4",
+      "result": {
+        "state": "won",
+        "time": 26.2,
+        "rescued": 4,
+        "lost": 1,
+        "stats": {
+          "blocks": 1,
+          "bridges": 1,
+          "digs": 0,
+          "releases": 1
+        }
+      }
+    }
+  ]
+}

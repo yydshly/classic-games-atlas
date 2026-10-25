@@ -1,5 +1,7 @@
 # 把叶影留到纸上：本地可玩切片
 
+本页保留原型及候选复核的历史阶段记录；源码、构建和测试现已纳入发布前主干拟合入树，当前整合状态见 [主干检查记录](../main-integration-qa/README.md)。历史“本地/候选/未发布”不代替实际main与Pages发布状态。
+
 原型开发记录基于统一候选8cb045c08910d37a862e98277affb85cc6a2824f；下述“本地/未上传”记录描述提交前状态。修后代码与文字验证记录已保存到统一候选 [3f45d0c582b1507ee30895a9ad9838758a5f03be](https://github.com/yydshly/classic-games-atlas/commit/3f45d0c582b1507ee30895a9ad9838758a5f03be)，离线PNG与压缩包仍留本地。main与部署未变。入口仍是 experiments/windowlife-request-preview/index.html，未新增游戏或入口。原型记录见report.json，原Inlet和Quiet保持原字节。
 
 ## 实际体验闭环

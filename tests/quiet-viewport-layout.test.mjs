@@ -70,4 +70,3 @@ function luminance(hex){const rgb=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/2
 const contrast=(Math.max(luminance(fg),luminance(bg))+.05)/(Math.min(luminance(fg),luminance(bg))+.05);
 assert(contrast>=4.5);assert(css.includes('button:focus-visible')&&css.includes('outline:3px solid #ecc583'));
 console.log(JSON.stringify({passed:true,scope:'real controller/Cannon with recording renderer, matchMedia and reported rectangle fixtures; not fresh browser UI acceptance',terminal:{viewport:[699,650],sizes:terminal.sizes,layoutSwitches:0,state:'real woke then native-button retry'},pause:{viewport:[699,900],sizes:pause.sizes,layoutSwitches:0,manualFocusAndPauseRetained:true},mediaBoundaryAndRotation:true,desktopCameraRetained:true,manualButton:{foreground:fg,background:bg,contrast},physicalStateInjected:false},null,2));
-

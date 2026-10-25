@@ -51,4 +51,3 @@ if(process.argv.includes('--export')){
  }
  writeFileSync(new URL('comparison.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.cases));
 }
-

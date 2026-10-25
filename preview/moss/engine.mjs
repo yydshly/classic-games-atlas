@@ -1,11 +1,11 @@
-import {LEVELS,TOOLS} from './levels.mjs';
+import {LEVELS,TOOLS} from './levels.mjs?v=moss-feedback-r1';
 export {LEVELS,TOOLS};
 export const STEP=.05,SPEED=1.25,MAX_FALL=2.2;
 const clone=v=>JSON.parse(JSON.stringify(v)),solid=c=>['#',':','='].includes(c),terminal=g=>g.state==='won'||g.state==='lost';
 export const tileAt=(g,x,y)=>g.grid.tiles[y]?.[x]??'#';
 const setTile=(g,x,y,ch)=>{const row=g.grid.tiles[y];g.grid.tiles[y]=row.slice(0,x)+ch+row.slice(x+1);};
 const event=(g,text)=>{g.events.push({time:g.time,text});if(g.events.length>12)g.events.shift();};
-function spawnActor(g){const id=++g.spawned;g.actors.push({id,name:'苔灯 '+id,color:['#dbaf72','#8fb69b','#a7aecb'][id%3],x:g.spawn.x,y:g.spawn.y,dir:g.spawn.dir,state:'walking',job:null,vy:0,fallStart:g.spawn.y,turnCooldown:0});}
+function spawnActor(g){const id=++g.spawned;g.actors.push({id,name:'苔灯 '+id,color:['#dbaf72','#8fb69b','#a7aecb'][id%3],x:g.spawn.x,y:g.spawn.y,dir:g.spawn.dir,state:'walking',job:null,vy:0,fallStart:g.spawn.y,turnCooldown:0,fallOrigin:null,lossEvent:null});}
 export function createGame(index=0){if(!Number.isInteger(index)||!LEVELS[index])throw new RangeError('不存在这段归途');const l=LEVELS[index],g={version:1,level:l.id,title:l.name,brief:l.brief,state:'ready',time:0,ticks:0,accumulator:0,limit:l.limit,grid:{width:24,height:12,tiles:[...l.grid]},spawn:clone(l.spawn),exit:clone(l.exit),total:l.total,quota:l.quota,spawned:0,spawnClock:l.interval,rescued:0,lost:0,actors:[],resources:clone(l.resources),stats:{blocks:0,bridges:0,digs:0,releases:0},log:[],events:[],reason:'先看清断口和出口，开始后也可以暂停安排。'};spawnActor(g);return g;}
 export function start(g){if(g.state==='ready'||g.state==='paused'){g.state='playing';g.reason='同伴会自主前行；暂停时也可以安排工具。';return true;}return false;}
 export function pause(g){if(g.state==='playing'){g.state='paused';g.reason='已暂停；可以查看同伴并施令，计时和作业都已停住。';return true;}if(g.state==='paused')return start(g);return false;}
@@ -27,7 +27,7 @@ export function inspect(g,id,tool){
  return {ok:true,reason:tool==='bridge'?'可跨'+cells.length+'格；整桥完成前仍是断口。':'可开通'+cells.length+'格土墙；不会挖掉地板。',cost:1,preview:cells,duration:cells.length*.7};
 }
 export function assign(g,id,tool){const check=inspect(g,id,tool);if(!check.ok)return check;const a=g.actors.find(a=>a.id===id);if(tool==='release'){a.state='walking';g.stats.releases++;}else{g.resources[tool]--;if(tool==='block'){a.state='blocking';g.stats.blocks++;}else{a.state=tool==='bridge'?'bridging':'digging';a.job={tool,remaining:check.duration,duration:check.duration,cells:clone(check.preview)};g.stats[tool==='bridge'?'bridges':'digs']++;}}g.log.push({time:g.time,actorId:id,tool,cells:clone(check.preview)});event(g,a.name+'：'+TOOLS[tool].name);return {...check,reason:tool==='release'?'已免费放行。':tool==='block'?'已驻足；记得在安全后放行。':'开始施工，暂停时进度也会停止。'};}
-function lose(g,a,why){if(['lost','rescued'].includes(a.state))return;a.state='lost';a.job=null;g.lost++;event(g,a.name+'失足：'+why);}
+function lose(g,a,why){if(['lost','rescued'].includes(a.state))return;a.lossEvent={time:g.time,cause:why};a.state='lost';a.job=null;g.lost++;event(g,a.name+'失足：'+why);}
 function horizontal(g,a,dt){const next=a.x+a.dir*SPEED*dt,row=Math.floor(a.y-.45),lead=Math.floor(next+a.dir*.2);if(solid(tileAt(g,lead,row))){a.dir=-a.dir;return;}
  for(const b of g.actors)if(b.id!==a.id&&b.state==='blocking'&&Math.abs(b.y-a.y)<.35&&(b.x-a.x)*a.dir>0&&(b.x-next)*a.dir<=.56){a.x=b.x-a.dir*.56;a.dir=-a.dir;a.turnCooldown=.25;return;}a.x=next;
 }
@@ -36,8 +36,8 @@ function actorStep(g,a,dt){
  if(a.job){a.job.remaining=Math.max(0,Math.round((a.job.remaining-dt)*1000)/1000);if(a.job.remaining<=0){for(const p of a.job.cells)setTile(g,p.x,p.y,a.job.tool==='bridge'?'=':'.');event(g,a.name+'完工，通路已开放。');a.job=null;a.state='walking';}return;}
  a.turnCooldown=Math.max(0,a.turnCooldown-dt);horizontal(g,a,dt);
  const underX=Math.floor(a.x);if(tileAt(g,underX,Math.floor(a.y+.01))==='~'||tileAt(g,underX,Math.floor(a.y-.45))==='~'){lose(g,a,'落入水隙');return;}
- if(a.state==='walking'&&!standing(g,a)){a.state='falling';a.vy=0;a.fallStart=a.y;}
- if(a.state==='falling'){const before=a.y;a.vy=Math.min(7,a.vy+8*dt);const next=a.y+a.vy*dt;let landed=false;for(let y=Math.ceil(before-.00001);y<=Math.floor(next+.00001);y++){const tile=tileAt(g,underX,y);if(tile==='~'){lose(g,a,'落入水隙');return;}if(solid(tile)){a.y=y;a.vy=0;landed=true;if(y-a.fallStart>MAX_FALL){lose(g,a,'落差超过安全高度');return;}a.state='walking';break;}}if(!landed)a.y=next;if(a.y>g.grid.height+.5){lose(g,a,'离开了归途');return;}}
+ if(a.state==='walking'&&!standing(g,a)){const builder=g.actors.find(b=>b.job?.tool==='bridge'&&b.job.cells.some(p=>p.x===underX&&p.y===a.y));a.fallOrigin={time:g.time,x:underX,y:a.y,bridgeActorId:builder?.id??null};a.state='falling';a.vy=0;a.fallStart=a.y;}
+ if(a.state==='falling'){const before=a.y;a.vy=Math.min(7,a.vy+8*dt);const next=a.y+a.vy*dt;let landed=false;for(let y=Math.ceil(before-.00001);y<=Math.floor(next+.00001);y++){const tile=tileAt(g,underX,y);if(tile==='~'){lose(g,a,'落入水隙');return;}if(solid(tile)){a.y=y;a.vy=0;landed=true;if(y-a.fallStart>MAX_FALL){lose(g,a,'落差超过安全高度');return;}a.state='walking';a.fallOrigin=null;break;}}if(!landed)a.y=next;if(a.y>g.grid.height+.5){lose(g,a,'离开了归途');return;}}
  if(a.state==='walking'&&Math.abs(a.x-g.exit.x)<.45&&Math.abs(a.y-g.exit.y)<.2){a.state='rescued';a.job=null;g.rescued++;event(g,a.name+'抵达苔灯门。');}
 }
 function settle(g){if(g.spawned===g.total&&g.rescued+g.lost===g.total){g.state=g.rescued>=g.quota?'won':'lost';g.reason=g.state==='won'?'全部同伴已有去向，救回'+g.rescued+'/'+g.total+'，达到'+g.quota+'人的目标。':'所有同伴已有去向，未达到救援目标。';event(g,g.reason);}else if(g.time>=g.limit){g.state='lost';g.reason='归途时间结束；还有同伴未抵达，重试这一程可以重新安排。';event(g,g.reason);}}
@@ -57,6 +57,10 @@ export function restore(value){
   if(!g.resources||!['block','bridge','dig'].every(tool=>int(g.resources[tool])&&g.resources[tool]===l.resources[tool]-used[tool])||!g.stats||g.stats.blocks!==used.block||g.stats.bridges!==used.bridge||g.stats.digs!==used.dig||g.stats.releases!==used.release||used.release>used.block)return null;
   const activeCells=new Set();
   for(let i=0;i<g.actors.length;i++){const a=g.actors[i];if(a.id!==i+1||a.name!=='苔灯 '+a.id||typeof a.color!=='string'||!finite(a.x)||a.x<0||a.x>24||!finite(a.y)||a.y<0||a.y>13||![1,-1].includes(a.dir)||!['walking','blocking','bridging','digging','falling','rescued','lost'].includes(a.state)||!finite(a.vy)||a.vy<0||a.vy>7||!finite(a.fallStart)||a.fallStart<0||a.fallStart>12||!finite(a.turnCooldown)||a.turnCooldown<0||a.turnCooldown>.250001)return null;
+   // Optional presentation facts; old checkpoints without them remain valid.
+   if(a.lossEvent!=null&&(a.state!=='lost'||Object.keys(a.lossEvent).sort().join(',')!=='cause,time'||!finite(a.lossEvent.time)||a.lossEvent.time<0||a.lossEvent.time>g.time||!['落入水隙','落差超过安全高度','离开了归途'].includes(a.lossEvent.cause)))return null;
+   if(a.fallOrigin!=null){const f=a.fallOrigin;if(!['falling','lost'].includes(a.state)||Object.keys(f).sort().join(',')!=='bridgeActorId,time,x,y'||!finite(f.time)||f.time<0||f.time>g.time||!Number.isInteger(f.x)||f.x<0||f.x>23||f.y!==a.fallStart||a.lossEvent&&f.time>a.lossEvent.time)return null;
+    if(f.bridgeActorId!==null&&(!Number.isInteger(f.bridgeActorId)||!g.log.some(o=>o.actorId===f.bridgeActorId&&o.tool==='bridge'&&o.time<=f.time&&f.time<=o.time+o.cells.length*.7+STEP+1e-8&&o.cells.some(p=>p.x===f.x&&p.y===f.y))))return null;}
    if(['walking','blocking','bridging','digging'].includes(a.state)&&(!standing(g,a)||solid(tileAt(g,Math.floor(a.x),Math.floor(a.y-.45)))))return null;
    if(a.state==='rescued'&&(Math.abs(a.x-g.exit.x)>=.45||Math.abs(a.y-g.exit.y)>=.2))return null;
    if(a.job){const j=a.job,tool=a.state==='bridging'?'bridge':a.state==='digging'?'dig':null;if(!tool||j.tool!==tool||!Array.isArray(j.cells)||j.cells.length<1||j.cells.length>3||j.duration!==j.cells.length*.7||!finite(j.remaining)||j.remaining<=0||j.remaining>j.duration+.00001||!g.log.some(o=>o.actorId===a.id&&o.tool===j.tool&&eq(o.cells,j.cells)))return null;

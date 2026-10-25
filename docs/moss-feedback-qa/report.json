@@ -1,0 +1,178 @@
+{
+  "status": "local candidate only; independent review required; not published",
+  "baseMain": "02eccbf34a210eea98fa5720c603c14b431e7e19",
+  "playerGoal": "explain a real rescue failure and independently adjust the next arrangement",
+  "scope": "failure facts, persistent in-flow feedback and a small under-actor location marker; no gameplay change",
+  "examples": [
+    {
+      "level": 1,
+      "route": "no-input",
+      "incident": {
+        "actorId": 1,
+        "time": 5.05,
+        "cause": "落入水隙",
+        "point": {
+          "x": 8.5,
+          "y": 9
+        },
+        "fromFall": true,
+        "unfinishedBridge": false,
+        "drop": 1.8
+      },
+      "copy": {
+        "message": "1号在左侧失散：落入水隙（5.05秒）。",
+        "context": "叉号标记了开始下落的位置。"
+      },
+      "fallOrigin": {
+        "time": 4.4,
+        "x": 8,
+        "y": 9,
+        "bridgeActorId": null
+      }
+    },
+    {
+      "level": 2,
+      "route": "no-input",
+      "incident": {
+        "actorId": 1,
+        "time": 8.1,
+        "cause": "落差超过安全高度",
+        "point": {
+          "x": 7.5,
+          "y": 7
+        },
+        "fromFall": true,
+        "unfinishedBridge": false,
+        "drop": 3
+      },
+      "copy": {
+        "message": "1号在左侧失散：下降3格，超过安全落差2.2格（8.10秒）。",
+        "context": "叉号标记了开始下落的位置。"
+      },
+      "fallOrigin": {
+        "time": 7.3,
+        "x": 7,
+        "y": 7,
+        "bridgeActorId": null
+      }
+    },
+    {
+      "level": 1,
+      "route": "bridge-only-minimum-quota",
+      "incident": {
+        "actorId": 2,
+        "time": 6.25,
+        "cause": "落入水隙",
+        "point": {
+          "x": 8.5,
+          "y": 9
+        },
+        "fromFall": true,
+        "unfinishedBridge": true,
+        "drop": 1.8
+      },
+      "copy": {
+        "message": "2号在左侧失散：落入水隙（6.25秒）。",
+        "context": "开始下落时，叉号处的桥尚未完工。"
+      },
+      "fallOrigin": {
+        "time": 5.6,
+        "x": 8,
+        "y": 9,
+        "bridgeActorId": 1
+      }
+    }
+  ],
+  "beforeAfter": {
+    "routes": 16,
+    "comparison": "complete state stream after every legal command and 0.05s update; only fallOrigin/lossEvent excluded",
+    "allTraceHashesMatch": true
+  },
+  "checks": {
+    "focused": 6,
+    "defaultRegression": 109,
+    "originalMossModelGroups": 6,
+    "originalMossJourneyGroups": 7,
+    "historicalQABytesRestored": true,
+    "actualDOMPauseRetryNextAndNewJourney": true,
+    "legacySaveWithoutNewFields": true,
+    "malformedFactsRejected": true,
+    "markerBeforeLivingActorsAndNoWorldMutation": true,
+    "catalogueGroups": 10
+  },
+  "runtimeGraph": {
+    "modules": 6,
+    "edges": [
+      {
+        "from": "preview/moss/game.mjs",
+        "to": "preview/moss/feedback.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/feedback.mjs",
+        "to": "preview/moss/engine.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/engine.mjs",
+        "to": "preview/moss/levels.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/game.mjs",
+        "to": "preview/moss/engine.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/game.mjs",
+        "to": "preview/moss/renderer.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/game.mjs",
+        "to": "preview/moss/journey.mjs",
+        "query": "?v=moss-feedback-r1"
+      },
+      {
+        "from": "preview/moss/journey.mjs",
+        "to": "preview/moss/engine.mjs",
+        "query": "?v=moss-feedback-r1"
+      }
+    ],
+    "tag": "moss-feedback-r1",
+    "selfHostedOnly": true
+  },
+  "noClaims": [
+    "no inference that release was too early",
+    "no unique solution or automatic correction",
+    "no browser screenshots, real-device layout or human enjoyment acceptance"
+  ],
+  "remaining": [
+    "independent review",
+    "390 and desktop actual pixels/marker visibility",
+    "whether players understand and revise their plan"
+  ],
+  "sourceHashes": {
+    "engine.mjs": "fb14aa6c92e5f5bb476df2d3b469ed221d213e523e92179456fa4d4180ae9f30",
+    "feedback.mjs": "9eaf327b1472974e64a468827751e19dd0fc194d329be4d2907ceacca88ff09d",
+    "game.mjs": "f5ba6dbe9f8848855dfc27243aa4fe5bd0028595e0574896c6f5183398543c5c",
+    "journey.mjs": "c3d89aacd060e236d153035af7ee3a989d4c6e81dde5b7870ff304a1504a7f65",
+    "renderer.mjs": "ca21da133270ec152c782b56c8484c0bc138718ad4825db62182803e46f1b868",
+    "style.css": "0febd7ed0c5ff55e87604eef898e7ebd87869860eeda7244e99a53072668b1f8",
+    "index.html": "ad706f697fbf002defbda8132eb6350dfbe837bf672c89e10da1483825cb7e45",
+    "levels.mjs": "056de3e8bd86a62a1eb5950562aedaf7047adbd5b2f58890b0b94a7f5e011700"
+  },
+  "preservation": {
+    "passed": true,
+    "baseMain": "02eccbf34a210eea98fa5720c603c14b431e7e19",
+    "baselineFiles": 8279,
+    "explicitlyModifiedFiles": 10,
+    "addedFiles": 6,
+    "deletedFiles": 0,
+    "works": 45,
+    "registeredEntries": 99,
+    "onlyMossRegisteredHTMLMayChange": true,
+    "negativeMutationChecksPassed": 5,
+    "mainAndPublicationUnchanged": true
+  }
+}

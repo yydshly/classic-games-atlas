@@ -1,32 +1,25 @@
-# 统一预览开发主线：来源与最小整合计划
+# 同一主干中的游戏、源码与维护检查
 
-2026-10-25，维护整合已在同一候选实施：Inlet 与 Windowlife 源模块、专项测试和 Quiet 落点测试已选择性集中。运行 HTML、Quiet r3、正式路径与 main 不变；没有全量合旧分支或新增网页入口。实际开发命令、当前源目录与逐文件来源见 [统一检查工具](../tools/preview-bundles/README.md) 和 [来源 manifest](../tools/preview-bundles/sources.json)。下列树与缺口表保留为整合前基线。
+本文件记录发布前主干拟合入状态，不构成线上部署声明。基线main为`efc55fa253cbc0bc1435a4b69537bcc55d23a95b`，来源候选为`cda0ee3a43224eb6eab432ed3b64fc4e784dcea3`。用户要求所有已开发游戏留在同一主干，临时候选仅用于开发；不是要求每次改进新增入口或改存档key。当前未更新远端main、未部署。
 
-## 历史树关系（源码集中前的审计快照）
+## 本次累积整合范围
 
-- main `efc55fa253cbc0bc1435a4b69537bcc55d23a95b`，tree `6709d0807d98be31ad2164f5a7aa8a0addad552f`。
-- 统一候选运行基线 `fef5739c9398ed36119a3b8143c4ed8b4dbf7cb5`，tree `c04808f5e4fa2cb878c161398e5eb0fde98030df`。
-- 核对两个完整树：main 的 8189 个文件在候选均为同一 blob；候选额外有 95 个 QA/测试文件。本清单随后只增加候选文档，不改变运行文件。
-- 在此历史快照时源码与专项回归尚未集中；该缺口已在 `0f777103083d6b19b248093e136ee3cbe27c7073` 完成。保留旧分支有助追溯，不代表应将旧树整体合入。
+main原有8189个文件全部保留。仅现有`experiments/windowlife-request-preview/index.html`更新为叶影玩法；另外加入维护必需源码、构建、测试、审计及文字夹具。首页、目录数据、45款/99登记入口、其他游戏的全部文件和冻结v1档案保持原blob。完整增改清单见 [integration-scope.json](../tools/preview-bundles/integration-scope.json)，执行证据见 [主干拟合入检查](main-integration-qa/README.md)。不使用旧候选整棵树覆盖main。
 
-## 来源 → 当前运行路径 → 整合前源码与测试缺口
+| 项目 | 当前运行与源码 | 来源及维护状态 |
+| --- | --- | --- |
+| Inlet期限/ETA | `experiments/inlet-deadline-preview/index.html`与同目录`source/` | 固定来源[01dd7d48](https://github.com/yydshly/classic-games-atlas/commit/01dd7d48430a740a13170be703232567a4ba9e10)；期限、布局与合法路线检查均集中，运行HTML保持main原字节，正式v3不改。 |
+| Windowlife叶影 | `experiments/windowlife-request-preview/index.html`与同目录`source/` | 原请求片段来源[c416a7e2](https://github.com/yydshly/classic-games-atlas/commit/c416a7e25b0117e2a80c287181a02c8e22e2b86c)，叶影/长等待保存/Esc修复来源[7ec39bd9](https://github.com/yydshly/classic-games-atlas/commit/7ec39bd9d83d899d17439681c443ccc1e246e1e7)。保留同一游戏、同一隔离key与v1旧档恢复；正式三日日常不改。 |
+| Quiet轻轻回窝 | `experiments/quiet-workbench-preview/`中的运行模块直接为源码 | 落点来源[dcd3f4e2](https://github.com/yydshly/classic-games-atlas/commit/dcd3f4e2cffe2dab467af9b4082f46f6817043bc)，当前r3运行内容不变。全部新增测试及所需历史源码片段/JSON纳入；不复制旧physics/view覆盖当前版本。 |
 
-| 项目 | 固定来源提交 | 当前运行路径 | 已集中与缺口 |
-| --- | --- | --- | --- |
-| Inlet 期限/ETA 预览 | [01dd7d48430a740a13170be703232567a4ba9e10](https://github.com/yydshly/classic-games-atlas/commit/01dd7d48430a740a13170be703232567a4ba9e10)，旧分支 `cloud/inlet-preview-deadline` | `experiments/inlet-deadline-preview/index.html`，独立内联 bundle；后续布局提交 b1d889b → efc55fa，均未改脚本 | 期限补丁原模块位于该来源的 `versions/v3/preview/inlet/{engine,game,renderer}.mjs` 与 `style.css`；配套 `journey.mjs`、`levels.mjs` 为依赖。候选仍保留正式 v3 原字节，不能用源补丁直接覆盖。缺 `tests/inlet-v3-preview-deadline.test.mjs` 与 `docs/inlet-deadline-qa/{README.md,forecast-audit.mjs,boundaries.json,forecast-audit.json}`。现有 `docs/inlet-deadline-layout-qa/{verify.mjs,before-contract.json,report.json,README.md,scroll-followup.md}` 仅覆盖内联脚本不变、接线、隔离存档及布局约束，不能代替期限专项测试。 |
-| Windowlife 请求场景 | [c416a7e25b0117e2a80c287181a02c8e22e2b86c](https://github.com/yydshly/classic-games-atlas/commit/c416a7e25b0117e2a80c287181a02c8e22e2b86c)，旧分支 `cloud/windowlife-request-scene`；网页标注的本地 e6c8bae 与其同 tree | `experiments/windowlife-request-preview/index.html`，独立内联 bundle | 原源模块在该来源的 `experiments/windowlife-request/{main,controller,scene,storage,view}.mjs` 与 `style.css`，README 解释状态机/存储边界。缺 `tests/windowlife-request-{scene,controller,view}.test.mjs`。原场景依赖 `preview/windowlife/levels.mjs`；该文件在旧来源和当前候选同 blob `50b6395afaed1f7051b3a6d7007135ed6947a656`。不复制旧 index.html，不新增第二入口。旧离线图与报告可留原分支，以固定提交链接追溯。 |
-| Quiet 落点与轻轻回窝 | [dcd3f4e2cffe2dab467af9b4082f46f6817043bc](https://github.com/yydshly/classic-games-atlas/commit/dcd3f4e2cffe2dab467af9b4082f46f6817043bc)，旧分支 `cloud/quiet-fall-marker` → main 7e58eb5 的隔离预览 → 统一候选的体验/竖屏/r3 修订 | `experiments/quiet-workbench-preview/`，当前缓存版本 `gentle-home-d9246fd-r3` | 模块源码已在运行目录：`boot,game,physics,feedback,view,scene,presentation,batch.mjs`，以及 `index.html/style.css/NOTES.md`。`physics.mjs` 与旧落点来源同 blob `6c85c2fe36191775c9ae9c74019b3c741302e5b0`；feedback 已继续改进，不能拿旧文件覆盖。现有 `tests/quiet-{gentle-home,lamp-envelope,temporal,readability,portrait,viewport-layout}.test.mjs` 等及 `docs/quiet-gentle-home-qa/` 已集中，但缺旧 `tests/quiet-workbench-fall-marker.test.mjs`。现有 `quiet-workbench-fall-feedback.test.mjs` 面向原实验，验证材质归因；它不是缺失落点测试的同义替代。 |
+逐文件原始来源及导入适配见 [sources.json](../tools/preview-bundles/sources.json)，当前运行命令见 [构建检查说明](../tools/preview-bundles/README.md)。旧`verification.json`、`regression-status.json`与各早期QA报告是有固定基线的历史证据，不是当前全部UI验收状态。正常开发只要求当前源码/JS/CSS一致和行为回归；历史SHA锁单独运行。
 
-上述历史基线的脚本 SHA256 为 `e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5`，HTML SHA256 为 `43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b`。重建检查现已建立：JS/CSS与运行内容相同；HTML比较借用当前标记外壳，不是独立页面设计验证。
+## 留存与可发现性
 
-## 原最小整合顺序（本轮已实施，详见工具说明）
+必要维护材料随运行代码一起进入最终main；不把临时候选当成长期唯一源码库。历史离线PNG、动画、压缩轨迹和日志不在本次main范围，仍可按 [统一候选固定提交](https://github.com/yydshly/classic-games-atlas/tree/cda0ee3a43224eb6eab432ed3b64fc4e784dcea3/docs/quiet-gentle-home-qa) 追溯。测试所需文字源码片段及JSON已选择性带入。
 
-1. 只在同一候选选择性集中源码。Inlet 放入现有预览下 `source/`，取固定来源的五个 mjs 依赖与 CSS；Windowlife 同样取五个 mjs 与 CSS。各自附来源 SHA、原路径、blob/SHA256 和隔离适配差异清单，不复制 index.html 或旧整棵树。任何路径重定位只改 import/入口接线，正式 `versions/v3/preview/inlet`、原 Windowlife 与 Quiet 均不改。
-2. 引入对应期限/场景三套专项测试，明确改为导入上述预览 source；保留断言内容和来源。Inlet 的 UI 文案接线检查也改向新 source，不再误测未修的正式 v3。Windowlife 的共享 levels 必须固定来源哈希或复制到 source 并调整 import；不顺带改正式关卡。
-3. 选择性移入 Quiet 落点专项测试，仅将两个导入重定向到现有 `quiet-workbench-preview` 模块。先验证真实 Cannon 的最后支撑点、复制隔离、终局稳定与 retry 清理，保留现有测试；不移入旧 physics/feedback/view。
-4. 为两个单 HTML 预览建立显式、版本固定的生成命令。保留当前隔离 key、独立提示、页面结构与 Inlet 最新 CSS；先证明生成结果与当前运行脚本相同。若不能相同，列明包装/打包差异并补覆盖，不能用“有原源码”代替一致性证明。生成检查须在临时目录执行并在发现未提交运行差异时失败，不自动覆盖运行文件。
-5. 用一个候选检查入口串起来源 manifest、依赖遍历、bundle 重建、专项测试与当前隔离存档检查。每次只把已验收的运行 diff 提交 main；源码/测试整理本身先留候选。合并前重新以最新 main 为基线计算累计差异，绝不用旧候选 tree 覆盖当前 main。
+三项近期实验的HTML已存在于main，各自可通过直接URL定位，但未登记在45款/99入口清单，也未找到main本地HTML/Markdown的入链：`experiments/inlet-deadline-preview/`、`experiments/windowlife-request-preview/`、`experiments/quiet-workbench-preview/`。后续应建立清楚的实验导航，保留全部现有作品入口，不增加游戏计数；本次不随意改首页。
 
-## 质量门槛
+## 已有证据与剩余质量门槛
 
-历史 Pages run [40169800044](https://github.com/yydshly/classic-games-atlas/actions/runs/40169800044) 的 head 为 efc55fa，build/report/deploy 均 success。根已提供该版真实电脑布局通过：390×844滚动无遮挡、1280×720初始地图/主控同屏、820×740说明展开/暂停正常。本云端未重试原代理403或浏览器拒绝。第二/三湾真人通关、真实手机及 Windowlife 真人参与感仍未验；模型路线不能替代。历史布局 SHA 审计已从默认回归分离，旧报告按固定版本解释。
+根已提供Inlet布局及第二/第三湾真实电脑UI通关证据；频繁暂停与预测不证明连续实时难度。Quiet r3的两项桌面问题已有真实复验。叶影的模型、DOM、存档、Canvas指令与离线图审查仍不能代替原生浏览器输入/滚动、实体手机或陌生玩家体验。云浏览器和代理拒绝路径未重试。

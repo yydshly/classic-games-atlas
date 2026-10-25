@@ -64,4 +64,3 @@ w.fit(390,560);const stableCamera=projection();w.pose(awakeFrame.snapshot,awake)
 assert.deepEqual(projection(),stableCamera,'impact/wake never shakes or changes the camera');
 for(const v of allCorners(new T.Box3().setFromObject(w.rig.head))){v.project(w.camera);assert(Math.abs(v.x)<1&&Math.abs(v.y)<1,'wake head still fits portrait envelope');}
 console.log(JSON.stringify({passed:true,scope:'real Cannon events and Three projection/rig checks; not CSS/browser/touch or player acceptance',metrics,farReturnVisibility:visibility,firstHit,maximumHandIncrease,maximumBrowLift,checks:['full supports and station visible','station outside reachable envelope','existing input directions retained','1280x720/800 desktop camera restored exactly','far tool lower-body occlusion reduced on a real soft-route state','mesh budget retained','gentle reflex only on real impact; decay, pause and retry clear','no camera shake or physical changes']},null,2));
-
