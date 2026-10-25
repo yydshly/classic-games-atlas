@@ -34,6 +34,7 @@ for(const [width,height]of [[1280,800],[390,700],[320,600]]){
  }
 }
 checks.push('camera projection retains real support at 1280, 390 and 320 widths (geometry only, not layout acceptance)');
+workshop.fit(1280,800);
 const fast=new QuietWorld();for(const p of [[-1.95,2.5],[-1.95,.55],[-.3,.55]])go(fast,...p);
 for(let i=0;i<2400&&fast.state==='playing';i++){fast.step({z:-1});if(Math.hypot(fast.player.position.x,fast.player.position.z+3.65)<.65)break;}
 s=fast.snapshot();assert.equal(s.state,'playing');assert.equal(dockState(s),'too-fast');assert.match(feedback(s).message,/尚未接通/);

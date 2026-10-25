@@ -8,7 +8,8 @@ import {baselineSource} from '../docs/quiet-gentle-home-qa/baseline-source.mjs';
 import {sequences,DT} from '../docs/quiet-gentle-home-qa/temporal/sequences.mjs';
 const BASE='b576b8e9b6c7a0765a3147ca17b8aaef3e919ef6';
 assert.equal(readFileSync(new URL('../experiments/quiet-workbench-preview/physics.mjs',import.meta.url),'utf8'),baselineSource(BASE,'physics.mjs'));
-assert.equal(readFileSync(new URL('../experiments/quiet-workbench-preview/presentation.mjs',import.meta.url),'utf8'),baselineSource(BASE,'presentation.mjs'));
+const presentationSource=readFileSync(new URL('../experiments/quiet-workbench-preview/presentation.mjs',import.meta.url),'utf8');
+assert.equal(presentationSource.match(/export function dockState[\s\S]*?\n}/)[0],baselineSource(BASE,'presentation.mjs').match(/export function dockState[\s\S]*?\n}/)[0]);
 const world=new QuietWorld(),m=new QuietPresentation(),samples=[{name:'ready',snapshot:world.snapshot(),pose:new QuietPresentation().update(world.snapshot(),0)}];
 let fast=false,charge=false,brakedFast=false;
 for(const f of sequences().dock){const p=m.update(f.snapshot,DT,{brake:!!f.input.brake});if(!fast&&p.dock==='too-fast'){samples.push({name:'too-fast',snapshot:f.snapshot,pose:p});fast=true;}if(!brakedFast&&p.dock==='too-fast'&&f.input.brake){samples.push({name:'too-fast-braking',snapshot:f.snapshot,pose:p});brakedFast=true;}if(!charge&&p.connected){samples.push({name:'charged',snapshot:f.snapshot,pose:p});charge=true;break;}}
@@ -34,4 +35,4 @@ for(const s of samples){
  const stopBars=s.pose.dock==='too-fast'?visibleStopBars():null;if(stopBars!==null)assert(stopBars>=1,'actual camera retains an unoccluded stop cue from either real approach');
  let meshes=0,groups=0,casters=0;w.scene.traverseVisible(o=>{if(o.isMesh){meshes++;groups+=Array.isArray(o.material)?o.geometry.groups.length:1;casters+=Number(o.castShadow);}});assert(meshes<=97&&groups<=97&&casters<=12);counts[s.name]={meshes,groups,casters,unoccludedBarCenters:stopBars};
 }
-console.log(JSON.stringify({passed:true,scope:'same camera and actual-state geometry checks; not user comprehension, WebGL pixels or frame rate',checks:['physics and presentation unchanged','same camera across actual ready/fast/charged samples','repair fits prior shell silhouette','shared paired-contact motif','open gaps versus physically present charged bridge, beyond colour','flat indicators stay inside original goal','only too-fast shows dual bars; only charged closes contacts','visible-mesh/draw-group budget <=97 including active brake'],counts},null,2));
+console.log(JSON.stringify({passed:true,scope:'same camera and actual-state geometry checks; not user comprehension, WebGL pixels or frame rate',checks:['physics and dock-state thresholds unchanged','same desktop camera across actual ready/fast/charged samples','repair fits prior shell silhouette','shared paired-contact motif','open gaps versus physically present charged bridge, beyond colour','flat indicators stay inside original goal','only too-fast shows dual bars; only charged closes contacts','visible-mesh/draw-group budget <=97 including active brake'],counts},null,2));

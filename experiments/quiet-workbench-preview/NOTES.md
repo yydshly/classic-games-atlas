@@ -12,10 +12,12 @@
 
 `physics.mjs` 与 main `7e58eb5778e13534147f712f3da593130224625a` 中该文件逐字节相同：全部承托、六个工具体、初始位置、两路线、速度、噪声阈值和胜负条件未改。没有存档、音频权限、新外部依赖或付费素材。
 
-[本轮构图修正与限制](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/composition/README.md)。有 Node 模型、Three 场景对象、控制器 DOM 夹具和 CPU 静态几何投影；**无本轮浏览器截图或真实输入验收**。静态投影不含 WebGL 着色、阴影或页面 UI；不能把它当实际效果或乐趣达标证明。浏览器受阻未重试。
+[本轮构图修正与限制](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/composition/README.md)。这些资料为 Node 模型、Three 场景对象、控制器 DOM 夹具和 CPU 静态几何投影，不含 WebGL 着色、阴影或页面 DOM。现已收到已发布 r1 的辅助桌面 QA：两路线可完成，390×844 桌面视口场景偏小、远端工具遮挡需改善；这不是实体手机或当前修订的验收。
 
 [连续动作与回充时序审查](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/temporal/README.md) 记录制动姿态、轻碰恢复和接通收尾的最小衔接修复；物理与原有胜负规则保持不变。
 
 [修补片与充电触点可读性](https://github.com/yydshly/classic-games-atlas/blob/e36ca83402cb34a7601df6f76fb9aede05c0a615/docs/quiet-gentle-home-qa/readability/README.md)：更清楚的配对形状、开路/接通几何与双侧平贴制动提示；原物理、相机和既有表现时序不变，玩家理解仍待验收。
 
-本次运行资源统一使用 `gentle-home-9bcd0fc-r1` 版本引用，覆盖入口脚本、内部模块链与样式。共享的 Cannon/Three 供应文件保持原字节与原 URL，不修改其它游戏的依赖。以上 QA 链接固定到已核验提交，不要求将图片、动画或轨迹合入主站。
+本次运行资源统一使用 `gentle-home-d9246fd-r2` 版本引用，覆盖入口脚本、内部模块链与样式。共享的 Cannon/Three 供应文件保持原字节与原 URL，不修改其它游戏的依赖。以上 QA 链接固定到已核验提交，不要求将图片、动画或轨迹合入主站。
+
+本次候选仅修竖屏可读性与真实轻碰的局部眉手反应：竖屏镜头正对真实承托，既有修理师工作位排到桌后不可达空区，HUD/提示/触控在画布外排版；桌面镜头、物理、输入及胜负不变。版本 r2 **仍待 390×844 与 1280×720 实际 UI 复验**，尚未更新 main。CPU 投影与几何遮挡检查不能代替浏览器或手感验收。

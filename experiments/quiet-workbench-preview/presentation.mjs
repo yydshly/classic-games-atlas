@@ -23,6 +23,9 @@ export class QuietPresentation {
     // Identical threshold to the existing world, used only for guidance.
     const dock=dockState(s,goal,goalRadius);
     const impact=Math.exp(-this.impactAge*9),gain=clamp((s.lastImpact?.gain||0)*1.6);
+    // A brief local hand/brow reflex comes only from a real impact event.
+    // Give a gentle tap enough readable motion without adding noise or shake.
+    const startle=s.lastImpact?(.22+.50*Math.sqrt(gain))*Math.exp(-this.impactAge*5.5):0;
     const awake=s.state==='woke',breath=Math.sin(this.clock*1.65),shallow=clamp((s.noise-.15)/.4);
     // Input changes stay immediate in physics and the brake light. Only the
     // self-levelled face eases its pose, including a release while still moving.
@@ -34,10 +37,10 @@ export class QuietPresentation {
       brake:brake&&speed>.08,faceYaw:clamp(s.player.velocity[0]/(speed+.3),-1,1)*.32,
       facePitch:this.pitch,
       impact,impactTool:s.lastImpact?.tool||null,impactStrength:gain,
-      handLift:awake?.16+clamp(this.endAge/.65)*.55:shallow*.16+impact*gain*(.12+.02*shallow),
+      handLift:awake?.16+clamp(this.endAge/.65)*.55:shallow*.16+startle*.38,
       headLift:awake?.12+clamp(this.endAge/.65)*.35:shallow*.10+impact*gain*.08*(1-shallow),
       headTurn:awake?-.22*clamp(this.endAge/.65):-shallow*.13-impact*gain*.10*(1-shallow),
-      brow:awake?1:clamp(s.noise*1.8+impact*gain),awake,breath:awake?0:breath*.018,
+      brow:awake?1:clamp(s.noise*1.8+startle),browLift:awake?0:startle*.045,startle,awake,breath:awake?0:breath*.018,
       charge,chargePitch:this.chargeStartPitch*(1-charge)-Math.sin(charge*Math.PI)*.20,
       fall:s.state==='fell',endAge:this.endAge
     };

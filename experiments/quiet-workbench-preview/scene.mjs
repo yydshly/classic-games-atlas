@@ -1,6 +1,6 @@
 import * as T from '../kinetic/vendor/three.module.min.js';
-import {fallMarker} from './feedback.mjs?v=gentle-home-9bcd0fc-r1';
-import {batchStatic} from './batch.mjs?v=gentle-home-9bcd0fc-r1';
+import {fallMarker} from './feedback.mjs?v=gentle-home-d9246fd-r2';
+import {batchStatic} from './batch.mjs?v=gentle-home-d9246fd-r2';
 
 // All support and obstacle meshes are built from ROOM, never invented here.
 export function buildWorkshop(room){
@@ -131,9 +131,10 @@ export function buildWorkshop(room){
   });fastMark.visible=false;
   rod([0,.08,-4.34],[.35,-.55,-4.65],.025,M.iron);rod([.35,-.55,-4.65],[1.6,-.75,-4.75],.025,M.iron);
   // Repairer and shelf are visibly below and beside all playable support.
-  box([5.35,-1.35,-.7],[1.45,.18,1.4],M.edge);
-  for(const x of [4.8,5.9])for(const z of [-1.2,-.2])box([x,-2.05,z],[.11,1.4,.11],M.iron);
-  const person=group('repairer',[5.25,-.65,-.8]);
+  const station=group('repairer-station');
+  box([5.35,-1.35,-.7],[1.45,.18,1.4],M.edge,station);
+  for(const x of [4.8,5.9])for(const z of [-1.2,-.2])box([x,-2.05,z],[.11,1.4,.11],M.iron,station);
+  const person=group('repairer',[5.25,-.65,-.8],station);
   const chest=group('breathing-chest',[0,.43,0],person);
   ball([0,0,0],[.65,.76,.50],M.shirt,chest).castShadow=true;ball([-.1,-.05,.34],[.52,.61,.20],M.apron,chest);
   box([-.1,-.02,.53],[.52,.29,.025],M.edge,chest);for(const x of [-.25,.06])box([x,.13,.56],[.035,.24,.025],M.metal,chest);
@@ -156,14 +157,14 @@ export function buildWorkshop(room){
   rod(elbow,wrist,.145,M.shirt,forearm).castShadow=true;ball(wrist,[.15,.135,.15],M.apron,forearm);
   ball([-.23,-.20,.82],[.16,.105,.14],M.skin,forearm).castShadow=true;
   for(let i=0;i<3;i++)ball([-.35,-.195,.72+i*.075],[.065,.07,.035],M.skin,forearm);
-  box([6.45,-.85,.75],[1.4,.10,1.25],M.edge);
-  cyl([6.35,-.56,.76],[.19,.48,.19],M.cream);cyl([6.35,-.31,.76],[.15,.012,.15],M.edge);
-  const handle=ring([6.58,-.57,.76],.12,.035,M.cream);handle.rotation.x=0;handle.rotation.y=Math.PI/2;
-  for(const x of [6.0,6.33]){const lens=ring([x,-.78,.20],.13,.018,M.iron);lens.rotation.z=.1;}
-  rod([6.13,-.78,.20],[6.2,-.78,.20],.015,M.iron);
+  box([6.45,-.85,.75],[1.4,.10,1.25],M.edge,station);
+  cyl([6.35,-.56,.76],[.19,.48,.19],M.cream,station);cyl([6.35,-.31,.76],[.15,.012,.15],M.edge,station);
+  const handle=ring([6.58,-.57,.76],.12,.035,M.cream,station);handle.rotation.x=0;handle.rotation.y=Math.PI/2;
+  for(const x of [6.0,6.33]){const lens=ring([x,-.78,.20],.13,.018,M.iron,station);lens.rotation.z=.1;}
+  rod([6.13,-.78,.20],[6.2,-.78,.20],.015,M.iron,station);
   // The same lamp is mounted on the outer chair corner, entirely beyond the
   // player envelope. Its base has a visible support rather than floating.
-  const deskLamp=group('desk-lamp');
+  const deskLamp=group('desk-lamp',[0,0,0],station);
   cyl([5.9,-1.22,-1.2],[.20,.08,.20],M.iron,deskLamp);
   rod([5.9,-1.18,-1.2],[5.9,1.22,-1.2],.045,M.iron,deskLamp);
   rod([5.9,1.22,-1.2],[6.1,1.60,-1.35],.045,M.iron,deskLamp);
@@ -172,10 +173,21 @@ export function buildWorkshop(room){
   const fallCross=group('last-support-marker');fallCross.visible=false;
   const fallMat=new T.MeshBasicMaterial({color:'#efbd82'});
   for(const angle of [-Math.PI/4,Math.PI/4]){const stroke=box([0,0,0],[.52,.022,.055],fallMat,fallCross);stroke.rotation.y=angle;}
+  let stationEnvelope;
   function fit(width,height){
-    const aspect=width/height;camera.updateMatrixWorld(true);
+    const portrait=width<700&&height>width*.72,aspect=width/height;
+    // Reflow the same off-table station into the spare depth of a narrow
+    // frame. No support or collider moves, and controls keep world X/Z.
+    station.position.set(portrait?-4.5:0,0,portrait?-6.8:0);
+    station.updateWorldMatrix(true,true);
+    camera.position.set(...(portrait?[-.875,18,12.7]:[5.5,13,17]));
+    camera.lookAt(portrait?-.875:.1,0,.1);camera.updateMatrixWorld(true);
     const bounds={minX:Infinity,maxX:-Infinity,minY:Infinity,maxY:-Infinity};
-    for(const x of [-5.65,6.9])for(const y of [-.75,1.9])for(const z of [-4.6,4.7]){const p=new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse);bounds.minX=Math.min(bounds.minX,p.x);bounds.maxX=Math.max(bounds.maxX,p.x);bounds.minY=Math.min(bounds.minY,p.y);bounds.maxY=Math.max(bounds.maxY,p.y);}
+    const include=(x,y,z)=>{const p=new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse);bounds.minX=Math.min(bounds.minX,p.x);bounds.maxX=Math.max(bounds.maxX,p.x);bounds.minY=Math.min(bounds.minY,p.y);bounds.maxY=Math.max(bounds.maxY,p.y);};
+    if(portrait){
+      for(const s of room.surfaces)for(const x of [-1,1])for(const z of [-1,1])for(const y of [-.6,room.radius*2])include(s.position[0]+x*(s.size[0]/2+room.radius),y,s.position[2]+z*(s.size[2]/2+room.radius));
+      const b=stationEnvelope.clone().translate(station.position);for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z])include(x,y,z);
+    }else for(const x of [-5.65,6.9])for(const y of [-.75,1.9])for(const z of [-4.6,4.7])include(x,y,z);
     const cx=(bounds.minX+bounds.maxX)/2,cy=(bounds.minY+bounds.maxY)/2;
     let halfH=(bounds.maxY-bounds.minY)/2*1.04,halfW=(bounds.maxX-bounds.minX)/2*1.04;
     halfH=Math.max(halfH,halfW/aspect);halfW=halfH*aspect;
@@ -190,7 +202,7 @@ export function buildWorkshop(room){
     chest.scale.y=1+p.breath;head.position.y=1.37+p.headLift;head.rotation.set(0,p.headTurn,-.16+p.headLift*.24);
     forearm.rotation.x=-p.handLift;forearm.rotation.z=0;
     eyelids.forEach(e=>e.visible=!p.awake);openEyes.forEach(e=>{e.visible=p.awake;e.scale.y=.035+.04*Math.min(1,p.endAge/.35);});
-    brows.forEach((b,i)=>b.rotation.z=(i?1:-1)*p.brow*.28);
+    brows.forEach((b,i)=>{b.rotation.z=(i?1:-1)*p.brow*.28;b.position.y=.18+(p.browLift||0);});
     for(const [id,t] of tools){const hit=id===p.impactTool?p.impact*p.impactStrength:0;t.lid.rotation.z=Math.sin(p.clock*45)*hit*.045;t.lid.position.y=room.tools.find(r=>r.id===id).size[1]/2+.012+hit*.025;}
     contactLight.color.set(p.connected?'#a5e3bf':'#5b6963');connectedContacts.forEach(o=>o.visible=p.connected);
     approach.visible=p.dock==='approach'||p.dock==='too-fast';fastMark.visible=p.dock==='too-fast';fastMark.scale.y=1;
@@ -200,9 +212,12 @@ export function buildWorkshop(room){
   // Merge repeated static stitches/fasteners and each tool's static lid parts.
   // The lid still moves as one unit; collider bodies remain independently named.
   batchStatic(scene,scene.children.filter(o=>o.isMesh&&!o.name&&!o.castShadow));
+  batchStatic(station,station.children.filter(o=>o.isMesh&&!o.name&&!o.castShadow));
+  for(const t of tools.values())batchStatic(t.group,t.group.children.filter(o=>o.isMesh&&!o.name&&!o.castShadow));
   for(const root of [tray,deskLamp,...[...tools.values()].map(t=>t.lid)]){
     const parts=[];root.traverse(o=>{if(o.isMesh)parts.push(o);});batchStatic(root,parts);
   }
+  stationEnvelope=new T.Box3().setFromObject(station);stationEnvelope.max.y+=.6;
   fit(1280,800);
-  return{scene,camera,fit,pose,rig:{robot,shell,face,head,forearm,chest,eyes,tools,dock,approach,fastMark,connectedContacts,fallCross,supports,deskLamp}};
+  return{scene,camera,fit,pose,rig:{robot,shell,face,head,forearm,chest,eyes,brows,tools,dock,approach,fastMark,connectedContacts,fallCross,supports,deskLamp,station}};
 }

@@ -1,0 +1,183 @@
+{
+  "source_remote_commit": "d9246fd7fc42657adf6619e7cb9cef7f52a929e1",
+  "source_tree": "ebed8be11e464896f577003092c75026686740b0",
+  "version": "gentle-home-d9246fd-r2",
+  "runtime_dependencies": {
+    "experiments/quiet-workbench-preview/index.html": {
+      "sha256": "90cf44cf90af199e067c854017decd2de7b765d945bb6e8f3219a070726ea06b",
+      "bytes": 4256
+    },
+    "experiments/quiet-workbench-preview/style.css": {
+      "sha256": "bf9f46003c72360b825a01a8969f872b0c46d282018a22de579a252363710627",
+      "bytes": 4662
+    },
+    "experiments/quiet-workbench-preview/boot.mjs": {
+      "sha256": "c2c70c83995bb14f944a0f2d3c9336d0b0e774b710ca91d77a1161a3eaf506e9",
+      "bytes": 159
+    },
+    "experiments/quiet-workbench-preview/game.mjs": {
+      "sha256": "0411110a5fb9c4730a42549a410e62f263d5696cab7ca0259249657e91c900a5",
+      "bytes": 4834
+    },
+    "experiments/quiet-workbench-preview/physics.mjs": {
+      "sha256": "55a332c64d36f1dc41ddb3b3b18f2fef630760f9c7dfab0712eda49ed43813a0",
+      "bytes": 5915
+    },
+    "experiments/quiet-workbench-preview/view.mjs": {
+      "sha256": "315065cf1a562eba911750564eb3ddd187548e69c045d891deef391f95a9a9f9",
+      "bytes": 1294
+    },
+    "experiments/quiet-workbench-preview/feedback.mjs": {
+      "sha256": "284a24f628d2c1a47c72ea2dfde593859859f535206a226f10080bf440364198",
+      "bytes": 2034
+    },
+    "experiments/kinetic/vendor/cannon-es.mjs": {
+      "sha256": "f0700cbd3a482954949b9d58c1b0f76dcc74767750297647a39d8c40dd63d37c",
+      "bytes": 346256
+    },
+    "experiments/kinetic/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "experiments/quiet-workbench-preview/scene.mjs": {
+      "sha256": "741d8eeda9ec9015ed26ba49c5da167314c955f0ab749da8db3c365ededf8ed3",
+      "bytes": 17347
+    },
+    "experiments/quiet-workbench-preview/presentation.mjs": {
+      "sha256": "801281342adf0e60ebd4dbb9fd08a3b689da4d2aef3ad84dd84d6e4ee36608d3",
+      "bytes": 3418
+    },
+    "experiments/kinetic/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "experiments/quiet-workbench-preview/batch.mjs": {
+      "sha256": "57f3cae72999e3a780511d479ac09bd0bf541fb78feb3e5b39c6f62b088c8917",
+      "bytes": 1739
+    }
+  },
+  "dependency_edges": [
+    {
+      "from": "experiments/quiet-workbench-preview/index.html",
+      "specifier": "style.css?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/style.css"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/index.html",
+      "specifier": "boot.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/boot.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/boot.mjs",
+      "specifier": "./game.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/game.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/game.mjs",
+      "specifier": "./physics.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/physics.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/game.mjs",
+      "specifier": "./view.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/view.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/game.mjs",
+      "specifier": "./feedback.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/feedback.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/physics.mjs",
+      "specifier": "../kinetic/vendor/cannon-es.mjs",
+      "path": "experiments/kinetic/vendor/cannon-es.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/view.mjs",
+      "specifier": "../kinetic/vendor/three.module.min.js",
+      "path": "experiments/kinetic/vendor/three.module.min.js"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/view.mjs",
+      "specifier": "./scene.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/scene.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/view.mjs",
+      "specifier": "./presentation.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/presentation.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/feedback.mjs",
+      "specifier": "./presentation.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/presentation.mjs"
+    },
+    {
+      "from": "experiments/kinetic/vendor/three.module.min.js",
+      "specifier": "./three.core.min.js",
+      "path": "experiments/kinetic/vendor/three.core.min.js"
+    },
+    {
+      "from": "experiments/kinetic/vendor/three.module.min.js",
+      "specifier": "./three.core.min.js",
+      "path": "experiments/kinetic/vendor/three.core.min.js"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/scene.mjs",
+      "specifier": "../kinetic/vendor/three.module.min.js",
+      "path": "experiments/kinetic/vendor/three.module.min.js"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/scene.mjs",
+      "specifier": "./feedback.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/feedback.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/scene.mjs",
+      "specifier": "./batch.mjs?v=gentle-home-d9246fd-r2",
+      "path": "experiments/quiet-workbench-preview/batch.mjs"
+    },
+    {
+      "from": "experiments/quiet-workbench-preview/batch.mjs",
+      "specifier": "../kinetic/vendor/three.module.min.js",
+      "path": "experiments/kinetic/vendor/three.module.min.js"
+    }
+  ],
+  "changed_paths": [
+    "docs/quiet-gentle-home-qa/README.md",
+    "docs/quiet-gentle-home-qa/portrait/README.md",
+    "docs/quiet-gentle-home-qa/portrait/before-presentation.mjs.txt",
+    "docs/quiet-gentle-home-qa/portrait/before-scene.mjs.txt",
+    "docs/quiet-gentle-home-qa/portrait/before-style.css.txt",
+    "docs/quiet-gentle-home-qa/portrait/checks.log",
+    "docs/quiet-gentle-home-qa/portrait/comparison.json",
+    "docs/quiet-gentle-home-qa/portrait/export.mjs",
+    "docs/quiet-gentle-home-qa/portrait/fast-after.png",
+    "docs/quiet-gentle-home-qa/portrait/ready-after.png",
+    "docs/quiet-gentle-home-qa/portrait/ready-before.png",
+    "docs/quiet-gentle-home-qa/portrait/render.py",
+    "docs/quiet-gentle-home-qa/portrait/soft-return-after.png",
+    "docs/quiet-gentle-home-qa/portrait/soft-return-before.png",
+    "docs/quiet-gentle-home-qa/portrait/tap-after.png",
+    "docs/quiet-gentle-home-qa/portrait/tap-before.png",
+    "experiments/quiet-workbench-preview/NOTES.md",
+    "experiments/quiet-workbench-preview/boot.mjs",
+    "experiments/quiet-workbench-preview/feedback.mjs",
+    "experiments/quiet-workbench-preview/game.mjs",
+    "experiments/quiet-workbench-preview/index.html",
+    "experiments/quiet-workbench-preview/presentation.mjs",
+    "experiments/quiet-workbench-preview/scene.mjs",
+    "experiments/quiet-workbench-preview/style.css",
+    "experiments/quiet-workbench-preview/view.mjs",
+    "tests/quiet-gentle-home.test.mjs",
+    "tests/quiet-portrait.test.mjs",
+    "tests/quiet-readability.test.mjs"
+  ],
+  "physics_unchanged": true,
+  "controller_unchanged_except_version_refs": true,
+  "protected_paths_unchanged": true,
+  "browser_attempts": 0,
+  "http_retry_attempts": 0,
+  "main_written": false,
+  "secret_scan_passed": true
+}
