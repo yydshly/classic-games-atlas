@@ -87,8 +87,9 @@ export function step(g,input={}){
   if(p.y>575&&g.phase==='playing')fail(g,'落进了货栈之间的水道');
   if(p.x>=LEVEL.goal&&p.grounded&&g.phase==='playing'){g.phase='won';g.result={cause:'抵达收货站',ticks:g.tick};event(g,'arrived');}
 }
-export function forecastThrow(g){if(!heldBox(g)||g.phase!=='playing')return null;
-  const copy=structuredClone(g),id=copy.player.holding;copy.previous.action=false;const points=[];let outcome='air';
+export function forecastThrow(g){if(!heldBox(g)||!['playing','paused'].includes(g.phase))return null;
+  // Preview only: advance a private copy so a paused live scene stays untouched.
+  const copy=structuredClone(g),id=copy.player.holding;copy.phase='playing';copy.previous.action=false;const points=[];let outcome='air';
   for(let i=0;i<100;i++){step(copy,{action:i===0});const b=copy.boxes.find(b=>b.id===id);if(i%5===0)points.push({x:b.x,y:b.y-15});
     if(b.mode!=='flying'){outcome=b.mode==='rest'?'ground':'impact';points.push({x:b.x,y:b.y-15});break;}}
   return {points,outcome};
@@ -97,7 +98,7 @@ export function hint(g){const p=g.player;if(g.phase==='failed')return g.result.c
   if(g.phase==='won')return '到站了。可以换一种走法再试；本轮只有这一关，后续尚未制作。';
   if(g.phase==='paused')return '已暂停。恢复后再继续，松开的按键不会残留。';
   if(g.lastEvent?.type==='place-blocked'&&g.tick-g.lastEvent.tick<180)return '这里被挡住了，木箱还在手上。换个位置再轻放。';
-  if(p.x<355)return p.holding?'箱子举好了：再按 J 投向前方巡逻机。↓＋J 可轻放。':'先靠近浅色木箱，按 J 举起；移动 ← →，空格跳跃。';
+  if(p.x<355)return p.holding?'看虚线和箱形落点，再按 J 投出；↓＋J 可轻放。':'先靠近浅色木箱，按 J 举起；移动 ← →，空格跳跃。';
   if(p.x<625)return g.learned.hit?'打中了。前方断口需要跳过去，别一路直走。':'巡逻机碰到会受伤：用箱子击退，也能找时机跳过。';
   if(p.x<840)return '看清木沿：走到断口前，再按空格跳到另一边。';
   if(p.x<1350)return '下层可投箱清路；想走货架，可把箱子轻放垫脚再跳上去。';

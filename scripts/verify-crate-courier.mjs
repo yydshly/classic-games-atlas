@@ -21,7 +21,8 @@ function visit(ref,from){const [clean,query]=ref.split('?');assert(!/^(https?:|\
 for(const m of html.matchAll(/(?:href="|import\(')(\.\/(?:main\.mjs)[^'"]*|style\.css[^'"]*)/g))visit(m[1],'experiments/crate-courier/index.html');
 assert(runtime.has('experiments/crate-courier/main.mjs'));
 assert(runtime.has('experiments/crate-courier/style.css'));
-assert.equal(runtime.size,5);assert.deepEqual([...versions],['v=crate-slice-1']);
+const currentVersion=html.match(/<span>(crate-slice-\d+)<\/span>/)?.[1];assert(currentVersion,'visible runtime version missing');
+assert.equal(runtime.size,5);assert.deepEqual([...versions],['v='+currentVersion]);
 const entries=JSON.parse(readFileSync(path.join(root,'play-entries.mjs'),'utf8').match(/PLAY_ENTRIES=Object\.freeze\((\[[\s\S]*?\])\.map\(Object\.freeze\)\)/)[1]);
 assert.equal(entries.length,99);assert.equal(new Set(entries.map(x=>x.slug)).size,45);
 const oldFiles=git('ls-tree','-r','--name-only',base).trim().split('\n');
