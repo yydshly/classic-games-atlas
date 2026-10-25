@@ -1,6 +1,6 @@
-import {QuietWorld,ROOM} from './physics.mjs?v=gentle-home-d9246fd-r2';
-import {createView} from './view.mjs?v=gentle-home-d9246fd-r2';
-import {feedback} from './feedback.mjs?v=gentle-home-d9246fd-r2';
+import {QuietWorld,ROOM} from './physics.mjs?v=gentle-home-d9246fd-r3';
+import {createView} from './view.mjs?v=gentle-home-d9246fd-r3';
+import {feedback} from './feedback.mjs?v=gentle-home-d9246fd-r3';
 
 const $=s=>document.querySelector(s),keys=new Set(),touch=new Map();
 let world=new QuietWorld(),view,last=0,mode='ready',failed=false,terminalShown=false;

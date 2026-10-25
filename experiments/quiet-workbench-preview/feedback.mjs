@@ -1,4 +1,4 @@
-import {dockState} from './presentation.mjs?v=gentle-home-d9246fd-r2';
+import {dockState} from './presentation.mjs?v=gentle-home-d9246fd-r3';
 function baseFeedback(s){
  if(s.state==='woke')return{title:'哐——修理师醒了。',message:'这次碰撞太响。回零件盘旁，再试试提前制动或绕软垫。'};
  if(s.state==='fell'){
