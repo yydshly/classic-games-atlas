@@ -1,0 +1,506 @@
+{
+  "passed": true,
+  "scope": "Node legal-control physics, actual Three scene objects, DOM/render fixtures; not browser pixels or human play",
+  "checks": [
+    "physics, ROOM and every collision/threshold byte-identical to published preview",
+    "both unchanged routes finish under legal control at three frame intervals",
+    "real quaternion drives shell only; face self-levelled; support and all six tool bodies match physical bounds",
+    "camera projection retains real support at 1280, 390 and 320 widths (geometry only, not layout acceptance)",
+    "legal too-fast approach remains unconnected; only charged connects contacts and triggers settling nod",
+    "real impact latches once, decays without repeated contact animation; pause freezes; retry clears; real wake raises head and hand",
+    "composition: arm stays attached at shoulder during wake; lamp remains outside foreground corridor",
+    "actual controller passes brake metadata, freezes simulation/presentation on pause, manual preserves pause, retry clears, terminal keeps scene unobscured"
+  ],
+  "routes": [
+    {
+      "name": "metal",
+      "dt": 0.008333333333333333,
+      "time": 9.033333333333461,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.008333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.03333333333333333,
+      "time": 9.008333333333463,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.03333333333333333,
+      "time": 12.891666666666575,
+      "noise": 0
+    },
+    {
+      "name": "metal",
+      "dt": 0.1,
+      "time": 8.975000000000131,
+      "noise": 0
+    },
+    {
+      "name": "soft",
+      "dt": 0.1,
+      "time": 12.93333333333324,
+      "noise": 0
+    }
+  ]
+}
+✔ tests/quiet-gentle-home.test.mjs (638.202566ms)
+{
+  "passed": true,
+  "scope": "legal Cannon controls and exact triangle distance, not browser collision pixels or performance",
+  "runs": [
+    {
+      "dt": 0.008333333333333333,
+      "position": [
+        3.6396152738152314,
+        0.3399961631754459,
+        3.9151730711569166
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.18127243314154706,
+      "newClearance": 5.203825059862124
+    },
+    {
+      "dt": 0.03333333333333333,
+      "position": [
+        3.6396167445821486,
+        0.3399961631754459,
+        3.9152133924752994
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.1812700360142795,
+      "newClearance": 5.203860389891393
+    },
+    {
+      "dt": 0.1,
+      "position": [
+        3.63964350277162,
+        0.3399961631754459,
+        3.9167433346841904
+      ],
+      "grounded": true,
+      "state": "playing",
+      "noise": 0,
+      "oldPenetration": 0.18114267989386115,
+      "newClearance": 5.205213093831893
+    }
+  ],
+  "entireLampMinX": 5.699999809265137,
+  "conservativeEnvelopeMaxX": 4.4799999999999995,
+  "casters": 12
+}
+✔ tests/quiet-lamp-envelope.test.mjs (418.329643ms)
+{
+  "passed": true,
+  "scope": "real Cannon events and Three projection/rig checks; not CSS/browser/touch or player acceptance",
+  "metrics": {
+    "390x560": {
+      "before": {
+        "width": 17.743074005272675,
+        "height": 17.225297207516896
+      },
+      "after": {
+        "width": 26.246262036434782,
+        "height": 24.997325954531732
+      },
+      "scale": 1.4792398447211137,
+      "meshes": 88,
+      "groups": 88,
+      "casters": 12,
+      "stationToPlayableClearance": 0.9249999999999998
+    },
+    "390x400": {
+      "before": {
+        "width": 17.743074005272675,
+        "height": 17.2252972075169
+      },
+      "after": {
+        "width": 21.159258662339123,
+        "height": 20.15238912895454
+      },
+      "scale": 1.1925362344795083,
+      "meshes": 88,
+      "groups": 88,
+      "casters": 12,
+      "stationToPlayableClearance": 0.9249999999999998
+    },
+    "320x340": {
+      "before": {
+        "width": 14.558419696633988,
+        "height": 14.133577195911302
+      },
+      "after": {
+        "width": 17.985369862988257,
+        "height": 17.12953075961136
+      },
+      "scale": 1.235393005406116,
+      "meshes": 88,
+      "groups": 88,
+      "casters": 12,
+      "stationToPlayableClearance": 0.9249999999999998
+    }
+  },
+  "farReturnVisibility": {
+    "before": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "after": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "firstHit": {
+    "frame": 149,
+    "gain": 0.588784096265025
+  },
+  "maximumHandIncrease": 0.1361254026487297,
+  "maximumBrowLift": 0.03173838634090601,
+  "checks": [
+    "full supports and station visible",
+    "station outside reachable envelope",
+    "existing input directions retained",
+    "1280x720/800 desktop camera restored exactly",
+    "far tool lower-body occlusion reduced on a real soft-route state",
+    "mesh budget retained",
+    "gentle reflex only on real impact; decay, pause and retry clear",
+    "no camera shake or physical changes"
+  ]
+}
+✔ tests/quiet-portrait.test.mjs (557.3633ms)
+{
+  "passed": true,
+  "scope": "same camera and actual-state geometry checks; not user comprehension, WebGL pixels or frame rate",
+  "checks": [
+    "physics and dock-state thresholds unchanged",
+    "same desktop camera across actual ready/fast/charged samples",
+    "repair fits prior shell silhouette",
+    "shared paired-contact motif",
+    "open gaps versus physically present charged bridge, beyond colour",
+    "flat indicators stay inside original goal",
+    "only too-fast shows dual bars; only charged closes contacts",
+    "visible-mesh/draw-group budget <=97 including active brake"
+  ],
+  "counts": {
+    "ready": {
+      "meshes": 88,
+      "groups": 88,
+      "casters": 12,
+      "unoccludedBarCenters": null
+    },
+    "too-fast": {
+      "meshes": 89,
+      "groups": 89,
+      "casters": 12,
+      "unoccludedBarCenters": 2
+    },
+    "too-fast-braking": {
+      "meshes": 90,
+      "groups": 90,
+      "casters": 12,
+      "unoccludedBarCenters": 2
+    },
+    "charged": {
+      "meshes": 90,
+      "groups": 90,
+      "casters": 12,
+      "unoccludedBarCenters": null
+    },
+    "opposite-too-fast": {
+      "meshes": 89,
+      "groups": 89,
+      "casters": 12,
+      "unoccludedBarCenters": 2
+    }
+  }
+}
+✔ tests/quiet-readability.test.mjs (381.235619ms)
+{
+  "passed": true,
+  "base": "8d1b634b43ac65332ab2b6a24bc86eb5af477709",
+  "method": "60Hz real Cannon binary-control stream; real Three rig matrices; no browser, frame-rate or player-quality acceptance",
+  "frames": {
+    "rolling-brake": 105,
+    "light-recovery": 420,
+    "two-tools": 309,
+    "dock": 934,
+    "fall": 210,
+    "wake": 169
+  },
+  "totalFrames": 2147,
+  "physicalStreamSha256": "0706207263aef4b140d095049a9c6e6eeb7025182238021cdc68df10cfc1ac76",
+  "physicsByteIdentical": true,
+  "checks": [
+    "binary inputs only; exact physical stream preserved; real rolling quaternion reaches shell; self-levelled face; brake press/release continuity",
+    "real non-terminal impact naturally decays through 0.55 without the archived head/hand step",
+    "two real tools hit 0.983s apart; latest tool reacts once and noise reaches a genuine wake terminal",
+    "actual fast approach remains unconnected; binary brake reaches charged; no connection pose snap; nod settles to zero",
+    "genuine fall/wake/charged freeze world time, position and quaternion; existing wake/nod finish; commanded retry clears reaction history"
+  ],
+  "before": {
+    "rolling-brake": {
+      "frames": 105,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0.1702553963846243,
+        "frame": 39
+      },
+      "release": {
+        "pitchStep": 0.13747669328800874,
+        "frame": 45
+      },
+      "chargedFrame": -1
+    },
+    "light-recovery": {
+      "frames": 420,
+      "recovery": {
+        "headStep": 0.08927760503539073,
+        "frame": 162,
+        "beforeNoise": 0.5512840962650264,
+        "afterNoise": 0.5482840962650265,
+        "beforeHead": 1.4700000000000002,
+        "afterHead": 1.3807223949646095
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "two-tools": {
+      "frames": 309,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "dock": {
+      "frames": 934,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": 821,
+      "connection": {
+        "pitchStep": 0.12,
+        "before": -0.12,
+        "after": 0
+      }
+    },
+    "fall": {
+      "frames": 210,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "wake": {
+      "frames": 169,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    }
+  },
+  "after": {
+    "rolling-brake": {
+      "frames": 105,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0.042674391639981095,
+        "frame": 39
+      },
+      "release": {
+        "pitchStep": 0.0285774244875584,
+        "frame": 45
+      },
+      "chargedFrame": -1
+    },
+    "light-recovery": {
+      "frames": 420,
+      "recovery": {
+        "headStep": 0.0007618369759379018,
+        "frame": 175,
+        "beforeNoise": 0.5122840962650278,
+        "afterNoise": 0.5092840962650279,
+        "beforeHead": 1.460738143232569,
+        "afterHead": 1.459976306256631
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "two-tools": {
+      "frames": 309,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "dock": {
+      "frames": 934,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": 821,
+      "connection": {
+        "pitchStep": 0,
+        "before": -0.10538090099535505,
+        "after": -0.10538090099535505
+      }
+    },
+    "fall": {
+      "frames": 210,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    },
+    "wake": {
+      "frames": 169,
+      "recovery": {
+        "headStep": 0
+      },
+      "brake": {
+        "pitchStep": 0
+      },
+      "release": {
+        "pitchStep": 0
+      },
+      "chargedFrame": -1
+    }
+  },
+  "twoToolSeconds": 0.9833333333333298,
+  "terminalScope": "World freezes. Existing bounded wake/nod and ambient breathing have separate presentation time; no claim that every decorative animation freezes."
+}
+✔ tests/quiet-temporal.test.mjs (610.315252ms)
+{
+  "passed": true,
+  "scope": "real controller/Cannon with recording renderer, matchMedia and reported rectangle fixtures; not fresh browser UI acceptance",
+  "terminal": {
+    "viewport": [
+      699,
+      650
+    ],
+    "sizes": [
+      [
+        699,
+        544
+      ],
+      [
+        699,
+        481
+      ],
+      [
+        699,
+        544
+      ]
+    ],
+    "layoutSwitches": 0,
+    "state": "real woke then native-button retry"
+  },
+  "pause": {
+    "viewport": [
+      699,
+      900
+    ],
+    "sizes": [
+      [
+        699,
+        641
+      ],
+      [
+        699,
+        529
+      ],
+      [
+        699,
+        641
+      ]
+    ],
+    "layoutSwitches": 0,
+    "manualFocusAndPauseRetained": true
+  },
+  "mediaBoundaryAndRotation": true,
+  "desktopCameraRetained": true,
+  "manualButton": {
+    "foreground": "#fff6df",
+    "background": "#3b6158",
+    "contrast": 6.421278158612366
+  },
+  "physicalStateInjected": false
+}
+✔ tests/quiet-viewport-layout.test.mjs (319.751655ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1187.630817

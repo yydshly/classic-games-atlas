@@ -1,6 +1,6 @@
 import * as T from '../kinetic/vendor/three.module.min.js';
-import {fallMarker} from './feedback.mjs?v=gentle-home-d9246fd-r2';
-import {batchStatic} from './batch.mjs?v=gentle-home-d9246fd-r2';
+import {fallMarker} from './feedback.mjs?v=gentle-home-d9246fd-r3';
+import {batchStatic} from './batch.mjs?v=gentle-home-d9246fd-r3';
 
 // All support and obstacle meshes are built from ROOM, never invented here.
 export function buildWorkshop(room){
@@ -174,8 +174,9 @@ export function buildWorkshop(room){
   const fallMat=new T.MeshBasicMaterial({color:'#efbd82'});
   for(const angle of [-Math.PI/4,Math.PI/4]){const stroke=box([0,0,0],[.52,.022,.055],fallMat,fallCross);stroke.rotation.y=angle;}
   let stationEnvelope;
-  function fit(width,height){
-    const portrait=width<700&&height>width*.72,aspect=width/height;
+  // The live view supplies the viewport media result; defaults support offline callers.
+  function fit(width,height,{portrait=width<=700&&height>=width}={}){
+    const aspect=width/height;
     // Reflow the same off-table station into the spare depth of a narrow
     // frame. No support or collider moves, and controls keep world X/Z.
     station.position.set(portrait?-4.5:0,0,portrait?-6.8:0);

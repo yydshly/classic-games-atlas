@@ -2,6 +2,8 @@
 
 2026-10-25 收到已发布 r1 的真实桌面辅助 QA 后，新增[竖屏构图与轻碰反馈修订](portrait/README.md)。该记录区分外部实际 QA、当前源码/模型检查与待浏览器复验项；以下原始记录按当时范围保留。
 
+r2 真实复验确认固定699×650终局镜头换侧和手册按钮低对比，后续[r3 viewport稳定与按钮修复](viewport/README.md)保留给定尺寸及回归证据；r3仍待真实UI复验。
+
 后续机器人/充电窝可读性修订见 [readability/README.md](readability/README.md)，包含同相机 ready、过快和 charged 前后投影；仍非真实 UI 或玩家理解验收。
 
 后续有限时序审查与三处表现衔接修复见 [temporal/README.md](temporal/README.md)。其中为真实 Cannon 序列与 CPU 几何回放，不是浏览器录像。
