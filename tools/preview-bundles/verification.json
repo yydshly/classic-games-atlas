@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "scope": "source provenance, dependency graph and byte identity; not browser/UI acceptance",
+  "esbuildVersion": "0.25.12",
+  "origins": [
+    {
+      "path": "experiments/inlet-deadline-preview/source/engine.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/inlet-deadline-preview/source/game.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/inlet-deadline-preview/source/renderer.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/inlet-deadline-preview/source/journey.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/inlet-deadline-preview/source/levels.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/inlet-deadline-preview/source/style.css",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/main.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/controller.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/scene.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/storage.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/view.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/style.css",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "experiments/windowlife-request-preview/source/levels.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "tests/inlet-v3-preview-deadline.test.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "tests/windowlife-request-scene.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "tests/windowlife-request-controller.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "tests/windowlife-request-view.test.mjs",
+      "originCommit": "c416a7e25b0117e2a80c287181a02c8e22e2b86c",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "tests/quiet-workbench-fall-marker.test.mjs",
+      "originCommit": "dcd3f4e2cffe2dab467af9b4082f46f6817043bc",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "docs/inlet-deadline-layout-qa/forecast-audit.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    },
+    {
+      "path": "docs/inlet-deadline-layout-qa/policy.mjs",
+      "originCommit": "01dd7d48430a740a13170be703232567a4ba9e10",
+      "unchangedSinceImport": true
+    }
+  ],
+  "previews": [
+    {
+      "id": "inlet-deadline",
+      "runtimePath": "experiments/inlet-deadline-preview/index.html",
+      "dependencies": [
+        "versions/v3/preview/inlet/levels.mjs",
+        "versions/v3/preview/inlet/engine.mjs",
+        "versions/v3/preview/inlet/renderer.mjs",
+        "versions/v3/preview/inlet/journey.mjs",
+        "versions/v3/preview/inlet/game.mjs"
+      ],
+      "hashes": {
+        "html": "43491133c1f2cde452227a60f6b918ff49ef52c142b4028047f6e3114e03de1b",
+        "script": "e01a9c9af6f34bde262ca8904dfb370e8d20a4e8edc8182d1d0cbec46cf7eec5",
+        "css": "5ce8579b5b16352a05c5408ef401dab3ad7cb77c07ffb28f08b864972fcb34e1"
+      }
+    },
+    {
+      "id": "windowlife-request",
+      "runtimePath": "experiments/windowlife-request-preview/index.html",
+      "dependencies": [
+        "preview/windowlife/levels.mjs",
+        "experiments/windowlife-request/scene.mjs",
+        "experiments/windowlife-request/storage.mjs",
+        "experiments/windowlife-request/controller.mjs",
+        "experiments/windowlife-request/view.mjs",
+        "experiments/windowlife-request/main.mjs"
+      ],
+      "hashes": {
+        "html": "a6171cea124d0c9de3f32d1661c34997e46c3079ba516cd38f5fdb6201118751",
+        "script": "f237352f6e3822d66e8324b9fcd1f1729c4ea7e38f3f5a761d2ede33aca899a1",
+        "css": "f493c74d288a8505e1176a1876c283765366d870d5760049a9b9ed75eba5c61c"
+      }
+    }
+  ],
+  "baselineMain": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+  "baselineCandidate": "1102b4ba7439ee1dbc8cba319752c3135bff0125",
+  "focusedTests": {
+    "command": "npm test --prefix tools/preview-bundles",
+    "passed": 37,
+    "failed": 0
+  },
+  "negativeChecks": [
+    "changed source limit",
+    "changed runtime script",
+    "sticky overlay regression",
+    "formal storage key leakage"
+  ],
+  "forecastAudit": {
+    "states": 503,
+    "forecasts": 2012,
+    "blocked": 976,
+    "collision": 326,
+    "safeClosed": 710,
+    "safeDidNotClose": []
+  },
+  "lockedOfflineInstallAndCLIOutputVerified": true,
+  "runtimeHTMLNotModified": true,
+  "formalPathsAndQuietR3NotModified": true,
+  "browserOrHTTPAttempted": false,
+  "realUIAcceptance": "pending separate desktop task"
+}
