@@ -1,5 +1,7 @@
 # Inlet 独立试玩：状态与操作布局候选
 
+历史记录说明：before-contract.json/report.json/verify.mjs保留布局修复时的证据；verify锁旧脚本SHA并重写report，已移出默认回归。根已提供efc55fa真实电脑布局通过：390×844滚动无遮挡、1280×720首屏地图/主控、820×740展开/暂停正常。第二/三湾真人通关及真实手机仍未验。当前回归使用 tools/preview-bundles 的 npm test；下文“未发布/待复验”均为当时历史状态。
+
 后续真实复验发现窄屏状态条遮挡海图，修订见 [scroll-followup.md](scroll-followup.md)。当前修订将状态条改回普通流并压缩桌面首屏，地图尺寸公式不变；以下首轮记录按历史范围保留。
 
 状态：**仅候选，未更新 main，未进行本轮真实浏览器复验。**

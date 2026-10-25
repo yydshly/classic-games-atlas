@@ -4,8 +4,11 @@
   "type": "module",
   "scripts": {
     "check": "node check.mjs",
-    "test": "node check-all.mjs --audit",
-    "test:consistency": "node --test check.test.mjs"
+    "test": "node check-all.mjs",
+    "test:consistency": "node --test check.test.mjs",
+    "audit:forecast": "node ../../docs/inlet-deadline-layout-qa/forecast-audit.mjs",
+    "audit:routes": "node ../../docs/inlet-playability-qa/replay.mjs",
+    "audit:layout-historical": "node ../../docs/inlet-deadline-layout-qa/verify.mjs"
   },
   "devDependencies": {
     "esbuild": "0.25.12"

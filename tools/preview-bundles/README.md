@@ -13,7 +13,7 @@ npm test --prefix tools/preview-bundles
 
 开发依赖仅 `esbuild@0.25.12`，版本和官方 npm 包完整性由 package-lock.json 固定。`node_modules` 被忽略，不提交原生二进制，不引入游戏运行时网络依赖。`--ignore-scripts` 使用 npm 提供的对应平台可选包，避免安装生命周期脚本。
 
-快速一致性检查：`node tools/preview-bundles/check.mjs`。完整检查串起来源记录、两个包的依赖图和逐字节一致性、五份集中专项测试、Quiet r3 viewport 回归、Inlet 内联 bundle 的合成 DOM/隔离存档检查，以及有限合法路线的 forecast audit。所有夹具、Cannon 和 mock-canvas 检查均不是浏览器或玩家验收。
+快速一致性检查：`node tools/preview-bundles/check.mjs`。默认完整检查只读，串起来源、两个包的依赖图和 JS/CSS 一致性、专项测试、Quiet r3、当前 Inlet bundle 的合成 DOM/隔离存档与第二/三湾固定输入路线。不写 QA JSON，不锁历史脚本 SHA；有意编辑源码并生成匹配 bundle 后可以通过，旧 bundle/行为回退仍失败。夹具、Cannon 和 mock-canvas 均不是浏览器或玩家验收。
 
 ## 可维护的源目录
 
@@ -35,9 +35,15 @@ node tools/preview-bundles/build.mjs --out-dir /tmp/atlas-previews
 
 生成器在临时目录使用历史模块路径作为 esbuild 的规范化输入路径，以保留已发布包中的注释和字节；实际输入全部读取当前分支的 source，不读取旧分支或正式 v3。唯一的 staging import 改写恢复 Windowlife 的规范化 levels 路径，运行依赖图仍严格限定为本分支复制的六个模块。版本、编码、target、IIFE 名与换行也固定。
 
-生成文件仅写到指定的仓库外目录。检查默认只比较，绝不自动改运行 HTML；开发者审查生成差异后，只替换现有 HTML 的对应生成区，并再次运行完整检查。页面标记直接在既有 index.html 修改，无第二份模板；不得把旧分支的页面、CSS 或整棵树覆盖回来。
+生成文件仅写到指定的仓库外目录。检查默认只比较，不自动改运行 HTML；审查生成差异后再替换对应生成区。独立重建的是 JS/CSS；完整 HTML 比较借用当前 index.html 标记外壳重新注入两者，不能独立验证页面标记或设计。页面标记直接在既有 index.html 修改，无第二份模板；不得用旧分支的页面、CSS 或整棵树覆盖。
 
-本轮验证记录见 [verification.json](verification.json)。main 网站、三个运行预览和正式路径在本次集中前后均保持原字节；发布仍需单独选择已检查的运行 diff。线上布局真实 QA 由已有电脑任务完成，本工具不作 UI 通过结论。
+首次源码集中的历史记录见 [verification.json](verification.json)，当前范围见 [regression-status.json](regression-status.json) 和 [关卡审查](../../docs/inlet-playability-qa/README.md)。本轮维护未改 main、预览运行文件或正式路径。根已提供 efc55fa 的真实电脑布局通过：390×844滚动无遮挡、1280×720初始地图/主控同屏、820×740展开说明/暂停正常。这不是第二/三湾真人通关、真实手机或全 UI 验收。
+
+## 独立审计与报告副作用
+
+- `npm run audit:forecast --prefix tools/preview-bundles` 默认只读输出并断言安全预测实际闭合；加 `-- --write` 写新 forecast-current.json，不覆盖历史 forecast-audit.json。旧字段 collision:326 是所有非 safe 分类，当前称 nonSafe，不能说326次真实碰撞。
+- `npm run audit:routes --prefix tools/preview-bundles` 默认只读重放；加 `-- --write` 明确更新关卡 report.json。
+- `npm run audit:layout-historical --prefix tools/preview-bundles` 复跑 efc55fa 布局修复的历史不变性审计，锁旧 SHA/属性/CSS且会重写其 report.json，已移出默认回归。未来合法开发改变 bundle 后，该历史审计失败是预期现象；旧 before-contract.json/report.json 原样保留。
 
 ## 仍留在历史分支的资料
 

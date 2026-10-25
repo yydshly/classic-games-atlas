@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "scope": "source provenance, dependency graph and byte identity; not browser/UI acceptance",
+  "scope": "independent JS/CSS byte rebuild and source/dependency checks; full HTML comparison retains the checked-in markup shell and does not independently verify page design",
   "esbuildVersion": "0.25.12",
   "origins": [
     {
@@ -164,5 +164,22 @@
   "runtimeHTMLNotModified": true,
   "formalPathsAndQuietR3NotModified": true,
   "browserOrHTTPAttempted": false,
-  "realUIAcceptance": "pending separate desktop task"
+  "recordType": "historical source-concentration checks at candidate 0f777103083d6b19b248093e136ee3cbe27c7073; original counts/hashes retained",
+  "realUIAcceptanceAtTimeOfRecord": "pending separate desktop task",
+  "currentUIEvidence": {
+    "runtimeCommit": "efc55fa253cbc0bc1435a4b69537bcc55d23a95b",
+    "source": "parent supplied actual desktop browser verification",
+    "passedLayout": [
+      "390x844 all scroll positions do not obscure chart",
+      "1280x720 initial full chart and main controls",
+      "820x740 disclosure and pause"
+    ],
+    "stillUnverified": [
+      "second/third bay actual browser completion",
+      "physical phone controls",
+      "complete UI acceptance"
+    ]
+  },
+  "historicalStatisticsNote": "forecastAudit.collision=326 counted all non-safe classifications, not 326 actual collisions; current audit prints nonSafe",
+  "currentRegression": "regression-status.json; npm test is read-only and no longer invokes historical layout SHA audit"
 }

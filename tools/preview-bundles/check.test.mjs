@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtemp, mkdir, copyFile, readFile, writeFile, rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {check, configs, repositoryRoot} from './build.mjs';
+import {check, rebuild, configs, repositoryRoot} from './build.mjs';
 
 async function fixture(action) {
   const root = await mkdtemp(path.join(tmpdir(), 'atlas-preview-check-test-'));
@@ -48,6 +48,12 @@ test('a changed source limit is caught instead of accepting a stale runtime bund
 test('a changed runtime bundle is caught independently of matching source files', async () => fixture(async root => {
   await replace(root, 'experiments/windowlife-request-preview/index.html', 'var WindowlifeRequestPreview', 'var ChangedPreview');
   await assert.rejects(check(root), /windowlife-request: inline bundle differs from source/);
+}));
+test('an intentional source edit with a matching regenerated bundle is accepted without a historical SHA lock', async () => fixture(async root => {
+  await replace(root, 'experiments/inlet-deadline-preview/source/levels.mjs', '练习一条安全落脚的织线', '练习本湾安全落脚的织线');
+  const built=await rebuild(root);
+  for(const page of built.results)await writeFile(path.join(root,page.runtimePath),page.html);
+  assert.equal((await check(root)).passed,true);
 }));
 test('restoring the sticky map overlay in runtime CSS is caught', async () => fixture(async root => {
   await replace(root, 'experiments/inlet-deadline-preview/index.html', '.play-console .telemetry{order:1;position:static;', '.play-console .telemetry{order:1;position:sticky;');
