@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { CAMPAIGNS } from '../experiments/border-letters/world.mjs';
-import { continueTurn, endTurn, forage, fortify, isSupplied, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
+import { continueTurn, endTurn, forage, fortify, goalOf, isSupplied, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
 
 function action(state, fn, ...args) {
   const result = fn(state, ...args);
@@ -74,6 +75,21 @@ test('sixth mission requires the announced relay transmission without banning th
     [march,'courier','beacon'],[forage,'camp'],E,E]);
   assert.equal(northWithRelay.metrics.marches, 4);
   assert.equal(northWithRelay.metrics.spent, 8);
+});
+test('an old sixth-mission turn-four save keeps its winnable original objective', () => {
+  const record = JSON.parse(readFileSync(new URL('./fixtures/border-stage6-old-active.json', import.meta.url), 'utf8'));
+  const old = record.state, before = JSON.stringify(old);
+  assert.equal(validSave(old), true);
+  assert.equal(old.goalVersion, undefined);
+  assert.deepEqual(goalOf(old).courierVisits, ['outpost', 'beacon']);
+  const won = action(action(old, forage, 'camp'), endTurn);
+  assert.equal(won.phase, 'won');
+  assert.equal(JSON.stringify(old), before);
+  const fresh = newGame(5);
+  assert.equal(fresh.goalVersion, 2);
+  assert.deepEqual(goalOf(fresh).courierVisits, ['relay', 'outpost', 'beacon']);
+  assert.equal(validSave({ ...fresh, goalVersion: 3 }), false);
+  assert.equal(validSave({ ...newGame(0), goalVersion: 2 }), false);
 });
 test('seventh mission can rush the courier or guard each announced raid in sequence', () => {
   const rush = play(6, [[march,'courier','granary'],[march,'courier','ford'],E,

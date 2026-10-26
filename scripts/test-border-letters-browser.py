@@ -128,6 +128,27 @@ with sync_playwright() as p:
     old_sixth_page.locator('[data-result="next"]').click()
     assert old_sixth_page.locator('#chapter-title').inner_text().startswith('七')
     old_sixth_context.close()
+    old_active_raw = (ROOT / 'tests/fixtures/border-stage6-old-active.json').read_text().strip()
+    old_active_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    old_active_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(old_active_raw) + ');')
+    old_active_page = old_active_context.new_page()
+    old_active_page.goto(base + '/experiments/border-letters/')
+    assert '旧版存档沿用原目标' in old_active_page.locator('#chapter-intro').inner_text()
+    assert '驿骑到过 远哨 ✓、北望 ✓' in old_active_page.locator('#status').inner_text()
+    assert old_active_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == old_active_raw
+    assert old_active_page.evaluate('document.documentElement.scrollWidth') <= 390
+    old_active_page.screenshot(path=str(OUT / '390-sixth-legacy-active.png'), full_page=True)
+    old_active_page.locator('[data-action="pause"]').click()
+    do(old_active_page, 'forage', at='camp')
+    do(old_active_page, 'end')
+    assert '来信送达' in old_active_page.locator('#result').inner_text()
+    old_active_page.locator('[data-result="retry"]').click()
+    old_active_page.locator('#restart-dialog button[value="restart"]').click()
+    old_active_page.wait_for_function('document.querySelector("#status").textContent.includes("驿骑到过 烽台、远哨、北望")')
+    assert '烽台传令' in old_active_page.locator('#chapter-intro').inner_text()
+    assert '驿骑到过 烽台、远哨、北望' in old_active_page.locator('#status').inner_text()
+    assert old_active_page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.goalVersion') == 2
+    old_active_context.close()
     corrupt_five = json.loads(legacy_raw)
     corrupt_five['state']['food'] = -1
     corrupt_context = browser.new_context(viewport={'width': 390, 'height': 844})
@@ -403,6 +424,6 @@ with sync_playwright() as p:
     assert '存粮 8' in legacy.locator('#supply-badge').inner_text()
     legacy.close()
     assert not errors, errors
-    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign, sixth north-road counterexample and alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, old fifth and sixth win saves, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
+    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign, sixth north-road counterexample and alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, old fifth and sixth win/active saves, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
     browser.close()
 server.shutdown()

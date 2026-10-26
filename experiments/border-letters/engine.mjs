@@ -1,10 +1,11 @@
-import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-2';
+import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-3';
 
 const clone = value => structuredClone(value);
 export function newGame(stage = 0) {
   if (!Number.isInteger(stage) || stage < 0 || stage >= CAMPAIGNS.length) throw new Error('关卡无效');
   const level = CAMPAIGNS[stage];
   return { version: 1, stage, turn: 1, orders: level.orders, food: level.food,
+    ...(stage === 5 ? { goalVersion: 2 } : {}),
     ownership: Object.fromEntries(NODES.map(place => [place.id, ['camp', 'granary'].includes(place.id) ? 'ally' : 'neutral'])),
     garrison: {}, units: [{ id: 'guard', role: 'guard', name: '谷卫', at: level.start?.guard || 'granary', fort: 0 },
       { id: 'courier', role: 'courier', name: '驿骑', at: level.start?.courier || 'camp', fort: 0 }],
@@ -13,6 +14,12 @@ export function newGame(stage = 0) {
     metrics: { spent: 0, marches: 0, harvests: 0, guarded: 0 } };
 }
 export const levelOf = state => CAMPAIGNS[state.stage];
+export function goalOf(state) {
+  const goal = levelOf(state).goal;
+  // Existing sixth-mission saves have no marker; keep their original two-stop objective.
+  return state.stage === 5 && state.goalVersion !== 2
+    ? { ...goal, courierVisits: ['outpost', 'beacon'] } : goal;
+}
 export const unitOf = (state, id) => state.units.find(unit => unit.id === id);
 export function isSupplied(state, at) {
   const seen = new Set(['camp']);
@@ -70,7 +77,7 @@ export function undo(state) {
   return { ok: true, state: next };
 }
 export function goalMet(state) {
-  const goal = levelOf(state).goal;
+  const goal = goalOf(state);
   return goal.hold.every(at => state.ownership[at] === 'ally') &&
     (goal.courierVisits || []).every(at => state.visits.includes(at));
 }
@@ -109,7 +116,8 @@ export function continueTurn(state) {
   return { ok: true, state: next };
 }
 export function validSave(value) {
-  if (!value || value.version !== 1 || !Number.isInteger(value.stage) || value.stage < 0 || value.stage >= CAMPAIGNS.length) return false;
+  if (!value || value.version !== 1 || !Number.isInteger(value.stage) || value.stage < 0 || value.stage >= CAMPAIGNS.length ||
+    (value.goalVersion !== undefined && (value.stage !== 5 || value.goalVersion !== 2))) return false;
   if (!Number.isInteger(value.turn) || value.turn < 1 || value.turn > levelOf(value).maxTurn ||
     !Number.isInteger(value.orders) || value.orders < 0 || value.orders > levelOf(value).orders ||
     !Number.isFinite(value.food) || value.food < 0 || value.food > 999 ||

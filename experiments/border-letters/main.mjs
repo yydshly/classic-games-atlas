@@ -1,5 +1,5 @@
-import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-2';
-import { continueTurn, endTurn, forage, fortify, goalMet, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-2';
+import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-3';
+import { continueTurn, endTurn, forage, fortify, goalMet, goalOf, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-3';
 
 const KEY = 'atlas.border-letters.v1';
 const $ = id => document.getElementById(id);
@@ -49,7 +49,9 @@ function startStage(index) {
 function retryStage() { state = newGame(state.stage); chosenUnit = 'guard'; chosenNode = 'granary'; feedback = ''; persist(); render(); }
 function render() {
   const level = CAMPAIGNS[state.stage];
-  $('chapter-title').textContent = level.name; $('chapter-intro').textContent = level.intro;
+  const legacySixth = state.stage === 5 && state.goalVersion !== 2;
+  const goal = goalOf(state);
+  $('chapter-title').textContent = level.name; $('chapter-intro').textContent = legacySixth ? level.legacyIntro : level.intro;
   $('chapter-pick').innerHTML = CAMPAIGNS.map((_, i) => `<button type="button" data-stage="${i}" class="${i === state.stage ? 'current' : ''}" ${i > unlocked ? 'disabled' : ''} aria-label="第${i + 1}役${i > unlocked ? '，未解锁' : ''}" aria-current="${i === state.stage ? 'step' : 'false'}">${i + 1}</button>`).join('');
   $('turn-badge').textContent = state.settlementPending ? `第 ${state.turn - 1} 回合已结算 · 待继续` : `第 ${state.turn} / ${level.maxTurn} 回合 · ${state.orders} 命令`;
   $('supply-badge').textContent = `存粮 ${state.food}`;
@@ -59,10 +61,10 @@ function render() {
     const enemy = state.ownership[place.id] === 'enemy' ? `敌 ${state.garrison[place.id]}` : '';
     return `<button type="button" class="place ${state.ownership[place.id]} ${chosenNode === place.id ? 'selected' : ''}" style="left:${place.x}%;top:${place.y}%;--terrain:${place.color}" data-node="${place.id}" aria-pressed="${chosenNode === place.id}" aria-label="${place.name}，${place.terrain}，${state.ownership[place.id] === 'ally' ? '我方' : state.ownership[place.id] === 'enemy' ? '敌方' : '未控'}${occupants ? '，驻有' + occupants : ''}"><strong>${place.name}</strong><small>${place.terrain}</small>${occupants || enemy ? `<span class="marker">${occupants || enemy}</span>` : ''}</button>`;
   }).join('');
-  const hold = level.goal.hold.map(at => `${node(at).name}${state.ownership[at] === 'ally' ? ' ✓' : ''}`).join('、');
-  const visit = (level.goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
-  const oldSixthWin = state.stage === 5 && state.phase === 'won' && !state.visits.includes('relay');
-  $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${oldSixthWin ? '<br>旧版第六役完赛记录按当时目标保留。' : ''}${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
+  const hold = goal.hold.map(at => `${node(at).name}${state.ownership[at] === 'ally' ? ' ✓' : ''}`).join('、');
+  const visit = (goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
+  const oldGoalNote = legacySixth && state.phase === 'won' ? '旧版第六役完赛记录按当时目标保留。' : legacySixth && state.phase === 'playing' ? '旧版进行中存档沿用原目标；重试本役启用烽台传令。' : '';
+  $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${oldGoalNote ? `<br>${oldGoalNote}` : ''}${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
   $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · ${unit.role === 'guard' ? '战/守力 3' : '战/守力 1'}</strong><small>在${node(unit.at).name} · 驻防 +${unit.role === 'guard' ? 2 : 1}${unit.fort ? '（已驻防）' : ''}</small></button>`).join('');
   const unit = unitOf(state, chosenUnit), adjacent = neighbors(unit.at).includes(chosenNode);
   const terrainCost = adjacent ? grainCost(unit.role, chosenNode) : null;
