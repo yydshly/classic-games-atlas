@@ -1,14 +1,14 @@
-import {step,STEP,hint,getLevel,LEVELS} from './engine.mjs?v=dawn-slice-3';
-import {Renderer} from './view.mjs?v=dawn-slice-3';
-import {attachInput} from './input.mjs?v=dawn-slice-3';
-import {openStore} from './storage.mjs?v=dawn-slice-3';
+import {step,STEP,hint,getLevel,LEVELS} from './engine.mjs?v=dawn-slice-4';
+import {Renderer} from './view.mjs?v=dawn-slice-4';
+import {attachInput} from './input.mjs?v=dawn-slice-4';
+import {openStore} from './storage.mjs?v=dawn-slice-4';
 const $=s=>document.querySelector(s),store=openStore(()=>window.localStorage),game=store.load(),renderer=new Renderer($('#world'));let accumulator=0,last=0,controller,recapSignature='';
 function save(){store.save(game);status();}
 function status(){$('#save-status').textContent=store.message;$('#save-retry').hidden=!store.problem;$('#save-retry').textContent=store.protected?'建立新存档':'重试保存';}
 function render(){const level=getLevel(game),won=game.phase==='won',final=won&&game.stageIndex===LEVELS.length-1;renderer.draw(game);
-  $('#chapter').textContent=`本阶段 ${game.stageIndex+1}/${LEVELS.length} · ${level.title}`;$('#intro-title').textContent=level.title;$('#intro-goal').textContent=level.goalText;$('#intro-choice').textContent=level.choice;$('#entry-form').textContent=`重试保留入关${game.entryBig?'大':'小'}体型，已完成的关卡不丢。`;
+  $('#chapter').textContent=`本阶段 ${game.stageIndex+1}/${LEVELS.length} · ${level.title}${game.layoutRevision===1?' · 原路线存档':''}`;$('#intro-title').textContent=level.title;$('#intro-goal').textContent=level.goalText;$('#intro-choice').textContent=level.choice;$('#entry-form').textContent=`${game.layoutRevision===1?'原路线存档，续关和重试沿原地形。':''}重试保留入关${game.entryBig?'大':'小'}体型，已完成的关卡不丢。`;
   $('#intro').hidden=game.phase!=='ready';$('#paused').hidden=game.phase!=='paused';$('#pause').disabled=!['playing','paused'].includes(game.phase);$('#retry').disabled=game.phase==='ready';$('#pause').textContent=game.phase==='paused'?'继续 P':'暂停 P';$('#form').textContent=game.player.big?'大体型 · 可承受一次侧碰':game.player.pending?'晨露果已接住':'小体型 · 避开侧碰';$('#seed-count').textContent=`晨光籽 ${game.seeds.length} / ${level.seeds.length}`;$('#progress').textContent=`到站 ${Math.min(100,Math.floor(game.player.x/level.goal*100))}%`;$('#hint').textContent=hint(game);
-  $('#result').hidden=!['failed','won'].includes(game.phase);$('#result-title').textContent=won?(game.stageIndex===0?'晨钟响了 · 第一关完成':final?'到达风铃驿 · 本阶段走通':'到达渠尾小亭 · 第二关完成'):'这一趟停在这里';$('#result-text').textContent=hint(game);$('#result-retry').textContent='重试本关';$('#next').hidden=!won||final;$('#next').textContent=final?'':`下一关 · ${LEVELS[game.stageIndex+1]?.title||''}`;$('#restart').hidden=!final;$('#review-summary').hidden=!final;
+  $('#result').hidden=!['failed','won'].includes(game.phase);$('#result-title').textContent=won?(game.stageIndex===0?'晨钟响了 · 第一关完成':final?'到达风铃驿 · 本阶段走通':'到达渠尾小亭 · 第二关完成'):'这一趟停在这里';$('#result-text').textContent=hint(game)+(final&&game.layoutRevision===1?' 这是原路线记录；确认下方“体验石洲路线”后，从第一关开始新版并替换本作三关记录。':'');$('#result-retry').textContent='重试本关';$('#next').hidden=!won||final;$('#next').textContent=final?'':`下一关 · ${LEVELS[game.stageIndex+1]?.title||''}`;$('#restart').hidden=!final;$('#restart').textContent=game.layoutRevision===1?'从头重走 · 体验石洲路线':'从头重走阶段';$('#review-summary').hidden=!final;
   const signature=JSON.stringify(game.journey.completed);if(signature!==recapSignature){recapSignature=signature;$('#recap').replaceChildren(...game.journey.completed.map(r=>{const li=document.createElement('li');li.textContent=`${r.stageIndex+1}. ${r.title} · ${(r.ticks/120).toFixed(1)}秒 · 踩中${r.stats.stomps}次 · 果实${r.stats.fruit} · 籽${r.seeds}/${LEVELS[r.stageIndex].seeds.length} · 重试${r.retries}次 · ${r.big?'大':'小'}体型到站`;return li;}));}status();}
 
 function change(){accumulator=0;last=0;save();}
