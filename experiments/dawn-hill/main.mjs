@@ -1,7 +1,7 @@
-import {step,STEP,hint} from './engine.mjs?v=dawn-slice-1';
-import {Renderer} from './view.mjs?v=dawn-slice-1';
-import {attachInput} from './input.mjs?v=dawn-slice-1';
-import {openStore} from './storage.mjs?v=dawn-slice-1';
+import {step,STEP,hint} from './engine.mjs?v=dawn-slice-2';
+import {Renderer} from './view.mjs?v=dawn-slice-2';
+import {attachInput} from './input.mjs?v=dawn-slice-2';
+import {openStore} from './storage.mjs?v=dawn-slice-2';
 const $=s=>document.querySelector(s),store=openStore(()=>window.localStorage),game=store.load(),renderer=new Renderer($('#world'));let accumulator=0,last=0,controller;
 function save(){store.save(game);status();}
 function status(){$('#save-status').textContent=store.message;$('#save-retry').hidden=!store.problem;$('#save-retry').textContent=store.protected?'建立新存档':'重试保存';}

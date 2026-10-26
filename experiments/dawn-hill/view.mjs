@@ -1,4 +1,4 @@
-import {LEVEL,body,hint} from './engine.mjs?v=dawn-slice-1';
+import {LEVEL,body,hint} from './engine.mjs?v=dawn-slice-2';
 const C={ink:'#263e41',grass:'#65805a',lip:'#abc78b',soil:'#b3825a',stone:'#ceb68e',cream:'#fff4d7',teal:'#277f82',dark:'#1d555f',gold:'#eab94f'};
 export class Renderer{
   constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');if(!this.ctx)throw Error('画布不可用');this.w=960;this.h=500;this.camera=0;}

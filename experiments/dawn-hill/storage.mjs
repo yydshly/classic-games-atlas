@@ -1,4 +1,4 @@
-import {createGame,LEVEL} from './engine.mjs?v=dawn-slice-1';
+import {createGame,LEVEL} from './engine.mjs?v=dawn-slice-2';
 export const SAVE_KEY='classic-games-atlas:dawn-hill:single:v1';
 const finite=(n,min,max)=>typeof n==='number'&&Number.isFinite(n)&&n>=min&&n<=max,integer=(n,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=0&&n<=max;
 const kinds=new Set(['grow','block','jump','grow-wait','shrink','fruit','side','stomp','seed','fall','finish']);

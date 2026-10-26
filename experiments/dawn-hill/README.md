@@ -1,6 +1,6 @@
 # 晨丘跃行 · 晨露坡首关
 
-本地原型 `dawn-slice-1`，尚未公开保存、部署或浏览器验收。图鉴参考项为 `super-mario-bros`。原创角色小岚、翻叶虫、晨露果、晨丘地图和程序绘图；不使用任天堂图像、声音、关卡或ROM，不冒充官方复刻。
+当前首关修正预览 `dawn-slice-2`。首版已随main `aecdf093a91968b85a63def00269e3195bc38c89` 发布；本轮修正画布焦点键盘过滤并统一缓存版本，准备部署后复验。原生键盘与完整首关尚未验收。图鉴参考项为 `super-mario-bros`。原创角色小岚、翻叶虫、晨露果、晨丘地图和程序绘图；不使用任天堂图像、声音、关卡或ROM，不冒充官方复刻。
 
 玩家要走到右侧晨钟亭。价值在脚下的行动：走或跑影响水平距离，跳键持续时间改变高度，空中能收住或反向修正；下降踩虫和侧面碰虫结果不同。可以走低处，也可多跳几次登高取晨光籽和备用强化。收集不是钥匙，未收齐照样完成；等待不会替玩家过关。
 
@@ -31,6 +31,6 @@ node scripts/verify-dawn-hill.mjs
 node tools/dawn-hill/export.mjs /workspace/scratch/dawn-hill/pixels-final
 ```
 
-默认检查只读；只有显式 `record-routes.mjs --write` 生成文字路线夹具，export只写指定离线目录。没有运行bundle需要回写：HTML引用main、CSS，模块依赖统一 `v=dawn-slice-1`，应用测试用既有esbuild临时内存打包真实main。
+默认检查只读；只有显式 `record-routes.mjs --write` 生成文字路线夹具，export只写指定离线目录。没有运行bundle需要回写：HTML引用main、CSS，模块依赖统一 `v=dawn-slice-2`，应用测试用既有esbuild临时内存打包真实main。
 
 存档只使用 `classic-games-atlas:dawn-hill:single:v1`，不读其他游戏的key。缺档从ready开始；刷新活动现场先暂停。受损/拒读原档保护不覆盖，另建须确认；写满保留上次字节并提供重试。快照有大小/字段边界，不按tick重放，不宣称防玩家改档。完整证据与局限见 [QA记录](../../docs/dawn-hill-qa/README.md)。
