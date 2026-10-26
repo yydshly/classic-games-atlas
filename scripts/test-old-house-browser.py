@@ -2,7 +2,7 @@
 Never sets game state, inventory, flags, enemy health, or completion status.
 Screenshots and reports remain under ignored .local/old-house-qa/.
 """
-import json, math, subprocess
+import json, math, subprocess, sys, hashlib
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -10,6 +10,107 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.local/old-house-qa'
 OUT.mkdir(parents=True,exist_ok=True)
 BASE='http://127.0.0.1:4174/'
+
+def result_actions_only():
+    """Isolated completed-save UI fixtures, not new human/gameplay completion evidence."""
+    fixture_source="""
+import assert from 'node:assert/strict';
+import {modelDriver,route} from './scripts/old-house-routes.mjs';
+import {createGame,tick,snapshot} from './experiments/old-house-echoes/engine.mjs';
+import {persist} from './experiments/old-house-echoes/storage.mjs';
+const completed=modelDriver();await route(completed,'bypass');
+const failed=modelDriver();await failed.go(10,2.3);await failed.door('corridor');
+for(let i=0;i<2400&&failed.state().mode!=='lost';i++)tick(failed.state(),{});
+assert.equal(failed.state().mode,'lost');
+function bytes(s,checkpoint){let raw;assert(persist({setItem(k,v){raw=v;}},s,checkpoint));return raw;}
+console.log(JSON.stringify({won:bytes(completed.state(),completed.recorded),lost:bytes(failed.state(),snapshot(createGame()))}));
+"""
+    fixtures=json.loads(subprocess.check_output(['node','--input-type=module','-e',fixture_source],cwd=ROOT,text=True))
+    key='classic-games-atlas:old-house-echoes:rescue:v1'
+    evidence={'scope':'Local Chromium geometry and actual coordinate/locator clicks plus keyboard. Valid engine-generated completed/lost save fixtures; no new human completion, native-device, combat, capacity or held-touch acceptance claim.','cases':[]}
+    def saved(page):return page.evaluate('(key)=>localStorage.getItem(key)',key)
+    def state(page):return json.loads(page.locator('canvas').get_attribute('data-snapshot'))
+    def digest(raw):return hashlib.sha256(raw.encode()).hexdigest()
+    with sync_playwright() as p:
+        browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+        for width,height in [(390,844),(1440,1100)]:
+            for terminal in ['won','lost']:
+                raw=fixtures[terminal];context=browser.new_context(viewport={'width':width,'height':height});page=context.new_page();page.set_default_timeout(10000);errors=[];hits=[];requests=[]
+                context.add_init_script("if(localStorage.getItem("+json.dumps(key)+")===null){localStorage.setItem("+json.dumps(key)+","+json.dumps(raw)+");localStorage.setItem('qa-unrelated-save','unchanged');}")
+                page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda req:requests.append(req.url))
+                def console(msg):
+                    if msg.text.startswith('RESULT_POINTER:'):hits.append(json.loads(msg.text[len('RESULT_POINTER:'):]))
+                page.on('console',console)
+                def open_result():
+                    page.goto(BASE+'experiments/old-house-echoes/');page.locator('#start').click();assert state(page)['mode']==terminal;assert saved(page)==raw
+                    assert any('/main.mjs?v=echoes-slice-1-result-3' in url for url in requests) and any('/style.css?v=echoes-slice-1-result-3' in url for url in requests)
+                    page.evaluate("document.addEventListener('pointerdown',e=>{const t=e.target.closest('a,button');console.log('RESULT_POINTER:'+JSON.stringify(t?{tag:t.tagName,text:t.textContent.trim(),action:t.dataset.resultAction||null,returned:t.dataset.resultReturn||null,cancel:t.dataset.cancelReset||null,confirm:t.dataset.confirmReset||null}:null));},true)")
+                def coordinate_click(selector,fx=.5,fy=.5):
+                    el=page.locator(selector);el.scroll_into_view_if_needed();box=el.bounding_box();x=box['x']+box['width']*fx;y=box['y']+box['height']*fy
+                    hit=el.evaluate('(el,p)=>{const t=document.elementFromPoint(p.x,p.y);return t===el||el.contains(t)}',{'x':x,'y':y});assert hit,(selector,box,x,y)
+                    with page.expect_console_message(predicate=lambda msg:msg.text.startswith('RESULT_POINTER:'),timeout=3000) as pointer:
+                        page.mouse.click(x,y)
+                    return json.loads(pointer.value.text[len('RESULT_POINTER:'):])
+                def unchanged():
+                    assert saved(page)==raw;assert state(page)['mode']==terminal
+                    assert page.evaluate("localStorage.getItem('qa-unrelated-save')")=='unchanged'
+                open_result();initial=state(page)
+                geometry=page.locator('#panel-content').evaluate("""el=>{
+const nodes=[...el.querySelectorAll('.result-return,.result-retry-actions button')];
+return nodes.map(n=>{const b=n.getBoundingClientRect();return {text:n.textContent,rect:{x:b.x,y:b.y,width:b.width,height:b.height},fragments:[...n.getClientRects()].length};});}
+""")
+                assert len(geometry)==3 and all(g['fragments']==1 and g['rect']['height']>=48 for g in geometry)
+                link,retry,restart=[g['rect']for g in geometry]
+                assert retry['y']-link['y']-link['height']>=19
+                if width==390:assert restart['y']-retry['y']-retry['height']>=11
+                else:assert restart['x']-retry['x']-retry['width']>=11
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+                page.screenshot(path=str(OUT/f'result-hit-after-{terminal}-{width}.png'),full_page=True)
+                cancellations=[]
+                for action in ['retry','restart']:
+                    selector='[data-result-action="'+action+'"]'
+                    for method in ['cancel-button','Escape','close-button','keyboard-cancel']:
+                        actual=coordinate_click(selector);assert actual['action']==action and not actual['returned'];assert state(page)==initial;unchanged()
+                        title=page.locator('#panel-title').inner_text();assert title==('重试本次救援'if action=='retry'else'重新开始救援')
+                        assert page.locator('[data-confirm-reset]').is_visible();assert page.locator('[data-cancel-reset]').is_visible()
+                        cancel_box=page.locator('[data-cancel-reset]').bounding_box();confirm_box=page.locator('[data-confirm-reset]').bounding_box();assert min(cancel_box['height'],confirm_box['height'])>=48
+                        if width==390:assert confirm_box['y']-cancel_box['y']-cancel_box['height']>=11
+                        else:assert confirm_box['x']-cancel_box['x']-cancel_box['width']>=11
+                        if terminal=='won' and method=='cancel-button':page.screenshot(path=str(OUT/f'result-confirm-{action}-{width}.png'),full_page=True)
+                        if method=='cancel-button':assert coordinate_click('[data-cancel-reset]')['cancel']=='yes'
+                        elif method=='Escape':page.keyboard.press('Escape')
+                        elif method=='close-button':coordinate_click('#close-panel')
+                        else:
+                            assert page.locator('[data-cancel-reset]').evaluate('el=>el===document.activeElement')
+                            page.keyboard.press('Tab');assert page.locator('[data-confirm-reset]').evaluate('el=>el===document.activeElement')
+                            page.keyboard.press('Shift+Tab');page.keyboard.press('Enter')
+                        unchanged();assert state(page)==initial;assert page.locator(selector).evaluate('el=>el===document.activeElement');cancellations.append(action+':'+method)
+                returned=[]
+                for fx,fy in [(.5,.5),(.5,.08),(.5,.92),(.02,.5),(.98,.5)]:
+                    actual=coordinate_click('[data-result-return]',fx,fy);assert actual['returned']=='yes' and actual['tag']=='A'
+                    page.wait_for_url(BASE+'#play');assert saved(page)==raw;returned.append({'point':[fx,fy],'actualPointerTarget':actual});open_result()
+                page.locator('[data-result-return]').click();page.wait_for_url(BASE+'#play');assert saved(page)==raw;open_result()
+                page.locator('[data-result-return]').focus();page.keyboard.press('Enter');page.wait_for_url(BASE+'#play');assert saved(page)==raw;open_result()
+                # The focused retry button still supports Enter; Enter on the default cancel is safe.
+                page.locator('[data-result-action="retry"]').focus();page.keyboard.press('Enter');assert page.locator('[data-cancel-reset]').evaluate('el=>el===document.activeElement');page.keyboard.press('Enter');unchanged()
+                assert not errors,errors
+                evidence['cases'].append({'viewport':[width,height],'terminal':terminal,'geometry':geometry,'coordinateReturns':returned,'locatorReturn':True,'keyboardReturnAndCancel':True,'cancellations':cancellations,'saveSha256BeforeAndAfter':digest(raw),'byteIdenticalSaveAndRecord':True,'mainAndStyleCacheKey':'echoes-slice-1-result-3','scriptErrors':errors})
+                context.close()
+        # A reset occurs only after the separate explicit confirmation, in isolated contexts.
+        for action in ['retry','restart']:
+            raw=fixtures['won'];context=browser.new_context(viewport={'width':390,'height':844});context.add_init_script('localStorage.setItem('+json.dumps(key)+','+json.dumps(raw)+');');page=context.new_page();page.goto(BASE+'experiments/old-house-echoes/');page.locator('#start').click()
+            page.locator('[data-result-action="'+action+'"]').click();assert saved(page)==raw and state(page)['mode']=='won'
+            confirm=page.locator('[data-confirm-reset]');box=confirm.bounding_box();x=box['x']+box['width']/2;y=box['y']+box['height']/2;assert confirm.evaluate('(el,p)=>document.elementFromPoint(p.x,p.y)===el',{'x':x,'y':y});page.mouse.click(x,y);current=state(page);assert current['mode']=='playing';assert current['room']==('duty'if action=='retry'else'hall');assert saved(page)!=raw
+            if action=='retry':
+                record=json.loads(raw)['checkpoint'];assert current['inventory']==record['inventory'] and current['stats']==record['stats']
+            evidence[action+'RequiresConfirmation']=True;context.close()
+        browser.close()
+    evidence['passed']=True;(OUT/'result-hit-regression.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'passed':True,'resultCases':len(evidence['cases']),'report':str(OUT/'result-hit-regression.json')},ensure_ascii=False))
+
+if '--result-actions-only' in sys.argv:
+    result_actions_only()
+    raise SystemExit
+
 TRACE="""
 import {modelDriver,route} from './scripts/old-house-routes.mjs';
 const all={};for(const style of ['clear','bypass']){const d=modelDriver(),trace=[];for(const key of ['go','door','interact','pack','combine','store','take','close','shoot','mark','checkpoint']){const fn=d[key];d[key]=async(...args)=>{trace.push([key,...args]);return fn.apply(d,args);};}await route(d,style);all[style]=trace;}console.log(JSON.stringify(all));
