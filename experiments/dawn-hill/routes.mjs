@@ -1,0 +1,15 @@
+// Bounded model-assisted QA. Only normal buttons from the actual starting state.
+// Observing positions is not a human input trace; raw inputs can be independently replayed.
+import {createGame,command,step} from './engine.mjs';
+export function runner(stride=1){if(![1,4].includes(stride))throw Error('QA stride outside bounded review');const game=createGame(),runs=[],observations=[];command(game,'start');
+ function advance(input={},count=1){for(let n=0;n<count;n++){if(game.phase!=='playing')break;const keys=JSON.stringify(input),last=runs.at(-1);if(last?.keys===keys)last.frames++;else runs.push({keys,frames:1});step(game,input);if(game.events.at(-1)?.kind==='shrink'&&game.events.at(-1).tick===game.tick)observations.push({label:'side-hit',game:structuredClone(game)});}}
+ function until(predicate,input={},limit=2400){for(let n=0;n<limit&&!predicate(game);n+=stride){if(game.phase!=='playing')throw Error('route stopped '+JSON.stringify({phase:game.phase,x:game.player.x,y:game.player.y,event:game.events.at(-1)}));advance(typeof input==='function'?input(game):input,stride);}if(!predicate(game))throw Error('route limit '+JSON.stringify(game.player));}
+ function record(label){observations.push({label,game:structuredClone(game)});}return {game,runs,observations,advance,until,record};}
+function walk(r,x){r.until(g=>g.player.x>=x,{right:true});r.advance({},24);}
+function hop(r,x,label){r.advance({});let n=0;r.until(g=>n>5&&g.player.grounded,g=>{n++;return {right:g.player.x<x-5,left:g.player.x>x+5,run:true,jump:n<65};},200);r.advance({},20);if(label)r.record(label);}
+export function takeFruit(r){walk(r,362);r.advance({jump:true},14);r.record('head-hit');r.advance({jump:true},25);r.record('fruit-emerging');r.advance({jump:true},31);r.record('fruit-on-block');walk(r,421);r.until(g=>g.player.big,{},500);r.record('grown');}
+function stomp(r,index){r.until(g=>g.enemies[index].x-g.player.x<145,{right:true});r.advance({});let n=0;r.until(g=>!g.enemies[index].alive,g=>{n++;const e=g.enemies[index],p=g.player;return {right:p.x<e.x-4,left:p.x>e.x+4,jump:n<65};},160);r.record('stomp-'+index);r.until(g=>g.player.grounded,{},150);r.advance({},20);}
+function cross(r,from,to){walk(r,from);hop(r,to);}
+export function lowerRoute(stride=1){const r=runner(stride);takeFruit(r);stomp(r,0);cross(r,905,1090);walk(r,1095);hop(r,1200,'low-step');
+  r.until(g=>g.player.x>=1450,{right:true});r.record('lower-orchard');r.until(g=>g.enemies[2].x-g.player.x<128,{right:true});hop(r,r.game.enemies[2].x,'after-third');cross(r,1850,2055);r.until(g=>g.phase==='won',{right:true});r.record('arrived');return r;}
+export function upperRoute(stride=1){const r=runner(stride);takeFruit(r);stomp(r,0);cross(r,905,1090);walk(r,1095);hop(r,1200,'first-terrace');hop(r,1330,'middle-terrace');hop(r,1480,'upper-choice');walk(r,1510);r.advance({jump:true},70);r.advance({});walk(r,1570);r.advance({},100);r.record('upper-reward');hop(r,1740,'upper-descent');cross(r,1850,2055);r.until(g=>g.phase==='won',{right:true});r.record('arrived');return r;}
