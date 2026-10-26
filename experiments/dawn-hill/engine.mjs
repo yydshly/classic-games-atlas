@@ -1,4 +1,4 @@
-import {LEVEL,STEP} from './level.mjs?v=dawn-slice-1';
+import {LEVEL,STEP} from './level.mjs?v=dawn-slice-2';
 export {LEVEL,STEP};
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 export const body=(p,big=p.big)=>({x:p.x-(big?13:11),y:p.y-(big?48:30),w:big?26:22,h:big?48:30});
