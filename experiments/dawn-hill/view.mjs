@@ -1,11 +1,11 @@
-import {getLevel,body} from './engine.mjs?v=dawn-slice-5';
+import {getLevel,body,solids} from './engine.mjs?v=dawn-slice-6';
 const C={ink:'#263e41',grass:'#65805a',lip:'#abc78b',soil:'#b3825a',stone:'#ceb68e',cream:'#fff4d7',teal:'#277f82',dark:'#1d555f',gold:'#eab94f'};
 export class Renderer{
   constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');if(!this.ctx)throw Error('画布不可用');this.w=960;this.h=500;this.camera=0;}
   fit(w,h,dpr=1){this.w=Math.max(240,w);this.h=Math.max(240,h);this.dpr=Math.min(dpr,1.5);this.canvas.width=Math.round(this.w*this.dpr);this.canvas.height=Math.round(this.h*this.dpr);}
   draw(g){const level=getLevel(g),c=this.ctx,w=this.w,h=this.h,W=Math.max(430,w/h*430),scale=w/W,H=h/scale,cam=Math.max(0,Math.min(level.width-W,g.player.x-W*.34));this.camera=cam;this.worldWidth=W;
     c.setTransform(this.dpr,0,0,this.dpr,0,0);c.clearRect(0,0,w,h);c.save();c.scale(scale,scale);
-    const palette=({morning:['#bcd8d4','#f9e4bd','#f8f0d7'],orchard:['#b2d0c6','#e0e4bb','#f3e5c9'],evening:['#bfc3d3','#f0c3a8','#f6debc'],grain:['#cdd5ba','#f4dfae','#f7e8c4'],watch:['#b7c9d5','#d9d9ce','#f0e5cc'],courtyard:['#d9c6c4','#f4d4ae','#f7e8c7']})[level.theme];
+    const palette=({morning:['#bcd8d4','#f9e4bd','#f8f0d7'],orchard:['#b2d0c6','#e0e4bb','#f3e5c9'],evening:['#bfc3d3','#f0c3a8','#f6debc'],grain:['#cdd5ba','#f4dfae','#f7e8c4'],watch:['#b7c9d5','#d9d9ce','#f0e5cc'],courtyard:['#d9c6c4','#f4d4ae','#f7e8c7'],brick:['#c9d9cc','#f4ddbc','#f7e8c9'],arcade:['#bdcfd7','#dce5d1','#f0e6cf'],kiln:['#cec4d2','#edc2a6','#f8dfbb']})[level.theme];
     const sky=c.createLinearGradient(0,0,0,H);sky.addColorStop(0,palette[0]);sky.addColorStop(.7,palette[1]);sky.addColorStop(1,palette[2]);c.fillStyle=sky;c.fillRect(0,0,W,H);c.translate(0,H-500);
     const ellipse=(x,y,rx,ry,color)=>{c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();};
     ellipse(W*.76-cam*.04,125,43,43,'#fff0bb');
@@ -19,11 +19,18 @@ export class Renderer{
     for(const x of [130,210,520,850,1090,1850,2110]){if(x<cam-30||x>cam+W+30)continue;c.strokeStyle='#63845b';c.lineWidth=2;c.beginPath();c.moveTo(x,420);c.lineTo(x+3,408);c.stroke();ellipse(x+3,406,4,3,x%3?'#eac784':'#f4e0af');}
     if(g.stageIndex===0){this.sign(220,418,'短按 · 长按');this.sign(830,418,'留意断口');this.sign(1090,418,'高路有奖励');}else if(g.stageIndex===1){this.sign(315,418,'上走 · 下取果');this.sign(680,233,'渠上步道');this.sign(1850,348,'渠尾在右');}else if(g.stageIndex===2){this.sign(270,418,'台上有巡逻');if(g.layoutRevision===2){this.sign(1430,418,'落洲再跳');this.sign(1514,233,'直越石洲');}else this.sign(1130,418,'落稳 · 再跳');this.sign(2140,418,'风铃在右');}
     if(g.stageIndex===3){this.sign(245,418,'阶梯可停稳');this.sign(920,418,'松跳 · 落稳');this.sign(1550,418,'出棚后长跳');const roof=level.terrain.find(s=>s.id==='low-canopy');c.strokeStyle='#9d825d';c.lineWidth=3;c.beginPath();c.moveTo(roof.x+8,roof.y+roof.h-1);c.lineTo(roof.x+roof.w-8,roof.y+roof.h-1);c.stroke();for(const x of [135,230,1860]){c.strokeStyle='#9b9762';c.lineWidth=2;c.beginPath();c.moveTo(x,420);c.lineTo(x+2,394);c.stroke();ellipse(x+2,397,3,8,'#d2b76d');}}
-    else if(g.stageIndex===4){this.sign(410,363,'先看脚印');this.sign(1035,418,'看清再上台');this.sign(1900,418,'看方向再跳');for(const e of g.enemies){for(let x=e.left;x<=e.right;x+=23){ellipse(x,e.y-1,3,1.4,'#8c775d');ellipse(x+6,e.y-3,2,1.2,'#8c775d');}ellipse(e.right,e.y-1,3,1.4,'#8c775d');ellipse(e.right-6,e.y-3,2,1.2,'#8c775d');}}
+    else if(g.stageIndex===4){this.sign(410,363,'先看脚印');this.sign(1035,418,'看清再上台');this.sign(1900,418,'看方向再跳');
+      // Outlined soles stay legible against both the grass lip and stone; larger end prints mark the real turn bounds.
+      const sole=(x,y,rx,ry)=>{ellipse(x,y,rx+1,ry+1,'#fff4d7');ellipse(x,y,rx,ry,'#334a47');};
+      for(const e of g.enemies){const print=(x,direction,end)=>{sole(x,e.y-3,end?4.6:3.5,end?2.8:2.1);sole(x+direction*6,e.y-6,2.1,1.5);};for(let x=e.left;x<=e.right;x+=23)print(x,1,x===e.left);print(e.right,-1,true);}}
     else if(g.stageIndex===5){this.sign(285,418,'高低路任选');this.sign(1420,418,'可重新选路');this.sign(2630,418,'归庭钟在右');}
+    if(g.stageIndex===6){this.sign(290,418,'红砖 · 从下顶');this.sign(490,418,'上开口 · 下绕行');this.sign(1200,418,'两路在此重汇');}
+    else if(g.stageIndex===7){this.sign(300,418,'左阶也能上桥');this.sign(660,418,'留邻砖 · 好落脚');this.sign(1360,418,'两路重汇');}
+    else if(g.stageIndex===8){this.sign(425,418,'宽阶上先停看');this.sign(720,363,'破砖或走地面');this.sign(1360,418,'窑灯广场在右');}
     // A shadow follows the actual fruit's nearest support; it never draws a walkable lip.
-    for(const f of g.fruits)if(f.alive&&f.emerge===0){const support=[...level.terrain,...level.blocks].filter(s=>f.x>=s.x&&f.x<=s.x+s.w&&s.y>=f.y-.01).sort((a,b)=>a.y-b.y)[0];if(support)ellipse(f.x,support.y-1,8,2,'#80694e66');}
+    for(const f of g.fruits)if(f.alive&&f.emerge===0){const support=solids(g).filter(s=>f.x>=s.x&&f.x<=s.x+s.w&&s.y>=f.y-.01).sort((a,b)=>a.y-b.y)[0];if(support)ellipse(f.x,support.y-1,8,2,'#80694e66');}
     for(const f of g.fruits)if(f.alive&&f.emerge>0)this.fruit(f);
+    for(const b of level.bricks||[]){const state=g.bricks.find(s=>s.id===b.id),t=.24-state.bump;if(state.broken){if(state.bump>0)for(const [dx,dy,dir]of [[0,0,-1],[20,0,1],[0,12,-1],[20,12,1]]){c.fillStyle=dy?'#8f4e3c':'#bd7353';c.fillRect(b.x+dx+dir*t*65,b.y+dy-t*120+t*t*500,15,9);}continue;}const lift=Math.sin(state.bump/.24*Math.PI)*5;c.save();c.translate(b.x,b.y-lift);this.round(0,0,b.w,b.h,2,'#884b3d');c.fillStyle='#bd7353';c.fillRect(2,2,b.w-4,b.h-4);c.strokeStyle='#efd2aa';c.lineWidth=2;c.beginPath();c.moveTo(2,b.h/2);c.lineTo(b.w-2,b.h/2);c.moveTo(b.w/2,2);c.lineTo(b.w/2,b.h/2);c.moveTo(b.w/4,b.h/2);c.lineTo(b.w/4,b.h-2);c.moveTo(b.w*3/4,b.h/2);c.lineTo(b.w*3/4,b.h-2);c.stroke();c.restore();}
     for(const b of level.blocks){const state=g.blocks.find(s=>s.id===b.id),lift=state.bump>0?Math.sin(state.bump/.24*Math.PI)*6:0;c.save();c.translate(b.x,b.y-lift);this.round(0,0,b.w,b.h,6,state.used?'#ab9b76':C.gold);this.round(3,3,b.w-6,b.h-7,4,state.used?'#b8ab8b':'#f6d57e');c.strokeStyle=state.used?'#807b61':'#87692f';c.lineWidth=2;c.beginPath();c.moveTo(10,20);c.quadraticCurveTo(8,7,27,7);c.quadraticCurveTo(27,21,10,20);c.moveTo(11,20);c.lineTo(23,10);c.stroke();if(state.used){c.beginPath();c.moveTo(9,24);c.lineTo(29,24);c.stroke();}c.restore();const f=g.fruits.find(f=>f.id===b.id&&f.alive);if(f&&f.vx>0&&f.x<=b.x+b.w+11){c.strokeStyle='#42694e';c.lineWidth=2;for(const dx of [5,13]){c.beginPath();c.moveTo(b.x+b.w+dx,b.y+4);c.lineTo(b.x+b.w+dx+4,b.y+8);c.lineTo(b.x+b.w+dx,b.y+12);c.stroke();}}}
     for(const s of level.seeds)if(!g.seeds.includes(s.id)){c.save();c.translate(s.x,s.y);c.rotate(Math.sin(g.tick/36+s.x)*.08);this.round(-7,-10,14,20,6,'#c48631');this.round(-4,-8,8,16,4,'#f7d76c');c.restore();}
     for(const f of g.fruits)if(f.alive&&f.emerge===0)this.fruit(f);
