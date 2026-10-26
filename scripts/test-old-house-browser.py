@@ -43,7 +43,7 @@ console.log(JSON.stringify({won:bytes(completed.state(),completed.recorded),lost
                 page.on('console',console)
                 def open_result():
                     page.goto(BASE+'experiments/old-house-echoes/');page.locator('#start').click();assert state(page)['mode']==terminal;assert saved(page)==raw
-                    assert any('/main.mjs?v=echoes-slice-1-result-3' in url for url in requests) and any('/style.css?v=echoes-slice-1-result-3' in url for url in requests)
+                    assert any('/main.mjs?v=echoes-courtyard-1' in url for url in requests) and any('/style.css?v=echoes-slice-1-result-3' in url for url in requests)
                     page.evaluate("document.addEventListener('pointerdown',e=>{const t=e.target.closest('a,button');console.log('RESULT_POINTER:'+JSON.stringify(t?{tag:t.tagName,text:t.textContent.trim(),action:t.dataset.resultAction||null,returned:t.dataset.resultReturn||null,cancel:t.dataset.cancelReset||null,confirm:t.dataset.confirmReset||null}:null));},true)")
                 def coordinate_click(selector,fx=.5,fy=.5):
                     el=page.locator(selector);el.scroll_into_view_if_needed();box=el.bounding_box();x=box['x']+box['width']*fx;y=box['y']+box['height']*fy
@@ -56,7 +56,7 @@ console.log(JSON.stringify({won:bytes(completed.state(),completed.recorded),lost
                     assert page.evaluate("localStorage.getItem('qa-unrelated-save')")=='unchanged'
                 open_result();initial=state(page)
                 geometry=page.locator('#panel-content').evaluate("""el=>{
-const nodes=[...el.querySelectorAll('.result-return,.result-retry-actions button')];
+const nodes=[...el.querySelectorAll('[data-result-return],.result-retry-actions button')];
 return nodes.map(n=>{const b=n.getBoundingClientRect();return {text:n.textContent,rect:{x:b.x,y:b.y,width:b.width,height:b.height},fragments:[...n.getClientRects()].length};});}
 """)
                 assert len(geometry)==3 and all(g['fragments']==1 and g['rect']['height']>=48 for g in geometry)
