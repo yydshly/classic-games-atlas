@@ -1,9 +1,9 @@
 // Bounded model-assisted QA. Only normal buttons from the actual starting state.
 // Observing positions is not a human input trace; raw inputs can be independently replayed.
 import {createGame,command,step} from './engine.mjs';
-export function runner(stride=1,layoutRevision=2){if(![1,4].includes(stride))throw Error('QA stride outside bounded review');const game=createGame(0,0,false,null,layoutRevision),runs=[],observations=[];command(game,'start');
+export function runner(stride=1,layoutRevision=2){if(![1,4].includes(stride))throw Error('QA stride outside bounded review');const game=createGame(0,0,false,null,layoutRevision,3),runs=[],observations=[];command(game,'start');
  function advance(input={},count=1){for(let n=0;n<count;n++){if(game.phase!=='playing')break;const keys=JSON.stringify(input),last=runs.at(-1);if(last?.keys===keys)last.frames++;else runs.push({keys,frames:1});step(game,input);if(game.events.at(-1)?.kind==='shrink'&&game.events.at(-1).tick===game.tick)observations.push({label:'side-hit',game:structuredClone(game)});}}
- function until(predicate,input={},limit=2400){for(let n=0;n<limit&&!predicate(game);n+=stride){if(game.phase!=='playing')throw Error('route stopped '+JSON.stringify({stageIndex:game.stageIndex,phase:game.phase,x:game.player.x,y:game.player.y,event:game.events.at(-1)}));advance(typeof input==='function'?input(game):input,stride);}if(!predicate(game))throw Error('route limit '+JSON.stringify({stageIndex:game.stageIndex,player:game.player,fruits:game.fruits}));}
+ function until(predicate,input={},limit=2400){for(let n=0;n<limit&&!predicate(game);n+=stride){if(game.phase!=='playing')throw Error('route stopped '+JSON.stringify({stageIndex:game.stageIndex,phase:game.phase,player:game.player,stats:game.stats,event:game.events.at(-1)}));advance(typeof input==='function'?input(game):input,stride);}if(!predicate(game))throw Error('route limit '+JSON.stringify({stageIndex:game.stageIndex,player:game.player,fruits:game.fruits}));}
  function record(label){observations.push({label,game:structuredClone(game)});}function issue(name){const before=game.stageIndex;command(game,name);runs.push({command:name});if(name==='next'&&game.stageIndex===before)throw Error('next chapter rejected');}return {game,runs,observations,advance,until,record,issue};}
 function walk(r,x){r.until(g=>g.player.x>=x,{right:true});r.advance({},24);}
 function hop(r,x,label){r.advance({});let n=0;r.until(g=>n>5&&g.player.grounded,g=>{n++;return {right:g.player.x<x-5,left:g.player.x>x+5,run:true,jump:n<65};},200);r.advance({},20);if(label)r.record(label);}
@@ -36,3 +36,5 @@ function thirdLowChoice(r){walk(r,295);hop(r,520);cross(r,855,1040);walk(r,1130)
 function thirdHighChoice(r,avoidLast=false){walk(r,295);hop(r,430);hop(r,600);stomp(r,1);hop(r,900);hop(r,1050);walk(r,1130);hop(r,1250);hop(r,1405,'quality-wind-step');hop(r,1560,'quality-high-launch');hop(r,1770,'quality-high-far-bank');if(avoidLast){r.until(g=>g.enemies[2].x-g.player.x<145,{right:true});hop(r,r.game.enemies[2].x+45,'quality-high-bypass');}else stomp(r,2);walk(r,2010);hop(r,2090);cross(r,2195,2380);r.until(g=>g.phase==='won',{right:true});r.record('quality-high-arrived');}
 
 export function qualitySmallHighRoute(){const r=lowerRoute(1,2);next(r);secondSafe(r);next(r);thirdHighChoice(r,true);r.record('quality-small-high-arrived');return r;}
+
+export const routeActions=Object.freeze({walk,hop,cross,next});
