@@ -1,6 +1,6 @@
 # 晨丘跃行 · 三关阶段候选
 
-本地阶段版本 `dawn-slice-3`，未公开或部署。首关r2已由main `05a160fa8ee1d6960756dee969b696358067b050` 发布，父线程真实UI已到亭并验证结算刷新；用了分段暂停，不能当连续手感或乐趣验收。本轮只补露渠果园、晚风归坡与三关流程，后两关尚未真实UI验收。图鉴参考项为 `super-mario-bros`。原创角色小岚、翻叶虫、晨露果、晨丘地图和程序绘图；不使用任天堂图像、声音、关卡或ROM，不冒充官方复刻。
+本地质量轮版本 `dawn-slice-4`，未公开或部署。已发布 `dawn-slice-3`（main `9444abc06611459218bb7561da7848e0e4664c3f`）已由父线程真实IAB完成三关、R本关重试与最终结算刷新；用了暂停，不是连续手感或真人乐趣认可。本轮只改第三关石洲/高路取舍和接果可读性，保留旧存档原路线；新改动未真实UI验收。图鉴参考项为 `super-mario-bros`。原创角色小岚、翻叶虫、晨露果、晨丘地图和程序绘图；不使用任天堂素材或关卡，不冒充官方复刻。具体价值、证据与局限见 [本轮质量记录](../../docs/dawn-hill-qa/quality.md)。
 
 玩家要走到当前关右侧的亭驿，第一关是晨钟亭。价值在脚下的行动：走或跑影响水平距离，跳键持续时间改变高度，空中能收住或反向修正；下降踩虫和侧面碰虫结果不同。每关按地形和巡逻选择避敌路线或取奖励：首关奖励偏高，第二关果实在树下。收集不是钥匙，未收齐照样完成；等待不会替玩家过关。
 
@@ -17,7 +17,7 @@
 
 安全草坡试走跑与跳高 → 叶纹匣下方顶开、等待果实完整冒出后接住 → 第一只翻叶虫可以练习从上方踩中反弹 → 90宽断口 → 低处直行或高处石台奖励 → 110宽断口 → 晨钟亭。低处有巡逻，不能把“低路”说成自动安全；大体型已受击的人可以考虑高路第二颗果实。大体型再吃果不叠加第二层护盾，晨光籽是额外收集记录，不解锁终点。
 
-本阶段三关：晨露坡学控制落点；露渠果园在高处避敌与树下取果之间选；晚风归坡把高低落脚、台上巡逻和反弹连起来。奖励不解锁终点，两种体型都有正常路线。之后是否扩关及关数依据新判断与质量决定，不是用户要求的永久三关上限。
+本阶段三关：晨露坡学控制落点；露渠果园在高处避敌与树下取果之间选；新版晚风归坡在低路落稳石洲取籽和高路直越之间选择，末段再组合台上巡逻和落脚。奖励不解锁终点，两种体型都有正常路线。之后是否扩关及关数依据新判断与质量决定，不是用户要求的永久三关上限。
 
 ## 运行与维护
 
@@ -28,10 +28,11 @@ npm ci --offline --ignore-scripts --cache /workspace/scratch/windowlife-npm-cach
 node --test experiments/dawn-hill/*.test.mjs
 node tools/dawn-hill/record-routes.mjs --check
 node tools/dawn-hill/record-routes.mjs --stage --check
+node tools/dawn-hill/record-routes.mjs --quality --check
 node scripts/verify-dawn-hill.mjs
-node tools/dawn-hill/export.mjs /workspace/scratch/dawn-hill/stage/pixels-final --stage
+node tools/dawn-hill/quality-export.mjs /workspace/scratch/dawn-hill/quality-r4/pixels-final
 ```
 
-默认检查只读；只有显式 `record-routes.mjs --write` 生成文字路线夹具，export只写指定离线目录。没有运行bundle需要回写：HTML引用main、CSS，模块依赖统一 `v=dawn-slice-3`，应用测试用既有esbuild临时内存打包真实main。
+默认检查只读；只有显式 `record-routes.mjs --write` 生成文字路线夹具，export只写指定离线目录。没有运行bundle需要回写：HTML引用main、CSS，模块依赖统一 `v=dawn-slice-4`，应用测试用既有esbuild临时内存打包真实main。
 
-存档只使用 `classic-games-atlas:dawn-hill:single:v1`，不读其他游戏的key。缺档从ready开始；刷新活动现场先暂停。受损/拒读原档保护不覆盖，另建须确认；写满保留上次字节并提供重试。快照有大小/字段边界，不按tick重放，不宣称防玩家改档。保存格式升级为V2，仍用原key；V1缺档/途中/暂停/失败/完成均有明确转换，不自动清档，也不按历史帧重放。完整阶段证据与局限见 [阶段记录](../../docs/dawn-hill-qa/stage.md)，首关历史见 [原QA记录](../../docs/dawn-hill-qa/README.md)。
+存档只使用 `classic-games-atlas:dawn-hill:single:v1`，不读其他游戏的key。缺档从ready开始；刷新活动现场先暂停。受损/拒读原档保护不覆盖，另建须确认；写满保留上次字节并提供重试。快照有大小/字段边界，不按tick重放，不宣称防玩家改档。保存格式升级为V2，仍用原key；V1缺档/途中/暂停/失败/完成均有明确转换，不自动清档，也不按历史帧重放。缺少layoutRevision的旧档按原地图继续、重试不换地形；最终确认从头重走才开石洲新路线。完整历史阶段证据与局限见 [阶段记录](../../docs/dawn-hill-qa/stage.md)，首关历史见 [原QA记录](../../docs/dawn-hill-qa/README.md)。

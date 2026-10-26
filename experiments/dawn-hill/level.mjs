@@ -14,12 +14,20 @@ const second=freezeLevel({title:'露渠果园',destination:'渠尾小亭',theme:
  blocks:[{id:'canal-fruit',x:715,y:315,w:38,h:30},{id:'late-fruit',x:1600,y:300,w:38,h:30}],
  enemies:[{id:'orchard-1',x:660,y:420,left:605,right:805,speed:35},{id:'orchard-2',x:1530,y:420,left:1460,right:1700,speed:-40},{id:'orchard-3',x:2240,y:420,left:2170,right:2350,speed:43}],
  seeds:[{id:'canal-a',x:765,y:390},{id:'canal-b',x:1550,y:390},{id:'canal-c',x:1650,y:390}]});
-const third=freezeLevel({title:'晚风归坡',destination:'风铃驿',theme:'evening',goalText:'沿高低石台到右侧的风铃驿。',choice:'高台有巡逻。可先停在宽台看时机，也可从低处跑跳；奖励不必收齐。',width:2680,floor:420,start:90,goal:2530,
+const thirdLegacy=freezeLevel({title:'晚风归坡',destination:'风铃驿',theme:'evening',goalText:'沿高低石台到右侧的风铃驿。',choice:'高台有巡逻。可先停在宽台看时机，也可从低处跑跳；奖励不必收齐。',width:2680,floor:420,start:90,goal:2530,
  terrain:[{id:'ridge-start',x:0,y:420,w:880,h:160},{id:'ridge-middle',x:990,y:420,w:590,h:160},{id:'ridge-far',x:1680,y:420,w:560,h:160},{id:'ridge-home',x:2330,y:420,w:350,h:160},{id:'watch-step',x:350,y:365,w:140,h:55},{id:'perch',x:580,y:310,w:150,h:18},{id:'gap-walk',x:820,y:235,w:220,h:20},{id:'rest-step',x:1190,y:365,w:110,h:55},{id:'wind-step',x:1380,y:300,w:130,h:18},{id:'launch-step',x:1510,y:235,w:95,h:20},{id:'last-step',x:2030,y:365,w:110,h:55}],
  blocks:[{id:'ridge-fruit',x:190,y:315,w:38,h:30},{id:'rest-fruit',x:1820,y:315,w:38,h:30}],
  enemies:[{id:'ridge-1',x:420,y:365,left:385,right:465,speed:33},{id:'ridge-2',x:660,y:310,left:615,right:700,speed:-35},{id:'ridge-3',x:1810,y:420,left:1730,right:1930,speed:40}],
  seeds:[{id:'ridge-a',x:625,y:280},{id:'ridge-b',x:1430,y:270},{id:'ridge-c',x:1570,y:315}]});
+// R3 snapshots retain their original map; new journeys use this local revision.
+const third=freezeLevel({...thirdLegacy,goalText:'穿过晚风石洲，到右侧的风铃驿。',choice:'中段低路分两跳，在宽石洲落稳取籽；高路可越过石洲，少一次停留。两路都到风铃驿。',
+ terrain:[...thirdLegacy.terrain.map(t=>t.id==='ridge-middle'?{...t,w:510}:t.id==='ridge-far'?{...t,x:1720,w:520}:t.id==='wind-step'?{...t,x:1360,w:90}:t),{id:'stepping-isle',x:1570,y:420,w:80,h:160}],
+ blocks:thirdLegacy.blocks.map(b=>b.id==='rest-fruit'?{...b,x:1950}:b),
+ enemies:thirdLegacy.enemies.map(e=>e.id==='ridge-3'?{...e,x:1880,left:1850,right:1920}:e),
+ seeds:thirdLegacy.seeds.map(s=>s.id==='ridge-c'?{...s,x:1610,y:390}:s)});
+export const LAYOUT_REVISION=2;
+export const LEGACY_LEVELS=Object.freeze([first,second,thirdLegacy]);
 export const LEVELS=Object.freeze([first,second,third]);
 export const LEVEL=LEVELS[0]; // First-level compatibility for historical route checks.
-export function getLevel(g){const level=LEVELS[g.stageIndex??0];if(!level)throw Error('unknown chapter');return level;}
+export function getLevel(g){const revision=g.layoutRevision??1;if(![1,LAYOUT_REVISION].includes(revision))throw Error('unknown layout revision');const level=(revision===1?LEGACY_LEVELS:LEVELS)[g.stageIndex??0];if(!level)throw Error('unknown chapter');return level;}
 export const STEP=1/120;
