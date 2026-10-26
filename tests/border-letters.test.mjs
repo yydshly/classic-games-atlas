@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { CAMPAIGNS } from '../experiments/border-letters/world.mjs';
-import { endTurn, forage, fortify, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
+import { continueTurn, endTurn, forage, fortify, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
 
 function action(state, fn, ...args) {
   const result = fn(state, ...args);
@@ -10,7 +10,10 @@ function action(state, fn, ...args) {
 }
 function play(stage, script) {
   let state = newGame(stage);
-  for (const [fn, ...args] of script) state = action(state, fn, ...args);
+  for (const [fn, ...args] of script) {
+    state = action(state, fn, ...args);
+    if (fn === endTurn && state.settlementPending) state = action(state, continueTurn);
+  }
   assert.equal(state.phase, 'won', `${CAMPAIGNS[stage].name}: ${state.logs.join(' | ')}`);
   return state;
 }
@@ -44,7 +47,7 @@ test('fourth mission requires two garrisons at the openly signaled final attacks
     [march,'guard','pass'],[forage,'camp'],E,
     [march,'guard','beacon'],[forage,'camp'],E,E,
     [march,'guard','outpost'],E,E,E,
-  ]) solo = action(solo,fn,...args);
+  ]) { solo = action(solo,fn,...args); if (fn === endTurn && solo.settlementPending) solo = action(solo,continueTurn); }
   assert.equal(solo.phase,'lost');
   assert.equal(solo.ownership.beacon,'enemy');
   assert.equal(solo.ownership.outpost,'ally');
@@ -74,14 +77,40 @@ test('insufficient grain does not lock camp forage and repeated settlement is re
   state = action(state,forage,'camp');
   assert.equal(state.food,4);
   state = newGame(0);
-  for (let t=0;t<3;t++) state = action(state,endTurn);
+  for (let t=0;t<3;t++) { state = action(state,endTurn); if (state.settlementPending) state = action(state,continueTurn); }
   assert.equal(state.phase,'lost');
   assert.equal(endTurn(state).ok,false);
 });
 test('shortage reduces next-turn orders but always leaves one forage command', () => {
   const state = newGame(0); state.food = 1;
-  const next = action(state,endTurn);
+  const next = action(action(state,endTurn),continueTurn);
   assert.equal(next.orders,1);
   assert.equal(next.food,0);
   assert.equal(forage(next,'camp').ok,true);
+});
+test('one settlement intent advances once until a separately confirmed next turn', () => {
+  const initial = newGame(0);
+  const settled = action(initial,endTurn);
+  assert.equal(settled.turn,2);
+  assert.equal(settled.settlementPending,true);
+  assert.equal(settled.logs.filter(line => line.includes('第 1 回合补给')).length,1);
+  const bytes = JSON.stringify(settled);
+  assert.equal(endTurn(settled).ok,false);
+  assert.equal(forage(settled,'camp').ok,false);
+  assert.equal(undo(settled).ok,false);
+  assert.equal(JSON.stringify(settled),bytes);
+  assert.equal(validSave(JSON.parse(bytes)),true);
+  const paused = { ...JSON.parse(bytes), paused:true };
+  assert.equal(continueTurn(paused).ok,false);
+  const ready = action({ ...paused, paused:false },continueTurn);
+  assert.equal(ready.turn,2);
+  assert.equal(ready.food,settled.food);
+  assert.deepEqual(ready.logs,settled.logs);
+  assert.equal(ready.settlementPending,false);
+  const deliberateEmpty = action(ready,endTurn);
+  assert.equal(deliberateEmpty.turn,3);
+  assert.equal(deliberateEmpty.logs.filter(line => line.includes('第 2 回合补给')).length,1);
+  const legacy = newGame(0); delete legacy.settlementPending;
+  assert.equal(validSave(legacy),true);
+  assert.equal(endTurn(legacy).ok,true);
 });

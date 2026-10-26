@@ -27,6 +27,8 @@ def do(page, action, unit=None, at=None):
     if at:
         page.locator(f'[data-node="{at}"]').click()
     page.locator(f'[data-action="{action}"]').click()
+    if action == 'end' and page.locator('#settlement').is_visible():
+        page.locator('[data-action="continue"]').click()
 
 def route(page, script):
     for step in script:
@@ -130,8 +132,8 @@ with sync_playwright() as p:
     wide.keyboard.press('Escape')
     assert '暂停' in wide.locator('#feedback').inner_text()
     wide.keyboard.press('Escape')
-    wide.keyboard.press('f'); wide.keyboard.press('e')
-    wide.keyboard.press('g'); wide.keyboard.press('f'); wide.keyboard.press('e')
+    wide.keyboard.press('f'); wide.keyboard.press('e'); wide.keyboard.press('c')
+    wide.keyboard.press('g'); wide.keyboard.press('f'); wide.keyboard.press('e'); wide.keyboard.press('c')
     wide.keyboard.press('e')
     assert '来信送达' in wide.locator('#result').inner_text()
     wide.close()
@@ -140,18 +142,20 @@ with sync_playwright() as p:
     touch.locator('[data-node="camp"]').tap()
     touch.locator('[data-action="forage"]').tap()
     touch.locator('[data-action="end"]').tap()
+    touch.locator('[data-action="continue"]').tap()
     touch.locator('[data-unit="courier"]').tap()
     touch.locator('[data-action="fortify"]').tap()
     touch.locator('[data-node="camp"]').tap()
     touch.locator('[data-action="forage"]').tap()
     touch.locator('[data-action="end"]').tap()
+    touch.locator('[data-action="continue"]').tap()
     touch.locator('[data-action="end"]').tap()
     assert '来信送达' in touch.locator('#result').inner_text()
     assert touch.evaluate('document.documentElement.scrollWidth') <= 390
     touch.close()
     failed = browser.new_page(viewport={'width': 390, 'height': 844})
     failed.goto(base + '/experiments/border-letters/')
-    for _ in range(3): failed.locator('[data-action="end"]').click()
+    for _ in range(3): do(failed, 'end')
     assert '军情未竟' in failed.locator('#result').inner_text()
     assert failed.locator('[data-action="end"]').is_disabled()
     failed.locator('[data-result="retry"]').click()
@@ -159,7 +163,77 @@ with sync_playwright() as p:
     failed.wait_for_function('document.querySelector("#turn-badge").textContent.includes("第 1 / 3 回合")')
     assert failed.locator('#result').is_hidden()
     failed.close()
+    # The online P1: a physical double click must settle exactly one turn.
+    rapid = browser.new_page(viewport={'width': 390, 'height': 844})
+    rapid.goto(base + '/experiments/border-letters/')
+    rapid.locator('[data-action="end"]').scroll_into_view_if_needed()
+    end_box = rapid.locator('[data-action="end"]').bounding_box()
+    x, y = end_box['x'] + end_box['width']/2, end_box['y'] + end_box['height']/2
+    rapid.mouse.dblclick(x, y, delay=45)
+    state = rapid.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state')
+    assert state['turn'] == 2 and state['settlementPending'] is True
+    assert sum('第 1 回合补给' in line for line in state['logs']) == 1
+    assert not any('第 2 回合补给' in line for line in state['logs'])
+    assert rapid.locator('[data-action="end"]').is_disabled()
+    assert rapid.locator('#settlement').is_visible()
+    rapid.screenshot(path=str(OUT / '390-settlement.png'), full_page=True)
+    rapid.wait_for_timeout(700)
+    rapid.mouse.click(x, y)
+    assert rapid.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    rapid.locator('[data-action="pause"]').click()
+    saved_pending = rapid.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    rapid.reload()
+    assert rapid.evaluate('localStorage.getItem("atlas.border-letters.v1")') == saved_pending
+    assert rapid.locator('#settlement').is_visible()
+    assert rapid.locator('[data-action="continue"]').is_disabled()
+    rapid.locator('[data-action="pause"]').click()
+    end_box_now = rapid.locator('[data-action="end"]').bounding_box()
+    continue_box = rapid.locator('[data-action="continue"]').bounding_box()
+    assert continue_box['y'] >= end_box_now['y'] + end_box_now['height'], (end_box_now, continue_box)
+    rapid.locator('[data-action="continue"]').click()
+    assert rapid.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    assert rapid.locator('#settlement').is_hidden()
+    rapid.locator('[data-action="end"]').click()
+    assert rapid.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 3
+    rapid.close()
+    # Rapid touch taps and held-key repeats are independent input routes.
+    rapid_touch = browser.new_page(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
+    rapid_touch.goto(base + '/experiments/border-letters/')
+    rapid_touch.locator('[data-action="end"]').scroll_into_view_if_needed()
+    box = rapid_touch.locator('[data-action="end"]').bounding_box()
+    tx, ty = box['x'] + box['width']/2, box['y'] + box['height']/2
+    rapid_touch.touchscreen.tap(tx, ty); rapid_touch.touchscreen.tap(tx, ty)
+    assert rapid_touch.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    rapid_touch.wait_for_timeout(700)
+    rapid_touch.touchscreen.tap(tx, ty)
+    assert rapid_touch.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    rapid_touch.locator('[data-action="continue"]').tap()
+    assert rapid_touch.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.settlementPending') is False
+    rapid_touch.touchscreen.tap(tx, ty)
+    assert rapid_touch.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 3
+    rapid_touch.close()
+    held = browser.new_page(viewport={'width': 1280, 'height': 800})
+    held.goto(base + '/experiments/border-letters/')
+    held.keyboard.down('e'); held.keyboard.down('e')
+    assert held.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    held.locator('[data-action="continue"]').click()
+    held.keyboard.down('e')
+    assert held.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 2
+    held.keyboard.up('e'); held.keyboard.press('e')
+    assert held.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 3
+    held.close()
+    legacy = browser.new_page(viewport={'width': 390, 'height': 844})
+    legacy.goto(base + '/experiments/border-letters/')
+    do(legacy, 'forage', at='camp')
+    legacy.evaluate('''() => { const key = 'atlas.border-letters.v1'; const r = JSON.parse(localStorage.getItem(key)); delete r.state.settlementPending; for (const s of r.state.undo) delete s.settlementPending; localStorage.setItem(key, JSON.stringify(r)); }''')
+    legacy.reload()
+    assert '暂停' in legacy.locator('#feedback').inner_text()
+    assert '存粮 12' in legacy.locator('#supply-badge').inner_text()
+    legacy.locator('[data-action="pause"]').click()
+    legacy.locator('[data-action="undo"]').click()
+    assert '存粮 8' in legacy.locator('#supply-badge').inner_text()
+    legacy.close()
     assert not errors, errors
-    print(json.dumps({'passed': True, 'scope': 'local Chromium pointer campaign and alternate route, keyboard completion, emulated 390 touch completion, pause reload, retry cancel/confirm, navigation, narrow and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
+    print(json.dumps({'passed': True, 'scope': 'local Chromium full pointer campaign and alternate route; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, legacy save, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
     browser.close()
 server.shutdown()

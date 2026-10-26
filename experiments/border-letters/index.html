@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1d3435">
   <meta name="description" content="边郡来信：原创五役回合策略首段，已上线试玩。">
   <title>边郡来信 · 原创回合策略试玩</title>
-  <link rel="stylesheet" href="./style.css?v=border-slice-1">
+  <link rel="stylesheet" href="./style.css?v=border-slice-1-settle-1">
 </head>
 <body>
   <a class="skip" href="#game">跳到战局</a>
@@ -16,19 +16,19 @@
   </header>
   <main id="game">
     <section class="intro" aria-labelledby="how-title">
-      <div><h2 id="how-title">你是边郡的传信官</h2><p>在期限内完成每役目标，守住松驿。每回合只有少量命令：先点 <b>谷卫或驿骑</b>，再点相邻地点行军；也可在已控制的松驿／谷仓筹粮，或令队伍驻防。谷卫战／守力 3、驻防再加 2；驿骑战／守力 1、驻防再加 1。同地守力相加，至少达到公开敌力才能守住。行军按地形耗粮，断线再加一粮；回合末两队共耗两粮，粮不足时下回合少一命令。</p><p><b>胜利</b>：到期限时满足战役目标且末回合不断粮；<b>失败</b>：松驿失守、目标逾期或末回合断粮。未结算的命令可撤销，结算后的选择不会自动回滚。数字 1/2 选队，方向键在地图间移动焦点，Enter 选点；M 行军、F 筹粮、G 驻防、Z 撤销、E 结算、Esc 暂停。</p></div>
+      <div><h2 id="how-title">你是边郡的传信官</h2><p>在期限内完成每役目标，守住松驿。每回合只有少量命令：先点 <b>谷卫或驿骑</b>，再点相邻地点行军；也可在已控制的松驿／谷仓筹粮，或令队伍驻防。谷卫战／守力 3、驻防再加 2；驿骑战／守力 1、驻防再加 1。同地守力相加，至少达到公开敌力才能守住。行军按地形耗粮，断线再加一粮；回合末两队共耗两粮，粮不足时下回合少一命令。</p><p><b>胜利</b>：到期限时满足战役目标且末回合不断粮；<b>失败</b>：松驿失守、目标逾期或末回合断粮。未结算的命令可撤销。每次结算仅推进一回合；看完日志后须另点“继续部署”，才可再下令或结算。数字 1/2 选队，方向键在地图间移动焦点，Enter 选点；M 行军、F 筹粮、G 驻防、Z 撤销、E 结算、C 继续部署、Esc 暂停。</p></div>
       <p class="note">以光荣《三国志》系列的命令、内政、补给与地形判断为参照；人物、地名、地图和规则是原创短篇，不是原作完整复刻。原作素材未使用。</p>
     </section>
     <div class="chapter-bar"><div><p class="eyebrow">五役首段 · 可续展</p><h2 id="chapter-title"></h2><p id="chapter-intro"></p></div><div class="chapter-pick" id="chapter-pick" aria-label="战役选择"></div></div>
     <div class="board-layout">
       <section class="field-panel" aria-labelledby="field-title"><div class="panel-title"><h3 id="field-title">边郡路图</h3><span id="turn-badge"></span></div><div class="map" id="map" role="group" aria-label="相连郡路地图"></div><div class="legend"><span><i class="swatch ally"></i>我方</span><span><i class="swatch neutral"></i>未控</span><span><i class="swatch enemy"></i>敌方</span><span>实线为可行军道路</span></div></section>
-      <aside class="orders-panel" aria-labelledby="orders-title"><div class="panel-title"><h3 id="orders-title">本回合部署</h3><span id="supply-badge"></span></div><div class="status" id="status"></div><div class="units" id="units"></div><div class="selection" id="selection"></div><div class="actions" id="actions"><button type="button" data-action="march">向选中地点行军 <kbd>M</kbd></button><button type="button" data-action="forage">在选中地点筹粮 <kbd>F</kbd></button><button type="button" data-action="fortify">选中队伍驻防 <kbd>G</kbd></button><button type="button" data-action="undo">撤销命令 <kbd>Z</kbd></button><button type="button" class="primary" data-action="end">结算回合 <kbd>E</kbd></button><button type="button" data-action="pause">暂停</button></div><p class="feedback" id="feedback" role="status" aria-live="polite"></p></aside>
+      <aside class="orders-panel" aria-labelledby="orders-title"><div class="panel-title"><h3 id="orders-title">本回合部署</h3><span id="supply-badge"></span></div><div class="status" id="status"></div><div class="units" id="units"></div><div class="selection" id="selection"></div><div class="actions" id="actions"><button type="button" data-action="march">向选中地点行军 <kbd>M</kbd></button><button type="button" data-action="forage">在选中地点筹粮 <kbd>F</kbd></button><button type="button" data-action="fortify">选中队伍驻防 <kbd>G</kbd></button><button type="button" data-action="undo">撤销命令 <kbd>Z</kbd></button><button type="button" class="primary" data-action="end">结算回合 <kbd>E</kbd></button><button type="button" data-action="pause">暂停</button></div><div class="settlement" id="settlement" hidden role="status" aria-live="polite"><h4 id="settlement-turn"></h4><p>粮食与敌军突袭已经结算并存档。先看下方日志；准备好后再单独继续部署。</p><button type="button" data-action="continue">继续部署 <kbd>C</kbd></button></div><p class="feedback" id="feedback" role="status" aria-live="polite"></p></aside>
     </div>
     <div class="below"><section class="intel"><h3>公开军情</h3><div id="intel"></div></section><section class="history"><h3>行军日志</h3><ol id="history"></ol></section></div>
     <section class="result" id="result" hidden aria-live="polite"></section>
   </main>
   <dialog id="restart-dialog"><form method="dialog"><h2>重试本役？</h2><p>仅重置当前《边郡来信》战役；已解锁战役和其他游戏存档不会改变。</p><div class="dialog-actions"><button value="cancel">取消</button><button value="restart" class="danger">确认重试</button></div></form></dialog>
   <footer>已上线试玩首段 · 五个目标不同的战役 · 可暂停续档。桌面与390宽屏幕局部验证完成，真实玩家与实体手机体验待验。</footer>
-  <script type="module" src="./main.mjs?v=border-slice-1"></script>
+  <script type="module" src="./main.mjs?v=border-slice-1-settle-1"></script>
 </body>
 </html>

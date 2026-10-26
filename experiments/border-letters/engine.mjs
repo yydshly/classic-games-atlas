@@ -1,4 +1,4 @@
-import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs';
+import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-1-settle-1';
 
 const clone = value => structuredClone(value);
 export function newGame(stage = 0) {
@@ -9,7 +9,8 @@ export function newGame(stage = 0) {
     garrison: {}, units: [{ id: 'guard', role: 'guard', name: '谷卫', at: level.start?.guard || 'granary', fort: 0 },
       { id: 'courier', role: 'courier', name: '驿骑', at: level.start?.courier || 'camp', fort: 0 }],
     visits: [], logs: ['两名守使已到位。先点队伍，再选相邻地点并下令。'],
-    undo: [], phase: 'playing', paused: false, metrics: { spent: 0, marches: 0, harvests: 0, guarded: 0 } };
+    undo: [], phase: 'playing', paused: false, settlementPending: false,
+    metrics: { spent: 0, marches: 0, harvests: 0, guarded: 0 } };
 }
 export const levelOf = state => CAMPAIGNS[state.stage];
 export const unitOf = (state, id) => state.units.find(unit => unit.id === id);
@@ -26,6 +27,7 @@ const commit = (state, next) => { next.undo = [...state.undo, { ...clone(state),
 function reject(reason) { return { ok: false, reason }; }
 function requireOrder(state) {
   if (state.phase !== 'playing' || state.paused) return '当前不能下令';
+  if (state.settlementPending) return '先查看上一回合结算，再继续部署';
   if (!state.orders) return '本回合命令已用尽，请结算';
   return '';
 }
@@ -63,7 +65,7 @@ export function fortify(state, unitId) {
   return { ok: true, state: commit(state, next) };
 }
 export function undo(state) {
-  if (state.phase !== 'playing' || state.paused || !state.undo.length) return reject('本回合无可撤销命令');
+  if (state.phase !== 'playing' || state.paused || state.settlementPending || !state.undo.length) return reject('本回合无可撤销命令');
   const next = clone(state.undo.at(-1)); next.undo = state.undo.slice(0, -1);
   return { ok: true, state: next };
 }
@@ -74,6 +76,7 @@ export function goalMet(state) {
 }
 export function endTurn(state) {
   if (state.phase !== 'playing' || state.paused) return reject('当前不能结算');
+  if (state.settlementPending) return reject('先查看上一回合结算，再继续部署');
   const next = clone(state), level = levelOf(state);
   next.undo = [];
   const upkeep = next.units.length;
@@ -97,6 +100,12 @@ export function endTurn(state) {
     next.phase = goalMet(next) && !shortage ? 'won' : 'lost';
     pushLog(next, next.phase === 'won' ? '任务达成，边郡来信送出。' : shortage ? '期限回合军粮不足，无法完成交接。' : '期限已到，目标尚未齐备。');
   } else { next.turn++; next.orders = shortage ? Math.max(1, level.orders - 1) : level.orders; }
+  next.settlementPending = next.phase === 'playing';
+  return { ok: true, state: next };
+}
+export function continueTurn(state) {
+  if (state.phase !== 'playing' || state.paused || !state.settlementPending) return reject('当前没有待确认的回合结算');
+  const next = clone(state); next.settlementPending = false;
   return { ok: true, state: next };
 }
 export function validSave(value) {
@@ -106,7 +115,9 @@ export function validSave(value) {
     !Number.isFinite(value.food) || value.food < 0 || value.food > 999 ||
     !['playing', 'won', 'lost'].includes(value.phase) || !Array.isArray(value.units) || value.units.length !== 2 ||
     !Array.isArray(value.visits) || !Array.isArray(value.logs) || value.logs.length > 10 ||
-    !value.metrics || !['spent','marches','harvests','guarded'].every(key => Number.isInteger(value.metrics[key]) && value.metrics[key] >= 0)) return false;
+    !value.metrics || !['spent','marches','harvests','guarded'].every(key => Number.isInteger(value.metrics[key]) && value.metrics[key] >= 0) ||
+    (value.settlementPending !== undefined && typeof value.settlementPending !== 'boolean') ||
+    (value.settlementPending === true && value.phase !== 'playing')) return false;
   return ['guard','courier'].every(id => value.units.filter(unit => unit.id === id).length === 1) &&
     value.units.every(unit => unit.role === unit.id && node(unit.at) && Number.isInteger(unit.fort) && unit.fort >= 0 && unit.fort <= 2) &&
     value.visits.every(at => !!node(at)) && value.logs.every(log => typeof log === 'string' && log.length < 300) &&
