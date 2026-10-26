@@ -46,6 +46,27 @@ export const CAMPAIGNS = [
     goal: { hold: ['camp', 'granary', 'relay'], courierVisits: ['outpost'] },
     waves: [{ turn: 2, at: 'granary', power: 3 }, { turn: 4, at: 'relay', power: 3 }, { turn: 6, at: 'camp', power: 3 }],
   },
+  {
+    name: '六 · 粮道易手', maxTurn: 4, food: 8, orders: 2,
+    start: { guard: 'camp', courier: 'granary' },
+    intro: '首回合谷仓将受敌力 3 突袭。谷卫进仓可保住补给线；也可让驿骑连走浅渡与烽台，暂弃谷仓抢先送信，但断线后每次行军多耗 1 粮。第四回合前驿骑须到过远哨、北望，松驿不能失守。',
+    goal: { hold: ['camp'], courierVisits: ['outpost', 'beacon'] },
+    waves: [{ turn: 1, at: 'granary', power: 3 }],
+  },
+  {
+    name: '七 · 潮前换防', maxTurn: 5, food: 14, orders: 2,
+    intro: '第二回合烽台、第三回合远哨依次遇袭。驿骑可先行送信并驻防远哨，让谷卫随后夺回烽台；也可由谷卫逐点守住、驿骑跟进。期末两处都须控制，且驿骑到过远哨。',
+    goal: { hold: ['camp', 'relay', 'outpost'], courierVisits: ['outpost'] },
+    waves: [{ turn: 2, at: 'relay', power: 3 }, { turn: 3, at: 'outpost', power: 2 }],
+  },
+  {
+    name: '八 · 守点撤回', maxTurn: 5, food: 14, orders: 3,
+    start: { guard: 'pass', courier: 'camp' },
+    intro: '谷卫从岚隘、驿骑从松驿出发。驿骑须到过烽台；第三回合松驿与北望同时遇袭，北望还会在第四、五回合受袭。谷卫可守北望、让驿骑探报后折返松驿；也可让谷卫回驿、驿骑赶到北望并每回合驻防。期末两点都须控制。',
+    goal: { hold: ['camp', 'beacon'], courierVisits: ['relay'] },
+    waves: [{ turn: 3, at: 'camp', power: 2 }, { turn: 3, at: 'beacon', power: 2 },
+      { turn: 4, at: 'beacon', power: 2 }, { turn: 5, at: 'beacon', power: 2 }],
+  },
 ];
 
 export const node = id => NODES.find(item => item.id === id);

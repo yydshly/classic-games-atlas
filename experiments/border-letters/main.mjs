@@ -1,5 +1,5 @@
-import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-1-settle-1';
-import { continueTurn, endTurn, forage, fortify, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-1-settle-1';
+import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-1';
+import { continueTurn, endTurn, forage, fortify, goalMet, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-1';
 
 const KEY = 'atlas.border-letters.v1';
 const $ = id => document.getElementById(id);
@@ -8,6 +8,8 @@ const safeRead = () => { try { return JSON.parse(localStorage.getItem(KEY)); } c
 const record = safeRead();
 let unlocked = Number.isInteger(record?.unlocked) ? Math.min(CAMPAIGNS.length - 1, Math.max(0, record.unlocked)) : 0;
 let state = validSave(record?.state) ? record.state : newGame();
+// The five-mission release capped a completed final mission at unlocked=4.
+if (state.stage === 4 && state.phase === 'won' && state.turn === CAMPAIGNS[4].maxTurn && goalMet(state)) unlocked = Math.max(unlocked, 5);
 if (state.stage > unlocked) state = newGame(unlocked);
 state.settlementPending = !!state.settlementPending;
 state.paused = state.phase === 'playing' && !!record?.state;
@@ -61,8 +63,11 @@ function render() {
   const visit = (level.goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
   $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
   $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · ${unit.role === 'guard' ? '战/守力 3' : '战/守力 1'}</strong><small>在${node(unit.at).name} · 驻防 +${unit.role === 'guard' ? 2 : 1}${unit.fort ? '（已驻防）' : ''}</small></button>`).join('');
-  const unit = unitOf(state, chosenUnit), cost = neighbors(unit.at).includes(chosenNode) ? grainCost(unit.role, chosenNode) + (isSupplied(state, unit.at) ? 0 : 1) : null;
-  $('selection').textContent = `已选 ${unit.name}（${node(unit.at).name}）→ ${node(chosenNode).name}。${cost === null ? '请选择相邻地点。' : `行军预计耗粮 ${cost}；${state.orders} 个命令可用。`}`;
+  const unit = unitOf(state, chosenUnit), adjacent = neighbors(unit.at).includes(chosenNode);
+  const terrainCost = adjacent ? grainCost(unit.role, chosenNode) : null;
+  const brokenLine = adjacent && !isSupplied(state, unit.at);
+  const cost = adjacent ? terrainCost + Number(brokenLine) : null;
+  $('selection').textContent = `已选 ${unit.name}（${node(unit.at).name}）→ ${node(chosenNode).name}。${cost === null ? '请选择相邻地点。' : `行军预计耗粮 ${cost}（地形 ${terrainCost}${brokenLine ? ' + 断线 1' : ''}）；${state.orders} 个命令可用。`}`;
   document.querySelectorAll('[data-action]').forEach(button => {
     const action = button.dataset.action;
     button.disabled = action === 'pause' ? state.phase !== 'playing' : !available(action) || (action === 'undo' && !state.undo.length);
@@ -71,7 +76,7 @@ function render() {
   $('settlement').hidden = state.phase !== 'playing' || !state.settlementPending;
   $('settlement-turn').textContent = state.settlementPending ? `第 ${state.turn - 1} 回合已结算` : '';
   const upcoming = level.waves.filter(wave => wave.turn >= state.turn);
-  $('intel').innerHTML = upcoming.length ? upcoming.map(wave => `<p><strong>第 ${wave.turn} 回合末：</strong>${node(wave.at).name}将受敌力 ${wave.power} 突袭；该地守力总和至少为 ${wave.power} 才能守住，失守后需夺回。</p>`).join('') : '<p>目前没有后续突袭情报。仍须在期限前满足目标。</p>';
+  $('intel').innerHTML = state.phase !== 'playing' ? '<p>本役已结束；已发生的突袭见行军日志。</p>' : upcoming.length ? upcoming.map(wave => `<p><strong>第 ${wave.turn} 回合末：</strong>${node(wave.at).name}将受敌力 ${wave.power} 突袭；该地守力总和至少为 ${wave.power} 才能守住，失守后需夺回。</p>`).join('') : '<p>目前没有后续突袭情报。仍须在期限前满足目标。</p>';
   $('history').innerHTML = state.logs.map(log => `<li>${esc(log)}</li>`).join('');
   $('feedback').textContent = feedback;
   $('result').hidden = state.phase === 'playing';

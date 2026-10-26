@@ -1,4 +1,4 @@
-"""Local Chromium interaction and pixel fixture for the original Border Letters slice."""
+"""Local Chromium interaction and pixel fixture for the eight-mission candidate."""
 from __future__ import annotations
 import json
 import os
@@ -94,17 +94,53 @@ with sync_playwright() as p:
             assert page.locator('#intel').inner_text().count('第 6 回合末') == 2
         route(page, script)
         assert '来信送达' in page.locator('#result').inner_text(), (i, page.locator('#result').inner_text())
+        assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
         if i == 2:
             guard_result = page.locator('#result').inner_text()
             assert '行军 2 次' in guard_result and '额外行军耗粮 4' in guard_result
         if i < 5: page.locator('[data-result="next"]').click()
+    # The published five-mission record capped unlocked at 4 even after winning stage 5.
+    legacy_five = page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1"))')
+    assert legacy_five['state']['stage'] == 4 and legacy_five['state']['phase'] == 'won'
+    legacy_five['unlocked'] = 4
+    legacy_raw = json.dumps(legacy_five, ensure_ascii=False)
+    legacy_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    legacy_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(legacy_raw) + ');')
+    legacy_page = legacy_context.new_page()
+    legacy_page.goto(base + '/experiments/border-letters/')
+    assert legacy_page.locator('[data-stage="5"]').is_enabled()
+    assert legacy_page.locator('[data-stage="6"]').is_disabled()
+    assert legacy_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == legacy_raw
+    legacy_page.locator('[data-result="next"]').click()
+    assert legacy_page.locator('#chapter-title').inner_text().startswith('六')
+    assert legacy_page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.stage') == 5
+    legacy_context.close()
+    corrupt_five = json.loads(legacy_raw)
+    corrupt_five['state']['food'] = -1
+    corrupt_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    corrupt_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(json.dumps(corrupt_five, ensure_ascii=False)) + ');')
+    corrupt_page = corrupt_context.new_page()
+    corrupt_page.goto(base + '/experiments/border-letters/')
+    assert corrupt_page.locator('[data-stage="5"]').is_disabled()
+    assert corrupt_page.locator('#chapter-title').inner_text().startswith('一')
+    corrupt_context.close()
+    impossible_five = json.loads(legacy_raw)
+    impossible_five['state']['turn'] = 1
+    impossible_five['state']['ownership']['relay'] = 'neutral'
+    impossible_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    impossible_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(json.dumps(impossible_five, ensure_ascii=False)) + ');')
+    impossible_page = impossible_context.new_page()
+    impossible_page.goto(base + '/experiments/border-letters/')
+    assert impossible_page.locator('#chapter-title').inner_text().startswith('五')
+    assert impossible_page.locator('[data-stage="5"]').is_disabled()
+    impossible_context.close()
     page.screenshot(path=str(OUT / '390-finish.png'), full_page=True)
     page.locator('[data-result="retry"]').click()
     page.locator('#restart-dialog button[value="restart"]').click()
     page.wait_for_function('document.querySelector("#turn-badge").textContent.includes("第 1 / 6 回合")')
     assert page.locator('#chapter-title').inner_text().startswith('五')
     assert '第 1 / 6 回合' in page.locator('#turn-badge').inner_text()
-    assert len(page.locator('#chapter-pick button:enabled').all()) == 5
+    assert len(page.locator('#chapter-pick button:enabled').all()) == 6
     stage_before = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
     page.once('dialog', lambda dialog: dialog.dismiss())
     page.locator('[data-stage="1"]').click()
@@ -118,6 +154,110 @@ with sync_playwright() as p:
     assert '来信送达' in courier_result and '行军 3 次' in courier_result and '额外行军耗粮 3' in courier_result
     page.locator('header nav a[href="../../"]').click()
     assert page.url.rstrip('/') == base
+
+    # Sixth mission is reached through the five completed UI missions above.
+    page.goto(base + '/experiments/border-letters/')
+    assert page.locator('[data-stage="5"]').is_enabled()
+    page.locator('[data-stage="5"]').click()
+    assert page.locator('#chapter-title').inner_text().startswith('六')
+    assert '谷仓' in page.locator('#intel').inner_text() and '第 1 回合末' in page.locator('#intel').inner_text()
+    keep = [('march','guard','granary'),('march','courier','ford'),E,
+            ('march','courier','relay'),('forage',None,'camp'),E,
+            ('march','courier','outpost'),('forage',None,'camp'),E,
+            ('march','courier','beacon'),E]
+    route(page, keep)
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 5 次' in page.locator('#result').inner_text() and '额外行军耗粮 6' in page.locator('#result').inner_text()
+    page.screenshot(path=str(OUT / '390-sixth-keep.png'), full_page=True)
+    keep_save = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="cancel"]').click()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == keep_save
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','courier','ford'),('march','courier','relay'),E])
+    page.locator('[data-unit="courier"]').click()
+    page.locator('[data-node="outpost"]').click()
+    assert '地形 1 + 断线 1' in page.locator('#selection').inner_text()
+    page.screenshot(path=str(OUT / '390-sixth-disconnected.png'), full_page=True)
+    route(page, [('march','courier','outpost'),('forage',None,'camp'),E,
+                 ('march','courier','beacon'),('forage',None,'camp'),E,E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 4 次' in page.locator('#result').inner_text() and '额外行军耗粮 7' in page.locator('#result').inner_text()
+    page.screenshot(path=str(OUT / '390-sixth-rush.png'), full_page=True)
+    page.locator('[data-result="next"]').click()
+    assert page.locator('#chapter-title').inner_text().startswith('七')
+    assert '第 2 回合末' in page.locator('#intel').inner_text()
+    route(page, [('march','courier','granary'),('march','courier','ford'),E,
+                 ('march','courier','relay'),('march','courier','outpost'),E])
+    assert '敌方' in page.locator('[data-node="relay"]').get_attribute('aria-label')
+    route(page, [('march','guard','pass'),('fortify','courier'),E,
+                 ('march','guard','relay'),('forage',None,'camp'),E,E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 6 次' in page.locator('#result').inner_text() and '驻防 1 次' in page.locator('#result').inner_text()
+    page.screenshot(path=str(OUT / '390-seventh-rush.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','guard','pass'),('march','courier','granary'),E,
+                 ('march','guard','relay'),('march','courier','ford'),E,
+                 ('march','guard','outpost'),('march','courier','relay'),E,
+                 ('forage',None,'camp'),('march','courier','outpost'),E,
+                 ('forage',None,'camp'),E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 7 次' in page.locator('#result').inner_text() and '驻防 0 次' in page.locator('#result').inner_text()
+    page.locator('[data-result="next"]').click()
+    assert page.locator('#chapter-title').inner_text().startswith('八')
+    assert page.locator('#intel').inner_text().count('第 3 回合末') == 2
+    page.screenshot(path=str(OUT / '390-eighth-start.png'), full_page=True)
+    route(page, [('march','courier','granary'),('march','courier','ford'),('march','courier','relay'),E,
+                 ('march','courier','outpost'),('march','courier','beacon'),('march','guard','granary'),E,
+                 ('march','guard','camp'),('fortify','courier'),('forage',None,'camp'),E,
+                 ('fortify','courier'),('forage',None,'camp'),E,('fortify','courier'),E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '驻防 3 次' in page.locator('#result').inner_text() and '额外行军耗粮 9' in page.locator('#result').inner_text()
+    assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
+    page.screenshot(path=str(OUT / '390-eighth-courier.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','guard','beacon'),('march','courier','granary'),('march','courier','pass'),E,
+                 ('march','courier','relay'),('march','courier','pass'),('forage',None,'camp'),E,
+                 ('march','courier','granary'),('march','courier','camp'),('fortify','courier'),E,
+                 ('forage',None,'camp'),E,('forage',None,'camp'),E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '驻防 1 次' in page.locator('#result').inner_text() and '额外行军耗粮 12' in page.locator('#result').inner_text()
+    assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
+    assert len(page.locator('#chapter-pick button:enabled').all()) == 8
+    assert page.evaluate('document.documentElement.scrollWidth') <= 390
+    page.screenshot(path=str(OUT / '390-eighth-guard.png'), full_page=True)
+    eighth_record = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="cancel"]').click()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == eighth_record
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    do(page, 'march', 'guard', 'beacon')
+    do(page, 'pause')
+    eighth_pending = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.reload()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == eighth_pending
+    do(page, 'pause')
+    do(page, 'undo')
+    assert '存粮 14' in page.locator('#supply-badge').inner_text()
+    do(page, 'march', 'guard', 'beacon')
+    page.locator('[data-action="end"]').click()
+    pending_turn = page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn')
+    assert pending_turn == 2 and page.locator('#settlement').is_visible()
+    do(page, 'pause')
+    page.reload()
+    assert page.locator('#settlement').is_visible() and page.locator('[data-action="continue"]').is_disabled()
+    do(page, 'pause')
+    page.locator('[data-action="continue"]').click()
+    assert page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == pending_turn
+    do(page, 'end')
+    do(page, 'end')
+    assert '军情未竟' in page.locator('#result').inner_text()
+    assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
+    assert '第 4 回合末' not in page.locator('#history').inner_text()
 
     wide = browser.new_page(viewport={'width': 1280, 'height': 800}, device_scale_factor=1)
     wide.on('pageerror', lambda error: errors.append(str(error)))
@@ -234,6 +374,6 @@ with sync_playwright() as p:
     assert '存粮 8' in legacy.locator('#supply-badge').inner_text()
     legacy.close()
     assert not errors, errors
-    print(json.dumps({'passed': True, 'scope': 'local Chromium full pointer campaign and alternate route; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, legacy save, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
+    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign and three alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, legacy save, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
     browser.close()
 server.shutdown()

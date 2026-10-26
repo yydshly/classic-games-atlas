@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { CAMPAIGNS } from '../experiments/border-letters/world.mjs';
-import { continueTurn, endTurn, forage, fortify, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
+import { continueTurn, endTurn, forage, fortify, isSupplied, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
 
 function action(state, fn, ...args) {
   const result = fn(state, ...args);
@@ -40,6 +40,59 @@ test('courier ford route and guard pass route carry different order and grain co
   assert.equal(courier.metrics.guarded, 1);
   assert.equal(guard.metrics.marches, 2);
   assert.equal(courier.metrics.marches, 3);
+});
+test('sixth mission supports supply defense and a faster disconnected courier run', () => {
+  const keep = play(5, [[march,'guard','granary'],[march,'courier','ford'],E,
+    [march,'courier','relay'],[forage,'camp'],E,
+    [march,'courier','outpost'],[forage,'camp'],E,[march,'courier','beacon'],E]);
+  const rush = play(5, [[march,'courier','ford'],[march,'courier','relay'],E,
+    [march,'courier','outpost'],[forage,'camp'],E,
+    [march,'courier','beacon'],[forage,'camp'],E,E]);
+  assert.equal(keep.ownership.granary, 'ally');
+  assert.equal(rush.ownership.granary, 'enemy');
+  assert.equal(isSupplied(keep, keep.units[1].at), true);
+  assert.equal(isSupplied(rush, rush.units[1].at), false);
+  assert.equal(keep.metrics.marches, 5);
+  assert.equal(rush.metrics.marches, 4);
+  assert.equal(keep.metrics.spent, 6);
+  assert.equal(rush.metrics.spent, 7);
+  assert.equal(keep.metrics.harvests, rush.metrics.harvests);
+});
+test('seventh mission can rush the courier or guard each announced raid in sequence', () => {
+  const rush = play(6, [[march,'courier','granary'],[march,'courier','ford'],E,
+    [march,'courier','relay'],[march,'courier','outpost'],E,
+    [march,'guard','pass'],[fortify,'courier'],E,
+    [march,'guard','relay'],[forage,'camp'],E,E]);
+  const guard = play(6, [[march,'guard','pass'],[march,'courier','granary'],E,
+    [march,'guard','relay'],[march,'courier','ford'],E,
+    [march,'guard','outpost'],[march,'courier','relay'],E,
+    [forage,'camp'],[march,'courier','outpost'],E,[forage,'camp'],E]);
+  assert.equal(rush.metrics.guarded, 1);
+  assert.equal(guard.metrics.guarded, 0);
+  assert.equal(rush.metrics.marches, 6);
+  assert.equal(guard.metrics.marches, 7);
+  assert.equal(rush.metrics.harvests, 1);
+  assert.equal(guard.metrics.harvests, 2);
+  assert.equal(rush.ownership.relay, 'ally');
+  assert.equal(guard.ownership.relay, 'ally');
+});
+test('eighth mission permits guard holding beacon or courier refortifying it', () => {
+  const guard = play(7, [[march,'guard','beacon'],[march,'courier','granary'],[march,'courier','pass'],E,
+    [march,'courier','relay'],[march,'courier','pass'],[forage,'camp'],E,
+    [march,'courier','granary'],[march,'courier','camp'],[fortify,'courier'],E,
+    [forage,'camp'],E,[forage,'camp'],E]);
+  const courier = play(7, [[march,'courier','granary'],[march,'courier','ford'],[march,'courier','relay'],E,
+    [march,'courier','outpost'],[march,'courier','beacon'],[march,'guard','granary'],E,
+    [march,'guard','camp'],[fortify,'courier'],[forage,'camp'],E,
+    [fortify,'courier'],[forage,'camp'],E,[fortify,'courier'],E]);
+  assert.equal(guard.metrics.guarded, 1);
+  assert.equal(courier.metrics.guarded, 3);
+  assert.equal(guard.metrics.harvests, 3);
+  assert.equal(courier.metrics.harvests, 2);
+  assert.equal(guard.metrics.spent, 12);
+  assert.equal(courier.metrics.spent, 9);
+  assert.equal(guard.ownership.camp, 'ally');
+  assert.equal(courier.ownership.beacon, 'ally');
 });
 test('fourth mission requires two garrisons at the openly signaled final attacks', () => {
   let solo = newGame(3);
