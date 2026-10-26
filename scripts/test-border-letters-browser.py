@@ -46,6 +46,7 @@ with sync_playwright() as p:
     assert '/play/' in page.url
     page.locator('a[href*="border-letters"]').first.click()
     assert '/experiments/border-letters/' in page.url
+    page.wait_for_function('document.querySelector("#chapter-title").textContent.startsWith("一")')
     assert page.locator('#chapter-title').inner_text().startswith('一')
     assert page.evaluate('document.documentElement.scrollWidth') <= 390
     boxes = page.locator('[data-node]').evaluate_all('nodes => nodes.map(n => ({id:n.dataset.node,r:n.getBoundingClientRect().toJSON()}))')
@@ -276,10 +277,22 @@ with sync_playwright() as p:
     assert '来信送达' in page.locator('#result').inner_text()
     assert '驻防 1 次' in page.locator('#result').inner_text() and '额外行军耗粮 12' in page.locator('#result').inner_text()
     assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
-    assert len(page.locator('#chapter-pick button:enabled').all()) == 8
+    assert len(page.locator('#chapter-pick button:enabled').all()) == 9
     assert page.evaluate('document.documentElement.scrollWidth') <= 390
     page.screenshot(path=str(OUT / '390-eighth-guard.png'), full_page=True)
     eighth_record = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    old_eighth = json.loads(eighth_record)
+    old_eighth['unlocked'] = 7
+    old_eighth_raw = json.dumps(old_eighth, ensure_ascii=False)
+    old_eighth_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    old_eighth_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(old_eighth_raw) + ');')
+    old_eighth_page = old_eighth_context.new_page()
+    old_eighth_page.goto(base + '/experiments/border-letters/')
+    assert old_eighth_page.locator('[data-stage="8"]').is_enabled()
+    assert old_eighth_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == old_eighth_raw
+    old_eighth_page.locator('[data-result="next"]').click()
+    assert old_eighth_page.locator('#chapter-title').inner_text().startswith('九')
+    old_eighth_context.close()
     page.locator('[data-result="retry"]').click()
     page.locator('#restart-dialog button[value="cancel"]').click()
     assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == eighth_record
@@ -309,6 +322,121 @@ with sync_playwright() as p:
     assert '本役已结束；已发生的突袭见行军日志' in page.locator('#intel').inner_text()
     assert '第 4 回合末' not in page.locator('#history').inner_text()
 
+    # Ninth mission: guarded mountain route waits out the publicly announced closure.
+    page.locator('[data-stage="8"]').click()
+    assert page.locator('#chapter-title').inner_text().startswith('九')
+    assert '第 3 回合浅渡—烽台封闭' in page.locator('#intel').inner_text()
+    assert page.locator('#map .road.closed').count() == 0
+    page.screenshot(path=str(OUT / '390-ninth-start.png'), full_page=True)
+    route(page, [('march','guard','granary'),('march','guard','pass'),E,
+                 ('march','guard','relay'),('march','courier','ford')])
+    page.locator('[data-action="end"]').click()
+    assert page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 3
+    assert page.locator('#settlement').is_visible()
+    assert page.locator('#map .road.closed').count() == 1
+    assert page.locator('#road-legend').is_visible()
+    assert '下一部署回合封闭' in page.locator('#intel').inner_text()
+    page.keyboard.press('e')
+    assert page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 3
+    page.locator('[data-action="continue"]').click()
+    assert '当前封闭' in page.locator('#intel').inner_text()
+    page.locator('[data-unit="courier"]').click()
+    page.locator('[data-node="relay"]').click()
+    assert '未耗命令与军粮' in page.locator('#selection').inner_text()
+    closed_save = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.locator('[data-action="march"]').click()
+    assert '本次未耗命令或军粮' in page.locator('#feedback').inner_text()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == closed_save
+    page.screenshot(path=str(OUT / '390-ninth-closed.png'), full_page=True)
+    closed_touch = browser.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
+    closed_touch.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(closed_save) + ');')
+    closed_touch_page = closed_touch.new_page()
+    closed_touch_page.goto(base + '/experiments/border-letters/')
+    closed_touch_page.locator('[data-action="pause"]').tap()
+    closed_touch_page.locator('[data-unit="courier"]').tap()
+    closed_touch_page.locator('[data-node="relay"]').tap()
+    touch_before = closed_touch_page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    closed_touch_page.locator('[data-action="march"]').tap()
+    assert '本次未耗命令或军粮' in closed_touch_page.locator('#feedback').inner_text()
+    assert closed_touch_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == touch_before
+    closed_touch.close()
+    closed_keyboard = browser.new_context(viewport={'width': 1280, 'height': 800})
+    closed_keyboard.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(closed_save) + ');')
+    closed_keyboard_page = closed_keyboard.new_page()
+    closed_keyboard_page.goto(base + '/experiments/border-letters/')
+    closed_keyboard_page.keyboard.press('Escape')
+    closed_keyboard_page.keyboard.press('2')
+    closed_keyboard_page.locator('[data-node="relay"]').focus()
+    closed_keyboard_page.keyboard.press('Enter')
+    key_before = closed_keyboard_page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    closed_keyboard_page.keyboard.press('m')
+    assert '本次未耗命令或军粮' in closed_keyboard_page.locator('#feedback').inner_text()
+    assert closed_keyboard_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == key_before
+    closed_keyboard.close()
+    do(page, 'pause')
+    paused_closed = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.reload()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == paused_closed
+    assert page.locator('#map .road.closed').count() == 1
+    do(page, 'pause')
+    do(page, 'forage', at='camp')
+    do(page, 'undo')
+    assert page.locator('#map .road.closed').count() == 1
+    route(page, [('forage',None,'camp'),('forage',None,'camp')])
+    page.locator('[data-action="end"]').click()
+    assert page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 4
+    assert page.locator('#settlement').is_visible()
+    assert page.locator('#map .road.closed').count() == 0
+    assert '下一部署回合重开' in page.locator('#intel').inner_text()
+    page.keyboard.press('e')
+    assert page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.turn') == 4
+    page.locator('[data-action="continue"]').click()
+    assert '现已重开' in page.locator('#intel').inner_text()
+    route(page, [('march','courier','relay'),('march','courier','outpost'),E,E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 6 次' in page.locator('#result').inner_text() and '额外行军耗粮 8' in page.locator('#result').inner_text()
+    assert '驻防 0 次' in page.locator('#result').inner_text()
+    page.screenshot(path=str(OUT / '390-ninth-guard.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','guard','granary'),('march','courier','ford'),E,
+                 ('march','guard','pass'),('forage',None,'camp'),E,
+                 ('forage',None,'camp'),E])
+    assert '敌方' in page.locator('[data-node="relay"]').get_attribute('aria-label')
+    route(page, [('march','guard','relay'),('march','courier','relay'),E,
+                 ('march','courier','outpost'),E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 6 次' in page.locator('#result').inner_text() and '额外行军耗粮 8' in page.locator('#result').inner_text()
+    assert '驱散敌兵' in page.locator('#history').inner_text()
+    page.screenshot(path=str(OUT / '390-ninth-recover.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','courier','ford'),('march','courier','relay'),E,('forage',None,'camp'),E])
+    page.locator('[data-unit="courier"]').click()
+    page.locator('[data-node="outpost"]').click()
+    assert '地形 1 + 断线 1' in page.locator('#selection').inner_text()
+    page.screenshot(path=str(OUT / '390-ninth-supply-break.png'), full_page=True)
+    route(page, [('fortify','courier'),E,('march','courier','outpost'),E,
+                 ('march','courier','relay'),('fortify','courier'),E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 4 次' in page.locator('#result').inner_text() and '额外行军耗粮 4' in page.locator('#result').inner_text()
+    assert '驻防 2 次' in page.locator('#result').inner_text()
+    page.screenshot(path=str(OUT / '390-ninth-courier.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','courier','ford'),('march','courier','relay'),E,
+                 ('forage',None,'camp'),E,E,E,E])
+    assert '军情未竟' in page.locator('#result').inner_text()
+    lost_ninth = page.evaluate('localStorage.getItem("atlas.border-letters.v1")')
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="cancel"]').click()
+    assert page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == lost_ninth
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    page.wait_for_function('document.querySelector("#turn-badge").textContent.includes("第 1 / 5 回合")')
+    assert page.locator('#chapter-title').inner_text().startswith('九')
+    assert page.evaluate('document.documentElement.scrollWidth') <= 390
+
     wide = browser.new_page(viewport={'width': 1280, 'height': 800}, device_scale_factor=1)
     wide.on('pageerror', lambda error: errors.append(str(error)))
     wide.goto(base + '/experiments/border-letters/')
@@ -326,6 +454,12 @@ with sync_playwright() as p:
     wide.keyboard.press('g'); wide.keyboard.press('f'); wide.keyboard.press('e'); wide.keyboard.press('c')
     wide.keyboard.press('e')
     assert '来信送达' in wide.locator('#result').inner_text()
+    wide.evaluate('''async () => { const { newGame } = await import('./engine.mjs'); localStorage.setItem('atlas.border-letters.v1', JSON.stringify({ unlocked: 8, state: newGame(8) })); }''')
+    wide.reload()
+    assert wide.locator('#chapter-title').inner_text().startswith('九')
+    wide.locator('[data-action="pause"]').click()
+    assert wide.evaluate('document.documentElement.scrollWidth') <= 1280
+    wide.screenshot(path=str(OUT / '1280-ninth-start.png'), full_page=True)
     wide.close()
     touch = browser.new_page(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, device_scale_factor=1)
     touch.goto(base + '/experiments/border-letters/')
@@ -424,6 +558,6 @@ with sync_playwright() as p:
     assert '存粮 8' in legacy.locator('#supply-badge').inner_text()
     legacy.close()
     assert not errors, errors
-    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign, sixth north-road counterexample and alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, old fifth and sixth win/active saves, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
+    print(json.dumps({'passed': True, 'scope': 'local Chromium nine-mission pointer campaign; ninth guarded, delayed-recovery and courier routes, closed-road failure/retry, turn 2→3 and 3→4 pending boundaries, 390 touch and keyboard rejection; first-eight regressions, old fifth/sixth/eighth saves, double click and held-key settlement checks, 390/wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
     browser.close()
 server.shutdown()

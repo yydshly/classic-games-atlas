@@ -68,6 +68,14 @@ export const CAMPAIGNS = [
     waves: [{ turn: 3, at: 'camp', power: 2 }, { turn: 3, at: 'beacon', power: 2 },
       { turn: 4, at: 'beacon', power: 2 }, { turn: 5, at: 'beacon', power: 2 }],
   },
+  {
+    name: '九 · 潮闸封路', maxTurn: 5, food: 10, orders: 2,
+    start: { guard: 'camp', courier: 'granary' },
+    intro: '第三回合浅渡—烽台潮闸封闭，第四回合重开；封闭时既不能通行，也不能沿此边传送补给。驿骑须到远哨送潮报，第五回合守住松驿与烽台。第三、五回合烽台将受敌力 2 突袭：驿骑可赶在封路前过渡并定时驻防；谷卫走岚隘可提前稳守，也可等第三回合突袭后夺回，驿骑等重开再送信。',
+    goal: { hold: ['camp', 'relay'], courierVisits: ['outpost'] },
+    roadClosures: [{ turn: 3, reopenTurn: 4, edge: ['ford', 'relay'] }],
+    waves: [{ turn: 3, at: 'relay', power: 2 }, { turn: 5, at: 'relay', power: 2 }],
+  },
 ];
 
 export const node = id => NODES.find(item => item.id === id);

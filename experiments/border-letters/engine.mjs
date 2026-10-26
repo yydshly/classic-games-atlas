@@ -1,4 +1,4 @@
-import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-3';
+import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-3-tide-1';
 
 const clone = value => structuredClone(value);
 export function newGame(stage = 0) {
@@ -21,11 +21,17 @@ export function goalOf(state) {
     ? { ...goal, courierVisits: ['outpost', 'beacon'] } : goal;
 }
 export const unitOf = (state, id) => state.units.find(unit => unit.id === id);
+export const roadClosure = (state, a, b) => levelOf(state).roadClosures?.find(closure =>
+  closure.turn === state.turn && closure.edge.includes(a) && closure.edge.includes(b)) || null;
 export function isSupplied(state, at) {
   const seen = new Set(['camp']);
   const queue = ['camp'];
-  while (queue.length) for (const next of neighbors(queue.shift())) {
-    if (state.ownership[next] === 'ally' && !seen.has(next)) { seen.add(next); queue.push(next); }
+  while (queue.length) {
+    const current = queue.shift();
+    for (const next of neighbors(current)) {
+      if (roadClosure(state, current, next)) continue;
+      if (state.ownership[next] === 'ally' && !seen.has(next)) { seen.add(next); queue.push(next); }
+    }
   }
   return seen.has(at);
 }
@@ -42,6 +48,8 @@ export function march(state, unitId, target) {
   const bad = requireOrder(state); if (bad) return reject(bad);
   const unit = unitOf(state, unitId);
   if (!unit || !node(target) || !neighbors(unit.at).includes(target)) return reject('只能向相邻地点行军');
+  const closure = roadClosure(state, unit.at, target);
+  if (closure) return reject(`第 ${closure.turn} 回合浅渡—烽台潮闸封闭，第 ${closure.reopenTurn} 回合重开；本次未耗命令或军粮`);
   const cost = grainCost(unit.role, target) + (isSupplied(state, unit.at) ? 0 : 1);
   if (state.food < cost) return reject(`需要 ${cost} 粮；可在已控制的松驿或谷仓筹粮`);
   const enemy = state.ownership[target] === 'enemy' ? (state.garrison[target] || 1) : 0;

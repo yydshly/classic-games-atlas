@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { CAMPAIGNS } from '../experiments/border-letters/world.mjs';
-import { continueTurn, endTurn, forage, fortify, goalOf, isSupplied, march, newGame, undo, validSave } from '../experiments/border-letters/engine.mjs';
+import { continueTurn, endTurn, forage, fortify, goalOf, isSupplied, march, newGame, roadClosure, undo, validSave } from '../experiments/border-letters/engine.mjs';
 
 function action(state, fn, ...args) {
   const result = fn(state, ...args);
@@ -126,6 +126,52 @@ test('eighth mission permits guard holding beacon or courier refortifying it', (
   assert.equal(courier.metrics.spent, 9);
   assert.equal(guard.ownership.camp, 'ally');
   assert.equal(courier.ownership.beacon, 'ally');
+});
+test('ninth mission trades timely courier fortifications against a guarded mountain route', () => {
+  const courier = play(8, [[march,'courier','ford'],[march,'courier','relay'],E,
+    [forage,'camp'],E,[fortify,'courier'],E,
+    [march,'courier','outpost'],E,[march,'courier','relay'],[fortify,'courier'],E]);
+  const guard = play(8, [[march,'guard','granary'],[march,'guard','pass'],E,
+    [march,'guard','relay'],[march,'courier','ford'],E,
+    [forage,'camp'],[forage,'camp'],E,
+    [march,'courier','relay'],[march,'courier','outpost'],E,E]);
+  assert.deepEqual([courier.metrics.marches,courier.metrics.spent,courier.metrics.harvests,courier.metrics.guarded,courier.food],[4,4,1,2,0]);
+  assert.deepEqual([guard.metrics.marches,guard.metrics.spent,guard.metrics.harvests,guard.metrics.guarded,guard.food],[6,8,2,0,0]);
+  assert.equal(courier.ownership.relay,'ally');
+  assert.equal(guard.ownership.relay,'ally');
+});
+test('ninth mission mountain guard can recover a publicly lost relay after the closure', () => {
+  const recovered = play(8, [[march,'guard','granary'],[march,'courier','ford'],E,
+    [march,'guard','pass'],[forage,'camp'],E,[forage,'camp'],E,
+    [march,'guard','relay'],[march,'courier','relay'],E,
+    [march,'courier','outpost'],E]);
+  assert.deepEqual([recovered.metrics.marches,recovered.metrics.spent,recovered.metrics.harvests,recovered.metrics.guarded,recovered.food],[6,8,2,0,0]);
+  assert.equal(recovered.ownership.relay,'ally');
+});
+test('ninth mission closure blocks both passage and supply only on turn three', () => {
+  let early = newGame(8);
+  early = action(early,march,'courier','ford');
+  early = action(early,march,'courier','relay');
+  early = action(action(early,endTurn),continueTurn);
+  assert.equal(early.turn,2);
+  assert.equal(isSupplied(early,'relay'),true);
+  const atThreePending = action(early,endTurn);
+  assert.equal(atThreePending.turn,3);
+  assert.equal(atThreePending.settlementPending,true);
+  assert.ok(roadClosure(atThreePending,'ford','relay'));
+  const atThree = action(atThreePending,continueTurn);
+  assert.equal(isSupplied(atThree,'relay'),false);
+  const bytes = JSON.stringify(atThree);
+  const backToFord = march(atThree,'courier','ford');
+  assert.equal(backToFord.ok,false);
+  assert.match(backToFord.reason,/第 4 回合重开/);
+  assert.equal(JSON.stringify(atThree),bytes);
+  const atFourPending = action(action(atThree,fortify,'courier'),endTurn);
+  assert.equal(atFourPending.turn,4);
+  assert.equal(roadClosure(atFourPending,'ford','relay'),null);
+  assert.equal(isSupplied(atFourPending,'relay'),true);
+  const atFour = action(atFourPending,continueTurn);
+  assert.equal(march(atFour,'courier','ford').ok,true);
 });
 test('fourth mission requires two garrisons at the openly signaled final attacks', () => {
   let solo = newGame(3);

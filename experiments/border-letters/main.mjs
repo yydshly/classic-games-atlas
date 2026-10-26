@@ -1,5 +1,5 @@
-import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-3';
-import { continueTurn, endTurn, forage, fortify, goalMet, goalOf, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-3';
+import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-3-tide-1';
+import { continueTurn, endTurn, forage, fortify, goalMet, goalOf, isSupplied, march, newGame, roadClosure, undo, unitOf, validSave } from './engine.mjs?v=border-slice-3-tide-1';
 
 const KEY = 'atlas.border-letters.v1';
 const $ = id => document.getElementById(id);
@@ -10,6 +10,8 @@ let unlocked = Number.isInteger(record?.unlocked) ? Math.min(CAMPAIGNS.length - 
 let state = validSave(record?.state) ? record.state : newGame();
 // The five-mission release capped a completed final mission at unlocked=4.
 if (state.stage === 4 && state.phase === 'won' && state.turn === CAMPAIGNS[4].maxTurn && goalMet(state)) unlocked = Math.max(unlocked, 5);
+// The eight-mission release capped a completed eighth mission at unlocked=7.
+if (state.stage === 7 && state.phase === 'won' && state.turn === CAMPAIGNS[7].maxTurn && goalMet(state)) unlocked = Math.max(unlocked, 8);
 if (state.stage > unlocked) state = newGame(unlocked);
 state.settlementPending = !!state.settlementPending;
 state.paused = state.phase === 'playing' && !!record?.state;
@@ -55,22 +57,24 @@ function render() {
   $('chapter-pick').innerHTML = CAMPAIGNS.map((_, i) => `<button type="button" data-stage="${i}" class="${i === state.stage ? 'current' : ''}" ${i > unlocked ? 'disabled' : ''} aria-label="第${i + 1}役${i > unlocked ? '，未解锁' : ''}" aria-current="${i === state.stage ? 'step' : 'false'}">${i + 1}</button>`).join('');
   $('turn-badge').textContent = state.settlementPending ? `第 ${state.turn - 1} 回合已结算 · 待继续` : `第 ${state.turn} / ${level.maxTurn} 回合 · ${state.orders} 命令`;
   $('supply-badge').textContent = `存粮 ${state.food}`;
-  const lines = EDGES.map(([a,b]) => { const A = node(a), B = node(b); return `<line class="road" x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" />`; }).join('');
+  const lines = EDGES.map(([a,b]) => { const A = node(a), B = node(b); return `<line class="road ${roadClosure(state,a,b) ? 'closed' : ''}" x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" />`; }).join('');
   $('map').innerHTML = `<svg class="roads" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${lines}</svg>` + NODES.map(place => {
     const occupants = state.units.filter(unit => unit.at === place.id).map(unit => unit.id === 'guard' ? '卫' : '骑').join(' ');
     const enemy = state.ownership[place.id] === 'enemy' ? `敌 ${state.garrison[place.id]}` : '';
     return `<button type="button" class="place ${state.ownership[place.id]} ${chosenNode === place.id ? 'selected' : ''}" style="left:${place.x}%;top:${place.y}%;--terrain:${place.color}" data-node="${place.id}" aria-pressed="${chosenNode === place.id}" aria-label="${place.name}，${place.terrain}，${state.ownership[place.id] === 'ally' ? '我方' : state.ownership[place.id] === 'enemy' ? '敌方' : '未控'}${occupants ? '，驻有' + occupants : ''}"><strong>${place.name}</strong><small>${place.terrain}</small>${occupants || enemy ? `<span class="marker">${occupants || enemy}</span>` : ''}</button>`;
   }).join('');
+  $('road-legend').hidden = !level.roadClosures?.some(closure => closure.turn === state.turn);
   const hold = goal.hold.map(at => `${node(at).name}${state.ownership[at] === 'ally' ? ' ✓' : ''}`).join('、');
   const visit = (goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
   const oldGoalNote = legacySixth && state.phase === 'won' ? '旧版第六役完赛记录按当时目标保留。' : legacySixth && state.phase === 'playing' ? '旧版进行中存档沿用原目标；重试本役启用烽台传令。' : '';
   $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${oldGoalNote ? `<br>${oldGoalNote}` : ''}${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
   $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · ${unit.role === 'guard' ? '战/守力 3' : '战/守力 1'}</strong><small>在${node(unit.at).name} · 驻防 +${unit.role === 'guard' ? 2 : 1}${unit.fort ? '（已驻防）' : ''}</small></button>`).join('');
   const unit = unitOf(state, chosenUnit), adjacent = neighbors(unit.at).includes(chosenNode);
+  const blockedRoad = adjacent ? roadClosure(state, unit.at, chosenNode) : null;
   const terrainCost = adjacent ? grainCost(unit.role, chosenNode) : null;
   const brokenLine = adjacent && !isSupplied(state, unit.at);
-  const cost = adjacent ? terrainCost + Number(brokenLine) : null;
-  $('selection').textContent = `已选 ${unit.name}（${node(unit.at).name}）→ ${node(chosenNode).name}。${cost === null ? '请选择相邻地点。' : `行军预计耗粮 ${cost}（地形 ${terrainCost}${brokenLine ? ' + 断线 1' : ''}）；${state.orders} 个命令可用。`}`;
+  const cost = adjacent && !blockedRoad ? terrainCost + Number(brokenLine) : null;
+  $('selection').textContent = `已选 ${unit.name}（${node(unit.at).name}）→ ${node(chosenNode).name}。${blockedRoad ? `第 ${blockedRoad.turn} 回合潮闸封路，不能行军或传补给；第 ${blockedRoad.reopenTurn} 回合重开。选择其他路或等待，未耗命令与军粮。` : cost === null ? '请选择相邻地点。' : `行军预计耗粮 ${cost}（地形 ${terrainCost}${brokenLine ? ' + 断线 1' : ''}）；${state.orders} 个命令可用。`}`;
   document.querySelectorAll('[data-action]').forEach(button => {
     const action = button.dataset.action;
     button.disabled = action === 'pause' ? state.phase !== 'playing' : !available(action) || (action === 'undo' && !state.undo.length);
@@ -79,7 +83,16 @@ function render() {
   $('settlement').hidden = state.phase !== 'playing' || !state.settlementPending;
   $('settlement-turn').textContent = state.settlementPending ? `第 ${state.turn - 1} 回合已结算` : '';
   const upcoming = level.waves.filter(wave => wave.turn >= state.turn);
-  $('intel').innerHTML = state.phase !== 'playing' ? '<p>本役已结束；已发生的突袭见行军日志。</p>' : upcoming.length ? upcoming.map(wave => `<p><strong>第 ${wave.turn} 回合末：</strong>${node(wave.at).name}将受敌力 ${wave.power} 突袭；该地守力总和至少为 ${wave.power} 才能守住，失守后需夺回。</p>`).join('') : '<p>目前没有后续突袭情报。仍须在期限前满足目标。</p>';
+  const roadIntel = (level.roadClosures || []).map(closure => {
+    const status = state.turn === closure.turn
+      ? state.settlementPending ? '下一部署回合封闭，地图红线预示；先查看结算，再点继续部署。' : '当前封闭，地图红线标示。'
+      : state.turn >= closure.reopenTurn
+        ? state.settlementPending && state.turn === closure.reopenTurn ? '下一部署回合重开；先查看结算，再点继续部署。' : '现已重开。'
+        : '尚未封闭，可提前安排过路。';
+    return `<p><strong>潮闸预报：</strong>第 ${closure.turn} 回合浅渡—烽台封闭，第 ${closure.reopenTurn} 回合重开；封闭时不能通行或沿此边传补给。${status}</p>`;
+  }).join('');
+  const waveIntel = upcoming.map(wave => `<p><strong>第 ${wave.turn} 回合末：</strong>${node(wave.at).name}将受敌力 ${wave.power} 突袭；该地守力总和至少为 ${wave.power} 才能守住，失守后需夺回。</p>`).join('');
+  $('intel').innerHTML = state.phase !== 'playing' ? '<p>本役已结束；已发生的突袭见行军日志。</p>' : roadIntel + (waveIntel || '<p>目前没有后续突袭情报。仍须在期限前满足目标。</p>');
   $('history').innerHTML = state.logs.map(log => `<li>${esc(log)}</li>`).join('');
   $('feedback').textContent = feedback;
   $('result').hidden = state.phase === 'playing';
