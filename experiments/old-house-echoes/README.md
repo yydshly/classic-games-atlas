@@ -1,8 +1,8 @@
 # 旧馆余声 · 雨檐救援
 
-七个相连房间的原创生存探索首段，`echoes-slice-1`。**仅本地候选，未部署，不计入45款登记作品。** 不是完整《Resident Evil》复刻，七室不是后续上限。没有使用原作人物、建筑、地图、故事、美术、音效或代码。
+七个相连房间的原创生存探索首段，`echoes-slice-1`。**已上线试玩／七室首段，线上体验验收中；不计入45款登记作品。** 不是完整《Resident Evil》复刻，七室不是后续上限。没有使用原作人物、建筑、地图、故事、美术、音效或代码。
 
-从仓库根目录运行 `python3 -m http.server 4174 --bind 127.0.0.1`，打开 `/experiments/old-house-echoes/`。首页近期入口 → `/play/#independent` → 本作 → 返回大厅；原45款、99版本与7个旧实验地址继续保留。
+从仓库根目录运行 `python3 -m http.server 4174 --bind 127.0.0.1`，打开 `/experiments/old-house-echoes/`。首页近期入口 → `/play/#independent` → 本作 → 返回大厅；原45款、99版本与7个旧实验地址继续保留。玩法版本仍为 `echoes-slice-1`；本次仅修正发布状态，入口与主模块使用 `echoes-slice-1-status-2` 缓存标记。
 
 ## 救援目标与操作
 
@@ -41,4 +41,4 @@ node scripts/audit-play-entry-links.mjs --check
 
 [GOG 授权原版发行介绍](https://www.gog.com/en/game/resident_evil)（2026-10-26读取）所保留原版介绍强调洋馆空间、光影和变化镜头。本作只取固定视角的空间判断，不复用画面；每室固定一镜、屏幕方向移动，无坦克控制、三维物品旋转、双主角、复杂武器、推箱、原版剧情/谜题、耗材存档或完整原版规模。后续西翼/庭院档案/地下撤离尚未制作，应以新的决策而非堆房间推进。
 
-当前证据与限制见 [本地开发记录](../../docs/old-house-echoes-qa/README.md)。辅助输入回放不等于陌生玩家趣味验收；390 Chromium模拟不等于真机触控。未上传截图，未公开提交或部署。
+当前证据与限制见 [本地开发记录](../../docs/old-house-echoes-qa/README.md)。辅助输入回放不等于陌生玩家趣味验收；390 Chromium模拟不等于真机触控。截图仍仅本地保存；源码与入口已通过正式 GitHub/Pages 发布，线上体验与实体手机验收待继续。

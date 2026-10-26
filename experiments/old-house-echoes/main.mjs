@@ -6,7 +6,7 @@ import {draw} from './renderer.mjs?v=echoes-slice-1';
 const $=id=>document.getElementById(id),canvas=$('world'),panel=$('panel');let storage;try{storage=window.localStorage;}catch{}
 const saved=load(storage);let s=saved.save||createGame(),checkpoint=saved.checkpoint||snapshot(createGame()),started=false,screen='',selected=null,saveAllowed=saved.ok,lastMessage='',lastHud='',sound=false,audio;
 const clone=v=>structuredClone(v),itemName=id=>ITEMS[id].name;
-function save(){if(!started)return;if(!saveAllowed){$('save-status').textContent=saved.reason;return;}$('save-status').textContent=persist(storage,s,checkpoint)?'现场已保存在本机 · 未部署候选':'保存失败 · 当前可继续玩，请重试保存';}
+function save(){if(!started)return;if(!saveAllowed){$('save-status').textContent=saved.reason;return;}$('save-status').textContent=persist(storage,s,checkpoint)?'现场已保存在本机 · 已上线试玩／七室首段，线上体验验收中':'保存失败 · 当前可继续玩，请重试保存';}
 function tone(type){if(!sound)return;try{audio??=new AudioContext();audio.resume();const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.setValueAtTime(type==='shot'?150:type==='hurt'?82:330,audio.currentTime);g.gain.setValueAtTime(.035,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.14);o.connect(g).connect(audio.destination);o.start();o.stop(audio.currentTime+.15);}catch{sound=false;}}
 function events(){for(const e of s.events.splice(0)){if(e==='checkpoint'){checkpoint=snapshot(s);save();}else if(e==='door'||e==='won')save();tone(e);}}
 function update(){

@@ -1,6 +1,6 @@
-# 旧馆余声 · 首段本地交付记录
+# 旧馆余声 · 首段交付与验证记录
 
-2026-10-26，独立分支 `local/old-house-echoes`。基于远端 main `9416903214395b62f50bfa5e41e9b3f48cf23b83`，base tree `d21e5547f5a79c9b9b4d6f63d3a7f6705ac502eb`。远端只执行读取/fetch；没有 push、上传、部署，也没有将55份先前被拒的玩法说明混入范围。当前仓库及工作区无 `AGENTS.md`，工作区 `.agents` 为空；已读根 README 的目录、技术与测试说明。
+2026-10-26，独立分支 `local/old-house-echoes`。基于远端 main `9416903214395b62f50bfa5e41e9b3f48cf23b83`，base tree `d21e5547f5a79c9b9b4d6f63d3a7f6705ac502eb`。首次验证时仅本地交付；随后按原18文件范围通过正式 GitHub 连接发布为 `2a501de8b1bedc2286367c78901fb73d27cf97b9`，Pages 部署成功。当前已上线试玩／七室首段，线上体验验收中；没有将55份先前被拒的玩法说明混入范围。当前仓库及工作区无 `AGENTS.md`，工作区 `.agents` 为空；已读根 README 的目录、技术与测试说明。
 
 已完成七室原创生存探索首段、有限资源/携带与物品操作、真实可躲可清巡馆偶、温室绕行和储物回环、救援后慢速返程、暂停续档/记录点重试、键盘和390触控仿真。不是完整原作复刻；同行是偏移绘图与减速，无独立护送AI。角色、建筑、地图、情节、程序美术和合成提示音原创。玩法与参考事实边界见 [游戏 README](../../experiments/old-house-echoes/README.md)。
 
@@ -32,11 +32,11 @@
 
 实际像素检查使用本地 PNG 与 `view_image`，覆盖门厅、回廊、值班室、温室、阅览室、档案室、前室及390暂停面板。看到了固定地板投影、通道障碍、任务物/状态、两名同行者和面板排版。发现小屏画布文字偏小，已将交互与推击提示补到14px DOM。复验修正了标签遮住角色头部的情况，并为回廊补原创抽象肖像。画面仍是克制的程序图形首段，不能把模型通过或截图当成真人审美认可。没有把离线模型图称浏览器画面。
 
-本地截图及报告全部位于忽略目录 `.local/old-house-qa/`：`browser-report.json`、`model-report.json`、`regression.txt`、`entry-audit.json`、`scope-audit.json`；`clear-*.png`/`bypass-*.png` 七室过程、`pressure-full-before-fuse.png`/`pressure-full-before-wire.png`、`mobile-intro-play.png`/`mobile-paused.png`，以及最后像素复查 `pixel-final-corridor.png`/`pixel-final-duty.png`。没有上传或纳入提交。
+本地截图及报告全部位于忽略目录 `.local/old-house-qa/`：`browser-report.json`、`model-report.json`、`regression.txt`、`entry-audit.json`、`scope-audit.json`；`clear-*.png`/`bypass-*.png` 七室过程、`pressure-full-before-fuse.png`/`pressure-full-before-wire.png`、`mobile-intro-play.png`/`mobile-paused.png`，以及最后像素复查 `pixel-final-corridor.png`/`pixel-final-duty.png`。截图没有上传或纳入提交。
 
 ## 入口、变更与保留
 
-最小旧文件修改只有三处：`index.html` 新增一段近期本地候选链接；`play/entries.json` 头部新增候选元数据；由 `scripts/build-play-index.mjs --write` 重建 `play/index.html`。首页主体未重建。索引明确“本地候选/未部署”，统计仍45登记/99历史版本，实验网页7→8，仍注明同作修订版不重复算独立游戏。旧实验元数据、游戏、版本、数据、存档入口全部保留。
+最小旧文件修改只有三处：`index.html` 新增一段近期试玩链接；`play/entries.json` 头部新增试玩元数据；由 `scripts/build-play-index.mjs --write` 重建 `play/index.html`。首页主体未重建。本次状态收尾把旧馆首页、索引、游戏保存状态及说明中的过时文案统一改为“已上线试玩／七室首段，线上体验验收中”，统计仍45登记/99历史版本，实验网页7→8，仍注明同作修订版不重复算独立游戏。旧实验元数据、游戏、版本、数据、存档入口全部保留。
 
 新增为 `experiments/old-house-echoes/` 的9个文本文件、三份本地验证/回放脚本、一份测试与本目录记录/清单。精确路径见 [scope.json](./scope.json)，`node scripts/verify-old-house-echoes.mjs` 检查三处旧文件改动和全部新增范围；检查没有删除/改名、没有图片二进制、没有旧游戏或55份说明文件变更。`node scripts/audit-play-entry-links.mjs --check` 在本地最终 tree 检查全部107个可玩入口可达（99版本＋8实验），不是线上发布检查。
 
@@ -44,4 +44,6 @@
 
 `python3 scripts/validate_data.py` 在原有数据关联断言失败：`moss→lemmings`、`inlet→qix`、`ladder→lode-runner` 不在72项原作ID集合。`data/games.json` 与 `data/experiments.json` 均与基线逐字节一致，未扩散修改。该老验证器不通过应单列，不能宣称全仓所有检查绿。
 
-本任务无环境、网络或核心玩法阻断。未验真人趣味、连续手感、实体手机及浏览器兼容覆盖；父线程可在现有用户电脑做真实UI QA。先评审资源路线与画面，再决定西翼/庭院档案/地下撤离如何增加不同决策；当前三者尚未制作。此记录不授权公开提交、上传或部署。
+本任务无环境、网络或核心玩法阻断。未验真人趣味、连续手感、实体手机及浏览器兼容覆盖；父线程可在现有用户电脑做真实UI QA。先评审资源路线与画面，再决定西翼/庭院档案/地下撤离如何增加不同决策；当前三者尚未制作。发布授权仅覆盖本次旧馆的18个源码、入口及文字验证文件；截图和无关说明批次仍不在范围内。
+
+发布状态收尾仅在原18文件范围修改文案及对应状态断言。玩法、存档键、既有验证结论和其他作品不变；用 `echoes-slice-1-status-2` 更新旧馆入口与主模块缓存键。此缓存键避免复用旧主模块，尚不等于实测 CDN 响应头或真实用户缓存已刷新。
