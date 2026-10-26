@@ -49,8 +49,8 @@ export const CAMPAIGNS = [
   {
     name: '六 · 粮道易手', maxTurn: 4, food: 8, orders: 2,
     start: { guard: 'camp', courier: 'granary' },
-    intro: '首回合谷仓将受敌力 3 突袭。谷卫进仓可保住补给线；也可让驿骑连走浅渡与烽台，暂弃谷仓抢先送信，但断线后每次行军多耗 1 粮。第四回合前驿骑须到过远哨、北望，松驿不能失守。',
-    goal: { hold: ['camp'], courierVisits: ['outpost', 'beacon'] },
+    intro: '首回合谷仓将受敌力 3 突袭。谷卫进仓可保住补给线；也可让驿骑连走浅渡与烽台，暂弃谷仓抢先送信，但断线后每次行军多耗 1 粮。驿骑须到过烽台传令、远哨与北望；第四回合结束时松驿不能失守。',
+    goal: { hold: ['camp'], courierVisits: ['relay', 'outpost', 'beacon'] },
     waves: [{ turn: 1, at: 'granary', power: 3 }],
   },
   {

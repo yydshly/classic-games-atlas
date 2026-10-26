@@ -1,5 +1,5 @@
-import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-1';
-import { continueTurn, endTurn, forage, fortify, goalMet, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-1';
+import { CAMPAIGNS, EDGES, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-2';
+import { continueTurn, endTurn, forage, fortify, goalMet, isSupplied, march, newGame, undo, unitOf, validSave } from './engine.mjs?v=border-slice-2-eight-2';
 
 const KEY = 'atlas.border-letters.v1';
 const $ = id => document.getElementById(id);
@@ -61,7 +61,8 @@ function render() {
   }).join('');
   const hold = level.goal.hold.map(at => `${node(at).name}${state.ownership[at] === 'ally' ? ' ✓' : ''}`).join('、');
   const visit = (level.goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
-  $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
+  const oldSixthWin = state.stage === 5 && state.phase === 'won' && !state.visits.includes('relay');
+  $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${oldSixthWin ? '<br>旧版第六役完赛记录按当时目标保留。' : ''}${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
   $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · ${unit.role === 'guard' ? '战/守力 3' : '战/守力 1'}</strong><small>在${node(unit.at).name} · 驻防 +${unit.role === 'guard' ? 2 : 1}${unit.fort ? '（已驻防）' : ''}</small></button>`).join('');
   const unit = unitOf(state, chosenUnit), adjacent = neighbors(unit.at).includes(chosenNode);
   const terrainCost = adjacent ? grainCost(unit.role, chosenNode) : null;

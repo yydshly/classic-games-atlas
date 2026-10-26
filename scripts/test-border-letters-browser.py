@@ -115,6 +115,19 @@ with sync_playwright() as p:
     assert legacy_page.locator('#chapter-title').inner_text().startswith('六')
     assert legacy_page.evaluate('JSON.parse(localStorage.getItem("atlas.border-letters.v1")).state.stage') == 5
     legacy_context.close()
+    # A real sixth-mission north-road win from the previous eight-mission release.
+    old_sixth_raw = (ROOT / 'tests/fixtures/border-stage6-old-north-save.json').read_text().strip()
+    old_sixth_context = browser.new_context(viewport={'width': 390, 'height': 844})
+    old_sixth_context.add_init_script('localStorage.setItem(' + json.dumps('atlas.border-letters.v1') + ',' + json.dumps(old_sixth_raw) + ');')
+    old_sixth_page = old_sixth_context.new_page()
+    old_sixth_page.goto(base + '/experiments/border-letters/')
+    assert '来信送达' in old_sixth_page.locator('#result').inner_text()
+    assert '旧版第六役完赛记录按当时目标保留' in old_sixth_page.locator('#status').inner_text()
+    assert old_sixth_page.locator('[data-stage="6"]').is_enabled()
+    assert old_sixth_page.evaluate('localStorage.getItem("atlas.border-letters.v1")') == old_sixth_raw
+    old_sixth_page.locator('[data-result="next"]').click()
+    assert old_sixth_page.locator('#chapter-title').inner_text().startswith('七')
+    old_sixth_context.close()
     corrupt_five = json.loads(legacy_raw)
     corrupt_five['state']['food'] = -1
     corrupt_context = browser.new_context(viewport={'width': 390, 'height': 844})
@@ -185,6 +198,22 @@ with sync_playwright() as p:
     assert '来信送达' in page.locator('#result').inner_text()
     assert '行军 4 次' in page.locator('#result').inner_text() and '额外行军耗粮 7' in page.locator('#result').inner_text()
     page.screenshot(path=str(OUT / '390-sixth-rush.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','courier','pass'),('march','courier','beacon'),E,
+                 ('march','courier','outpost'),('forage',None,'camp'),E,
+                 ('forage',None,'camp'),E,E])
+    assert '军情未竟' in page.locator('#result').inner_text()
+    assert '驿骑到过 烽台、远哨 ✓、北望 ✓' in page.locator('#status').inner_text()
+    assert page.evaluate('document.documentElement.scrollWidth') <= 390
+    page.screenshot(path=str(OUT / '390-sixth-north-missed-relay.png'), full_page=True)
+    page.locator('[data-result="retry"]').click()
+    page.locator('#restart-dialog button[value="restart"]').click()
+    route(page, [('march','courier','pass'),('march','courier','relay'),E,
+                 ('march','courier','outpost'),('forage',None,'camp'),E,
+                 ('march','courier','beacon'),('forage',None,'camp'),E,E])
+    assert '来信送达' in page.locator('#result').inner_text()
+    assert '行军 4 次' in page.locator('#result').inner_text() and '额外行军耗粮 8' in page.locator('#result').inner_text()
     page.locator('[data-result="next"]').click()
     assert page.locator('#chapter-title').inner_text().startswith('七')
     assert '第 2 回合末' in page.locator('#intel').inner_text()
@@ -374,6 +403,6 @@ with sync_playwright() as p:
     assert '存粮 8' in legacy.locator('#supply-badge').inner_text()
     legacy.close()
     assert not errors, errors
-    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign and three alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, legacy save, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
+    print(json.dumps({'passed': True, 'scope': 'local Chromium eight-mission pointer campaign, sixth north-road counterexample and alternate routes; physical mouse double click, rapid emulated touch taps, held-key repeat across Continue; paused pending reload, old fifth and sixth win saves, retry cancel/confirm, 390 and wide pixels', 'screenshots': [str(x) for x in sorted(OUT.glob('*.png'))]}, ensure_ascii=False))
     browser.close()
 server.shutdown()

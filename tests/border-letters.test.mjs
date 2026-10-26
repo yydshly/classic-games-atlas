@@ -58,6 +58,23 @@ test('sixth mission supports supply defense and a faster disconnected courier ru
   assert.equal(rush.metrics.spent, 7);
   assert.equal(keep.metrics.harvests, rush.metrics.harvests);
 });
+test('sixth mission requires the announced relay transmission without banning the north road', () => {
+  let shortcut = newGame(5);
+  for (const [fn, ...args] of [[march,'courier','pass'],[march,'courier','beacon'],E,
+    [march,'courier','outpost'],[forage,'camp'],E,[forage,'camp'],E,E]) {
+    shortcut = action(shortcut, fn, ...args);
+    if (fn === endTurn && shortcut.settlementPending) shortcut = action(shortcut, continueTurn);
+  }
+  assert.equal(shortcut.phase, 'lost');
+  assert.equal(shortcut.visits.includes('relay'), false);
+  assert.equal(shortcut.metrics.marches, 3);
+  assert.equal(shortcut.metrics.spent, 6);
+  const northWithRelay = play(5, [[march,'courier','pass'],[march,'courier','relay'],E,
+    [march,'courier','outpost'],[forage,'camp'],E,
+    [march,'courier','beacon'],[forage,'camp'],E,E]);
+  assert.equal(northWithRelay.metrics.marches, 4);
+  assert.equal(northWithRelay.metrics.spent, 8);
+});
 test('seventh mission can rush the courier or guard each announced raid in sequence', () => {
   const rush = play(6, [[march,'courier','granary'],[march,'courier','ford'],E,
     [march,'courier','relay'],[march,'courier','outpost'],E,

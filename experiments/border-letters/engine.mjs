@@ -1,4 +1,4 @@
-import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-1';
+import { CAMPAIGNS, NODES, grainCost, neighbors, node } from './world.mjs?v=border-slice-2-eight-2';
 
 const clone = value => structuredClone(value);
 export function newGame(stage = 0) {
