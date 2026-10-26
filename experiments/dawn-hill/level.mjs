@@ -25,9 +25,24 @@ const third=freezeLevel({...thirdLegacy,goalText:'穿过晚风石洲，到右侧
  blocks:thirdLegacy.blocks.map(b=>b.id==='rest-fruit'?{...b,x:1950}:b),
  enemies:thirdLegacy.enemies.map(e=>e.id==='ridge-3'?{...e,x:1880,left:1850,right:1920}:e),
  seeds:thirdLegacy.seeds.map(s=>s.id==='ridge-c'?{...s,x:1610,y:390}:s)});
+const fourth=freezeLevel({title:'草穗阶谷',destination:'穗风亭',theme:'grain',goalText:'穿过阶谷与低石棚，到右侧的穗风亭。',choice:'阶梯可停稳；低棚下提早松开跳，落稳再跳。高台的籽是可选奖励。',width:2600,floor:420,start:90,goal:2460,
+ terrain:[{id:'grain-start',x:0,y:420,w:760,h:160},{id:'grain-main',x:840,y:420,w:880,h:160},{id:'grain-home',x:1820,y:420,w:780,h:160},{id:'grain-first',x:310,y:385,w:110,h:35},{id:'grain-second',x:480,y:350,w:110,h:18},{id:'grain-third',x:620,y:315,w:90,h:18},{id:'low-canopy',x:980,y:310,w:340,h:18},{id:'short-one',x:1060,y:398,w:50,h:22},{id:'short-two',x:1210,y:394,w:55,h:26}],
+ blocks:[{id:'grain-fruit',x:180,y:315,w:38,h:30},{id:'grain-rest-fruit',x:1600,y:315,w:38,h:30}],
+ enemies:[{id:'grain-1',x:1480,y:420,left:1425,right:1540,speed:35},{id:'grain-2',x:2150,y:420,left:2080,right:2230,speed:-35}],
+ seeds:[{id:'grain-a',x:525,y:320},{id:'grain-b',x:690,y:285},{id:'grain-c',x:1235,y:365}]});
+const fifth=freezeLevel({title:'钟影望台',destination:'铜钟楼',theme:'watch',goalText:'看清望台上的巡逻，前往右侧铜钟楼。',choice:'有宽台可以停住观察。脚印标示巡逻边界，先看方向，再选择踩过或跳绕。',width:2620,floor:420,start:90,goal:2480,
+ terrain:[{id:'watch-start',x:0,y:420,w:920,h:160},{id:'watch-main',x:1030,y:420,w:1590,h:160},{id:'lookout',x:390,y:365,w:130,h:55},{id:'patrol-step',x:1110,y:365,w:120,h:55},{id:'balcony-step',x:1450,y:365,w:100,h:55},{id:'bell-balcony',x:1600,y:300,w:300,h:18}],
+ blocks:[{id:'watch-fruit',x:180,y:315,w:38,h:30},{id:'watch-return-fruit',x:2330,y:315,w:38,h:30}],
+ enemies:[{id:'watch-1',x:670,y:420,left:610,right:740,speed:35},{id:'watch-2',x:1185,y:365,left:1145,right:1205,speed:-32},{id:'watch-3',x:1790,y:300,left:1730,right:1850,speed:35},{id:'watch-4',x:2140,y:420,left:2070,right:2210,speed:-40}],
+ seeds:[{id:'watch-a',x:700,y:390},{id:'watch-b',x:1710,y:270},{id:'watch-c',x:2250,y:390}]});
+const sixth=freezeLevel({title:'双径归庭',destination:'归庭大钟',theme:'courtyard',goalText:'选择高低两径，在右侧归庭大钟前落稳。',choice:'两处分路可混合选择：高台奖励伴随巡逻，低路有断口与地面巡逻。奖励不必收齐。',width:2920,floor:420,start:90,goal:2780,
+ terrain:[{id:'court-start',x:0,y:420,w:1080,h:160},{id:'court-main',x:1180,y:420,w:830,h:160},{id:'court-home',x:2120,y:420,w:800,h:160},{id:'court-first',x:400,y:380,w:100,h:40},{id:'court-middle',x:550,y:315,w:120,h:18},{id:'court-upper',x:710,y:235,w:260,h:18},{id:'court-return',x:1540,y:365,w:120,h:55},{id:'court-climb',x:1700,y:300,w:140,h:18},{id:'court-crossing',x:1890,y:235,w:290,h:18},{id:'court-last',x:2320,y:365,w:120,h:55}],
+ blocks:[{id:'court-fruit',x:180,y:315,w:38,h:30},{id:'court-upper-fruit',x:920,y:140,w:38,h:30},{id:'court-middle-fruit',x:1330,y:315,w:38,h:30}],
+ enemies:[{id:'court-1',x:760,y:420,left:700,right:850,speed:35},{id:'court-2',x:855,y:235,left:810,right:880,speed:-34},{id:'court-3',x:2070,y:235,left:1980,right:2130,speed:35},{id:'court-4',x:2500,y:420,left:2470,right:2600,speed:-40}],
+ seeds:[{id:'court-a',x:795,y:205},{id:'court-b',x:905,y:205},{id:'court-c',x:2060,y:205}]});
 export const LAYOUT_REVISION=2;
-export const LEGACY_LEVELS=Object.freeze([first,second,thirdLegacy]);
-export const LEVELS=Object.freeze([first,second,third]);
+export const LEGACY_LEVELS=Object.freeze([first,second,thirdLegacy,fourth,fifth,sixth]);
+export const LEVELS=Object.freeze([first,second,third,fourth,fifth,sixth]);
 export const LEVEL=LEVELS[0]; // First-level compatibility for historical route checks.
 export function getLevel(g){const revision=g.layoutRevision??1;if(![1,LAYOUT_REVISION].includes(revision))throw Error('unknown layout revision');const level=(revision===1?LEGACY_LEVELS:LEVELS)[g.stageIndex??0];if(!level)throw Error('unknown chapter');return level;}
 export const STEP=1/120;

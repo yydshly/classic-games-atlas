@@ -11,7 +11,7 @@ import {runner,qualityLowRoute,qualityHighRoute,qualitySmallHighRoute,stageUnpow
 import {encodeSave,decodeSave,openStore,SAVE_KEY} from './storage.mjs';
 const low=qualityLowRoute(),high=qualityHighRoute();
 function prefix(route,stage,tick,revision=2){
- const g=command(createGame(0,0,false,null,revision),'start');
+ const g=command(createGame(0,0,false,null,revision,3),'start');
  for(const run of route.runs){
   if(g.stageIndex===stage&&g.tick===tick)return g;
   if(run.command)command(g,run.command);
@@ -25,14 +25,14 @@ function prefix(route,stage,tick,revision=2){
 const advance=(g,n,keys={})=>{for(let i=0;i<n;i++)step(g,keys);};
 test('new full normal routes replay and make a real stop-on-island versus direct-high-crossing choice',()=>{
  for(const route of [low,high]){
-  const g=command(createGame(),'start');
+  const g=command(createGame(0,0,false,null,2,3),'start');
   for(const run of route.runs){if(run.command)command(g,run.command);else advance(g,run.frames,JSON.parse(run.keys));}
   assert.deepEqual(g,route.game);assert.equal(g.phase,'won');assert.equal(g.journey.completed.length,3);
  }
  const stop=low.observations.find(o=>o.label==='quality-island-rest').game;
  assert(stop.player.grounded&&stop.player.y===420&&stop.player.x>1583&&stop.player.x<1637);
  assert(stop.seeds.includes('ridge-c'));assert(high.game.seeds.includes('ridge-b'));assert(!high.game.seeds.includes('ridge-c'));
- const g=command(createGame(),'start');let fromHigh=false,islandTouch=false;
+ const g=command(createGame(0,0,false,null,2,3),'start');let fromHigh=false,islandTouch=false;
  for(const run of high.runs){if(run.command)command(g,run.command);else for(let n=0;n<run.frames;n++){step(g,JSON.parse(run.keys));if(g.stageIndex===2&&g.player.x>=1510&&g.player.x<1605&&g.player.grounded&&g.player.y===235)fromHigh=true;if(fromHigh&&g.player.x>=1570&&g.player.x<=1650&&g.player.grounded&&g.player.y===420)islandTouch=true;}}
  assert(fromHigh);assert.equal(islandTouch,false);
 });
@@ -83,7 +83,7 @@ test('current route checkpoints have no terrain overlap, serialize and recover t
 });
 
 test('a small high-route journey crosses the isle, jumps past the last enemy and reaches the goal without injected state',()=>{
- const route=qualitySmallHighRoute(),g=command(createGame(),'start');let highLaunch=false,isleContact=false,farBank=false,bypassed=false,checked=0;
+ const route=qualitySmallHighRoute(),g=command(createGame(0,0,false,null,2,3),'start');let highLaunch=false,isleContact=false,farBank=false,bypassed=false,checked=0;
  for(const run of route.runs){if(run.command)command(g,run.command);else for(let n=0;n<run.frames;n++){step(g,JSON.parse(run.keys));if(g.stageIndex===2){checked++;assert.equal(g.phase==='failed',false);assert.equal(g.player.big,false);assert.equal(g.stats.fruit,0);assert.equal(g.stats.damage,0);assert(![...getLevel(g).terrain,...getLevel(g).blocks].some(t=>overlap(body(g.player),t)));if(g.player.grounded&&g.player.y===235&&g.player.x>=1510&&g.player.x<=1605)highLaunch=true;if(highLaunch&&g.player.grounded&&g.player.y===420&&g.player.x>=1570&&g.player.x<=1650)isleContact=true;if(highLaunch&&g.player.grounded&&g.player.y===420&&g.player.x>=1720)farBank=true;if(g.player.x>1935&&g.enemies[2].alive)bypassed=true;if(g.tick%120===0)assert.deepEqual(decodeSave(encodeSave(g)),g);}}}
  assert.deepEqual(g,route.game);assert.equal(g.phase,'won');assert.equal(g.tick,2145);assert.equal(checked,2145);assert(highLaunch&&farBank&&bypassed);assert.equal(isleContact,false);assert.equal(g.retries,0);assert.equal(g.journey.completed.length,3);assert.equal(g.stats.stomps,2);assert.equal(g.enemies[2].alive,true);
 });
