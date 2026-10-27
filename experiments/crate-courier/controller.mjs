@@ -1,4 +1,4 @@
-import {command,step,hint,heldBox,getLevel,LEVELS} from './engine.mjs?v=crate-courier-seven-1';
+import {command,step,hint,heldBox,getLevel,LEVELS} from './engine.mjs?v=crate-courier-seven-fourth-cue-1';
 export function attachController(root,g,{onChange=()=>{},confirmRestart}={}){
   const $=s=>root.querySelector(s),doc=root.ownerDocument,win=doc.defaultView,stage=$('#stage');
   const keyboard={},pointers=new Map(),pulses=new Map();let disposed=false,placeQueued=false;
@@ -22,7 +22,9 @@ export function attachController(root,g,{onChange=()=>{},confirmRestart}={}){
     if(g.phase==='won'){$('#result-title').textContent=final?'七站平安走完':'第'+number+'关到站';$('#result-text').textContent=level.next;$('#result-retry').textContent='再试本关';$('#next').textContent=final?'':'下一关 · '+LEVELS[g.stageIndex+1].title;}
     if(g.phase==='failed'){$('#result-title').textContent='这次没能到站';$('#result-text').textContent=g.result.cause+'。重试只重开本关，前面已完成的章节保留。';$('#result-retry').textContent='重试第'+number+'关';}
     if(final){const signature=JSON.stringify(g.journey.completed);if($('#recap').dataset.signature!==signature){$('#recap').replaceChildren(...g.journey.completed.map(c=>{const li=doc.createElement('li');li.textContent=`${c.title}：投中${c.hits}次 · 跳${c.jumps}次 · 轻放${c.places}次 · 重试${c.retries}次`;return li;}));$('#recap').dataset.signature=signature;}}
-    $('#canvas').setAttribute('aria-label',`第${number}关${level.title}：递送员位于本关 ${Math.min(100,Math.round(g.player.x/level.goal*100))}%；体力 ${g.player.hp}；${held?'持箱':'空手'}。${text}`);
+    const horizontal=Math.min(100,Math.round(g.player.x/level.goal*100));
+    const position=g.stageIndex===3&&g.phase!=='won'&&horizontal===100?'已到高架下方，仍未到站':`位于本关 ${horizontal}%`;
+    $('#canvas').setAttribute('aria-label',`第${number}关${level.title}：递送员${position}；体力 ${g.player.hp}；${held?'持箱':'空手'}。${text}`);
   }
   const listen=(o,type,f)=>{o.addEventListener(type,f);unlisten.push(()=>o.removeEventListener(type,f));},unlisten=[];
   listen($('#start'),'click',()=>change('start'));listen($('#pause'),'click',()=>change(g.phase==='paused'?'resume':'pause'));listen($('#retry'),'click',()=>change('retry'));listen($('#result-retry'),'click',()=>change('retry'));

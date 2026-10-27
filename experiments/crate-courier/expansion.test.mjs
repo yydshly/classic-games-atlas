@@ -16,7 +16,7 @@ test('fourth through sixth chapters replay normal held inputs, keep old completi
   }
   const final=chapterSixLower().game;assert.equal(final.stageIndex,5);assert.equal(final.levelVersion,2);assert.equal(final.player.y,440);
   const fourthStep=chapterFourRoute().observations.find(o=>o.label==='box-step-3').snapshot;
-  assert.equal(fourthStep.player.support,'box-3');assert.match(hint(fourthStep),/先走下箱子/);
+  assert.equal(fourthStep.player.support,'box-3');assert.match(hint(fourthStep),/先向上跳.*再按右/);
   assert.equal(final.journey.completed[3].places,1);
   assert.deepEqual([final.run.shots,final.run.hits,final.run.places,final.player.hp],[1,1,0,3]);
   assert.equal(decodeSave(encodeSave(final)).journey.completed.length,6);

@@ -1,4 +1,4 @@
-import {getLevel,heldBox,pickupBox,forecastThrow,LEVELS} from './engine.mjs?v=crate-courier-seven-1';
+import {getLevel,heldBox,pickupBox,forecastThrow,LEVELS} from './engine.mjs?v=crate-courier-seven-fourth-cue-1';
 const C={ink:'#203b42',deep:'#244b53',teal:'#397d79',mint:'#98bfac',paper:'#f5e8cc',gold:'#eab96c',wood:'#b0784c',darkwood:'#654c3c',red:'#d27357'};
 function block(c,x,y,w,h,r,fill,stroke=null){c.fillStyle=fill;c.beginPath();c.roundRect(x,y,w,h,r);c.fill();if(stroke){c.strokeStyle=stroke;c.lineWidth=2;c.stroke();}}
 function line(c,points,color,width=2){c.strokeStyle=color;c.lineWidth=width;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
@@ -10,7 +10,7 @@ export class Renderer{
   draw(g,{snapCamera=false}={}){const c=this.c,w=this.width/this.scale,p=g.player,level=getLevel(g);
     const desired=Math.max(0,Math.min(level.width-w,p.x-w*.33));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
     c.setTransform(this.canvas.width/this.width,0,0,this.canvas.height/this.height,0,0);c.clearRect(0,0,this.width,this.height);c.scale(this.scale,this.scale);
-    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
+    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level.id==='shifting-stacks')this.fourthGoalCues(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
     const focus=heldBox(g)||pickupBox(g);if(focus&&['playing','paused'].includes(g.phase)){
       if(focus.mode==='held'){
         if(!this.prediction||g.tick-this.predictionTick>=6||this.predictionFace!==p.face||this.predictionBox!==focus.id||this.predictionPhase!==g.phase){this.prediction=forecastThrow(g);this.predictionTick=g.tick;this.predictionFace=p.face;this.predictionBox=focus.id;this.predictionPhase=g.phase;}
@@ -95,6 +95,14 @@ export class Renderer{
     label(c,'上层绕行',790,253,C.deep,14,'center');
     c.fillStyle='#e7b971';for(const [x,w]of [[760,470],[1400,250]])c.fillRect(x,433,w,5);
     label(c,'下层清路',850,421,C.deep,14,'center');
+  }
+  fourthGoalCues(c,level){const shelf=level.solids.find(s=>s.id==='arrival-shelf');
+    // The stripe marks the actual crate landing zone, safely on the right bank
+    // and wholly outside the shelf. It has no collision surface of its own.
+    const left=shelf.x-75;block(c,left,434,58,5,1,C.gold,C.deep);
+    label(c,'外沿放箱',left+29,421,C.deep,13,'center');
+    block(c,level.goal-58,level.goalY-46,116,27,5,C.paper,C.deep);
+    label(c,'↑ 上层到站',level.goal,level.goalY-27,C.deep,13,'center');
   }
   supplies(c,g){for(const source of g.sources){block(c,source.x-26,source.y,52,6,2,'#3c716d');line(c,[[source.x-23,source.y+5],[source.x+23,source.y+5]],'#aad0b4',2);if(source.cooldown>0){oval(c,source.x,source.y-24,11,11,'#f5e8cc99');label(c,'↺',source.x,source.y-19,C.deep,18,'center');}}}
   crate(c,b){c.save();c.translate(b.x,b.y-15);c.rotate(b.angle);block(c,-15,-15,30,30,3,'#debd7e',C.darkwood);block(c,-10,-11,20,22,1,'#bd945b');line(c,[[-11,-11],[11,11]],'#edd6a0',5);line(c,[[10,-11],[-10,11]],'#edd6a0',4);for(const x of [-11,11])for(const y of [-11,11])oval(c,x,y,1.2,1.2,C.darkwood);c.restore();}

@@ -1,7 +1,7 @@
-import {createGame,command,STEP} from './engine.mjs?v=crate-courier-seven-1';
-import {Renderer} from './view.mjs?v=crate-courier-seven-1';
-import {attachController} from './controller.mjs?v=crate-courier-seven-1';
-import {openStore} from './storage.mjs?v=crate-courier-seven-1';
+import {createGame,command,STEP} from './engine.mjs?v=crate-courier-seven-fourth-cue-1';
+import {Renderer} from './view.mjs?v=crate-courier-seven-fourth-cue-1';
+import {attachController} from './controller.mjs?v=crate-courier-seven-fourth-cue-1';
+import {openStore} from './storage.mjs?v=crate-courier-seven-fourth-cue-1';
 const root=document.querySelector('#game'),canvas=root.querySelector('#canvas'),backing={getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)};
 const store=openStore(backing),g=store.read()||createGame(),renderer=new Renderer(canvas);
 let last=0,accumulator=0,resize=true,clockReset=true,nextSaveTick=g.tick+120;

@@ -44,7 +44,7 @@ const third={id:'evening-bay',title:'回湾夜递',destination:'回湾灯港',th
   supplies:[{id:'first',x:150,y:440},{id:'early-upper',x:330,y:332},{id:'middle',x:785,y:440},{id:'middle-upper',x:1080,y:332},{id:'return',x:1380,y:440},{id:'last',x:2020,y:440}],
   enemies:[{id:'crawler-1',x:445,y:440,min:365,max:525,dir:-1},{id:'crawler-2',x:870,y:440,min:810,max:900,dir:1},{id:'crawler-3',x:1720,y:440,min:1660,max:1780,dir:1},{id:'crawler-4',x:2220,y:440,min:2150,max:2310,dir:-1}]};
 const fourth={id:'shifting-stacks',title:'错层接力',destination:'高架交接台',theme:'warehouse',width:2520,height:560,goal:2390,goalY:332,
-  introduction:'最后一道水道左岸有箱子：带它跳到右岸，轻放垫脚登上终点高架。落地的箱子去落点捡；打坏或落水后回原补给点。',
+  introduction:'最后一道水道左岸有箱子：带它跳到右岸，放在高架左外沿的金色落箱区，借箱登上上层交接台。错放的箱子仍可在右岸捡回；打坏或落水后回原补给点。',
   next:'高架交接完成。下一段是斜桥调度：投箱清下路，或踩货架绕开巡逻机。',
   solids:[
     {id:'start-dock',x:0,y:440,w:650,h:120,material:'wood'},

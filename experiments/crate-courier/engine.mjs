@@ -1,5 +1,5 @@
 // Deterministic movement/throw rules shared by all authored chapters.
-import {LEVELS,LEVEL,getLevel} from './levels.mjs?v=crate-courier-seven-1';
+import {LEVELS,LEVEL,getLevel} from './levels.mjs?v=crate-courier-seven-fourth-cue-1';
 export {LEVELS,LEVEL,getLevel};
 export const STEP=1/120;
 const G=1260,BOX_G=1080,SPEED=216,JUMP=-490,BOX_SIZE=30;
@@ -93,10 +93,24 @@ export function hint(g){const p=g.player;if(g.phase==='failed')return g.result.c
   if(g.events.some(e=>e.type==='enemy-hit'&&g.tick-e.tick<90))return '投中巡逻机！这台已清除，继续看落脚点。';
   if(g.lastEvent?.type==='place-blocked'&&g.tick-g.lastEvent.tick<180)return '这里被挡住了，木箱还在手上。换个位置再轻放。';
   if(g.stageIndex===6&&g.levelVersion===2&&p.support==='box-0')return '箱子挡住巡逻并垫高了脚；从箱顶朝右跳上第一段货架。';
+  if(g.stageIndex===3&&p.support==='box-3'&&g.boxes[3].x>=2050){
+    const edge=getLevel(g).solids.find(s=>s.id==='arrival-shelf').x;
+    return g.boxes[3].x<edge-15?'从外沿箱顶先向上跳，再按右越过架边，走到上层门口。':'箱子在高架下，跳不穿架底；走下箱子，在右岸按 J 捡回后放到左外沿金带。';
+  }
   if(g.stageIndex>=3&&p.support?.startsWith('box-'))return '你正站在箱顶；先走下箱子，再从旁边按 J 举起。';
   if(g.stageIndex===1){if(p.x<470)return '终点在上层。先看矮货台和货架；箱子可投敌，也可轻放垫脚。';if(p.x>2120&&p.y>360)return '转运台在上方；阶梯在左侧，可以从下层回头再找落脚点。';if(p.y<300)return '沿上层货架前往亮灯的门口。看清落脚点，每跳一次松开再按。';if(p.x<1500)return p.y<360?'沿货台前进，发射高度要与巡逻机相近。每跳一次松开再按。':'下层能投箱开路；货架上另有一条路。空中保持方向，每跳重新按。';return '矮货台接上转运台。爬上亮灯的上层门口，不必清空所有巡逻。';}
   if(g.stageIndex===2){if(p.x<700)return '这一段回灯港。举投清路或跳上货架，越过第一道水道。';if(p.x<1600)return '矮货台能登上上层；也可沿下层前进。看落点出手，每跳松开再按。';return '越过最后水道，在亮灯的回湾站收尾。空中保持方向，箱子不用带到终点。';}
-  if(g.stageIndex===3)return p.x<1750?'错层货栈：带箱清路或踩架绕行；落地箱去落点捡，损坏或落水才回补给点。':p.x<2050?'末道左岸的木箱要带着跳到右岸，留它垫脚登上高架。':'交接台在上层。箱在左岸就跳回去取；到右岸后轻放垫脚，再松开跳键重新起跳。';
+  if(g.stageIndex===3){
+    if(p.x<1750)return '错层货栈：带箱清路或踩架绕行；落地箱去落点捡，损坏或落水才回补给点。';
+    if(p.x<2050)return '末道左岸的木箱要带到右岸，放在高架左外沿金带上。';
+    const edge=getLevel(g).solids.find(s=>s.id==='arrival-shelf').x,box=g.boxes[3];
+    if(p.y<=getLevel(g).goalY)return '沿高架向亮灯的上层交接台走。';
+    if(p.holding)return '站在高架左外沿金带左边，面右轻放；再从箱顶朝右跳上高架。';
+    if(box.mode==='rest'&&box.x>=edge-15)return '箱子落在高架下；在右岸靠近按 J 捡回，退到左外沿金带再轻放。';
+    if(box.mode==='rest'&&box.x>=edge-75&&box.x<edge-15)return '箱子在外沿金带；站上箱顶先向上跳，再按右越过架边。';
+    if(box.x<2050)return '箱子仍在左岸，可跳回去取；右岸左外沿金带才是垫脚落点。';
+    return '上层交接台才算到站；在右岸拾回箱子，放到高架左外沿金带。';
+  }
   if(g.stageIndex===4)return p.x<650?'巡逻在前：投箱清下路更稳，窄货架可绕；硬闯碰撞会扣体力。':'斜桥：看虚线落点；落地箱就地捡，损坏或落水才回补给点。';
   if(g.stageIndex===5){if(g.levelVersion!==2)return p.x<2080?'晨光终递：投箱清路或走上层，再越过水道。每次跳跃都需松开再按。':'总仓在上层；留箱轻放垫脚。落地箱子去落点捡，损坏或落水才回左侧补给点。';
     if(p.x<560)return p.holding?'带箱越过前方水沟，右岸先看巡逻的走向。':'左岸木箱可以带过水沟；空手也可看准时机绕过巡逻。';
