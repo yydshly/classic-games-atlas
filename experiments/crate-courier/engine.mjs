@@ -1,5 +1,5 @@
-// Deterministic movement/throw rules shared by three authored chapters.
-import {LEVELS,LEVEL,getLevel} from './levels.mjs?v=crate-slice-3';
+// Deterministic movement/throw rules shared by all authored chapters.
+import {LEVELS,LEVEL,getLevel} from './levels.mjs?v=crate-courier-seven-1';
 export {LEVELS,LEVEL,getLevel};
 export const STEP=1/120;
 const G=1260,BOX_G=1080,SPEED=216,JUMP=-490,BOX_SIZE=30;
@@ -9,18 +9,18 @@ const boxRect=b=>({x:b.x-15,y:b.y-30,w:30,h:30});
 export const heldBox=g=>g.boxes.find(b=>b.id===g.player.holding)||null;
 export const pickupBox=g=>g.boxes.filter(b=>b.mode==='rest'&&Math.abs(b.y-g.player.y)<19&&Math.abs(b.x-g.player.x)<55).sort((a,b)=>Math.abs(a.x-g.player.x)-Math.abs(b.x-g.player.x))[0]||null;
 const event=(g,type,extra={})=>{g.lastEvent={type,tick:g.tick,...extra};g.events.push(g.lastEvent);if(g.events.length>36)g.events.shift();};
-function makeStage(stageIndex){const level=LEVELS[stageIndex];return {stageIndex,phase:'ready',tick:0,player:{x:110,y:440,vx:0,vy:0,w:28,h:46,face:1,grounded:true,support:'start-dock',hp:3,invulnerable:0,holding:null,coyote:.08,buffer:0,pose:0},
+function makeStage(stageIndex,levelVersion=2){const level=getLevel({stageIndex,levelVersion});return {stageIndex,...([5,6].includes(stageIndex)?{levelVersion}:{}),phase:'ready',tick:0,player:{x:110,y:440,vx:0,vy:0,w:28,h:46,face:1,grounded:true,support:'start-dock',hp:3,invulnerable:0,holding:null,coyote:.08,buffer:0,pose:0},
   boxes:level.supplies.map((s,i)=>({id:'box-'+i,source:s.id,x:s.x,y:s.y,vx:0,vy:0,mode:'rest',armed:false,age:0,angle:0})),
   enemies:level.enemies.map(e=>({...e,w:38,h:32,alive:true,hitAt:-1})),sources:level.supplies.map(s=>({...s,cooldown:0})),
   previous:{},events:[],lastEvent:null,learned:{lift:false,throw:false,jump:false,hit:false},result:null,run:{shots:0,hits:0,damage:0,jumps:0,places:0}};}
-export function createGame(){return {...makeStage(0),journey:{completed:[],retries:[0,0,0]}};}
+export function createGame(){return {...makeStage(0),journey:{completed:[],retries:LEVELS.map(()=>0)}};}
 export function command(g,name){
   if(name==='start'&&g.phase==='ready'){g.phase='playing';event(g,'start');return true;}
   if(name==='pause'&&g.phase==='playing'){g.phase='paused';g.previous={};return true;}
   if(name==='resume'&&g.phase==='paused'){g.phase='playing';g.previous={};return true;}
-  if(name==='retry'){const journey=g.journey,index=g.stageIndex;journey.retries[index]++;Object.assign(g,makeStage(index));g.journey=journey;g.phase='playing';return true;}
+  if(name==='retry'){const journey=g.journey,index=g.stageIndex,levelVersion=[5,6].includes(index)?(g.levelVersion??1):2;journey.retries[index]=(journey.retries[index]||0)+1;Object.assign(g,makeStage(index,levelVersion));g.journey=journey;g.phase='playing';return true;}
   if(name==='next'&&g.phase==='won'&&g.stageIndex<LEVELS.length-1){const journey=g.journey;Object.assign(g,makeStage(g.stageIndex+1));g.journey=journey;return true;}
-  if(name==='restart'&&g.phase==='won'&&g.stageIndex===LEVELS.length-1){Object.assign(g,createGame());return true;}
+  if(name==='restart'&&g.phase==='won'&&g.stageIndex===LEVELS.length-1){Object.assign(g,createGame());delete g.levelVersion;return true;}
   return false;
 }
 function fail(g,cause){g.phase='failed';g.result={cause,x:g.player.x,y:g.player.y};event(g,'failed',{cause});}
@@ -89,9 +89,27 @@ export function forecastThrow(g){if(!heldBox(g)||!['playing','paused'].includes(
 export function hint(g){const p=g.player;if(g.phase==='failed')return g.result.cause+'。按 R 或“重试第'+(g.stageIndex+1)+'关”，从本关起点再试。';
   if(g.phase==='won')return getLevel(g).next;
   if(g.phase==='paused')return '已暂停。恢复后再继续，松开的按键不会残留。';
+  if(g.events.some(e=>e.type==='hurt'&&g.tick-e.tick<90))return '巡逻机撞到你，体力减一；角色闪烁时暂时不会再次受伤。';
+  if(g.events.some(e=>e.type==='enemy-hit'&&g.tick-e.tick<90))return '投中巡逻机！这台已清除，继续看落脚点。';
   if(g.lastEvent?.type==='place-blocked'&&g.tick-g.lastEvent.tick<180)return '这里被挡住了，木箱还在手上。换个位置再轻放。';
+  if(g.stageIndex===6&&g.levelVersion===2&&p.support==='box-0')return '箱子挡住巡逻并垫高了脚；从箱顶朝右跳上第一段货架。';
+  if(g.stageIndex>=3&&p.support?.startsWith('box-'))return '你正站在箱顶；先走下箱子，再从旁边按 J 举起。';
   if(g.stageIndex===1){if(p.x<470)return '终点在上层。先看矮货台和货架；箱子可投敌，也可轻放垫脚。';if(p.x>2120&&p.y>360)return '转运台在上方；阶梯在左侧，可以从下层回头再找落脚点。';if(p.y<300)return '沿上层货架前往亮灯的门口。看清落脚点，每跳一次松开再按。';if(p.x<1500)return p.y<360?'沿货台前进，发射高度要与巡逻机相近。每跳一次松开再按。':'下层能投箱开路；货架上另有一条路。空中保持方向，每跳重新按。';return '矮货台接上转运台。爬上亮灯的上层门口，不必清空所有巡逻。';}
-  if(g.stageIndex===2){if(p.x<700)return '最后一段回灯港。举投清路或跳上货架，越过第一道水道。';if(p.x<1600)return '矮货台能登上上层；也可沿下层前进。看落点出手，每跳松开再按。';return '越过最后水道，在亮灯的回湾站收尾。空中保持方向，箱子不用带到终点。';}
+  if(g.stageIndex===2){if(p.x<700)return '这一段回灯港。举投清路或跳上货架，越过第一道水道。';if(p.x<1600)return '矮货台能登上上层；也可沿下层前进。看落点出手，每跳松开再按。';return '越过最后水道，在亮灯的回湾站收尾。空中保持方向，箱子不用带到终点。';}
+  if(g.stageIndex===3)return p.x<1750?'错层货栈：带箱清路或踩架绕行；落地箱去落点捡，损坏或落水才回补给点。':p.x<2050?'末道左岸的木箱要带着跳到右岸，留它垫脚登上高架。':'交接台在上层。箱在左岸就跳回去取；到右岸后轻放垫脚，再松开跳键重新起跳。';
+  if(g.stageIndex===4)return p.x<650?'巡逻在前：投箱清下路更稳，窄货架可绕；硬闯碰撞会扣体力。':'斜桥：看虚线落点；落地箱就地捡，损坏或落水才回补给点。';
+  if(g.stageIndex===5){if(g.levelVersion!==2)return p.x<2080?'晨光终递：投箱清路或走上层，再越过水道。每次跳跃都需松开再按。':'总仓在上层；留箱轻放垫脚。落地箱子去落点捡，损坏或落水才回左侧补给点。';
+    if(p.x<560)return p.holding?'带箱越过前方水沟，右岸先看巡逻的走向。':'左岸木箱可以带过水沟；空手也可看准时机绕过巡逻。';
+    if(p.x<770)return '带箱起跳，落到右岸再观察巡逻；跳键落地后要松开才能再次起跳。';
+    if(p.x<1140)return p.holding?'先看投掷虚线与巡逻位置，再按 J 出手；也可留箱看准空档跳过。':'右岸巡逻可跳过；落地木箱就地捡，坏箱从左岸补给点恢复。';
+    return '越过矮货台，右侧地面就是晨光总仓。';}
+  if(g.stageIndex===6){
+    if(g.levelVersion!==2){if(p.y<=332)return '上层避开下层巡逻。窄货架之间要重新按跳键，终点在最右高架。';if(p.x<600)return '北廊：在巡逻靠近前按 ↓＋J 轻放挡路，借箱上架；也可按 J 投中清下路。';if(p.x<1550)return '下层更直，但要看准投箱与水道起跳点。落地箱可捡，损坏才回补给点。';return '分拣站在上层。带末箱到空档轻放垫脚，再跳到亮灯处。';}
+    if(p.y<=332)return '上层宽货架避开下层巡逻；两处断口要松开跳键再起跳，右侧落回地面到站。';
+    if(p.x<600)return p.holding?'北廊岔路：在地板金色放箱区按 ↓＋J 挡机登架；或继续前行按 J 投箱清下路。':'首箱可在金色区轻放挡机登架，也可投中巡逻，选一条路。';
+    if(p.x<1370)return '下层更直：看准第二箱投掷轨迹和水道起跳点；上层宽货架绕开巡逻。';
+    return '交接台就在右侧地面；下层清路与上层绕行都会在这里汇合，不需末箱垫脚。';
+  }
   if(p.x<355)return p.holding?'看虚线和箱形落点，再按 J 投出；↓＋J 可轻放。':'先靠近浅色木箱，按 J 举起；移动 ← →，空格跳跃。';
   if(p.x<625)return g.learned.hit?'打中了。前方断口需要跳过去，别一路直走。':'巡逻机碰到会受伤：用箱子击退，也能找时机跳过。';
   if(p.x<840)return '看清木沿：走到断口前，再按空格跳到另一边。';

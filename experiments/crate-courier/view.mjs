@@ -1,4 +1,4 @@
-import {getLevel,heldBox,pickupBox,forecastThrow} from './engine.mjs?v=crate-slice-3';
+import {getLevel,heldBox,pickupBox,forecastThrow,LEVELS} from './engine.mjs?v=crate-courier-seven-1';
 const C={ink:'#203b42',deep:'#244b53',teal:'#397d79',mint:'#98bfac',paper:'#f5e8cc',gold:'#eab96c',wood:'#b0784c',darkwood:'#654c3c',red:'#d27357'};
 function block(c,x,y,w,h,r,fill,stroke=null){c.fillStyle=fill;c.beginPath();c.roundRect(x,y,w,h,r);c.fill();if(stroke){c.strokeStyle=stroke;c.lineWidth=2;c.stroke();}}
 function line(c,points,color,width=2){c.strokeStyle=color;c.lineWidth=width;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();}
@@ -10,7 +10,7 @@ export class Renderer{
   draw(g,{snapCamera=false}={}){const c=this.c,w=this.width/this.scale,p=g.player,level=getLevel(g);
     const desired=Math.max(0,Math.min(level.width-w,p.x-w*.33));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
     c.setTransform(this.canvas.width/this.width,0,0,this.canvas.height/this.height,0,0);c.clearRect(0,0,this.width,this.height);c.scale(this.scale,this.scale);
-    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);this.supplies(c,g);
+    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
     const focus=heldBox(g)||pickupBox(g);if(focus&&['playing','paused'].includes(g.phase)){
       if(focus.mode==='held'){
         if(!this.prediction||g.tick-this.predictionTick>=6||this.predictionFace!==p.face||this.predictionBox!==focus.id||this.predictionPhase!==g.phase){this.prediction=forecastThrow(g);this.predictionTick=g.tick;this.predictionFace=p.face;this.predictionBox=focus.id;this.predictionPhase=g.phase;}
@@ -33,7 +33,7 @@ export class Renderer{
     if(g.phase==='won'){if(g.stageIndex!==1)label(c,g.stageIndex===2?'归港！':'到站！',level.goal,level.goalY-118,C.paper,23,'center');for(let i=0;i<4;i++)line(c,[[level.goal-70+i*38,level.goalY-102],[level.goal-70+i*38,level.goalY-92]],C.gold,3);}
     c.restore();
     // A small distance ribbon gives direction without drawing false platforms.
-    block(c,18,18,Math.min(w-36,250),34,10,'#f5e8ccdd');label(c,`${g.stageIndex+1}/3  ${level.title} → ${level.destination}`,30,40,C.deep,12);
+    block(c,18,18,Math.min(w-36,250),34,10,'#f5e8ccdd');label(c,`${g.stageIndex+1}/${LEVELS.length}  ${level.title} → ${level.destination}`,30,40,C.deep,12);
   }
   sky(c,w,t,level){if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
     oval(c,w*.78-this.camera*.03,96,40,40,'#f5e6b8');
@@ -66,7 +66,13 @@ export class Renderer{
     for(const x of [2095,2370]){block(c,x,409,22,31,3,'#a4694c');line(c,[[x+12,411],[x+6,384],[x+18,397],[x+23,379]],'#4e7c65',5);}
     for(const [x,y]of [[565,260],[1190,212],[1840,255]]){line(c,[[x-110,y],[x,y+18],[x+110,y-4]],'#647e68',2);for(let i=-2;i<3;i++){c.fillStyle=i%2?C.paper:C.gold;c.beginPath();c.moveTo(x+i*35,y+10);c.lineTo(x+i*35+12,y+11);c.lineTo(x+i*35+6,y+27);c.closePath();c.fill();}}
   }
-  otherSky(c,w,t,level){const night=level.theme==='evening',gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,night?'#526c82':'#aebda3');gradient.addColorStop(1,night?'#7c9c9b':'#ddd5b5');c.fillStyle=gradient;c.fillRect(0,0,w,560);
+  otherSky(c,w,t,level){if(level.theme==='north-open'){
+      const sky=c.createLinearGradient(0,0,0,560);sky.addColorStop(0,'#8fb7bc');sky.addColorStop(.65,'#d1d9c1');sky.addColorStop(1,'#7da79f');c.fillStyle=sky;c.fillRect(0,0,w,560);
+      oval(c,w*.77-this.camera*.025,102,43,43,'#f7deb0');
+      for(let i=-1;i<5;i++){const x=i*355-(this.camera*.14)%355;block(c,x,235,285,110,5,'#87aaa4');line(c,[[x-12,238],[x+142,179],[x+298,238]],'#648c89',8);for(const d of [38,97,156,215])block(c,x+d,256,24,38,3,'#bed0b1');}
+      c.fillStyle='#77a29d';c.fillRect(0,379,w,181);for(let i=0;i<14;i++){const x=(i*121-this.camera*.36)%(w+100);line(c,[[x,408+(i%4)*36],[x+27,408+(i%4)*36]],'#b1cabb',2);}return;
+    }
+    const night=level.theme==='evening',gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,night?'#526c82':'#aebda3');gradient.addColorStop(1,night?'#7c9c9b':'#ddd5b5');c.fillStyle=gradient;c.fillRect(0,0,w,560);
     if(night){oval(c,w*.78-this.camera*.025,91,33,33,'#f0d9a3');for(let i=0;i<8;i++)oval(c,(i*143+50-this.camera*.04)%(w+100),65+(i%3)*41,1.1,1.1,C.paper);for(let i=-1;i<4;i++){const x=i*380-(this.camera*.16)%380;block(c,x,262,210,104,3,'#496975');line(c,[[x-8,262],[x+105,217],[x+218,262]],'#3a5c6a',6);for(const dx of [32,138])block(c,x+dx,285,25,29,3,'#d5bb80');}}
     else{for(let i=-1;i<5;i++){const x=i*330-(this.camera*.2)%330;block(c,x,80,14,310,2,'#778c78');line(c,[[x-15,78],[x+165,40],[x+345,78]],'#647f70',9);block(c,x+30,112,240,168,4,'#cbd6bc');for(let row=0;row<3;row++)line(c,[[x+30,154+row*42],[x+270,154+row*42]],'#a3b7a1',4);for(let col=0;col<4;col++)line(c,[[x+78+col*48,112],[x+78+col*48,280]],'#a3b7a1',3);line(c,[[x+65,295],[x+248,295]],'#889d85',3);}}
     c.fillStyle=night?'#5c8288':'#7f9e8c';c.fillRect(0,379,w,181);for(let i=0;i<16;i++){const x=(i*123-this.camera*.39)%(w+90);line(c,[[x,404+(i%4)*37],[x+38,404+(i%4)*37]],night?'#a5b8ac':'#b5c5a6',2);}
@@ -79,6 +85,16 @@ export class Renderer{
     block(c,x-84,y-h+12,168,26,4,C.paper);label(c,level.destination,x,y-h+31,C.deep,15,'center');block(c,x-32,y-5,64,5,1,C.gold);
     for(const side of [-1,1]){line(c,[[x+side*70,y-h+44],[x+side*70,y-h+74]],C.deep,3);block(c,x+side*70-10,y-h+72,20,25,5,'#f3d18c',C.deep);}
     if(night){line(c,[[x+60,y-h],[x+60,y-h-54]],C.deep,5);block(c,x+48,y-h-61,24,19,5,C.gold,C.deep);}
+  }
+  northRoutes(c){
+    // Paint only on real support surfaces; the marks cannot be mistaken for ledges.
+    c.fillStyle='#f2d390';c.fillRect(350,433,52,6);
+    for(const x of [358,376,392])line(c,[[x,434],[x+7,438]],'#8c633b',2);
+    label(c,'提前轻放',376,421,C.ink,14,'center');
+    c.fillStyle='#98c6b0';for(const [x,w,y]of [[660,600,270],[1350,300,270]])c.fillRect(x+8,y+4,w-16,5);
+    label(c,'上层绕行',790,253,C.deep,14,'center');
+    c.fillStyle='#e7b971';for(const [x,w]of [[760,470],[1400,250]])c.fillRect(x,433,w,5);
+    label(c,'下层清路',850,421,C.deep,14,'center');
   }
   supplies(c,g){for(const source of g.sources){block(c,source.x-26,source.y,52,6,2,'#3c716d');line(c,[[source.x-23,source.y+5],[source.x+23,source.y+5]],'#aad0b4',2);if(source.cooldown>0){oval(c,source.x,source.y-24,11,11,'#f5e8cc99');label(c,'↺',source.x,source.y-19,C.deep,18,'center');}}}
   crate(c,b){c.save();c.translate(b.x,b.y-15);c.rotate(b.angle);block(c,-15,-15,30,30,3,'#debd7e',C.darkwood);block(c,-10,-11,20,22,1,'#bd945b');line(c,[[-11,-11],[11,11]],'#edd6a0',5);line(c,[[10,-11],[-10,11]],'#edd6a0',4);for(const x of [-11,11])for(const y of [-11,11])oval(c,x,y,1.2,1.2,C.darkwood);c.restore();}

@@ -1,4 +1,4 @@
-// Three authored chapters, one movement/throw model. The first geometry is unchanged.
+// Seven authored chapters, one movement/throw model. Old six/seven maps stay frozen for existing saves.
 const first={id:'rain-dock',title:'雨后货栈',destination:'雨湾收货站',theme:'harbor',width:2440,height:560,goal:2290,goalY:440,
   introduction:'穿过巡逻机和水道，抵达右侧亮灯的收货站。先认识木箱、投掷与跳跃。',
   next:'收货站已到。下一段去上层转运台：先看高低货台，再选择从哪里开路。',
@@ -12,7 +12,7 @@ const first={id:'rain-dock',title:'雨后货栈',destination:'雨湾收货站',t
   enemies:[{id:'crawler-1',x:490,y:440,min:430,max:570,dir:-1},{id:'crawler-2',x:1130,y:440,min:1040,max:1250,dir:1},{id:'crawler-3',x:2040,y:440,min:1940,max:2140,dir:-1}]};
 const second={id:'two-storeys',title:'双层货栈',destination:'上层转运台',theme:'warehouse',width:2420,height:560,goal:2320,goalY:248,
   introduction:'这次终点在上层。下层可投箱清路，也可借矮货台或轻放的箱子登上货架。箱子用来攻击还是垫脚，由你决定。',
-  next:'上层转运台已到。最后一段回到灯港，沿水道把举投和跳跃连起来。',
+  next:'上层转运台已到。下一段回到灯港，沿水道把举投和跳跃连起来。',
   solids:[
     {id:'start-dock',x:0,y:440,w:780,h:120,material:'wood'},
     {id:'middle-dock',x:880,y:440,w:560,h:120,material:'wood'},
@@ -29,8 +29,8 @@ const second={id:'two-storeys',title:'双层货栈',destination:'上层转运台
   supplies:[{id:'first',x:230,y:440},{id:'upper-first',x:540,y:332},{id:'middle',x:970,y:440},{id:'upper-mid',x:1030,y:248},{id:'last',x:1610,y:440},{id:'upper-last',x:1590,y:248},{id:'arrival',x:2160,y:248}],
   enemies:[{id:'crawler-1',x:690,y:440,min:600,max:740,dir:-1},{id:'crawler-2',x:1190,y:248,min:1110,max:1320,dir:1},{id:'crawler-3',x:1210,y:440,min:1130,max:1380,dir:-1},{id:'crawler-4',x:2230,y:248,min:2180,max:2260,dir:-1}]};
 const third={id:'evening-bay',title:'回湾夜递',destination:'回湾灯港',theme:'evening',width:2540,height:560,goal:2410,goalY:440,
-  introduction:'最后一段到回湾灯港。水道之间有矮货台和上层通路：出手前看落点，落地后松开跳键再准备下一跳。',
-  next:'三段路线已走完。回看自己的选择，也可以从码头再走一遍。',
+  introduction:'这一段到回湾灯港。水道之间有矮货台和上层通路：出手前看落点，落地后松开跳键再准备下一跳。',
+  next:'回湾灯港已到。接着去错层货栈：清路和留箱垫脚需要重新安排。',
   solids:[
     {id:'start-dock',x:0,y:440,w:620,h:120,material:'wood'},
     {id:'middle-dock',x:730,y:440,w:480,h:120,material:'wood'},
@@ -43,7 +43,91 @@ const third={id:'evening-bay',title:'回湾夜递',destination:'回湾灯港',th
     {id:'return-step',x:1550,y:406,w:75,h:34,material:'cargo'}],
   supplies:[{id:'first',x:150,y:440},{id:'early-upper',x:330,y:332},{id:'middle',x:785,y:440},{id:'middle-upper',x:1080,y:332},{id:'return',x:1380,y:440},{id:'last',x:2020,y:440}],
   enemies:[{id:'crawler-1',x:445,y:440,min:365,max:525,dir:-1},{id:'crawler-2',x:870,y:440,min:810,max:900,dir:1},{id:'crawler-3',x:1720,y:440,min:1660,max:1780,dir:1},{id:'crawler-4',x:2220,y:440,min:2150,max:2310,dir:-1}]};
+const fourth={id:'shifting-stacks',title:'错层接力',destination:'高架交接台',theme:'warehouse',width:2520,height:560,goal:2390,goalY:332,
+  introduction:'最后一道水道左岸有箱子：带它跳到右岸，轻放垫脚登上终点高架。落地的箱子去落点捡；打坏或落水后回原补给点。',
+  next:'高架交接完成。下一段是斜桥调度：投箱清下路，或踩货架绕开巡逻机。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:650,h:120,material:'wood'},
+    {id:'middle-dock',x:750,y:440,w:610,h:120,material:'wood'},
+    {id:'transfer-dock',x:1460,y:440,w:500,h:120,material:'wood'},
+    {id:'last-dock',x:2050,y:440,w:470,h:120,material:'wood'},
+    {id:'early-step',x:325,y:406,w:72,h:34,material:'cargo'},
+    {id:'early-shelf',x:420,y:332,w:165,h:20,material:'shelf'},
+    {id:'middle-step',x:920,y:406,w:72,h:34,material:'cargo'},
+    {id:'middle-shelf',x:1020,y:332,w:215,h:20,material:'shelf'},
+    {id:'transfer-shelf',x:1640,y:332,w:175,h:20,material:'shelf'},
+    {id:'arrival-shelf',x:2245,y:332,w:275,h:20,material:'shelf'}],
+  supplies:[{id:'first',x:205,y:440},{id:'middle',x:810,y:440},{id:'transfer',x:1510,y:440},{id:'last',x:1920,y:440}],
+  enemies:[{id:'crawler-1',x:525,y:440,min:460,max:590,dir:-1},{id:'crawler-2',x:1190,y:440,min:1120,max:1300,dir:1},{id:'crawler-3',x:1810,y:440,min:1730,max:1900,dir:-1}]};
+const fifth={id:'slant-bridge',title:'斜桥调度',destination:'斜桥卸货口',theme:'evening',width:2490,height:560,goal:2360,goalY:440,
+  introduction:'底层投箱能清出安全直路；上层窄货架可绕开部分巡逻。不清后段直接穿行能省出手时间，但碰撞会掉体力。箱子落地可捡回，打坏或落水后回原补给点。',
+  next:'斜桥已过。最后一段把垫脚、投掷与跨水道放在同一趟递送里。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:690,h:120,material:'wood'},
+    {id:'middle-dock',x:790,y:440,w:590,h:120,material:'wood'},
+    {id:'bridge-dock',x:1480,y:440,w:470,h:120,material:'wood'},
+    {id:'last-dock',x:2050,y:440,w:440,h:120,material:'wood'},
+    {id:'entry-step',x:260,y:406,w:70,h:34,material:'cargo'},
+    {id:'shelf-a',x:355,y:332,w:285,h:20,material:'shelf'},
+    {id:'middle-step',x:880,y:406,w:72,h:34,material:'cargo'},
+    {id:'shelf-b',x:980,y:332,w:330,h:20,material:'shelf'},
+    {id:'shelf-c',x:1630,y:332,w:260,h:20,material:'shelf'},
+    {id:'last-step',x:2130,y:406,w:72,h:34,material:'cargo'}],
+  supplies:[{id:'first',x:175,y:440},{id:'middle',x:840,y:440},{id:'bridge',x:1600,y:440},{id:'last',x:2110,y:440}],
+  enemies:[{id:'crawler-1',x:520,y:440,min:440,max:620,dir:1},{id:'crawler-2',x:1160,y:440,min:1070,max:1280,dir:-1},{id:'crawler-3',x:1760,y:440,min:1680,max:1850,dir:1},{id:'crawler-4',x:2250,y:440,min:2190,max:2310,dir:-1}]};
+const legacySixth={id:'dawn-relay',title:'晨光终递',destination:'晨光总仓',theme:'dawn',width:2640,height:560,goal:2510,goalY:332,
+  introduction:'先决定在下层清路还是踩架绕行，随后越过两道水道；末段要留箱垫脚登上总仓。落地的箱子可捡回；打坏或落水后回原补给点。',
+  next:'晨光总仓已到。北廊分拣要在轻放挡路与投箱清路之间再做一次选择。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:630,h:120,material:'wood'},
+    {id:'middle-dock',x:730,y:440,w:610,h:120,material:'wood'},
+    {id:'return-dock',x:1440,y:440,w:540,h:120,material:'wood'},
+    {id:'last-dock',x:2080,y:440,w:560,h:120,material:'wood'},
+    {id:'start-step',x:260,y:406,w:70,h:34,material:'cargo'},
+    {id:'start-shelf',x:355,y:332,w:210,h:20,material:'shelf'},
+    {id:'middle-step',x:860,y:406,w:70,h:34,material:'cargo'},
+    {id:'middle-shelf',x:960,y:332,w:240,h:20,material:'shelf'},
+    {id:'return-step',x:1590,y:406,w:70,h:34,material:'cargo'},
+    {id:'return-shelf',x:1690,y:332,w:230,h:20,material:'shelf'},
+    {id:'arrival-shelf',x:2350,y:332,w:290,h:20,material:'shelf'}],
+  supplies:[{id:'first',x:170,y:440},{id:'middle',x:790,y:440},{id:'return',x:1500,y:440},{id:'last',x:2130,y:440}],
+  enemies:[{id:'crawler-1',x:480,y:440,min:420,max:580,dir:-1},{id:'crawler-2',x:1120,y:440,min:1040,max:1270,dir:1},{id:'crawler-3',x:1780,y:440,min:1700,max:1900,dir:-1},{id:'crawler-4',x:2240,y:440,min:2190,max:2310,dir:1}]};
+const sixth={...legacySixth,width:1530,goal:1390,goalY:440,
+  introduction:'晨光短递：把左岸木箱带过水沟，先看右岸巡逻走向，再用虚线瞄准投掷；熟练时也能看准空档跳过。终点就在地面。落地的箱子去落点捡；打坏或落水后回左岸补给点。',
+  next:'晨光总仓已到。北廊分拣将提供挡机上层与投箱下层两条安排。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:650,h:120,material:'wood'},
+    {id:'last-dock',x:770,y:440,w:760,h:120,material:'wood'},
+    {id:'exit-cargo',x:1250,y:406,w:64,h:34,material:'cargo'}],
+  supplies:[{id:'crossing',x:530,y:440}],
+  enemies:[{id:'crawler-1',x:1030,y:440,min:960,max:1110,dir:-1}]};
+const legacySeventh={id:'return-sort',title:'折返分拣',destination:'北廊分拣站',theme:'warehouse',width:2020,height:560,goal:1880,goalY:332,
+  introduction:'趁巡逻机还未靠近，轻放木箱挡路让它掉头；借箱登上货架，走上层避开下层巡逻。也可投箱清路，沿下层直行，再带末段木箱垫脚登站。放得太晚箱子会被撞坏；损坏或落水后回原补给点。',
+  next:'北廊递送完成。轻放挡路与投掷清路是两种安排；这七关仍是原创短篇阶段，不是最终关数上限。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:620,h:120,material:'wood'},
+    {id:'middle-dock',x:730,y:440,w:530,h:120,material:'wood'},
+    {id:'last-dock',x:1370,y:440,w:650,h:120,material:'wood'},
+    {id:'first-shelf',x:510,y:332,w:75,h:20,material:'shelf'},
+    {id:'middle-shelf',x:630,y:270,w:630,h:20,material:'shelf'},
+    {id:'cross-shelf',x:1370,y:270,w:250,h:20,material:'shelf'},
+    {id:'arrival-shelf',x:1740,y:332,w:280,h:20,material:'shelf'}],
+  supplies:[{id:'barrier',x:180,y:440},{id:'middle',x:790,y:440},{id:'arrival',x:1450,y:440}],
+  enemies:[{id:'crawler-1',x:570,y:440,min:430,max:610,dir:-1},{id:'crawler-2',x:1060,y:440,min:940,max:1190,dir:-1}]};
+const seventh={...legacySeventh,theme:'north-open',goalY:440,
+  introduction:'北廊有两条真正不同的送货路：早些轻放首箱挡住巡逻，踩箱上宽货架，绕远却少交手；或把前两箱投向下层巡逻，较快越过两道水道。亮灯交接台就在右侧地面，不需再留末箱登架。',
+  next:'北廊递送完成。挡机上层用放箱与连续落脚避开下层巡逻；投箱下层用两次瞄准换取直路。这七关仍是原创短篇阶段，不是最终关数上限。',
+  solids:[
+    {id:'start-dock',x:0,y:440,w:620,h:120,material:'wood'},
+    {id:'middle-dock',x:730,y:440,w:530,h:120,material:'wood'},
+    {id:'last-dock',x:1370,y:440,w:650,h:120,material:'wood'},
+    {id:'first-shelf',x:475,y:332,w:105,h:20,material:'shelf'},
+    {id:'middle-shelf',x:660,y:270,w:600,h:20,material:'shelf'},
+    {id:'cross-shelf',x:1350,y:270,w:300,h:20,material:'shelf'}],
+  supplies:[{id:'barrier',x:180,y:440},{id:'middle',x:790,y:440}]};
 function freeze(value){if(value&&typeof value==='object'){for(const v of Object.values(value))freeze(v);Object.freeze(value);}return value;}
-export const LEVELS=freeze([first,second,third]);
+export const LEVELS=freeze([first,second,third,fourth,fifth,sixth,seventh]);
+export const LEGACY_SIXTH=freeze(legacySixth);
+export const LEGACY_SEVENTH=freeze(legacySeventh);
 export const LEVEL=LEVELS[0];
-export const getLevel=g=>LEVELS[g.stageIndex??0];
+export const getLevel=g=>g.stageIndex===5&&g.levelVersion!==2?LEGACY_SIXTH:g.stageIndex===6&&g.levelVersion!==2?LEGACY_SEVENTH:LEVELS[g.stageIndex??0];
