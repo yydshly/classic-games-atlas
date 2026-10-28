@@ -8,7 +8,9 @@ export class Renderer{
   constructor(canvas){this.canvas=canvas;this.c=canvas.getContext('2d');if(!this.c)throw Error('Canvas2D 初始化失败');this.camera=0;this.width=960;this.height=560;this.scale=1;this.needsCameraFit=true;this.prediction=null;this.predictionTick=-10;this.predictionFace=null;this.predictionBox=null;this.predictionPhase=null;}
   resize(width,height,dpr=1){if(width!==this.width||height!==this.height)this.needsCameraFit=true;this.width=width;this.height=height;this.scale=height/560;this.canvas.width=Math.round(width*Math.min(1.5,dpr));this.canvas.height=Math.round(height*Math.min(1.5,dpr));}
   draw(g,{snapCamera=false}={}){const c=this.c,w=this.width/this.scale,p=g.player,level=getLevel(g);
-    const desired=Math.max(0,Math.min(level.width-w,p.x-w*.33));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
+    // Once the sixth chapter reaches the far bank, narrow screens show the patrol before committing a throw.
+    const cameraAnchor=level===LEVELS[5]&&w<650&&p.x>=770 ? .16 : .33;
+    const desired=Math.max(0,Math.min(level.width-w,p.x-w*cameraAnchor));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
     c.setTransform(this.canvas.width/this.width,0,0,this.canvas.height/this.height,0,0);c.clearRect(0,0,this.width,this.height);c.scale(this.scale,this.scale);
     this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level.id==='shifting-stacks')this.fourthGoalCues(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
     const focus=heldBox(g)||pickupBox(g);if(focus&&['playing','paused'].includes(g.phase)){
@@ -26,7 +28,7 @@ export class Renderer{
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);
     for(const b of g.boxes)if(b.mode!=='spent')this.crate(c,b);
-    this.person(c,p,g.tick,g.phase);
+    if(level===LEVELS[5])this.dawnCourier(c,g);else this.person(c,p,g.tick,g.phase);
     const recent=g.lastEvent;if(recent&&g.tick-recent.tick<50&&recent.type==='enemy-hit'){
       const t=(g.tick-recent.tick)/50;c.globalAlpha=1-t;for(let i=0;i<5;i++){const a=i*Math.PI*2/5;line(c,[[recent.x+Math.cos(a)*(18+t*28),recent.y-20+Math.sin(a)*(18+t*20)],[recent.x+Math.cos(a)*(25+t*28),recent.y-20+Math.sin(a)*(25+t*20)]],C.gold,3);}c.globalAlpha=1;
     }
@@ -35,12 +37,46 @@ export class Renderer{
     // A small distance ribbon gives direction without drawing false platforms.
     block(c,18,18,Math.min(w-36,250),34,10,'#f5e8ccdd');label(c,`${g.stageIndex+1}/${LEVELS.length}  ${level.title} → ${level.destination}`,30,40,C.deep,12);
   }
-  sky(c,w,t,level){if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
+  sky(c,w,t,level){if(level===LEVELS[5]){this.dawnRelaySky(c,w);return;}if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
     oval(c,w*.78-this.camera*.03,96,40,40,'#f5e6b8');
     for(let i=-1;i<8;i++){const x=i*210-(this.camera*.18)%210;block(c,x,180+(i%2)*18,174,160,5,'#709992');line(c,[[x-8,183+(i%2)*18],[x+87,133+(i%2)*18],[x+182,183+(i%2)*18]],'#5e8580',10);for(let j=0;j<3;j++)block(c,x+22+j*46,220+(i%2)*18,22,46,4,'#b1c4ac');}
     c.fillStyle='#6f9d94';c.fillRect(0,338,w,222);c.fillStyle='#7ca99c';c.fillRect(0,369,w,191);
     for(let i=0;i<20;i++){const x=(i*93-this.camera*.42)%(w+100);line(c,[[x,387+(i%4)*39],[x+26+(i%3)*9,387+(i%4)*39]],'#a8c5b0',2);}
     const drift=Math.sin(t*.3)*8;line(c,[[w*.59+drift,103],[w*.59+7+drift,99],[w*.59+14+drift,103]],'#5e8580',2);
+  }
+  dawnRelaySky(c,w){
+    // Static, original dawn-depot study. All detail stays behind the real floor and actors.
+    const sky=c.createLinearGradient(0,0,0,390);
+    sky.addColorStop(0,'#a8bfb9');sky.addColorStop(.52,'#d4d5b8');sky.addColorStop(1,'#c5d3bb');
+    c.fillStyle=sky;c.fillRect(0,0,w,560);
+    const sunX=w*.8-this.camera*.035,sunY=113;
+    const halo=c.createRadialGradient(sunX,sunY,10,sunX,sunY,105);
+    halo.addColorStop(0,'#f7e0aeaa');halo.addColorStop(1,'#f7e0ae00');
+    c.fillStyle=halo;c.fillRect(sunX-105,sunY-105,210,210);
+    oval(c,sunX,sunY,35,35,'#f7e4b7');
+    c.save();c.beginPath();c.rect(0,150,w,228);c.clip();
+    for(let i=-1;i<8;i++){
+      const x=i*320-(this.camera*.28)%320;
+      block(c,x,226,292,152,4,'#88a39a');
+      line(c,[[x-8,228],[x+146,173],[x+300,228]],'#6d938c',7);
+      block(c,x+20,245,252,123,4,'#d9dbbf','#79948c');
+      c.fillStyle='#9fb0a2';c.globalAlpha=.55;
+      for(const [bx,by,bw,bh]of [[x+45,320,52,48],[x+98,337,59,31],[x+174,309,64,59]])block(c,bx,by,bw,bh,3,'#839e94');
+      c.globalAlpha=1;
+      for(const pane of [x+84,x+146,x+208])line(c,[[pane,245],[pane,368]],'#809d94',3);
+      line(c,[[x+20,304],[x+272,304]],'#9eafa0',3);
+      line(c,[[x+20,368],[x+272,368]],'#76948b',4);
+    }
+    // One broad light direction, not a moving effect or a false route marker.
+    const rayX=sunX-16;c.fillStyle='#fff0c230';c.beginPath();c.moveTo(rayX,174);c.lineTo(rayX+48,174);c.lineTo(rayX+190,378);c.lineTo(rayX+70,378);c.closePath();c.fill();
+    c.restore();
+    c.fillStyle='#789a90';c.fillRect(0,378,w,182);
+    c.fillStyle='#6d928b';c.fillRect(0,378,w,23);
+    for(let i=-1;i<18;i++){
+      const x=i*105-(this.camera*.4)%105;
+      line(c,[[x,417+(i%3)*48],[x+31,417+(i%3)*48]],'#a9c4ab',2);
+      line(c,[[x+21,456+(i%2)*56],[x+43,456+(i%2)*56]],'#91b4a4',1.5);
+    }
   }
   docks(c,level){for(const s of level.solids){
     if(s.material==='wood'){
@@ -80,6 +116,7 @@ export class Renderer{
   otherSetting(c,level){
     const night=level.theme==='evening';for(const x of (night?[38,1280,1900]:[38,1460])){line(c,[[x,340],[x,438]],C.deep,5);block(c,x-18,322,40,28,5,C.paper,C.deep);label(c,'→',x+2,344,C.deep,23,'center');}
     const x=level.goal,y=level.goalY,h=level.theme==='warehouse'?142:196;
+    if(level===LEVELS[5]){const glow=c.createRadialGradient(x,y-94,10,x,y-94,180);glow.addColorStop(0,'#f3dda066');glow.addColorStop(1,'#f3dda000');c.fillStyle=glow;c.fillRect(x-180,y-240,360,200);}
     block(c,x-95,y-h,190,h,5,night?'#426b74':'#718d77',C.deep);c.fillStyle=night?'#294f5b':'#416f64';c.beginPath();c.moveTo(x-108,y-h);c.lineTo(x,y-h-42);c.lineTo(x+107,y-h);c.closePath();c.fill();
     block(c,x-38,y-116,76,116,6,'#34535a');block(c,x-27,y-105,54,105,5,'#d9bb7a');block(c,x-19,y-98,38,53,4,'#f3d99e');line(c,[[x,y-97],[x,y-47]],'#aa915f',2);oval(c,x+18,y-27,2.6,2.6,C.deep);
     block(c,x-84,y-h+12,168,26,4,C.paper);label(c,level.destination,x,y-h+31,C.deep,15,'center');block(c,x-32,y-5,64,5,1,C.gold);
@@ -122,6 +159,62 @@ export class Renderer{
     oval(c,0,-41,12,12,'#ebc196');block(c,-14,-52,28,10,5,C.deep);block(c,p.face>0?-3:-20,-46,23,4,2,C.deep);oval(c,p.face*5,-40,1.7,2.2,C.ink);line(c,[[p.face*5,-34],[p.face*8,-35]],'#95654d',1.3);
     line(c,[[-10,-30],[10,-30]],C.gold,5);const tail=walking?Math.sin(tick/8)*3:0;line(c,[[p.face*-10,-30],[p.face*-21,-24+tail]],C.gold,5);
     if(phase==='won'){line(c,[[-14,-25],[-22,-37],[-22,-47]],C.teal,6);oval(c,-22,-47,4,4,'#ebc196');}
+    c.restore();
+  }
+  dawnCourier(c,g){
+    // The silhouette stays close to the 28×46 actor box; the carried box is already drawn separately.
+    const p=g.player,tick=g.tick,phase=g.phase;
+    if(this.courierFrame&&tick<this.courierFrame.tick)this.landingTick=-100;
+    if(this.courierFrame&&tick>this.courierFrame.tick&&tick-this.courierFrame.tick<=3&&
+      !this.courierFrame.grounded&&p.grounded)this.landingTick=tick;
+    this.courierFrame={tick,grounded:p.grounded};
+    let action;
+    for(let i=g.events.length-1;i>=0;i--)if(['placed','throw'].includes(g.events[i].type)){action=g.events[i];break;}
+    const walking=p.grounded&&Math.abs(p.vx)>0,holding=!!p.holding,actionAge=action?tick-action.tick:Infinity;
+    const placing=!holding&&p.pose>0&&action?.type==='placed'&&actionAge>=0&&actionAge<24;
+    const throwing=!holding&&p.pose>0&&action?.type==='throw'&&actionAge>=0&&actionAge<28;
+    const reduced=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const swing=walking&&!reduced?Math.sin(tick/7)*5:0;
+    const landing=p.grounded&&tick-(this.landingTick??-100)<12,shift=landing?4:placing?2:0;
+    c.save();c.translate(p.x,p.y);if(p.invulnerable>0&&Math.floor(tick/8)%2)c.globalAlpha=.55;
+    if(p.grounded)oval(c,0,2,17,3,'#203b423d');
+    if(!p.grounded){
+      const rise=p.vy<0;
+      line(c,[[-6,-13],[-11,rise?-5:-2],[-14,rise?-7:0]],C.deep,6);
+      line(c,[[6,-13],[10,rise?-6:-2],[13,rise?-9:0]],C.deep,6);
+    }else if(landing){
+      line(c,[[-6,-9],[-11,-5],[-15,0]],C.deep,6);
+      line(c,[[6,-9],[11,-5],[15,0]],C.deep,6);
+    }else{
+      line(c,[[-6,-13+shift],[-8+swing,0],[-12+swing,0]],C.deep,6);
+      line(c,[[6,-13+shift],[8-swing,0],[12-swing,0]],C.deep,6);
+    }
+    // Warm shoulder straps identify the courier against both the pale depot and red-faced patrol.
+    block(c,p.face>0?-15:9,-28+shift,6,14,2,'#ad764e',C.deep);
+    block(c,-12,-34+shift,24,24,6,'#2b6470',C.deep);
+    line(c,[[-8,-31+shift],[-3,-19+shift]],'#f0cb83',3);
+    line(c,[[8,-31+shift],[3,-19+shift]],'#f0cb83',3);
+    block(c,-4,-21+shift,8,5,2,'#dfb86f');
+    let hands;
+    if(holding)hands=[[-12,-51+shift],[12,-51+shift]];
+    else if(placing)hands=p.face>0?[[-14,-19+shift],[18,-11+shift]]:[[-18,-11+shift],[14,-19+shift]];
+    else if(throwing)hands=p.face>0?[[-14,-19+shift],[18,-36+shift]]:[[-18,-36+shift],[14,-19+shift]];
+    else if(!p.grounded)hands=p.face>0?[[-16,-23+shift],[15,-29+shift]]:[[-15,-29+shift],[16,-23+shift]];
+    else hands=[[-14,-19+shift+swing*.3],[14,-19+shift-swing*.3]];
+    for(let i=0;i<2;i++){
+      line(c,[[i?9:-9,-29+shift],hands[i]],'#2b6470',6);
+      oval(c,hands[i][0],hands[i][1],3,3,'#efc69b');
+    }
+    oval(c,0,-41+shift,11,11,'#efc69b');
+    oval(c,p.face*10,-40+shift,3,3,'#e8b789');
+    block(c,-12,-52+shift,24,9,3,C.deep);
+    block(c,-8,-51+shift,16,3,1,'#efcf8d');
+    block(c,p.face>0?-1:-17,-45+shift,18,4,2,C.deep);
+    oval(c,p.face*5,-41+shift,2,2,C.ink);
+    if(phase==='won'){
+      line(c,[[p.face*-9,-29+shift],[p.face*-16,-40+shift]],'#2b6470',5);
+      oval(c,p.face*-16,-40+shift,3,3,'#efc69b');
+    }
     c.restore();
   }
 }
