@@ -177,24 +177,24 @@ export class Renderer{
     const swing=walking&&!reduced?Math.sin(tick/7)*5:0;
     const landing=p.grounded&&tick-(this.landingTick??-100)<12,shift=landing?4:placing?2:0;
     c.save();c.translate(p.x,p.y);if(p.invulnerable>0&&Math.floor(tick/8)%2)c.globalAlpha=.55;
-    if(p.grounded)oval(c,0,2,17,3,'#203b423d');
+    if(p.grounded)oval(c,0,2,18,4,'#203b423d');
     if(!p.grounded){
       const rise=p.vy<0;
-      line(c,[[-6,-13],[-11,rise?-5:-2],[-14,rise?-7:0]],C.deep,6);
-      line(c,[[6,-13],[10,rise?-6:-2],[13,rise?-9:0]],C.deep,6);
+      line(c,[[-6,-13],[-11,rise?-5:-2],[-14,rise?-7:0]],C.deep,7);
+      line(c,[[6,-13],[10,rise?-6:-2],[13,rise?-9:0]],C.deep,7);
     }else if(landing){
-      line(c,[[-6,-9],[-11,-5],[-15,0]],C.deep,6);
-      line(c,[[6,-9],[11,-5],[15,0]],C.deep,6);
+      line(c,[[-6,-9],[-11,-5],[-15,0]],C.deep,7);
+      line(c,[[6,-9],[11,-5],[15,0]],C.deep,7);
     }else{
-      line(c,[[-6,-13+shift],[-8+swing,0],[-12+swing,0]],C.deep,6);
-      line(c,[[6,-13+shift],[8-swing,0],[12-swing,0]],C.deep,6);
+      line(c,[[-6,-13+shift],[-8+swing,0],[-12+swing,0]],C.deep,7);
+      line(c,[[6,-13+shift],[8-swing,0],[12-swing,0]],C.deep,7);
     }
-    // Warm shoulder straps identify the courier against both the pale depot and red-faced patrol.
-    block(c,p.face>0?-15:9,-28+shift,6,14,2,'#ad764e',C.deep);
-    block(c,-12,-34+shift,24,24,6,'#2b6470',C.deep);
-    line(c,[[-8,-31+shift],[-3,-19+shift]],'#f0cb83',3);
-    line(c,[[8,-31+shift],[3,-19+shift]],'#f0cb83',3);
-    block(c,-4,-21+shift,8,5,2,'#dfb86f');
+    // The same jacket, cap and satchel silhouette continues through all seven stations.
+    block(c,-13,-33+shift,26,25,7,C.teal,C.deep);
+    line(c,[[-5,-27+shift],[6,-27+shift]],'#8fc3ac',3);
+    block(c,-10,-22+shift,7,7,2,'#9bbe9e');
+    line(c,[[-10,-30+shift],[10,-30+shift]],C.gold,5);
+    line(c,[[p.face*-10,-30+shift],[p.face*-21,-24+shift]],C.gold,5);
     let hands;
     if(holding)hands=[[-12,-51+shift],[12,-51+shift]];
     else if(placing)hands=p.face>0?[[-14,-19+shift],[18,-11+shift]]:[[-18,-11+shift],[14,-19+shift]];
@@ -202,18 +202,17 @@ export class Renderer{
     else if(!p.grounded)hands=p.face>0?[[-16,-23+shift],[15,-29+shift]]:[[-15,-29+shift],[16,-23+shift]];
     else hands=[[-14,-19+shift+swing*.3],[14,-19+shift-swing*.3]];
     for(let i=0;i<2;i++){
-      line(c,[[i?9:-9,-29+shift],hands[i]],'#2b6470',6);
-      oval(c,hands[i][0],hands[i][1],3,3,'#efc69b');
+      line(c,[[i?11:-11,-28+shift],hands[i]],C.teal,7);
+      oval(c,hands[i][0],hands[i][1],4,4,'#ebba8b');
     }
-    oval(c,0,-41+shift,11,11,'#efc69b');
-    oval(c,p.face*10,-40+shift,3,3,'#e8b789');
-    block(c,-12,-52+shift,24,9,3,C.deep);
-    block(c,-8,-51+shift,16,3,1,'#efcf8d');
-    block(c,p.face>0?-1:-17,-45+shift,18,4,2,C.deep);
-    oval(c,p.face*5,-41+shift,2,2,C.ink);
+    oval(c,0,-41+shift,12,12,'#ebc196');
+    block(c,-14,-52+shift,28,10,5,C.deep);
+    block(c,p.face>0?-3:-20,-46+shift,23,4,2,C.deep);
+    oval(c,p.face*5,-40+shift,1.7,2.2,C.ink);
+    line(c,[[p.face*5,-34+shift],[p.face*8,-35+shift]],'#95654d',1.3);
     if(phase==='won'){
-      line(c,[[p.face*-9,-29+shift],[p.face*-16,-40+shift]],'#2b6470',5);
-      oval(c,p.face*-16,-40+shift,3,3,'#efc69b');
+      line(c,[[p.face*-9,-29+shift],[p.face*-16,-40+shift]],C.teal,6);
+      oval(c,p.face*-16,-40+shift,4,4,'#ebc196');
     }
     c.restore();
   }
