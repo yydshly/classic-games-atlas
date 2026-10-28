@@ -4,6 +4,14 @@ import { continueTurn, endTurn, forage, fortify, goalMet, goalOf, isSupplied, ma
 const KEY = 'atlas.border-letters.v1';
 const $ = id => document.getElementById(id);
 const defenseOf = unit => (unit.role === 'guard' ? 3 : 1) + unit.fort;
+function fortifyStatus(unit) {
+  if (state.phase !== 'playing') return '本役已结束；驻防命令不可用。';
+  if (state.settlementPending) return '本回合已结算，驻防已失效；待继续部署。';
+  if (unit.fort) return `${state.paused ? '已暂停；' : ''}本回合已驻防：+${unit.fort} 已计入当前守力；结算时生效，结算后失效。`;
+  if (!state.orders) return `${state.paused ? '已暂停；' : ''}本回合命令已用尽，无法再驻防。`;
+  if (state.paused) return '已暂停；恢复后可下令驻防。';
+  return `尚未驻防；可用 1 命令使本回合守力 +${unit.role === 'guard' ? 2 : 1}。`;
+}
 const esc = value => String(value).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
 const safeRead = () => { try { return JSON.parse(localStorage.getItem(KEY)); } catch { return null; } };
 const record = safeRead();
@@ -69,7 +77,7 @@ function render() {
   const visit = (goal.courierVisits || []).map(at => `${node(at).name}${state.visits.includes(at) ? ' ✓' : ''}`).join('、');
   const oldGoalNote = legacySixth && state.phase === 'won' ? '旧版第六役完赛记录按当时目标保留。' : legacySixth && state.phase === 'playing' ? '旧版进行中存档沿用原目标；重试本役启用烽台传令。' : '';
   $('status').innerHTML = `<b>目标：</b>期末控制 ${hold}${visit ? `；驿骑到过 ${visit}` : ''}。<br><b>回合末：</b>两队耗粮 2；断粮下回合少一命令，期限回合断粮失败。松驿失守即失败。${oldGoalNote ? `<br>${oldGoalNote}` : ''}${state.phase !== 'playing' ? `<br><b>${state.phase === 'won' ? '已胜利' : '已失败'}</b>` : state.settlementPending ? '<br><b>结算已保存；先查看日志，再继续部署。</b>' : state.paused ? '<br><b>已暂停</b>' : ''}`;
-  $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · 战力 ${unit.role === 'guard' ? 3 : 1} / 当前守力 ${defenseOf(unit)}</strong><small>在${node(unit.at).name} · ${unit.fort ? '已驻防，结算突袭时生效，结算完后失效' : `驻防 +${unit.role === 'guard' ? 2 : 1}（仅本回合）`}</small></button>`).join('');
+  $('units').innerHTML = state.units.map(unit => `<button type="button" data-unit="${unit.id}" class="${chosenUnit === unit.id ? 'active' : ''}" aria-pressed="${chosenUnit === unit.id}"><strong>${unit.name} · 战力 ${unit.role === 'guard' ? 3 : 1} / 当前守力 ${defenseOf(unit)}</strong><small>在${node(unit.at).name} · ${fortifyStatus(unit)}</small></button>`).join('');
   const unit = unitOf(state, chosenUnit), adjacent = neighbors(unit.at).includes(chosenNode);
   const blockedRoad = adjacent ? roadClosure(state, unit.at, chosenNode) : null;
   const terrainCost = adjacent ? grainCost(unit.role, chosenNode) : null;
