@@ -2,7 +2,7 @@
 
 七个相连房间的原创生存探索首段，`echoes-slice-1`。**已上线试玩／七室首段，线上体验验收中；不计入45款登记作品。** 不是完整《Resident Evil》复刻，七室不是后续上限。没有使用原作人物、建筑、地图、故事、美术、音效或代码。
 
-从仓库根目录运行 `python3 -m http.server 4174 --bind 127.0.0.1`，打开 `/experiments/old-house-echoes/`。首页近期入口 → `/play/#independent` → 本作 → 返回大厅；原45款、99版本与7个旧实验地址继续保留。玩法版本仍为 `echoes-slice-1`；首段完成结果提供继续第二段的链接，独立存档；首段规则与地图不改。正式已上线首段缓存标记为 `echoes-slice-1-result-3`，当前入口载入新版主模块使用 `echoes-courtyard-1`。
+从仓库根目录运行 `python3 -m http.server 4174 --bind 127.0.0.1`，打开 `/experiments/old-house-echoes/`。首页近期入口 → `/play/#independent` → 本作 → 返回大厅；原45款、99版本与7个旧实验地址继续保留。玩法版本仍为 `echoes-slice-1`；首段完成结果提供继续第二段的链接，独立存档；首段规则与地图不改。当前入口主模块缓存标记为 `echoes-slice-1-result-4`，第二段页面缓存标记为 `echoes-courtyard-loadout-1`；第二段装备重新配置，首段物品不继承。
 
 ## 救援目标与操作
 
