@@ -12,7 +12,7 @@ export class Renderer{
     const cameraAnchor=level===LEVELS[5]&&w<650&&p.x>=770 ? .16 : .33;
     const desired=Math.max(0,Math.min(level.width-w,p.x-w*cameraAnchor));this.camera=(snapCamera||g.tick===0||this.needsCameraFit)?desired:g.phase==='playing'?this.camera+(desired-this.camera)*.13:this.camera;this.needsCameraFit=false;
     c.setTransform(this.canvas.width/this.width,0,0,this.canvas.height/this.height,0,0);c.clearRect(0,0,this.width,this.height);c.scale(this.scale,this.scale);
-    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level.id==='shifting-stacks')this.fourthGoalCues(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
+    this.sky(c,w,g.tick/120,level);c.save();c.translate(-this.camera,0);this.docks(c,level);this.setting(c,level);if(level===LEVELS[1])this.twoStoreyMarks(c);if(level.id==='shifting-stacks')this.fourthGoalCues(c,level);if(level.theme==='north-open')this.northRoutes(c);this.supplies(c,g);
     const focus=heldBox(g)||pickupBox(g);if(focus&&['playing','paused'].includes(g.phase)){
       if(focus.mode==='held'){
         if(!this.prediction||g.tick-this.predictionTick>=6||this.predictionFace!==p.face||this.predictionBox!==focus.id||this.predictionPhase!==g.phase){this.prediction=forecastThrow(g);this.predictionTick=g.tick;this.predictionFace=p.face;this.predictionBox=focus.id;this.predictionPhase=g.phase;}
@@ -28,7 +28,7 @@ export class Renderer{
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);
     for(const b of g.boxes)if(b.mode!=='spent')this.crate(c,b);
-    if(level===LEVELS[0]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
+    if(level===LEVELS[0]||level===LEVELS[1]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
     const recent=g.lastEvent;if(recent&&g.tick-recent.tick<50&&recent.type==='enemy-hit'){
       const t=(g.tick-recent.tick)/50;c.globalAlpha=1-t;for(let i=0;i<5;i++){const a=i*Math.PI*2/5;line(c,[[recent.x+Math.cos(a)*(18+t*28),recent.y-20+Math.sin(a)*(18+t*20)],[recent.x+Math.cos(a)*(25+t*28),recent.y-20+Math.sin(a)*(25+t*20)]],C.gold,3);}c.globalAlpha=1;
     }
@@ -37,7 +37,7 @@ export class Renderer{
     // A small distance ribbon gives direction without drawing false platforms.
     block(c,18,18,Math.min(w-36,250),34,10,'#f5e8ccdd');label(c,`${g.stageIndex+1}/${LEVELS.length}  ${level.title} → ${level.destination}`,30,40,C.deep,12);
   }
-  sky(c,w,t,level){if(level===LEVELS[0]){this.rainYardSky(c,w);return;}if(level===LEVELS[5]){this.dawnRelaySky(c,w);return;}if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
+  sky(c,w,t,level){if(level===LEVELS[0]){this.rainYardSky(c,w);return;}if(level===LEVELS[1]){this.twoStoreyHallSky(c,w);return;}if(level===LEVELS[5]){this.dawnRelaySky(c,w);return;}if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
     oval(c,w*.78-this.camera*.03,96,40,40,'#f5e6b8');
     for(let i=-1;i<8;i++){const x=i*210-(this.camera*.18)%210;block(c,x,180+(i%2)*18,174,160,5,'#709992');line(c,[[x-8,183+(i%2)*18],[x+87,133+(i%2)*18],[x+182,183+(i%2)*18]],'#5e8580',10);for(let j=0;j<3;j++)block(c,x+22+j*46,220+(i%2)*18,22,46,4,'#b1c4ac');}
     c.fillStyle='#6f9d94';c.fillRect(0,338,w,222);c.fillStyle='#7ca99c';c.fillRect(0,369,w,191);
@@ -71,6 +71,33 @@ export class Renderer{
     for(let i=-1;i<20;i++){
       const x=i*91-(this.camera*.35)%91,y=423+(i%4)*34;
       line(c,[[x,y],[x+21+(i%3)*7,y]],'#9fb9ab',1.6);
+    }
+  }
+  twoStoreyHallSky(c,w){
+    // Enclosed sorting hall: broad clerestory light and distant storage bays
+    // sit behind the actual platforms, whose warm top edges remain the route.
+    const wall=c.createLinearGradient(0,0,0,560);
+    wall.addColorStop(0,'#819c9e');wall.addColorStop(.56,'#c3cebb');wall.addColorStop(1,'#77958d');
+    c.fillStyle=wall;c.fillRect(0,0,w,560);
+    c.fillStyle='#4c6c70';c.fillRect(0,0,w,53);
+    for(let i=-1;i<9;i++){
+      const x=i*262-(this.camera*.13)%262;
+      line(c,[[x-12,53],[x+130,82],[x+274,53]],'#5e7d7c',9);
+      block(c,x+21,105,208,126,3,'#dce0c7','#8da79d');
+      c.fillStyle='#bad0bf';c.fillRect(x+28,112,194,112);
+      line(c,[[x+125,111],[x+125,224]],'#8ca9a3',4);
+      line(c,[[x+28,170],[x+222,170]],'#8ca9a3',4);
+      // Light falls into the hall, never forming a playable-looking edge.
+      c.fillStyle='#eee5c12b';c.beginPath();c.moveTo(x+34,229);c.lineTo(x+110,229);c.lineTo(x+160,377);c.lineTo(x+91,377);c.closePath();c.fill();
+      block(c,x+244,81,12,310,2,'#688985');
+    }
+    c.fillStyle='#8ea99c';c.fillRect(0,387,w,173);
+    c.fillStyle='#668a86';c.fillRect(0,391,w,21);
+    for(let i=-1;i<11;i++){
+      const x=i*178-(this.camera*.32)%178;
+      block(c,x+12,424,105,93,3,'#78968c');
+      line(c,[[x+22,444],[x+105,444]],'#9db9a6',2);
+      line(c,[[x+18,480],[x+108,480]],'#67847d',3);
     }
   }
   dawnRelaySky(c,w){
@@ -162,6 +189,13 @@ export class Renderer{
     c.fillStyle='#e7b971';for(const [x,w]of [[760,470],[1400,250]])c.fillRect(x,433,w,5);
     label(c,'下层清路',850,421,C.deep,14,'center');
   }
+  twoStoreyMarks(c){
+    // Paint the ascent cue on the two real cargo steps; it adds no support.
+    for(const x of [350,1980]){
+      label(c,'上层 ↑',x+37,390,C.deep,13,'center');
+      line(c,[[x+15,402],[x+59,402]],C.gold,3);
+    }
+  }
   fourthGoalCues(c,level){const shelf=level.solids.find(s=>s.id==='arrival-shelf');
     // The stripe marks the actual crate landing zone, safely on the right bank
     // and wholly outside the shelf. It has no collision surface of its own.
@@ -239,7 +273,7 @@ export class Renderer{
     block(c,p.face>0?-3:-20,-46+shift,23,4,2,C.deep);
     oval(c,p.face*5,-40+shift,1.7,2.2,C.ink);
     line(c,[[p.face*5,-34+shift],[p.face*8,-35+shift]],'#95654d',1.3);
-    if(g.stageIndex===0){
+    if(g.stageIndex===0||g.stageIndex===1){
       const hurt=[...g.events].reverse().find(e=>e.type==='hurt'),age=hurt?tick-hurt.tick:Infinity;
       if(age>=0&&age<50){
         // A short, stationary health cue complements the existing knockback and blink.
