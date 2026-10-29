@@ -28,7 +28,7 @@ export class Renderer{
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);
     for(const b of g.boxes)if(b.mode!=='spent')this.crate(c,b);
-    if(level===LEVELS[5])this.dawnCourier(c,g);else this.person(c,p,g.tick,g.phase);
+    if(level===LEVELS[0]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
     const recent=g.lastEvent;if(recent&&g.tick-recent.tick<50&&recent.type==='enemy-hit'){
       const t=(g.tick-recent.tick)/50;c.globalAlpha=1-t;for(let i=0;i<5;i++){const a=i*Math.PI*2/5;line(c,[[recent.x+Math.cos(a)*(18+t*28),recent.y-20+Math.sin(a)*(18+t*20)],[recent.x+Math.cos(a)*(25+t*28),recent.y-20+Math.sin(a)*(25+t*20)]],C.gold,3);}c.globalAlpha=1;
     }
@@ -37,12 +37,41 @@ export class Renderer{
     // A small distance ribbon gives direction without drawing false platforms.
     block(c,18,18,Math.min(w-36,250),34,10,'#f5e8ccdd');label(c,`${g.stageIndex+1}/${LEVELS.length}  ${level.title} → ${level.destination}`,30,40,C.deep,12);
   }
-  sky(c,w,t,level){if(level===LEVELS[5]){this.dawnRelaySky(c,w);return;}if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
+  sky(c,w,t,level){if(level===LEVELS[0]){this.rainYardSky(c,w);return;}if(level===LEVELS[5]){this.dawnRelaySky(c,w);return;}if(level.theme!=='harbor'){this.otherSky(c,w,t,level);return;}const gradient=c.createLinearGradient(0,0,0,560);gradient.addColorStop(0,'#aac8be');gradient.addColorStop(.7,'#dce0c2');gradient.addColorStop(1,'#7aa9a1');c.fillStyle=gradient;c.fillRect(0,0,w,560);
     oval(c,w*.78-this.camera*.03,96,40,40,'#f5e6b8');
     for(let i=-1;i<8;i++){const x=i*210-(this.camera*.18)%210;block(c,x,180+(i%2)*18,174,160,5,'#709992');line(c,[[x-8,183+(i%2)*18],[x+87,133+(i%2)*18],[x+182,183+(i%2)*18]],'#5e8580',10);for(let j=0;j<3;j++)block(c,x+22+j*46,220+(i%2)*18,22,46,4,'#b1c4ac');}
     c.fillStyle='#6f9d94';c.fillRect(0,338,w,222);c.fillStyle='#7ca99c';c.fillRect(0,369,w,191);
     for(let i=0;i<20;i++){const x=(i*93-this.camera*.42)%(w+100);line(c,[[x,387+(i%4)*39],[x+26+(i%3)*9,387+(i%4)*39]],'#a8c5b0',2);}
     const drift=Math.sin(t*.3)*8;line(c,[[w*.59+drift,103],[w*.59+7+drift,99],[w*.59+14+drift,103]],'#5e8580',2);
+  }
+  rainYardSky(c,w){
+    // Distant roofs stay soft; only the real dock edge receives a hard, warm line.
+    const sky=c.createLinearGradient(0,0,0,560);
+    sky.addColorStop(0,'#839fa7');sky.addColorStop(.58,'#becdc5');sky.addColorStop(1,'#789c99');
+    c.fillStyle=sky;c.fillRect(0,0,w,560);
+    const lightX=w*.79-this.camera*.025,lightY=112;
+    oval(c,lightX,lightY,136,100,'#eee6c419');
+    oval(c,lightX,lightY,82,68,'#eee6c432');
+    oval(c,lightX,lightY,26,26,'#eee6c4');
+    for(let i=-1;i<10;i++){
+      const x=i*238-(this.camera*.12)%238,roof=235+(i%3)*15;
+      block(c,x,roof,210,155,3,'#9bb3ae');
+      line(c,[[x-9,roof+2],[x+105,roof-37],[x+219,roof+2]],'#8aa7a4',6);
+      for(const pane of [x+39,x+86,x+133,x+180])block(c,pane,roof+45,22,36,2,'#b8c9b8');
+    }
+    for(let i=-1;i<8;i++){
+      const x=i*322-(this.camera*.22)%322,roof=273+(i%2)*10;
+      block(c,x,roof,286,115,4,'#789b98');
+      line(c,[[x-8,roof+1],[x+143,roof-30],[x+294,roof+1]],'#6b8e8e',6);
+      for(const pane of [x+51,x+116,x+181,x+246])block(c,pane,roof+36,27,43,2,'#a9bdb0');
+      line(c,[[x+8,roof+95],[x+278,roof+95]],'#8daba2',2);
+    }
+    c.fillStyle='#5f8888';c.fillRect(0,388,w,172);
+    c.fillStyle='#729996';c.fillRect(0,390,w,25);
+    for(let i=-1;i<20;i++){
+      const x=i*91-(this.camera*.35)%91,y=423+(i%4)*34;
+      line(c,[[x,y],[x+21+(i%3)*7,y]],'#9fb9ab',1.6);
+    }
   }
   dawnRelaySky(c,w){
     // Static, original dawn-depot study. All detail stays behind the real floor and actors.
@@ -161,7 +190,7 @@ export class Renderer{
     if(phase==='won'){line(c,[[-14,-25],[-22,-37],[-22,-47]],C.teal,6);oval(c,-22,-47,4,4,'#ebc196');}
     c.restore();
   }
-  dawnCourier(c,g){
+  expressiveCourier(c,g){
     // The silhouette stays close to the 28×46 actor box; the carried box is already drawn separately.
     const p=g.player,tick=g.tick,phase=g.phase;
     if(this.courierFrame&&tick<this.courierFrame.tick)this.landingTick=-100;
@@ -210,6 +239,15 @@ export class Renderer{
     block(c,p.face>0?-3:-20,-46+shift,23,4,2,C.deep);
     oval(c,p.face*5,-40+shift,1.7,2.2,C.ink);
     line(c,[[p.face*5,-34+shift],[p.face*8,-35+shift]],'#95654d',1.3);
+    if(g.stageIndex===0){
+      const hurt=[...g.events].reverse().find(e=>e.type==='hurt'),age=hurt?tick-hurt.tick:Infinity;
+      if(age>=0&&age<50){
+        // A short, stationary health cue complements the existing knockback and blink.
+        c.globalAlpha=1;const x=p.face>0?17:-48;
+        block(c,x,-78,31,22,5,'#9d503e',C.paper);
+        label(c,'−1',x+15.5,-62,C.paper,15,'center');
+      }
+    }
     if(phase==='won'){
       line(c,[[p.face*-9,-29+shift],[p.face*-16,-40+shift]],C.teal,6);
       oval(c,p.face*-16,-40+shift,4,4,'#ebc196');
