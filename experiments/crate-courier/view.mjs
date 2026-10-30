@@ -28,7 +28,7 @@ export class Renderer{
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);
     for(const b of g.boxes)if(b.mode!=='spent')this.crate(c,b);
-    if(level===LEVELS[0]||level===LEVELS[1]||level===LEVELS[2]||level===LEVELS[3]||level===LEVELS[4]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
+    if(level===LEVELS[0]||level===LEVELS[1]||level===LEVELS[2]||level===LEVELS[3]||level===LEVELS[4]||level===LEVELS[5]||level===LEVELS[6])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
     const recent=g.lastEvent;if(recent&&g.tick-recent.tick<50&&recent.type==='enemy-hit'){
       const t=(g.tick-recent.tick)/50;c.globalAlpha=1-t;for(let i=0;i<5;i++){const a=i*Math.PI*2/5;line(c,[[recent.x+Math.cos(a)*(18+t*28),recent.y-20+Math.sin(a)*(18+t*20)],[recent.x+Math.cos(a)*(25+t*28),recent.y-20+Math.sin(a)*(25+t*20)]],C.gold,3);}c.globalAlpha=1;
     }
