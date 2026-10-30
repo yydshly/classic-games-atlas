@@ -28,7 +28,7 @@ export class Renderer{
     }else this.prediction=null;
     for(const e of g.enemies)this.enemy(c,e,g.tick);
     for(const b of g.boxes)if(b.mode!=='spent')this.crate(c,b);
-    if(level===LEVELS[0]||level===LEVELS[1]||level===LEVELS[2]||level===LEVELS[3]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
+    if(level===LEVELS[0]||level===LEVELS[1]||level===LEVELS[2]||level===LEVELS[3]||level===LEVELS[4]||level===LEVELS[5])this.expressiveCourier(c,g);else this.person(c,p,g.tick,g.phase);
     const recent=g.lastEvent;if(recent&&g.tick-recent.tick<50&&recent.type==='enemy-hit'){
       const t=(g.tick-recent.tick)/50;c.globalAlpha=1-t;for(let i=0;i<5;i++){const a=i*Math.PI*2/5;line(c,[[recent.x+Math.cos(a)*(18+t*28),recent.y-20+Math.sin(a)*(18+t*20)],[recent.x+Math.cos(a)*(25+t*28),recent.y-20+Math.sin(a)*(25+t*20)]],C.gold,3);}c.globalAlpha=1;
     }
@@ -303,7 +303,7 @@ export class Renderer{
     block(c,p.face>0?-3:-20,-46+shift,23,4,2,C.deep);
     oval(c,p.face*5,-40+shift,1.7,2.2,C.ink);
     line(c,[[p.face*5,-34+shift],[p.face*8,-35+shift]],'#95654d',1.3);
-    if(g.stageIndex===0||g.stageIndex===1||g.stageIndex===2||g.stageIndex===3){
+    if(g.stageIndex===0||g.stageIndex===1||g.stageIndex===2||g.stageIndex===3||g.stageIndex===4){
       const hurt=[...g.events].reverse().find(e=>e.type==='hurt'),age=hurt?tick-hurt.tick:Infinity;
       if(age>=0&&age<50){
         // A short, stationary health cue complements the existing knockback and blink.
