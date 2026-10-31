@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#142638">
+  <meta name="game-build" content="three-seats-dual-order-art-1">
+  <title>三席擂台 · 原创三人接力试玩</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a href="../../index.html">← 返回游戏图鉴</a>
+      <span>单场接力实验</span>
+    </header>
+    <main>
+      <div class="intro">
+        <p class="eyebrow">THREE SEATS / ORIGINAL RELAY BOUT</p>
+        <h1>三席擂台</h1>
+        <p>你带三位拳手守住潮门拳社。赛前安排己方顺序，并从两套公开敌序中选一场对照；胜者带余血留场，败者由下一位接替。先击倒对方三席获胜，己方三席尽退则失败。</p>
+      </div>
+      <div class="layout">
+        <section class="arena-wrap" aria-label="三席擂台比赛">
+          <div class="scoreboard">
+            <div><small>己方</small><strong id="player-line">汐 → 芦 → 砾</strong><span id="player-hp">赛前待命</span></div>
+            <div class="score-mid"><span id="seat-count">第 1 席</span><b id="match-state">排阵</b></div>
+            <div class="enemy-score"><small>对方 · 顺序公开</small><strong id="enemy-line">芦 → 汐 → 砾</strong><span id="enemy-hp">赛前待命</span></div>
+          </div>
+          <canvas id="arena" width="960" height="540" aria-label="两位拳手在原创潮门拳社擂台对战；攻防状态同步显示在下方文字中"></canvas>
+          <div id="controls" class="controls" aria-label="触控操作">
+            <div class="move-controls"><button data-control="left" aria-label="向左移动">◀ 左</button><button data-control="right" aria-label="向右移动">右 ▶</button></div>
+            <div class="action-controls"><button data-control="guard" aria-label="按住防守">守</button><button data-control="light" aria-label="轻击">轻击</button><button data-control="heavy" aria-label="重击">重击</button></div>
+          </div>
+          <p id="event" class="event" role="status">赛前排定三人顺序。对方依次为芦、汐、砾。</p>
+          <div class="actions"><button id="pause" disabled>暂停</button><button id="restart">重新排阵</button><button id="help">玩法与按键</button></div>
+        </section>
+        <aside>
+          <section id="setup" class="card">
+            <p class="eyebrow">BEFORE THE BOUT</p><h2>排定你的三席</h2>
+            <p>三人技能不同。观察对方的公开顺序，再决定谁先上场。两套敌序仅改变出场次序，没有隐藏加成；排阵只在开赛前可改。</p>
+            <div id="order" class="order"></div>
+            <h3 class="plan-title">选择公开对手顺序</h3>
+            <div id="opponent-plans" class="enemy-plans" aria-label="对手顺序"></div>
+            <button id="start" class="primary">按此顺序开赛</button>
+          </section>
+          <section class="card readout"><h2>当前攻防</h2><p id="combat-readout">开赛前可更换己方顺序。</p><p id="result" hidden></p>
+            <div id="result-actions" hidden><button id="retry" class="primary">本场重试</button><button id="reorder">重新排阵</button></div>
+          </section>
+          <section class="card compact"><h2>操作</h2><p>← / → 或 A / D 移动；J 轻击、K 重击；按住 L 防守。P 暂停。手机使用画面下方触控键，可两指同时操作。</p><p>攻击有可见前摇和收招；浅金线提示对方范围，青线提示己方范围。挡住会减伤，但无法边挡边打。对方只按当前距离和动作行动，不读取未来输入。</p></section>
+        </aside>
+      </div>
+      <footer>原创人物与场景 · 独立本地存档 · 刷新后先暂停 · 一场接力原型，并非完整格斗作品。三人组队与排序循环参考 <a href="https://www.snk-corp.co.jp/us/games/kof-portal/about/" target="_blank" rel="noopener noreferrer">SNK 官方介绍</a>；角色、画面和简化规则均为本作原创。</footer>
+    </main>
+  </div>
+  <dialog id="confirm"><h2 id="confirm-title">重新开始？</h2><p id="confirm-copy"></p><div class="dialog-actions"><button id="cancel-reset">取消</button><button id="confirm-reset" class="primary">确认</button></div></dialog>
+  <dialog id="manual"><h2>玩法与按键</h2><p>先调整己方汐、芦、砾的出场顺序，再选潮线阵或疾潮阵：两套对手顺序都公开，拳手能力相同，仅换出场次序。胜者余血留场，败者换下一席；击倒对方三位获胜，己方三位尽退则失败。</p><p>汐移动快、近距出手快；芦中距牵制、重击伸得更远；砾血厚、挡后反击稳。轻击更快，重击距离或伤害更高但前摇和收招更长。浅金线是对方出手前的范围提示。</p><p>键盘 ←/→ 或 A/D 移动、J 轻击、K 重击、按住 L 防守、P 暂停。触控用左侧移动和右侧动作；松指、取消、失焦均释放。游戏自动保存当前场，刷新后暂停，不会离线推进。</p><button id="close-manual" class="primary">返回擂台</button></dialog>
+  <script type="module" src="main.mjs?v=three-seats-dual-order-art-1"></script>
+</body>
+</html>
