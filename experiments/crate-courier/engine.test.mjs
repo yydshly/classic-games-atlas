@@ -1,8 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createGame,command,step,forecastThrow,STEP,heldBox,hint} from './engine.mjs';
-import {runner,combatRoute,jumpRoute,shelfRoute} from './routes.mjs';
+import {createGame,createPracticeGame,command,step,forecastThrow,STEP,heldBox,hint} from './engine.mjs';
+import {runner,combatRoute,jumpRoute,shelfRoute,chapterSevenBarrier} from './routes.mjs';
+test('a cleared stage can be practiced to arrival without changing the original seven-stage record',()=>{
+  const original=chapterSevenBarrier().game,bytes=JSON.stringify(original),practice=createPracticeGame(original,0);
+  assert(command(practice,'start'));for(const run of combatRoute().runs)if(!run.command)for(let i=0;i<run.frames;i++)step(practice,JSON.parse(run.keys));
+  assert.equal(practice.phase,'won');assert.equal(practice.journey.completed.length,1);
+  assert.equal(JSON.stringify(original),bytes);assert.equal(original.journey.completed.length,7);
+  assert.throws(()=>createPracticeGame(original,7));
+});
 import {Renderer} from './view.mjs';
 import {recordingCanvas} from '../../tools/crate-courier/svg-context.mjs';
 test('opening waits for an explicit start and does not run behind instructions',()=>{const g=createGame(),before=structuredClone(g);for(let i=0;i<600;i++)step(g,{right:true,jump:true,action:true});assert.deepEqual(g,before);assert(command(g,'start'));assert(!command(g,'start'));});

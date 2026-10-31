@@ -1,5 +1,5 @@
-import {command,step,hint,heldBox,getLevel,LEVELS} from './engine.mjs?v=crate-courier-seven-fourth-cue-1';
-export function attachController(root,g,{onChange=()=>{},confirmRestart}={}){
+import {command,step,hint,heldBox,getLevel,LEVELS} from './engine.mjs?v=crate-courier-seven-practice-1';
+export function attachController(root,g,{onChange=()=>{},confirmRestart,isPractice=()=>false}={}){
   const $=s=>root.querySelector(s),doc=root.ownerDocument,win=doc.defaultView,stage=$('#stage');
   const keyboard={},pointers=new Map(),pulses=new Map();let disposed=false,placeQueued=false;
   const queue=(key,source)=>{if(!pulses.has(key))pulses.set(key,new Set());pulses.get(key).add(source);};
@@ -7,9 +7,9 @@ export function attachController(root,g,{onChange=()=>{},confirmRestart}={}){
   const mapping={ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',Space:'jump',KeyK:'jump',KeyJ:'action',KeyE:'action',ArrowDown:'down',KeyS:'down'};
   const keys=()=>{const out={};for(const [code,value]of Object.entries(keyboard))if(value&&mapping[code])out[mapping[code]]=true;for(const v of pointers.values())out[v]=true;return out;};
   function clear(){for(const k of Object.keys(keyboard))delete keyboard[k];pointers.clear();pulses.clear();placeQueued=false;for(const b of root.querySelectorAll('.pressed'))b.classList.remove('pressed');}
-  function change(name,focus=true){clear();if(!command(g,name))return;render();onChange(name);if(focus)stage.focus({preventScroll:true});}
+  function change(name,focus=true){clear();if(isPractice()&&['next','restart'].includes(name))return;if(!command(g,name))return;render();onChange(name);if(focus)stage.focus({preventScroll:true});}
   function render(){
-    const level=getLevel(g),number=g.stageIndex+1,final=g.phase==='won'&&number===LEVELS.length;
+    const level=getLevel(g),number=g.stageIndex+1,practice=isPractice(),final=g.phase==='won'&&number===LEVELS.length,journeyFinal=final&&!practice;
     $('#intro').hidden=g.phase!=='ready';$('#result').hidden=!['failed','won'].includes(g.phase);
     $('#intro-chapter').textContent=`第${number}关 · ${level.title}`;$('#intro-title').textContent=number===1?'抱起木箱，开出一条路。':level.destination+'在前方';$('#intro-goal').textContent='你是递送员阿禾。'+level.introduction;$('#start').textContent=`开始第${number}关`;
     $('#pause').disabled=!['playing','paused'].includes(g.phase);$('#pause').textContent=g.phase==='paused'?'继续':'暂停';$('#retry').disabled=g.phase==='ready';
@@ -17,11 +17,12 @@ export function attachController(root,g,{onChange=()=>{},confirmRestart}={}){
     const held=!!heldBox(g);$('#cargo').textContent=`${number}/${LEVELS.length} · `+(held?'持箱 · J 投掷':'空手 · J 举箱');$('#action').textContent=held?'投掷':'举箱';$('#place').hidden=!held;
     for(const b of root.querySelectorAll('[data-control],#place'))b.disabled=g.phase!=='playing';
     const text=hint(g);if($('#hint').textContent!==text)$('#hint').textContent=text;
-    $('#next').hidden=g.phase!=='won'||final;$('#restart').hidden=!final;$('#recap').hidden=!final;
+    $('#next').hidden=practice||g.phase!=='won'||final;$('#restart').hidden=!journeyFinal;$('#recap').hidden=!journeyFinal;
+    $('#practice-panel').hidden=!journeyFinal;$('#practice-exit').hidden=!practice;$('#practice-badge').hidden=!practice;
     $('#result').classList.toggle('upper-arrival',g.stageIndex===1&&g.player.y<360);
-    if(g.phase==='won'){$('#result-title').textContent=final?'七站平安走完':'第'+number+'关到站';$('#result-text').textContent=level.next;$('#result-retry').textContent='再试本关';$('#next').textContent=final?'':'下一关 · '+LEVELS[g.stageIndex+1].title;}
-    if(g.phase==='failed'){$('#result-title').textContent='这次没能到站';$('#result-text').textContent=g.result.cause+'。重试只重开本关，前面已完成的章节保留。';$('#result-retry').textContent='重试第'+number+'关';}
-    if(final){const signature=JSON.stringify(g.journey.completed);if($('#recap').dataset.signature!==signature){$('#recap').replaceChildren(...g.journey.completed.map(c=>{const li=doc.createElement('li');li.textContent=`${c.title}：投中${c.hits}次 · 跳${c.jumps}次 · 轻放${c.places}次 · 重试${c.retries}次`;return li;}));$('#recap').dataset.signature=signature;}}
+    if(g.phase==='won'){$('#result-title').textContent=practice?'第'+number+'关练习到站':final?'七站平安走完':'第'+number+'关到站';$('#result-text').textContent=practice?'练习完成，不计入七关旅程。可再试本关或返回原旅程。':level.next;$('#result-retry').textContent='再试本关';$('#next').textContent=final?'':'下一关 · '+LEVELS[g.stageIndex+1].title;}
+    if(g.phase==='failed'){$('#result-title').textContent='这次没能到站';$('#result-text').textContent=g.result.cause+(practice?'。练习失败可从本关起点重试，原旅程不变。':'。重试只重开本关，前面已完成的章节保留。');$('#result-retry').textContent='重试第'+number+'关';}
+    if(journeyFinal){const signature=JSON.stringify(g.journey.completed);if($('#recap').dataset.signature!==signature){$('#recap').replaceChildren(...g.journey.completed.map(c=>{const li=doc.createElement('li');li.textContent=`${c.title}：投中${c.hits}次 · 跳${c.jumps}次 · 轻放${c.places}次 · 重试${c.retries}次`;return li;}));$('#recap').dataset.signature=signature;}}
     const horizontal=Math.min(100,Math.round(g.player.x/level.goal*100));
     const position=g.stageIndex===3&&g.phase!=='won'&&horizontal===100?'已到高架下方，仍未到站':`位于本关 ${horizontal}%`;
     $('#canvas').setAttribute('aria-label',`第${number}关${level.title}：递送员${position}；体力 ${g.player.hp}；${held?'持箱':'空手'}。${text}`);

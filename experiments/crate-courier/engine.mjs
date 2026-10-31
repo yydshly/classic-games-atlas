@@ -14,6 +14,17 @@ function makeStage(stageIndex,levelVersion=2){const level=getLevel({stageIndex,l
   enemies:level.enemies.map(e=>({...e,w:38,h:32,alive:true,hitAt:-1})),sources:level.supplies.map(s=>({...s,cooldown:0})),
   previous:{},events:[],lastEvent:null,learned:{lift:false,throw:false,jump:false,hit:false},result:null,run:{shots:0,hits:0,damage:0,jumps:0,places:0}};}
 export function createGame(){return {...makeStage(0),journey:{completed:[],retries:LEVELS.map(()=>0)}};}
+// A completed journey grants a separate, disposable run of any cleared stage.
+// The caller stores this run outside the journey key; the original object is never mutated.
+export function createPracticeGame(journeyGame,stageIndex){
+  if(!Number.isInteger(stageIndex)||stageIndex<0||stageIndex>=LEVELS.length||
+     journeyGame.phase!=='won'||journeyGame.stageIndex!==LEVELS.length-1||
+     journeyGame.journey.completed.length!==LEVELS.length)throw Error('此关尚未在旅程中通关');
+  return {...makeStage(stageIndex),journey:{
+    completed:structuredClone(journeyGame.journey.completed.slice(0,stageIndex)),
+    retries:[...journeyGame.journey.retries]
+  }};
+}
 export function command(g,name){
   if(name==='start'&&g.phase==='ready'){g.phase='playing';event(g,'start');return true;}
   if(name==='pause'&&g.phase==='playing'){g.phase='paused';g.previous={};return true;}
