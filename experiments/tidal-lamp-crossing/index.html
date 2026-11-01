@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a35"><meta name="game-build" content="tidal-lamp-crossing-three-1">
+  <title>潮桥送灯 · 三关横断原型</title>
+  <link rel="stylesheet" href="style.css?v=tidal-lamp-crossing-three-1">
+</head><body><div class="shell">
+  <header><a href="../../index.html">← 返回游戏大厅</a><span>原创实时横断 · 三关原型 · 体验待验</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">TIDAL LAMP / CROSSING</p><h1>潮桥送灯</h1><p>你是港区灯邮。沿九列短步穿过车道与潮水，把灯送到<strong>北岸中央灯塔</strong>。车撞、落水或时间耗尽会失败；重试只重开当前关。安全岛可以停步看节奏，水面必须踩在移动的浮梁上，浮梁会带你走。</p></div><div class="stamp" aria-hidden="true"><span>灯</span><small>渡潮急件</small></div></section>
+    <section class="stage-card"><div><p class="eyebrow">ROUTE ORDERS</p><h2 id="stage-title"></h2><p id="stage-brief"></p><p id="stage-goal">目标：限时抵达北岸中央的交灯处。</p></div><div class="stage-side"><div id="stage-tabs" class="stage-tabs" aria-label="选择已解锁关卡"></div><button id="start" class="primary">开始送灯</button><button id="next" class="primary" hidden>进入下一关</button></div></section>
+    <div class="game-layout"><section class="board-card" aria-label="当前渡桥地图"><canvas id="board" width="720" height="720" role="img" aria-label="九列地图：金色交灯处在北岸中央；灰色车道有货车，蓝色水道有木浮梁。"></canvas><p class="legend"><span><i class="swatch road"></i>货车道：避开移动的车</span><span><i class="swatch water"></i>水道：落在浮梁上</span><span><i class="swatch safe"></i>安全岛：可停步</span></p></section>
+      <aside class="sidebar"><div class="metrics"><div><b id="time"></b><small>剩余秒</small></div><div><b id="hops"></b><small>本关步数</small></div><div><b id="position"></b><small>横向位置</small></div></div><p id="phase" class="phase"></p>
+        <div class="pad-card"><h3>短步移动</h3><p>键盘方向键 / WASD，或按下屏幕方向键；按住会连续短步，松开即停。P 暂停，R 打开重试确认。失焦自动暂停。</p><div class="dpad" id="dpad" aria-label="方向控制"><button data-dir="up" class="up" aria-label="向北走一步">↑</button><button data-dir="left" class="left" aria-label="向西走一步">←</button><button data-dir="down" class="down" aria-label="向南走一步">↓</button><button data-dir="right" class="right" aria-label="向东走一步">→</button></div></div>
+        <div class="session-actions"><button id="pause">暂停 P</button><button id="resume" hidden>继续 P</button><button id="retry">重试本关</button></div>
+        <p id="status" class="status" role="status"></p><p id="record" class="record"></p><a class="return" href="../../index.html">返回游戏大厅 →</a>
+      </aside></div>
+    <footer>灵感来自经 Konami 授权发行的 <a href="https://www.arcadearchives.com/en/title/aca-099/" target="_blank" rel="noopener noreferrer">《FROGGER》官方发行介绍</a>所述“看准时机穿越车流与河道”。本作人物、港区、车辆、浮梁、地图、画面与故事均为原创；只有三关短篇，不是原作完整复刻。真人首次体验与实体手机仍待验收，不计入已有 45 款目录作品。</footer>
+  </main>
+  <dialog id="confirm"><h2>重试本关？</h2><p>当前位置和时间将重置；已完成的关卡记录及其他游戏存档保持不变。</p><div><button id="cancel-retry">取消，保留现状</button><button id="confirm-retry" class="primary">确认重试</button></div></dialog>
+  <script type="module" src="main.mjs?v=tidal-lamp-crossing-three-1"></script>
+</div></body></html>
