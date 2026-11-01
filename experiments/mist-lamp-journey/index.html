@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b34"><meta name="game-build" content="mist-lamp-three-regions-1">
+  <title>雾灯远行 · 三区探索原型</title>
+  <link rel="stylesheet" href="style.css?v=mist-lamp-three-regions-1">
+</head><body><div class="shell">
+  <header class="topbar"><a href="../../index.html">← 返回图鉴大厅</a><span>原创 RPG · 三区探索原型 · 体验待验</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">MIST LAMP / THREE CONNECTED REGIONS</p><h1>雾灯远行</h1></div><p id="intro-text">带岚、遥和丘穿过风墙山口、淹水档案馆与观测站，重启主灯。三段资源连续结转；选近路节约口粮，或绕路取有限补给。</p></div>
+    <div class="layout"><section class="field" aria-label="地图与战斗画面">
+      <canvas id="scene" width="920" height="520" aria-label="区域地图；路径与敌人也在右侧文字说明"></canvas>
+      <div class="touch-row"><div class="dpad" aria-label="触控移动"><button data-move="0,-1" aria-label="向上">↑</button><div><button data-move="-1,0" aria-label="向左">←</button><button data-move="0,1" aria-label="向下">↓</button><button data-move="1,0" aria-label="向右">→</button></div></div><button id="interact" class="interact">营地休整 E</button></div>
+      <p id="message" class="message" role="status"></p>
+      <div class="field-actions"><button id="pause">暂停 P</button><button id="resume" hidden>继续</button><button id="backtrack" hidden>返回上一区</button><button id="retry">重试当前区</button><a href="../../index.html">返回大厅</a></div>
+    </section><aside>
+      <section id="welcome" class="card welcome"><p class="eyebrow">THREE SHORT REGIONS</p><h2>目标与操作</h2><p>方向键 / WASD 移动，手机点按方向。战斗里三名存活队员依次行动，敌方意图先显示。岚结阵减伤、遥治疗、丘破甲；普通攻击无需法力。</p><p>生命、法力与物品跨区保留，不自动补满。营地休整耗 1 口粮；无粮时后两区各有一次明确的应急布棚，资源仍有限。失败可只重试当前区，刷新先暂停，退出不清档。</p><button id="start" class="primary">从风墙山口出发</button></section>
+      <section id="region-card" class="card region-card"><p class="eyebrow">EXPEDITION / CURRENT REGION</p><h2 id="region-title">第一段 · 风墙山口</h2><p id="region-goal"></p><p id="region-brief"></p><p id="stage-summary" class="stage-summary"></p></section>
+      <section id="party-card" class="card"><div class="card-title"><h2>队伍与背包</h2><span id="phase">准备出发</span></div><div id="party" class="party"></div><p id="stock" class="stock"></p><label class="target-label">物品 / 治疗目标 <select id="target" aria-label="选择探索时的物品目标"><option value="0">岚 · 护卫</option><option value="1">遥 · 医者</option><option value="2">丘 · 测绘师</option></select></label><div class="item-row"><button id="kit">药包 +5 生命</button><button id="tonic">饮剂 +3 法力</button></div></section>
+      <section id="battle" class="card battle" hidden><p class="eyebrow">TURN / VISIBLE INTENT</p><h2 id="foe"></h2><p id="intent" class="intent"></p><p id="actor"></p><div class="battle-actions"><button data-action="attack">普通攻击 1</button><button data-action="guard">防守 2</button><button data-action="skill">职业技能 3</button></div><p id="skill-help"></p><label class="target-label">治疗 / 物品目标 <select id="battle-target" aria-label="选择战斗时的治疗或物品目标"><option value="0">岚 · 护卫</option><option value="1">遥 · 医者</option><option value="2">丘 · 测绘师</option></select></label><div class="item-row"><button id="battle-kit">药包 +5 生命</button><button id="battle-tonic">饮剂 +3 法力</button></div></section>
+      <section id="result" class="card result" hidden><h2 id="result-title"></h2><p id="result-copy"></p><div id="review"></div><button id="next-region" class="primary" hidden>带现有资源前往下一区</button><button id="result-retry">重试当前区</button><a href="../../index.html">返回图鉴大厅</a></section>
+      <section class="card guide"><h2>当前路线与胜负</h2><p id="route-guide"></p><p>战斗按 1 / 2 / 3 攻击、防守、技能，4 / 5 用药包或饮剂；先选目标。P 暂停。全队倒下会失败；不要求法力才能普通攻击。已清敌人与开过的障碍在回访时保持状态。</p></section>
+    </aside></div>
+    <footer>原创人物、地图与画面。三区探索原型，真人品质验收中；参考初代《Final Fantasy》的职业与远行体验，本作的公开敌意图、有限营地和三区地图均为自主简化，不是商业原作完整复刻。存档独立，不计入现有 45 款。</footer>
+  </main></div>
+  <dialog id="confirm"><h2>重试当前区域？</h2><p>只回到本区入口与进入时的资源状态，前区结局和其他游戏存档不变。取消不会写入。</p><div><button id="cancel-reset">取消，保留进度</button><button id="confirm-reset" class="primary">确认重试本区</button></div></dialog>
+  <script type="module" src="main.mjs?v=mist-lamp-three-regions-1"></script>
+</body></html>
