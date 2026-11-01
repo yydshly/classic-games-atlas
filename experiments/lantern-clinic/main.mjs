@@ -1,5 +1,5 @@
 import { SAVE_KEY, ROOM, SHIFTS, createGame, start, build, sell, assign, hire, route,
-  tick, pause, resume, restart, selectStage, nextStage, checkpoint, restore } from './engine.mjs?v=lantern-clinic-three-shifts-1';
+  tick, pause, resume, restart, selectStage, nextStage, checkpoint, restore } from './engine.mjs?v=lantern-clinic-three-shifts-result-1';
 
 const $ = id => document.getElementById(id);
 const esc = x => String(x ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -39,7 +39,14 @@ function render() {
   }).join('');
   const pending = game.patients.filter(p => !['done', 'left'].includes(p.status));
   $('queue-count').textContent = `${pending.length} 位待处理`;
-  $('floor-patients').innerHTML = pending.length ? pending.map(p => `<span>${esc(p.name)} · ${p.status === 'decision' ? '待安排' : p.status === 'waiting' ? '接待台' : `第 ${p.plot + 1} 间`}</span>`).join('') : '<span>候诊廊暂空；按“推进”接待下一位。</span>';
+  const emptyQueue = {
+    ready: '候诊廊暂空；布置房间后开始本班接诊。',
+    active: '候诊廊暂空；按“推进”接待下一位。',
+    paused: '已暂停；点击“继续”后再推进接诊。',
+    won: game.stage < 2 ? '本班已完成；点击下方“进入下一班”。' : '三班全部完成；可从页首返回大厅或重玩已解锁班次。',
+    lost: '本班未达标；可重试本班。',
+  }[game.phase];
+  $('floor-patients').innerHTML = pending.length ? pending.map(p => `<span>${esc(p.name)} · ${p.status === 'decision' ? '待安排' : p.status === 'waiting' ? '接待台' : `第 ${p.plot + 1} 间`}</span>`).join('') : `<span>${emptyQueue}</span>`;
   $('patients').innerHTML = pending.map(p => {
     let detail = p.status === 'waiting' ? '接待台登记中；下一分钟会显示线索。' :
       p.status === 'decision' ? `${esc(p.clue)}${p.known ? `；已确认：${esc(ROOM[p.hint].name)}` : '；可先读谱，也可直接选择处理室。'}` :
