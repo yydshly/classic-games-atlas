@@ -42,7 +42,7 @@ const copy = value => JSON.parse(JSON.stringify(value));
 const integer = (value, min, max = Infinity) => Number.isInteger(value) && value >= min && value <= max;
 function fresh(stage, unlocked = stage, records = [null, null, null]) {
   return { version: 1, stage, unlocked, records: copy(records), phase: 'ready', resumePhase: null,
-    minute: 0, scans: SHIFTS[stage].scans, cursor: 0, revealed: false, correct: 0, errors: 0,
+    minute: 0, scans: SHIFTS[stage].scans, cursor: 0, revealed: false, evidence: null, correct: 0, errors: 0,
     released: 0, copies: 0, scansUsed: 0, log: [],
     message: '先阅读当班规则；核对船单与港务底册，再决定放行或暂扣。' };
 }
@@ -74,23 +74,28 @@ export function start(s) {
   if (s.phase !== 'ready') return false;
   s.phase = 'active'; s.message = '第一份船单已上台。规则和港务底册可随时查看；判定每艘船耗时 1 分钟。'; return true;
 }
+export function chooseEvidence(s, reason) {
+  if (s.phase !== 'active' || !Object.hasOwn(REASONS, reason) ||
+      reason === 'cargo' && s.stage < 1 || reason === 'weight' && s.stage < 2 || s.evidence === reason) return false;
+  s.evidence = reason; return true;
+}
 export function inspect(s, method) {
   if (s.phase !== 'active' || s.revealed || currentCase(s)?.shownSeal !== '墨渍遮号' || !['scan', 'copy'].includes(method)) return false;
   const cost = method === 'scan' ? 1 : 2;
   if (method === 'scan' && s.scans < 1) { s.message = '快检次数已用尽；可花两分钟索取拓本。'; return false; }
   if (s.minute + cost >= SHIFTS[s.stage].limit) { s.message = '本班剩余时间不足以取证并作出判定；可直接根据已知内容决断或重试。'; return false; }
-  s.minute += cost; s.revealed = true;
+  s.minute += cost; s.revealed = true; s.evidence = null;
   if (method === 'scan') { s.scans--; s.scansUsed++; } else s.copies++;
-  s.message = `${method === 'scan' ? '快检' : '索取拓本'}耗时 ${cost} 分钟：封签号 ${currentCase(s).actualSeal}。东汐开放状态按当前分钟重新判断。`;
+  s.message = `${method === 'scan' ? '快检' : '索取拓本'}耗时 ${cost} 分钟：封签号 ${currentCase(s).actualSeal}。时间与信息已变化，请重新选择证据。`;
   return true;
 }
 export function decide(s, verdict, reason) {
-  if (s.phase !== 'active' || !['release', 'hold'].includes(verdict) || !Object.hasOwn(REASONS, reason) ||
+  if (s.phase !== 'active' || s.evidence !== reason || !['release', 'hold'].includes(verdict) || !Object.hasOwn(REASONS, reason) ||
       verdict === 'release' && reason !== 'none' || verdict === 'hold' && reason === 'none') return false;
   const entry = currentCase(s), rules = SHIFTS[s.stage];
   if (!entry || s.minute >= rules.limit) return false;
   const actual = reasonsFor(s, entry), right = verdict === 'release' ? actual.length === 0 : actual.includes(reason);
-  s.minute++; s.cursor++; s.revealed = false;
+  s.minute++; s.cursor++; s.revealed = false; s.evidence = null;
   if (right) s.correct++; else s.errors++;
   if (verdict === 'release') s.released++;
   s.log.push({ name: entry.name, verdict, reason, right, actual: [...actual], at: s.minute });
@@ -111,6 +116,7 @@ export function restore(raw) {
       !['ready', 'active', 'paused', 'won', 'lost'].includes(raw.phase) ||
       !integer(raw.minute, 0, SHIFTS[raw.stage].limit) || !integer(raw.cursor, 0, SHIFTS[raw.stage].cases.length) ||
       !integer(raw.scans, 0, SHIFTS[raw.stage].scans) || typeof raw.revealed !== 'boolean' ||
+      (Object.hasOwn(raw, 'evidence') && raw.evidence !== null && !Object.hasOwn(REASONS, raw.evidence)) ||
       !integer(raw.correct, 0, raw.cursor) || !integer(raw.errors, 0, raw.cursor) ||
       raw.correct + raw.errors !== raw.cursor || !integer(raw.released, 0, raw.cursor) ||
       !integer(raw.copies, 0) || !integer(raw.scansUsed, 0, SHIFTS[raw.stage].scans) ||
@@ -122,7 +128,9 @@ export function restore(raw) {
         !Object.hasOwn(REASONS, r.reason) || typeof r.right !== 'boolean' || !Array.isArray(r.actual) ||
         r.actual.some(reason => !Object.hasOwn(REASONS, reason) || reason === 'none') || !integer(r.at, 1, SHIFTS[raw.stage].limit)) ||
       typeof raw.message !== 'string') return null;
-  const s = copy(raw);
+  const s = copy(raw), legacyEvidence = !Object.hasOwn(raw, 'evidence');
+  if (legacyEvidence) s.evidence = null;
   if (s.phase === 'active') { s.phase = 'paused'; s.resumePhase = 'active'; s.message = '刷新后先暂停；船单、时间、查验次数与记录均已保留。'; }
+  if (legacyEvidence && ['active', 'paused'].includes(s.phase)) s.message += ' 旧档未保存本船证据，请重新选择后再签发。';
   return s;
 }

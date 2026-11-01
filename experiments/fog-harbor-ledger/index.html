@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#18313c"><meta name="game-build" content="fog-harbor-three-shifts-1">
+  <meta name="theme-color" content="#18313c"><meta name="game-build" content="fog-harbor-three-shifts-evidence-1">
   <title>雾港查单 · 三班航务推理原型</title>
   <link rel="stylesheet" href="style.css?v=fog-harbor-three-shifts-1">
 </head><body><div class="shell">
@@ -14,7 +14,7 @@
       <p id="case-intro"></p>
       <div id="documents" class="documents"></div>
       <div class="verify card"><h3>污损封签复核</h3><p>两种方式只会公开封签号；花掉的分钟也可能让东汐关闭。</p><div class="verify-actions"><button id="inspect">快检 · 1 分钟</button><button id="copy">索拓本 · 2 分钟</button></div></div>
-      <div class="decision card"><h3>选择证据，再签发决定</h3><div id="reasons" class="reasons" aria-label="证据原因"></div><div class="verdict-actions"><button id="release" class="primary">放行 R</button><button id="hold">暂扣 H</button></div></div>
+      <div class="decision card"><h3>选择证据，再签发决定</h3><p id="evidence-status"></p><div id="reasons" class="reasons" aria-label="证据原因"></div><div class="verdict-actions"><button id="release" class="primary">放行 R</button><button id="hold">暂扣 H</button></div></div>
       <div class="session-actions"><button id="pause">暂停 P</button><button id="resume" hidden>继续 P</button><button id="retry">重试本班</button></div>
       <p id="status" class="status" role="status"></p><button id="next" class="primary" hidden>进入下一班</button>
       <details class="history"><summary>已核记录与理由</summary><div id="history"></div></details>
@@ -22,5 +22,5 @@
     <footer>原创船只、港湾、货单与规则。参考 [Papers, Please] 开发者对逐案核对文书、依据变动规则作决定的官方介绍；本作改为虚构货运，只有三班固定案例，不含原作设定、图形、音频或角色，也不宣称完整复刻。<a href="https://papersplea.se/presskit/" target="_blank" rel="noopener noreferrer">参考来源 · 开发者官方说明</a>。此原型仍待真人体验验收，不计入既有 45 款目录作品。</footer>
   </main></div>
   <dialog id="confirm"><h2>重试当前班？</h2><p>本班时间、查验次数和船单回到开班前。已解锁班次与其他游戏存档保持不变。</p><div><button id="cancel-retry">取消，保留现状</button><button id="confirm-retry" class="primary">确认重试本班</button></div></dialog>
-  <script type="module" src="main.mjs?v=fog-harbor-three-shifts-1"></script>
+  <script type="module" src="main.mjs?v=fog-harbor-three-shifts-evidence-1"></script>
 </body></html>

@@ -1,16 +1,15 @@
-import { SAVE_KEY, REASONS, SHIFTS, createGame, currentCase, start, inspect, decide,
-  pause, resume, restart, selectShift, nextShift, checkpoint, restore } from './engine.mjs?v=fog-harbor-three-shifts-1';
+import { SAVE_KEY, REASONS, SHIFTS, createGame, currentCase, start, chooseEvidence, inspect, decide,
+  pause, resume, restart, selectShift, nextShift, checkpoint, restore } from './engine.mjs?v=fog-harbor-three-shifts-evidence-1';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let game;
 try { game = restore(JSON.parse(localStorage.getItem(SAVE_KEY))); } catch { game = null; }
 if (!game) game = createGame();
-let selected = 'none', storageFailure = false, lastVerdict = { at: 0, button: null };
+let storageFailure = false, lastVerdict = { at: 0, button: null };
 const evidenceOrder = ['none', 'expiry', 'route', 'seal', 'cargo', 'weight'];
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(checkpoint(game))); } catch { storageFailure = true; } }
 function commit(changed) { if (changed) save(); render(); }
-function resetEvidence(changed) { if (changed) selected = 'none'; commit(changed); }
 function rulesFor(shift) {
   return [
     `航证有效期必须 ≥ 当班第 ${shift.day} 日。`,
@@ -49,7 +48,7 @@ function render() {
   $('phase').textContent = ({ ready: '布置规则', active: '正在核单', paused: '已暂停', won: '本班完成', lost: '本班未达标' })[game.phase];
   $('case-title').textContent = entry ? `第 ${game.cursor + 1} 份 · ${entry.name}` : game.phase === 'won' ? '本班核毕' : game.phase === 'lost' ? '本班停案' : '等待开班';
   $('case-intro').textContent = entry ? game.revealed ? '封签已经复核；再选证据并判定。' : entry.shownSeal === '墨渍遮号' ? '封签污损。可花时间快检或索拓本，也可承担误判风险直接决定。' : '从船单、底册和当班规则找出一致或冲突之处。' :
-    game.phase === 'won' ? '已完成本班；可进入下一班或重玩已解锁班次。' : game.phase === 'lost' ? '本班判定未达标；重试不会抹去之前的成绩。' : '先阅读规则，再开始。';
+    game.phase === 'won' ? game.stage < SHIFTS.length - 1 ? '已完成本班；可进入下一班或重玩已解锁班次。' : '三班全部完成；可重玩已解锁班次或返回游戏大厅。' : game.phase === 'lost' ? '本班判定未达标；重试不会抹去之前的成绩。' : '先阅读规则，再开始。';
   renderDocuments(entry);
   $('start').hidden = game.phase !== 'ready'; $('next').hidden = !(game.phase === 'won' && game.stage < 2);
   $('pause').hidden = game.phase === 'paused'; $('pause').disabled = !active;
@@ -58,25 +57,26 @@ function render() {
   $('stage-tabs').innerHTML = SHIFTS.map((s, i) => `<button data-stage="${i}" class="${i === game.stage ? 'selected' : ''}" ${i > game.unlocked || !['ready', 'won', 'lost'].includes(game.phase) ? 'disabled' : ''} aria-label="第 ${i + 1} 班 ${esc(s.name)}${i > game.unlocked ? '，尚未解锁' : ''}">${i + 1} · ${esc(s.name)}</button>`).join('');
   $('inspect').disabled = !active || !entry || game.revealed || entry.shownSeal !== '墨渍遮号' || game.scans < 1 || game.minute + 1 >= shift.limit;
   $('copy').disabled = !active || !entry || game.revealed || entry.shownSeal !== '墨渍遮号' || game.minute + 2 >= shift.limit;
-  $('reasons').innerHTML = evidenceOrder.map((id, i) => `<button data-reason="${id}" aria-pressed="${selected === id}" class="${selected === id ? 'selected' : ''}" ${!active || id === 'cargo' && shift.day < 2 || id === 'weight' && shift.day < 3 ? 'disabled' : ''}><small>${i + 1}</small>${esc(REASONS[id])}</button>`).join('');
-  $('release').disabled = !active || selected !== 'none'; $('hold').disabled = !active || selected === 'none';
+  $('reasons').innerHTML = evidenceOrder.map((id, i) => `<button data-reason="${id}" aria-pressed="${game.evidence === id}" class="${game.evidence === id ? 'selected' : ''}" ${!active || id === 'cargo' && shift.day < 2 || id === 'weight' && shift.day < 3 ? 'disabled' : ''}><small>${i + 1}</small>${esc(REASONS[id])}</button>`).join('');
+  $('evidence-status').textContent = game.evidence === null ? '本船尚未选择证据；选定后才能签发。' : `本船已选：${REASONS[game.evidence]}。`;
+  $('release').disabled = !active || game.evidence !== 'none'; $('hold').disabled = !active || game.evidence === null || game.evidence === 'none';
   $('status').textContent = game.message + (storageFailure ? ' 本机存储不可用；刷新后可能无法续档。' : '');
   $('history').innerHTML = game.log.map(row => `<p><strong>${esc(row.name)}</strong> · ${row.verdict === 'release' ? '放行' : `暂扣：${esc(REASONS[row.reason])}`} · ${row.right ? '正确' : `误判（实际：${row.actual.length ? row.actual.map(x => REASONS[x]).join('、') : '可放行'}）`} · 第 ${row.at} 分钟</p>`).join('') || '<p>尚无已核船单。</p>';
 }
 
 $('start').addEventListener('click', () => commit(start(game)));
-$('next').addEventListener('click', () => resetEvidence(nextShift(game)));
-$('stage-tabs').addEventListener('click', event => { const button = event.target.closest('[data-stage]'); if (button) resetEvidence(selectShift(game, Number(button.dataset.stage))); });
-$('reasons').addEventListener('click', event => { const button = event.target.closest('[data-reason]'); if (!button || button.disabled) return; selected = button.dataset.reason; render(); });
+$('next').addEventListener('click', () => commit(nextShift(game)));
+$('stage-tabs').addEventListener('click', event => { const button = event.target.closest('[data-stage]'); if (button) commit(selectShift(game, Number(button.dataset.stage))); });
+$('reasons').addEventListener('click', event => { const button = event.target.closest('[data-reason]'); if (button && !button.disabled) commit(chooseEvidence(game, button.dataset.reason)); });
 $('inspect').addEventListener('click', () => commit(inspect(game, 'scan')));
 $('copy').addEventListener('click', () => commit(inspect(game, 'copy')));
 function verdict(event, kind) {
   if (game.phase !== 'active') return;
   const now = performance.now();
   if (event?.detail && (event.detail > 1 || event.currentTarget === lastVerdict.button && now - lastVerdict.at < 250)) return;
-  const changed = decide(game, kind, selected);
+  const changed = decide(game, kind, game.evidence);
   if (changed && event?.detail) lastVerdict = { at: now, button: event.currentTarget };
-  resetEvidence(changed);
+  commit(changed);
 }
 $('release').addEventListener('click', event => verdict(event, 'release'));
 $('hold').addEventListener('click', event => verdict(event, 'hold'));
@@ -84,13 +84,13 @@ $('pause').addEventListener('click', () => commit(pause(game)));
 $('resume').addEventListener('click', () => commit(resume(game)));
 $('retry').addEventListener('click', () => $('confirm').showModal());
 $('cancel-retry').addEventListener('click', () => $('confirm').close());
-$('confirm-retry').addEventListener('click', () => { $('confirm').close(); resetEvidence(restart(game)); });
+$('confirm-retry').addEventListener('click', () => { $('confirm').close(); commit(restart(game)); });
 document.addEventListener('keydown', event => {
   if ($('confirm').open || event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
   if (event.code === 'KeyP') { event.preventDefault(); commit(game.phase === 'paused' ? resume(game) : pause(game)); return; }
   if (game.phase !== 'active') return;
   const number = /^Digit([1-6])$/.exec(event.code);
-  if (number) { const id = evidenceOrder[Number(number[1]) - 1], button = document.querySelector(`[data-reason="${id}"]`); if (!button.disabled) { event.preventDefault(); selected = id; render(); } return; }
+  if (number) { const id = evidenceOrder[Number(number[1]) - 1], button = document.querySelector(`[data-reason="${id}"]`); if (!button.disabled) { event.preventDefault(); commit(chooseEvidence(game, id)); } return; }
   const keys = { KeyI: () => inspect(game, 'scan'), KeyC: () => inspect(game, 'copy') };
   if (keys[event.code]) { event.preventDefault(); commit(keys[event.code]()); return; }
   if (event.code === 'KeyR' || event.code === 'KeyH') { event.preventDefault(); verdict(null, event.code === 'KeyR' ? 'release' : 'hold'); }

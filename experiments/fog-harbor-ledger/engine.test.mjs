@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { SHIFTS, SAVE_KEY, createGame, currentCase, reasonsFor, start, inspect, decide,
+import { SHIFTS, SAVE_KEY, createGame, currentCase, reasonsFor, start, chooseEvidence, inspect, decide,
   pause, resume, restart, selectShift, nextShift, checkpoint, restore } from './engine.mjs';
 
 const script = [
@@ -17,6 +17,7 @@ function play(s, method = 'scan') {
       assert(inspect(s, choice));
     }
     const reason = entry.route === '东汐' && s.minute >= SHIFTS[s.stage].closeAt ? 'route' : script[s.stage][i];
+    assert(chooseEvidence(s, reason));
     assert(decide(s, reason === 'none' ? 'release' : 'hold', reason));
   }
   return { phase: s.phase, minute: s.minute, correct: s.correct, errors: s.errors,
@@ -57,7 +58,9 @@ test('bad evidence is penalized, time and limited checks cannot be duplicated', 
   const s = createGame(); assert(start(s));
   assert.equal(inspect(s, 'scan'), false); assert.equal(s.minute, 0);
   assert.equal(decide(s, 'hold', 'none'), false); assert.equal(s.minute, 0);
+  assert(chooseEvidence(s, 'expiry'));
   assert(decide(s, 'hold', 'expiry')); assert.equal(s.errors, 1);
+  assert(chooseEvidence(s, 'none'));
   assert(decide(s, 'release', 'none')); assert.equal(s.errors, 2);
   assert.equal(s.phase, 'lost'); assert.equal(s.minute, 2);
   assert.equal(decide(s, 'release', 'none'), false);
@@ -67,7 +70,7 @@ test('bad evidence is penalized, time and limited checks cannot be duplicated', 
 test('scan and copy show the same serial, with different scarce-resource cost', () => {
   for (const method of ['scan', 'copy']) {
     const s = createGame(); s.unlocked = 1; assert(selectShift(s, 1)); assert(start(s));
-    assert(decide(s, 'release', 'none')); assert.equal(currentCase(s).shownSeal, '墨渍遮号');
+    assert(chooseEvidence(s, 'none')); assert(decide(s, 'release', 'none')); assert.equal(currentCase(s).shownSeal, '墨渍遮号');
     const before = s.minute; assert(inspect(s, method)); assert(s.revealed);
     assert.equal(s.minute, before + (method === 'scan' ? 1 : 2));
     assert.equal(s.scans, method === 'scan' ? 0 : 1);
@@ -78,7 +81,7 @@ test('scan and copy show the same serial, with different scarce-resource cost', 
 test('pause, restore, failed shift retry and old records stay isolated', () => {
   assert(SAVE_KEY.includes('fog-harbor-ledger'));
   const s = createGame(); play(s); const record = checkpoint(s.records[0]);
-  assert(nextShift(s)); assert(start(s)); assert(decide(s, 'release', 'none'));
+  assert(nextShift(s)); assert(start(s)); assert(chooseEvidence(s, 'none')); assert(decide(s, 'release', 'none'));
   const active = checkpoint(s), saved = restore(active);
   assert.equal(saved.phase, 'paused'); assert.equal(saved.minute, active.minute);
   assert.equal(decide(saved, 'release', 'none'), false);
@@ -88,4 +91,43 @@ test('pause, restore, failed shift retry and old records stay isolated', () => {
   assert(restore({ ...active, records: ['broken', null, null] }) === null);
   assert(restart(saved)); assert.deepEqual(saved.records[0], record);
   assert(selectShift(saved, 0)); assert.deepEqual(saved.records[0], record);
+});
+test('selected evidence survives pause and reload, then clears for the next ship', () => {
+  const s = createGame(); assert(start(s));
+  assert.equal(s.evidence, null);
+  assert.equal(decide(s, 'release', 'none'), false);
+  assert(chooseEvidence(s, 'none'));
+  assert(pause(s));
+  const saved = restore(checkpoint(s)); assert.equal(saved.phase, 'paused');
+  assert.equal(saved.evidence, 'none');
+  assert(resume(saved)); assert(decide(saved, 'release', 'none'));
+  assert.equal(saved.cursor, 1); assert.equal(saved.evidence, null);
+  assert.equal(decide(saved, 'hold', 'expiry'), false);
+  assert(chooseEvidence(saved, 'expiry'));
+  assert(decide(saved, 'hold', 'expiry'));
+  assert.equal(saved.evidence, null);
+});
+test('new information and old saves require an explicit current-ship choice', () => {
+  const s = createGame(); s.unlocked = 1;
+  assert(selectShift(s, 1)); assert(start(s));
+  assert(chooseEvidence(s, 'none')); assert(decide(s, 'release', 'none'));
+  assert(chooseEvidence(s, 'seal'));
+  assert(inspect(s, 'scan')); assert.equal(s.evidence, null);
+  assert.equal(decide(s, 'hold', 'seal'), false);
+  assert(chooseEvidence(s, 'none'));
+  const old = checkpoint(s); delete old.evidence;
+  const migrated = restore(old);
+  assert.equal(migrated.phase, 'paused'); assert.equal(migrated.evidence, null);
+  assert.match(migrated.message, /旧档未保存本船证据/);
+  assert(resume(migrated));
+  assert.equal(decide(migrated, 'release', 'none'), false);
+  assert(chooseEvidence(migrated, 'none'));
+  assert(decide(migrated, 'release', 'none'));
+  assert.equal(migrated.evidence, null);
+  assert.equal(restore({ ...checkpoint(migrated), evidence: 'fake' }), null);
+});
+test('confirmed retry clears the current-ship choice', () => {
+  const s = createGame(); assert(start(s)); assert(chooseEvidence(s, 'expiry'));
+  assert(restart(s)); assert.equal(s.phase, 'ready'); assert.equal(s.evidence, null);
+  assert.equal(s.cursor, 0); assert.equal(s.minute, 0);
 });
