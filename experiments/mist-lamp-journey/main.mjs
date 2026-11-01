@@ -14,7 +14,7 @@ try {
   }
 } catch { game = null; }
 if (!game) game = createGame();
-let activeMove = null, lastCombatAction = 0;
+let activeMove = null, lastCombatClick = { button: null, at: 0 };
 
 function save() {
   try { localStorage.setItem(SAVE_KEY, JSON.stringify(checkpoint(game))); }
@@ -82,16 +82,19 @@ function doMove(dx, dy, keyboard = false) {
   if (game.status !== 'exploring') stopMoving();
 }
 function currentTarget() { return Number($(game.status === 'battle' ? 'battle-target' : 'target').value); }
-function doCombat(action) {
+function doCombat(action, clickEvent = null) {
   if (game.status !== 'battle') return;
   const now = performance.now();
-  if (now - lastCombatAction < 210) return; // 物理双击不替两名队员下令。
+  // A second click on the same button must not command the next hero. A distinct
+  // keyboard command is a new intention even if it follows a click immediately.
+  if (clickEvent?.detail && (clickEvent.detail > 1 ||
+      (clickEvent.currentTarget === lastCombatClick.button && now - lastCombatClick.at < 210))) return;
   const changed = battleAction(game, action, currentTarget());
-  if (changed) lastCombatAction = now;
+  if (changed && clickEvent?.detail) lastCombatClick = { button: clickEvent.currentTarget, at: now };
   commit(changed);
 }
-function doItem(item) {
-  if (game.status === 'battle') doCombat(item);
+function doItem(item, clickEvent = null) {
+  if (game.status === 'battle') doCombat(item, clickEvent);
   else if (game.status === 'exploring') commit(useItem(game, item, currentTarget()));
 }
 $('start').addEventListener('click', () => commit(start(game)));
@@ -100,11 +103,11 @@ $('backtrack').addEventListener('click', () => commit(backtrack(game)));
 $('next-region').addEventListener('click', () => commit(advanceRegion(game)));
 $('pause').addEventListener('click', () => { stopMoving(); commit(pause(game)); });
 $('resume').addEventListener('click', () => { commit(resume(game)); if (game.status === 'battle') document.body.classList.add('compact-battle'); });
-$('kit').addEventListener('click', () => doItem('kit'));
-$('tonic').addEventListener('click', () => doItem('tonic'));
-$('battle-kit').addEventListener('click', () => doItem('kit'));
-$('battle-tonic').addEventListener('click', () => doItem('tonic'));
-document.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => doCombat(button.dataset.action)));
+$('kit').addEventListener('click', event => doItem('kit', event));
+$('tonic').addEventListener('click', event => doItem('tonic', event));
+$('battle-kit').addEventListener('click', event => doItem('kit', event));
+$('battle-tonic').addEventListener('click', event => doItem('tonic', event));
+document.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', event => doCombat(button.dataset.action, event)));
 $('retry').addEventListener('click', () => { stopMoving(); confirm.showModal(); });
 $('result-retry').addEventListener('click', () => confirm.showModal());
 $('cancel-reset').addEventListener('click', () => confirm.close());
